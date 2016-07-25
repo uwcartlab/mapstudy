@@ -1,601 +1,220 @@
 {
 	"pages": [
-		{},
 		{
-			"page": 2,
-			"library": "Leaflet",
-			"resetButton": true,
-			"interactions": {
-				"retrieve": {
-					"logging": true,
-					"interface": {
-						"window": false
-					}
-				},
-				"pan": {
-					"logging": true,
-					"interface": {
-						"widget": false
-					}
-				},
-				"zoom": {
-					"logging": true
-				},
-				"overlay": {
-					"logging": true,
-					"toggle": true,
-					"dataLayers": [
-						"US States"
-					]
-				},
-				"underlay": {
-					"logging": true,
-					"toggle": true
-				},
-				"search": {
-					"attributes": ["name", "Density (ppl/sq. mile)"],
-					"logging": true,
-					"toggle": true
-				},
-				"filter": {
-					"dataLayers": [
-						"US States"
-					],
-					"tool": "slider",
-					"logging": true,
-					"toggle": true
-				},
-				"reexpress": {
-					"logging": true,
-					"toggle": true
-				},
-				"resymbolize": {
-					"logging": true,
-					"toggle": true
-				}
-			},
-			"mapOptions": {
-				"center": [39.83,-98.583],
-				"zoom": 3,
-				"minZoom": 3,
-				"maxZoom": 13
-			},
-			"baseLayers": [{
-				"name": "Stamen Toner Lite",
-				"source": "Stamen.TonerLite",
-				"layerOptions": {
-					"attribution": "Map by <a href='http://stamen.com'>Stamen</a>, data by <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a>"
-					}
-				},
-				{
-				"name": "Stamen Toner",
-				"source": "http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png",
-				"layerOptions": {
-					"attribution": "Map by <a href='http://stamen.com'>Stamen</a>, data by <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a>"
-					}
-			}],
-			"dataLayers": [{
-				"name": "US States",
-				"source": "data/us-states.geojson",
-				"renderOnLoad": true,
-				"expressedAttribute": "Density (ppl/sq. mile)",
-				"displayAttributes": [
-					"name", 
-					"Density (ppl/sq. mile)"
-				],
-				"layerOptions": {
-					"fillOpacity": 0.8,
-					"color": "black",
-					"weight": 1,
-					"opacity": 1,
-					"fillColor": "#FD8D3C"
-				},
-				"techniques": [{
-					"type": "choropleth",
-					"classification": "quantile",
-					"classes": "Oranges.5"
-				},{
-					"type": "proportional symbol",
-					"classification": "unclassed",
-					"classes": [
-						5,
-						20
-					]
-				}]
-			},
-			{
-				"name": "Cities Layer",
-				"source": "data/city-data.geojson",
-				"renderOnLoad": false,
-				"expressedAttribute": "2011",
-				"displayAttributes": [
-					"name", 
-					"2005",
-					"2006",
-					"2007",
-					"2008",
-					"2009",
-					"2010",
-					"2011"
-				],
-				"layerOptions": {
-					"fillOpacity": 0.8,
-					"color": "white",
-					"fillColor": "blue",
-					"opacity": 1,
-					"weight": 1
-				},
-				"techniques": [{
-					"type": "proportional symbol",
-					"classification": "unclassed",
-					"classes": [
-						5,
-						20
-					]
-				}]
-			}]
+			"page": 1
+		},
+		{
+			"page": 2
 		},
 		{
 			"page": 3,
 			"library": "Leaflet",
+			"mapOptions": {
+				"legend": true,
+				"center": [
+					0,
+					0
+				],
+				"zoom": 0,
+				"minZoom": 0,
+				"maxZoom": 22,
+				"maxBounds": [
+					[
+						-90,
+						-180
+					],
+					[
+						90,
+						180
+					]
+				]
+			},
+			"baseLayers": [
+				{
+					"name": "Kansas_Light",
+					"source": "https://api.mapbox.com/styles/v1/vinckl/ciq19s8qt0002bkmb3j6mdje7/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+				}
+			],
 			"interactions": {
-				"retrieve": {
+				"zoom": {
 					"logging": true,
-					"toggle": true,
 					"interface": {
-						"popup": false
+						"touch": true,
+						"scrollWheel": true,
+						"doubleClick": true,
+						"box": true,
+						"keyboard": true,
+						"widget": false
 					}
 				},
 				"pan": {
 					"logging": true,
-					"toggle": true,
-					"interface": {}
+					"interface": {
+						"drag": true,
+						"keyboard": true,
+						"widget": false
+					}
 				},
-				"zoom": {
+				"retrieve": {
 					"logging": true,
-					"toggle": true,
-					"interface": {}
-				},
-				"overlay": {
-					"logging": true,
-					"toggle": true,
-					"dataLayers": [
-						"Population Density"
-					]
-				},
-				"underlay": {
-					"logging": true,
-					"toggle": true
-				},
-				"search": {
-					"attributes": ["name", "density"],
-					"logging": true,
-					"toggle": true
-				},
-				"filter": {
-					"dataLayers": [
-						"Population Density"
-					],
-					"tool": "slider",
-					"logging": true,
-					"toggle": true
-				},
-				"reexpress": {
-					"logging": true,
-					"toggle": true
-				},
-				"resymbolize": {
-					"logging": true,
-					"toggle": true
+					"interface": {
+						"popup": true,
+						"window": false
+					}
 				}
-			},
-			"mapOptions": {
-				"center": [45,-90],
-				"zoom": 7,
-				"minZoom": 3,
-				"maxZoom": 13
-			},
-			"baseLayers": [{
-				"name": "Stamen Toner Lite",
-				"source": "http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png",
-				"layerOptions": {
-					"attribution": "Map by <a href='http://stamen.com'>Stamen</a>, data by <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a>"
-					}
-				},
-				{
-				"name": "Stamen Toner",
-				"source": "http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png",
-				"layerOptions": {
-					"attribution": "Map by <a href='http://stamen.com'>Stamen</a>, data by <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a>"
-					}
-			}],
-			"dataLayers": [{
-				"name": "Population Density",
-				"source": "data/wi-tracts-poly.topojson",
-				"expressedAttribute": "density",
-				"layerOptions": {
-					"color": "black",
-					"weight": 1,
-					"opacity": 0.8,
-					"fillOpacity": 0.8,
-					"fillColor": "#FD8D3C"
-				},
-				"techniques": [{
-					"type": "heat",
-					"size": 0.5
-				},
-				{
-					"type": "proportional symbol",
-					"classification": "unclassed",
-					"classes": [
-						5,
-						20
-					]
-				},
-				{
-					"type": "choropleth",
-					"classification": "quantile",
-					"classes": "Oranges.5"
-				}]
-			}]
+			}
 		},
 		{
 			"page": 4,
 			"library": "Leaflet",
+			"mapOptions": {
+				"legend": true,
+				"center": [
+					0,
+					0
+				],
+				"zoom": 0,
+				"minZoom": 0,
+				"maxZoom": 22,
+				"maxBounds": [
+					[
+						-90,
+						-180
+					],
+					[
+						90,
+						180
+					]
+				]
+			},
+			"baseLayers": [
+				{
+					"source": "https://api.mapbox.com/styles/v1/vinckl/ciq19s8qt0002bkmb3j6mdje7/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+				}
+			],
 			"interactions": {
-				"retrieve": {
+				"zoom": {
 					"logging": true,
-					"toggle": true,
 					"interface": {
-						"popup": false
+						"touch": true,
+						"scrollWheel": true,
+						"doubleClick": true,
+						"box": true,
+						"keyboard": true,
+						"widget": false
 					}
 				},
 				"pan": {
 					"logging": true,
-					"toggle": true,
-					"interface": {}
-				},
-				"zoom": {
-					"logging": true,
-					"toggle": true,
-					"interface": {}
-				},
-				"overlay": {
-					"logging": true,
-					"toggle": true,
-					"dataLayers": [
-						"Population Density"
-					]
-				},
-				"underlay": {
-					"logging": true,
-					"toggle": true
-				},
-				"search": {
-					"attributes": ["name", "density"],
-					"logging": true,
-					"toggle": true
-				},
-				"filter": {
-					"dataLayers": [
-						"Population Density"
-					],
-					"tool": "slider",
-					"logging": true,
-					"toggle": true
-				},
-				"reexpress": {
-					"logging": true,
-					"toggle": true
-				},
-				"resymbolize": {
-					"logging": true,
-					"toggle": true
+					"interface": {
+						"drag": true,
+						"keyboard": true,
+						"widget": false
+					}
 				}
-			},
-			"mapOptions": {
-				"center": [39.83,-98.583],
-				"zoom": 3,
-				"minZoom": 3,
-				"maxZoom": 13
-			},
-			"baseLayers": [{
-				"name": "Stamen Toner Lite",
-				"source": "http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png",
-				"layerOptions": {
-					"attribution": "Map by <a href='http://stamen.com'>Stamen</a>, data by <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a>"
-					}
-				},
-				{
-				"name": "Stamen Toner",
-				"source": "http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png",
-				"layerOptions": {
-					"attribution": "Map by <a href='http://stamen.com'>Stamen</a>, data by <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a>"
-					}
-			}],
-			"dataLayers": [{
-				"name": "Population Density",
-				"source": "data/us-states.geojson",
-				"expressedAttribute": "Density (ppl/sq. mile)",
-				"layerOptions": {
-					"color": "black",
-					"weight": 1,
-					"opacity": 0.8,
-					"fillOpacity": 0.8,
-					"fillColor": "#FD8D3C"
-				},
-				"techniques": [{
-					"type": "heat",
-					"size": 5
-				},
-				{
-					"type": "proportional symbol",
-					"classification": "unclassed",
-					"classes": [
-						5,
-						20
-					]
-				},
-				{
-					"type": "choropleth",
-					"classification": "quantile",
-					"classes": "Oranges.5"
-				}]
-			},
-			{
-				"name": "Cities Layer",
-				"source": "data/city-data.geojson",
-				"expressedAttribute": "2011",
-				"displayAttributes": [
-					"name", 
-					"2005",
-					"2006",
-					"2007",
-					"2008",
-					"2009",
-					"2010",
-					"2011"
-				],
-				"layerOptions": {
-					"fillOpacity": 0.8,
-					"color": "white",
-					"fillColor": "blue",
-					"opacity": 1,
-					"weight": 1
-				},
-				"techniques": [{
-					"type": "proportional symbol",
-					"classification": "unclassed",
-					"classes": [
-						5,
-						20
-					]
-				}]
-			}]
+			}
 		},
 		{
 			"page": 5,
 			"library": "Leaflet",
-			"interactions": {
-				"retrieve": {
-					"logging": true,
-					"toggle": true,
-					"interface": {
-						"popup": false
-					}
-				},
-				"pan": {
-					"logging": true,
-					"toggle": true,
-					"interface": {}
-				},
-				"zoom": {
-					"logging": true,
-					"toggle": true,
-					"interface": {}
-				},
-				"overlay": {
-					"logging": true,
-					"toggle": true,
-					"dataLayers": [
-						"Population Density"
-					]
-				},
-				"underlay": {
-					"logging": true,
-					"toggle": true
-				},
-				"search": {
-					"attributes": ["name", "density"],
-					"logging": true,
-					"toggle": true
-				},
-				"filter": {
-					"dataLayers": [
-						"Population Density"
-					],
-					"tool": "slider",
-					"logging": true,
-					"toggle": true
-				},
-				"reexpress": {
-					"logging": true,
-					"toggle": true
-				},
-				"resymbolize": {
-					"logging": true,
-					"toggle": true
-				}
-			},
 			"mapOptions": {
-				"center": [39.83,-98.583],
-				"zoom": 3,
-				"minZoom": 3,
-				"maxZoom": 13
-			},
-			"baseLayers": [{
-				"name": "Stamen Toner Lite",
-				"source": "http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png",
-				"layerOptions": {
-					"attribution": "Map by <a href='http://stamen.com'>Stamen</a>, data by <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a>"
-					}
-				},
-				{
-				"name": "Stamen Toner",
-				"source": "http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png",
-				"layerOptions": {
-					"attribution": "Map by <a href='http://stamen.com'>Stamen</a>, data by <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a>"
-					}
-			}],
-			"dataLayers": [{
-				"name": "US Population",
-				"source": "data/us-states-pop.geojson",
-				"expressedAttribute": "population",
-				"displayAttributes": [
-					"name",
-					"population",
-					"density"
+				"legend": true,
+				"center": [
+					0,
+					0
 				],
-				"techniques": [{
-					"type": "dot",
-					"interval": 1000000
-				}]
-			},
-			{
-				"name": "Population Density",
-				"source": "data/us-states.geojson",
-				"expressedAttribute": "Density (ppl/sq. mile)",
-				"displayAttributes": [
-					"name",
-					"Density (ppl/sq. mile)"
-				],
-				"layerOptions": {
-					"color": "black",
-					"weight": 1,
-					"opacity": 0.8,
-					"fillOpacity": 0.8,
-					"fillColor": "#FD8D3C"
-				},
-				"techniques": [{
-					"type": "proportional symbol",
-					"classification": "unclassed",
-					"classes": [
-						5,
-						20
+				"zoom": 0,
+				"minZoom": 0,
+				"maxZoom": 22,
+				"maxBounds": [
+					[
+						-90,
+						-180
+					],
+					[
+						90,
+						180
 					]
-				},
+				]
+			},
+			"baseLayers": [
 				{
-					"type": "choropleth",
-					"classification": "quantile",
-					"classes": "Oranges.5"
-				}]
-			}]
+					"source": "https://api.mapbox.com/styles/v1/vinckl/ciq19s8qt0002bkmb3j6mdje7/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+				}
+			]
 		},
-		{},
+		{
+			"page": 6,
+			"library": "Leaflet",
+			"mapOptions": {
+				"legend": true,
+				"center": [
+					0,
+					0
+				],
+				"zoom": 0,
+				"minZoom": 0,
+				"maxZoom": 22,
+				"maxBounds": [
+					[
+						-90,
+						-180
+					],
+					[
+						90,
+						180
+					]
+				]
+			},
+			"baseLayers": [
+				{
+					"source": "https://api.mapbox.com/styles/v1/vinckl/ciq19s8qt0002bkmb3j6mdje7/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+				}
+			]
+		},
 		{
 			"page": 7,
 			"library": "Leaflet",
-			"interactions": {
-				"retrieve": {
-					"logging": true,
-					"toggle": true,
-					"interface": {
-						"popup": false
-					}
-				},
-				"pan": {
-					"logging": true,
-					"toggle": true,
-					"interface": {}
-				},
-				"zoom": {
-					"logging": true,
-					"toggle": true,
-					"interface": {}
-				},
-				"overlay": {
-					"logging": true,
-					"toggle": true,
-					"dataLayers": [
-						"Population Density"
-					]
-				},
-				"underlay": {
-					"logging": true,
-					"toggle": true
-				},
-				"search": {
-					"attributes": ["name", "density"],
-					"logging": true,
-					"toggle": true
-				},
-				"filter": {
-					"dataLayers": [
-						"Population Density"
-					],
-					"tool": "slider",
-					"logging": true,
-					"toggle": true
-				},
-				"reexpress": {
-					"logging": true,
-					"toggle": true
-				},
-				"resymbolize": {
-					"logging": true,
-					"toggle": true
-				}
-			},
 			"mapOptions": {
-				"center": [45,-90],
-				"zoom": 7,
-				"minZoom": 3,
-				"maxZoom": 13
-			},
-			"baseLayers": [{
-				"name": "Stamen Toner Lite",
-				"source": "http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png",
-				"layerOptions": {
-					"attribution": "Map by <a href='http://stamen.com'>Stamen</a>, data by <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a>"
-					}
-				},
-				{
-				"name": "Stamen Toner",
-				"source": "http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png",
-				"layerOptions": {
-					"attribution": "Map by <a href='http://stamen.com'>Stamen</a>, data by <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a>"
-					}
-			}],
-			"dataLayers": [{
-				"name": "Population Density",
-				"source": "data/wi-tracts-poly.topojson",
-				"expressedAttribute": "density",
-				"layerOptions": {
-					"color": "black",
-					"weight": 1,
-					"opacity": 0.8,
-					"fillOpacity": 0.8,
-					"fillColor": "#FD8D3C"
-				},
-				"techniques": [{
-					"type": "isarithmic",
-					"interval": 20,
-					"size": 1
-				},
-				{
-					"type": "proportional symbol",
-					"classification": "unclassed",
-					"classes": [
-						5,
-						20
+				"legend": true,
+				"center": [
+					0,
+					0
+				],
+				"zoom": 0,
+				"minZoom": 0,
+				"maxZoom": 22,
+				"maxBounds": [
+					[
+						-90,
+						-180
+					],
+					[
+						90,
+						180
 					]
-				},
+				]
+			},
+			"baseLayers": [
 				{
-					"type": "choropleth",
-					"classification": "quantile",
-					"classes": "Oranges.5"
-				}]
-			}]
+					"source": "https://api.mapbox.com/styles/v1/vinckl/ciq19s8qt0002bkmb3j6mdje7/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+				}
+			]
+		},
+		{
+			"page": 8
+		},
+		{
+			"page": 9
+		},
+		{
+			"page": 10
+		},
+		{
+			"page": 11
+		},
+		{
+			"page": 12
 		}
 	]
 }

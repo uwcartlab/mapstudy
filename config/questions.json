@@ -7,15 +7,8 @@
 				{
 					"blocks": [
 						{
-							"title": "Page 1",
-							"ask": "This is what a page without a map looks like. It consists of a single set with two blocks. This text is the \"ask\" for a block without an input. You can use this formatting to create an information page or consent form."
-						},
-						{
-							"ask": "This is the second block in the single set on this page. Notice that you can create a new block for each new paragraph of text. In addition to text, this block contains a text input. You could use this kind of formatting to request information or consent from a participant.",
-							"description": "Unlike the first block, this block has no title, but does have a description. This is the description; it is shown in italics. In addition to the two blocks, this set has a single \"next\" button.",
-							"input": {
-								"type": "text"
-							}
+							"title": "Participant Consent Form",
+							"ask": "<strong>Title of this Study:</strong> Elements of Interactive Cartography </br> <strong>Principle Investigator:</strong></br> Robert E. Roth, PhD </br> 375 Science Hall </br>N. Park Street </br> Madison, WI 53706 </br> Phone: 608-262-1453; Email: reroth@wisc.edu </br></br> <strong>Description of Research:</strong></br> You are invited to participate in a study aimed at improving the design of interactive maps on the web. Specifically, the study investigates how we should design online maps that depict statistical information. </br></br> <strong>What will my participation involve?</strong> </br>If you decide to participate in this research, you will complete a survey that requires you to answer a series of tasks using different map designs. The survey will take approximately 30 minutes to complete. You will be compensated $10  for your participation upon completing the survey. </br></br> <strong>Are there any risks to me?</strong></br>Risk to participation is minimal. Thus, there are no foreseeable physical or mental risks to participation beyond those encountered in the normal course of everyday life.</br></br><strong>Are there any benefits to me?</strong></br>Your responses to the survey will be used to develop a better understanding of the design of interactive and online maps.</br></br><strong>How will my confidentiality be protected?</strong></br>No personally identifiable or sensitive information will be collected or maintained. Only group characteristics will be reported in publications of research findings.</br></br><strong>Whom should I contact if I have questions?</strong></br>You may ask any questions about the research at any time. If you have questions about the research after you leave today you should contact Robert E. Roth, PhD (PI) at 608-262-1453. If you are not satisfied with response of research team, have more questions, or want to talk with someone about your rights as a research participant, you should contact the University of Wisconsin-Madison Education Research and Social & Behavioral Science IRB Office at 608-263-2320. Your participation is completely voluntary and you can withdraw from the study at any time without compensation.</br></br><strong>If you agree to take part in this research study as outlined above, please click 'Next' below. Selecting this button means that you understand your rights as a participant and agree to participate in this research study. Close your browser if you choose not to participate:</strong>"
 						}
 					],
 					"buttons": [
@@ -26,211 +19,80 @@
 		},
 		{
 			"page": 2,
+			"fullpage": true,
 			"sets": [
 				{
-					"set": 1,
 					"blocks": [
 						{
-							"title": "This is the first set of Page 2.",
-							"ask": "All of the questions you can see and the buttons belong to the same set. These blocks are designed give you an idea of what kinds of inputs you can create."
-						},
-						{
-							"ask": "What is thy name?",
-							"description": "Gimme a name!",
-							"input": {
-								"type": "text",
-								"required": true
-							}
-						},
-						{
-							"title": "Quest",
-							"ask": "What is thy quest?",
-							"description": "",
-							"input": {
-								"type": "paragraph"
-							}
-						},
-						{
-							"title": "Color",
-							"ask": "What is thy favorite color?",
-							"input": {
-								"type": "checkboxes",
-								"items": [
-									{
-										"text": "Green."
-									},
-									{
-										"text": "No, no--blue!"
-									}
-								]
-							}
-						},
-						{
-							"title": "Airspeed Velocity",
-							"ask": "What is the airspeed velocity of an unladen swallow?",
-							"input": {
-								"type": "matrix",
-								"items": [
-									{
-										"text": "African",
-										"label": "african"
-									},
-									{
-										"text": "European",
-										"label": "european"
-									}
-								],
-								"options": [
-									{
-										"text": "10 kph"
-									},
-									{
-										"text": "20 kph"
-									},
-									{
-										"text": "30 kph"
-									},
-									{
-										"text": "I don't know!",
-										"value": "dunno"
-									}
-								]
-							}
-						},
-						{
-							"title": "Swallow Type",
-							"ask": "African or European?",
-							"description": "Select an answer to move to the next set...",
-							"input": {
-								"type": "radios",
-								"autoadvance": true,
-								"options": [
-									{
-										"text": "African"
-									},
-									{
-										"text": "European"
-									},
-									{
-										"text": "I don't know that!",
-										"value": "aaaaaaaaaaaaaaaah!"
-									}
-								]
-							}
+							"ask": "<strong>Thank you for agreeing to participate!</strong></br></br>Maps and geographic information are extremely common in daily life today! You may be familiar with mapping services like Apple Maps, Google Maps, and MapQuest. You also may make use of web maps in social media like Facebook, Foursquare, Instagram, and Twitter. Further, you might have explored more complex interactive maps in popular news outlets like the New York Times and the Washington Post. The purpose of this study is to learn how we should design these maps.</br></br><strong>Instructions</strong></br></br>In the following survey, you will be shown four different web map designs that depict the volume of tweets in Kansas in the last year. <strong><i>Twitter</i></strong> is a social media platform allowing users to submit 140 character tweets that include a mappable location. The volume of tweets often is used as a proxy for public interest and engagement around different topics (e.g., entertainment, fashion, food, sports), with the topics organized by 'hashtags' (using the pound '#'Â sign) to allow users to identify their comments by these topics. The density of tweets often follows the density of people, but for the following maps do <strong><u>not</u></strong> consider the relationship between tweets and population, as this is not relevant to the study.</br></br>The tweet topic will change from map to map, such that each tweet map pattern you will see is unique. You then will be asked a series of questions requiring you to {interact with and} interpret the map pattern to find the answer. Following each map task, you will be asked to assess the confidence you have in your answer and the difficulty you had in finding the answer. The map task <strong><u>is</u></strong> timed, so please do not divert your attention when completing the map tasks; the confidence and difficulty questions are <strong><u>not</u></strong> timed, so take your time in answering these follow-up questions.</br></br>Before viewing the maps, you will have the chance to test a sample map to get a feel for the web map functionality and map questions. After viewing the maps, you will be asked to answer a series of background and preference questions. You will be compensated after completing the map reading tasks and exit survey question.</br></br><strong>Eligibility</strong></br></br>Before beginning, please once again review your eligibility for participating in the study: These restrictions greatly impact your responses.</br></br><ul><li>You must be 18 years of age or older.</li><li>You must be fluent in English.</li><li>You must currently be living in the United States, but not in Kansas due to familiarity with the tested Geography</li><li>You do not have color vision impairment (i.e., are colorblind)</li><li>You must complete the survey on a non-mobile device, such as a laptop or desktop computer with a screen display of at least 10 inches. Completing the experiment on a smartphone or small screen tablet will greatly impact your performance and skew results.</li></ul></br></br>Select 'Next' to confirm that you have read the instructions and confirm that you are eligible and ready to try the sample map."
 						}
 					],
 					"buttons": [
-						"back",
-						"save"
-					]
-				},
-				{
-					"set": 2,
-					"blocks": [
-						{
-							"title": "This is the second set of Page 2. Note the countdown timer up top.",
-							"ask": "How far were you catapulted?",
-							"description": "aaaaaaaaaaaaaaaah!",
-							"input": {
-								"type": "dropdown",
-								"options": [
-									{
-										"text": "1 km"
-									},
-									{
-										"text": "2 km"
-									},
-									{
-										"text": "to the moon!"
-									}
-								]
-							}
-						},
-						{
-							"ask": "Rank the importance of the following:",
-							"input": {
-								"type": "rank",
-								"items": [
-									{
-										"text": "bird"
-									},
-									{
-										"text": "fish"
-									},
-									{
-										"text": "monkeybrains"
-									},
-									{
-										"text": "your mom"
-									}
-								]
-							}
-						}
-					],
-					"buttons": [
-						"back",
 						"next"
-					],
-					"timer": {
-						"direction": "down",
-						"starttime": "00:00:30"
-					}
+					]
 				}
 			]
 		},
 		{
 			"page": 3,
+			"fullpage": false,
 			"sets": [
 				{
 					"blocks": [
 						{
-							"title": "A paragraph question for Page 3, Set 1",
-							"ask": "This is Page 3. The order of pages 3 and 4 has been randomized. This page has a page timer that counts up. It will count until the next page is triggered.",
+							"title": "Sample Map/Questions",
+							"ask": "If you were asked, for example, to determine the total number of basketball tweets in Kansas. You would choose one of the following:",
+							"description": "**When you select 'Next', a timer will begin. ",
 							"input": {
-								"type": "paragraph"
+								"required": true,
+								"autoadvance": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "10,000"
+									},
+									{
+										"text": "20,000"
+									},
+									{
+										"text": "30,000"
+									},
+									{
+										"text": "40,000"
+									}
+								]
 							}
 						}
 					],
 					"buttons": [
 						"next",
-						"back",
-						"save"
-					]
-				},
-				{
-					"blocks": [
-						{
-							"ask": "A text question for Page 3, Set 2",
-							"input": {
-								"type": "text"
-							}
-						}
-					],
-					"buttons": [
-						"next",
-						"back",
 						"save"
 					]
 				}
-			],
-			"timer": {}
+			]
 		},
 		{
 			"page": 4,
+			"fullpage": false,
 			"sets": [
 				{
 					"blocks": [
 						{
-							"title": "A text question for Page 4",
-							"ask": "This is Page 4. The order of pages 3 and 4 has been randomized.",
+							"ask": "Where are the most tweets?",
 							"input": {
-								"type": "text"
+								"required": false,
+								"type": "text",
+								"options": [
+
+								],
+								"items": [
+
+								]
 							}
 						}
 					],
 					"buttons": [
 						"next",
-						"back",
 						"save"
 					]
 				}
@@ -238,36 +100,247 @@
 		},
 		{
 			"page": 5,
+			"fullpage": false,
 			"sets": [
 				{
 					"blocks": [
 						{
-							"title": "A text question for Page 5",
-							"ask": "This is Page 5.",
-							"description": "You should only include a submit button on the second-to-last page. That way, the user will see a final ending page. If the app is configured to e-mail data, an e-mail will be sent each time the submit button is clicked.",
+							"ask": "Where are the most tweets?",
 							"input": {
-								"type": "text"
+								"required": false,
+								"type": "text",
+								"options": [
+
+								],
+								"items": [
+
+								]
 							}
 						}
 					],
 					"buttons": [
+						"next",
 						"back",
-						"submit"
+						"save"
 					]
 				}
 			]
 		},
 		{
 			"page": 6,
+			"fullpage": false,
+			"sets": [
+				{
+					"blocks": [
+						{
+							"ask": "Where are the most tweets?",
+							"input": {
+								"required": false,
+								"type": "text",
+								"options": [
+
+								],
+								"items": [
+
+								]
+							}
+						}
+					],
+					"buttons": [
+						"next",
+						"back",
+						"save"
+					]
+				}
+			]
+		},
+		{
+			"page": 7,
+			"fullpage": false,
+			"sets": [
+				{
+					"blocks": [
+						{
+							"ask": "Where are the most tweets?",
+							"input": {
+								"required": false,
+								"type": "text",
+								"options": [
+
+								],
+								"items": [
+
+								]
+							}
+						}
+					],
+					"buttons": [
+						"next",
+						"back",
+						"save"
+					]
+				}
+			]
+		},
+		{
+			"page": 8,
 			"fullpage": true,
 			"sets": [
 				{
 					"blocks": [
 						{
-							"title": "Page 6",
-							"ask": "Thank you for taking this survey. You really rock.",
-							"description": "Because this set has no buttons, the participant will not be able to navigate to a different part of the survey."
+							"title": "*The survey is no longer being timed</br>Exit Survey-Usefulness and Preference",
+							"ask": "Rank how useful you found the four map designs for completing the map tasks. ",
+							"input": {
+								"required": false,
+								"type": "matrix",
+								"options": [
+
+								],
+								"items": [
+									{
+										"label": "p9s1b1i1"
+									}
+								]
+							}
 						}
+					],
+					"buttons": [
+						"next",
+						"save"
+					]
+				}
+			]
+		},
+		{
+			"page": 9,
+			"fullpage": true,
+			"sets": [
+				{
+					"blocks": [
+						{
+							"title": "Exit Survey-Background",
+							"ask": "How old are you?",
+							"input": {
+								"required": false,
+								"type": "text",
+								"options": [
+
+								],
+								"items": [
+
+								]
+							}
+						}
+					],
+					"buttons": [
+						"next",
+						"back",
+						"save"
+					]
+				}
+			]
+		},
+		{
+			"page": 10,
+			"fullpage": true,
+			"sets": [
+				{
+					"blocks": [
+						{
+							"title": "Exit Survey-Familiarity and Interest",
+							"input": {
+								"required": false,
+								"type": "text",
+								"options": [
+
+								],
+								"items": [
+
+								]
+							}
+						}
+					],
+					"buttons": [
+						"next",
+						"back",
+						"save"
+					]
+				}
+			]
+		},
+		{
+			"page": 11,
+			"fullpage": true,
+			"sets": [
+				{
+					"blocks": [
+						{
+							"title": "Exit Survey-Technology",
+							"input": {
+								"required": false,
+								"type": "text",
+								"options": [
+
+								],
+								"items": [
+
+								]
+							}
+						}
+					],
+					"buttons": [
+						"back",
+						"save",
+						"submit"
+					]
+				}
+			]
+		},
+		{
+			"page": 12,
+			"fullpage": true,
+			"sets": [
+				{
+					"blocks": [
+						{
+							"title": "Thank you!",
+							"ask": "Thank you for taking the time to complete this survey. Your response has been recorded. You will receive your payment shortly.</br></br>Please close your browser to exit."
+						},
+						{
+							"input": {
+								"required": false,
+								"type": "text",
+								"options": [
+
+								],
+								"items": [
+
+								]
+							}
+						}
+					],
+					"buttons": [
+
+					]
+				},
+				{
+					"blocks": [
+						{
+							"input": {
+								"required": false,
+								"type": "text",
+								"options": [
+
+								],
+								"items": [
+
+								]
+							}
+						}
+					],
+					"buttons": [
+
 					]
 				}
 			]
