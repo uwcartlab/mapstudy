@@ -220,7 +220,7 @@
 					"blocks": [
 						{
 							"title": "Exit Survey-Background",
-							"ask": "How old are you?",
+							"ask": "1. How old are you?",
 							"input": {
 								"required": false,
 								"type": "text",
@@ -230,6 +230,82 @@
 								"items": [
 
 								]
+							}
+						},
+						{
+							"ask": "2. What is your gender identity?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "Male"
+									},
+									{
+										"text": "Female"
+									},
+									{"text": "Other"
+								}
+							]
+							}
+						},
+						{
+							"ask": "3. Do you have corrected vision?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "Yes"
+									},
+									{"text": "No"
+								}
+							]
+							}
+						},
+						{
+							"ask": "4. Do you have color vision impairment?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "Yes"
+									},
+									{"text": "No"
+								},
+								{
+									"text": "Don't know"
+								}
+							]
+							}
+						},
+						{
+							"ask": "5. Is English your first language?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "Yes"
+									},
+									{"text": "No"
+								}
+							]
+							}
+						},
+						{
+							"ask": "6. Are you fluent in English?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "Yes"
+									},
+									{"text": "No"
+								}
+							]
 							}
 						}
 					],
@@ -306,41 +382,14 @@
 						{
 							"title": "Thank you!",
 							"ask": "Thank you for taking the time to complete this survey. Your response has been recorded. You will receive your payment shortly.</br></br>Please close your browser to exit."
-						},
-						{
-							"input": {
-								"required": false,
-								"type": "text",
-								"options": [
-
-								],
-								"items": [
-
-								]
-							}
 						}
+
 					],
 					"buttons": [
-
 					]
 				},
 				{
-					"blocks": [
-						{
-							"input": {
-								"required": false,
-								"type": "text",
-								"options": [
-
-								],
-								"items": [
-
-								]
-							}
-						}
-					],
 					"buttons": [
-
 					]
 				}
 			]
