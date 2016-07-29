@@ -185,33 +185,189 @@
 		{
 			"page": 8,
 			"fullpage": true,
-			"sets": [
-				{
-					"blocks": [
-						{
-							"title": "*The survey is no longer being timed</br>Exit Survey-Usefulness and Preference",
-							"ask": "Rank how useful you found the four map designs for completing the map tasks. ",
-							"input": {
-								"required": false,
-								"type": "matrix",
-								"options": [
-
-								],
-								"items": [
-									{
-										"label": "p9s1b1i1"
-									}
-								]
+				"sets": [
+					{
+						"blocks": [
+							{
+								"title": "*The survey is no longer being timed</br>Exit Survey-Usefulness and Preference",
+								"ask": "<br>Select how <strong><i>useful</i></strong> you found the four map designs for completing the map tasks:",
+								"input": {
+									"required": false,
+									"type": "matrix",
+									"options": [
+										{
+											"text": "Not at all Useful"
+										},
+										{
+											"text": "Not Useful"
+										},
+										{
+											"text": "Not Useful"
+										},
+										{
+											"text": "Neutral"
+										},
+										{
+											"text": "Moderately Useful"
+										},
+										{
+											"text": "Very Useful"
+										},
+										{
+											"text": "Extremely Useful"
+										}
+									],
+									"items": [
+										{
+											"text": "Choropleth Map",
+											"label": "p2s1b1i1"
+										},
+										{
+											"text": "Proportional Symbol Map"
+										},
+										{
+											"text": "Heat Map"
+										},
+										{
+											"text": "Dot Map"
+										}
+									]
+								}
+							},
+							{
+								"ask": "<br>Select your personal <strong><i>preference</i></strong> of the four map designs regardless of the map tasks:",
+								"input": {
+									"required": false,
+									"autoadvance": false,
+									"type": "matrix",
+									"options": [
+										{
+											"text": "Lowest Preference"
+										},
+										{
+											"text": "Low Preference"
+										},
+										{
+											"text": "Slightly Prefer"
+										},
+										{
+											"text": "Neutral"
+										},
+										{
+											"text": "Moderately Prefer"
+										},
+										{
+											"text": "Really Prefer"
+										},
+										{
+											"text": "Extremely Prefer"
+										}
+									],
+									"items": [
+										{
+											"text": "Choropleth Map",
+											"label": "p2s1b2i1"
+										},
+										{
+											"text": "Proportional Symbol Map"
+										},
+										{
+											"text": "Heat Map"
+										},
+										{
+											"text": "Dot Map"
+										}
+									]
+								}
+							},
+							{
+								"ask": "<br>Select how <strong><i>useful</i></strong> you found the provided interactive features for completing the map tasks:",
+								"input": {
+									"required": false,
+									"autoadvance": false,
+									"type": "matrix",
+									"options": [
+										{
+											"text": "Not at all Useful"
+										},
+										{
+											"text": "Not Useful"
+										},
+										{
+											"text": "Not Useful"
+										},
+										{
+											"text": "Neutral"
+										},
+										{
+											"text": "Moderately Useful"
+										},
+										{
+											"text": "Very Useful"
+										},
+										{
+											"text": "Extremely Useful"
+										}
+									],
+									"items": [
+										{
+											"text": "Pan Map Position",
+											"label": "p2s1b3i1"
+										},
+										{
+											"text": "Zoom in and Out"
+										}
+									]
+								}
+							},
+							{
+								"ask": "<br>Select your personal <strong><i>preference</i></strong> of the provided interactive features regardless of the map tasks:",
+								"input": {
+									"required": false,
+									"autoadvance": false,
+									"type": "matrix",
+									"options": [
+										{
+											"text": "Lowest Preference"
+										},
+										{
+											"text": "Low Preference"
+										},
+										{
+											"text": "Slightly Prefer"
+										},
+										{
+											"text": "Neutral"
+										},
+										{
+											"text": "Moderately Prefer"
+										},
+										{
+											"text": "Really Prefer"
+										},
+										{
+											"text": "Extremely Prefer"
+										}
+									],
+									"items": [
+										{
+											"text": "Pan Map Position",
+											"label": "p2s1b4i1"
+										},
+										{
+											"text": "Zoom in and Out"
+										}
+									]
+								}
 							}
-						}
-					],
-					"buttons": [
-						"next",
-						"save"
-					]
-				}
-			]
-		},
+						],
+						"buttons": [
+							"next",
+							"save"
+						]
+					}
+				]
+			},
 		{
 			"page": 9,
 			"fullpage": true,
