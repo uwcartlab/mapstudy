@@ -1,0 +1,209 @@
+<h1 id="pages">Pages</h1>
+<p>*A page is defined as one M-section and one Q-section (one map and one set of questions that go with that map). Pages are stored in a <code>pages</code> array, the outermost property of the map.json and questions.json config files. Each page is designated by creating an M-section object in map.json and a Q-section object in questions.json at the same index in each respective <code>pages</code> array. For example:</p>
+<pre><code>//in map.json:
+{
+    pages: [
+        {
+            &quot;page&quot;: 1,
+            &quot;library&quot;: &quot;Leaflet&quot;,
+            ...
+        },
+        {
+            &quot;page&quot;: 2,
+            &quot;library&quot;: &quot;Leaflet&quot;,
+            ...
+        },
+        ...
+    ]
+}
+
+//in questions.json:
+{
+    pages: [
+        {
+            &quot;page&quot;: 1,
+            &quot;sets&quot;: [
+                ...
+            ]
+        },
+        {
+            &quot;page&quot;: 2,
+            &quot;sets&quot;: [
+                ...
+            ]
+        },
+        ...
+    ]
+}
+</code></pre><p><em>To ensure that each regular two-column page loads and displays properly, you must include <strong>both</strong> an M-section object in map.json and a Q-section object in questions.json at the <strong>same index</strong>. In the example above, the <code>page</code> property of each object is merely a reminder of which object one is looking at and does nothing programmatically; all options are set based on the array index. If the application has only a single page, there need only be one of each object.</em></p>
+<p><em>To include a consent form, instructions, or other full-page content, include a complete Q-section object and an empty M-section object at the same index in each <code>pages</code> array, and set the Q-section <code>fullpage</code> property to <code>true</code>; for example:</em></p>
+<pre><code>//in map.json:
+{
+    pages: [
+        {},
+        {
+            &quot;page&quot;: 2,
+            &quot;library&quot;: &quot;Leaflet&quot;,
+            ...
+        },
+        ...
+    ]
+}
+
+//in questions.json:
+{
+    pages: [
+        {
+            &quot;page&quot;: 1,
+            &quot;fullpage&quot;: true,
+            &quot;sets&quot;: [
+                {
+                    &quot;blocks&quot;: [
+                        {
+                            &quot;ask&quot;: &quot;Some information or instructions...&quot;
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            &quot;page&quot;: 2,
+            &quot;sets&quot;: [
+                ...
+            ]
+        },
+        ...
+    ]
+}
+</code></pre><h1 id="map-module">Map Module</h1>
+<p><strong>Bolded items are high priority for implementation</strong></p>
+<p>[Items in brackets are aspirational]</p>
+<h3 id="m-section">M-section</h3>
+<p><em>This section includes the modules necessary to create the map, which is situated on the left side of the page at a desktop aspect ratio, or on top if mobile.</em></p>
+<h3 id="m-library">M-library</h3>
+<ul>
+<li><strong>Leaflet</strong></li>
+<li>[MapboxGL]</li>
+<li>[D3]</li>
+</ul>
+<h3 id="m-technique">M-technique</h3>
+<ul>
+<li><strong>Choropleth</strong></li>
+<li>Dot</li>
+<li><strong>Proportional Symbol</strong></li>
+<li>Isoline</li>
+<li>Config<ul>
+<li>Size (radius)</li>
+<li>Shape (circle, square, icon)</li>
+<li>Fill color</li>
+<li>Fill opacity</li>
+<li>Line color</li>
+<li>Line opacity</li>
+</ul>
+</li>
+</ul>
+<h3 id="m-interaction">M-interaction</h3>
+<ul>
+<li><strong>Filter</strong></li>
+<li><strong>Zoom</strong></li>
+<li>Pan</li>
+<li>Retrieve</li>
+<li>Sequence</li>
+<li>Reexpress</li>
+<li>[Rotate (MapboxGL and D3 only)]</li>
+<li>[Resymbolize]</li>
+<li>[Reproject]</li>
+<li>[Overlay]</li>
+</ul>
+<h3 id="m-parameters">M-parameters</h3>
+<ul>
+<li>Geocenter</li>
+<li>Data layer<ul>
+<li>File URL -OR-</li>
+<li>PostGIS table name (assumes database parameters in P-section)</li>
+<li>Available attributes</li>
+<li>Expressed attribute</li>
+<li>Leaflet and Mapbox layer options</li>
+</ul>
+</li>
+<li>Base tile layer (Leaflet and MapboxGL only)<ul>
+<li>Leaflet and Mapbox layer options</li>
+</ul>
+</li>
+<li>[Alternative tile layers<ul>
+<li>options]</li>
+</ul>
+</li>
+<li>[Data overlays<ul>
+<li>Selected attributes</li>
+<li>options]</li>
+</ul>
+</li>
+</ul>
+<h2 id="questions-module">Questions Module</h2>
+<h3 id="q-section">Q-section</h3>
+<p><em>This section includes the survey question modules, which appear on the right or bottom of the page, in a nested heirarchy. A Q-set module is a set of child modules displayed on the page at once. Q-sets are displayed in the order in which they are declared. A Q-block is a question block that contains the question and/or Q-inputs for the answer(s). A Q-input is one input element and any associated prompt or label belonging to a Q-block. A Q-button is on the same level as a Q-block and contains a Back, Next, or Submit button.</em></p>
+<ul>
+<li>Fullpage? (boolean; default false)</li>
+</ul>
+<h3 id="q-set">Q-set</h3>
+<p><em>Wrapper for all Q-blocks on a page</em></p>
+<p>Requirements:</p>
+<p>-1+ Q-blocks
+-Next or Submit Q-button</p>
+<h3 id="q-block">Q-block</h3>
+<p><em>Question block</em></p>
+<p>Dependency: Q-set</p>
+<ul>
+<li>Reset numbering? (boolean; default false)</li>
+<li>Question title</li>
+<li>Question ask</li>
+<li>Question description</li>
+</ul>
+<h3 id="q-input">Q-input</h3>
+<p><em>Input element for a question answer</em></p>
+<p>Dependency: Q-block</p>
+<ul>
+<li>Type<ul>
+<li>Text</li>
+<li>Paragraph</li>
+<li>Radio</li>
+<li>Checkbox</li>
+<li>Dropdown</li>
+<li>Matrix<ul>
+<li>Options</li>
+<li>Items</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Starting value or prompt</li>
+<li>Label (for Radio or Checkbox)</li>
+</ul>
+<h3 id="q-button">Q-button</h3>
+<p><em>Navigation buttons. Next buttons proceed to the next Q-set; Back buttons return to the previous Q-set; Submit buttons submit all answers and end the survey.</em></p>
+<p>Dependency: Q-set</p>
+<ul>
+<li>Type<ul>
+<li>Back</li>
+<li>Next</li>
+<li>Submit</li>
+</ul>
+</li>
+</ul>
+<h2 id="p-section">P-section</h2>
+<p><em>This section includes back-end parameters that are custom to the survey. To hide it from users, it is included in a PHP file rather than a JS file.</em></p>
+<ul>
+<li>Database<ul>
+<li>Server IP address</li>
+<li>Username</li>
+<li>Password</li>
+</ul>
+</li>
+</ul>
+<h2 id="includes">Includes</h2>
+<p><em>Non-customizable script modules</em></p>
+<ul>
+<li>Interaction logging script</li>
+<li>SQL for building the necessary Postgresql tables</li>
+</ul>

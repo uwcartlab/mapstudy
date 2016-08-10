@@ -1,0 +1,9 @@
+<h1 id="phpmailer-extras">PHPMailer Extras</h1>
+<p>These classes provide optional additional functions to PHPMailer.</p>
+<p>These are not loaded by the PHPMailer autoloader, so in some cases you may need to <code>require</code> them yourself before using them.</p>
+<h2 id="easypeasyics">EasyPeasyICS</h2>
+<p>This class was originally written by Manuel Reinhard and provides a simple means of generating ICS/vCal files that are used in sending calendar events. PHPMailer does not use it directly, but you can use it to generate content appropriate for placing in the <code>Ical</code> property of PHPMailer. The PHPMailer project is now its official home as Manuel has given permission for that and is no longer maintaining it himself.</p>
+<h2 id="htmlfilter">htmlfilter</h2>
+<p>This class by Konstantin Riabitsev and Jim Jagielski implements HTML filtering to remove potentially malicious tags, such as <code>&lt;script&gt;</code> or <code>onclick=</code> attributes that can result in XSS attacks. This is a simple filter and is not as comprehensive as <a href="http://www.bioinformatics.org/phplabware/internal_utilities/htmLawed/">HTMLawed</a> or <a href="http://htmlpurifier.org">HTMLPurifier</a>, but it&#39;s easier to use and considerably better than nothing! PHPMailer does not use it directly, but you may want to apply it to user-supplied HTML before using it as a message body.</p>
+<h2 id="ntlm_sasl_client">NTLM_SASL_client</h2>
+<p>This class by Manuel Lemos (bundled with permission) adds the ability to authenticate with Microsoft Windows mail servers that use NTLM-based authentication. It is used by PHPMailer if you send via SMTP and set the <code>AuthType</code> property to <code>NTLM</code>; you will also need to use the <code>Realm</code> and <code>Workstation</code> properties. The original source is <a href="http://www.phpclasses.org/browse/file/7495.html">here</a>.</p>
