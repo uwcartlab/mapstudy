@@ -11,33 +11,36 @@
 			"library": "Leaflet",
 			"mapOptions": {
 				"legend": true,
+				"resetButton": true,
 				"center": [
-					0,
-					0
+					38.5,
+					-98.5
 				],
-				"zoom": 0,
-				"minZoom": 0,
-				"maxZoom": 22,
+				"zoom": 6,
+				"minZoom": 5,
+				"maxZoom": 18,
 				"maxBounds": [
 					[
-						-90,
-						-180
+						43,
+						-110
 					],
 					[
-						90,
-						180
+						30,
+						-90
 					]
 				]
 			},
 			"baseLayers": [
 				{
-					"name": "Kansas_Light",
-					"source": "https://api.mapbox.com/styles/v1/vinckl/ciq19s8qt0002bkmb3j6mdje7/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+					"name": "Basemap",
+					"source": "https://api.mapbox.com/styles/v1/vinckl/cirp7eizn001zg9ngj4u3usm3/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 				}
 			],
+
 			"interactions": {
 				"zoom": {
 					"logging": true,
+					"toggle": false,
 					"interface": {
 						"touch": true,
 						"scrollWheel": true,
@@ -49,18 +52,17 @@
 				},
 				"pan": {
 					"logging": true,
+					"toggle": false,
 					"interface": {
 						"drag": true,
 						"keyboard": true,
 						"widget": false
 					}
+
 				},
-				"retrieve": {
+				"reset": {
 					"logging": true,
-					"interface": {
-						"popup": true,
-						"window": false
-					}
+					"toggle": false
 				}
 			}
 		},

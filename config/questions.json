@@ -40,7 +40,7 @@
 				{
 					"blocks": [
 						{
-							"title": "Sample Map/Questions",
+							"title": "Sample Map",
 							"ask": "If you were asked, for example, to determine the total number of basketball tweets in Kansas. You would choose one of the following:",
 							"description": "**When you select 'Next', a timer will begin. ",
 							"input": {
@@ -65,8 +65,7 @@
 						}
 					],
 					"buttons": [
-						"next",
-						"save"
+						"next"
 					]
 				}
 			]
