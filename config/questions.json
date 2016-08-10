@@ -40,25 +40,24 @@
 				{
 					"blocks": [
 						{
-							"title": "Sample Map",
-							"ask": "If you were asked, for example, to determine the total number of basketball tweets in Kansas. You would choose one of the following:",
-							"description": "**When you select 'Next', a timer will begin. ",
+							"title": "Example Map",
+							"ask": "This is an example of what a map could look like. It shows the total number of tweets, but always review the legend carefully so you know what you are looking at. Each map that you will be shown will be a different topic with a different distribution. The distribution that you will be looking at will have 'higher' and 'lower' relationship. <br><br>The maps will allow you to pan, or move around the map, and zoom, or change the level of detail you are looking at. Exploration is encouraged. If you are familiar with the represented geography, do not consider any correlating factors in map reading and interaction. <br><br>Use the map to answer the following example question.<br><br> <strong>REMEMBER:</strong> Once you select 'Next' a timer will start. "
+						},
+						{
+							"ask": "How many tweets were sent in Wichita County?",
 							"input": {
 								"required": true,
 								"autoadvance": false,
 								"type": "radios",
 								"options": [
 									{
-										"text": "10,000"
+										"text": "xxxx"
 									},
 									{
-										"text": "20,000"
+										"text": "xxxx"
 									},
 									{
-										"text": "30,000"
-									},
-									{
-										"text": "40,000"
+										"text": "xxxx"
 									}
 								]
 							}

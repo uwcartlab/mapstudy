@@ -31,41 +31,64 @@
 				]
 			},
 			"baseLayers": [
-				{
-					"name": "Basemap",
-					"source": "https://api.mapbox.com/styles/v1/vinckl/cirp7eizn001zg9ngj4u3usm3/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
-				}
-			],
-
-			"interactions": {
-				"zoom": {
-					"logging": true,
-					"toggle": false,
-					"interface": {
-						"touch": true,
-						"scrollWheel": true,
-						"doubleClick": true,
-						"box": true,
-						"keyboard": true,
-						"widget": false
+					{
+						"name": "Basemap",
+						"source": "https://api.mapbox.com/styles/v1/vinckl/cirp7eizn001zg9ngj4u3usm3/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 					}
+				],
+				"dataLayers": [
+					{
+						"name": "MapTest",
+						"source": "data/maptest.geojson",
+						"expressedAttribute": "tweets",
+						"displayAttributes": [
+							"NAME10"
+						],
+						"layerOptions": {
+					"fillOpacity": 0.8,
+					"color": "black",
+					"weight": 0.5,
+					"opacity": 1
 				},
-				"pan": {
-					"logging": true,
-					"toggle": false,
-					"interface": {
-						"drag": true,
-						"keyboard": true,
-						"widget": false
+						"renderOnLoad": true,
+						"techniques": [
+							{
+								"type": "choropleth",
+								"classification": "natural breaks",
+								"classes": "BuGn.5"
+							}
+						]
 					}
-
-				},
-				"reset": {
-					"logging": true,
-					"toggle": false
+				],
+				"interactions": {
+					"zoom": {
+						"logging": true,
+						"toggle": false,
+						"interface": {
+							"touch": true,
+							"scrollWheel": true,
+							"doubleClick": true,
+							"box": true,
+							"keyboard": true,
+							"widget": false
+						}
+					},
+					"pan": {
+						"logging": true,
+						"toggle": false,
+						"interface": {
+							"drag": true,
+							"keyboard": true,
+							"widget": false
+						}
+					},
+					"sequence": {
+						"dataLayers": [
+							"MapTest"
+						]
+					}
 				}
-			}
-		},
+			},
 		{
 			"page": 4,
 			"library": "Leaflet",
