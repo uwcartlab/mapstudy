@@ -481,14 +481,105 @@
 					"blocks": [
 						{
 							"title": "Exit Survey-Familiarity and Interest",
+							"ask": "1. Please rate your <strong><i>knowledge</i></strong> of the following topics: ",
 							"input": {
 								"required": false,
-								"type": "text",
+								"type": "matrix",
 								"options": [
-
+									{
+										"text": "No Knowledge"
+									},
+									{
+										"text": "Minimal Knowledge"
+									},
+									{
+										"text": "Some Knowledge"
+									},
+									{
+										"text": "Average Knowledge"
+									},
+									{
+										"text": "Above Average Knowledge"
+									},
+									{
+										"text": "I Know Quite a Bit"
+									},
+									{
+										"text": "I Know a Lot"
+									}
 								],
 								"items": [
-
+									{
+										"text": "Computer Technology",
+										"label": "p2s1b1i1"
+									},
+									{
+										"text": "The Internet/The Web"
+									},
+									{
+										"text": "Map Design"
+									},
+									{
+										"text": "Geography"
+									},
+									{
+										"text": "Numbers and Statistics"
+									},
+									{
+										"text": "Twitter"
+									}
+								]
+							}
+						},
+						{
+							"ask": "2. Please rate your <strong><i>interest</i></strong> in the following topics: ",
+							"input": {
+								"required": false,
+								"autoadvance": false,
+								"type": "matrix",
+								"options": [
+									{
+										"text": "No Interest"
+									},
+									{
+										"text": "Minimal Interest"
+									},
+									{
+										"text": "Some Interest"
+									},
+									{
+										"text": "Average Interest"
+									},
+									{
+										"text": "Above Average Interest"
+									},
+									{
+										"text": "Quite a Bit of Interest"
+									},
+									{
+										"text": "A Lot of Interest"
+									}
+								],
+								"items": [
+									{
+										"text": "Computer Technology",
+										"label": "p2s1b2i1"
+									},
+									{
+										"text": "The Internet/The Web"
+									},
+									{
+										"text": "Map Design"
+									},
+									{
+										"text": "Geography"
+									},
+									{
+										"text": "Numbers and Statistics"
+									},
+									{
+										"text": "Twitter"
+									}
 								]
 							}
 						}
@@ -509,22 +600,71 @@
 					"blocks": [
 						{
 							"title": "Exit Survey-Technology",
+							"ask": "1. What kind of <strong><i>computing device</i></strong> did you use to view and complete the survey:",
 							"input": {
 								"required": false,
-								"type": "text",
+								"type": "radios",
 								"options": [
-
-								],
-								"items": [
-
+									{
+										"text": "Smartphone"
+									},
+									{
+										"text": "Tablet"
+									},
+									{
+										"text": "Laptop Computer"
+									},
+									{
+										"text": "Desktop Computer"
+									},
+									{
+										"text": "Other"
+									}
+								]
+							}
+						},
+						{
+							"ask": "2. What best describes the manner you interacted with the map and submitted your survey responses? ",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "Touch Screen"
+									},
+									{
+										"text": "Touch Pad"
+									},
+									{
+										"text": "Mouse"
+									},
+									{
+										"text": "Other"
+									}
+								]
+							}
+						},
+						{
+							"ask": "3. Did you divert your attention (e.g., open another website, check your phone) in any way when completing the survey?Note: this has no bearing on compensation",
+							"input": {
+								"required": false,
+								"autoadvance": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "Yes"
+									},
+									{
+										"text": "No"
+									}
 								]
 							}
 						}
 					],
 					"buttons": [
-						"back",
 						"save",
-						"submit"
+						"submit",
+						"back"
 					]
 				}
 			]
