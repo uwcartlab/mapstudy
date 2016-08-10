@@ -421,20 +421,1016 @@
 									}
 								}
 							},
+							{
+								"page": 8,
+								"library": "Leaflet",
+								"mapOptions": {
+									"legend": true,
+									"resetButton": true,
+									"center": [
+										38.5,
+										-98.5
+									],
+									"zoom": 6,
+									"minZoom": 5,
+									"maxZoom": 18,
+									"maxBounds": [
+										[
+											43,
+											-110
+										],
+										[
+											30,
+											-90
+										]
+									]
+								},
+								"baseLayers": [
+										{
+											"name": "Basemap",
+											"source": "https://api.mapbox.com/styles/v1/vinckl/cirp7eizn001zg9ngj4u3usm3/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+										}
+									],
+									"dataLayers": [
+										{
+											"name": "MapTest",
+											"source": "data/maptest.geojson",
+											"expressedAttribute": "tweets",
+											"displayAttributes": [
+												"NAME10"
+											],
+											"layerOptions": {
+										"fillOpacity": 0.8,
+										"color": "black",
+										"weight": 0.5,
+										"opacity": 1
+									},
+											"renderOnLoad": true,
+											"techniques": [
+												{
+													"type": "choropleth",
+													"classification": "natural breaks",
+													"classes": "BuGn.5"
+												}
+											]
+										}
+									],
+									"interactions": {
+										"zoom": {
+											"logging": true,
+											"toggle": false,
+											"interface": {
+												"touch": true,
+												"scrollWheel": true,
+												"doubleClick": true,
+												"box": true,
+												"keyboard": true,
+												"widget": false
+											}
+										},
+										"pan": {
+											"logging": true,
+											"toggle": false,
+											"interface": {
+												"drag": true,
+												"keyboard": true,
+												"widget": false
+											}
+										},
+										"sequence": {
+											"dataLayers": [
+												"MapTest"
+											]
+										}
+									}
+								},
+								{
+									"page": 9,
+									"library": "Leaflet",
+									"mapOptions": {
+										"legend": true,
+										"resetButton": true,
+										"center": [
+											38.5,
+											-98.5
+										],
+										"zoom": 6,
+										"minZoom": 5,
+										"maxZoom": 18,
+										"maxBounds": [
+											[
+												43,
+												-110
+											],
+											[
+												30,
+												-90
+											]
+										]
+									},
+									"baseLayers": [
+											{
+												"name": "Basemap",
+												"source": "https://api.mapbox.com/styles/v1/vinckl/cirp7eizn001zg9ngj4u3usm3/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+											}
+										],
+										"dataLayers": [
+											{
+												"name": "MapTest",
+												"source": "data/maptest.geojson",
+												"expressedAttribute": "tweets",
+												"displayAttributes": [
+													"NAME10"
+												],
+												"layerOptions": {
+											"fillOpacity": 0.8,
+											"color": "black",
+											"weight": 0.5,
+											"opacity": 1
+										},
+												"renderOnLoad": true,
+												"techniques": [
+													{
+														"type": "choropleth",
+														"classification": "natural breaks",
+														"classes": "BuGn.5"
+													}
+												]
+											}
+										],
+										"interactions": {
+											"zoom": {
+												"logging": true,
+												"toggle": false,
+												"interface": {
+													"touch": true,
+													"scrollWheel": true,
+													"doubleClick": true,
+													"box": true,
+													"keyboard": true,
+													"widget": false
+												}
+											},
+											"pan": {
+												"logging": true,
+												"toggle": false,
+												"interface": {
+													"drag": true,
+													"keyboard": true,
+													"widget": false
+												}
+											},
+											"sequence": {
+												"dataLayers": [
+													"MapTest"
+												]
+											}
+										}
+									},
+									{
+										"page": 10,
+										"library": "Leaflet",
+										"mapOptions": {
+											"legend": true,
+											"resetButton": true,
+											"center": [
+												38.5,
+												-98.5
+											],
+											"zoom": 6,
+											"minZoom": 5,
+											"maxZoom": 18,
+											"maxBounds": [
+												[
+													43,
+													-110
+												],
+												[
+													30,
+													-90
+												]
+											]
+										},
+										"baseLayers": [
+												{
+													"name": "Basemap",
+													"source": "https://api.mapbox.com/styles/v1/vinckl/cirp7eizn001zg9ngj4u3usm3/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+												}
+											],
+											"dataLayers": [
+												{
+													"name": "MapTest",
+													"source": "data/maptest.geojson",
+													"expressedAttribute": "tweets",
+													"displayAttributes": [
+														"NAME10"
+													],
+													"layerOptions": {
+												"fillOpacity": 0.8,
+												"color": "black",
+												"weight": 0.5,
+												"opacity": 1
+											},
+													"renderOnLoad": true,
+													"techniques": [
+														{
+															"type": "choropleth",
+															"classification": "natural breaks",
+															"classes": "BuGn.5"
+														}
+													]
+												}
+											],
+											"interactions": {
+												"zoom": {
+													"logging": true,
+													"toggle": false,
+													"interface": {
+														"touch": true,
+														"scrollWheel": true,
+														"doubleClick": true,
+														"box": true,
+														"keyboard": true,
+														"widget": false
+													}
+												},
+												"pan": {
+													"logging": true,
+													"toggle": false,
+													"interface": {
+														"drag": true,
+														"keyboard": true,
+														"widget": false
+													}
+												},
+												"sequence": {
+													"dataLayers": [
+														"MapTest"
+													]
+												}
+											}
+										},
+										{
+											"page": 11,
+											"library": "Leaflet",
+											"mapOptions": {
+												"legend": true,
+												"resetButton": true,
+												"center": [
+													38.5,
+													-98.5
+												],
+												"zoom": 6,
+												"minZoom": 5,
+												"maxZoom": 18,
+												"maxBounds": [
+													[
+														43,
+														-110
+													],
+													[
+														30,
+														-90
+													]
+												]
+											},
+											"baseLayers": [
+													{
+														"name": "Basemap",
+														"source": "https://api.mapbox.com/styles/v1/vinckl/cirp7eizn001zg9ngj4u3usm3/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+													}
+												],
+												"dataLayers": [
+													{
+														"name": "MapTest",
+														"source": "data/maptest.geojson",
+														"expressedAttribute": "tweets",
+														"displayAttributes": [
+															"NAME10"
+														],
+														"layerOptions": {
+													"fillOpacity": 0.8,
+													"color": "black",
+													"weight": 0.5,
+													"opacity": 1
+												},
+														"renderOnLoad": true,
+														"techniques": [
+															{
+																"type": "choropleth",
+																"classification": "natural breaks",
+																"classes": "BuGn.5"
+															}
+														]
+													}
+												],
+												"interactions": {
+													"zoom": {
+														"logging": true,
+														"toggle": false,
+														"interface": {
+															"touch": true,
+															"scrollWheel": true,
+															"doubleClick": true,
+															"box": true,
+															"keyboard": true,
+															"widget": false
+														}
+													},
+													"pan": {
+														"logging": true,
+														"toggle": false,
+														"interface": {
+															"drag": true,
+															"keyboard": true,
+															"widget": false
+														}
+													},
+													"sequence": {
+														"dataLayers": [
+															"MapTest"
+														]
+													}
+												}
+											},
+											{
+												"page": 12,
+												"library": "Leaflet",
+												"mapOptions": {
+													"legend": true,
+													"resetButton": true,
+													"center": [
+														38.5,
+														-98.5
+													],
+													"zoom": 6,
+													"minZoom": 5,
+													"maxZoom": 18,
+													"maxBounds": [
+														[
+															43,
+															-110
+														],
+														[
+															30,
+															-90
+														]
+													]
+												},
+												"baseLayers": [
+														{
+															"name": "Basemap",
+															"source": "https://api.mapbox.com/styles/v1/vinckl/cirp7eizn001zg9ngj4u3usm3/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+														}
+													],
+													"dataLayers": [
+														{
+															"name": "MapTest",
+															"source": "data/maptest.geojson",
+															"expressedAttribute": "tweets",
+															"displayAttributes": [
+																"NAME10"
+															],
+															"layerOptions": {
+														"fillOpacity": 0.8,
+														"color": "black",
+														"weight": 0.5,
+														"opacity": 1
+													},
+															"renderOnLoad": true,
+															"techniques": [
+																{
+																	"type": "choropleth",
+																	"classification": "natural breaks",
+																	"classes": "BuGn.5"
+																}
+															]
+														}
+													],
+													"interactions": {
+														"zoom": {
+															"logging": true,
+															"toggle": false,
+															"interface": {
+																"touch": true,
+																"scrollWheel": true,
+																"doubleClick": true,
+																"box": true,
+																"keyboard": true,
+																"widget": false
+															}
+														},
+														"pan": {
+															"logging": true,
+															"toggle": false,
+															"interface": {
+																"drag": true,
+																"keyboard": true,
+																"widget": false
+															}
+														},
+														"sequence": {
+															"dataLayers": [
+																"MapTest"
+															]
+														}
+													}
+												},
+												{
+													"page": 13,
+													"library": "Leaflet",
+													"mapOptions": {
+														"legend": true,
+														"resetButton": true,
+														"center": [
+															38.5,
+															-98.5
+														],
+														"zoom": 6,
+														"minZoom": 5,
+														"maxZoom": 18,
+														"maxBounds": [
+															[
+																43,
+																-110
+															],
+															[
+																30,
+																-90
+															]
+														]
+													},
+													"baseLayers": [
+															{
+																"name": "Basemap",
+																"source": "https://api.mapbox.com/styles/v1/vinckl/cirp7eizn001zg9ngj4u3usm3/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+															}
+														],
+														"dataLayers": [
+															{
+																"name": "MapTest",
+																"source": "data/maptest.geojson",
+																"expressedAttribute": "tweets",
+																"displayAttributes": [
+																	"NAME10"
+																],
+																"layerOptions": {
+															"fillOpacity": 0.8,
+															"color": "black",
+															"weight": 0.5,
+															"opacity": 1
+														},
+																"renderOnLoad": true,
+																"techniques": [
+																	{
+																		"type": "choropleth",
+																		"classification": "natural breaks",
+																		"classes": "BuGn.5"
+																	}
+																]
+															}
+														],
+														"interactions": {
+															"zoom": {
+																"logging": true,
+																"toggle": false,
+																"interface": {
+																	"touch": true,
+																	"scrollWheel": true,
+																	"doubleClick": true,
+																	"box": true,
+																	"keyboard": true,
+																	"widget": false
+																}
+															},
+															"pan": {
+																"logging": true,
+																"toggle": false,
+																"interface": {
+																	"drag": true,
+																	"keyboard": true,
+																	"widget": false
+																}
+															},
+															"sequence": {
+																"dataLayers": [
+																	"MapTest"
+																]
+															}
+														}
+													},
+													{
+														"page": 14,
+														"library": "Leaflet",
+														"mapOptions": {
+															"legend": true,
+															"resetButton": true,
+															"center": [
+																38.5,
+																-98.5
+															],
+															"zoom": 6,
+															"minZoom": 5,
+															"maxZoom": 18,
+															"maxBounds": [
+																[
+																	43,
+																	-110
+																],
+																[
+																	30,
+																	-90
+																]
+															]
+														},
+														"baseLayers": [
+																{
+																	"name": "Basemap",
+																	"source": "https://api.mapbox.com/styles/v1/vinckl/cirp7eizn001zg9ngj4u3usm3/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+																}
+															],
+															"dataLayers": [
+																{
+																	"name": "MapTest",
+																	"source": "data/maptest.geojson",
+																	"expressedAttribute": "tweets",
+																	"displayAttributes": [
+																		"NAME10"
+																	],
+																	"layerOptions": {
+																"fillOpacity": 0.8,
+																"color": "black",
+																"weight": 0.5,
+																"opacity": 1
+															},
+																	"renderOnLoad": true,
+																	"techniques": [
+																		{
+																			"type": "choropleth",
+																			"classification": "natural breaks",
+																			"classes": "BuGn.5"
+																		}
+																	]
+																}
+															],
+															"interactions": {
+																"zoom": {
+																	"logging": true,
+																	"toggle": false,
+																	"interface": {
+																		"touch": true,
+																		"scrollWheel": true,
+																		"doubleClick": true,
+																		"box": true,
+																		"keyboard": true,
+																		"widget": false
+																	}
+																},
+																"pan": {
+																	"logging": true,
+																	"toggle": false,
+																	"interface": {
+																		"drag": true,
+																		"keyboard": true,
+																		"widget": false
+																	}
+																},
+																"sequence": {
+																	"dataLayers": [
+																		"MapTest"
+																	]
+																}
+															}
+														},
+														{
+															"page": 15,
+															"library": "Leaflet",
+															"mapOptions": {
+																"legend": true,
+																"resetButton": true,
+																"center": [
+																	38.5,
+																	-98.5
+																],
+																"zoom": 6,
+																"minZoom": 5,
+																"maxZoom": 18,
+																"maxBounds": [
+																	[
+																		43,
+																		-110
+																	],
+																	[
+																		30,
+																		-90
+																	]
+																]
+															},
+															"baseLayers": [
+																	{
+																		"name": "Basemap",
+																		"source": "https://api.mapbox.com/styles/v1/vinckl/cirp7eizn001zg9ngj4u3usm3/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+																	}
+																],
+																"dataLayers": [
+																	{
+																		"name": "MapTest",
+																		"source": "data/maptest.geojson",
+																		"expressedAttribute": "tweets",
+																		"displayAttributes": [
+																			"NAME10"
+																		],
+																		"layerOptions": {
+																	"fillOpacity": 0.8,
+																	"color": "black",
+																	"weight": 0.5,
+																	"opacity": 1
+																},
+																		"renderOnLoad": true,
+																		"techniques": [
+																			{
+																				"type": "choropleth",
+																				"classification": "natural breaks",
+																				"classes": "BuGn.5"
+																			}
+																		]
+																	}
+																],
+																"interactions": {
+																	"zoom": {
+																		"logging": true,
+																		"toggle": false,
+																		"interface": {
+																			"touch": true,
+																			"scrollWheel": true,
+																			"doubleClick": true,
+																			"box": true,
+																			"keyboard": true,
+																			"widget": false
+																		}
+																	},
+																	"pan": {
+																		"logging": true,
+																		"toggle": false,
+																		"interface": {
+																			"drag": true,
+																			"keyboard": true,
+																			"widget": false
+																		}
+																	},
+																	"sequence": {
+																		"dataLayers": [
+																			"MapTest"
+																		]
+																	}
+																}
+															},
+															{
+																"page": 16,
+																"library": "Leaflet",
+																"mapOptions": {
+																	"legend": true,
+																	"resetButton": true,
+																	"center": [
+																		38.5,
+																		-98.5
+																	],
+																	"zoom": 6,
+																	"minZoom": 5,
+																	"maxZoom": 18,
+																	"maxBounds": [
+																		[
+																			43,
+																			-110
+																		],
+																		[
+																			30,
+																			-90
+																		]
+																	]
+																},
+																"baseLayers": [
+																		{
+																			"name": "Basemap",
+																			"source": "https://api.mapbox.com/styles/v1/vinckl/cirp7eizn001zg9ngj4u3usm3/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+																		}
+																	],
+																	"dataLayers": [
+																		{
+																			"name": "MapTest",
+																			"source": "data/maptest.geojson",
+																			"expressedAttribute": "tweets",
+																			"displayAttributes": [
+																				"NAME10"
+																			],
+																			"layerOptions": {
+																		"fillOpacity": 0.8,
+																		"color": "black",
+																		"weight": 0.5,
+																		"opacity": 1
+																	},
+																			"renderOnLoad": true,
+																			"techniques": [
+																				{
+																					"type": "choropleth",
+																					"classification": "natural breaks",
+																					"classes": "BuGn.5"
+																				}
+																			]
+																		}
+																	],
+																	"interactions": {
+																		"zoom": {
+																			"logging": true,
+																			"toggle": false,
+																			"interface": {
+																				"touch": true,
+																				"scrollWheel": true,
+																				"doubleClick": true,
+																				"box": true,
+																				"keyboard": true,
+																				"widget": false
+																			}
+																		},
+																		"pan": {
+																			"logging": true,
+																			"toggle": false,
+																			"interface": {
+																				"drag": true,
+																				"keyboard": true,
+																				"widget": false
+																			}
+																		},
+																		"sequence": {
+																			"dataLayers": [
+																				"MapTest"
+																			]
+																		}
+																	}
+																},
+																{
+																	"page": 17,
+																	"library": "Leaflet",
+																	"mapOptions": {
+																		"legend": true,
+																		"resetButton": true,
+																		"center": [
+																			38.5,
+																			-98.5
+																		],
+																		"zoom": 6,
+																		"minZoom": 5,
+																		"maxZoom": 18,
+																		"maxBounds": [
+																			[
+																				43,
+																				-110
+																			],
+																			[
+																				30,
+																				-90
+																			]
+																		]
+																	},
+																	"baseLayers": [
+																			{
+																				"name": "Basemap",
+																				"source": "https://api.mapbox.com/styles/v1/vinckl/cirp7eizn001zg9ngj4u3usm3/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+																			}
+																		],
+																		"dataLayers": [
+																			{
+																				"name": "MapTest",
+																				"source": "data/maptest.geojson",
+																				"expressedAttribute": "tweets",
+																				"displayAttributes": [
+																					"NAME10"
+																				],
+																				"layerOptions": {
+																			"fillOpacity": 0.8,
+																			"color": "black",
+																			"weight": 0.5,
+																			"opacity": 1
+																		},
+																				"renderOnLoad": true,
+																				"techniques": [
+																					{
+																						"type": "choropleth",
+																						"classification": "natural breaks",
+																						"classes": "BuGn.5"
+																					}
+																				]
+																			}
+																		],
+																		"interactions": {
+																			"zoom": {
+																				"logging": true,
+																				"toggle": false,
+																				"interface": {
+																					"touch": true,
+																					"scrollWheel": true,
+																					"doubleClick": true,
+																					"box": true,
+																					"keyboard": true,
+																					"widget": false
+																				}
+																			},
+																			"pan": {
+																				"logging": true,
+																				"toggle": false,
+																				"interface": {
+																					"drag": true,
+																					"keyboard": true,
+																					"widget": false
+																				}
+																			},
+																			"sequence": {
+																				"dataLayers": [
+																					"MapTest"
+																				]
+																			}
+																		}
+																	},
+																	{
+																		"page": 18,
+																		"library": "Leaflet",
+																		"mapOptions": {
+																			"legend": true,
+																			"resetButton": true,
+																			"center": [
+																				38.5,
+																				-98.5
+																			],
+																			"zoom": 6,
+																			"minZoom": 5,
+																			"maxZoom": 18,
+																			"maxBounds": [
+																				[
+																					43,
+																					-110
+																				],
+																				[
+																					30,
+																					-90
+																				]
+																			]
+																		},
+																		"baseLayers": [
+																				{
+																					"name": "Basemap",
+																					"source": "https://api.mapbox.com/styles/v1/vinckl/cirp7eizn001zg9ngj4u3usm3/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+																				}
+																			],
+																			"dataLayers": [
+																				{
+																					"name": "MapTest",
+																					"source": "data/maptest.geojson",
+																					"expressedAttribute": "tweets",
+																					"displayAttributes": [
+																						"NAME10"
+																					],
+																					"layerOptions": {
+																				"fillOpacity": 0.8,
+																				"color": "black",
+																				"weight": 0.5,
+																				"opacity": 1
+																			},
+																					"renderOnLoad": true,
+																					"techniques": [
+																						{
+																							"type": "choropleth",
+																							"classification": "natural breaks",
+																							"classes": "BuGn.5"
+																						}
+																					]
+																				}
+																			],
+																			"interactions": {
+																				"zoom": {
+																					"logging": true,
+																					"toggle": false,
+																					"interface": {
+																						"touch": true,
+																						"scrollWheel": true,
+																						"doubleClick": true,
+																						"box": true,
+																						"keyboard": true,
+																						"widget": false
+																					}
+																				},
+																				"pan": {
+																					"logging": true,
+																					"toggle": false,
+																					"interface": {
+																						"drag": true,
+																						"keyboard": true,
+																						"widget": false
+																					}
+																				},
+																				"sequence": {
+																					"dataLayers": [
+																						"MapTest"
+																					]
+																				}
+																			}
+																		},
+																		{
+																			"page": 19,
+																			"library": "Leaflet",
+																			"mapOptions": {
+																				"legend": true,
+																				"resetButton": true,
+																				"center": [
+																					38.5,
+																					-98.5
+																				],
+																				"zoom": 6,
+																				"minZoom": 5,
+																				"maxZoom": 18,
+																				"maxBounds": [
+																					[
+																						43,
+																						-110
+																					],
+																					[
+																						30,
+																						-90
+																					]
+																				]
+																			},
+																			"baseLayers": [
+																					{
+																						"name": "Basemap",
+																						"source": "https://api.mapbox.com/styles/v1/vinckl/cirp7eizn001zg9ngj4u3usm3/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+																					}
+																				],
+																				"dataLayers": [
+																					{
+																						"name": "MapTest",
+																						"source": "data/maptest.geojson",
+																						"expressedAttribute": "tweets",
+																						"displayAttributes": [
+																							"NAME10"
+																						],
+																						"layerOptions": {
+																					"fillOpacity": 0.8,
+																					"color": "black",
+																					"weight": 0.5,
+																					"opacity": 1
+																				},
+																						"renderOnLoad": true,
+																						"techniques": [
+																							{
+																								"type": "choropleth",
+																								"classification": "natural breaks",
+																								"classes": "BuGn.5"
+																							}
+																						]
+																					}
+																				],
+																				"interactions": {
+																					"zoom": {
+																						"logging": true,
+																						"toggle": false,
+																						"interface": {
+																							"touch": true,
+																							"scrollWheel": true,
+																							"doubleClick": true,
+																							"box": true,
+																							"keyboard": true,
+																							"widget": false
+																						}
+																					},
+																					"pan": {
+																						"logging": true,
+																						"toggle": false,
+																						"interface": {
+																							"drag": true,
+																							"keyboard": true,
+																							"widget": false
+																						}
+																					},
+																					"sequence": {
+																						"dataLayers": [
+																							"MapTest"
+																						]
+																					}
+																				}
+																			},
 		{
-			"page": 8
+			"page": 20
 		},
 		{
-			"page": 9
+			"page": 21
 		},
 		{
-			"page": 10
+			"page": 22
 		},
 		{
-			"page": 11
+			"page": 23
 		},
 		{
-			"page": 12
+			"page": 24
 		}
 	]
 }
