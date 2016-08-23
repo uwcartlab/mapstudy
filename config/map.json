@@ -199,7 +199,7 @@
 					"baseLayers": [
 							{
 								"name": "Basemap",
-								"source": "https://api.mapbox.com/styles/v1/vinckl/cirp7eizn001zg9ngj4u3usm3/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+								"source": "https://api.mapbox.com/styles/v1/vinckl/cis7x179a0030gkno43r6lvv8/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 							}
 						],
 						"dataLayers": [
