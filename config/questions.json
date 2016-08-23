@@ -77,22 +77,75 @@
 					"blocks": [
 						{
 							"title": "Tweets about Basketball, Choropleth Map",
-							"ask": "Where are the most tweets?",
+							"ask": "Which town had more tweets?",
 							"input": {
 								"required": false,
-								"type": "text",
+								"type": "radios",
 								"options": [
-
-								],
-								"items": [
-
+									{
+										"text": "A (4)"
+									},
+									{
+										"text": "B (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which town had the most tweets?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "E (4)"
+									},
+									{
+										"text": "D (3)"
+									},
+									{
+										"text": "C (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which county had more tweets?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "A (4)"
+									},
+									{
+										"text": "B (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which county had the most tweets?",
+							"input": {
+								"required": false,
+								"autoadvance": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "C (4)"
+									},
+									{
+										"text": "B (3)"
+									},
+									{
+										"text": "A (2)"
+									}
 								]
 							}
 						}
 					],
 					"buttons": [
-						"next",
-						"save"
+						"next"
 					]
 				}
 			]
@@ -105,23 +158,76 @@
 					"blocks": [
 						{
 							"title": "Tweets about Hamburgers, Proportional Symbol Map",
-							"ask": "Where are the most tweets?",
+							"ask": "Which town had more tweets?",
 							"input": {
 								"required": false,
-								"type": "text",
+								"type": "radios",
 								"options": [
-
-								],
-								"items": [
-
+									{
+										"text": "A (4)"
+									},
+									{
+										"text": "B (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which town had the most tweets?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "E (4)"
+									},
+									{
+										"text": "D (3)"
+									},
+									{
+										"text": "C (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which county had more tweets?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "A (4)"
+									},
+									{
+										"text": "B (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which county had the most tweets?",
+							"input": {
+								"required": false,
+								"autoadvance": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "C (4)"
+									},
+									{
+										"text": "B (3)"
+									},
+									{
+										"text": "A (2)"
+									}
 								]
 							}
 						}
 					],
 					"buttons": [
 						"next",
-						"back",
-						"save"
+						"back"
 					]
 				}
 			]
@@ -134,23 +240,76 @@
 					"blocks": [
 						{
 							"title": "Tweets about Jackets, Heat Map",
-							"ask": "Where are the most tweets?",
+							"ask": "Which town had more tweets?",
 							"input": {
 								"required": false,
-								"type": "text",
+								"type": "radios",
 								"options": [
-
-								],
-								"items": [
-
+									{
+										"text": "A (4)"
+									},
+									{
+										"text": "B (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which town had the most tweets?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "E (4)"
+									},
+									{
+										"text": "D (3)"
+									},
+									{
+										"text": "C (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which county had more tweets?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "A (4)"
+									},
+									{
+										"text": "B (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which county had the most tweets?",
+							"input": {
+								"required": false,
+								"autoadvance": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "C (4)"
+									},
+									{
+										"text": "B (3)"
+									},
+									{
+										"text": "A (2)"
+									}
 								]
 							}
 						}
 					],
 					"buttons": [
 						"next",
-						"back",
-						"save"
+						"back"
 					]
 				}
 			]
@@ -163,23 +322,76 @@
 					"blocks": [
 						{
 							"title": "Tweets about Nightlife, Dot Density Map",
-							"ask": "Where are the most tweets?",
+							"ask": "Which town had more tweets?",
 							"input": {
 								"required": false,
-								"type": "text",
+								"type": "radios",
 								"options": [
-
-								],
-								"items": [
-
+									{
+										"text": "A (4)"
+									},
+									{
+										"text": "B (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which town had the most tweets?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "E (4)"
+									},
+									{
+										"text": "D (3)"
+									},
+									{
+										"text": "C (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which county had more tweets?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "A (4)"
+									},
+									{
+										"text": "B (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which county had the most tweets?",
+							"input": {
+								"required": false,
+								"autoadvance": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "C (4)"
+									},
+									{
+										"text": "B (3)"
+									},
+									{
+										"text": "A (2)"
+									}
 								]
 							}
 						}
 					],
 					"buttons": [
 						"next",
-						"back",
-						"save"
+						"back"
 					]
 				}
 			]
@@ -192,23 +404,76 @@
 					"blocks": [
 						{
 							"title": "Tweets about Shoes, Dot Density Map",
-							"ask": "Where are the most tweets?",
+							"ask": "Which town had more tweets?",
 							"input": {
 								"required": false,
-								"type": "text",
+								"type": "radios",
 								"options": [
-
-								],
-								"items": [
-
+									{
+										"text": "A (4)"
+									},
+									{
+										"text": "B (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which town had the most tweets?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "E (4)"
+									},
+									{
+										"text": "D (3)"
+									},
+									{
+										"text": "C (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which county had more tweets?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "A (4)"
+									},
+									{
+										"text": "B (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which county had the most tweets?",
+							"input": {
+								"required": false,
+								"autoadvance": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "C (4)"
+									},
+									{
+										"text": "B (3)"
+									},
+									{
+										"text": "A (2)"
+									}
 								]
 							}
 						}
 					],
 					"buttons": [
 						"next",
-						"back",
-						"save"
+						"back"
 					]
 				}
 			]
@@ -221,23 +486,76 @@
 					"blocks": [
 						{
 							"title": "Tweets about Pizza, Heat Map",
-							"ask": "Where are the most tweets?",
-							"input": {
-								"required": false,
-								"type": "text",
-								"options": [
-
-								],
-								"items": [
-
-								]
+							"ask": "Which town had more tweets?",
+								"input": {
+									"required": false,
+									"type": "radios",
+									"options": [
+										{
+											"text": "A (4)"
+										},
+										{
+											"text": "B (2)"
+										}
+									]
+								}
+							},
+							{
+								"ask": "Which town had the most tweets?",
+								"input": {
+									"required": false,
+									"type": "radios",
+									"options": [
+										{
+											"text": "E (4)"
+										},
+										{
+											"text": "D (3)"
+										},
+										{
+											"text": "C (2)"
+										}
+									]
+								}
+							},
+							{
+								"ask": "Which county had more tweets?",
+								"input": {
+									"required": false,
+									"type": "radios",
+									"options": [
+										{
+											"text": "A (4)"
+										},
+										{
+											"text": "B (2)"
+										}
+									]
+								}
+							},
+							{
+								"ask": "Which county had the most tweets?",
+								"input": {
+									"required": false,
+									"autoadvance": false,
+									"type": "radios",
+									"options": [
+										{
+											"text": "C (4)"
+										},
+										{
+											"text": "B (3)"
+										},
+										{
+											"text": "A (2)"
+										}
+									]
+								}
 							}
-						}
-					],
+						],
 					"buttons": [
 						"next",
-						"back",
-						"save"
+						"back"
 					]
 				}
 			]
@@ -250,23 +568,76 @@
 					"blocks": [
 						{
 							"title": "Tweets about Baseball, Proportional Symbol Map",
-							"ask": "Where are the most tweets?",
+							"ask": "Which town had more tweets?",
 							"input": {
 								"required": false,
-								"type": "text",
+								"type": "radios",
 								"options": [
-
-								],
-								"items": [
-
+									{
+										"text": "A (4)"
+									},
+									{
+										"text": "B (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which town had the most tweets?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "E (4)"
+									},
+									{
+										"text": "D (3)"
+									},
+									{
+										"text": "C (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which county had more tweets?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "A (4)"
+									},
+									{
+										"text": "B (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which county had the most tweets?",
+							"input": {
+								"required": false,
+								"autoadvance": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "C (4)"
+									},
+									{
+										"text": "B (3)"
+									},
+									{
+										"text": "A (2)"
+									}
 								]
 							}
 						}
 					],
 					"buttons": [
 						"next",
-						"back",
-						"save"
+						"back"
 					]
 				}
 			]
@@ -279,23 +650,76 @@
 					"blocks": [
 						{
 							"title": "Tweets about Hiking, Choropleth Map",
-							"ask": "Where are the most tweets?",
+							"ask": "Which town had more tweets?",
 							"input": {
 								"required": false,
-								"type": "text",
+								"type": "radios",
 								"options": [
-
-								],
-								"items": [
-
+									{
+										"text": "A (4)"
+									},
+									{
+										"text": "B (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which town had the most tweets?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "E (4)"
+									},
+									{
+										"text": "D (3)"
+									},
+									{
+										"text": "C (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which county had more tweets?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "A (4)"
+									},
+									{
+										"text": "B (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which county had the most tweets?",
+							"input": {
+								"required": false,
+								"autoadvance": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "C (4)"
+									},
+									{
+										"text": "B (3)"
+									},
+									{
+										"text": "A (2)"
+									}
 								]
 							}
 						}
 					],
 					"buttons": [
 						"next",
-						"back",
-						"save"
+						"back"
 					]
 				}
 			]
@@ -308,23 +732,76 @@
 					"blocks": [
 						{
 							"title": "Tweets about Soccer, Heat Map",
-							"ask": "Where are the most tweets?",
+							"ask": "Which town had more tweets?",
 							"input": {
 								"required": false,
-								"type": "text",
+								"type": "radios",
 								"options": [
-
-								],
-								"items": [
-
+									{
+										"text": "A (4)"
+									},
+									{
+										"text": "B (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which town had the most tweets?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "E (4)"
+									},
+									{
+										"text": "D (3)"
+									},
+									{
+										"text": "C (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which county had more tweets?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "A (4)"
+									},
+									{
+										"text": "B (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which county had the most tweets?",
+							"input": {
+								"required": false,
+								"autoadvance": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "C (4)"
+									},
+									{
+										"text": "B (3)"
+									},
+									{
+										"text": "A (2)"
+									}
 								]
 							}
 						}
 					],
 					"buttons": [
 						"next",
-						"back",
-						"save"
+						"back"
 					]
 				}
 			]
@@ -337,23 +814,76 @@
 					"blocks": [
 						{
 							"title": "Tweets about Salad, Dot Density Map",
-							"ask": "Where are the most tweets?",
-							"input": {
-								"required": false,
-								"type": "text",
-								"options": [
-
-								],
-								"items": [
-
-								]
+							"ask": "Which town had more tweets?",
+								"input": {
+									"required": false,
+									"type": "radios",
+									"options": [
+										{
+											"text": "A (4)"
+										},
+										{
+											"text": "B (2)"
+										}
+									]
+								}
+							},
+							{
+								"ask": "Which town had the most tweets?",
+								"input": {
+									"required": false,
+									"type": "radios",
+									"options": [
+										{
+											"text": "E (4)"
+										},
+										{
+											"text": "D (3)"
+										},
+										{
+											"text": "C (2)"
+										}
+									]
+								}
+							},
+							{
+								"ask": "Which county had more tweets?",
+								"input": {
+									"required": false,
+									"type": "radios",
+									"options": [
+										{
+											"text": "A (4)"
+										},
+										{
+											"text": "B (2)"
+										}
+									]
+								}
+							},
+							{
+								"ask": "Which county had the most tweets?",
+								"input": {
+									"required": false,
+									"autoadvance": false,
+									"type": "radios",
+									"options": [
+										{
+											"text": "C (4)"
+										},
+										{
+											"text": "B (3)"
+										},
+										{
+											"text": "A (2)"
+										}
+									]
+								}
 							}
-						}
-					],
+						],
 					"buttons": [
 						"next",
-						"back",
-						"save"
+						"back"
 					]
 				}
 			]
@@ -366,23 +896,76 @@
 					"blocks": [
 						{
 							"title": "Tweets about Gloves, Choropleth Map",
-							"ask": "Where are the most tweets?",
-							"input": {
-								"required": false,
-								"type": "text",
-								"options": [
-
-								],
-								"items": [
-
-								]
+							"ask": "Which town had more tweets?",
+								"input": {
+									"required": false,
+									"type": "radios",
+									"options": [
+										{
+											"text": "A (4)"
+										},
+										{
+											"text": "B (2)"
+										}
+									]
+								}
+							},
+							{
+								"ask": "Which town had the most tweets?",
+								"input": {
+									"required": false,
+									"type": "radios",
+									"options": [
+										{
+											"text": "E (4)"
+										},
+										{
+											"text": "D (3)"
+										},
+										{
+											"text": "C (2)"
+										}
+									]
+								}
+							},
+							{
+								"ask": "Which county had more tweets?",
+								"input": {
+									"required": false,
+									"type": "radios",
+									"options": [
+										{
+											"text": "A (4)"
+										},
+										{
+											"text": "B (2)"
+										}
+									]
+								}
+							},
+							{
+								"ask": "Which county had the most tweets?",
+								"input": {
+									"required": false,
+									"autoadvance": false,
+									"type": "radios",
+									"options": [
+										{
+											"text": "C (4)"
+										},
+										{
+											"text": "B (3)"
+										},
+										{
+											"text": "A (2)"
+										}
+									]
+								}
 							}
-						}
-					],
+						],
 					"buttons": [
 						"next",
-						"back",
-						"save"
+						"back"
 					]
 				}
 			]
@@ -395,23 +978,76 @@
 					"blocks": [
 						{
 							"title": "Tweets about Movies, Proportional Symbol Map",
-							"ask": "Where are the most tweets?",
+							"ask": "Which town had more tweets?",
 							"input": {
 								"required": false,
-								"type": "text",
+								"type": "radios",
 								"options": [
-
-								],
-								"items": [
-
+									{
+										"text": "A (4)"
+									},
+									{
+										"text": "B (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which town had the most tweets?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "E (4)"
+									},
+									{
+										"text": "D (3)"
+									},
+									{
+										"text": "C (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which county had more tweets?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "A (4)"
+									},
+									{
+										"text": "B (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which county had the most tweets?",
+							"input": {
+								"required": false,
+								"autoadvance": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "C (4)"
+									},
+									{
+										"text": "B (3)"
+									},
+									{
+										"text": "A (2)"
+									}
 								]
 							}
 						}
 					],
 					"buttons": [
 						"next",
-						"back",
-						"save"
+						"back"
 					]
 				}
 			]
@@ -424,23 +1060,76 @@
 					"blocks": [
 						{
 							"title": "Tweets about Hats, Proportional Symbol Map",
-							"ask": "Where are the most tweets?",
+							"ask": "Which town had more tweets?",
 							"input": {
 								"required": false,
-								"type": "text",
+								"type": "radios",
 								"options": [
-
-								],
-								"items": [
-
+									{
+										"text": "A (4)"
+									},
+									{
+										"text": "B (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which town had the most tweets?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "E (4)"
+									},
+									{
+										"text": "D (3)"
+									},
+									{
+										"text": "C (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which county had more tweets?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "A (4)"
+									},
+									{
+										"text": "B (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which county had the most tweets?",
+							"input": {
+								"required": false,
+								"autoadvance": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "C (4)"
+									},
+									{
+										"text": "B (3)"
+									},
+									{
+										"text": "A (2)"
+									}
 								]
 							}
 						}
 					],
 					"buttons": [
 						"next",
-						"back",
-						"save"
+						"back"
 					]
 				}
 			]
@@ -453,23 +1142,76 @@
 					"blocks": [
 						{
 							"title": "Tweets about Coffee, Choropleth Map",
-							"ask": "Where are the most tweets?",
+							"ask": "Which town had more tweets?",
 							"input": {
 								"required": false,
-								"type": "text",
+								"type": "radios",
 								"options": [
-
-								],
-								"items": [
-
+									{
+										"text": "A (4)"
+									},
+									{
+										"text": "B (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which town had the most tweets?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "E (4)"
+									},
+									{
+										"text": "D (3)"
+									},
+									{
+										"text": "C (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which county had more tweets?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "A (4)"
+									},
+									{
+										"text": "B (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which county had the most tweets?",
+							"input": {
+								"required": false,
+								"autoadvance": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "C (4)"
+									},
+									{
+										"text": "B (3)"
+									},
+									{
+										"text": "A (2)"
+									}
 								]
 							}
 						}
 					],
 					"buttons": [
 						"next",
-						"back",
-						"save"
+						"back"
 					]
 				}
 			]
@@ -482,23 +1224,76 @@
 					"blocks": [
 						{
 							"title": "Tweets about Tennis, Dot Density Map",
-							"ask": "Where are the most tweets?",
+							"ask": "Which town had more tweets?",
 							"input": {
 								"required": false,
-								"type": "text",
+								"type": "radios",
 								"options": [
-
-								],
-								"items": [
-
+									{
+										"text": "A (4)"
+									},
+									{
+										"text": "B (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which town had the most tweets?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "E (4)"
+									},
+									{
+										"text": "D (3)"
+									},
+									{
+										"text": "C (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which county had more tweets?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "A (4)"
+									},
+									{
+										"text": "B (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which county had the most tweets?",
+							"input": {
+								"required": false,
+								"autoadvance": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "C (4)"
+									},
+									{
+										"text": "B (3)"
+									},
+									{
+										"text": "A (2)"
+									}
 								]
 							}
 						}
 					],
 					"buttons": [
 						"next",
-						"back",
-						"save"
+						"back"
 					]
 				}
 			]
@@ -511,23 +1306,76 @@
 					"blocks": [
 						{
 							"title": "Tweets about Music, Heat Map",
-							"ask": "Where are the most tweets?",
+							"ask": "Which town had more tweets?",
 							"input": {
 								"required": false,
-								"type": "text",
+								"type": "radios",
 								"options": [
-
-								],
-								"items": [
-
+									{
+										"text": "A (4)"
+									},
+									{
+										"text": "B (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which town had the most tweets?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "E (4)"
+									},
+									{
+										"text": "D (3)"
+									},
+									{
+										"text": "C (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which county had more tweets?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "A (4)"
+									},
+									{
+										"text": "B (2)"
+									}
+								]
+							}
+						},
+						{
+							"ask": "Which county had the most tweets?",
+							"input": {
+								"required": false,
+								"autoadvance": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "C (4)"
+									},
+									{
+										"text": "B (3)"
+									},
+									{
+										"text": "A (2)"
+									}
 								]
 							}
 						}
 					],
 					"buttons": [
 						"next",
-						"back",
-						"save"
+						"back"
 					]
 				}
 			]
@@ -712,8 +1560,7 @@
 							}
 						],
 						"buttons": [
-							"next",
-							"save"
+							"next"
 						]
 					}
 				]
@@ -817,8 +1664,7 @@
 					],
 					"buttons": [
 						"next",
-						"back",
-						"save"
+						"back"
 					]
 				}
 			]
@@ -936,8 +1782,7 @@
 					],
 					"buttons": [
 						"next",
-						"back",
-						"save"
+						"back"
 					]
 				}
 			]
@@ -1012,7 +1857,6 @@
 						}
 					],
 					"buttons": [
-						"save",
 						"submit",
 						"back"
 					]
