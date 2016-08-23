@@ -76,6 +76,7 @@
 				{
 					"blocks": [
 						{
+							"title": "Tweets about Basketball, Choropleth Map",
 							"ask": "Where are the most tweets?",
 							"input": {
 								"required": false,
@@ -103,6 +104,7 @@
 				{
 					"blocks": [
 						{
+							"title": "Tweets about Hamburgers, Proportional Symbol Map",
 							"ask": "Where are the most tweets?",
 							"input": {
 								"required": false,
@@ -131,6 +133,7 @@
 				{
 					"blocks": [
 						{
+							"title": "Tweets about Jackets, Heat Map",
 							"ask": "Where are the most tweets?",
 							"input": {
 								"required": false,
@@ -159,6 +162,7 @@
 				{
 					"blocks": [
 						{
+							"title": "Tweets about Nightlife, Dot Density Map",
 							"ask": "Where are the most tweets?",
 							"input": {
 								"required": false,
@@ -187,6 +191,7 @@
 				{
 					"blocks": [
 						{
+							"title": "Tweets about Shoes, Dot Density Map",
 							"ask": "Where are the most tweets?",
 							"input": {
 								"required": false,
@@ -215,6 +220,7 @@
 				{
 					"blocks": [
 						{
+							"title": "Tweets about Pizza, Heat Map",
 							"ask": "Where are the most tweets?",
 							"input": {
 								"required": false,
@@ -243,6 +249,7 @@
 				{
 					"blocks": [
 						{
+							"title": "Tweets about Baseball, Proportional Symbol Map",
 							"ask": "Where are the most tweets?",
 							"input": {
 								"required": false,
@@ -271,6 +278,7 @@
 				{
 					"blocks": [
 						{
+							"title": "Tweets about Hiking, Choropleth Map",
 							"ask": "Where are the most tweets?",
 							"input": {
 								"required": false,
@@ -299,6 +307,7 @@
 				{
 					"blocks": [
 						{
+							"title": "Tweets about Soccer, Heat Map",
 							"ask": "Where are the most tweets?",
 							"input": {
 								"required": false,
@@ -327,6 +336,7 @@
 				{
 					"blocks": [
 						{
+							"title": "Tweets about Salad, Dot Density Map",
 							"ask": "Where are the most tweets?",
 							"input": {
 								"required": false,
@@ -355,6 +365,7 @@
 				{
 					"blocks": [
 						{
+							"title": "Tweets about Gloves, Choropleth Map",
 							"ask": "Where are the most tweets?",
 							"input": {
 								"required": false,
@@ -383,6 +394,7 @@
 				{
 					"blocks": [
 						{
+							"title": "Tweets about Movies, Proportional Symbol Map",
 							"ask": "Where are the most tweets?",
 							"input": {
 								"required": false,
@@ -411,6 +423,7 @@
 				{
 					"blocks": [
 						{
+							"title": "Tweets about Hats, Proportional Symbol Map",
 							"ask": "Where are the most tweets?",
 							"input": {
 								"required": false,
@@ -439,6 +452,7 @@
 				{
 					"blocks": [
 						{
+							"title": "Tweets about Coffee, Choropleth Map",
 							"ask": "Where are the most tweets?",
 							"input": {
 								"required": false,
@@ -467,6 +481,7 @@
 				{
 					"blocks": [
 						{
+							"title": "Tweets about Tennis, Dot Density Map",
 							"ask": "Where are the most tweets?",
 							"input": {
 								"required": false,
@@ -495,6 +510,7 @@
 				{
 					"blocks": [
 						{
+							"title": "Tweets about Music, Heat Map",
 							"ask": "Where are the most tweets?",
 							"input": {
 								"required": false,
