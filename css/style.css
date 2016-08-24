@@ -156,8 +156,8 @@ svg {
 
 #page-timer {
     position: absolute;
-    left: 47.5%;
-    top: 0.5em;
+    left: 87.5%;
+    bottom: 1.5em;
     font-size: 1.3em;
 }
 
@@ -256,7 +256,7 @@ svg {
 }
 
 .range-slider {
-    width: 300px;  
+    width: 300px;
 }
 
 .slider-labels {

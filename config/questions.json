@@ -153,6 +153,9 @@
 		{
 			"page": 5,
 			"fullpage": false,
+			"timer": {
+				"persist": true
+			},
 			"sets": [
 				{
 					"blocks": [
