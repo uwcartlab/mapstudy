@@ -44,20 +44,20 @@
 							"ask": "This is an example of what a map could look like. It shows the total number of tweets, but always review the legend carefully so you know what you are looking at. Each map that you will be shown will be a different topic with a different distribution. The distribution that you will be looking at will have a 'higher' and 'lower' relationship. <br><br>The maps will allow you to pan, or move around the map, and zoom, or change the level of detail you are looking at. Exploration is encouraged. If you are familiar with the represented geography, do not consider any correlating factors in map reading and interaction. <br><br>Use the map to answer the following example question.<br><br> <strong>REMEMBER: Once you select 'Next' the survey will begin and a timer will start.</strong>"
 						},
 						{
-							"ask": "How many tweets were sent in Wichita County?",
+							"ask": "Which city had the most tweets?",
 							"input": {
 								"required": true,
 								"autoadvance": false,
 								"type": "radios",
 								"options": [
 									{
-										"text": "xxxx"
+										"text": "Hoxie"
 									},
 									{
-										"text": "xxxx"
+										"text": "Colby"
 									},
 									{
-										"text": "xxxx"
+										"text": "Hill City"
 									}
 								]
 							}
