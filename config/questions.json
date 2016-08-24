@@ -72,6 +72,9 @@
 		{
 			"page": 4,
 			"fullpage": false,
+			"timer": {
+				"persist": true
+			},
 			"sets": [
 				{
 					"blocks": [
@@ -153,9 +156,6 @@
 		{
 			"page": 5,
 			"fullpage": false,
-			"timer": {
-				"persist": true
-			},
 			"sets": [
 				{
 					"blocks": [
@@ -402,6 +402,12 @@
 		{
 			"page": 8,
 			"fullpage": false,
+			"timer": {
+				"remove": true
+			},
+			"timer": {
+				"persist": true
+			},
 			"sets": [
 				{
 					"blocks": [
@@ -730,6 +736,12 @@
 		{
 			"page": 12,
 			"fullpage": false,
+			"timer": {
+				"remove": true
+			},
+			"timer": {
+				"persist": true
+			},
 			"sets": [
 				{
 					"blocks": [
@@ -1058,6 +1070,12 @@
 		{
 			"page": 16,
 			"fullpage": false,
+			"timer": {
+				"remove": true
+			},
+			"timer": {
+				"persist": true
+			},
 			"sets": [
 				{
 					"blocks": [
@@ -1386,6 +1404,9 @@
 		{
 			"page": 20,
 			"fullpage": true,
+			"timer": {
+				"remove": true
+			},
 				"sets": [
 					{
 						"blocks": [
