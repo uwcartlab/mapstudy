@@ -38,7 +38,7 @@
 				],
 				"dataLayers": [
 					{
-						"name": "MapTest",
+						"name": "Example Map",
 						"source": "data/maptest.geojson",
 						"expressedAttribute": "tweets",
 						"displayAttributes": [
