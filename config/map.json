@@ -121,7 +121,7 @@
 					],
 					"dataLayers": [
 						{
-							"name": "Basketball",
+							"name": "Basketball tweets",
 							"source": "data/countiesall.geojson",
 							"expressedAttribute": "Basketball",
 							"displayAttributes": [
@@ -204,7 +204,7 @@
 						],
 						"dataLayers": [
 							{
-								"name": "Hamburgers",
+								"name": "Hamburger tweets",
 								"source": "data/countiesall.geojson",
 								"expressedAttribute": "Hamburgers",
 								"displayAttributes": [
@@ -290,7 +290,7 @@
 							],
 							"dataLayers": [
 								{
-									"name": "Jackets",
+									"name": "Jacket tweets",
 									"source": "data/countiesall.geojson",
 									"expressedAttribute": "Jackets",
 									"displayAttributes": [
@@ -306,7 +306,7 @@
 									"techniques": [
 										{
 											"type": "heat",
-											"size": 1
+											"size": 0.7
 										}
 									]
 								}
@@ -372,7 +372,7 @@
 								],
 								"dataLayers": [
 									{
-										"name": "Nightlife",
+										"name": "Nightlife tweets",
 										"source": "data/countiesall.geojson",
 										"expressedAttribute": "Nightlife",
 										"displayAttributes": [
@@ -455,7 +455,7 @@
 									],
 									"dataLayers": [
 										{
-											"name": "Shoes",
+											"name": "Shoes tweets",
 											"source": "data/countiesall.geojson",
 											"expressedAttribute": "Shoes",
 											"displayAttributes": [
@@ -538,7 +538,7 @@
 										],
 										"dataLayers": [
 											{
-												"name": "Pizza",
+												"name": "Pizza tweets",
 												"source": "data/countiesall.geojson",
 												"expressedAttribute": "Pizza",
 												"displayAttributes": [
@@ -554,7 +554,7 @@
 												"techniques": [
 													{
 														"type": "heat",
-														"size": 1
+														"size": 0.7
 													}
 												]
 											}
@@ -620,7 +620,7 @@
 											],
 											"dataLayers": [
 												{
-													"name": "Baseball",
+													"name": "Baseball tweets",
 													"source": "data/countiesall.geojson",
 													"expressedAttribute": "Baseball",
 													"displayAttributes": [
@@ -706,7 +706,7 @@
 												],
 												"dataLayers": [
 													{
-														"name": "Hiking",
+														"name": "Hiking tweets",
 														"source": "data/countiesall.geojson",
 														"expressedAttribute": "Hiking",
 														"displayAttributes": [
@@ -789,7 +789,7 @@
 													],
 													"dataLayers": [
 														{
-															"name": "Soccer",
+															"name": "Soccer tweets",
 															"source": "data/countiesall.geojson",
 															"expressedAttribute": "Soccer",
 															"displayAttributes": [
@@ -805,7 +805,7 @@
 															"techniques": [
 																{
 																	"type": "heat",
-																	"size": 1
+																	"size": 0.7
 																}
 															]
 														}
@@ -871,7 +871,7 @@
 														],
 														"dataLayers": [
 															{
-																"name": "Salad",
+																"name": "Salad tweets",
 																"source": "data/countiesall.geojson",
 																"expressedAttribute": "Salad",
 																"displayAttributes": [
@@ -954,7 +954,7 @@
 															],
 															"dataLayers": [
 																{
-																	"name": "Gloves",
+																	"name": "Glove tweets",
 																	"source": "data/countiesall.geojson",
 																	"expressedAttribute": "Gloves",
 																	"displayAttributes": [
@@ -1037,7 +1037,7 @@
 																],
 																"dataLayers": [
 																	{
-																		"name": "Movies",
+																		"name": "Movie tweets",
 																		"source": "data/countiesall.geojson",
 																		"expressedAttribute": "Movies",
 																		"displayAttributes": [
@@ -1123,7 +1123,7 @@
 																	],
 																	"dataLayers": [
 																		{
-																			"name": "Hats",
+																			"name": "Hat tweets",
 																			"source": "data/countiesall.geojson",
 																			"expressedAttribute": "Hats",
 																			"displayAttributes": [
@@ -1209,7 +1209,7 @@
 																		],
 																		"dataLayers": [
 																			{
-																				"name": "Coffee",
+																				"name": "Coffee tweets",
 																				"source": "data/countiesall.geojson",
 																				"expressedAttribute": "Coffee",
 																				"displayAttributes": [
@@ -1292,7 +1292,7 @@
 																			],
 																			"dataLayers": [
 																				{
-																					"name": "Tennis",
+																					"name": "Tennis tweets",
 																					"source": "data/countiesall.geojson",
 																					"expressedAttribute": "Tennis",
 																					"displayAttributes": [
@@ -1375,7 +1375,7 @@
 																				],
 																				"dataLayers": [
 																					{
-																						"name": "Music",
+																						"name": "Music tweets",
 																						"source": "data/countiesall.geojson",
 																						"expressedAttribute": "Music",
 																						"displayAttributes": [
@@ -1391,7 +1391,7 @@
 																						"techniques": [
 																							{
 																								"type": "heat",
-																								"size": 1
+																								"size": 0.7
 																							}
 																						]
 																					}
