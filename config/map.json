@@ -424,7 +424,10 @@
 								}
 							},
 							{
-								"page": 8,
+								"page": 8
+							},
+							{
+								"page": 9,
 								"library": "Leaflet",
 								"mapOptions": {
 									"legend": true,
@@ -507,7 +510,7 @@
 									}
 								},
 								{
-									"page": 9,
+									"page": 10,
 									"library": "Leaflet",
 									"mapOptions": {
 										"legend": true,
@@ -589,7 +592,7 @@
 										}
 									},
 									{
-										"page": 10,
+										"page": 11,
 										"library": "Leaflet",
 										"mapOptions": {
 											"legend": true,
@@ -675,7 +678,7 @@
 											}
 										},
 										{
-											"page": 11,
+											"page": 12,
 											"library": "Leaflet",
 											"mapOptions": {
 												"legend": true,
@@ -758,7 +761,10 @@
 												}
 											},
 											{
-												"page": 12,
+												"page": 13
+											},
+											{
+												"page": 14,
 												"library": "Leaflet",
 												"mapOptions": {
 													"legend": true,
@@ -840,7 +846,7 @@
 													}
 												},
 												{
-													"page": 13,
+													"page": 15,
 													"library": "Leaflet",
 													"mapOptions": {
 														"legend": true,
@@ -923,7 +929,7 @@
 														}
 													},
 													{
-														"page": 14,
+														"page": 16,
 														"library": "Leaflet",
 														"mapOptions": {
 															"legend": true,
@@ -1006,7 +1012,7 @@
 															}
 														},
 														{
-															"page": 15,
+															"page": 17,
 															"library": "Leaflet",
 															"mapOptions": {
 																"legend": true,
@@ -1092,7 +1098,10 @@
 																}
 															},
 															{
-																"page": 16,
+																"page": 18
+															},
+															{
+																"page": 19,
 																"library": "Leaflet",
 																"mapOptions": {
 																	"legend": true,
@@ -1178,7 +1187,7 @@
 																	}
 																},
 																{
-																	"page": 17,
+																	"page": 20,
 																	"library": "Leaflet",
 																	"mapOptions": {
 																		"legend": true,
@@ -1261,7 +1270,7 @@
 																		}
 																	},
 																	{
-																		"page": 18,
+																		"page": 21,
 																		"library": "Leaflet",
 																		"mapOptions": {
 																			"legend": true,
@@ -1344,7 +1353,7 @@
 																			}
 																		},
 																		{
-																			"page": 19,
+																			"page": 22,
 																			"library": "Leaflet",
 																			"mapOptions": {
 																				"legend": true,
@@ -1425,20 +1434,23 @@
 																					}
 																				}
 																			},
-		{
-			"page": 20
-		},
-		{
-			"page": 21
-		},
-		{
-			"page": 22
-		},
-		{
-			"page": 23
-		},
+																			{
+																				"page": 23
+																			},
 		{
 			"page": 24
+		},
+		{
+			"page": 25
+		},
+		{
+			"page": 26
+		},
+		{
+			"page": 27
+		},
+		{
+			"page": 28
 		}
 	]
 }

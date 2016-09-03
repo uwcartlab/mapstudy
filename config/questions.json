@@ -72,9 +72,6 @@
 		{
 			"page": 4,
 			"fullpage": false,
-			"timer": {
-				"persist": true
-			},
 			"sets": [
 				{
 					"blocks": [
@@ -401,13 +398,70 @@
 		},
 		{
 			"page": 8,
+			"fullpage": true,
+			"sets": [
+				{
+					"blocks": [
+						{
+							"title": "*These Questions are NOT timed.",
+							"ask": "1. On a scale of 1-5, how confident are you in your answer?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "1-No Confidence"
+									},
+									{
+										"text": "2-A Little Confident"
+									},
+									{
+										"text": "3-Average Confidence"
+									},
+									{
+										"text": "4-Confident"
+									},
+									{
+										"text": "5-Very Confident"
+									}
+								]
+							}
+						},
+						{
+							"ask": "2. On a scale of 1-5, how easy was it to arrive at this answer",
+							"input": {
+								"required": false,
+								"autoadvance": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "1-Not At All Easy"
+									},
+									{
+										"text": "2-Slightly Easy"
+									},
+									{
+										"text": "3-Average Easiness"
+									},
+									{
+										"text": "4-Easy"
+									},
+									{
+										"text": "5-Very Easy"
+									}
+								]
+							}
+						}
+					],
+					"buttons": [
+						"next"
+					]
+				}
+			]
+		},
+		{
+			"page": 9,
 			"fullpage": false,
-			"timer": {
-				"remove": true
-			},
-			"timer": {
-				"persist": true
-			},
 			"sets": [
 				{
 					"blocks": [
@@ -488,7 +542,7 @@
 			]
 		},
 		{
-			"page": 9,
+			"page": 10,
 			"fullpage": false,
 			"sets": [
 				{
@@ -570,7 +624,7 @@
 			]
 		},
 		{
-			"page": 10,
+			"page": 11,
 			"fullpage": false,
 			"sets": [
 				{
@@ -652,7 +706,7 @@
 			]
 		},
 		{
-			"page": 11,
+			"page": 12,
 			"fullpage": false,
 			"sets": [
 				{
@@ -734,14 +788,71 @@
 			]
 		},
 		{
-			"page": 12,
+			"page": 13,
+			"fullpage": true,
+			"sets": [
+				{
+					"blocks": [
+						{
+							"title": "*These Questions are NOT timed.",
+							"ask": "1. On a scale of 1-5, how confident are you in your answer?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "1-No Confidence"
+									},
+									{
+										"text": "2-A Little Confident"
+									},
+									{
+										"text": "3-Average Confidence"
+									},
+									{
+										"text": "4-Confident"
+									},
+									{
+										"text": "5-Very Confident"
+									}
+								]
+							}
+						},
+						{
+							"ask": "2. On a scale of 1-5, how easy was it to arrive at this answer",
+							"input": {
+								"required": false,
+								"autoadvance": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "1-Not At All Easy"
+									},
+									{
+										"text": "2-Slightly Easy"
+									},
+									{
+										"text": "3-Average Easiness"
+									},
+									{
+										"text": "4-Easy"
+									},
+									{
+										"text": "5-Very Easy"
+									}
+								]
+							}
+						}
+					],
+					"buttons": [
+						"next"
+					]
+				}
+			]
+		},
+		{
+			"page": 14,
 			"fullpage": false,
-			"timer": {
-				"remove": true
-			},
-			"timer": {
-				"persist": true
-			},
 			"sets": [
 				{
 					"blocks": [
@@ -822,7 +933,7 @@
 			]
 		},
 		{
-			"page": 13,
+			"page": 15,
 			"fullpage": false,
 			"sets": [
 				{
@@ -904,7 +1015,7 @@
 			]
 		},
 		{
-			"page": 14,
+			"page": 16,
 			"fullpage": false,
 			"sets": [
 				{
@@ -986,7 +1097,7 @@
 			]
 		},
 		{
-			"page": 15,
+			"page": 17,
 			"fullpage": false,
 			"sets": [
 				{
@@ -1068,14 +1179,71 @@
 			]
 		},
 		{
-			"page": 16,
+			"page": 18,
+			"fullpage": true,
+			"sets": [
+				{
+					"blocks": [
+						{
+							"title": "*These Questions are NOT timed.",
+							"ask": "1. On a scale of 1-5, how confident are you in your answer?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "1-No Confidence"
+									},
+									{
+										"text": "2-A Little Confident"
+									},
+									{
+										"text": "3-Average Confidence"
+									},
+									{
+										"text": "4-Confident"
+									},
+									{
+										"text": "5-Very Confident"
+									}
+								]
+							}
+						},
+						{
+							"ask": "2. On a scale of 1-5, how easy was it to arrive at this answer",
+							"input": {
+								"required": false,
+								"autoadvance": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "1-Not At All Easy"
+									},
+									{
+										"text": "2-Slightly Easy"
+									},
+									{
+										"text": "3-Average Easiness"
+									},
+									{
+										"text": "4-Easy"
+									},
+									{
+										"text": "5-Very Easy"
+									}
+								]
+							}
+						}
+					],
+					"buttons": [
+						"next"
+					]
+				}
+			]
+		},
+		{
+			"page": 19,
 			"fullpage": false,
-			"timer": {
-				"remove": true
-			},
-			"timer": {
-				"persist": true
-			},
 			"sets": [
 				{
 					"blocks": [
@@ -1156,7 +1324,7 @@
 			]
 		},
 		{
-			"page": 17,
+			"page": 20,
 			"fullpage": false,
 			"sets": [
 				{
@@ -1238,7 +1406,7 @@
 			]
 		},
 		{
-			"page": 18,
+			"page": 21,
 			"fullpage": false,
 			"sets": [
 				{
@@ -1320,7 +1488,7 @@
 			]
 		},
 		{
-			"page": 19,
+			"page": 22,
 			"fullpage": false,
 			"sets": [
 				{
@@ -1402,11 +1570,71 @@
 			]
 		},
 		{
-			"page": 20,
+			"page": 23,
 			"fullpage": true,
-			"timer": {
-				"remove": true
-			},
+			"sets": [
+				{
+					"blocks": [
+						{
+							"title": "*These Questions are NOT timed.",
+							"ask": "1. On a scale of 1-5, how confident are you in your answer?",
+							"input": {
+								"required": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "1-No Confidence"
+									},
+									{
+										"text": "2-A Little Confident"
+									},
+									{
+										"text": "3-Average Confidence"
+									},
+									{
+										"text": "4-Confident"
+									},
+									{
+										"text": "5-Very Confident"
+									}
+								]
+							}
+						},
+						{
+							"ask": "2. On a scale of 1-5, how easy was it to arrive at this answer",
+							"input": {
+								"required": false,
+								"autoadvance": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "1-Not At All Easy"
+									},
+									{
+										"text": "2-Slightly Easy"
+									},
+									{
+										"text": "3-Average Easiness"
+									},
+									{
+										"text": "4-Easy"
+									},
+									{
+										"text": "5-Very Easy"
+									}
+								]
+							}
+						}
+					],
+					"buttons": [
+						"next"
+					]
+				}
+			]
+		},
+		{
+			"page": 24,
+			"fullpage": true,
 				"sets": [
 					{
 						"blocks": [
@@ -1590,7 +1818,7 @@
 				]
 			},
 		{
-			"page": 21,
+			"page": 25,
 			"fullpage": true,
 			"sets": [
 				{
@@ -1694,7 +1922,7 @@
 			]
 		},
 		{
-			"page": 22,
+			"page": 26,
 			"fullpage": true,
 			"sets": [
 				{
@@ -1812,7 +2040,7 @@
 			]
 		},
 		{
-			"page": 23,
+			"page": 27,
 			"fullpage": true,
 			"sets": [
 				{
@@ -1888,7 +2116,7 @@
 			]
 		},
 		{
-			"page": 24,
+			"page": 28,
 			"fullpage": true,
 			"sets": [
 				{
