@@ -128,7 +128,7 @@
 							"ask": "Which county had the most tweets?",
 							"input": {
 								"required": false,
-								"autoadvance": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -209,7 +209,7 @@
 							"ask": "Which county had the most tweets?",
 							"input": {
 								"required": false,
-								"autoadvance": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -291,7 +291,7 @@
 							"ask": "Which county had the most tweets?",
 							"input": {
 								"required": false,
-								"autoadvance": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -373,7 +373,7 @@
 							"ask": "Which county had the most tweets?",
 							"input": {
 								"required": false,
-								"autoadvance": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -518,7 +518,7 @@
 							"ask": "Which county had the most tweets?",
 							"input": {
 								"required": false,
-								"autoadvance": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -600,7 +600,7 @@
 								"ask": "Which county had the most tweets?",
 								"input": {
 									"required": false,
-									"autoadvance": false,
+									"autoadvance": true,
 									"type": "radios",
 									"options": [
 										{
@@ -682,7 +682,7 @@
 							"ask": "Which county had the most tweets?",
 							"input": {
 								"required": false,
-								"autoadvance": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -764,7 +764,7 @@
 							"ask": "Which county had the most tweets?",
 							"input": {
 								"required": false,
-								"autoadvance": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -909,7 +909,7 @@
 							"ask": "Which county had the most tweets?",
 							"input": {
 								"required": false,
-								"autoadvance": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -991,7 +991,7 @@
 								"ask": "Which county had the most tweets?",
 								"input": {
 									"required": false,
-									"autoadvance": false,
+									"autoadvance": true,
 									"type": "radios",
 									"options": [
 										{
@@ -1073,7 +1073,7 @@
 								"ask": "Which county had the most tweets?",
 								"input": {
 									"required": false,
-									"autoadvance": false,
+									"autoadvance": true,
 									"type": "radios",
 									"options": [
 										{
@@ -1155,7 +1155,7 @@
 							"ask": "Which county had the most tweets?",
 							"input": {
 								"required": false,
-								"autoadvance": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -1300,7 +1300,7 @@
 							"ask": "Which county had the most tweets?",
 							"input": {
 								"required": false,
-								"autoadvance": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -1382,7 +1382,7 @@
 							"ask": "Which county had the most tweets?",
 							"input": {
 								"required": false,
-								"autoadvance": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -1464,7 +1464,7 @@
 							"ask": "Which county had the most tweets?",
 							"input": {
 								"required": false,
-								"autoadvance": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -1546,7 +1546,7 @@
 							"ask": "Which county had the most tweets?",
 							"input": {
 								"required": false,
-								"autoadvance": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
