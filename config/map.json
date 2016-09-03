@@ -54,7 +54,7 @@
 						"techniques": [
 							{
 								"type": "choropleth",
-								"classification": "natural breaks",
+								"classification": "equal interval",
 								"classes": "BuGn.5"
 							}
 						]
@@ -137,7 +137,7 @@
 							"techniques": [
 								{
 									"type": "choropleth",
-									"classification": "natural breaks",
+									"classification": "equal interval",
 									"classes": "BuGn.5"
 								}
 							]
@@ -220,7 +220,7 @@
 								"techniques": [
 									{
 										"type": "proportional symbol",
-										"classification": "unclassed",
+										"classification": "equal interval",
 										"classes": [
 											5,
 											20
@@ -639,7 +639,7 @@
 													"techniques": [
 														{
 															"type": "proportional symbol",
-															"classification": "unclassed",
+															"classification": "equal interval",
 															"classes": [
 																5,
 																20
@@ -725,7 +725,7 @@
 														"techniques": [
 															{
 																"type": "choropleth",
-																"classification": "natural breaks",
+																"classification": "equal interval",
 																"classes": "BuGn.5"
 															}
 														]
@@ -976,7 +976,7 @@
 																	"techniques": [
 																		{
 																			"type": "choropleth",
-																			"classification": "natural breaks",
+																			"classification": "equal interval",
 																			"classes": "BuGn.5"
 																		}
 																	]
@@ -1059,7 +1059,7 @@
 																		"techniques": [
 																			{
 																				"type": "proportional symbol",
-																				"classification": "unclassed",
+																				"classification": "equal interval",
 																				"classes": [
 																					5,
 																					20
@@ -1148,7 +1148,7 @@
 																			"techniques": [
 																				{
 																					"type": "proportional symbol",
-																					"classification": "unclassed",
+																					"classification": "equal interval",
 																					"classes": [
 																						5,
 																						20
@@ -1234,7 +1234,7 @@
 																				"techniques": [
 																					{
 																						"type": "choropleth",
-																						"classification": "natural breaks",
+																						"classification": "equal interval",
 																						"classes": "BuGn.5"
 																					}
 																				]
