@@ -37,6 +37,7 @@
 					}
 				],
 				"dataLayers": [
+
 					{
 						"name": "Example Map",
 						"source": "data/maptest.geojson",
@@ -49,7 +50,7 @@
 					"color": "black",
 					"weight": 0.5,
 					"opacity": 1
-				},
+					},
 						"renderOnLoad": true,
 						"techniques": [
 							{
@@ -57,8 +58,49 @@
 								"classification": "equal interval",
 								"classes": "BuGn.5"
 							}
-						]
-					}
+						]},
+				{
+					"name": "Example Map",
+					"source": "data/maptest.geojson",
+					"expressedAttribute": "tweets",
+					"displayAttributes": [
+						"NAME10"
+					],
+					"layerOptions": {
+				"fillOpacity": 1,
+				"color": "black",
+				"weight": 0.5,
+				"opacity": 1,
+				"minZoom": 7
+				},
+					"renderOnLoad": true,
+					"techniques": [
+						{
+							"type": "label",
+							"size": 10
+						}
+					]},
+					{
+						"name": "Example Map",
+						"source": "data/.json",
+						"expressedAttribute": "city",
+						"displayAttributes": [
+							"city"
+						],
+						"layerOptions": {
+					"fillOpacity": 1,
+					"color": "black",
+					"weight": 0.5,
+					"opacity": 1,
+					"minZoom": 5
+					},
+						"renderOnLoad": true,
+						"techniques": [
+							{
+								"type": "label",
+								"size": 10
+							}
+						]}
 				],
 				"interactions": {
 					"zoom": {
