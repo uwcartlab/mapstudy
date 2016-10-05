@@ -49,7 +49,9 @@
 					"fillOpacity": 0.8,
 					"color": "black",
 					"weight": 0.5,
-					"opacity": 1
+					"opacity": 1,
+					"minZoom": 0,
+					"maxZoom": 12
 					},
 						"renderOnLoad": true,
 						"techniques": [
@@ -59,6 +61,29 @@
 								"classes": "BuGn.5"
 							}
 						]},
+						{
+							"name": "Example Map",
+							"source": "data/detailsdata.geojson",
+							"expressedAttribute": "county_t_1",
+							"displayAttributes": [
+								"NAME10"
+							],
+							"layerOptions": {
+						"fillOpacity": 0.8,
+						"color": "black",
+						"weight": 0.5,
+						"opacity": 1,
+						"minZoom": 9,
+						"maxZoom": 22
+						},
+							"renderOnLoad": true,
+							"techniques": [
+								{
+									"type": "choropleth",
+									"classification": "equal interval",
+									"classes": "BuGn.5"
+								}
+							]},
 				{
 					"name": "Example Map",
 					"source": "data/maptest.geojson",
@@ -173,7 +198,9 @@
 						"fillOpacity": 0.8,
 						"color": "black",
 						"weight": 0.5,
-						"opacity": 1
+						"opacity": 1,
+						"minZoom": 0,
+						"maxZoom": 12
 					},
 							"renderOnLoad": true,
 							"techniques": [
@@ -183,7 +210,72 @@
 									"classes": "BuGn.5"
 								}
 							]
-						}
+						},
+						{
+							"name": "Example Map",
+							"source": "data/detailsdata.geojson",
+							"expressedAttribute": "county_t_1",
+							"displayAttributes": [
+								"NAME10"
+							],
+							"layerOptions": {
+						"fillOpacity": 0.8,
+						"color": "black",
+						"weight": 0.5,
+						"opacity": 1,
+						"minZoom": 9,
+						"maxZoom": 22
+						},
+							"renderOnLoad": true,
+							"techniques": [
+								{
+									"type": "choropleth",
+									"classification": "equal interval",
+									"classes": "BuGn.5"
+								}
+							]},
+						{
+							"name": "Example Map",
+							"source": "data/maptest.geojson",
+							"expressedAttribute": "tweets",
+							"displayAttributes": [
+								"NAME10"
+							],
+							"layerOptions": {
+						"fillOpacity": 1,
+						"color": "black",
+						"weight": 0.5,
+						"opacity": 1,
+						"minZoom": 7
+						},
+							"renderOnLoad": true,
+							"techniques": [
+								{
+									"type": "label",
+									"size": 10
+								}
+							]},
+							{
+								"name": "Example Map",
+								"source": "data/.json",
+								"expressedAttribute": "city",
+								"displayAttributes": [
+									"city"
+								],
+								"layerOptions": {
+							"fillOpacity": 1,
+							"color": "black",
+							"weight": 0.5,
+							"opacity": 1,
+							"minZoom": 5
+							},
+								"renderOnLoad": true,
+								"techniques": [
+									{
+										"type": "label",
+										"size": 10
+									}
+								]}
 					],
 					"interactions": {
 						"zoom": {
@@ -256,7 +348,9 @@
 							"fillOpacity": 0.8,
 							"color": "black",
 							"weight": 0.5,
-							"opacity": 1
+							"opacity": 1,
+							"minZoom": 0,
+							"maxZoom": 7
 						},
 								"renderOnLoad": true,
 								"techniques": [
@@ -771,8 +865,75 @@
 																"classes": "BuGn.5"
 															}
 														]
-													}
+													},
+													{
+														"name": "Example Map",
+														"source": "data/detailsdata.geojson",
+														"expressedAttribute": "county_t_8",
+														"displayAttributes": [
+															"NAME10"
+														],
+														"layerOptions": {
+													"fillOpacity": 0.8,
+													"color": "black",
+													"weight": 0.5,
+													"opacity": 1,
+													"minZoom": 9,
+													"maxZoom": 22
+													},
+														"renderOnLoad": true,
+														"techniques": [
+															{
+																"type": "choropleth",
+																"classification": "equal interval",
+																"classes": "BuGn.5"
+															}
+														]},
+													{
+														"name": "Example Map",
+														"source": "data/maptest.geojson",
+														"expressedAttribute": "tweets",
+														"displayAttributes": [
+															"NAME10"
+														],
+														"layerOptions": {
+													"fillOpacity": 1,
+													"color": "black",
+													"weight": 0.5,
+													"opacity": 1,
+													"minZoom": 7
+													},
+														"renderOnLoad": true,
+														"techniques": [
+															{
+																"type": "label",
+																"size": 10
+															}
+														]},
+														{
+															"name": "Example Map",
+															"source": "data/.json",
+															"expressedAttribute": "city",
+															"displayAttributes": [
+																"city"
+															],
+															"layerOptions": {
+														"fillOpacity": 1,
+														"color": "black",
+														"weight": 0.5,
+														"opacity": 1,
+														"minZoom": 5
+														},
+															"renderOnLoad": true,
+															"techniques": [
+																{
+																	"type": "label",
+																	"size": 10
+																}
+															]}
+
 												],
+
 												"interactions": {
 													"zoom": {
 														"logging": true,
@@ -1022,7 +1183,73 @@
 																			"classes": "BuGn.5"
 																		}
 																	]
-																}
+																},
+																{
+																	"name": "Example Map",
+																	"source": "data/detailsdata.geojson",
+																	"expressedAttribute": "county__11",
+																	"displayAttributes": [
+																		"NAME10"
+																	],
+																	"layerOptions": {
+																"fillOpacity": 0.8,
+																"color": "black",
+																"weight": 0.5,
+																"opacity": 1,
+																"minZoom": 9,
+																"maxZoom": 22
+																},
+																	"renderOnLoad": true,
+																	"techniques": [
+																		{
+																			"type": "choropleth",
+																			"classification": "equal interval",
+																			"classes": "BuGn.5"
+																		}
+																	]},
+																{
+																	"name": "Example Map",
+																	"source": "data/maptest.geojson",
+																	"expressedAttribute": "tweets",
+																	"displayAttributes": [
+																		"NAME10"
+																	],
+																	"layerOptions": {
+																"fillOpacity": 1,
+																"color": "black",
+																"weight": 0.5,
+																"opacity": 1,
+																"minZoom": 7
+																},
+																	"renderOnLoad": true,
+																	"techniques": [
+																		{
+																			"type": "label",
+																			"size": 10
+																		}
+																	]},
+																	{
+																		"name": "Example Map",
+																		"source": "data/.json",
+																		"expressedAttribute": "city",
+																		"displayAttributes": [
+																			"city"
+																		],
+																		"layerOptions": {
+																	"fillOpacity": 1,
+																	"color": "black",
+																	"weight": 0.5,
+																	"opacity": 1,
+																	"minZoom": 5
+																	},
+																		"renderOnLoad": true,
+																		"techniques": [
+																			{
+																				"type": "label",
+																				"size": 10
+																			}
+																		]}
+
 															],
 															"interactions": {
 																"zoom": {
@@ -1280,7 +1507,73 @@
 																						"classes": "BuGn.5"
 																					}
 																				]
-																			}
+																			},
+																			{
+																				"name": "Example Map",
+																				"source": "data/detailsdata.geojson",
+																				"expressedAttribute": "county__14",
+																				"displayAttributes": [
+																					"NAME10"
+																				],
+																				"layerOptions": {
+																			"fillOpacity": 0.8,
+																			"color": "black",
+																			"weight": 0.5,
+																			"opacity": 1,
+																			"minZoom": 9,
+																			"maxZoom": 22
+																			},
+																				"renderOnLoad": true,
+																				"techniques": [
+																					{
+																						"type": "choropleth",
+																						"classification": "equal interval",
+																						"classes": "BuGn.5"
+																					}
+																				]},
+																			{
+																				"name": "Example Map",
+																				"source": "data/maptest.geojson",
+																				"expressedAttribute": "tweets",
+																				"displayAttributes": [
+																					"NAME10"
+																				],
+																				"layerOptions": {
+																			"fillOpacity": 1,
+																			"color": "black",
+																			"weight": 0.5,
+																			"opacity": 1,
+																			"minZoom": 7
+																			},
+																				"renderOnLoad": true,
+																				"techniques": [
+																					{
+																						"type": "label",
+																						"size": 10
+																					}
+																				]},
+																				{
+																					"name": "Example Map",
+																					"source": "data/.json",
+																					"expressedAttribute": "city",
+																					"displayAttributes": [
+																						"city"
+																					],
+																					"layerOptions": {
+																				"fillOpacity": 1,
+																				"color": "black",
+																				"weight": 0.5,
+																				"opacity": 1,
+																				"minZoom": 5
+																				},
+																					"renderOnLoad": true,
+																					"techniques": [
+																						{
+																							"type": "label",
+																							"size": 10
+																						}
+																					]}
+
 																		],
 																		"interactions": {
 																			"zoom": {

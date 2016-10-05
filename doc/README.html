@@ -657,8 +657,8 @@ projection = d3.geo.albers()
     }]
 </code></pre><p>An array of objects containing the thematic mapping techniques, including the map type and classification parameters for the data layer. At least one technique object is required. The first technique object in the array will be used for the layer&#39;s initial expression; all other techniques for the layer will only be available to the user if <code>map.pages[page].interactions.reexpress</code> is included.</p>
 <h4 id="map-pages-page-datalayers-i-techniques-ii-type">map.pages[page].dataLayers[i].techniques[ii].type</h4>
-<pre><code>        &quot;type&quot;: *&quot;choropleth&quot;* *&quot;proportional symbol&quot;* *&quot;dot&quot;* *&quot;isarithmic&quot;* *&quot;heat&quot;*
-</code></pre><p>The <a href="https://en.wikipedia.org/wiki/Thematic_map">thematic map type</a>. Note that only a data layer with a <code>proportional symbol</code>, <code>isarithmic</code>, or <code>heat</code> technique type can use point feature data, but all technique types can use polygon data. The <code>retrieve</code> and <code>search</code> interactions are not available for <code>heat</code> map layers, and <code>search</code> is not available for <code>isarithmic</code> layers.</p>
+<pre><code>        &quot;type&quot;: *&quot;choropleth&quot;* *&quot;proportional symbol&quot;* *&quot;dot&quot;* *&quot;isarithmic&quot;* *&quot;heat&quot;* *&quot;label&quot;*
+</code></pre><p>The <a href="https://en.wikipedia.org/wiki/Thematic_map">thematic map type</a>. Note that only a data layer with a <code>proportional symbol</code>, <code>isarithmic</code>, or <code>heat</code> technique type can use point feature data, but all technique types can use polygon data. The <code>retrieve</code> and <code>search</code> interactions are not available for <code>heat</code> map layers, and <code>search</code> is not available for <code>isarithmic</code> layers. <code>label</code> layers create labels using the first of the <code>displayAttributes</code> centered within each polygon feature, or to the upper-right of each point feature. If creating labels, creating a separate <code>dataLayer</code> with <code>label</code> as the only technique is recommended.</p>
 <h4 id="map-pages-page-datalayers-i-techniques-ii-classification">map.pages[page].dataLayers[i].techniques[ii].classification</h4>
 <pre><code>        &quot;classification&quot;: *&quot;quantile&quot;* *&quot;equal interval&quot;* *&quot;natural breaks&quot;* *&quot;unclassed&quot;*
 </code></pre><p>The classification technique for a choropleth or proportional symbol map. Which technique is chosen determines how the data values of the <code>expressedAttribute</code> are grouped for display on the map. Required for <code>choropleth</code> and <code>proportional symbol</code> types, and unavailable for <code>isarithmic</code>, <code>heat</code>, and <code>dot</code> type.</p>
@@ -706,7 +706,7 @@ projection = d3.geo.albers()
 <p>For a dot map, the value of <code>interval</code> is the denominator by which the feature&#39;s expressed attribute value will be divided to determine the number of dots to add within the boundaries of a feature. Omitting <code>interval</code> will result in a default of one dot for every 10 units. For example, if the expressed attribute value for a feature is <code>15,607</code>, by default there will be 1,561 dots scattered within that feature&#39;s boundaries. Designating <code>interval</code> as <code>1</code> will result in a dot being added for each whole number increase in the expressed attribute value, resulting in a true dot (as opposed to dot density) map. The larger the <code>interval</code>, the fewer dots will be created, and vice-versa. Note that the more dots are created, <em>and the more irregular the polygons in the dataset</em>, the longer the map will take to render. It is not recommended to use an <code>interval</code> that will create more than 10,000 dots total.</p>
 <h4 id="map-pages-page-datalayers-i-techniques-ii-size">map.pages[page].dataLayers[i].techniques[ii].size</h4>
 <pre><code>        *&quot;size&quot;*: *size*
-</code></pre><p>The size of dots on a dot map or isarithms on an isarithmic map; a number.</p>
+</code></pre><p>The size of dots on a dot map or isarithms on an isarithmic map, or the pixel size of labels; a number.</p>
 <table>
 <thead>
 <tr>
@@ -718,8 +718,8 @@ projection = d3.geo.albers()
 <tbody>
 <tr>
 <td style="text-align:center"><code>*size*</code></td>
-<td style="text-align:left">Not available for other technique types. For a dot map, <code>size</code> is the dot radius. For an isarithmic map, <code>size</code> is the line width of each isarithm.</td>
-<td style="text-align:left">1 pixel</td>
+<td style="text-align:left">Not available for other technique types. For a dot map, <code>size</code> is the dot radius. For an isarithmic map, <code>size</code> is the line width of each isarithm. For a label layer, the size is the pixel size of the label text</td>
+<td style="text-align:left">1 pixel (12 pixels for labels)</td>
 </tr>
 </tbody>
 </table>
