@@ -350,7 +350,7 @@
 							"weight": 0.5,
 							"opacity": 1,
 							"minZoom": 0,
-							"maxZoom": 7
+							"maxZoom": 9
 						},
 								"renderOnLoad": true,
 								"techniques": [
@@ -363,8 +363,57 @@
 										]
 									}
 								]
-							}
+							},
+							{
+								"name": "Hamburger tweets",
+								"source": "data/detailsdata.geojson",
+								"expressedAttribute": "county_t_2",
+								"displayAttributes": [
+									"NAME10"
+								],
+								"layerOptions": {
+							"fillOpacity": 0.8,
+							"color": "black",
+							"weight": 0.5,
+							"opacity": 1,
+							"minZoom": 9,
+							"maxZoom": 22
+						},
+								"renderOnLoad": true,
+								"techniques": [
+									{
+										"type": "proportional symbol",
+										"classification": "equal interval",
+										"classes": [
+											5,
+											20
+										]
+									}
+								]
+							},
+							{
+								"name": "Example Map",
+								"source": "data/maptest.geojson",
+								"expressedAttribute": "city",
+								"displayAttributes": [
+									"NAME10"
+								],
+								"layerOptions": {
+							"fillOpacity": 1,
+							"color": "black",
+							"weight": 0.5,
+							"opacity": 1,
+							"minZoom": 5
+							},
+								"renderOnLoad": true,
+								"techniques": [
+									{
+										"type": "label",
+										"size": 10
+									}
+								]}
 						],
+
 						"interactions": {
 							"zoom": {
 								"logging": true,
@@ -421,7 +470,7 @@
 						"baseLayers": [
 								{
 									"name": "Basemap",
-									"source": "https://api.mapbox.com/styles/v1/vinckl/cis7x179a0030gkno43r6lvv8/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+									"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 								}
 							],
 							"dataLayers": [
