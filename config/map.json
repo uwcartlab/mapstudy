@@ -37,6 +37,33 @@
 					}
 				],
 				"dataLayers": [
+					{
+						"name": "Hamburger tweets",
+						"source": "data/Cities.json",
+						"expressedAttribute": "lat",
+						"displayAttributes": [
+							"city"
+						],
+						"layerOptions": {
+					"fillOpacity": 0.8,
+					"color": "black",
+					"weight": 0.5,
+					"opacity": 1,
+					"minZoom": 0,
+					"maxZoom": 22
+				},
+						"renderOnLoad": true,
+						"techniques": [
+							{
+								"type": "proportional symbol",
+								"classification": "equal interval",
+								"classes": [
+							1,
+							1
+								]
+							}
+						]
+					},
 
 					{
 						"name": "Example Map",
@@ -107,7 +134,7 @@
 					]},
 					{
 						"name": "Example Map",
-						"source": "data/.json",
+						"source": "data/Cities.json",
 						"expressedAttribute": "city",
 						"displayAttributes": [
 							"city"
@@ -1190,7 +1217,7 @@
 														]},
 														{
 															"name": "Example Map",
-															"source": "data/.json",
+															"source": "data/Cities.json",
 															"expressedAttribute": "city",
 															"displayAttributes": [
 																"city"
@@ -1597,7 +1624,7 @@
 																	]},
 																	{
 																		"name": "Example Map",
-																		"source": "data/.json",
+																		"source": "data/Cities.json",
 																		"expressedAttribute": "city",
 																		"displayAttributes": [
 																			"city"
@@ -2019,7 +2046,7 @@
 																				]},
 																				{
 																					"name": "Example Map",
-																					"source": "data/.json",
+																					"source": "data/Cities.json",
 																					"expressedAttribute": "city",
 																					"displayAttributes": [
 																						"city"
