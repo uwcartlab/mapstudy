@@ -33,7 +33,7 @@
 			"baseLayers": [
 					{
 						"name": "Basemap",
-						"source": "https://api.mapbox.com/styles/v1/vinckl/cis98z43a002u2xoa5i3qu52n/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+						"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 					}
 				],
 				"dataLayers": [
@@ -160,7 +160,7 @@
 				"page": 4,
 				"library": "Leaflet",
 				"mapOptions": {
-					"legend": true,
+
 					"resetButton": true,
 					"center": [
 						38.5,
@@ -183,7 +183,7 @@
 				"baseLayers": [
 						{
 							"name": "Basemap",
-							"source": "https://api.mapbox.com/styles/v1/vinckl/cis98z43a002u2xoa5i3qu52n/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+							"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 						}
 					],
 					"dataLayers": [
@@ -257,7 +257,7 @@
 							]},
 							{
 								"name": "Example Map",
-								"source": "data/.json",
+								"source": "data/Cities.json",
 								"expressedAttribute": "city",
 								"displayAttributes": [
 									"city"
@@ -298,11 +298,6 @@
 								"keyboard": true,
 								"widget": false
 							}
-						},
-						"sequence": {
-							"dataLayers": [
-								"MapTest"
-							]
 						}
 					}
 				},
@@ -333,7 +328,7 @@
 					"baseLayers": [
 							{
 								"name": "Basemap",
-								"source": "https://api.mapbox.com/styles/v1/vinckl/cis7x179a0030gkno43r6lvv8/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+								"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 							}
 						],
 						"dataLayers": [
@@ -485,7 +480,9 @@
 								"fillOpacity": 0.8,
 								"color": "black",
 								"weight": 0.5,
-								"opacity": 1
+								"opacity": 1,
+								"minZoom": 0,
+								"maxZoom": 12
 							},
 									"renderOnLoad": true,
 									"techniques": [
@@ -494,8 +491,52 @@
 											"size": 0.7
 										}
 									]
-								}
-							],
+								},
+								{
+									"name": "Jacket tweets",
+									"source": "data/detailsdata.geojson",
+									"expressedAttribute": "county_t_3",
+									"displayAttributes": [
+										"NAME10"
+									],
+									"layerOptions": {
+								"fillOpacity": 0.8,
+								"color": "black",
+								"weight": 0.5,
+								"opacity": 1,
+								"minZoom": 9,
+								"maxZoom": 22
+							},
+									"renderOnLoad": true,
+									"techniques": [
+										{
+											"type": "heat",
+											"size": 0.7
+										}
+									]
+								},
+							{
+								"name": "Example Map",
+								"source": "data/maptest.geojson",
+								"expressedAttribute": "city",
+								"displayAttributes": [
+									"NAME10"
+								],
+								"layerOptions": {
+							"fillOpacity": 1,
+							"color": "black",
+							"weight": 0.5,
+							"opacity": 1,
+							"minZoom": 5
+							},
+								"renderOnLoad": true,
+								"techniques": [
+									{
+										"type": "label",
+										"size": 10
+									}
+								]}
+						],
 							"interactions": {
 								"zoom": {
 									"logging": true,
@@ -552,7 +593,7 @@
 							"baseLayers": [
 									{
 										"name": "Basemap",
-										"source": "https://api.mapbox.com/styles/v1/vinckl/cis7x179a0030gkno43r6lvv8/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+										"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 									}
 								],
 								"dataLayers": [
@@ -567,7 +608,9 @@
 									"fillOpacity": 0.8,
 									"color": "black",
 									"weight": 0.5,
-									"opacity": 1
+									"opacity": 1,
+									"minZoom": 0,
+									"maxZoom": 9
 								},
 										"renderOnLoad": true,
 										"techniques": [
@@ -577,7 +620,52 @@
 												"size": 1
 											}
 										]
-									}
+									},
+									{
+										"name": "Nightlife tweets",
+										"source": "data/detailsdata.geojson",
+										"expressedAttribute": "county_t_4",
+										"displayAttributes": [
+											"NAME10"
+										],
+										"layerOptions": {
+									"fillOpacity": 0.8,
+									"color": "black",
+									"weight": 0.5,
+									"opacity": 1,
+									"minZoom": 8,
+									"maxZoom": 22
+								},
+										"renderOnLoad": true,
+										"techniques": [
+											{
+												"type": "dot",
+												"interval": 10,
+												"size": 1
+											}
+										]
+									},
+									{
+										"name": "Example Map",
+										"source": "data/maptest.geojson",
+										"expressedAttribute": "city",
+										"displayAttributes": [
+											"NAME10"
+										],
+										"layerOptions": {
+									"fillOpacity": 1,
+									"color": "black",
+									"weight": 0.5,
+									"opacity": 1,
+									"minZoom": 5
+									},
+										"renderOnLoad": true,
+										"techniques": [
+											{
+												"type": "label",
+												"size": 10
+											}
+										]}
 								],
 								"interactions": {
 									"zoom": {
@@ -638,7 +726,7 @@
 								"baseLayers": [
 										{
 											"name": "Basemap",
-											"source": "https://api.mapbox.com/styles/v1/vinckl/cis7x179a0030gkno43r6lvv8/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+											"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 										}
 									],
 									"dataLayers": [
@@ -721,7 +809,7 @@
 									"baseLayers": [
 											{
 												"name": "Basemap",
-												"source": "https://api.mapbox.com/styles/v1/vinckl/cis7x179a0030gkno43r6lvv8/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+												"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 											}
 										],
 										"dataLayers": [
@@ -745,8 +833,52 @@
 														"size": 0.7
 													}
 												]
-											}
+											},
+										{
+											"name": "Jacket tweets",
+											"source": "data/detailsdata.geojson",
+											"expressedAttribute": "county_t_6",
+											"displayAttributes": [
+												"NAME10"
+											],
+											"layerOptions": {
+										"fillOpacity": 0.8,
+										"color": "black",
+										"weight": 0.5,
+										"opacity": 1,
+										"minZoom": 9,
+										"maxZoom": 22
+									},
+											"renderOnLoad": true,
+											"techniques": [
+												{
+													"type": "heat",
+													"size": 0.7
+												}
+											]
+										},
+									{
+										"name": "Example Map",
+										"source": "data/maptest.geojson",
+										"expressedAttribute": "city",
+										"displayAttributes": [
+											"NAME10"
 										],
+										"layerOptions": {
+									"fillOpacity": 1,
+									"color": "black",
+									"weight": 0.5,
+									"opacity": 1,
+									"minZoom": 5
+									},
+										"renderOnLoad": true,
+										"techniques": [
+											{
+												"type": "label",
+												"size": 10
+											}
+										]}
+								],
 										"interactions": {
 											"zoom": {
 												"logging": true,
@@ -803,7 +935,7 @@
 										"baseLayers": [
 												{
 													"name": "Basemap",
-													"source": "https://api.mapbox.com/styles/v1/vinckl/cis7x179a0030gkno43r6lvv8/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+													"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 												}
 											],
 											"dataLayers": [
@@ -832,7 +964,57 @@
 														}
 													]
 												}
-											],
+											,
+											{
+												"name": "Hamburger tweets",
+												"source": "data/detailsdata.geojson",
+												"expressedAttribute": "county_t_7",
+												"displayAttributes": [
+													"NAME10"
+												],
+												"layerOptions": {
+											"fillOpacity": 0.8,
+											"color": "black",
+											"weight": 0.5,
+											"opacity": 1,
+											"minZoom": 9,
+											"maxZoom": 22
+										},
+												"renderOnLoad": true,
+												"techniques": [
+													{
+														"type": "proportional symbol",
+														"classification": "equal interval",
+														"classes": [
+															5,
+															20
+														]
+													}
+												]
+											},
+											{
+												"name": "Example Map",
+												"source": "data/maptest.geojson",
+												"expressedAttribute": "city",
+												"displayAttributes": [
+													"NAME10"
+												],
+												"layerOptions": {
+											"fillOpacity": 1,
+											"color": "black",
+											"weight": 0.5,
+											"opacity": 1,
+											"minZoom": 5
+											},
+												"renderOnLoad": true,
+												"techniques": [
+													{
+														"type": "label",
+														"size": 10
+													}
+												]}
+										],
+
 											"interactions": {
 												"zoom": {
 													"logging": true,
@@ -889,7 +1071,7 @@
 											"baseLayers": [
 													{
 														"name": "Basemap",
-														"source": "https://api.mapbox.com/styles/v1/vinckl/cis98z43a002u2xoa5i3qu52n/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+														"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 													}
 												],
 												"dataLayers": [
@@ -1042,7 +1224,7 @@
 												"baseLayers": [
 														{
 															"name": "Basemap",
-															"source": "https://api.mapbox.com/styles/v1/vinckl/cis7x179a0030gkno43r6lvv8/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+															"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 														}
 													],
 													"dataLayers": [
@@ -1066,8 +1248,52 @@
 																	"size": 0.7
 																}
 															]
-														}
-													],
+														},
+														{
+															"name": "Jacket tweets",
+															"source": "data/detailsdata.geojson",
+															"expressedAttribute": "county_t_9",
+															"displayAttributes": [
+																"NAME10"
+															],
+															"layerOptions": {
+														"fillOpacity": 0.8,
+														"color": "black",
+														"weight": 0.5,
+														"opacity": 1,
+														"minZoom": 9,
+														"maxZoom": 22
+													},
+															"renderOnLoad": true,
+															"techniques": [
+																{
+																	"type": "heat",
+																	"size": 0.7
+																}
+															]
+														},
+													{
+														"name": "Example Map",
+														"source": "data/maptest.geojson",
+														"expressedAttribute": "city",
+														"displayAttributes": [
+															"NAME10"
+														],
+														"layerOptions": {
+													"fillOpacity": 1,
+													"color": "black",
+													"weight": 0.5,
+													"opacity": 1,
+													"minZoom": 5
+													},
+														"renderOnLoad": true,
+														"techniques": [
+															{
+																"type": "label",
+																"size": 10
+															}
+														]}
+												],
 													"interactions": {
 														"zoom": {
 															"logging": true,
@@ -1124,7 +1350,7 @@
 													"baseLayers": [
 															{
 																"name": "Basemap",
-																"source": "https://api.mapbox.com/styles/v1/vinckl/cis7x179a0030gkno43r6lvv8/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+																"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 															}
 														],
 														"dataLayers": [
@@ -1207,7 +1433,7 @@
 														"baseLayers": [
 																{
 																	"name": "Basemap",
-																	"source": "https://api.mapbox.com/styles/v1/vinckl/cis98z43a002u2xoa5i3qu52n/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+																	"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 																}
 															],
 															"dataLayers": [
@@ -1356,7 +1582,7 @@
 															"baseLayers": [
 																	{
 																		"name": "Basemap",
-																		"source": "https://api.mapbox.com/styles/v1/vinckl/cis7x179a0030gkno43r6lvv8/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+																		"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 																	}
 																],
 																"dataLayers": [
@@ -1385,7 +1611,56 @@
 																			}
 																		]
 																	}
-																],
+																,
+																{
+																	"name": "Hamburger tweets",
+																	"source": "data/detailsdata.geojson",
+																	"expressedAttribute": "county__12",
+																	"displayAttributes": [
+																		"NAME10"
+																	],
+																	"layerOptions": {
+																"fillOpacity": 0.8,
+																"color": "black",
+																"weight": 0.5,
+																"opacity": 1,
+																"minZoom": 9,
+																"maxZoom": 22
+															},
+																	"renderOnLoad": true,
+																	"techniques": [
+																		{
+																			"type": "proportional symbol",
+																			"classification": "equal interval",
+																			"classes": [
+																				5,
+																				20
+																			]
+																		}
+																	]
+																},
+																{
+																	"name": "Example Map",
+																	"source": "data/maptest.geojson",
+																	"expressedAttribute": "city",
+																	"displayAttributes": [
+																		"NAME10"
+																	],
+																	"layerOptions": {
+																"fillOpacity": 1,
+																"color": "black",
+																"weight": 0.5,
+																"opacity": 1,
+																"minZoom": 5
+																},
+																	"renderOnLoad": true,
+																	"techniques": [
+																		{
+																			"type": "label",
+																			"size": 10
+																		}
+																	]}
+															],
 																"interactions": {
 																	"zoom": {
 																		"logging": true,
@@ -1445,7 +1720,7 @@
 																"baseLayers": [
 																		{
 																			"name": "Basemap",
-																			"source": "https://api.mapbox.com/styles/v1/vinckl/cis7x179a0030gkno43r6lvv8/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+																			"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 																		}
 																	],
 																	"dataLayers": [
@@ -1474,7 +1749,56 @@
 																				}
 																			]
 																		}
-																	],
+																	,
+																	{
+																		"name": "Hamburger tweets",
+																		"source": "data/detailsdata.geojson",
+																		"expressedAttribute": "county__13",
+																		"displayAttributes": [
+																			"NAME10"
+																		],
+																		"layerOptions": {
+																	"fillOpacity": 0.8,
+																	"color": "black",
+																	"weight": 0.5,
+																	"opacity": 1,
+																	"minZoom": 9,
+																	"maxZoom": 22
+																},
+																		"renderOnLoad": true,
+																		"techniques": [
+																			{
+																				"type": "proportional symbol",
+																				"classification": "equal interval",
+																				"classes": [
+																					5,
+																					20
+																				]
+																			}
+																		]
+																	},
+																	{
+																		"name": "Example Map",
+																		"source": "data/maptest.geojson",
+																		"expressedAttribute": "city",
+																		"displayAttributes": [
+																			"NAME10"
+																		],
+																		"layerOptions": {
+																	"fillOpacity": 1,
+																	"color": "black",
+																	"weight": 0.5,
+																	"opacity": 1,
+																	"minZoom": 5
+																	},
+																		"renderOnLoad": true,
+																		"techniques": [
+																			{
+																				"type": "label",
+																				"size": 10
+																			}
+																		]}
+																],
 																	"interactions": {
 																		"zoom": {
 																			"logging": true,
@@ -1531,7 +1855,7 @@
 																	"baseLayers": [
 																			{
 																				"name": "Basemap",
-																				"source": "https://api.mapbox.com/styles/v1/vinckl/cis98z43a002u2xoa5i3qu52n/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+																				"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 																			}
 																		],
 																		"dataLayers": [
@@ -1680,7 +2004,7 @@
 																		"baseLayers": [
 																				{
 																					"name": "Basemap",
-																					"source": "https://api.mapbox.com/styles/v1/vinckl/cis7x179a0030gkno43r6lvv8/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+																					"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 																				}
 																			],
 																			"dataLayers": [
@@ -1763,7 +2087,7 @@
 																			"baseLayers": [
 																					{
 																						"name": "Basemap",
-																						"source": "https://api.mapbox.com/styles/v1/vinckl/cis7x179a0030gkno43r6lvv8/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+																						"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 																					}
 																				],
 																				"dataLayers": [
@@ -1787,8 +2111,52 @@
 																								"size": 0.7
 																							}
 																						]
-																					}
-																				],
+																					},
+																					{
+																						"name": "Jacket tweets",
+																						"source": "data/detailsdata.geojson",
+																						"expressedAttribute": "county__16",
+																						"displayAttributes": [
+																							"NAME10"
+																						],
+																						"layerOptions": {
+																					"fillOpacity": 0.8,
+																					"color": "black",
+																					"weight": 0.5,
+																					"opacity": 1,
+																					"minZoom": 9,
+																					"maxZoom": 22
+																				},
+																						"renderOnLoad": true,
+																						"techniques": [
+																							{
+																								"type": "heat",
+																								"size": 0.7
+																							}
+																						]
+																					},
+																				{
+																					"name": "Example Map",
+																					"source": "data/maptest.geojson",
+																					"expressedAttribute": "city",
+																					"displayAttributes": [
+																						"NAME10"
+																					],
+																					"layerOptions": {
+																				"fillOpacity": 1,
+																				"color": "black",
+																				"weight": 0.5,
+																				"opacity": 1,
+																				"minZoom": 5
+																				},
+																					"renderOnLoad": true,
+																					"techniques": [
+																						{
+																							"type": "label",
+																							"size": 10
+																						}
+																					]}
+																			],
 																				"interactions": {
 																					"zoom": {
 																						"logging": true,
