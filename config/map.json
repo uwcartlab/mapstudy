@@ -711,7 +711,7 @@
 									],
 									"zoom": 6,
 									"minZoom": 5,
-									"maxZoom": 18,
+									"maxZoom": 11,
 									"maxBounds": [
 										[
 											43,
@@ -741,7 +741,9 @@
 										"fillOpacity": 0.8,
 										"color": "black",
 										"weight": 0.5,
-										"opacity": 1
+										"opacity": 1,
+										"minZoom": 0,
+										"maxZoom": 7
 									},
 											"renderOnLoad": true,
 											"techniques": [
@@ -751,8 +753,53 @@
 													"size": 1
 												}
 											]
-										}
-									],
+										},
+										{
+											"name": "Nightlife tweets",
+											"source": "data/detailsdata.geojson",
+											"expressedAttribute": "county_t_5",
+											"displayAttributes": [
+												"NAME10"
+											],
+											"layerOptions": {
+										"fillOpacity": 0.8,
+										"color": "black",
+										"weight": 0.5,
+										"opacity": 1,
+										"minZoom": 8,
+										"maxZoom": 11
+									},
+											"renderOnLoad": true,
+											"techniques": [
+												{
+													"type": "dot",
+													"interval": 10,
+													"size": 1
+												}
+											]
+										},
+										{
+											"name": "Example Map",
+											"source": "data/maptest.geojson",
+											"expressedAttribute": "city",
+											"displayAttributes": [
+												"NAME10"
+											],
+											"layerOptions": {
+										"fillOpacity": 1,
+										"color": "black",
+										"weight": 0.5,
+										"opacity": 1,
+										"minZoom": 5
+										},
+											"renderOnLoad": true,
+											"techniques": [
+												{
+													"type": "label",
+													"size": 10
+												}
+											]}
+										],
 									"interactions": {
 										"zoom": {
 											"logging": true,
@@ -1375,8 +1422,53 @@
 																		"size": 1
 																	}
 																]
-															}
-														],
+															},
+															{
+																"name": "Nightlife tweets",
+																"source": "data/detailsdata.geojson",
+																"expressedAttribute": "county__10",
+																"displayAttributes": [
+																	"NAME10"
+																],
+																"layerOptions": {
+															"fillOpacity": 0.8,
+															"color": "black",
+															"weight": 0.5,
+															"opacity": 1,
+															"minZoom": 8,
+															"maxZoom": 11
+														},
+																"renderOnLoad": true,
+																"techniques": [
+																	{
+																		"type": "dot",
+																		"interval": 10,
+																		"size": 1
+																	}
+																]
+															},
+															{
+																"name": "Example Map",
+																"source": "data/maptest.geojson",
+																"expressedAttribute": "city",
+																"displayAttributes": [
+																	"NAME10"
+																],
+																"layerOptions": {
+															"fillOpacity": 1,
+															"color": "black",
+															"weight": 0.5,
+															"opacity": 1,
+															"minZoom": 5
+															},
+																"renderOnLoad": true,
+																"techniques": [
+																	{
+																		"type": "label",
+																		"size": 10
+																	}
+																]}
+															],
 														"interactions": {
 															"zoom": {
 																"logging": true,
@@ -2029,8 +2121,53 @@
 																							"size": 1
 																						}
 																					]
-																				}
-																			],
+																				},
+																				{
+																					"name": "Nightlife tweets",
+																					"source": "data/detailsdata.geojson",
+																					"expressedAttribute": "county__15",
+																					"displayAttributes": [
+																						"NAME10"
+																					],
+																					"layerOptions": {
+																				"fillOpacity": 0.8,
+																				"color": "black",
+																				"weight": 0.5,
+																				"opacity": 1,
+																				"minZoom": 8,
+																				"maxZoom": 11
+																			},
+																					"renderOnLoad": true,
+																					"techniques": [
+																						{
+																							"type": "dot",
+																							"interval": 10,
+																							"size": 1
+																						}
+																					]
+																				},
+																				{
+																					"name": "Example Map",
+																					"source": "data/maptest.geojson",
+																					"expressedAttribute": "city",
+																					"displayAttributes": [
+																						"NAME10"
+																					],
+																					"layerOptions": {
+																				"fillOpacity": 1,
+																				"color": "black",
+																				"weight": 0.5,
+																				"opacity": 1,
+																				"minZoom": 5
+																				},
+																					"renderOnLoad": true,
+																					"techniques": [
+																						{
+																							"type": "label",
+																							"size": 10
+																						}
+																					]}
+																				],
 																			"interactions": {
 																				"zoom": {
 																					"logging": true,
