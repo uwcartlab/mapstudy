@@ -18,7 +18,7 @@
 				],
 				"zoom": 6,
 				"minZoom": 5,
-				"maxZoom": 18,
+				"maxZoom": 11,
 				"maxBounds": [
 					[
 						43,
@@ -50,7 +50,7 @@
 					"weight": 0.5,
 					"opacity": 1,
 					"minZoom": 7,
-					"maxZoom": 22
+					"maxZoom": 11
 				},
 						"renderOnLoad": true,
 						"techniques": [
@@ -78,7 +78,7 @@
 					"weight": 0.5,
 					"opacity": 1,
 					"minZoom": 0,
-					"maxZoom": 8
+					"maxZoom": 9
 					},
 						"renderOnLoad": true,
 						"techniques": [
@@ -100,7 +100,7 @@
 						"color": "black",
 						"weight": 0.5,
 						"opacity": 1,
-						"minZoom": 9,
+						"minZoom": 10,
 						"maxZoom": 11
 						},
 							"renderOnLoad": true,
@@ -123,7 +123,7 @@
 				"color": "black",
 				"weight": 0.5,
 				"opacity": 1,
-				"minZoom": 7
+				"minZoom": 8
 				},
 					"renderOnLoad": true,
 					"techniques": [
@@ -144,7 +144,7 @@
 					"color": "black",
 					"weight": 0.5,
 					"opacity": 1,
-					"minZoom": 8
+					"minZoom": 7
 					},
 						"renderOnLoad": true,
 						"techniques": [
@@ -195,7 +195,7 @@
 					],
 					"zoom": 6,
 					"minZoom": 5,
-					"maxZoom": 18,
+					"maxZoom": 11,
 					"maxBounds": [
 						[
 							43,
@@ -227,7 +227,7 @@
 						"weight": 0.5,
 						"opacity": 1,
 						"minZoom": 7,
-						"maxZoom": 22
+						"maxZoom": 11
 					},
 							"renderOnLoad": true,
 							"techniques": [
@@ -254,7 +254,7 @@
 						"weight": 0.5,
 						"opacity": 1,
 						"minZoom": 0,
-						"maxZoom": 8
+						"maxZoom": 9
 					},
 							"renderOnLoad": true,
 							"techniques": [
@@ -277,7 +277,7 @@
 						"color": "black",
 						"weight": 0.5,
 						"opacity": 1,
-						"minZoom": 9,
+						"minZoom": 10,
 						"maxZoom": 11
 						},
 							"renderOnLoad": true,
@@ -300,7 +300,7 @@
 						"color": "black",
 						"weight": 0.5,
 						"opacity": 1,
-						"minZoom": 7
+						"minZoom": 8
 						},
 							"renderOnLoad": true,
 							"techniques": [
@@ -321,7 +321,7 @@
 							"color": "black",
 							"weight": 0.5,
 							"opacity": 1,
-							"minZoom": 8
+							"minZoom": 7
 							},
 								"renderOnLoad": true,
 								"techniques": [
@@ -367,7 +367,7 @@
 						],
 						"zoom": 6,
 						"minZoom": 5,
-						"maxZoom": 18,
+						"maxZoom": 11,
 						"maxBounds": [
 							[
 								43,
@@ -399,7 +399,7 @@
 							"weight": 0.5,
 							"opacity": 1,
 							"minZoom": 0,
-							"maxZoom": 9
+							"maxZoom": 8
 						},
 								"renderOnLoad": true,
 								"techniques": [
@@ -426,7 +426,7 @@
 							"weight": 0.5,
 							"opacity": 1,
 							"minZoom": 9,
-							"maxZoom": 22
+							"maxZoom": 11
 						},
 								"renderOnLoad": true,
 								"techniques": [
@@ -452,7 +452,7 @@
 							"color": "black",
 							"weight": 0.5,
 							"opacity": 1,
-							"minZoom": 5
+							"minZoom": 8
 							},
 								"renderOnLoad": true,
 								"techniques": [
@@ -504,7 +504,7 @@
 							],
 							"zoom": 6,
 							"minZoom": 5,
-							"maxZoom": 18,
+							"maxZoom": 11,
 							"maxBounds": [
 								[
 									43,
@@ -536,7 +536,7 @@
 								"weight": 0.5,
 								"opacity": 1,
 								"minZoom": 0,
-								"maxZoom": 12
+								"maxZoom": 8
 							},
 									"renderOnLoad": true,
 									"techniques": [
@@ -559,7 +559,7 @@
 								"weight": 0.5,
 								"opacity": 1,
 								"minZoom": 9,
-								"maxZoom": 22
+								"maxZoom": 11
 							},
 									"renderOnLoad": true,
 									"techniques": [
@@ -581,7 +581,7 @@
 							"color": "black",
 							"weight": 0.5,
 							"opacity": 1,
-							"minZoom": 5
+							"minZoom": 8
 							},
 								"renderOnLoad": true,
 								"techniques": [
@@ -632,7 +632,7 @@
 								],
 								"zoom": 6,
 								"minZoom": 5,
-								"maxZoom": 18,
+								"maxZoom": 11,
 								"maxBounds": [
 									[
 										43,
@@ -664,7 +664,7 @@
 									"weight": 0.5,
 									"opacity": 1,
 									"minZoom": 0,
-									"maxZoom": 9
+									"maxZoom": 8
 								},
 										"renderOnLoad": true,
 										"techniques": [
@@ -687,8 +687,8 @@
 									"color": "black",
 									"weight": 0.5,
 									"opacity": 1,
-									"minZoom": 8,
-									"maxZoom": 22
+									"minZoom": 9,
+									"maxZoom": 11
 								},
 										"renderOnLoad": true,
 										"techniques": [
@@ -711,7 +711,7 @@
 									"color": "black",
 									"weight": 0.5,
 									"opacity": 1,
-									"minZoom": 5
+									"minZoom": 8
 									},
 										"renderOnLoad": true,
 										"techniques": [
@@ -797,7 +797,7 @@
 										"weight": 0.5,
 										"opacity": 1,
 										"minZoom": 0,
-										"maxZoom": 7
+										"maxZoom": 8
 									},
 											"renderOnLoad": true,
 											"techniques": [
@@ -820,7 +820,7 @@
 										"color": "black",
 										"weight": 0.5,
 										"opacity": 1,
-										"minZoom": 8,
+										"minZoom": 9,
 										"maxZoom": 11
 									},
 											"renderOnLoad": true,
@@ -844,7 +844,7 @@
 										"color": "black",
 										"weight": 0.5,
 										"opacity": 1,
-										"minZoom": 5
+										"minZoom": 8
 										},
 											"renderOnLoad": true,
 											"techniques": [
@@ -895,7 +895,7 @@
 										],
 										"zoom": 6,
 										"minZoom": 5,
-										"maxZoom": 18,
+										"maxZoom": 11,
 										"maxBounds": [
 											[
 												43,
@@ -925,7 +925,9 @@
 											"fillOpacity": 0.8,
 											"color": "black",
 											"weight": 0.5,
-											"opacity": 1
+											"opacity": 1,
+											"minZoom": 0,
+											"maxZoom": 8
 										},
 												"renderOnLoad": true,
 												"techniques": [
@@ -948,7 +950,7 @@
 										"weight": 0.5,
 										"opacity": 1,
 										"minZoom": 9,
-										"maxZoom": 22
+										"maxZoom": 11
 									},
 											"renderOnLoad": true,
 											"techniques": [
@@ -970,7 +972,7 @@
 									"color": "black",
 									"weight": 0.5,
 									"opacity": 1,
-									"minZoom": 5
+									"minZoom": 8
 									},
 										"renderOnLoad": true,
 										"techniques": [
@@ -1021,7 +1023,7 @@
 											],
 											"zoom": 6,
 											"minZoom": 5,
-											"maxZoom": 18,
+											"maxZoom": 11,
 											"maxBounds": [
 												[
 													43,
@@ -1051,7 +1053,9 @@
 												"fillOpacity": 0.8,
 												"color": "black",
 												"weight": 0.5,
-												"opacity": 1
+												"opacity": 1,
+												"minZoom": 0,
+												"maxZoom": 8
 											},
 													"renderOnLoad": true,
 													"techniques": [
@@ -1079,7 +1083,7 @@
 											"weight": 0.5,
 											"opacity": 1,
 											"minZoom": 9,
-											"maxZoom": 22
+											"maxZoom": 11
 										},
 												"renderOnLoad": true,
 												"techniques": [
@@ -1105,7 +1109,7 @@
 											"color": "black",
 											"weight": 0.5,
 											"opacity": 1,
-											"minZoom": 5
+											"minZoom": 8
 											},
 												"renderOnLoad": true,
 												"techniques": [
@@ -1157,7 +1161,7 @@
 												],
 												"zoom": 6,
 												"minZoom": 5,
-												"maxZoom": 18,
+												"maxZoom": 11,
 												"maxBounds": [
 													[
 														43,
@@ -1188,8 +1192,7 @@
 													"color": "black",
 													"weight": 0.5,
 													"opacity": 1,
-													"minZoom": 7,
-													"maxZoom": 22
+													"minZoom": 7
 												},
 														"renderOnLoad": true,
 														"techniques": [
@@ -1216,7 +1219,7 @@
 													"weight": 0.5,
 													"opacity": 1,
 													"minZoom": 0,
-													"maxZoom": 8
+													"maxZoom": 9
 												},
 														"renderOnLoad": true,
 														"techniques": [
@@ -1239,7 +1242,7 @@
 													"color": "black",
 													"weight": 0.5,
 													"opacity": 1,
-													"minZoom": 9,
+													"minZoom": 10,
 													"maxZoom": 11
 													},
 														"renderOnLoad": true,
@@ -1262,7 +1265,7 @@
 													"color": "black",
 													"weight": 0.5,
 													"opacity": 1,
-													"minZoom": 7
+													"minZoom": 8
 													},
 														"renderOnLoad": true,
 														"techniques": [
@@ -1283,7 +1286,7 @@
 														"color": "black",
 														"weight": 0.5,
 														"opacity": 1,
-														"minZoom": 8
+														"minZoom": 7
 														},
 															"renderOnLoad": true,
 															"techniques": [
@@ -1339,7 +1342,7 @@
 													],
 													"zoom": 6,
 													"minZoom": 5,
-													"maxZoom": 18,
+													"maxZoom": 11,
 													"maxBounds": [
 														[
 															43,
@@ -1369,7 +1372,9 @@
 														"fillOpacity": 0.8,
 														"color": "black",
 														"weight": 0.5,
-														"opacity": 1
+														"opacity": 1,
+														"minZoom": 0,
+														"maxZoom": 8
 													},
 															"renderOnLoad": true,
 															"techniques": [
@@ -1392,7 +1397,7 @@
 														"weight": 0.5,
 														"opacity": 1,
 														"minZoom": 9,
-														"maxZoom": 22
+														"maxZoom": 11
 													},
 															"renderOnLoad": true,
 															"techniques": [
@@ -1414,7 +1419,7 @@
 													"color": "black",
 													"weight": 0.5,
 													"opacity": 1,
-													"minZoom": 5
+													"minZoom": 8
 													},
 														"renderOnLoad": true,
 														"techniques": [
@@ -1465,7 +1470,7 @@
 														],
 														"zoom": 6,
 														"minZoom": 5,
-														"maxZoom": 18,
+														"maxZoom": 11,
 														"maxBounds": [
 															[
 																43,
@@ -1495,7 +1500,9 @@
 															"fillOpacity": 0.8,
 															"color": "black",
 															"weight": 0.5,
-															"opacity": 1
+															"opacity": 1,
+															"minZoom": 0,
+															"maxZoom": 8
 														},
 																"renderOnLoad": true,
 																"techniques": [
@@ -1518,7 +1525,7 @@
 															"color": "black",
 															"weight": 0.5,
 															"opacity": 1,
-															"minZoom": 8,
+															"minZoom": 9,
 															"maxZoom": 11
 														},
 																"renderOnLoad": true,
@@ -1542,7 +1549,7 @@
 															"color": "black",
 															"weight": 0.5,
 															"opacity": 1,
-															"minZoom": 5
+															"minZoom": 8
 															},
 																"renderOnLoad": true,
 																"techniques": [
@@ -1593,7 +1600,7 @@
 															],
 															"zoom": 6,
 															"minZoom": 5,
-															"maxZoom": 18,
+															"maxZoom": 11,
 															"maxBounds": [
 																[
 																	43,
@@ -1624,8 +1631,7 @@
 																"color": "black",
 																"weight": 0.5,
 																"opacity": 1,
-																"minZoom": 7,
-																"maxZoom": 22
+																"minZoom": 7
 															},
 																	"renderOnLoad": true,
 																	"techniques": [
@@ -1652,7 +1658,7 @@
 																"weight": 0.5,
 																"opacity": 1,
 																"minZoom": 0,
-																"maxZoom": 8
+																"maxZoom": 9
 															},
 																	"renderOnLoad": true,
 																	"techniques": [
@@ -1675,7 +1681,7 @@
 																"color": "black",
 																"weight": 0.5,
 																"opacity": 1,
-																"minZoom": 9,
+																"minZoom": 10,
 																"maxZoom": 11
 																},
 																	"renderOnLoad": true,
@@ -1698,7 +1704,7 @@
 																"color": "black",
 																"weight": 0.5,
 																"opacity": 1,
-																"minZoom": 7
+																"minZoom": 8
 																},
 																	"renderOnLoad": true,
 																	"techniques": [
@@ -1719,7 +1725,7 @@
 																	"color": "black",
 																	"weight": 0.5,
 																	"opacity": 1,
-																	"minZoom": 8
+																	"minZoom": 7
 																	},
 																		"renderOnLoad": true,
 																		"techniques": [
@@ -1771,7 +1777,7 @@
 																],
 																"zoom": 6,
 																"minZoom": 5,
-																"maxZoom": 18,
+																"maxZoom": 11,
 																"maxBounds": [
 																	[
 																		43,
@@ -1801,7 +1807,9 @@
 																	"fillOpacity": 0.8,
 																	"color": "black",
 																	"weight": 0.5,
-																	"opacity": 1
+																	"opacity": 1,
+																	"minZoom": 0,
+																	"maxZoom": 8
 																},
 																		"renderOnLoad": true,
 																		"techniques": [
@@ -1829,7 +1837,7 @@
 																"weight": 0.5,
 																"opacity": 1,
 																"minZoom": 9,
-																"maxZoom": 22
+																"maxZoom": 11
 															},
 																	"renderOnLoad": true,
 																	"techniques": [
@@ -1855,7 +1863,7 @@
 																"color": "black",
 																"weight": 0.5,
 																"opacity": 1,
-																"minZoom": 5
+																"minZoom": 8
 																},
 																	"renderOnLoad": true,
 																	"techniques": [
@@ -1909,7 +1917,7 @@
 																	],
 																	"zoom": 6,
 																	"minZoom": 5,
-																	"maxZoom": 18,
+																	"maxZoom": 11,
 																	"maxBounds": [
 																		[
 																			43,
@@ -1939,7 +1947,9 @@
 																		"fillOpacity": 0.8,
 																		"color": "black",
 																		"weight": 0.5,
-																		"opacity": 1
+																		"opacity": 1,
+																		"minZoom": 0,
+																		"maxZoom": 8
 																	},
 																			"renderOnLoad": true,
 																			"techniques": [
@@ -1967,7 +1977,7 @@
 																	"weight": 0.5,
 																	"opacity": 1,
 																	"minZoom": 9,
-																	"maxZoom": 22
+																	"maxZoom": 11
 																},
 																		"renderOnLoad": true,
 																		"techniques": [
@@ -1993,7 +2003,7 @@
 																	"color": "black",
 																	"weight": 0.5,
 																	"opacity": 1,
-																	"minZoom": 5
+																	"minZoom": 8
 																	},
 																		"renderOnLoad": true,
 																		"techniques": [
@@ -2044,7 +2054,7 @@
 																		],
 																		"zoom": 6,
 																		"minZoom": 5,
-																		"maxZoom": 18,
+																		"maxZoom": 11,
 																		"maxBounds": [
 																			[
 																				43,
@@ -2075,8 +2085,7 @@
 																			"color": "black",
 																			"weight": 0.5,
 																			"opacity": 1,
-																			"minZoom": 7,
-																			"maxZoom": 22
+																			"minZoom": 7
 																		},
 																				"renderOnLoad": true,
 																				"techniques": [
@@ -2103,7 +2112,7 @@
 																			"weight": 0.5,
 																			"opacity": 1,
 																			"minZoom": 0,
-																			"maxZoom": 8
+																			"maxZoom": 9
 																		},
 																				"renderOnLoad": true,
 																				"techniques": [
@@ -2126,7 +2135,7 @@
 																			"color": "black",
 																			"weight": 0.5,
 																			"opacity": 1,
-																			"minZoom": 9,
+																			"minZoom": 10,
 																			"maxZoom": 11
 																			},
 																				"renderOnLoad": true,
@@ -2149,7 +2158,7 @@
 																			"color": "black",
 																			"weight": 0.5,
 																			"opacity": 1,
-																			"minZoom": 7
+																			"minZoom": 8
 																			},
 																				"renderOnLoad": true,
 																				"techniques": [
@@ -2170,7 +2179,7 @@
 																				"color": "black",
 																				"weight": 0.5,
 																				"opacity": 1,
-																				"minZoom": 8
+																				"minZoom": 7
 																				},
 																					"renderOnLoad": true,
 																					"techniques": [
@@ -2222,7 +2231,7 @@
 																			],
 																			"zoom": 6,
 																			"minZoom": 5,
-																			"maxZoom": 18,
+																			"maxZoom": 11,
 																			"maxBounds": [
 																				[
 																					43,
@@ -2252,7 +2261,9 @@
 																				"fillOpacity": 0.8,
 																				"color": "black",
 																				"weight": 0.5,
-																				"opacity": 1
+																				"opacity": 1,
+																				"minZoom": 0,
+																				"maxZoom": 8
 																			},
 																					"renderOnLoad": true,
 																					"techniques": [
@@ -2275,7 +2286,7 @@
 																				"color": "black",
 																				"weight": 0.5,
 																				"opacity": 1,
-																				"minZoom": 8,
+																				"minZoom": 9,
 																				"maxZoom": 11
 																			},
 																					"renderOnLoad": true,
@@ -2299,7 +2310,7 @@
 																				"color": "black",
 																				"weight": 0.5,
 																				"opacity": 1,
-																				"minZoom": 5
+																				"minZoom": 8
 																				},
 																					"renderOnLoad": true,
 																					"techniques": [
@@ -2350,7 +2361,7 @@
 																				],
 																				"zoom": 6,
 																				"minZoom": 5,
-																				"maxZoom": 18,
+																				"maxZoom": 11,
 																				"maxBounds": [
 																					[
 																						43,
@@ -2380,7 +2391,9 @@
 																					"fillOpacity": 0.8,
 																					"color": "black",
 																					"weight": 0.5,
-																					"opacity": 1
+																					"opacity": 1,
+																					"minZoom": 0,
+																					"maxZoom": 8
 																				},
 																						"renderOnLoad": true,
 																						"techniques": [
@@ -2403,7 +2416,7 @@
 																					"weight": 0.5,
 																					"opacity": 1,
 																					"minZoom": 9,
-																					"maxZoom": 22
+																					"maxZoom": 11
 																				},
 																						"renderOnLoad": true,
 																						"techniques": [
@@ -2425,7 +2438,7 @@
 																				"color": "black",
 																				"weight": 0.5,
 																				"opacity": 1,
-																				"minZoom": 5
+																				"minZoom": 8
 																				},
 																					"renderOnLoad": true,
 																					"techniques": [
