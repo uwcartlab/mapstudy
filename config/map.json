@@ -542,7 +542,7 @@
 									"techniques": [
 										{
 											"type": "heat",
-											"size": 0.7
+											"size": 0.55
 										}
 									]
 								},
@@ -565,7 +565,7 @@
 									"techniques": [
 										{
 											"type": "heat",
-											"size": 0.7
+											"size": 0.55
 										}
 									]
 								},
@@ -933,7 +933,7 @@
 												"techniques": [
 													{
 														"type": "heat",
-														"size": 0.7
+														"size": 0.55
 													}
 												]
 											},
@@ -956,7 +956,7 @@
 											"techniques": [
 												{
 													"type": "heat",
-													"size": 0.7
+													"size": 0.55
 												}
 											]
 										},
@@ -1380,7 +1380,7 @@
 															"techniques": [
 																{
 																	"type": "heat",
-																	"size": 0.7
+																	"size": 0.55
 																}
 															]
 														},
@@ -1403,7 +1403,7 @@
 															"techniques": [
 																{
 																	"type": "heat",
-																	"size": 0.7
+																	"size": 0.55
 																}
 															]
 														},
@@ -2399,7 +2399,7 @@
 																						"techniques": [
 																							{
 																								"type": "heat",
-																								"size": 0.7
+																								"size": 0.55
 																							}
 																						]
 																					},
@@ -2422,7 +2422,7 @@
 																						"techniques": [
 																							{
 																								"type": "heat",
-																								"size": 0.7
+																								"size": 0.55
 																							}
 																						]
 																					},
