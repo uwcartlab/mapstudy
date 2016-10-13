@@ -670,8 +670,8 @@
 										"techniques": [
 											{
 												"type": "dot",
-												"interval": 10,
-												"size": 1
+												"interval": 20,
+												"size": 2
 											}
 										]
 									},
@@ -694,8 +694,8 @@
 										"techniques": [
 											{
 												"type": "dot",
-												"interval": 10,
-												"size": 1
+												"interval": 20,
+												"size": 2
 											}
 										]
 									},
@@ -803,8 +803,8 @@
 											"techniques": [
 												{
 													"type": "dot",
-													"interval": 10,
-													"size": 1
+													"interval": 20,
+													"size": 2
 												}
 											]
 										},
@@ -827,8 +827,8 @@
 											"techniques": [
 												{
 													"type": "dot",
-													"interval": 10,
-													"size": 1
+													"interval": 20,
+													"size": 2
 												}
 											]
 										},
@@ -1508,8 +1508,8 @@
 																"techniques": [
 																	{
 																		"type": "dot",
-																		"interval": 10,
-																		"size": 1
+																		"interval": 20,
+																		"size": 2
 																	}
 																]
 															},
@@ -1532,8 +1532,8 @@
 																"techniques": [
 																	{
 																		"type": "dot",
-																		"interval": 10,
-																		"size": 1
+																		"interval": 20,
+																		"size": 2
 																	}
 																]
 															},
@@ -2269,8 +2269,8 @@
 																					"techniques": [
 																						{
 																							"type": "dot",
-																							"interval": 10,
-																							"size": 1
+																							"interval": 20,
+																							"size": 2
 																						}
 																					]
 																				},
@@ -2293,8 +2293,8 @@
 																					"techniques": [
 																						{
 																							"type": "dot",
-																							"interval": 10,
-																							"size": 1
+																							"interval": 20,
+																							"size": 2
 																						}
 																					]
 																				},
