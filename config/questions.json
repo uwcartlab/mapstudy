@@ -116,10 +116,10 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "A (4)"
+										"text": "Wichita County"
 									},
 									{
-										"text": "B (2)"
+										"text": "Graham County"
 									}
 								]
 							}
@@ -132,13 +132,13 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "C (4)"
+										"text": "Wichita County"
 									},
 									{
-										"text": "B (3)"
+										"text": "Logan County"
 									},
 									{
-										"text": "A (2)"
+										"text": "Sheridan County"
 									}
 								]
 							}
@@ -746,10 +746,10 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "A (4)"
+										"text": "Wichita County"
 									},
 									{
-										"text": "B (2)"
+										"text": "Thomas County"
 									}
 								]
 							}
@@ -762,13 +762,13 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "C (4)"
+										"text": "Wichita County"
 									},
 									{
-										"text": "B (3)"
+										"text": "Trego County"
 									},
 									{
-										"text": "A (2)"
+										"text": "Graham County"
 									}
 								]
 							}
@@ -1052,10 +1052,10 @@
 									"type": "radios",
 									"options": [
 										{
-											"text": "A (4)"
+											"text": "Lane County"
 										},
 										{
-											"text": "B (2)"
+											"text": "Logan County"
 										}
 									]
 								}
@@ -1068,13 +1068,13 @@
 									"type": "radios",
 									"options": [
 										{
-											"text": "C (4)"
+											"text": "Lane County"
 										},
 										{
-											"text": "B (3)"
+											"text": "Scott County"
 										},
 										{
-											"text": "A (2)"
+											"text": "Graham County"
 										}
 									]
 								}
@@ -1358,10 +1358,10 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "A (4)"
+										"text": "Lane County"
 									},
 									{
-										"text": "B (2)"
+										"text": "Thomas County"
 									}
 								]
 							}
@@ -1374,13 +1374,13 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "C (4)"
+										"text": "Lane County"
 									},
 									{
-										"text": "B (3)"
+										"text": "Scott County"
 									},
 									{
-										"text": "A (2)"
+										"text": "Graham County"
 									}
 								]
 							}
