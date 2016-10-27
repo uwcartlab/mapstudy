@@ -13,12 +13,12 @@
 				"legend": true,
 				"resetButton": true,
 				"center": [
-					38.5,
-					-98.5
+					38.7,
+					-100.5
 				],
 				"zoom": 6,
-				"minZoom": 5,
-				"maxZoom": 11,
+				"minZoom": 7,
+				"maxZoom": 10,
 				"maxBounds": [
 					[
 						43,
@@ -190,12 +190,12 @@
 
 					"resetButton": true,
 					"center": [
-						38.5,
-						-98.5
+						38.7,
+						-100.5
 					],
 					"zoom": 6,
-					"minZoom": 5,
-					"maxZoom": 11,
+					"minZoom": 7,
+					"maxZoom": 10,
 					"maxBounds": [
 						[
 							43,
@@ -362,12 +362,12 @@
 						"legend": true,
 						"resetButton": true,
 						"center": [
-							38.5,
-							-98.5
+							38.7,
+							-100.5
 						],
 						"zoom": 6,
-						"minZoom": 5,
-						"maxZoom": 11,
+						"minZoom": 7,
+						"maxZoom": 10,
 						"maxBounds": [
 							[
 								43,
@@ -499,12 +499,12 @@
 							"legend": true,
 							"resetButton": true,
 							"center": [
-								38.5,
-								-98.5
+								38.7,
+								-100.5
 							],
 							"zoom": 6,
-							"minZoom": 5,
-							"maxZoom": 11,
+							"minZoom": 7,
+							"maxZoom": 10,
 							"maxBounds": [
 								[
 									43,
@@ -627,12 +627,12 @@
 								"legend": true,
 								"resetButton": true,
 								"center": [
-									38.5,
-									-98.5
+									38.7,
+									-100.5
 								],
 								"zoom": 6,
-								"minZoom": 5,
-								"maxZoom": 11,
+								"minZoom": 7,
+								"maxZoom": 10,
 								"maxBounds": [
 									[
 										43,
@@ -760,12 +760,12 @@
 									"legend": true,
 									"resetButton": true,
 									"center": [
-										38.5,
-										-98.5
+										38.7,
+										-100.5
 									],
 									"zoom": 6,
-									"minZoom": 5,
-									"maxZoom": 11,
+									"minZoom": 7,
+									"maxZoom": 10,
 									"maxBounds": [
 										[
 											43,
@@ -890,12 +890,12 @@
 										"legend": true,
 										"resetButton": true,
 										"center": [
-											38.5,
-											-98.5
+											38.7,
+											-100.5
 										],
 										"zoom": 6,
-										"minZoom": 5,
-										"maxZoom": 11,
+										"minZoom": 7,
+										"maxZoom": 10,
 										"maxBounds": [
 											[
 												43,
@@ -1018,12 +1018,12 @@
 											"legend": true,
 											"resetButton": true,
 											"center": [
-												38.5,
-												-98.5
+												38.7,
+												-100.5
 											],
 											"zoom": 6,
-											"minZoom": 5,
-											"maxZoom": 11,
+											"minZoom": 7,
+											"maxZoom": 10,
 											"maxBounds": [
 												[
 													43,
@@ -1156,12 +1156,12 @@
 												"legend": true,
 												"resetButton": true,
 												"center": [
-													38.5,
-													-98.5
+													38.7,
+													-100.5
 												],
 												"zoom": 6,
-												"minZoom": 5,
-												"maxZoom": 11,
+												"minZoom": 7,
+												"maxZoom": 10,
 												"maxBounds": [
 													[
 														43,
@@ -1337,12 +1337,12 @@
 													"legend": true,
 													"resetButton": true,
 													"center": [
-														38.5,
-														-98.5
+														38.7,
+														-100.5
 													],
 													"zoom": 6,
-													"minZoom": 5,
-													"maxZoom": 11,
+													"minZoom": 7,
+													"maxZoom": 10,
 													"maxBounds": [
 														[
 															43,
@@ -1465,12 +1465,12 @@
 														"legend": true,
 														"resetButton": true,
 														"center": [
-															38.5,
-															-98.5
+															38.7,
+															-100.5
 														],
 														"zoom": 6,
-														"minZoom": 5,
-														"maxZoom": 11,
+														"minZoom": 7,
+														"maxZoom": 10,
 														"maxBounds": [
 															[
 																43,
@@ -1595,12 +1595,12 @@
 															"legend": true,
 															"resetButton": true,
 															"center": [
-																38.5,
-																-98.5
+																38.7,
+																-100.5
 															],
 															"zoom": 6,
-															"minZoom": 5,
-															"maxZoom": 11,
+															"minZoom": 7,
+															"maxZoom": 10,
 															"maxBounds": [
 																[
 																	43,
@@ -1772,12 +1772,12 @@
 																"legend": true,
 																"resetButton": true,
 																"center": [
-																	38.5,
-																	-98.5
+																	38.7,
+																	-100.5
 																],
 																"zoom": 6,
-																"minZoom": 5,
-																"maxZoom": 11,
+																"minZoom": 7,
+																"maxZoom": 10,
 																"maxBounds": [
 																	[
 																		43,
@@ -1912,12 +1912,12 @@
 																	"legend": true,
 																	"resetButton": true,
 																	"center": [
-																		38.5,
-																		-98.5
+																		38.7,
+																		-100.5
 																	],
 																	"zoom": 6,
-																	"minZoom": 5,
-																	"maxZoom": 11,
+																	"minZoom": 7,
+																	"maxZoom": 10,
 																	"maxBounds": [
 																		[
 																			43,
@@ -2049,12 +2049,12 @@
 																		"legend": true,
 																		"resetButton": true,
 																		"center": [
-																			38.5,
-																			-98.5
+																			38.7,
+																			-100.5
 																		],
 																		"zoom": 6,
-																		"minZoom": 5,
-																		"maxZoom": 11,
+																		"minZoom": 7,
+																		"maxZoom": 10,
 																		"maxBounds": [
 																			[
 																				43,
@@ -2226,12 +2226,12 @@
 																			"legend": true,
 																			"resetButton": true,
 																			"center": [
-																				38.5,
-																				-98.5
+																				38.7,
+																				-100.5
 																			],
 																			"zoom": 6,
-																			"minZoom": 5,
-																			"maxZoom": 11,
+																			"minZoom": 7,
+																			"maxZoom": 10,
 																			"maxBounds": [
 																				[
 																					43,
@@ -2356,12 +2356,12 @@
 																				"legend": true,
 																				"resetButton": true,
 																				"center": [
-																					38.5,
-																					-98.5
+																					38.7,
+																					-100.5
 																				],
 																				"zoom": 6,
-																				"minZoom": 5,
-																				"maxZoom": 11,
+																				"minZoom": 7,
+																				"maxZoom": 10,
 																				"maxBounds": [
 																					[
 																						43,
