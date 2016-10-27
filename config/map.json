@@ -382,7 +382,7 @@
 					"baseLayers": [
 							{
 								"name": "Basemap",
-								"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+								"source": "https://api.mapbox.com/styles/v1/vinckl/citywhses007s2io4kph59sbr/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 							}
 						],
 						"dataLayers": [
@@ -525,7 +525,7 @@
 						"baseLayers": [
 								{
 									"name": "Basemap",
-									"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+									"source": "https://api.mapbox.com/styles/v1/vinckl/citywhses007s2io4kph59sbr/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 								}
 							],
 							"dataLayers": [
@@ -653,7 +653,7 @@
 							"baseLayers": [
 									{
 										"name": "Basemap",
-										"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+										"source": "https://api.mapbox.com/styles/v1/vinckl/citywhses007s2io4kph59sbr/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 									}
 								],
 								"dataLayers": [
@@ -786,7 +786,7 @@
 								"baseLayers": [
 										{
 											"name": "Basemap",
-											"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+											"source": "https://api.mapbox.com/styles/v1/vinckl/citywhses007s2io4kph59sbr/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 										}
 									],
 									"dataLayers": [
@@ -916,7 +916,7 @@
 									"baseLayers": [
 											{
 												"name": "Basemap",
-												"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+												"source": "https://api.mapbox.com/styles/v1/vinckl/citywhses007s2io4kph59sbr/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 											}
 										],
 										"dataLayers": [
@@ -1044,7 +1044,7 @@
 										"baseLayers": [
 												{
 													"name": "Basemap",
-													"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+													"source": "https://api.mapbox.com/styles/v1/vinckl/citywhses007s2io4kph59sbr/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 												}
 											],
 											"dataLayers": [
@@ -1369,7 +1369,7 @@
 												"baseLayers": [
 														{
 															"name": "Basemap",
-															"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+															"source": "https://api.mapbox.com/styles/v1/vinckl/citywhses007s2io4kph59sbr/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 														}
 													],
 													"dataLayers": [
@@ -1497,7 +1497,7 @@
 													"baseLayers": [
 															{
 																"name": "Basemap",
-																"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+																"source": "https://api.mapbox.com/styles/v1/vinckl/citywhses007s2io4kph59sbr/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 															}
 														],
 														"dataLayers": [
@@ -1804,7 +1804,7 @@
 															"baseLayers": [
 																	{
 																		"name": "Basemap",
-																		"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+																		"source": "https://api.mapbox.com/styles/v1/vinckl/citywhses007s2io4kph59sbr/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 																	}
 																],
 																"dataLayers": [
@@ -1950,7 +1950,7 @@
 																"baseLayers": [
 																		{
 																			"name": "Basemap",
-																			"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+																			"source": "https://api.mapbox.com/styles/v1/vinckl/citywhses007s2io4kph59sbr/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 																		}
 																	],
 																	"dataLayers": [
@@ -2270,7 +2270,7 @@
 																		"baseLayers": [
 																				{
 																					"name": "Basemap",
-																					"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+																					"source": "https://api.mapbox.com/styles/v1/vinckl/citywhses007s2io4kph59sbr/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 																				}
 																			],
 																			"dataLayers": [
@@ -2400,7 +2400,7 @@
 																			"baseLayers": [
 																					{
 																						"name": "Basemap",
-																						"source": "https://api.mapbox.com/styles/v1/vinckl/citxf1m0a00572jo1ex53z2st/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+																						"source": "https://api.mapbox.com/styles/v1/vinckl/citywhses007s2io4kph59sbr/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 																					}
 																				],
 																				"dataLayers": [
