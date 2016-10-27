@@ -80,6 +80,7 @@
 							"ask": "Which town had more tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -90,11 +91,13 @@
 									}
 								]
 							}
-						},
+						}]},
 						{
+						"blocks":	[{
 							"ask": "Which town had the most tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -108,11 +111,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which county had more tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -123,12 +128,14 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which county had the most tweets?",
 							"input": {
 								"required": false,
 								"autoadvance": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -145,7 +152,7 @@
 						}
 					],
 					"buttons": [
-						"next"
+
 					]
 				}
 			]
@@ -162,6 +169,7 @@
 							"input": {
 								"required": false,
 								"type": "radios",
+								"autoadvance": true,
 								"options": [
 									{
 										"text": "A (4)"
@@ -171,12 +179,14 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which town had the most tweets?",
 							"input": {
 								"required": false,
 								"type": "radios",
+								"autoadvance": true,
 								"options": [
 									{
 										"text": "E (4)"
@@ -189,11 +199,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which county had more tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -204,12 +216,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which county had the most tweets?",
 							"input": {
 								"required": false,
-								"autoadvance": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -226,7 +239,7 @@
 						}
 					],
 					"buttons": [
-						"next"
+
 					]
 				}
 			]
@@ -242,6 +255,7 @@
 							"ask": "Which town had more tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -252,11 +266,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which town had the most tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -270,11 +286,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which county had more tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -285,12 +303,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which county had the most tweets?",
 							"input": {
 								"required": false,
-								"autoadvance": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -307,7 +326,7 @@
 						}
 					],
 					"buttons": [
-						"next"
+
 					]
 				}
 			]
@@ -324,6 +343,7 @@
 							"input": {
 								"required": false,
 								"type": "radios",
+								"autoadvance": true,
 								"options": [
 									{
 										"text": "A (4)"
@@ -333,11 +353,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which town had the most tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -351,11 +373,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which county had more tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -366,12 +390,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which county had the most tweets?",
 							"input": {
 								"required": false,
-								"autoadvance": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -388,7 +413,7 @@
 						}
 					],
 					"buttons": [
-						"next"
+
 					]
 				}
 			]
@@ -468,6 +493,7 @@
 							"input": {
 								"required": false,
 								"type": "radios",
+								"autoadvance": true,
 								"options": [
 									{
 										"text": "A (4)"
@@ -477,12 +503,14 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which town had the most tweets?",
 							"input": {
 								"required": false,
 								"type": "radios",
+								"autoadvance": true,
 								"options": [
 									{
 										"text": "E (4)"
@@ -495,12 +523,14 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which county had more tweets?",
 							"input": {
 								"required": false,
 								"type": "radios",
+								"autoadvance": true,
 								"options": [
 									{
 										"text": "A (4)"
@@ -510,13 +540,15 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which county had the most tweets?",
 							"input": {
 								"required": false,
 								"autoadvance": false,
 								"type": "radios",
+								"autoadvance": true,
 								"options": [
 									{
 										"text": "C (4)"
@@ -532,7 +564,7 @@
 						}
 					],
 					"buttons": [
-						"next"
+
 					]
 				}
 			]
@@ -549,6 +581,7 @@
 								"input": {
 									"required": false,
 									"type": "radios",
+									"autoadvance": true,
 									"options": [
 										{
 											"text": "A (4)"
@@ -558,12 +591,14 @@
 										}
 									]
 								}
-							},
-							{
+								}]},
+								{
+								"blocks":	[{
 								"ask": "Which town had the most tweets?",
 								"input": {
 									"required": false,
 									"type": "radios",
+									"autoadvance": true,
 									"options": [
 										{
 											"text": "E (4)"
@@ -576,12 +611,14 @@
 										}
 									]
 								}
-							},
-							{
+								}]},
+								{
+								"blocks":	[{
 								"ask": "Which county had more tweets?",
 								"input": {
 									"required": false,
 									"type": "radios",
+									"autoadvance": true,
 									"options": [
 										{
 											"text": "A (4)"
@@ -591,13 +628,15 @@
 										}
 									]
 								}
-							},
-							{
+								}]},
+								{
+								"blocks":	[{
 								"ask": "Which county had the most tweets?",
 								"input": {
 									"required": false,
 									"autoadvance": false,
 									"type": "radios",
+									"autoadvance": true,
 									"options": [
 										{
 											"text": "C (4)"
@@ -613,7 +652,7 @@
 							}
 						],
 					"buttons": [
-						"next"
+
 					]
 				}
 			]
@@ -629,6 +668,7 @@
 							"ask": "Which town had more tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -639,12 +679,14 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which town had the most tweets?",
 							"input": {
 								"required": false,
 								"type": "radios",
+								"autoadvance": true,
 								"options": [
 									{
 										"text": "E (4)"
@@ -657,12 +699,14 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which county had more tweets?",
 							"input": {
 								"required": false,
 								"type": "radios",
+								"autoadvance": true,
 								"options": [
 									{
 										"text": "A (4)"
@@ -672,12 +716,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which county had the most tweets?",
 							"input": {
 								"required": false,
-								"autoadvance": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -694,7 +739,7 @@
 						}
 					],
 					"buttons": [
-						"next"
+
 					]
 				}
 			]
@@ -710,6 +755,7 @@
 							"ask": "Which town had more tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -720,11 +766,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which town had the most tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -738,11 +786,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which county had more tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -753,12 +803,14 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which county had the most tweets?",
 							"input": {
 								"required": false,
 								"autoadvance": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -775,7 +827,7 @@
 						}
 					],
 					"buttons": [
-						"next"
+
 					]
 				}
 			]
@@ -855,6 +907,7 @@
 							"input": {
 								"required": false,
 								"type": "radios",
+								"autoadvance": true,
 								"options": [
 									{
 										"text": "A (4)"
@@ -864,11 +917,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which town had the most tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -882,11 +937,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which county had more tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -897,12 +954,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which county had the most tweets?",
 							"input": {
 								"required": false,
-								"autoadvance": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -919,7 +977,7 @@
 						}
 					],
 					"buttons": [
-						"next"
+
 					]
 				}
 			]
@@ -935,6 +993,7 @@
 							"ask": "Which town had more tweets?",
 								"input": {
 									"required": false,
+									"autoadvance": true,
 									"type": "radios",
 									"options": [
 										{
@@ -945,11 +1004,13 @@
 										}
 									]
 								}
-							},
-							{
+								}]},
+								{
+								"blocks":	[{
 								"ask": "Which town had the most tweets?",
 								"input": {
 									"required": false,
+									"autoadvance": true,
 									"type": "radios",
 									"options": [
 										{
@@ -963,11 +1024,13 @@
 										}
 									]
 								}
-							},
-							{
+								}]},
+								{
+								"blocks":	[{
 								"ask": "Which county had more tweets?",
 								"input": {
 									"required": false,
+									"autoadvance": true,
 									"type": "radios",
 									"options": [
 										{
@@ -978,12 +1041,13 @@
 										}
 									]
 								}
-							},
-							{
+								}]},
+								{
+								"blocks":	[{
 								"ask": "Which county had the most tweets?",
 								"input": {
 									"required": false,
-									"autoadvance": false,
+									"autoadvance": true,
 									"type": "radios",
 									"options": [
 										{
@@ -1000,7 +1064,7 @@
 							}
 						],
 					"buttons": [
-						"next"
+
 					]
 				}
 			]
@@ -1017,6 +1081,7 @@
 								"input": {
 									"required": false,
 									"type": "radios",
+									"autoadvance": true,
 									"options": [
 										{
 											"text": "A (4)"
@@ -1026,11 +1091,13 @@
 										}
 									]
 								}
-							},
-							{
+								}]},
+								{
+								"blocks":	[{
 								"ask": "Which town had the most tweets?",
 								"input": {
 									"required": false,
+									"autoadvance": true,
 									"type": "radios",
 									"options": [
 										{
@@ -1044,11 +1111,13 @@
 										}
 									]
 								}
-							},
-							{
+								}]},
+								{
+								"blocks":	[{
 								"ask": "Which county had more tweets?",
 								"input": {
 									"required": false,
+									"autoadvance": true,
 									"type": "radios",
 									"options": [
 										{
@@ -1059,12 +1128,13 @@
 										}
 									]
 								}
-							},
-							{
+								}]},
+								{
+								"blocks":	[{
 								"ask": "Which county had the most tweets?",
 								"input": {
 									"required": false,
-									"autoadvance": false,
+									"autoadvance": true,
 									"type": "radios",
 									"options": [
 										{
@@ -1081,7 +1151,7 @@
 							}
 						],
 					"buttons": [
-						"next"
+
 					]
 				}
 			]
@@ -1097,6 +1167,7 @@
 							"ask": "Which town had more tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -1107,11 +1178,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which town had the most tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -1125,11 +1198,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which county had more tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -1140,12 +1215,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which county had the most tweets?",
 							"input": {
 								"required": false,
-								"autoadvance": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -1162,7 +1238,7 @@
 						}
 					],
 					"buttons": [
-						"next"
+
 					]
 				}
 			]
@@ -1241,6 +1317,7 @@
 							"ask": "Which town had more tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -1251,11 +1328,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which town had the most tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -1269,11 +1348,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which county had more tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -1284,12 +1365,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which county had the most tweets?",
 							"input": {
 								"required": false,
-								"autoadvance": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -1306,7 +1388,7 @@
 						}
 					],
 					"buttons": [
-						"next"
+
 					]
 				}
 			]
@@ -1322,6 +1404,7 @@
 							"ask": "Which town had more tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -1332,11 +1415,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which town had the most tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -1350,11 +1435,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which county had more tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -1365,12 +1452,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which county had the most tweets?",
 							"input": {
 								"required": false,
-								"autoadvance": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -1387,7 +1475,7 @@
 						}
 					],
 					"buttons": [
-						"next"
+
 					]
 				}
 			]
@@ -1403,6 +1491,7 @@
 							"ask": "Which town had more tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -1413,11 +1502,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which town had the most tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -1431,11 +1522,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which county had more tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -1446,12 +1539,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which county had the most tweets?",
 							"input": {
 								"required": false,
-								"autoadvance": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -1468,7 +1562,7 @@
 						}
 					],
 					"buttons": [
-						"next"
+
 					]
 				}
 			]
@@ -1484,6 +1578,7 @@
 							"ask": "Which town had more tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -1494,11 +1589,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which town had the most tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -1512,11 +1609,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which county had more tweets?",
 							"input": {
 								"required": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -1527,12 +1626,13 @@
 									}
 								]
 							}
-						},
-						{
+							}]},
+							{
+							"blocks":	[{
 							"ask": "Which county had the most tweets?",
 							"input": {
 								"required": false,
-								"autoadvance": false,
+								"autoadvance": true,
 								"type": "radios",
 								"options": [
 									{
@@ -1549,7 +1649,7 @@
 						}
 					],
 					"buttons": [
-						"next"
+
 					]
 				}
 			]
