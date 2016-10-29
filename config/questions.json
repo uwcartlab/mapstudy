@@ -1624,175 +1624,46 @@
 					{
 						"blocks": [
 							{
-								"title": "Exit Survey-Usefulness and Preference",
-								"ask": "<br>Select how <strong><i>useful</i></strong> you found the four map designs for completing the map tasks:",
+								"title": "Exit Survey-North American Hazardous Waste Trade",
+								"ask": "<br>Please rank how difficult it was to understand the hazardous waste trade <u>topic</u>:",
 								"input": {
 									"required": false,
-									"type": "matrix",
+									"type": "radios",
 									"options": [
 										{
-											"text": "Not at all Useful"
+											"text": "1. Very Difficult"
 										},
 										{
-											"text": "Not Useful"
+											"text": "2. Difficult"
 										},
 										{
-											"text": "Not Useful"
+											"text": "3. Neutral"
 										},
 										{
-											"text": "Neutral"
+											"text": "4. Not Difficult"
 										},
 										{
-											"text": "Moderately Useful"
-										},
-										{
-											"text": "Very Useful"
-										},
-										{
-											"text": "Extremely Useful"
-										}
-									],
-									"items": [
-										{
-											"text": "Choropleth Map",
-											"label": "p2s1b1i1"
-										},
-										{
-											"text": "Proportional Symbol Map"
-										},
-										{
-											"text": "Heat Map"
-										},
-										{
-											"text": "Dot Map"
+											"text": "5. Not At All Difficult"
 										}
 									]
 								}
 							},
 							{
-								"ask": "<br>Select your personal <strong><i>preference</i></strong> of the four map designs regardless of the map tasks:",
+								"ask": "<br>Discuss which points were confusing, if any:",
 								"input": {
 									"required": false,
 									"autoadvance": false,
-									"type": "matrix",
-									"options": [
-										{
-											"text": "Lowest Preference"
-										},
-										{
-											"text": "Low Preference"
-										},
-										{
-											"text": "Slightly Prefer"
-										},
-										{
-											"text": "Neutral"
-										},
-										{
-											"text": "Moderately Prefer"
-										},
-										{
-											"text": "Really Prefer"
-										},
-										{
-											"text": "Extremely Prefer"
-										}
-									],
-									"items": [
-										{
-											"text": "Choropleth Map",
-											"label": "p2s1b2i1"
-										},
-										{
-											"text": "Proportional Symbol Map"
-										},
-										{
-											"text": "Heat Map"
-										},
-										{
-											"text": "Dot Map"
-										}
-									]
+									"type": "paragraph"
 								}
 							},
 							{
-								"ask": "<br>Select how <strong><i>useful</i></strong> you found the provided interactive features for completing the map tasks:",
+								"ask": "<br>What information about the <u>hazardous waste trade</u> would have made coming to your decisions easier?",
 								"input": {
 									"required": false,
 									"autoadvance": false,
-									"type": "matrix",
-									"options": [
-										{
-											"text": "Not at all Useful"
-										},
-										{
-											"text": "Not Useful"
-										},
-										{
-											"text": "Not Useful"
-										},
-										{
-											"text": "Neutral"
-										},
-										{
-											"text": "Moderately Useful"
-										},
-										{
-											"text": "Very Useful"
-										},
-										{
-											"text": "Extremely Useful"
-										}
-									],
-									"items": [
-										{
-											"text": "Pan Map Position",
-											"label": "p2s1b3i1"
-										},
-										{
-											"text": "Zoom in and Out"
-										}
-									]
-								}
-							},
-							{
-								"ask": "<br>Select your personal <strong><i>preference</i></strong> of the provided interactive features regardless of the map tasks:",
-								"input": {
-									"required": false,
-									"autoadvance": false,
-									"type": "matrix",
-									"options": [
-										{
-											"text": "Lowest Preference"
-										},
-										{
-											"text": "Low Preference"
-										},
-										{
-											"text": "Slightly Prefer"
-										},
-										{
-											"text": "Neutral"
-										},
-										{
-											"text": "Moderately Prefer"
-										},
-										{
-											"text": "Really Prefer"
-										},
-										{
-											"text": "Extremely Prefer"
-										}
-									],
-									"items": [
-										{
-											"text": "Pan Map Position",
-											"label": "p2s1b4i1"
-										},
-										{
-											"text": "Zoom in and Out"
-										}
-									]
+									"type": "paragraph"
+
+
 								}
 							}
 						],
@@ -1805,27 +1676,78 @@
 		{
 			"page": 25,
 			"fullpage": true,
+				"sets": [
+					{
+						"blocks": [
+							{
+								"title": "Exit Survey-Interactive Maps",
+								"ask": "<br>Please rank how difficult it was to understand the <u>map</u>:",
+								"input": {
+									"required": false,
+									"type": "radios",
+									"options": [
+										{
+											"text": "1. Very Difficult"
+										},
+										{
+											"text": "2. Difficult"
+										},
+										{
+											"text": "3. Neutral"
+										},
+										{
+											"text": "4. Not Difficult"
+										},
+										{
+											"text": "5. Not At All Difficult"
+										}
+									]
+								}
+							},
+							{
+								"ask": "<br>Discuss which points were confusing, if any:",
+								"input": {
+									"required": false,
+									"autoadvance": false,
+									"type": "paragraph"
+								}
+							},
+							{
+								"ask": "<br>Changing which features on the <u>map</u> would have made coming to your decisions easier?",
+								"input": {
+									"required": false,
+									"autoadvance": false,
+									"type": "paragraph"
+
+
+								}
+							}
+						],
+						"buttons": [
+							"next"
+						]
+					}
+				]
+			},
+		{
+			"page": 26,
+			"fullpage": true,
 			"sets": [
 				{
 					"blocks": [
 						{
-							"title": "Exit Survey-Background",
-							"ask": "1. How old are you?",
+							"title": "Exit Survey-Background Information",
+							"ask": "What is your age?",
 							"input": {
 								"required": false,
-								"type": "text",
-								"options": [
-
-								],
-								"items": [
-
-								]
+								"type": "text"
 							}
 						},
 						{
-							"ask": "2. What is your gender identity?",
+							"ask": "What is your gender?",
 							"input": {
 								"required": false,
+								"autoadvance": false,
 								"type": "radios",
 								"options": [
 									{
@@ -1834,220 +1756,196 @@
 									{
 										"text": "Female"
 									},
-									{"text": "Other"
-								}
-							]
-							}
-						},
-						{
-							"ask": "3. Do you have corrected vision?",
-							"input": {
-								"required": false,
-								"type": "radios",
-								"options": [
 									{
-										"text": "Yes"
-									},
-									{"text": "No"
-								}
-							]
-							}
-						},
-						{
-							"ask": "4. Do you have color vision impairment?",
-							"input": {
-								"required": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "Yes"
-									},
-									{"text": "No"
-								},
-								{
-									"text": "Don't know"
-								}
-							]
-							}
-						},
-						{
-							"ask": "5. Is English your first language?",
-							"input": {
-								"required": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "Yes"
-									},
-									{"text": "No"
-								}
-							]
-							}
-						},
-						{
-							"ask": "6. Are you fluent in English?",
-							"input": {
-								"required": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "Yes"
-									},
-									{"text": "No"
-								}
-							]
-							}
-						}
-					],
-					"buttons": [
-						"next",
-						"back"
-					]
-				}
-			]
-		},
-		{
-			"page": 26,
-			"fullpage": true,
-			"sets": [
-				{
-					"blocks": [
-						{
-							"title": "Exit Survey-Familiarity and Interest",
-							"ask": "1. Please rate your <strong><i>knowledge</i></strong> of the following topics: ",
-							"input": {
-								"required": false,
-								"type": "matrix",
-								"options": [
-									{
-										"text": "No Knowledge"
-									},
-									{
-										"text": "Minimal Knowledge"
-									},
-									{
-										"text": "Some Knowledge"
-									},
-									{
-										"text": "Average Knowledge"
-									},
-									{
-										"text": "Above Average Knowledge"
-									},
-									{
-										"text": "I Know Quite a Bit"
-									},
-									{
-										"text": "I Know a Lot"
-									}
-								],
-								"items": [
-									{
-										"text": "Computer Technology",
-										"label": "p2s1b1i1"
-									},
-									{
-										"text": "The Internet/The Web"
-									},
-									{
-										"text": "Map Design"
-									},
-									{
-										"text": "Geography"
-									},
-									{
-										"text": "Numbers and Statistics"
-									},
-									{
-										"text": "Twitter"
+										"text": "Other"
 									}
 								]
 							}
 						},
 						{
-							"ask": "2. Please rate your <strong><i>interest</i></strong> in the following topics: ",
+							"ask": "What is the highest degree you have received?",
 							"input": {
 								"required": false,
 								"autoadvance": false,
-								"type": "matrix",
-								"options": [
-									{
-										"text": "No Interest"
-									},
-									{
-										"text": "Minimal Interest"
-									},
-									{
-										"text": "Some Interest"
-									},
-									{
-										"text": "Average Interest"
-									},
-									{
-										"text": "Above Average Interest"
-									},
-									{
-										"text": "Quite a Bit of Interest"
-									},
-									{
-										"text": "A Lot of Interest"
-									}
-								],
-								"items": [
-									{
-										"text": "Computer Technology",
-										"label": "p2s1b2i1"
-									},
-									{
-										"text": "The Internet/The Web"
-									},
-									{
-										"text": "Map Design"
-									},
-									{
-										"text": "Geography"
-									},
-									{
-										"text": "Numbers and Statistics"
-									},
-									{
-										"text": "Twitter"
-									}
-								]
+								"type": "text"
 							}
-						}
-					],
-					"buttons": [
-						"next",
-						"back"
-					]
-				}
-			]
-		},
-		{
-			"page": 27,
-			"fullpage": true,
-			"sets": [
-				{
-					"blocks": [
+						},
 						{
-							"title": "Exit Survey-Technology",
-							"ask": "1. What kind of <strong><i>computing device</i></strong> did you use to view and complete the survey:",
+							"ask": "What field is your degree(s) in?",
 							"input": {
 								"required": false,
+								"autoadvance": false,
+								"type": "text"
+							}
+						},
+						{
+							"ask": "How much experience do you have with maps?",
+							"input": {
+								"required": false,
+								"autoadvance": false,
 								"type": "radios",
 								"options": [
 									{
-										"text": "Smartphone"
+										"text": "1. No Experience"
 									},
 									{
-										"text": "Tablet"
+										"text": "2. Slight Expereince"
+									},
+									{
+										"text": "3. Some Experience"
+									},
+									{
+										"text": "4. Use Maps Most Days"
+									},
+									{
+										"text": "5. Use Maps Everyday"
+									}
+								]
+							}
+						},
+						{
+							"ask": "How much experience do you have with the hazardous waste industry?",
+							"input": {
+								"required": false,
+								"autoadvance": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "1. No Experience"
+									},
+									{
+										"text": "2. Slight Expereince"
+									},
+									{
+										"text": "3. Some Experience"
+									},
+									{
+										"text": "4. Part of Most Work Days"
+									},
+									{
+										"text": "5. Part of Every Work Day"
+									}
+								]
+							}
+						},
+						{
+							"ask": "How <i>familiar</i> are you with maps?",
+							"input": {
+								"required": false,
+								"autoadvance": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "1. Not At All Familiar"
+									},
+									{
+										"text": "2. Slightly Familiar"
+									},
+									{
+										"text": "3. Somewhat Familiar"
+									},
+									{
+										"text": "4. Moderately Familiar"
+									},
+									{
+										"text": "5. Extremely Familiar"
+									}
+								]
+							}
+						},
+						{
+							"ask": "How </i>familiar</i> are you with online, interactive maps (i.e. Google Maps)?",
+							"input": {
+								"required": false,
+								"autoadvance": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "1. Not At All Familiar"
+									},
+									{
+										"text": "2. Slightly Familiar"
+									},
+									{
+										"text": "3. Somewhat Familiar"
+									},
+									{
+										"text": "4. Moderately Familiar"
+									},
+									{
+										"text": "5. Extremely Familiar"
+									}
+								]
+							}
+						},
+						{
+							"ask": "How </i>familiar</i> are you with the hazardous waste trade?",
+							"input": {
+								"required": false,
+								"autoadvance": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "1. Not At All Familiar"
+									},
+									{
+										"text": "2. Slightly Familiar"
+									},
+									{
+										"text": "3. Somewhat Familiar"
+									},
+									{
+										"text": "4. Moderately Familiar"
+									},
+									{
+										"text": "5. Extremely Familiar"
+									}
+								]
+							}
+						},
+						{
+							"ask": "How often do you use computers?",
+							"input": {
+								"required": false,
+								"autoadvance": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "1. Never"
+									},
+									{
+										"text": "2. Almost Never"
+									},
+									{
+										"text": "3. Sometimes"
+									},
+									{
+										"text": "4. Almost Every Day"
+									},
+									{
+										"text": "5. Every Day"
+									}
+								]
+							}
+						},
+						{
+							"ask": "What device did you complete this survey on?",
+							"input": {
+								"required": false,
+								"autoadvance": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "Desktop Computer"
 									},
 									{
 										"text": "Laptop Computer"
 									},
 									{
-										"text": "Desktop Computer"
+										"text": "Tablet or Touchscreen Device"
+									},
+									{
+										"text": "Mobile Device"
 									},
 									{
 										"text": "Other"
@@ -2056,7 +1954,7 @@
 							}
 						},
 						{
-							"ask": "2. What best describes the manner you interacted with the map and submitted your survey responses? ",
+							"ask": "What best describes the manner you interacted with the map and submitted your survey responses? ",
 							"input": {
 								"required": false,
 								"type": "radios",
@@ -2075,24 +1973,9 @@
 									}
 								]
 							}
-						},
-						{
-							"ask": "3. Did you divert your attention (e.g., open another website, check your phone) in any way when completing the survey?Note: this has no bearing on compensation",
-							"input": {
-								"required": false,
-								"autoadvance": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "Yes"
-									},
-									{
-										"text": "No"
-									}
-								]
-							}
 						}
 					],
+
 					"buttons": [
 						"submit",
 						"back"
