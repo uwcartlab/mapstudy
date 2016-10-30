@@ -173,90 +173,7 @@
 					}
 				},
 				{
-					"page": 5,
-					"library": "Leaflet",
-					"mapOptions": {
-						"legend": true,
-						"resetButton": true,
-						"center": [
-							38.5,
-							-98.5
-						],
-						"zoom": 6,
-						"minZoom": 5,
-						"maxZoom": 18,
-						"maxBounds": [
-							[
-								43,
-								-110
-							],
-							[
-								30,
-								-90
-							]
-						]
-					},
-					"baseLayers": [
-							{
-								"name": "Basemap",
-								"source": "https://api.mapbox.com/styles/v1/vinckl/cis7x179a0030gkno43r6lvv8/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
-							}
-						],
-						"dataLayers": [
-							{
-								"name": "Hamburger tweets",
-								"source": "data/countiesall.geojson",
-								"expressedAttribute": "Hamburgers",
-								"displayAttributes": [
-									"NAME10"
-								],
-								"layerOptions": {
-							"fillOpacity": 0.8,
-							"color": "black",
-							"weight": 0.5,
-							"opacity": 1
-						},
-								"renderOnLoad": true,
-								"techniques": [
-									{
-										"type": "proportional symbol",
-										"classification": "equal interval",
-										"classes": [
-											5,
-											20
-										]
-									}
-								]
-							}
-						],
-						"interactions": {
-							"zoom": {
-								"logging": true,
-								"toggle": false,
-								"interface": {
-									"touch": true,
-									"scrollWheel": true,
-									"doubleClick": true,
-									"box": true,
-									"keyboard": true,
-									"widget": false
-								}
-							},
-							"pan": {
-								"logging": true,
-								"toggle": false,
-								"interface": {
-									"drag": true,
-									"keyboard": true,
-									"widget": false
-								}
-							},
-							"sequence": {
-								"dataLayers": [
-									"MapTest"
-								]
-							}
-						}
+					"page": 5
 					},
 					{
 						"page": 6,
@@ -424,8 +341,88 @@
 								}
 							},
 							{
-								"page": 8
-							},
+								"page": 8,
+								"library": "Leaflet",
+								"mapOptions": {
+									"legend": true,
+									"resetButton": true,
+									"center": [
+										38.5,
+										-98.5
+									],
+									"zoom": 6,
+									"minZoom": 5,
+									"maxZoom": 18,
+									"maxBounds": [
+										[
+											43,
+											-110
+										],
+										[
+											30,
+											-90
+										]
+									]
+								},
+								"baseLayers": [
+										{
+											"name": "Basemap",
+											"source": "https://api.mapbox.com/styles/v1/vinckl/cis7x179a0030gkno43r6lvv8/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+										}
+									],
+									"dataLayers": [
+										{
+											"name": "Nightlife tweets",
+											"source": "data/countiesall.geojson",
+											"expressedAttribute": "Nightlife",
+											"displayAttributes": [
+												"NAME10"
+											],
+											"layerOptions": {
+										"fillOpacity": 0.8,
+										"color": "black",
+										"weight": 0.5,
+										"opacity": 1
+									},
+											"renderOnLoad": true,
+											"techniques": [
+												{
+													"type": "dot",
+													"interval": 10,
+													"size": 1
+												}
+											]
+										}
+									],
+									"interactions": {
+										"zoom": {
+											"logging": true,
+											"toggle": false,
+											"interface": {
+												"touch": true,
+												"scrollWheel": true,
+												"doubleClick": true,
+												"box": true,
+												"keyboard": true,
+												"widget": false
+											}
+										},
+										"pan": {
+											"logging": true,
+											"toggle": false,
+											"interface": {
+												"drag": true,
+												"keyboard": true,
+												"widget": false
+											}
+										},
+										"sequence": {
+											"dataLayers": [
+												"MapTest"
+											]
+										}
+									}
+								},
 							{
 								"page": 9,
 								"library": "Leaflet",
@@ -761,10 +758,7 @@
 												}
 											},
 											{
-												"page": 13
-											},
-											{
-												"page": 14,
+												"page": 13,
 												"library": "Leaflet",
 												"mapOptions": {
 													"legend": true,
@@ -795,9 +789,9 @@
 													],
 													"dataLayers": [
 														{
-															"name": "Soccer tweets",
+															"name": "Nightlife tweets",
 															"source": "data/countiesall.geojson",
-															"expressedAttribute": "Soccer",
+															"expressedAttribute": "Nightlife",
 															"displayAttributes": [
 																"NAME10"
 															],
@@ -810,8 +804,9 @@
 															"renderOnLoad": true,
 															"techniques": [
 																{
-																	"type": "heat",
-																	"size": 0.7
+																	"type": "dot",
+																	"interval": 10,
+																	"size": 1
 																}
 															]
 														}
@@ -845,612 +840,17 @@
 														}
 													}
 												},
+											{
+												"page": 14
+												},
 												{
-													"page": 15,
-													"library": "Leaflet",
-													"mapOptions": {
-														"legend": true,
-														"resetButton": true,
-														"center": [
-															38.5,
-															-98.5
-														],
-														"zoom": 6,
-														"minZoom": 5,
-														"maxZoom": 18,
-														"maxBounds": [
-															[
-																43,
-																-110
-															],
-															[
-																30,
-																-90
-															]
-														]
-													},
-													"baseLayers": [
-															{
-																"name": "Basemap",
-																"source": "https://api.mapbox.com/styles/v1/vinckl/cis7x179a0030gkno43r6lvv8/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
-															}
-														],
-														"dataLayers": [
-															{
-																"name": "Salad tweets",
-																"source": "data/countiesall.geojson",
-																"expressedAttribute": "Salad",
-																"displayAttributes": [
-																	"NAME10"
-																],
-																"layerOptions": {
-															"fillOpacity": 0.8,
-															"color": "black",
-															"weight": 0.5,
-															"opacity": 1
-														},
-																"renderOnLoad": true,
-																"techniques": [
-																	{
-																		"type": "dot",
-																		"interval": 10,
-																		"size": 1
-																	}
-																]
-															}
-														],
-														"interactions": {
-															"zoom": {
-																"logging": true,
-																"toggle": false,
-																"interface": {
-																	"touch": true,
-																	"scrollWheel": true,
-																	"doubleClick": true,
-																	"box": true,
-																	"keyboard": true,
-																	"widget": false
-																}
-															},
-															"pan": {
-																"logging": true,
-																"toggle": false,
-																"interface": {
-																	"drag": true,
-																	"keyboard": true,
-																	"widget": false
-																}
-															},
-															"sequence": {
-																"dataLayers": [
-																	"MapTest"
-																]
-															}
-														}
+													"page": 15
 													},
 													{
-														"page": 16,
-														"library": "Leaflet",
-														"mapOptions": {
-															"legend": true,
-															"resetButton": true,
-															"center": [
-																38.5,
-																-98.5
-															],
-															"zoom": 6,
-															"minZoom": 5,
-															"maxZoom": 18,
-															"maxBounds": [
-																[
-																	43,
-																	-110
-																],
-																[
-																	30,
-																	-90
-																]
-															]
-														},
-														"baseLayers": [
-																{
-																	"name": "Basemap",
-																	"source": "https://api.mapbox.com/styles/v1/vinckl/cis98z43a002u2xoa5i3qu52n/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
-																}
-															],
-															"dataLayers": [
-																{
-																	"name": "Glove tweets",
-																	"source": "data/countiesall.geojson",
-																	"expressedAttribute": "Gloves",
-																	"displayAttributes": [
-																		"NAME10"
-																	],
-																	"layerOptions": {
-																"fillOpacity": 0.8,
-																"color": "black",
-																"weight": 0.5,
-																"opacity": 1
-															},
-																	"renderOnLoad": true,
-																	"techniques": [
-																		{
-																			"type": "choropleth",
-																			"classification": "equal interval",
-																			"classes": "BuGn.5"
-																		}
-																	]
-																}
-															],
-															"interactions": {
-																"zoom": {
-																	"logging": true,
-																	"toggle": false,
-																	"interface": {
-																		"touch": true,
-																		"scrollWheel": true,
-																		"doubleClick": true,
-																		"box": true,
-																		"keyboard": true,
-																		"widget": false
-																	}
-																},
-																"pan": {
-																	"logging": true,
-																	"toggle": false,
-																	"interface": {
-																		"drag": true,
-																		"keyboard": true,
-																		"widget": false
-																	}
-																},
-																"sequence": {
-																	"dataLayers": [
-																		"MapTest"
-																	]
-																}
-															}
+														"page": 16
 														},
 														{
-															"page": 17,
-															"library": "Leaflet",
-															"mapOptions": {
-																"legend": true,
-																"resetButton": true,
-																"center": [
-																	38.5,
-																	-98.5
-																],
-																"zoom": 6,
-																"minZoom": 5,
-																"maxZoom": 18,
-																"maxBounds": [
-																	[
-																		43,
-																		-110
-																	],
-																	[
-																		30,
-																		-90
-																	]
-																]
-															},
-															"baseLayers": [
-																	{
-																		"name": "Basemap",
-																		"source": "https://api.mapbox.com/styles/v1/vinckl/cis7x179a0030gkno43r6lvv8/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
-																	}
-																],
-																"dataLayers": [
-																	{
-																		"name": "Movie tweets",
-																		"source": "data/countiesall.geojson",
-																		"expressedAttribute": "Movies",
-																		"displayAttributes": [
-																			"NAME10"
-																		],
-																		"layerOptions": {
-																	"fillOpacity": 0.8,
-																	"color": "black",
-																	"weight": 0.5,
-																	"opacity": 1
-																},
-																		"renderOnLoad": true,
-																		"techniques": [
-																			{
-																				"type": "proportional symbol",
-																				"classification": "equal interval",
-																				"classes": [
-																					5,
-																					20
-																				]
-																			}
-																		]
-																	}
-																],
-																"interactions": {
-																	"zoom": {
-																		"logging": true,
-																		"toggle": false,
-																		"interface": {
-																			"touch": true,
-																			"scrollWheel": true,
-																			"doubleClick": true,
-																			"box": true,
-																			"keyboard": true,
-																			"widget": false
-																		}
-																	},
-																	"pan": {
-																		"logging": true,
-																		"toggle": false,
-																		"interface": {
-																			"drag": true,
-																			"keyboard": true,
-																			"widget": false
-																		}
-																	},
-																	"sequence": {
-																		"dataLayers": [
-																			"MapTest"
-																		]
-																	}
-																}
-															},
-															{
-																"page": 18
-															},
-															{
-																"page": 19,
-																"library": "Leaflet",
-																"mapOptions": {
-																	"legend": true,
-																	"resetButton": true,
-																	"center": [
-																		38.5,
-																		-98.5
-																	],
-																	"zoom": 6,
-																	"minZoom": 5,
-																	"maxZoom": 18,
-																	"maxBounds": [
-																		[
-																			43,
-																			-110
-																		],
-																		[
-																			30,
-																			-90
-																		]
-																	]
-																},
-																"baseLayers": [
-																		{
-																			"name": "Basemap",
-																			"source": "https://api.mapbox.com/styles/v1/vinckl/cis7x179a0030gkno43r6lvv8/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
-																		}
-																	],
-																	"dataLayers": [
-																		{
-																			"name": "Hat tweets",
-																			"source": "data/countiesall.geojson",
-																			"expressedAttribute": "Hats",
-																			"displayAttributes": [
-																				"NAME10"
-																			],
-																			"layerOptions": {
-																		"fillOpacity": 0.8,
-																		"color": "black",
-																		"weight": 0.5,
-																		"opacity": 1
-																	},
-																			"renderOnLoad": true,
-																			"techniques": [
-																				{
-																					"type": "proportional symbol",
-																					"classification": "equal interval",
-																					"classes": [
-																						5,
-																						20
-																					]
-																				}
-																			]
-																		}
-																	],
-																	"interactions": {
-																		"zoom": {
-																			"logging": true,
-																			"toggle": false,
-																			"interface": {
-																				"touch": true,
-																				"scrollWheel": true,
-																				"doubleClick": true,
-																				"box": true,
-																				"keyboard": true,
-																				"widget": false
-																			}
-																		},
-																		"pan": {
-																			"logging": true,
-																			"toggle": false,
-																			"interface": {
-																				"drag": true,
-																				"keyboard": true,
-																				"widget": false
-																			}
-																		},
-																		"sequence": {
-																			"dataLayers": [
-																				"MapTest"
-																			]
-																		}
-																	}
-																},
-																{
-																	"page": 20,
-																	"library": "Leaflet",
-																	"mapOptions": {
-																		"legend": true,
-																		"resetButton": true,
-																		"center": [
-																			38.5,
-																			-98.5
-																		],
-																		"zoom": 6,
-																		"minZoom": 5,
-																		"maxZoom": 18,
-																		"maxBounds": [
-																			[
-																				43,
-																				-110
-																			],
-																			[
-																				30,
-																				-90
-																			]
-																		]
-																	},
-																	"baseLayers": [
-																			{
-																				"name": "Basemap",
-																				"source": "https://api.mapbox.com/styles/v1/vinckl/cis98z43a002u2xoa5i3qu52n/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
-																			}
-																		],
-																		"dataLayers": [
-																			{
-																				"name": "Coffee tweets",
-																				"source": "data/countiesall.geojson",
-																				"expressedAttribute": "Coffee",
-																				"displayAttributes": [
-																					"NAME10"
-																				],
-																				"layerOptions": {
-																			"fillOpacity": 0.8,
-																			"color": "black",
-																			"weight": 0.5,
-																			"opacity": 1
-																		},
-																				"renderOnLoad": true,
-																				"techniques": [
-																					{
-																						"type": "choropleth",
-																						"classification": "equal interval",
-																						"classes": "BuGn.5"
-																					}
-																				]
-																			}
-																		],
-																		"interactions": {
-																			"zoom": {
-																				"logging": true,
-																				"toggle": false,
-																				"interface": {
-																					"touch": true,
-																					"scrollWheel": true,
-																					"doubleClick": true,
-																					"box": true,
-																					"keyboard": true,
-																					"widget": false
-																				}
-																			},
-																			"pan": {
-																				"logging": true,
-																				"toggle": false,
-																				"interface": {
-																					"drag": true,
-																					"keyboard": true,
-																					"widget": false
-																				}
-																			},
-																			"sequence": {
-																				"dataLayers": [
-																					"MapTest"
-																				]
-																			}
-																		}
-																	},
-																	{
-																		"page": 21,
-																		"library": "Leaflet",
-																		"mapOptions": {
-																			"legend": true,
-																			"resetButton": true,
-																			"center": [
-																				38.5,
-																				-98.5
-																			],
-																			"zoom": 6,
-																			"minZoom": 5,
-																			"maxZoom": 18,
-																			"maxBounds": [
-																				[
-																					43,
-																					-110
-																				],
-																				[
-																					30,
-																					-90
-																				]
-																			]
-																		},
-																		"baseLayers": [
-																				{
-																					"name": "Basemap",
-																					"source": "https://api.mapbox.com/styles/v1/vinckl/cis7x179a0030gkno43r6lvv8/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
-																				}
-																			],
-																			"dataLayers": [
-																				{
-																					"name": "Tennis tweets",
-																					"source": "data/countiesall.geojson",
-																					"expressedAttribute": "Tennis",
-																					"displayAttributes": [
-																						"NAME10"
-																					],
-																					"layerOptions": {
-																				"fillOpacity": 0.8,
-																				"color": "black",
-																				"weight": 0.5,
-																				"opacity": 1
-																			},
-																					"renderOnLoad": true,
-																					"techniques": [
-																						{
-																							"type": "dot",
-																							"interval": 10,
-																							"size": 1
-																						}
-																					]
-																				}
-																			],
-																			"interactions": {
-																				"zoom": {
-																					"logging": true,
-																					"toggle": false,
-																					"interface": {
-																						"touch": true,
-																						"scrollWheel": true,
-																						"doubleClick": true,
-																						"box": true,
-																						"keyboard": true,
-																						"widget": false
-																					}
-																				},
-																				"pan": {
-																					"logging": true,
-																					"toggle": false,
-																					"interface": {
-																						"drag": true,
-																						"keyboard": true,
-																						"widget": false
-																					}
-																				},
-																				"sequence": {
-																					"dataLayers": [
-																						"MapTest"
-																					]
-																				}
-																			}
-																		},
-																		{
-																			"page": 22,
-																			"library": "Leaflet",
-																			"mapOptions": {
-																				"legend": true,
-																				"resetButton": true,
-																				"center": [
-																					38.5,
-																					-98.5
-																				],
-																				"zoom": 6,
-																				"minZoom": 5,
-																				"maxZoom": 18,
-																				"maxBounds": [
-																					[
-																						43,
-																						-110
-																					],
-																					[
-																						30,
-																						-90
-																					]
-																				]
-																			},
-																			"baseLayers": [
-																					{
-																						"name": "Basemap",
-																						"source": "https://api.mapbox.com/styles/v1/vinckl/cis7x179a0030gkno43r6lvv8/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
-																					}
-																				],
-																				"dataLayers": [
-																					{
-																						"name": "Music tweets",
-																						"source": "data/countiesall.geojson",
-																						"expressedAttribute": "Music",
-																						"displayAttributes": [
-																							"NAME10"
-																						],
-																						"layerOptions": {
-																					"fillOpacity": 0.8,
-																					"color": "black",
-																					"weight": 0.5,
-																					"opacity": 1
-																				},
-																						"renderOnLoad": true,
-																						"techniques": [
-																							{
-																								"type": "heat",
-																								"size": 0.7
-																							}
-																						]
-																					}
-																				],
-																				"interactions": {
-																					"zoom": {
-																						"logging": true,
-																						"toggle": false,
-																						"interface": {
-																							"touch": true,
-																							"scrollWheel": true,
-																							"doubleClick": true,
-																							"box": true,
-																							"keyboard": true,
-																							"widget": false
-																						}
-																					},
-																					"pan": {
-																						"logging": true,
-																						"toggle": false,
-																						"interface": {
-																							"drag": true,
-																							"keyboard": true,
-																							"widget": false
-																						}
-																					},
-																					"sequence": {
-																						"dataLayers": [
-																							"MapTest"
-																						]
-																					}
-																				}
-																			},
-																			{
-																				"page": 23
-																			},
-		{
-			"page": 24
-		},
-		{
-			"page": 25
-		},
-		{
-			"page": 26
-		},
-		{
-			"page": 27
-		},
-		{
-			"page": 28
-		}
+															"page": 17
+															}
 	]
 }
