@@ -10,7 +10,7 @@
 {"type":"Feature","geometry":{"type":"Point","coordinates":[-101.0524,39.3958]},"properties":{"city":"Colby","lat":39.3958,"long":-101.0524}},
 {"type":"Feature","geometry":{"type":"Point","coordinates":[-101.7102,39.3508]},"properties":{"city":"Goodland","lat":39.3508,"long":-101.7102}},
 {"type":"Feature","geometry":{"type":"Point","coordinates":[-101.7521,38.8978]},"properties":{"city":"Sharon Springs","lat":38.8978,"long":-101.7521}},
-{"type":"Feature","geometry":{"type":"Point","coordinates":[-100.848,39.1271]},"properties":{"city":"Oakley","lat":39.1271,"long":-100.848}},
+{"type":"Feature","geometry":{"type":"Point","coordinates":[-101.2443,39.0633]},"properties":{"city":"Winona","lat":39.0633,"long":-101.2443}},
 {"type":"Feature","geometry":{"type":"Point","coordinates":[-100.4878,38.959]},"properties":{"city":"Gove","lat":38.959,"long":-100.4878}},
 {"type":"Feature","geometry":{"type":"Point","coordinates":[-99.8796,39.025]},"properties":{"city":"WaKeeney","lat":39.025,"long":-99.8796}},
 {"type":"Feature","geometry":{"type":"Point","coordinates":[-99.3268,38.8792]},"properties":{"city":"Hays","lat":38.8792,"long":-99.3268}},

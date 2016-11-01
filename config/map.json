@@ -33,7 +33,7 @@
 			"baseLayers": [
 					{
 						"name": "Basemap",
-						"source": "https://api.mapbox.com/styles/v1/vinckl/ciuzu88xr00it2io4dyrwoxph/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+						"source": "https://api.mapbox.com/styles/v1/vinckl/cityvzq8p00882inzeisk6o24/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 					}
 				],
 				"dataLayers": [
