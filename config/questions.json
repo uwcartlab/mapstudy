@@ -84,10 +84,10 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "A (4)"
+										"text": "Winona"
 									},
 									{
-										"text": "B (2)"
+										"text": "WaKeeney"
 									}
 								]
 							}
@@ -101,13 +101,13 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "E (4)"
+										"text": "Leoti"
 									},
 									{
-										"text": "D (3)"
+										"text": "Hill City"
 									},
 									{
-										"text": "C (2)"
+										"text": "WaKeeney"
 									}
 								]
 							}
@@ -172,10 +172,10 @@
 								"autoadvance": true,
 								"options": [
 									{
-										"text": "A (4)"
+										"text": "Colby"
 									},
 									{
-										"text": "B (2)"
+										"text": "WaKeeney"
 									}
 								]
 							}
@@ -189,13 +189,13 @@
 								"autoadvance": true,
 								"options": [
 									{
-										"text": "E (4)"
+										"text": "Leoti"
 									},
 									{
-										"text": "D (3)"
+										"text": "Ness City"
 									},
 									{
-										"text": "C (2)"
+										"text": "WaKeeney"
 									}
 								]
 							}
@@ -346,10 +346,10 @@
 								"autoadvance": true,
 								"options": [
 									{
-										"text": "A (4)"
+										"text": "Dighton"
 									},
 									{
-										"text": "B (2)"
+										"text": "Ness City"
 									}
 								]
 							}
@@ -363,13 +363,13 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "E (4)"
+										"text": "Leoti"
 									},
 									{
-										"text": "D (3)"
+										"text": "Dighton"
 									},
 									{
-										"text": "C (2)"
+										"text": "Ness City"
 									}
 								]
 							}
@@ -496,10 +496,10 @@
 								"autoadvance": true,
 								"options": [
 									{
-										"text": "A (4)"
+										"text": "Dighton"
 									},
 									{
-										"text": "B (2)"
+										"text": "Hill City"
 									}
 								]
 							}
@@ -513,13 +513,13 @@
 								"autoadvance": true,
 								"options": [
 									{
-										"text": "E (4)"
+										"text": "Dighton"
 									},
 									{
-										"text": "D (3)"
+										"text": "Leoti"
 									},
 									{
-										"text": "C (2)"
+										"text": "Hill City"
 									}
 								]
 							}
@@ -672,10 +672,10 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "A (4)"
+										"text": "Dighton"
 									},
 									{
-										"text": "B (2)"
+										"text": "Colby"
 									}
 								]
 							}
@@ -689,13 +689,13 @@
 								"autoadvance": true,
 								"options": [
 									{
-										"text": "E (4)"
+										"text": "Dighton"
 									},
 									{
-										"text": "D (3)"
+										"text": "Winona"
 									},
 									{
-										"text": "C (2)"
+										"text": "Colby"
 									}
 								]
 							}
@@ -759,10 +759,10 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "A (4)"
+										"text": "Winona"
 									},
 									{
-										"text": "B (2)"
+										"text": "Leoti"
 									}
 								]
 							}
@@ -782,7 +782,7 @@
 										"text": "D (3)"
 									},
 									{
-										"text": "C (2)"
+										"text": "WaKeeney"
 									}
 								]
 							}
@@ -997,10 +997,10 @@
 									"type": "radios",
 									"options": [
 										{
-											"text": "A (4)"
+											"text": "Dighton"
 										},
 										{
-											"text": "B (2)"
+											"text": "WaKeeney"
 										}
 									]
 								}
@@ -1014,13 +1014,13 @@
 									"type": "radios",
 									"options": [
 										{
-											"text": "E (4)"
+											"text": "Dighton"
 										},
 										{
-											"text": "D (3)"
+											"text": "Hill City"
 										},
 										{
-											"text": "C (2)"
+											"text": "WaKeeney"
 										}
 									]
 								}
@@ -1104,7 +1104,7 @@
 											"text": "E (4)"
 										},
 										{
-											"text": "D (3)"
+											"text": "Winona"
 										},
 										{
 											"text": "C (2)"
