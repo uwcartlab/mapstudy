@@ -98,10 +98,11 @@
 							"layerOptions": {
 						"fillOpacity": 0.8,
 						"color": "black",
-						"weight": 0.5,
+						"weight": 0.2,
 						"opacity": 1,
 						"minZoom": 10,
-						"maxZoom": 11
+						"maxZoom": 11,
+						"dashArray": "5, 5"
 						},
 							"renderOnLoad": true,
 							"techniques": [
@@ -275,10 +276,11 @@
 							"layerOptions": {
 						"fillOpacity": 0.8,
 						"color": "black",
-						"weight": 0.5,
+						"weight": 0.2,
 						"opacity": 1,
 						"minZoom": 10,
-						"maxZoom": 11
+						"maxZoom": 11,
+						"dashArray": "5, 5"
 						},
 							"renderOnLoad": true,
 							"techniques": [
@@ -382,7 +384,7 @@
 					"baseLayers": [
 							{
 								"name": "Basemap",
-								"source": "https://api.mapbox.com/styles/v1/vinckl/ciuzu88xr00it2io4dyrwoxph/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+								"source": "https://api.mapbox.com/styles/v1/vinckl/civ2hghwg000y2in0l8mqk343/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 							}
 						],
 						"dataLayers": [
@@ -446,6 +448,31 @@
 									}
 								]
 							},
+							{
+								"name": "Example Map",
+								"source": "data/detailsdata.geojson",
+								"expressedAttribute": "county_t_1",
+								"displayAttributes": [
+									"NAME10"
+								],
+								"layerOptions": {
+							"fillOpacity": 0.8,
+							"color": "black",
+							"weight": 0.2,
+							"opacity": 1,
+							"fillOpacity": 0,
+							"minZoom": 6,
+							"maxZoom": 11,
+							"dashArray": "5, 5"
+							},
+								"renderOnLoad": true,
+								"techniques": [
+									{
+										"type": "choropleth",
+										"classification": "equal interval",
+										"classes": "BuGn.5"
+									}
+								]},
 							{
 								"name": "Example Map",
 								"source": "data/maptest.geojson",
@@ -525,7 +552,7 @@
 						"baseLayers": [
 								{
 									"name": "Basemap",
-									"source": "https://api.mapbox.com/styles/v1/vinckl/ciuzu88xr00it2io4dyrwoxph/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+									"source": "https://api.mapbox.com/styles/v1/vinckl/civ2hghwg000y2in0l8mqk343/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 								}
 							],
 							"dataLayers": [
@@ -575,6 +602,31 @@
 										}
 									]
 								},
+								{
+									"name": "Example Map",
+									"source": "data/detailsdata.geojson",
+									"expressedAttribute": "county_t_1",
+									"displayAttributes": [
+										"NAME10"
+									],
+									"layerOptions": {
+								"fillOpacity": 0.8,
+								"color": "black",
+								"weight": 0.2,
+								"opacity": 1,
+								"fillOpacity": 0,
+								"minZoom": 6,
+								"maxZoom": 11,
+								"dashArray": "5, 5"
+								},
+									"renderOnLoad": true,
+									"techniques": [
+										{
+											"type": "choropleth",
+											"classification": "equal interval",
+											"classes": "BuGn.5"
+										}
+									]},
 							{
 								"name": "Example Map",
 								"source": "data/maptest.geojson",
@@ -653,7 +705,7 @@
 							"baseLayers": [
 									{
 										"name": "Basemap",
-										"source": "https://api.mapbox.com/styles/v1/vinckl/ciuzu88xr00it2io4dyrwoxph/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+										"source": "https://api.mapbox.com/styles/v1/vinckl/civ2hghwg000y2in0l8mqk343/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 									}
 								],
 								"dataLayers": [
@@ -681,6 +733,31 @@
 											}
 										]
 									},
+									{
+										"name": "Example Map",
+										"source": "data/detailsdata.geojson",
+										"expressedAttribute": "county_t_1",
+										"displayAttributes": [
+											"NAME10"
+										],
+										"layerOptions": {
+									"fillOpacity": 0.8,
+									"color": "black",
+									"weight": 0.2,
+									"opacity": 1,
+									"fillOpacity": 0,
+									"minZoom": 6,
+									"maxZoom": 11,
+									"dashArray": "5, 5"
+									},
+										"renderOnLoad": true,
+										"techniques": [
+											{
+												"type": "choropleth",
+												"classification": "equal interval",
+												"classes": "BuGn.5"
+											}
+										]},
 									{
 										"name": "Nightlife tweets",
 										"source": "data/detailsdata.geojson",
@@ -786,7 +863,7 @@
 								"baseLayers": [
 										{
 											"name": "Basemap",
-											"source": "https://api.mapbox.com/styles/v1/vinckl/ciuzu88xr00it2io4dyrwoxph/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+											"source": "https://api.mapbox.com/styles/v1/vinckl/civ2hghwg000y2in0l8mqk343/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 										}
 									],
 									"dataLayers": [
@@ -838,6 +915,31 @@
 												}
 											]
 										},
+										{
+											"name": "Example Map",
+											"source": "data/detailsdata.geojson",
+											"expressedAttribute": "county_t_1",
+											"displayAttributes": [
+												"NAME10"
+											],
+											"layerOptions": {
+										"fillOpacity": 0.8,
+										"color": "black",
+										"weight": 0.2,
+										"opacity": 1,
+										"fillOpacity": 0,
+										"minZoom": 6,
+										"maxZoom": 11,
+										"dashArray": "5, 5"
+										},
+											"renderOnLoad": true,
+											"techniques": [
+												{
+													"type": "choropleth",
+													"classification": "equal interval",
+													"classes": "BuGn.5"
+												}
+											]},
 										{
 											"name": "Example Map",
 											"source": "data/maptest.geojson",
@@ -916,7 +1018,7 @@
 									"baseLayers": [
 											{
 												"name": "Basemap",
-												"source": "https://api.mapbox.com/styles/v1/vinckl/ciuzu88xr00it2io4dyrwoxph/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+												"source": "https://api.mapbox.com/styles/v1/vinckl/civ2hghwg000y2in0l8mqk343/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 											}
 										],
 										"dataLayers": [
@@ -966,6 +1068,31 @@
 												}
 											]
 										},
+										{
+											"name": "Example Map",
+											"source": "data/detailsdata.geojson",
+											"expressedAttribute": "county_t_1",
+											"displayAttributes": [
+												"NAME10"
+											],
+											"layerOptions": {
+										"fillOpacity": 0.8,
+										"color": "black",
+										"weight": 0.2,
+										"opacity": 1,
+										"fillOpacity": 0,
+										"minZoom": 6,
+										"maxZoom": 11,
+										"dashArray": "5, 5"
+										},
+											"renderOnLoad": true,
+											"techniques": [
+												{
+													"type": "choropleth",
+													"classification": "equal interval",
+													"classes": "BuGn.5"
+												}
+											]},
 									{
 										"name": "Example Map",
 										"source": "data/maptest.geojson",
@@ -1044,7 +1171,7 @@
 										"baseLayers": [
 												{
 													"name": "Basemap",
-													"source": "https://api.mapbox.com/styles/v1/vinckl/ciuzu88xr00it2io4dyrwoxph/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+													"source": "https://api.mapbox.com/styles/v1/vinckl/civ2hghwg000y2in0l8mqk343/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 												}
 											],
 											"dataLayers": [
@@ -1109,6 +1236,31 @@
 													}
 												]
 											},
+											{
+												"name": "Example Map",
+												"source": "data/detailsdata.geojson",
+												"expressedAttribute": "county_t_1",
+												"displayAttributes": [
+													"NAME10"
+												],
+												"layerOptions": {
+											"fillOpacity": 0.8,
+											"color": "black",
+											"weight": 0.2,
+											"opacity": 1,
+											"fillOpacity": 0,
+											"minZoom": 6,
+											"maxZoom": 11,
+											"dashArray": "5, 5"
+											},
+												"renderOnLoad": true,
+												"techniques": [
+													{
+														"type": "choropleth",
+														"classification": "equal interval",
+														"classes": "BuGn.5"
+													}
+												]},
 											{
 												"name": "Example Map",
 												"source": "data/maptest.geojson",
@@ -1252,10 +1404,11 @@
 														"layerOptions": {
 													"fillOpacity": 0.8,
 													"color": "black",
-													"weight": 0.5,
+													"weight": 0.2,
 													"opacity": 1,
 													"minZoom": 10,
-													"maxZoom": 11
+													"maxZoom": 11,
+													"dashArray": "5, 5"
 													},
 														"renderOnLoad": true,
 														"techniques": [
@@ -1369,7 +1522,7 @@
 												"baseLayers": [
 														{
 															"name": "Basemap",
-															"source": "https://api.mapbox.com/styles/v1/vinckl/ciuzu88xr00it2io4dyrwoxph/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+															"source": "https://api.mapbox.com/styles/v1/vinckl/civ2hghwg000y2in0l8mqk343/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 														}
 													],
 													"dataLayers": [
@@ -1419,6 +1572,31 @@
 																}
 															]
 														},
+														{
+															"name": "Example Map",
+															"source": "data/detailsdata.geojson",
+															"expressedAttribute": "county_t_1",
+															"displayAttributes": [
+																"NAME10"
+															],
+															"layerOptions": {
+														"fillOpacity": 0.8,
+														"color": "black",
+														"weight": 0.2,
+														"opacity": 1,
+														"fillOpacity": 0,
+														"minZoom": 6,
+														"maxZoom": 11,
+														"dashArray": "5, 5"
+														},
+															"renderOnLoad": true,
+															"techniques": [
+																{
+																	"type": "choropleth",
+																	"classification": "equal interval",
+																	"classes": "BuGn.5"
+																}
+															]},
 													{
 														"name": "Example Map",
 														"source": "data/maptest.geojson",
@@ -1497,7 +1675,7 @@
 													"baseLayers": [
 															{
 																"name": "Basemap",
-																"source": "https://api.mapbox.com/styles/v1/vinckl/ciuzu88xr00it2io4dyrwoxph/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+																"source": "https://api.mapbox.com/styles/v1/vinckl/civ2hghwg000y2in0l8mqk343/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 															}
 														],
 														"dataLayers": [
@@ -1525,6 +1703,31 @@
 																	}
 																]
 															},
+															{
+																"name": "Example Map",
+																"source": "data/detailsdata.geojson",
+																"expressedAttribute": "county_t_1",
+																"displayAttributes": [
+																	"NAME10"
+																],
+																"layerOptions": {
+															"fillOpacity": 0.8,
+															"color": "black",
+															"weight": 0.2,
+															"opacity": 1,
+															"fillOpacity": 0,
+															"minZoom": 6,
+															"maxZoom": 11,
+															"dashArray": "5, 5"
+															},
+																"renderOnLoad": true,
+																"techniques": [
+																	{
+																		"type": "choropleth",
+																		"classification": "equal interval",
+																		"classes": "BuGn.5"
+																	}
+																]},
 															{
 																"name": "Nightlife tweets",
 																"source": "data/detailsdata.geojson",
@@ -1691,10 +1894,11 @@
 																	"layerOptions": {
 																"fillOpacity": 0.8,
 																"color": "black",
-																"weight": 0.5,
+																"weight": 0.2,
 																"opacity": 1,
 																"minZoom": 10,
-																"maxZoom": 11
+																"maxZoom": 11,
+																"dashArray": "5, 5"
 																},
 																	"renderOnLoad": true,
 																	"techniques": [
@@ -1803,7 +2007,7 @@
 															"baseLayers": [
 																	{
 																		"name": "Basemap",
-																		"source": "https://api.mapbox.com/styles/v1/vinckl/ciuzu88xr00it2io4dyrwoxph/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+																		"source": "https://api.mapbox.com/styles/v1/vinckl/civ2hghwg000y2in0l8mqk343/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 																	}
 																],
 																"dataLayers": [
@@ -1868,6 +2072,31 @@
 																		}
 																	]
 																},
+																{
+																	"name": "Example Map",
+																	"source": "data/detailsdata.geojson",
+																	"expressedAttribute": "county_t_1",
+																	"displayAttributes": [
+																		"NAME10"
+																	],
+																	"layerOptions": {
+																"fillOpacity": 0.8,
+																"color": "black",
+																"weight": 0.2,
+																"opacity": 1,
+																"fillOpacity": 0,
+																"minZoom": 6,
+																"maxZoom": 11,
+																"dashArray": "5, 5"
+																},
+																	"renderOnLoad": true,
+																	"techniques": [
+																		{
+																			"type": "choropleth",
+																			"classification": "equal interval",
+																			"classes": "BuGn.5"
+																		}
+																	]},
 																{
 																	"name": "Example Map",
 																	"source": "data/maptest.geojson",
@@ -1949,7 +2178,7 @@
 																"baseLayers": [
 																		{
 																			"name": "Basemap",
-																			"source": "https://api.mapbox.com/styles/v1/vinckl/ciuzu88xr00it2io4dyrwoxph/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+																			"source": "https://api.mapbox.com/styles/v1/vinckl/civ2hghwg000y2in0l8mqk343/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 																		}
 																	],
 																	"dataLayers": [
@@ -2014,6 +2243,31 @@
 																			}
 																		]
 																	},
+																	{
+																		"name": "Example Map",
+																		"source": "data/detailsdata.geojson",
+																		"expressedAttribute": "county_t_1",
+																		"displayAttributes": [
+																			"NAME10"
+																		],
+																		"layerOptions": {
+																	"fillOpacity": 0.8,
+																	"color": "black",
+																	"weight": 0.2,
+																	"opacity": 1,
+																	"fillOpacity": 0,
+																	"minZoom": 6,
+																	"maxZoom": 11,
+																	"dashArray": "5, 5"
+																	},
+																		"renderOnLoad": true,
+																		"techniques": [
+																			{
+																				"type": "choropleth",
+																				"classification": "equal interval",
+																				"classes": "BuGn.5"
+																			}
+																		]},
 																	{
 																		"name": "Example Map",
 																		"source": "data/maptest.geojson",
@@ -2156,10 +2410,11 @@
 																				"layerOptions": {
 																			"fillOpacity": 0.8,
 																			"color": "black",
-																			"weight": 0.5,
+																			"weight": 0.2,
 																			"opacity": 1,
 																			"minZoom": 10,
-																			"maxZoom": 11
+																			"maxZoom": 11,
+																			"dashArray": "5, 5"
 																			},
 																				"renderOnLoad": true,
 																				"techniques": [
@@ -2269,7 +2524,7 @@
 																		"baseLayers": [
 																				{
 																					"name": "Basemap",
-																					"source": "https://api.mapbox.com/styles/v1/vinckl/ciuzu88xr00it2io4dyrwoxph/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+																					"source": "https://api.mapbox.com/styles/v1/vinckl/civ2hghwg000y2in0l8mqk343/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 																				}
 																			],
 																			"dataLayers": [
@@ -2321,6 +2576,31 @@
 																						}
 																					]
 																				},
+																				{
+																					"name": "Example Map",
+																					"source": "data/detailsdata.geojson",
+																					"expressedAttribute": "county_t_1",
+																					"displayAttributes": [
+																						"NAME10"
+																					],
+																					"layerOptions": {
+																				"fillOpacity": 0.8,
+																				"color": "black",
+																				"weight": 0.2,
+																				"opacity": 1,
+																				"fillOpacity": 0,
+																				"minZoom": 6,
+																				"maxZoom": 11,
+																				"dashArray": "5, 5"
+																				},
+																					"renderOnLoad": true,
+																					"techniques": [
+																						{
+																							"type": "choropleth",
+																							"classification": "equal interval",
+																							"classes": "BuGn.5"
+																						}
+																					]},
 																				{
 																					"name": "Example Map",
 																					"source": "data/maptest.geojson",
@@ -2399,7 +2679,7 @@
 																			"baseLayers": [
 																					{
 																						"name": "Basemap",
-																						"source": "https://api.mapbox.com/styles/v1/vinckl/ciuzu88xr00it2io4dyrwoxph/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+																						"source": "https://api.mapbox.com/styles/v1/vinckl/civ2hghwg000y2in0l8mqk343/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 																					}
 																				],
 																				"dataLayers": [
@@ -2449,6 +2729,31 @@
 																							}
 																						]
 																					},
+																					{
+																						"name": "Example Map",
+																						"source": "data/detailsdata.geojson",
+																						"expressedAttribute": "county_t_1",
+																						"displayAttributes": [
+																							"NAME10"
+																						],
+																						"layerOptions": {
+																					"fillOpacity": 0.8,
+																					"color": "black",
+																					"weight": 0.2,
+																					"opacity": 1,
+																					"fillOpacity": 0,
+																					"minZoom": 6,
+																					"maxZoom": 11,
+																					"dashArray": "5, 5"
+																					},
+																						"renderOnLoad": true,
+																						"techniques": [
+																							{
+																								"type": "choropleth",
+																								"classification": "equal interval",
+																								"classes": "BuGn.5"
+																							}
+																						]},
 																				{
 																					"name": "Example Map",
 																					"source": "data/maptest.geojson",
