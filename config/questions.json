@@ -209,10 +209,10 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "A (4)"
+										"text": "Trego County"
 									},
 									{
-										"text": "B (2)"
+										"text": "Lane County"
 									}
 								]
 							}
@@ -226,13 +226,13 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "C (4)"
+										"text": "Trego County"
 									},
 									{
-										"text": "B (3)"
+										"text": "Sheridan County"
 									},
 									{
-										"text": "A (2)"
+										"text": "Graham County"
 									}
 								]
 							}
@@ -383,10 +383,10 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "A (4)"
+										"text": "Graham County"
 									},
 									{
-										"text": "B (2)"
+										"text": "Logan County"
 									}
 								]
 							}
@@ -400,13 +400,13 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "C (4)"
+										"text": "Thomas County"
 									},
 									{
-										"text": "B (3)"
+										"text": "Sheridan County"
 									},
 									{
-										"text": "A (2)"
+										"text": "Logan County"
 									}
 								]
 							}
@@ -533,10 +533,10 @@
 								"autoadvance": true,
 								"options": [
 									{
-										"text": "A (4)"
+										"text": "Graham County"
 									},
 									{
-										"text": "B (2)"
+										"text": "Trego County"
 									}
 								]
 							}
@@ -551,13 +551,13 @@
 								"autoadvance": true,
 								"options": [
 									{
-										"text": "C (4)"
+										"text": "Logan County"
 									},
 									{
-										"text": "B (3)"
+										"text": "Wichita County"
 									},
 									{
-										"text": "A (2)"
+										"text": "Trego County"
 									}
 								]
 							}
@@ -709,10 +709,10 @@
 								"autoadvance": true,
 								"options": [
 									{
-										"text": "A (4)"
+										"text": "Lane county"
 									},
 									{
-										"text": "B (2)"
+										"text": "Thomas County"
 									}
 								]
 							}
@@ -726,13 +726,13 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "C (4)"
+										"text": "Lane County"
 									},
 									{
-										"text": "B (3)"
+										"text": "Sheridan County"
 									},
 									{
-										"text": "A (2)"
+										"text": "Graham County"
 									}
 								]
 							}
@@ -776,7 +776,7 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "E (4)"
+										"text": "Hoxie"
 									},
 									{
 										"text": "D (3)"
@@ -1034,10 +1034,10 @@
 									"type": "radios",
 									"options": [
 										{
-											"text": "A (4)"
+											"text": "Lane County"
 										},
 										{
-											"text": "B (2)"
+											"text": "Logan County"
 										}
 									]
 								}
@@ -1051,13 +1051,13 @@
 									"type": "radios",
 									"options": [
 										{
-											"text": "C (4)"
+											"text": "Scott County"
 										},
 										{
-											"text": "B (3)"
+											"text": "Graham County"
 										},
 										{
-											"text": "A (2)"
+											"text": "Trego County"
 										}
 									]
 								}
@@ -1084,10 +1084,10 @@
 									"autoadvance": true,
 									"options": [
 										{
-											"text": "A (4)"
+											"text": "Dighton"
 										},
 										{
-											"text": "B (2)"
+											"text": "Leoti"
 										}
 									]
 								}
@@ -1101,13 +1101,13 @@
 									"type": "radios",
 									"options": [
 										{
-											"text": "E (4)"
+											"text": "Dighton"
 										},
 										{
 											"text": "Winona"
 										},
 										{
-											"text": "C (2)"
+											"text": "Leoti"
 										}
 									]
 								}
@@ -1171,10 +1171,10 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "A (4)"
+										"text": "Hoxie"
 									},
 									{
-										"text": "B (2)"
+										"text": "Colby"
 									}
 								]
 							}
@@ -1188,13 +1188,13 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "E (4)"
+										"text": "Hoxie"
 									},
 									{
-										"text": "D (3)"
+										"text": "Winona"
 									},
 									{
-										"text": "C (2)"
+										"text": "Colby"
 									}
 								]
 							}
@@ -1208,10 +1208,10 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "A (4)"
+										"text": "Trego County"
 									},
 									{
-										"text": "B (2)"
+										"text": "Thomas County"
 									}
 								]
 							}
@@ -1225,13 +1225,13 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "C (4)"
+										"text": "Trego County"
 									},
 									{
-										"text": "B (3)"
+										"text": "Scott County"
 									},
 									{
-										"text": "A (2)"
+										"text": "Graham County"
 									}
 								]
 							}
@@ -1321,10 +1321,10 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "A (4)"
+										"text": "Dighton"
 									},
 									{
-										"text": "B (2)"
+										"text": "Hill City"
 									}
 								]
 							}
@@ -1338,13 +1338,13 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "E (4)"
+										"text": "Dighton"
 									},
 									{
-										"text": "D (3)"
+										"text": "Colby"
 									},
 									{
-										"text": "C (2)"
+										"text": "WaKeeney"
 									}
 								]
 							}
@@ -1358,10 +1358,10 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "A (4)"
+										"text": "Lane County"
 									},
 									{
-										"text": "B (2)"
+										"text": "Graham County"
 									}
 								]
 							}
@@ -1375,13 +1375,13 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "C (4)"
+										"text": "Lane County"
 									},
 									{
-										"text": "B (3)"
+										"text": "Logan County"
 									},
 									{
-										"text": "A (2)"
+										"text": "Thomas County"
 									}
 								]
 							}
@@ -1408,10 +1408,10 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "A (4)"
+										"text": "Ness City"
 									},
 									{
-										"text": "B (2)"
+										"text": "Hill City"
 									}
 								]
 							}
@@ -1425,13 +1425,13 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "E (4)"
+										"text": "Ness City"
 									},
 									{
-										"text": "D (3)"
+										"text": "Colby"
 									},
 									{
-										"text": "C (2)"
+										"text": "Leoti"
 									}
 								]
 							}
@@ -1495,10 +1495,10 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "A (4)"
+										"text": "Colby"
 									},
 									{
-										"text": "B (2)"
+										"text": "WaKeeney"
 									}
 								]
 							}
@@ -1512,13 +1512,13 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "E (4)"
+										"text": "Colby"
 									},
 									{
-										"text": "D (3)"
+										"text": "Leoti"
 									},
 									{
-										"text": "C (2)"
+										"text": "Winona"
 									}
 								]
 							}
@@ -1532,10 +1532,10 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "A (4)"
+										"text": "Lane County"
 									},
 									{
-										"text": "B (2)"
+										"text": "Sheridan County"
 									}
 								]
 							}
@@ -1549,13 +1549,13 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "C (4)"
+										"text": "Trego County"
 									},
 									{
-										"text": "B (3)"
+										"text": "Logan County"
 									},
 									{
-										"text": "A (2)"
+										"text": "Sheridan County"
 									}
 								]
 							}
