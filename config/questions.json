@@ -41,23 +41,23 @@
 					"blocks": [
 						{
 							"title": "Example Map",
-							"ask": "This is an example of what a map could look like. It shows the total number of tweets, but always review the legend carefully so you know what you are looking at. Each map that you will be shown will be a different topic with a different distribution. The distribution that you will be looking at will have a 'higher' and 'lower' relationship. <br><br>The maps will allow you to pan, or move around the map, and zoom, or change the level of detail you are looking at. Exploration is encouraged. If you are familiar with the represented geography, do not consider any correlating factors in map reading and interaction. <br><br>Use the map to answer the following example question.<br><br> <strong>REMEMBER: Once you select 'Next' the survey will begin and a timer will start.</strong>"
+							"ask": "This is an example of what a map could look like. It shows the total amount of waste imported by each site from 2009-2012, but always review the legend carefully so you know what you are looking at. Each map that you will be shown will as a different question at a different location. <br><br>The maps will allow you to pan, or move around the map, zoom, or change the level of detail you are looking at, and retrieve details by clicking. Exploration is encouraged.<br><br>Use the map to answer the following example question.<br><br> <strong>REMEMBER: Once you select 'Next' the survey will begin and a timer will start.</strong>"
 						},
 						{
-							"ask": "Which city had the most tweets?",
+							"ask": "Rank the sites that imported the most hazardous waste from highest to lowest:",
 							"input": {
 								"required": true,
 								"autoadvance": false,
-								"type": "radios",
-								"options": [
+								"type": "rank",
+								"items": [
 									{
-										"text": "Ness City"
+										"text": "Clean Harbors Environmental Services"
 									},
 									{
-										"text": "Garden City"
+										"text": "AMG Vanadium"
 									},
 									{
-										"text": "Hays"
+										"text": "Spring Grove Resoure and Recovery"
 									}
 								]
 							}
@@ -71,6 +71,42 @@
 		},
 		{
 			"page": 4,
+			"fullpage": false,
+			"sets": [
+				{
+					"blocks": [
+						{
+							"title": "Example Map",
+							"ask": "This is an example of what a map could look like. It shows the total amount of waste imported by each site from 2009-2012, but always review the legend carefully so you know what you are looking at. Each map that you will be shown will as a different question at a different location. <br><br>The maps will allow you to pan, or move around the map, zoom, or change the level of detail you are looking at, retrieve details by clicking, overlay to add additional layers, and filter information. Exploration is encouraged.<br><br>Use the map to answer the following example question.<br><br> <strong>REMEMBER: Once you select 'Next' the survey will begin and a timer will start.</strong>"
+						},
+						{
+							"ask": "Rank the sites that imported the most hazardous waste from highest to lowest:",
+							"input": {
+								"required": true,
+								"autoadvance": false,
+								"type": "rank",
+								"items": [
+									{
+										"text": "Clean Harbors Environmental Services"
+									},
+									{
+										"text": "AMG Vanadium"
+									},
+									{
+										"text": "Spring Grove Resoure and Recovery"
+									}
+								]
+							}
+						}
+					],
+					"buttons": [
+						"next"
+					]
+				}
+			]
+		},
+		{
+			"page": 5,
 			"fullpage": false,
 			"sets": [
 				{
@@ -151,7 +187,7 @@
 			]
 		},
 		{
-			"page": 5,
+			"page": 6,
 			"fullpage": true,
 			"sets": [
 				{
@@ -214,7 +250,7 @@
 			]
 		},
 		{
-			"page": 6,
+			"page": 7,
 			"fullpage": false,
 			"sets": [
 				{
@@ -295,7 +331,7 @@
 			]
 		},
 		{
-			"page": 7,
+			"page": 8,
 			"fullpage": false,
 			"sets": [
 				{
@@ -376,7 +412,7 @@
 			]
 		},
 		{
-			"page": 8,
+			"page": 9,
 			"fullpage": false,
 			"sets": [
 				{
@@ -457,7 +493,7 @@
 			]
 		},
 		{
-			"page": 9,
+			"page": 10,
 			"fullpage": false,
 			"sets": [
 				{
@@ -538,7 +574,7 @@
 			]
 		},
 		{
-			"page": 10,
+			"page": 11,
 			"fullpage": false,
 			"sets": [
 				{
@@ -619,7 +655,7 @@
 			]
 		},
 		{
-			"page": 11,
+			"page": 12,
 			"fullpage": false,
 			"sets": [
 				{
@@ -700,7 +736,7 @@
 			]
 		},
 		{
-			"page": 12,
+			"page": 13,
 			"fullpage": false,
 			"sets": [
 				{
@@ -781,7 +817,7 @@
 			]
 		},
 		{
-			"page": 13,
+			"page": 14,
 			"fullpage": false,
 			"sets": [
 				{
@@ -862,13 +898,13 @@
 			]
 		},
 		{
-			"page": 14,
+			"page": 15,
 			"fullpage": true,
 				"sets": [
 					{
 						"blocks": [
 							{
-								"title": "Exit Survey-North American Hazardous Waste Trade",
+								"title": "*The survey is no longer being timed. <br><br> Exit Survey-North American Hazardous Waste Trade",
 								"ask": "<br>Please rank how difficult it was to understand the hazardous waste trade <u>topic</u>:",
 								"input": {
 									"required": false,
@@ -906,8 +942,29 @@
 									"required": false,
 									"autoadvance": false,
 									"type": "paragraph"
-
-
+								}
+							},
+							{
+								"ask": "<br>What are your views of the hazardous waste trade?",
+								"input": {
+									"required": false,
+									"autoadvance": false,
+									"type": "paragraph"
+								}
+							},
+							{
+								"ask": "Should we trade hazardous waste?",
+								"input": {
+									"required": false,
+									"type": "radios",
+									"options": [
+										{
+											"text": "Yes"
+										},
+										{
+											"text": "No"
+										}
+									]
 								}
 							}
 						],
@@ -918,7 +975,7 @@
 				]
 			},
 		{
-			"page": 15,
+			"page": 16,
 			"fullpage": true,
 				"sets": [
 					{
@@ -968,13 +1025,14 @@
 							}
 						],
 						"buttons": [
-							"next"
+							"next",
+							"back"
 						]
 					}
 				]
 			},
 		{
-			"page": 16,
+			"page": 17,
 			"fullpage": true,
 			"sets": [
 				{
@@ -1228,7 +1286,7 @@
 			]
 		},
 		{
-			"page": 17,
+			"page": 18,
 			"fullpage": true,
 			"sets": [
 				{

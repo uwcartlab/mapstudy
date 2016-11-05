@@ -96,6 +96,89 @@
 					"legend": true,
 					"resetButton": true,
 					"center": [
+						40,
+						-82.9
+					],
+					"zoom": 7,
+					"minZoom": 5,
+					"maxZoom": 18,
+					"maxBounds": [
+						[
+							30,
+							-60
+						],
+						[
+							50,
+							-100
+						]
+					]
+				},
+				"baseLayers": [
+						{
+							"name": "Basemap",
+							"source": "https://api.mapbox.com/styles/v1/vinckl/ciuvkpmgl00e82js5bd8dir82/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+						}
+					],
+					"dataLayers": [
+						{
+							"name": "Example Map",
+							"source": "data/maptest.geojson",
+							"expressedAttribute": "tweets",
+							"displayAttributes": [
+								"NAME10"
+							],
+							"layerOptions": {
+						"fillOpacity": 0.8,
+						"color": "black",
+						"weight": 0.5,
+						"opacity": 1
+					},
+							"renderOnLoad": true,
+							"techniques": [
+								{
+									"type": "choropleth",
+									"classification": "equal interval",
+									"classes": "BuGn.5"
+								}
+							]
+						}
+					],
+					"interactions": {
+						"zoom": {
+							"logging": true,
+							"toggle": false,
+							"interface": {
+								"touch": true,
+								"scrollWheel": true,
+								"doubleClick": true,
+								"box": true,
+								"keyboard": true,
+								"widget": false
+							}
+						},
+						"pan": {
+							"logging": true,
+							"toggle": false,
+							"interface": {
+								"drag": true,
+								"keyboard": true,
+								"widget": false
+							}
+						},
+						"sequence": {
+							"dataLayers": [
+								"MapTest"
+							]
+						}
+					}
+				},
+			{
+				"page": 5,
+				"library": "Leaflet",
+				"mapOptions": {
+					"legend": true,
+					"resetButton": true,
+					"center": [
 						32,
 						-100
 					],
@@ -173,10 +256,10 @@
 					}
 				},
 				{
-					"page": 5
+					"page": 6
 					},
 					{
-						"page": 6,
+						"page": 7,
 						"library": "Leaflet",
 						"mapOptions": {
 							"legend": true,
@@ -258,7 +341,7 @@
 							}
 						},
 						{
-							"page": 7,
+							"page": 8,
 							"library": "Leaflet",
 							"mapOptions": {
 								"legend": true,
@@ -341,7 +424,7 @@
 								}
 							},
 							{
-								"page": 8,
+								"page": 9,
 								"library": "Leaflet",
 								"mapOptions": {
 									"legend": true,
@@ -424,7 +507,7 @@
 									}
 								},
 							{
-								"page": 9,
+								"page": 10,
 								"library": "Leaflet",
 								"mapOptions": {
 									"legend": true,
@@ -507,7 +590,7 @@
 									}
 								},
 								{
-									"page": 10,
+									"page": 11,
 									"library": "Leaflet",
 									"mapOptions": {
 										"legend": true,
@@ -589,7 +672,7 @@
 										}
 									},
 									{
-										"page": 11,
+										"page": 12,
 										"library": "Leaflet",
 										"mapOptions": {
 											"legend": true,
@@ -675,7 +758,7 @@
 											}
 										},
 										{
-											"page": 12,
+											"page": 13,
 											"library": "Leaflet",
 											"mapOptions": {
 												"legend": true,
@@ -758,7 +841,7 @@
 												}
 											},
 											{
-												"page": 13,
+												"page": 14,
 												"library": "Leaflet",
 												"mapOptions": {
 													"legend": true,
@@ -841,16 +924,16 @@
 													}
 												},
 											{
-												"page": 14
+												"page": 15
 												},
 												{
-													"page": 15
+													"page": 16
 													},
 													{
-														"page": 16
+														"page": 17
 														},
 														{
-															"page": 17
+															"page": 18
 															}
 	]
 }
