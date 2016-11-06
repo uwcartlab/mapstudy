@@ -257,68 +257,26 @@
 					"blocks": [
 						{
 							"title": "Map 1",
-							"ask": "Which town had more tweets?",
+							"ask": "You are the manager of a newly opened Canadian firm looking to ship hazardous waste to Ohio (also Texas) to be processed. The transnational shipment is due to economic benefits and processing needs. Your waste needs to be incinerated (filter), which limits the facilities you can send to. Your goal is to send the waste to a place you know will handle (retrieve compliance data) the waste properly, otherwise your business could face scrutiny. Further, you are concerned about the communities that process waste, given recent news coverage about environmental (in)justice (overlay demographics) concerns in communities that have hazardous waste facilities. Given this, rank the top 3 sites that would be good to do business with.",
 							"input": {
-								"required": false,
-								"type": "radios",
-								"options": [
+								"required": true,
+								"autoadvance": false,
+								"type": "rank",
+								"items": [
 									{
-										"text": "A (4)"
+										"text": "Clean Harbors Environmental Services"
 									},
 									{
-										"text": "B (2)"
-									}
-								]
-							}
-						},
-						{
-							"ask": "Which town had the most tweets?",
-							"input": {
-								"required": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "E (4)"
+										"text": "AMG Vanadium"
 									},
 									{
-										"text": "D (3)"
+										"text": "Spring Grove Resoure and Recovery"
 									},
 									{
-										"text": "C (2)"
-									}
-								]
-							}
-						},
-						{
-							"ask": "Which county had more tweets?",
-							"input": {
-								"required": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "A (4)"
+										"text": "Spring Grove Resoure and Recovery"
 									},
 									{
-										"text": "B (2)"
-									}
-								]
-							}
-						},
-						{
-							"ask": "Which county had the most tweets?",
-							"input": {
-								"required": false,
-								"autoadvance": true,
-								"type": "radios",
-								"options": [
-									{
-										"text": "C (4)"
-									},
-									{
-										"text": "B (3)"
-									},
-									{
-										"text": "A (2)"
+										"text": "Spring Grove Resoure and Recovery"
 									}
 								]
 							}
@@ -338,68 +296,26 @@
 					"blocks": [
 						{
 							"title": "Map 2",
-							"ask": "Which town had more tweets?",
+							"ask": "You are a regulator at the EPA. Because of the region you work in, you are responsible for making sure all waste facilities in Ohio (also Texas) follow government regulations properly. Your task for the week is to focus on facilities that incinerate (filter) hazardous waste, which limits the facilities you work with for the week, because there is indication that some of these facilities are underperforming. Your job is to examine previous reports (retrieve compliance data) to understand each company’s past compliance record, as well as examine public concerns about the facilities in their respective communities. Recently, community members have come forward indicating they feel like they are burdened by the facility (overlay demographics). After your examination, rank the top 3 sites that need to be monitored more closely.",
 							"input": {
-								"required": false,
-								"type": "radios",
-								"options": [
+								"required": true,
+								"autoadvance": false,
+								"type": "rank",
+								"items": [
 									{
-										"text": "A (4)"
+										"text": "Clean Harbors Environmental Services"
 									},
 									{
-										"text": "B (2)"
-									}
-								]
-							}
-						},
-						{
-							"ask": "Which town had the most tweets?",
-							"input": {
-								"required": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "E (4)"
+										"text": "AMG Vanadium"
 									},
 									{
-										"text": "D (3)"
+										"text": "Spring Grove Resoure and Recovery"
 									},
 									{
-										"text": "C (2)"
-									}
-								]
-							}
-						},
-						{
-							"ask": "Which county had more tweets?",
-							"input": {
-								"required": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "A (4)"
+										"text": "Spring Grove Resoure and Recovery"
 									},
 									{
-										"text": "B (2)"
-									}
-								]
-							}
-						},
-						{
-							"ask": "Which county had the most tweets?",
-							"input": {
-								"required": false,
-								"autoadvance": true,
-								"type": "radios",
-								"options": [
-									{
-										"text": "C (4)"
-									},
-									{
-										"text": "B (3)"
-									},
-									{
-										"text": "A (2)"
+										"text": "Spring Grove Resoure and Recovery"
 									}
 								]
 							}
@@ -419,68 +335,26 @@
 					"blocks": [
 						{
 							"title": "Map 3",
-							"ask": "Which town had more tweets?",
+							"ask": "You plan to buy a new house in your home state of Ohio (also Texas). This state is home to multiple hazardous waste facilities, which causes concern for you and your family. Particularly, facilities with incinerators (filter) cause concern because of emissions from the incineration process. As you decide which city and neighborhood to live in, you investigate the hazardous waste facilities and see which ones have a record of processing waste properly (retrieve compliance data). Further, you examine the communities that have these waste facilities because of recent news coverage about environmental (in)justice (overlay demographics) concerns in communities that have hazardous waste facilities. Given this, rank the top 3 sites that you would not want to live nearby.",
 							"input": {
-								"required": false,
-								"type": "radios",
-								"options": [
+								"required": true,
+								"autoadvance": false,
+								"type": "rank",
+								"items": [
 									{
-										"text": "A (4)"
+										"text": "Clean Harbors Environmental Services"
 									},
 									{
-										"text": "B (2)"
-									}
-								]
-							}
-						},
-						{
-							"ask": "Which town had the most tweets?",
-							"input": {
-								"required": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "E (4)"
+										"text": "AMG Vanadium"
 									},
 									{
-										"text": "D (3)"
+										"text": "Spring Grove Resoure and Recovery"
 									},
 									{
-										"text": "C (2)"
-									}
-								]
-							}
-						},
-						{
-							"ask": "Which county had more tweets?",
-							"input": {
-								"required": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "A (4)"
+										"text": "Spring Grove Resoure and Recovery"
 									},
 									{
-										"text": "B (2)"
-									}
-								]
-							}
-						},
-						{
-							"ask": "Which county had the most tweets?",
-							"input": {
-								"required": false,
-								"autoadvance": true,
-								"type": "radios",
-								"options": [
-									{
-										"text": "C (4)"
-									},
-									{
-										"text": "B (3)"
-									},
-									{
-										"text": "A (2)"
+										"text": "Spring Grove Resoure and Recovery"
 									}
 								]
 							}
@@ -500,68 +374,26 @@
 					"blocks": [
 						{
 							"title": "Map 4",
-							"ask": "Which town had more tweets?",
+							"ask": "You are the manager of a newly opened Canadian firm looking to ship hazardous waste to Ohio (also Texas) to be processed. The transnational shipment is due to economic benefits and processing needs. Your waste needs to be incinerated (filter), which limits the facilities you can send to. Your goal is to send the waste to a place you know will handle (retrieve compliance data) the waste properly, otherwise your business could face scrutiny. Further, you are concerned about the communities that process waste, given recent news coverage about environmental (in)justice (overlay demographics) concerns in communities that have hazardous waste facilities. Given this, rank the top 3 sites that would be good to do business with.",
 							"input": {
-								"required": false,
-								"type": "radios",
-								"options": [
+								"required": true,
+								"autoadvance": false,
+								"type": "rank",
+								"items": [
 									{
-										"text": "A (4)"
+										"text": "Clean Harbors Environmental Services"
 									},
 									{
-										"text": "B (2)"
-									}
-								]
-							}
-						},
-						{
-							"ask": "Which town had the most tweets?",
-							"input": {
-								"required": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "E (4)"
+										"text": "AMG Vanadium"
 									},
 									{
-										"text": "D (3)"
+										"text": "Spring Grove Resoure and Recovery"
 									},
 									{
-										"text": "C (2)"
-									}
-								]
-							}
-						},
-						{
-							"ask": "Which county had more tweets?",
-							"input": {
-								"required": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "A (4)"
+										"text": "Spring Grove Resoure and Recovery"
 									},
 									{
-										"text": "B (2)"
-									}
-								]
-							}
-						},
-						{
-							"ask": "Which county had the most tweets?",
-							"input": {
-								"required": false,
-								"autoadvance": true,
-								"type": "radios",
-								"options": [
-									{
-										"text": "C (4)"
-									},
-									{
-										"text": "B (3)"
-									},
-									{
-										"text": "A (2)"
+										"text": "Spring Grove Resoure and Recovery"
 									}
 								]
 							}
@@ -581,68 +413,26 @@
 					"blocks": [
 						{
 							"title": "Map 5",
-							"ask": "Which town had more tweets?",
+							"ask": "You are a regulator at the EPA. Because of the region you work in, you are responsible for making sure all waste facilities in Ohio (also Texas) follow government regulations properly. Your task for the week is to focus on facilities that incinerate (filter) hazardous waste, which limits the facilities you work with for the week, because there is indication that some of these facilities are underperforming. Your job is to examine previous reports (retrieve compliance data) to understand each company’s past compliance record, as well as examine public concerns about the facilities in their respective communities. Recently, community members have come forward indicating they feel like they are burdened by the facility (overlay demographics). After your examination, rank the top 3 sites that need to be monitored more closely.",
 							"input": {
-								"required": false,
-								"type": "radios",
-								"options": [
+								"required": true,
+								"autoadvance": false,
+								"type": "rank",
+								"items": [
 									{
-										"text": "A (4)"
+										"text": "Clean Harbors Environmental Services"
 									},
 									{
-										"text": "B (2)"
-									}
-								]
-							}
-						},
-						{
-							"ask": "Which town had the most tweets?",
-							"input": {
-								"required": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "E (4)"
+										"text": "AMG Vanadium"
 									},
 									{
-										"text": "D (3)"
+										"text": "Spring Grove Resoure and Recovery"
 									},
 									{
-										"text": "C (2)"
-									}
-								]
-							}
-						},
-						{
-							"ask": "Which county had more tweets?",
-							"input": {
-								"required": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "A (4)"
+										"text": "Spring Grove Resoure and Recovery"
 									},
 									{
-										"text": "B (2)"
-									}
-								]
-							}
-						},
-						{
-							"ask": "Which county had the most tweets?",
-							"input": {
-								"required": false,
-								"autoadvance": true,
-								"type": "radios",
-								"options": [
-									{
-										"text": "C (4)"
-									},
-									{
-										"text": "B (3)"
-									},
-									{
-										"text": "A (2)"
+										"text": "Spring Grove Resoure and Recovery"
 									}
 								]
 							}
@@ -662,72 +452,30 @@
 					"blocks": [
 						{
 							"title": "Map 6",
-							"ask": "Which town had more tweets?",
-								"input": {
-									"required": false,
-									"type": "radios",
-									"options": [
-										{
-											"text": "A (4)"
-										},
-										{
-											"text": "B (2)"
-										}
-									]
-								}
-							},
-							{
-								"ask": "Which town had the most tweets?",
-								"input": {
-									"required": false,
-									"type": "radios",
-									"options": [
-										{
-											"text": "E (4)"
-										},
-										{
-											"text": "D (3)"
-										},
-										{
-											"text": "C (2)"
-										}
-									]
-								}
-							},
-							{
-								"ask": "Which county had more tweets?",
-								"input": {
-									"required": false,
-									"type": "radios",
-									"options": [
-										{
-											"text": "A (4)"
-										},
-										{
-											"text": "B (2)"
-										}
-									]
-								}
-							},
-							{
-								"ask": "Which county had the most tweets?",
-								"input": {
-									"required": false,
-									"autoadvance": true,
-									"type": "radios",
-									"options": [
-										{
-											"text": "C (4)"
-										},
-										{
-											"text": "B (3)"
-										},
-										{
-											"text": "A (2)"
-										}
-									]
-								}
+							"ask": "You plan to buy a new house in your home state of Ohio (also Texas). This state is home to multiple hazardous waste facilities, which causes concern for you and your family. Particularly, facilities with incinerators (filter) cause concern because of emissions from the incineration process. As you decide which city and neighborhood to live in, you investigate the hazardous waste facilities and see which ones have a record of processing waste properly (retrieve compliance data). Further, you examine the communities that have these waste facilities because of recent news coverage about environmental (in)justice (overlay demographics) concerns in communities that have hazardous waste facilities. Given this, rank the top 3 sites that you would not want to live nearby.",
+							"input": {
+								"required": true,
+								"autoadvance": false,
+								"type": "rank",
+								"items": [
+									{
+										"text": "Clean Harbors Environmental Services"
+									},
+									{
+										"text": "AMG Vanadium"
+									},
+									{
+										"text": "Spring Grove Resoure and Recovery"
+									},
+									{
+										"text": "Spring Grove Resoure and Recovery"
+									},
+									{
+										"text": "Spring Grove Resoure and Recovery"
+									}
+								]
 							}
+						}
 						],
 					"buttons": [
 						"next"
@@ -743,68 +491,26 @@
 					"blocks": [
 						{
 							"title": "Map 7",
-							"ask": "Which town had more tweets?",
+							"ask": "You are the manager of a newly opened Canadian firm looking to ship hazardous waste to Ohio (also Texas) to be processed. The transnational shipment is due to economic benefits and processing needs. Your waste needs to be incinerated (filter), which limits the facilities you can send to. Your goal is to send the waste to a place you know will handle (retrieve compliance data) the waste properly, otherwise your business could face scrutiny. Further, you are concerned about the communities that process waste, given recent news coverage about environmental (in)justice (overlay demographics) concerns in communities that have hazardous waste facilities. Given this, rank the top 3 sites that would be good to do business with.",
 							"input": {
-								"required": false,
-								"type": "radios",
-								"options": [
+								"required": true,
+								"autoadvance": false,
+								"type": "rank",
+								"items": [
 									{
-										"text": "A (4)"
+										"text": "Clean Harbors Environmental Services"
 									},
 									{
-										"text": "B (2)"
-									}
-								]
-							}
-						},
-						{
-							"ask": "Which town had the most tweets?",
-							"input": {
-								"required": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "E (4)"
+										"text": "AMG Vanadium"
 									},
 									{
-										"text": "D (3)"
+										"text": "Spring Grove Resoure and Recovery"
 									},
 									{
-										"text": "C (2)"
-									}
-								]
-							}
-						},
-						{
-							"ask": "Which county had more tweets?",
-							"input": {
-								"required": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "A (4)"
+										"text": "Spring Grove Resoure and Recovery"
 									},
 									{
-										"text": "B (2)"
-									}
-								]
-							}
-						},
-						{
-							"ask": "Which county had the most tweets?",
-							"input": {
-								"required": false,
-								"autoadvance": true,
-								"type": "radios",
-								"options": [
-									{
-										"text": "C (4)"
-									},
-									{
-										"text": "B (3)"
-									},
-									{
-										"text": "A (2)"
+										"text": "Spring Grove Resoure and Recovery"
 									}
 								]
 							}
@@ -824,68 +530,26 @@
 					"blocks": [
 						{
 							"title": "Map 8",
-							"ask": "Which town had more tweets?",
+							"ask": "You are a regulator at the EPA. Because of the region you work in, you are responsible for making sure all waste facilities in Ohio (also Texas) follow government regulations properly. Your task for the week is to focus on facilities that incinerate (filter) hazardous waste, which limits the facilities you work with for the week, because there is indication that some of these facilities are underperforming. Your job is to examine previous reports (retrieve compliance data) to understand each company’s past compliance record, as well as examine public concerns about the facilities in their respective communities. Recently, community members have come forward indicating they feel like they are burdened by the facility (overlay demographics). After your examination, rank the top 3 sites that need to be monitored more closely.",
 							"input": {
-								"required": false,
-								"type": "radios",
-								"options": [
+								"required": true,
+								"autoadvance": false,
+								"type": "rank",
+								"items": [
 									{
-										"text": "A (4)"
+										"text": "Clean Harbors Environmental Services"
 									},
 									{
-										"text": "B (2)"
-									}
-								]
-							}
-						},
-						{
-							"ask": "Which town had the most tweets?",
-							"input": {
-								"required": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "E (4)"
+										"text": "AMG Vanadium"
 									},
 									{
-										"text": "D (3)"
+										"text": "Spring Grove Resoure and Recovery"
 									},
 									{
-										"text": "C (2)"
-									}
-								]
-							}
-						},
-						{
-							"ask": "Which county had more tweets?",
-							"input": {
-								"required": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "A (4)"
+										"text": "Spring Grove Resoure and Recovery"
 									},
 									{
-										"text": "B (2)"
-									}
-								]
-							}
-						},
-						{
-							"ask": "Which county had the most tweets?",
-							"input": {
-								"required": false,
-								"autoadvance": true,
-								"type": "radios",
-								"options": [
-									{
-										"text": "C (4)"
-									},
-									{
-										"text": "B (3)"
-									},
-									{
-										"text": "A (2)"
+										"text": "Spring Grove Resoure and Recovery"
 									}
 								]
 							}
