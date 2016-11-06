@@ -17,16 +17,16 @@
 					-82.9
 				],
 				"zoom": 7,
-				"minZoom": 5,
-				"maxZoom": 18,
+				"minZoom": 6,
+				"maxZoom": 10,
 				"maxBounds": [
 					[
-						30,
-						-60
+						35,
+						-70
 					],
 					[
-						50,
-						-100
+						45,
+						-95
 					]
 				]
 			},
@@ -100,16 +100,16 @@
 						-82.9
 					],
 					"zoom": 7,
-					"minZoom": 5,
-					"maxZoom": 18,
+					"minZoom": 6,
+					"maxZoom": 10,
 					"maxBounds": [
 						[
-							30,
-							-60
+							35,
+							-70
 						],
 						[
-							50,
-							-100
+							45,
+							-95
 						]
 					]
 				},
@@ -184,7 +184,7 @@
 					],
 					"zoom": 6,
 					"minZoom": 5,
-					"maxZoom": 18,
+					"maxZoom": 10,
 					"maxBounds": [
 						[
 							10,
@@ -269,16 +269,16 @@
 								-82.9
 							],
 							"zoom": 7,
-							"minZoom": 5,
-							"maxZoom": 18,
+							"minZoom": 6,
+							"maxZoom": 10,
 							"maxBounds": [
 								[
-									30,
-									-60
+									35,
+									-70
 								],
 								[
-									50,
-									-100
+									45,
+									-95
 								]
 							]
 						},
@@ -352,7 +352,7 @@
 								],
 								"zoom": 6,
 								"minZoom": 5,
-								"maxZoom": 18,
+								"maxZoom": 10,
 								"maxBounds": [
 									[
 										10,
@@ -435,7 +435,7 @@
 									],
 									"zoom": 6,
 									"minZoom": 5,
-									"maxZoom": 18,
+									"maxZoom": 10,
 									"maxBounds": [
 										[
 											10,
@@ -517,16 +517,16 @@
 										-82.9
 									],
 									"zoom": 7,
-									"minZoom": 5,
-									"maxZoom": 18,
+									"minZoom": 6,
+									"maxZoom": 10,
 									"maxBounds": [
 										[
-											30,
-											-60
+											35,
+											-70
 										],
 										[
-											50,
-											-100
+											45,
+											-95
 										]
 									]
 								},
@@ -600,16 +600,16 @@
 											-82.9
 										],
 										"zoom": 7,
-										"minZoom": 5,
-										"maxZoom": 18,
+										"minZoom": 6,
+										"maxZoom": 10,
 										"maxBounds": [
 											[
-												30,
-												-60
+												35,
+												-70
 											],
 											[
-												50,
-												-100
+												45,
+												-95
 											]
 										]
 									},
@@ -683,7 +683,7 @@
 											],
 											"zoom": 6,
 											"minZoom": 5,
-											"maxZoom": 18,
+											"maxZoom": 10,
 											"maxBounds": [
 												[
 													10,
@@ -769,7 +769,7 @@
 												],
 												"zoom": 6,
 												"minZoom": 5,
-												"maxZoom": 18,
+												"maxZoom": 10,
 												"maxBounds": [
 													[
 														10,
@@ -851,16 +851,16 @@
 														-82.9
 													],
 													"zoom": 7,
-													"minZoom": 5,
-													"maxZoom": 18,
+													"minZoom": 6,
+													"maxZoom": 10,
 													"maxBounds": [
 														[
-															30,
-															-60
+															35,
+															-70
 														],
 														[
-															50,
-															-100
+															45,
+															-95
 														]
 													]
 												},
