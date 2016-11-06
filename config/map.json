@@ -324,6 +324,14 @@
 										"widget": false
 									}
 								},
+									"retrieve": {
+									"logging": true,
+									"toggle": false,
+									"interface": {
+									"popup": true,
+									"window": false
+										}
+									},
 								"pan": {
 									"logging": true,
 									"toggle": false,
@@ -332,11 +340,6 @@
 										"keyboard": true,
 										"widget": false
 									}
-								},
-								"sequence": {
-									"dataLayers": [
-										"MapTest"
-									]
 								}
 							}
 						},
@@ -416,10 +419,13 @@
 											"widget": false
 										}
 									},
-									"sequence": {
-										"dataLayers": [
-											"MapTest"
-										]
+									"retrieve": {
+									"logging": true,
+									"toggle": false,
+									"interface": {
+									"popup": true,
+									"window": false
+										}
 									}
 								}
 							},
@@ -499,10 +505,13 @@
 												"widget": false
 											}
 										},
-										"sequence": {
-											"dataLayers": [
-												"MapTest"
-											]
+										"retrieve": {
+										"logging": true,
+										"toggle": false,
+										"interface": {
+										"popup": true,
+										"window": false
+											}
 										}
 									}
 								},
@@ -582,10 +591,13 @@
 												"widget": false
 											}
 										},
-										"sequence": {
-											"dataLayers": [
-												"MapTest"
-											]
+										"retrieve": {
+										"logging": true,
+										"toggle": false,
+										"interface": {
+										"popup": true,
+										"window": false
+											}
 										}
 									}
 								},
@@ -664,10 +676,22 @@
 													"widget": false
 												}
 											},
-											"sequence": {
-												"dataLayers": [
-													"MapTest"
-												]
+											"retrieve": {
+												"logging": true,
+												"toggle": false,
+												"interface": {
+													"popup": true,
+													"window": false
+												}
+											},
+											"overlay": {
+												"logging": true,
+												"toggle": false
+											},
+											"filter": {
+												"logging": true,
+												"toggle": false,
+												"tool": "logic"
 											}
 										}
 									},
@@ -750,10 +774,22 @@
 														"widget": false
 													}
 												},
-												"sequence": {
-													"dataLayers": [
-														"MapTest"
-													]
+												"retrieve": {
+													"logging": true,
+													"toggle": false,
+													"interface": {
+														"popup": true,
+														"window": false
+													}
+												},
+												"overlay": {
+													"logging": true,
+													"toggle": false
+												},
+												"filter": {
+													"logging": true,
+													"toggle": false,
+													"tool": "logic"
 												}
 											}
 										},
@@ -833,11 +869,23 @@
 															"widget": false
 														}
 													},
-													"sequence": {
-														"dataLayers": [
-															"MapTest"
-														]
-													}
+													"retrieve": {
+															"logging": true,
+															"toggle": false,
+															"interface": {
+																"popup": true,
+																"window": false
+															}
+														},
+														"overlay": {
+															"logging": true,
+															"toggle": false
+														},
+														"filter": {
+															"logging": true,
+															"toggle": false,
+															"tool": "logic"
+														}
 												}
 											},
 											{
@@ -916,10 +964,22 @@
 																"widget": false
 															}
 														},
-														"sequence": {
-															"dataLayers": [
-																"MapTest"
-															]
+														"retrieve": {
+															"logging": true,
+															"toggle": false,
+															"interface": {
+																"popup": true,
+																"window": false
+															}
+														},
+														"overlay": {
+															"logging": true,
+															"toggle": false
+														},
+														"filter": {
+															"logging": true,
+															"toggle": false,
+															"tool": "logic"
 														}
 													}
 												},
