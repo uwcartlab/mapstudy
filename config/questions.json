@@ -601,6 +601,14 @@
 								}
 							},
 							{
+								"ask": "<br>Please describe your decision-making process:",
+								"input": {
+									"required": false,
+									"autoadvance": false,
+									"type": "paragraph"
+								}
+							},
+							{
 								"ask": "<br>What information about the <u>hazardous waste trade</u> would have made coming to your decisions easier?",
 								"input": {
 									"required": false,
@@ -724,6 +732,35 @@
 									},
 									{
 										"text": "Other"
+									}
+								]
+							}
+						},
+						{
+							"ask": "What state do you currently live in?",
+							"input": {
+								"required": false,
+								"type": "text"
+							}
+						},
+						{
+							"ask": "Have you ever lived in Texas or Ohio?",
+							"input": {
+								"required": false,
+								"autoadvance": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "Lived in Texas"
+									},
+									{
+										"text": "Lived in Ohio"
+									},
+									{
+										"text": "Lived in Both"
+									},
+									{
+										"text": "Lived in Neither"
 									}
 								]
 							}
