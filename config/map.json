@@ -575,7 +575,7 @@
 									"techniques": [
 										{
 											"type": "heat",
-											"size": 0.55
+											"size": 0.2
 										}
 									]
 								},
@@ -598,7 +598,7 @@
 									"techniques": [
 										{
 											"type": "heat",
-											"size": 0.55
+											"size": 0.2
 										}
 									]
 								},
