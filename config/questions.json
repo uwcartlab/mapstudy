@@ -1059,7 +1059,7 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "Winona"
+										"text": "Hoxie"
 									},
 									{
 										"text": "Leoti"
@@ -1671,7 +1671,7 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "Dighton"
+										"text": "Leoti"
 									},
 									{
 										"text": "Hill City"
@@ -1688,7 +1688,7 @@
 								"type": "matrix",
 								"options": [
 										{
-											"text": "Dighton"
+											"text": "Leoti"
 										},
 										{
 											"text": "Colby"
