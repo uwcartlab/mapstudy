@@ -777,7 +777,7 @@
 										"techniques": [
 											{
 												"type": "dot",
-												"interval": 20,
+												"interval": 5,
 												"size": 2
 											}
 										]
@@ -910,7 +910,7 @@
 											"techniques": [
 												{
 													"type": "dot",
-													"interval": 20,
+													"interval": 5,
 													"size": 2
 												}
 											]
@@ -1747,7 +1747,7 @@
 																"techniques": [
 																	{
 																		"type": "dot",
-																		"interval": 20,
+																		"interval": 5,
 																		"size": 2
 																	}
 																]
@@ -2571,7 +2571,7 @@
 																					"techniques": [
 																						{
 																							"type": "dot",
-																							"interval": 20,
+																							"interval": 5,
 																							"size": 2
 																						}
 																					]
