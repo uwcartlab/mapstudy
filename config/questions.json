@@ -48,16 +48,21 @@
 							"input": {
 								"required": true,
 								"autoadvance": false,
-								"type": "radios",
+								"type": "matrix",
 								"options": [
+										{
+											"text": "Ness City"
+										},
+										{
+											"text": "Garden City"
+										},
+										{
+											"text": "Hays"
+										}
+									],
+								"items": [
 									{
-										"text": "Ness City"
-									},
-									{
-										"text": "Garden City"
-									},
-									{
-										"text": "Hays"
+
 									}
 								]
 							}
@@ -155,16 +160,21 @@
 							"input": {
 								"required": false,
 								"autoadvance": true,
-								"type": "radios",
+								"type": "matrix",
 								"options": [
+										{
+											"text": "Leoti"
+										},
+										{
+											"text": "Hill City"
+										},
+										{
+											"text": "WaKeeney"
+										}
+									],
+								"items": [
 									{
-										"text": "Leoti"
-									},
-									{
-										"text": "Hill City"
-									},
-									{
-										"text": "WaKeeney"
+
 									}
 								]
 							}
@@ -307,16 +317,21 @@
 								"required": false,
 								"autoadvance": false,
 								"autoadvance": true,
-								"type": "radios",
+								"type": "matrix",
 								"options": [
+										{
+											"text": "Wichita County"
+										},
+										{
+											"text": "Logan County"
+										},
+										{
+											"text": "Sheridan County"
+										}
+									],
+								"items": [
 									{
-										"text": "Wichita County"
-									},
-									{
-										"text": "Logan County"
-									},
-									{
-										"text": "Sheridan County"
+
 									}
 								]
 							}
@@ -410,17 +425,22 @@
 							"ask": "Which town had the most tweets?",
 							"input": {
 								"required": false,
-								"type": "radios",
 								"autoadvance": true,
+								"type": "matrix",
 								"options": [
+										{
+											"text": "Leoti"
+										},
+										{
+											"text": "Ness City"
+										},
+										{
+											"text": "WaKeeney"
+										}
+									],
+								"items": [
 									{
-										"text": "Leoti"
-									},
-									{
-										"text": "Ness City"
-									},
-									{
-										"text": "WaKeeney"
+
 									}
 								]
 							}
@@ -448,16 +468,21 @@
 							"input": {
 								"required": false,
 								"autoadvance": true,
-								"type": "radios",
+								"type": "matrix",
 								"options": [
+										{
+											"text": "Trego County"
+										},
+										{
+											"text": "Sheridan County"
+										},
+										{
+											"text": "Graham County"
+										}
+									],
+								"items": [
 									{
-										"text": "Trego County"
-									},
-									{
-										"text": "Sheridan County"
-									},
-									{
-										"text": "Graham County"
+
 									}
 								]
 							}
@@ -498,16 +523,21 @@
 							"input": {
 								"required": false,
 								"autoadvance": true,
-								"type": "radios",
+								"type": "matrix",
 								"options": [
+										{
+											"text": "E4"
+										},
+										{
+											"text": "D3"
+										},
+										{
+											"text": "C2"
+										}
+									],
+								"items": [
 									{
-										"text": "E (4)"
-									},
-									{
-										"text": "D (3)"
-									},
-									{
-										"text": "C (2)"
+
 									}
 								]
 							}
@@ -535,16 +565,21 @@
 							"input": {
 								"required": false,
 								"autoadvance": true,
-								"type": "radios",
+								"type": "matrix",
 								"options": [
+										{
+											"text": "c4"
+										},
+										{
+											"text": "b3"
+										},
+										{
+											"text": "a2"
+										}
+									],
+								"items": [
 									{
-										"text": "C (4)"
-									},
-									{
-										"text": "B (3)"
-									},
-									{
-										"text": "A (2)"
+
 									}
 								]
 							}
@@ -585,16 +620,21 @@
 							"input": {
 								"required": false,
 								"autoadvance": true,
-								"type": "radios",
+								"type": "matrix",
 								"options": [
+										{
+											"text": "Leoti"
+										},
+										{
+											"text": "Dighton"
+										},
+										{
+											"text": "Ness City"
+										}
+									],
+								"items": [
 									{
-										"text": "Leoti"
-									},
-									{
-										"text": "Dighton"
-									},
-									{
-										"text": "Ness City"
+
 									}
 								]
 							}
@@ -622,16 +662,21 @@
 							"input": {
 								"required": false,
 								"autoadvance": true,
-								"type": "radios",
+								"type": "matrix",
 								"options": [
+										{
+											"text": "Thomas County"
+										},
+										{
+											"text": "Sheridan County"
+										},
+										{
+											"text": "Logan County"
+										}
+									],
+								"items": [
 									{
-										"text": "Thomas County"
-									},
-									{
-										"text": "Sheridan County"
-									},
-									{
-										"text": "Logan County"
+
 									}
 								]
 							}
@@ -734,17 +779,22 @@
 							"ask": "Which town had the most tweets?",
 							"input": {
 								"required": false,
-								"type": "radios",
 								"autoadvance": true,
+								"type": "matrix",
 								"options": [
+										{
+											"text": "Dighton"
+										},
+										{
+											"text": "Leoti"
+										},
+										{
+											"text": "Hill City"
+										}
+									],
+								"items": [
 									{
-										"text": "Dighton"
-									},
-									{
-										"text": "Leoti"
-									},
-									{
-										"text": "Hill City"
+
 									}
 								]
 							}
@@ -772,17 +822,22 @@
 							"input": {
 								"required": false,
 								"autoadvance": false,
-								"type": "radios",
 								"autoadvance": true,
+								"type": "matrix",
 								"options": [
+										{
+											"text": "Logan County"
+										},
+										{
+											"text": "Wichita County"
+										},
+										{
+											"text": "Trego County"
+										}
+									],
+								"items": [
 									{
-										"text": "Logan County"
-									},
-									{
-										"text": "Wichita County"
-									},
-									{
-										"text": "Trego County"
+
 									}
 								]
 							}
@@ -822,17 +877,22 @@
 								"ask": "Which town had the most tweets?",
 								"input": {
 									"required": false,
-									"type": "radios",
 									"autoadvance": true,
+									"type": "matrix",
 									"options": [
+											{
+												"text": "e4"
+											},
+											{
+												"text": "d3"
+											},
+											{
+												"text": "c2"
+											}
+										],
+									"items": [
 										{
-											"text": "E (4)"
-										},
-										{
-											"text": "D (3)"
-										},
-										{
-											"text": "C (2)"
+
 										}
 									]
 								}
@@ -860,17 +920,22 @@
 								"input": {
 									"required": false,
 									"autoadvance": false,
-									"type": "radios",
 									"autoadvance": true,
+									"type": "matrix",
 									"options": [
+											{
+												"text": "c4"
+											},
+											{
+												"text": "b3"
+											},
+											{
+												"text": "a2"
+											}
+										],
+									"items": [
 										{
-											"text": "C (4)"
-										},
-										{
-											"text": "B (3)"
-										},
-										{
-											"text": "A (2)"
+
 										}
 									]
 								}
@@ -910,17 +975,22 @@
 							"ask": "Which town had the most tweets?",
 							"input": {
 								"required": false,
-								"type": "radios",
 								"autoadvance": true,
+								"type": "matrix",
 								"options": [
+										{
+											"text": "Dighton"
+										},
+										{
+											"text": "Winona"
+										},
+										{
+											"text": "Colby"
+										}
+									],
+								"items": [
 									{
-										"text": "Dighton"
-									},
-									{
-										"text": "Winona"
-									},
-									{
-										"text": "Colby"
+
 									}
 								]
 							}
@@ -948,16 +1018,21 @@
 							"input": {
 								"required": false,
 								"autoadvance": true,
-								"type": "radios",
+								"type": "matrix",
 								"options": [
+										{
+											"text": "Lane County"
+										},
+										{
+											"text": "Sheridan County"
+										},
+										{
+											"text": "Graham County"
+										}
+									],
+								"items": [
 									{
-										"text": "Lane County"
-									},
-									{
-										"text": "Sheridan County"
-									},
-									{
-										"text": "Graham County"
+
 									}
 								]
 							}
@@ -998,16 +1073,21 @@
 							"input": {
 								"required": false,
 								"autoadvance": true,
-								"type": "radios",
+								"type": "matrix",
 								"options": [
+										{
+											"text": "Hoxie"
+										},
+										{
+											"text": "d3"
+										},
+										{
+											"text": "WaKeeney"
+										}
+									],
+								"items": [
 									{
-										"text": "Hoxie"
-									},
-									{
-										"text": "D (3)"
-									},
-									{
-										"text": "WaKeeney"
+
 									}
 								]
 							}
@@ -1036,16 +1116,21 @@
 								"required": false,
 								"autoadvance": false,
 								"autoadvance": true,
-								"type": "radios",
+								"type": "matrix",
 								"options": [
+										{
+											"text": "Wichita County"
+										},
+										{
+											"text": "Trego County"
+										},
+										{
+											"text": "Graham County"
+										}
+									],
+								"items": [
 									{
-										"text": "Wichita County"
-									},
-									{
-										"text": "Trego County"
-									},
-									{
-										"text": "Graham County"
+
 									}
 								]
 							}
@@ -1149,16 +1234,21 @@
 							"input": {
 								"required": false,
 								"autoadvance": true,
-								"type": "radios",
+								"type": "matrix",
 								"options": [
+										{
+											"text": "e4"
+										},
+										{
+											"text": "d3"
+										},
+										{
+											"text": "c2"
+										}
+									],
+								"items": [
 									{
-										"text": "E (4)"
-									},
-									{
-										"text": "D (3)"
-									},
-									{
-										"text": "C (2)"
+
 									}
 								]
 							}
@@ -1186,16 +1276,21 @@
 							"input": {
 								"required": false,
 								"autoadvance": true,
-								"type": "radios",
+								"type": "matrix",
 								"options": [
+										{
+											"text": "c4"
+										},
+										{
+											"text": "b3"
+										},
+										{
+											"text": "a2"
+										}
+									],
+								"items": [
 									{
-										"text": "C (4)"
-									},
-									{
-										"text": "B (3)"
-									},
-									{
-										"text": "A (2)"
+
 									}
 								]
 							}
@@ -1236,16 +1331,21 @@
 								"input": {
 									"required": false,
 									"autoadvance": true,
-									"type": "radios",
+									"type": "matrix",
 									"options": [
+											{
+												"text": "Dighton"
+											},
+											{
+												"text": "Hill City"
+											},
+											{
+												"text": "WaKeeney"
+											}
+										],
+									"items": [
 										{
-											"text": "Dighton"
-										},
-										{
-											"text": "Hill City"
-										},
-										{
-											"text": "WaKeeney"
+
 										}
 									]
 								}
@@ -1273,16 +1373,21 @@
 								"input": {
 									"required": false,
 									"autoadvance": true,
-									"type": "radios",
+									"type": "matrix",
 									"options": [
+											{
+												"text": "Scott County"
+											},
+											{
+												"text": "Graham County"
+											},
+											{
+												"text": "Trego County"
+											}
+										],
+									"items": [
 										{
-											"text": "Scott County"
-										},
-										{
-											"text": "Graham County"
-										},
-										{
-											"text": "Trego County"
+
 										}
 									]
 								}
@@ -1323,16 +1428,21 @@
 								"input": {
 									"required": false,
 									"autoadvance": true,
-									"type": "radios",
+									"type": "matrix",
 									"options": [
+											{
+												"text": "Dighton"
+											},
+											{
+												"text": "Winona"
+											},
+											{
+												"text": "Leoti"
+											}
+										],
+									"items": [
 										{
-											"text": "Dighton"
-										},
-										{
-											"text": "Winona"
-										},
-										{
-											"text": "Leoti"
+
 										}
 									]
 								}
@@ -1360,16 +1470,21 @@
 								"input": {
 									"required": false,
 									"autoadvance": true,
-									"type": "radios",
+									"type": "matrix",
 									"options": [
+											{
+												"text": "Lane County"
+											},
+											{
+												"text": "Scott County"
+											},
+											{
+												"text": "Graham County"
+											}
+										],
+									"items": [
 										{
-											"text": "Lane County"
-										},
-										{
-											"text": "Scott County"
-										},
-										{
-											"text": "Graham County"
+
 										}
 									]
 								}
@@ -1410,16 +1525,21 @@
 							"input": {
 								"required": false,
 								"autoadvance": true,
-								"type": "radios",
+								"type": "matrix",
 								"options": [
+										{
+											"text": "Hoxie"
+										},
+										{
+											"text": "Winona"
+										},
+										{
+											"text": "Colby"
+										}
+									],
+								"items": [
 									{
-										"text": "Hoxie"
-									},
-									{
-										"text": "Winona"
-									},
-									{
-										"text": "Colby"
+
 									}
 								]
 							}
@@ -1447,16 +1567,21 @@
 							"input": {
 								"required": false,
 								"autoadvance": true,
-								"type": "radios",
+								"type": "matrix",
 								"options": [
+										{
+											"text": "Trego County"
+										},
+										{
+											"text": "Scott County"
+										},
+										{
+											"text": "Graham County"
+										}
+									],
+								"items": [
 									{
-										"text": "Trego County"
-									},
-									{
-										"text": "Scott County"
-									},
-									{
-										"text": "Graham County"
+
 									}
 								]
 							}
@@ -1560,16 +1685,21 @@
 							"input": {
 								"required": false,
 								"autoadvance": true,
-								"type": "radios",
+								"type": "matrix",
 								"options": [
+										{
+											"text": "Dighton"
+										},
+										{
+											"text": "Colby"
+										},
+										{
+											"text": "WaKeeney"
+										}
+									],
+								"items": [
 									{
-										"text": "Dighton"
-									},
-									{
-										"text": "Colby"
-									},
-									{
-										"text": "WaKeeney"
+
 									}
 								]
 							}
@@ -1597,16 +1727,21 @@
 							"input": {
 								"required": false,
 								"autoadvance": true,
-								"type": "radios",
+								"type": "matrix",
 								"options": [
+										{
+											"text": "Lane County"
+										},
+										{
+											"text": "Logan County"
+										},
+										{
+											"text": "Thomas County"
+										}
+									],
+								"items": [
 									{
-										"text": "Lane County"
-									},
-									{
-										"text": "Logan County"
-									},
-									{
-										"text": "Thomas County"
+
 									}
 								]
 							}
@@ -1647,16 +1782,21 @@
 							"input": {
 								"required": false,
 								"autoadvance": true,
-								"type": "radios",
+								"type": "matrix",
 								"options": [
+										{
+											"text": "Ness City"
+										},
+										{
+											"text": "Colby"
+										},
+										{
+											"text": "Leoti"
+										}
+									],
+								"items": [
 									{
-										"text": "Ness City"
-									},
-									{
-										"text": "Colby"
-									},
-									{
-										"text": "Leoti"
+
 									}
 								]
 							}
@@ -1684,16 +1824,21 @@
 							"input": {
 								"required": false,
 								"autoadvance": true,
-								"type": "radios",
+								"type": "matrix",
 								"options": [
+										{
+											"text": "Lane County"
+										},
+										{
+											"text": "Scott County"
+										},
+										{
+											"text": "Graham County"
+										}
+									],
+								"items": [
 									{
-										"text": "Lane County"
-									},
-									{
-										"text": "Scott County"
-									},
-									{
-										"text": "Graham County"
+
 									}
 								]
 							}
@@ -1734,16 +1879,21 @@
 							"input": {
 								"required": false,
 								"autoadvance": true,
-								"type": "radios",
+								"type": "matrix",
 								"options": [
+										{
+											"text": "Colby"
+										},
+										{
+											"text": "Leoti"
+										},
+										{
+											"text": "Winona"
+										}
+									],
+								"items": [
 									{
-										"text": "Colby"
-									},
-									{
-										"text": "Leoti"
-									},
-									{
-										"text": "Winona"
+
 									}
 								]
 							}
@@ -1771,16 +1921,21 @@
 							"input": {
 								"required": false,
 								"autoadvance": true,
-								"type": "radios",
+								"type": "matrix",
 								"options": [
+										{
+											"text": "Trego County"
+										},
+										{
+											"text": "Logan County"
+										},
+										{
+											"text": "Sheridan County"
+										}
+									],
+								"items": [
 									{
-										"text": "Trego County"
-									},
-									{
-										"text": "Logan County"
-									},
-									{
-										"text": "Sheridan County"
+
 									}
 								]
 							}
@@ -1821,16 +1976,21 @@
 							"input": {
 								"required": false,
 								"autoadvance": true,
-								"type": "radios",
+								"type": "matrix",
 								"options": [
+										{
+											"text": "e4"
+										},
+										{
+											"text": "d3"
+										},
+										{
+											"text": "c2"
+										}
+									],
+								"items": [
 									{
-										"text": "E (4)"
-									},
-									{
-										"text": "D (3)"
-									},
-									{
-										"text": "C (2)"
+
 									}
 								]
 							}
@@ -1858,16 +2018,21 @@
 							"input": {
 								"required": false,
 								"autoadvance": true,
-								"type": "radios",
+								"type": "matrix",
 								"options": [
+										{
+											"text": "c4"
+										},
+										{
+											"text": "b3"
+										},
+										{
+											"text": "a2"
+										}
+									],
+								"items": [
 									{
-										"text": "C (4)"
-									},
-									{
-										"text": "B (3)"
-									},
-									{
-										"text": "A (2)"
+
 									}
 								]
 							}

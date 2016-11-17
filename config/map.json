@@ -558,8 +558,8 @@
 							"dataLayers": [
 								{
 									"name": "Jacket tweets",
-									"source": "data/countiesall.geojson",
-									"expressedAttribute": "Jackets",
+									"source": "data/pointtest.json",
+									"expressedAttribute": "point",
 									"displayAttributes": [
 										"NAME10"
 									],
@@ -575,14 +575,14 @@
 									"techniques": [
 										{
 											"type": "heat",
-											"size": 0.2
+											"size": 0.05
 										}
 									]
 								},
 								{
 									"name": "Jacket tweets",
-									"source": "data/detailsdata.geojson",
-									"expressedAttribute": "county_t_3",
+									"source": "data/pointtest.json",
+									"expressedAttribute": "point",
 									"displayAttributes": [
 										"NAME10"
 									],
@@ -598,7 +598,7 @@
 									"techniques": [
 										{
 											"type": "heat",
-											"size": 0.2
+											"size": 0.05
 										}
 									]
 								},
