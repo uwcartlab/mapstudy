@@ -558,7 +558,7 @@
 							"dataLayers": [
 								{
 									"name": "Jacket tweets",
-									"source": "data/pointtest.json",
+									"source": "data/Points1.json",
 									"expressedAttribute": "point",
 									"displayAttributes": [
 										"NAME10"
@@ -581,7 +581,7 @@
 								},
 								{
 									"name": "Jacket tweets",
-									"source": "data/pointtest.json",
+									"source": "data/Points1.json",
 									"expressedAttribute": "point",
 									"displayAttributes": [
 										"NAME10"
@@ -1024,8 +1024,8 @@
 										"dataLayers": [
 											{
 												"name": "Pizza tweets",
-												"source": "data/countiesall.geojson",
-												"expressedAttribute": "Pizza",
+												"source": "data/Points2.json",
+												"expressedAttribute": "point",
 												"displayAttributes": [
 													"NAME10"
 												],
@@ -1041,14 +1041,14 @@
 												"techniques": [
 													{
 														"type": "heat",
-														"size": 0.55
+														"size": 0.05
 													}
 												]
 											},
 										{
 											"name": "Jacket tweets",
-											"source": "data/detailsdata.geojson",
-											"expressedAttribute": "county_t_6",
+											"source": "data/Points2.json",
+											"expressedAttribute": "point",
 											"displayAttributes": [
 												"NAME10"
 											],
@@ -1064,7 +1064,7 @@
 											"techniques": [
 												{
 													"type": "heat",
-													"size": 0.55
+													"size": 0.05
 												}
 											]
 										},
@@ -1528,8 +1528,8 @@
 													"dataLayers": [
 														{
 															"name": "Soccer tweets",
-															"source": "data/countiesall.geojson",
-															"expressedAttribute": "Soccer",
+															"source": "data/Points3.json",
+															"expressedAttribute": "point",
 															"displayAttributes": [
 																"NAME10"
 															],
@@ -1545,14 +1545,14 @@
 															"techniques": [
 																{
 																	"type": "heat",
-																	"size": 0.55
+																	"size": 0.05
 																}
 															]
 														},
 														{
 															"name": "Jacket tweets",
-															"source": "data/detailsdata.geojson",
-															"expressedAttribute": "county_t_9",
+															"source": "data/Points3.json",
+															"expressedAttribute": "point",
 															"displayAttributes": [
 																"NAME10"
 															],
@@ -1568,7 +1568,7 @@
 															"techniques": [
 																{
 																	"type": "heat",
-																	"size": 0.55
+																	"size": 0.05
 																}
 															]
 														},
@@ -2685,8 +2685,8 @@
 																				"dataLayers": [
 																					{
 																						"name": "Music tweets",
-																						"source": "data/countiesall.geojson",
-																						"expressedAttribute": "Music",
+																						"source": "data/Points4.json",
+																						"expressedAttribute": "point",
 																						"displayAttributes": [
 																							"NAME10"
 																						],
@@ -2702,14 +2702,14 @@
 																						"techniques": [
 																							{
 																								"type": "heat",
-																								"size": 0.55
+																								"size": 0.05
 																							}
 																						]
 																					},
 																					{
 																						"name": "Jacket tweets",
-																						"source": "data/detailsdata.geojson",
-																						"expressedAttribute": "county__16",
+																						"source": "data/Points4.json",
+																						"expressedAttribute": "point",
 																						"displayAttributes": [
 																							"NAME10"
 																						],
@@ -2725,7 +2725,7 @@
 																						"techniques": [
 																							{
 																								"type": "heat",
-																								"size": 0.55
+																								"size": 0.05
 																							}
 																						]
 																					},
