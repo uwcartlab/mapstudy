@@ -1317,7 +1317,7 @@
 									"type": "radios",
 									"options": [
 										{
-											"text": "Dighton"
+											"text": "Hill City"
 										},
 										{
 											"text": "WaKeeney"
@@ -1334,10 +1334,10 @@
 									"type": "matrix",
 									"options": [
 											{
-												"text": "Dighton"
+												"text": "Hill City"
 											},
 											{
-												"text": "Hill City"
+												"text": "Dighton"
 											},
 											{
 												"text": "WaKeeney"
@@ -1885,7 +1885,7 @@
 											"text": "Colby"
 										},
 										{
-											"text": "Leoti"
+											"text": "Hoxie"
 										},
 										{
 											"text": "Winona"
