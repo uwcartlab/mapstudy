@@ -509,10 +509,10 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "A (4)"
+										"text": "Leoti"
 									},
 									{
-										"text": "B (2)"
+										"text": "WaKeeney"
 									}
 								]
 							}
@@ -526,13 +526,13 @@
 								"type": "matrix",
 								"options": [
 										{
-											"text": "E4"
+											"text": "Leoti"
 										},
 										{
-											"text": "D3"
+											"text": "Winona"
 										},
 										{
-											"text": "C2"
+											"text": "WaKeeney"
 										}
 									],
 								"items": [
@@ -551,10 +551,10 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "A (4)"
+										"text": "Wichita County"
 									},
 									{
-										"text": "B (2)"
+										"text": "Trego County"
 									}
 								]
 							}
@@ -568,13 +568,13 @@
 								"type": "matrix",
 								"options": [
 										{
-											"text": "c4"
+											"text": "Thomas County"
 										},
 										{
-											"text": "b3"
+											"text": "Graham County"
 										},
 										{
-											"text": "a2"
+											"text": "Trego County"
 										}
 									],
 								"items": [
@@ -864,10 +864,10 @@
 									"autoadvance": true,
 									"options": [
 										{
-											"text": "A (4)"
+											"text": "Hoxie"
 										},
 										{
-											"text": "B (2)"
+											"text": "Leoti"
 										}
 									]
 								}
@@ -881,13 +881,13 @@
 									"type": "matrix",
 									"options": [
 											{
-												"text": "e4"
+												"text": "Hoxie"
 											},
 											{
-												"text": "d3"
+												"text": "Winona"
 											},
 											{
-												"text": "c2"
+												"text": "Colby"
 											}
 										],
 									"items": [
@@ -906,10 +906,10 @@
 									"autoadvance": true,
 									"options": [
 										{
-											"text": "A (4)"
+											"text": "Logan County"
 										},
 										{
-											"text": "B (2)"
+											"text": "Graham County"
 										}
 									]
 								}
@@ -924,13 +924,13 @@
 									"type": "matrix",
 									"options": [
 											{
-												"text": "c4"
+												"text": "Logan County"
 											},
 											{
-												"text": "b3"
+												"text": "Sheridan County"
 											},
 											{
-												"text": "a2"
+												"text": "Lane County"
 											}
 										],
 									"items": [
@@ -1220,10 +1220,10 @@
 								"autoadvance": true,
 								"options": [
 									{
-										"text": "A (4)"
+										"text": "Hill City"
 									},
 									{
-										"text": "B (2)"
+										"text": "Winona"
 									}
 								]
 							}
@@ -1237,13 +1237,13 @@
 								"type": "matrix",
 								"options": [
 										{
-											"text": "e4"
+											"text": "Hill City"
 										},
 										{
-											"text": "d3"
+											"text": "Leoti"
 										},
 										{
-											"text": "c2"
+											"text": "WaKeeney"
 										}
 									],
 								"items": [
@@ -1262,10 +1262,10 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "A (4)"
+										"text": "Logan County"
 									},
 									{
-										"text": "B (2)"
+										"text": "Lane County"
 									}
 								]
 							}
@@ -1279,13 +1279,13 @@
 								"type": "matrix",
 								"options": [
 										{
-											"text": "c4"
+											"text": "Thomas County"
 										},
 										{
-											"text": "b3"
+											"text": "Graham County"
 										},
 										{
-											"text": "a2"
+											"text": "Lane County"
 										}
 									],
 								"items": [
@@ -1962,10 +1962,10 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "A (4)"
+										"text": "Hoxie"
 									},
 									{
-										"text": "B (2)"
+										"text": "Colby"
 									}
 								]
 							}
@@ -1979,13 +1979,13 @@
 								"type": "matrix",
 								"options": [
 										{
-											"text": "e4"
+											"text": "Ness City"
 										},
 										{
-											"text": "d3"
+											"text": "Winona"
 										},
 										{
-											"text": "c2"
+											"text": "Colby"
 										}
 									],
 								"items": [
@@ -2004,10 +2004,10 @@
 								"type": "radios",
 								"options": [
 									{
-										"text": "A (4)"
+										"text": "Logan County"
 									},
 									{
-										"text": "B (2)"
+										"text": "Trego County"
 									}
 								]
 							}
@@ -2021,13 +2021,13 @@
 								"type": "matrix",
 								"options": [
 										{
-											"text": "c4"
+											"text": "Wichita County"
 										},
 										{
-											"text": "b3"
+											"text": "Sheridan County"
 										},
 										{
-											"text": "a2"
+											"text": "Lane County"
 										}
 									],
 								"items": [
