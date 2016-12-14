@@ -38,6 +38,7 @@
 				],
 				"dataLayers": [
 					{
+						"roundTo": 0,
 						"name": "Hamburger tweets",
 						"source": "data/Cities.json",
 						"expressedAttribute": "lat",
@@ -66,6 +67,7 @@
 					},
 
 					{
+						"roundTo": 0,
 						"name": "Example Map",
 						"source": "data/maptest.geojson",
 						"expressedAttribute": "tweets",
@@ -89,6 +91,7 @@
 							}
 						]},
 						{
+							"roundTo": 0,
 							"name": "Example Map",
 							"source": "data/detailsdata.geojson",
 							"expressedAttribute": "county_t_1",
@@ -113,6 +116,7 @@
 								}
 							]},
 				{
+					"roundTo": 0,
 					"name": "Example Map",
 					"source": "data/maptest.geojson",
 					"expressedAttribute": "tweets",
