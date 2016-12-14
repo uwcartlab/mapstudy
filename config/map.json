@@ -568,6 +568,14 @@
 								"color": "black",
 								"weight": 0.5,
 								"opacity": 1,
+								"gradient": {
+									"1":"#006d2c",
+									"0.8":"#b2e2e2",
+									"0.6":"#66c2a4",
+									"0.4":"#2ca25f",
+									"0.2":"#edf8fb"
+
+								},
 								"minZoom": 0,
 								"maxZoom": 8
 							},
@@ -1034,6 +1042,14 @@
 											"color": "black",
 											"weight": 0.5,
 											"opacity": 1,
+											"gradient": {
+												"1":"#006d2c",
+												"0.8":"#b2e2e2",
+												"0.6":"#66c2a4",
+												"0.4":"#2ca25f",
+												"0.2":"#edf8fb"
+
+											},
 											"minZoom": 0,
 											"maxZoom": 8
 										},
@@ -1538,6 +1554,14 @@
 														"color": "black",
 														"weight": 0.5,
 														"opacity": 1,
+														"gradient": {
+															"1":"#006d2c",
+															"0.8":"#b2e2e2",
+															"0.6":"#66c2a4",
+															"0.4":"#2ca25f",
+															"0.2":"#edf8fb"
+
+														},
 														"minZoom": 0,
 														"maxZoom": 8
 													},
@@ -2695,6 +2719,14 @@
 																					"color": "black",
 																					"weight": 0.5,
 																					"opacity": 1,
+																					"gradient": {
+																						"1":"#006d2c",
+																						"0.8":"#b2e2e2",
+																						"0.6":"#66c2a4",
+																						"0.4":"#2ca25f",
+																						"0.2":"#edf8fb"
+
+																					},
 																					"minZoom": 0,
 																					"maxZoom": 8
 																				},
