@@ -155,6 +155,7 @@
 								]
 							},
 						{
+						"resetMap": true,
 						"blocks":	[{
 							"ask": "Which town had the most tweets?",
 							"input": {
@@ -237,6 +238,7 @@
 									]
 								},
 							{
+							"resetMap": true,
 							"blocks":	[{
 							"ask": "Which county had more tweets?",
 							"input": {
@@ -311,6 +313,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which county had the most tweets?",
 							"input": {
@@ -478,6 +481,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which town had the most tweets?",
 							"input": {
@@ -560,6 +564,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which county had more tweets?",
 							"input": {
@@ -634,6 +639,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which county had the most tweets?",
 							"input": {
@@ -800,6 +806,7 @@
 									]
 								},
 							{
+							"resetMap": true,
 							"blocks":	[{
 							"ask": "Which town had the most tweets?",
 							"input": {
@@ -882,6 +889,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which county had more tweets?",
 							"input": {
@@ -956,6 +964,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which county had the most tweets?",
 							"input": {
@@ -1121,6 +1130,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which town had the most tweets?",
 							"input": {
@@ -1203,6 +1213,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which county had more tweets?",
 							"input": {
@@ -1277,6 +1288,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which county had the most tweets?",
 							"input": {
@@ -1503,6 +1515,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which town had the most tweets?",
 							"input": {
@@ -1585,6 +1598,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which county had more tweets?",
 							"input": {
@@ -1659,6 +1673,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which county had the most tweets?",
 							"input": {
@@ -1823,6 +1838,7 @@
 										]
 									},
 								{
+									"resetMap": true,
 								"blocks":	[{
 								"ask": "Which town had the most tweets?",
 								"input": {
@@ -1905,6 +1921,7 @@
 										]
 									},
 								{
+									"resetMap": true,
 								"blocks":	[{
 								"ask": "Which county had more tweets?",
 								"input": {
@@ -1979,6 +1996,7 @@
 										]
 									},
 								{
+									"resetMap": true,
 								"blocks":	[{
 								"ask": "Which county had the most tweets?",
 								"input": {
@@ -2143,6 +2161,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which town had the most tweets?",
 							"input": {
@@ -2225,6 +2244,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which county had more tweets?",
 							"input": {
@@ -2299,6 +2319,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which county had the most tweets?",
 							"input": {
@@ -2462,6 +2483,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which town had the most tweets?",
 							"input": {
@@ -2544,6 +2566,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which county had more tweets?",
 							"input": {
@@ -2618,6 +2641,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which county had the most tweets?",
 							"input": {
@@ -2845,6 +2869,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which town had the most tweets?",
 							"input": {
@@ -2927,6 +2952,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which county had more tweets?",
 							"input": {
@@ -3001,6 +3027,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which county had the most tweets?",
 							"input": {
@@ -3164,6 +3191,7 @@
 										]
 									},
 								{
+									"resetMap": true,
 								"blocks":	[{
 								"ask": "Which town had the most tweets?",
 								"input": {
@@ -3246,6 +3274,7 @@
 										]
 									},
 								{
+									"resetMap": true,
 								"blocks":	[{
 								"ask": "Which county had more tweets?",
 								"input": {
@@ -3320,6 +3349,7 @@
 										]
 									},
 								{
+									"resetMap": true,
 								"blocks":	[{
 								"ask": "Which county had the most tweets?",
 								"input": {
@@ -3483,6 +3513,7 @@
 										]
 									},
 								{
+									"resetMap": true,
 								"blocks":	[{
 								"ask": "Which town had the most tweets?",
 								"input": {
@@ -3565,6 +3596,7 @@
 										]
 									},
 								{
+									"resetMap": true,
 								"blocks":	[{
 								"ask": "Which county had more tweets?",
 								"input": {
@@ -3639,6 +3671,7 @@
 										]
 									},
 								{
+									"resetMap": true,
 								"blocks":	[{
 								"ask": "Which county had the most tweets?",
 								"input": {
@@ -3802,6 +3835,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which town had the most tweets?",
 							"input": {
@@ -3884,6 +3918,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which county had more tweets?",
 							"input": {
@@ -3958,6 +3993,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which county had the most tweets?",
 							"input": {
@@ -4184,6 +4220,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which town had the most tweets?",
 							"input": {
@@ -4266,6 +4303,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which county had more tweets?",
 							"input": {
@@ -4340,6 +4378,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which county had the most tweets?",
 							"input": {
@@ -4503,6 +4542,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which town had the most tweets?",
 							"input": {
@@ -4585,6 +4625,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which county had more tweets?",
 							"input": {
@@ -4659,6 +4700,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which county had the most tweets?",
 							"input": {
@@ -4822,6 +4864,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which town had the most tweets?",
 							"input": {
@@ -4904,6 +4947,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which county had more tweets?",
 							"input": {
@@ -4978,6 +5022,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which county had the most tweets?",
 							"input": {
@@ -5141,6 +5186,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which town had the most tweets?",
 							"input": {
@@ -5223,6 +5269,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which county had more tweets?",
 							"input": {
@@ -5297,6 +5344,7 @@
 									]
 								},
 							{
+								"resetMap": true,
 							"blocks":	[{
 							"ask": "Which county had the most tweets?",
 							"input": {
