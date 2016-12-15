@@ -220,6 +220,7 @@
 					],
 					"dataLayers": [
 						{
+								"roundTo": 0,
 							"name": "Hamburger tweets",
 							"source": "data/Cities.json",
 							"expressedAttribute": "lat",
@@ -247,6 +248,7 @@
 							]
 						},
 						{
+								"roundTo": 0,
 							"name": "Basketball tweets",
 							"source": "data/countiesall.geojson",
 							"expressedAttribute": "Basketball",
@@ -271,6 +273,7 @@
 							]
 						},
 						{
+								"roundTo": 0,
 							"name": "Example Map",
 							"source": "data/detailsdata.geojson",
 							"expressedAttribute": "county_t_1",
@@ -295,6 +298,7 @@
 								}
 							]},
 						{
+								"roundTo": 0,
 							"name": "Example Map",
 							"source": "data/maptest.geojson",
 							"expressedAttribute": "tweets",
@@ -316,6 +320,7 @@
 								}
 							]},
 							{
+									"roundTo": 0,
 								"name": "Example Map",
 								"source": "data/Cities.json",
 								"expressedAttribute": "city",
@@ -393,6 +398,7 @@
 						],
 						"dataLayers": [
 							{
+									"roundTo": 0,
 								"name": "Hamburger tweets",
 								"source": "data/countiesall.geojson",
 								"expressedAttribute": "Hamburgers",
@@ -423,6 +429,7 @@
 								]
 							},
 							{
+									"roundTo": 0,
 								"name": "Hamburger tweets",
 								"source": "data/detailsdata.geojson",
 								"expressedAttribute": "county_t_2",
@@ -453,6 +460,7 @@
 								]
 							},
 							{
+									"roundTo": 0,
 								"name": "Example Map",
 								"source": "data/detailsdata.geojson",
 								"expressedAttribute": "county_t_1",
@@ -478,6 +486,7 @@
 									}
 								]},
 							{
+									"roundTo": 0,
 								"name": "Example Map",
 								"source": "data/maptest.geojson",
 								"expressedAttribute": "city",
@@ -561,6 +570,7 @@
 							],
 							"dataLayers": [
 								{
+										"roundTo": 0,
 									"name": "Jacket tweets",
 									"source": "data/Points1.json",
 									"expressedAttribute": "point",
@@ -592,6 +602,7 @@
 									]
 								},
 								{
+										"roundTo": 0,
 									"name": "Jacket tweets",
 									"source": "data/Points1.json",
 									"expressedAttribute": "point",
@@ -615,6 +626,7 @@
 									]
 								},
 								{
+										"roundTo": 0,
 									"name": "Example Map",
 									"source": "data/detailsdata.geojson",
 									"expressedAttribute": "county_t_1",
@@ -640,6 +652,7 @@
 										}
 									]},
 							{
+									"roundTo": 0,
 								"name": "Example Map",
 								"source": "data/maptest.geojson",
 								"expressedAttribute": "city",
@@ -722,6 +735,7 @@
 								],
 								"dataLayers": [
 									{
+											"roundTo": 0,
 										"name": "Nightlife tweets",
 										"source": "data/countiesall.geojson",
 										"expressedAttribute": "Nightlife",
@@ -746,6 +760,7 @@
 										]
 									},
 									{
+											"roundTo": 0,
 										"name": "Example Map",
 										"source": "data/detailsdata.geojson",
 										"expressedAttribute": "county_t_1",
@@ -771,6 +786,7 @@
 											}
 										]},
 									{
+											"roundTo": 0,
 										"name": "Nightlife tweets",
 										"source": "data/detailsdata.geojson",
 										"expressedAttribute": "county_t_4",
@@ -795,6 +811,7 @@
 										]
 									},
 									{
+											"roundTo": 0,
 										"name": "Example Map",
 										"source": "data/maptest.geojson",
 										"expressedAttribute": "city",
@@ -880,6 +897,7 @@
 									],
 									"dataLayers": [
 										{
+												"roundTo": 0,
 											"name": "Shoes tweets",
 											"source": "data/countiesall.geojson",
 											"expressedAttribute": "Shoes",
@@ -904,6 +922,7 @@
 											]
 										},
 										{
+												"roundTo": 0,
 											"name": "Nightlife tweets",
 											"source": "data/detailsdata.geojson",
 											"expressedAttribute": "county_t_5",
@@ -928,6 +947,7 @@
 											]
 										},
 										{
+												"roundTo": 0,
 											"name": "Example Map",
 											"source": "data/detailsdata.geojson",
 											"expressedAttribute": "county_t_1",
@@ -953,6 +973,7 @@
 												}
 											]},
 										{
+												"roundTo": 0,
 											"name": "Example Map",
 											"source": "data/maptest.geojson",
 											"expressedAttribute": "city",
@@ -1035,6 +1056,7 @@
 										],
 										"dataLayers": [
 											{
+													"roundTo": 0,
 												"name": "Pizza tweets",
 												"source": "data/Points2.json",
 												"expressedAttribute": "point",
@@ -1066,6 +1088,7 @@
 												]
 											},
 										{
+												"roundTo": 0,
 											"name": "Jacket tweets",
 											"source": "data/Points2.json",
 											"expressedAttribute": "point",
@@ -1089,6 +1112,7 @@
 											]
 										},
 										{
+												"roundTo": 0,
 											"name": "Example Map",
 											"source": "data/detailsdata.geojson",
 											"expressedAttribute": "county_t_1",
@@ -1114,6 +1138,7 @@
 												}
 											]},
 									{
+											"roundTo": 0,
 										"name": "Example Map",
 										"source": "data/maptest.geojson",
 										"expressedAttribute": "city",
@@ -1196,6 +1221,7 @@
 											],
 											"dataLayers": [
 												{
+														"roundTo": 0,
 													"name": "Baseball tweets",
 													"source": "data/countiesall.geojson",
 													"expressedAttribute": "Baseball",
@@ -1227,6 +1253,7 @@
 												}
 											,
 											{
+													"roundTo": 0,
 												"name": "Hamburger tweets",
 												"source": "data/detailsdata.geojson",
 												"expressedAttribute": "county_t_7",
@@ -1257,6 +1284,7 @@
 												]
 											},
 											{
+													"roundTo": 0,
 												"name": "Example Map",
 												"source": "data/detailsdata.geojson",
 												"expressedAttribute": "county_t_1",
@@ -1282,6 +1310,7 @@
 													}
 												]},
 											{
+													"roundTo": 0,
 												"name": "Example Map",
 												"source": "data/maptest.geojson",
 												"expressedAttribute": "city",
@@ -1365,6 +1394,7 @@
 												],
 												"dataLayers": [
 													{
+															"roundTo": 0,
 														"name": "Hamburger tweets",
 														"source": "data/Cities.json",
 														"expressedAttribute": "lat",
@@ -1391,6 +1421,7 @@
 														]
 													},
 													{
+															"roundTo": 0,
 														"name": "Hiking tweets",
 														"source": "data/countiesall.geojson",
 														"expressedAttribute": "Hiking",
@@ -1415,6 +1446,7 @@
 														]
 													},
 													{
+															"roundTo": 0,
 														"name": "Example Map",
 														"source": "data/detailsdata.geojson",
 														"expressedAttribute": "county_t_8",
@@ -1439,6 +1471,7 @@
 															}
 														]},
 													{
+															"roundTo": 0,
 														"name": "Example Map",
 														"source": "data/maptest.geojson",
 														"expressedAttribute": "tweets",
@@ -1460,6 +1493,7 @@
 															}
 														]},
 														{
+																"roundTo": 0,
 															"name": "Example Map",
 															"source": "data/Cities.json",
 															"expressedAttribute": "city",
@@ -1547,6 +1581,7 @@
 													],
 													"dataLayers": [
 														{
+																"roundTo": 0,
 															"name": "Soccer tweets",
 															"source": "data/Points3.json",
 															"expressedAttribute": "point",
@@ -1578,6 +1613,7 @@
 															]
 														},
 														{
+																"roundTo": 0,
 															"name": "Jacket tweets",
 															"source": "data/Points3.json",
 															"expressedAttribute": "point",
@@ -1601,6 +1637,7 @@
 															]
 														},
 														{
+																"roundTo": 0,
 															"name": "Example Map",
 															"source": "data/detailsdata.geojson",
 															"expressedAttribute": "county_t_1",
@@ -1626,6 +1663,7 @@
 																}
 															]},
 													{
+															"roundTo": 0,
 														"name": "Example Map",
 														"source": "data/maptest.geojson",
 														"expressedAttribute": "city",
@@ -1708,6 +1746,7 @@
 														],
 														"dataLayers": [
 															{
+																	"roundTo": 0,
 																"name": "Salad tweets",
 																"source": "data/countiesall.geojson",
 																"expressedAttribute": "Salad",
@@ -1732,6 +1771,7 @@
 																]
 															},
 															{
+																	"roundTo": 0,
 																"name": "Example Map",
 																"source": "data/detailsdata.geojson",
 																"expressedAttribute": "county_t_1",
@@ -1757,6 +1797,7 @@
 																	}
 																]},
 															{
+																	"roundTo": 0,
 																"name": "Nightlife tweets",
 																"source": "data/detailsdata.geojson",
 																"expressedAttribute": "county__10",
@@ -1781,6 +1822,7 @@
 																]
 															},
 															{
+																	"roundTo": 0,
 																"name": "Example Map",
 																"source": "data/maptest.geojson",
 																"expressedAttribute": "city",
@@ -1863,6 +1905,7 @@
 															],
 															"dataLayers": [
 																{
+																		"roundTo": 0,
 																	"name": "Hamburger tweets",
 																	"source": "data/Cities.json",
 																	"expressedAttribute": "lat",
@@ -1889,6 +1932,7 @@
 																	]
 																},
 																{
+																		"roundTo": 0,
 																	"name": "Glove tweets",
 																	"source": "data/countiesall.geojson",
 																	"expressedAttribute": "Gloves",
@@ -1913,6 +1957,7 @@
 																	]
 																},
 																{
+																		"roundTo": 0,
 																	"name": "Example Map",
 																	"source": "data/detailsdata.geojson",
 																	"expressedAttribute": "county__11",
@@ -1937,6 +1982,7 @@
 																		}
 																	]},
 																{
+																		"roundTo": 0,
 																	"name": "Example Map",
 																	"source": "data/maptest.geojson",
 																	"expressedAttribute": "tweets",
@@ -1958,6 +2004,7 @@
 																		}
 																	]},
 																	{
+																			"roundTo": 0,
 																		"name": "Example Map",
 																		"source": "data/Cities.json",
 																		"expressedAttribute": "city",
@@ -2040,6 +2087,7 @@
 																],
 																"dataLayers": [
 																	{
+																			"roundTo": 0,
 																		"name": "Movie tweets",
 																		"source": "data/countiesall.geojson",
 																		"expressedAttribute": "Movies",
@@ -2071,6 +2119,7 @@
 																	}
 																,
 																{
+																		"roundTo": 0,
 																	"name": "Hamburger tweets",
 																	"source": "data/detailsdata.geojson",
 																	"expressedAttribute": "county__12",
@@ -2101,6 +2150,7 @@
 																	]
 																},
 																{
+																		"roundTo": 0,
 																	"name": "Example Map",
 																	"source": "data/detailsdata.geojson",
 																	"expressedAttribute": "county_t_1",
@@ -2126,6 +2176,7 @@
 																		}
 																	]},
 																{
+																		"roundTo": 0,
 																	"name": "Example Map",
 																	"source": "data/maptest.geojson",
 																	"expressedAttribute": "city",
@@ -2211,6 +2262,7 @@
 																	],
 																	"dataLayers": [
 																		{
+																				"roundTo": 0,
 																			"name": "Hat tweets",
 																			"source": "data/countiesall.geojson",
 																			"expressedAttribute": "Hats",
@@ -2242,6 +2294,7 @@
 																		}
 																	,
 																	{
+																			"roundTo": 0,
 																		"name": "Hamburger tweets",
 																		"source": "data/detailsdata.geojson",
 																		"expressedAttribute": "county__13",
@@ -2272,6 +2325,7 @@
 																		]
 																	},
 																	{
+																			"roundTo": 0,
 																		"name": "Example Map",
 																		"source": "data/detailsdata.geojson",
 																		"expressedAttribute": "county_t_1",
@@ -2297,6 +2351,7 @@
 																			}
 																		]},
 																	{
+																			"roundTo": 0,
 																		"name": "Example Map",
 																		"source": "data/maptest.geojson",
 																		"expressedAttribute": "city",
@@ -2379,6 +2434,7 @@
 																		],
 																		"dataLayers": [
 																			{
+																					"roundTo": 0,
 																				"name": "Hamburger tweets",
 																				"source": "data/Cities.json",
 																				"expressedAttribute": "lat",
@@ -2405,6 +2461,7 @@
 																				]
 																			},
 																			{
+																					"roundTo": 0,
 																				"name": "Coffee tweets",
 																				"source": "data/countiesall.geojson",
 																				"expressedAttribute": "Coffee",
@@ -2429,6 +2486,7 @@
 																				]
 																			},
 																			{
+																					"roundTo": 0,
 																				"name": "Example Map",
 																				"source": "data/detailsdata.geojson",
 																				"expressedAttribute": "county__14",
@@ -2453,6 +2511,7 @@
 																					}
 																				]},
 																			{
+																					"roundTo": 0,
 																				"name": "Example Map",
 																				"source": "data/maptest.geojson",
 																				"expressedAttribute": "tweets",
@@ -2474,6 +2533,7 @@
 																					}
 																				]},
 																				{
+																						"roundTo": 0,
 																					"name": "Example Map",
 																					"source": "data/Cities.json",
 																					"expressedAttribute": "city",
@@ -2557,6 +2617,7 @@
 																			],
 																			"dataLayers": [
 																				{
+																						"roundTo": 0,
 																					"name": "Tennis tweets",
 																					"source": "data/countiesall.geojson",
 																					"expressedAttribute": "Tennis",
@@ -2581,6 +2642,7 @@
 																					]
 																				},
 																				{
+																						"roundTo": 0,
 																					"name": "Nightlife tweets",
 																					"source": "data/detailsdata.geojson",
 																					"expressedAttribute": "county__15",
@@ -2605,6 +2667,7 @@
 																					]
 																				},
 																				{
+																						"roundTo": 0,
 																					"name": "Example Map",
 																					"source": "data/detailsdata.geojson",
 																					"expressedAttribute": "county_t_1",
@@ -2630,6 +2693,7 @@
 																						}
 																					]},
 																				{
+																						"roundTo": 0,
 																					"name": "Example Map",
 																					"source": "data/maptest.geojson",
 																					"expressedAttribute": "city",
@@ -2712,6 +2776,7 @@
 																				],
 																				"dataLayers": [
 																					{
+																							"roundTo": 0,
 																						"name": "Music tweets",
 																						"source": "data/Points4.json",
 																						"expressedAttribute": "point",
@@ -2743,6 +2808,7 @@
 																						]
 																					},
 																					{
+																							"roundTo": 0,
 																						"name": "Jacket tweets",
 																						"source": "data/Points4.json",
 																						"expressedAttribute": "point",
@@ -2766,6 +2832,7 @@
 																						]
 																					},
 																					{
+																							"roundTo": 0,
 																						"name": "Example Map",
 																						"source": "data/detailsdata.geojson",
 																						"expressedAttribute": "county_t_1",
@@ -2791,6 +2858,7 @@
 																							}
 																						]},
 																				{
+																						"roundTo": 0,
 																					"name": "Example Map",
 																					"source": "data/maptest.geojson",
 																					"expressedAttribute": "city",
