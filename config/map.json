@@ -58,6 +58,7 @@
 							{
 								"type": "proportional symbol",
 								"classification": "equal interval",
+								"showOnLegend": false,
 								"classes": [
 							1,
 							1
@@ -134,6 +135,7 @@
 					"techniques": [
 						{
 							"type": "label",
+							"showOnLegend": false,
 							"size": 10
 						}
 					]},
@@ -155,6 +157,7 @@
 						"techniques": [
 							{
 								"type": "label",
+								"showOnLegend": false,
 								"size": 10
 							}
 						]}
@@ -239,6 +242,7 @@
 							"techniques": [
 								{
 									"type": "proportional symbol",
+									"showOnLegend": false,
 									"classification": "equal interval",
 									"classes": [
 								1,
@@ -316,6 +320,7 @@
 							"techniques": [
 								{
 									"type": "label",
+									"showOnLegend": false,
 									"size": 10
 								}
 							]},
@@ -338,6 +343,7 @@
 								"techniques": [
 									{
 										"type": "label",
+										"showOnLegend": false,
 										"size": 10
 									}
 								]}
@@ -481,6 +487,7 @@
 								"techniques": [
 									{
 										"type": "choropleth",
+										"showOnLegend": false,
 										"classification": "equal interval",
 										"classes": "BuGn.5"
 									}
@@ -504,6 +511,7 @@
 								"techniques": [
 									{
 										"type": "label",
+										"showOnLegend": false,
 										"size": 10
 									}
 								]}
@@ -647,6 +655,7 @@
 									"techniques": [
 										{
 											"type": "choropleth",
+											"showOnLegend": false,
 											"classification": "equal interval",
 											"classes": "BuGn.5"
 										}
@@ -670,6 +679,7 @@
 								"techniques": [
 									{
 										"type": "label",
+										"showOnLegend": false,
 										"size": 10
 									}
 								]}
@@ -781,6 +791,7 @@
 										"techniques": [
 											{
 												"type": "choropleth",
+												"showOnLegend": false,
 												"classification": "equal interval",
 												"classes": "BuGn.5"
 											}
@@ -829,6 +840,7 @@
 										"techniques": [
 											{
 												"type": "label",
+												"showOnLegend": false,
 												"size": 10
 											}
 										]}
@@ -968,6 +980,7 @@
 											"techniques": [
 												{
 													"type": "choropleth",
+													"showOnLegend": false,
 													"classification": "equal interval",
 													"classes": "BuGn.5"
 												}
@@ -991,6 +1004,7 @@
 											"techniques": [
 												{
 													"type": "label",
+													"showOnLegend": false,
 													"size": 10
 												}
 											]}
@@ -1133,6 +1147,7 @@
 											"techniques": [
 												{
 													"type": "choropleth",
+													"showOnLegend": false,
 													"classification": "equal interval",
 													"classes": "BuGn.5"
 												}
@@ -1156,6 +1171,7 @@
 										"techniques": [
 											{
 												"type": "label",
+												"showOnLegend": false,
 												"size": 10
 											}
 										]}
@@ -1305,6 +1321,7 @@
 												"techniques": [
 													{
 														"type": "choropleth",
+														"showOnLegend": false,
 														"classification": "equal interval",
 														"classes": "BuGn.5"
 													}
@@ -1328,6 +1345,7 @@
 												"techniques": [
 													{
 														"type": "label",
+														"showOnLegend": false,
 														"size": 10
 													}
 												]}
@@ -1412,6 +1430,7 @@
 														"techniques": [
 															{
 																"type": "proportional symbol",
+																"showOnLegend": false,
 																"classification": "equal interval",
 																"classes": [
 															1,
@@ -1489,6 +1508,7 @@
 														"techniques": [
 															{
 																"type": "label",
+																"showOnLegend": false,
 																"size": 10
 															}
 														]},
@@ -1511,6 +1531,7 @@
 															"techniques": [
 																{
 																	"type": "label",
+																	"showOnLegend": false,
 																	"size": 10
 																}
 															]}
@@ -1658,6 +1679,7 @@
 															"techniques": [
 																{
 																	"type": "choropleth",
+																	"showOnLegend": false,
 																	"classification": "equal interval",
 																	"classes": "BuGn.5"
 																}
@@ -1681,6 +1703,7 @@
 														"techniques": [
 															{
 																"type": "label",
+																"showOnLegend": false,
 																"size": 10
 															}
 														]}
@@ -1792,6 +1815,7 @@
 																"techniques": [
 																	{
 																		"type": "choropleth",
+																		"showOnLegend": false,
 																		"classification": "equal interval",
 																		"classes": "BuGn.5"
 																	}
@@ -1840,6 +1864,7 @@
 																"techniques": [
 																	{
 																		"type": "label",
+																		"showOnLegend": false,
 																		"size": 10
 																	}
 																]}
@@ -1923,6 +1948,7 @@
 																	"techniques": [
 																		{
 																			"type": "proportional symbol",
+																			"showOnLegend": false,
 																			"classification": "equal interval",
 																			"classes": [
 																		1,
@@ -2000,6 +2026,7 @@
 																	"techniques": [
 																		{
 																			"type": "label",
+																			"showOnLegend": false,
 																			"size": 10
 																		}
 																	]},
@@ -2022,6 +2049,7 @@
 																		"techniques": [
 																			{
 																				"type": "label",
+																				"showOnLegend": false,
 																				"size": 10
 																			}
 																		]}
@@ -2171,6 +2199,7 @@
 																	"techniques": [
 																		{
 																			"type": "choropleth",
+																			"showOnLegend": false,
 																			"classification": "equal interval",
 																			"classes": "BuGn.5"
 																		}
@@ -2194,6 +2223,7 @@
 																	"techniques": [
 																		{
 																			"type": "label",
+																			"showOnLegend": false,
 																			"size": 10
 																		}
 																	]}
@@ -2346,6 +2376,7 @@
 																		"techniques": [
 																			{
 																				"type": "choropleth",
+																				"showOnLegend": false,
 																				"classification": "equal interval",
 																				"classes": "BuGn.5"
 																			}
@@ -2369,6 +2400,7 @@
 																		"techniques": [
 																			{
 																				"type": "label",
+																				"showOnLegend": false,
 																				"size": 10
 																			}
 																		]}
@@ -2452,6 +2484,7 @@
 																				"techniques": [
 																					{
 																						"type": "proportional symbol",
+																						"showOnLegend": false,
 																						"classification": "equal interval",
 																						"classes": [
 																					1,
@@ -2529,6 +2562,7 @@
 																				"techniques": [
 																					{
 																						"type": "label",
+																						"showOnLegend": false,
 																						"size": 10
 																					}
 																				]},
@@ -2551,6 +2585,7 @@
 																					"techniques": [
 																						{
 																							"type": "label",
+																							"showOnLegend": false,
 																							"size": 10
 																						}
 																					]}
@@ -2688,6 +2723,7 @@
 																					"techniques": [
 																						{
 																							"type": "choropleth",
+																							"showOnLegend": false,
 																							"classification": "equal interval",
 																							"classes": "BuGn.5"
 																						}
@@ -2711,6 +2747,7 @@
 																					"techniques": [
 																						{
 																							"type": "label",
+																							"showOnLegend": false,
 																							"size": 10
 																						}
 																					]}
@@ -2853,6 +2890,7 @@
 																						"techniques": [
 																							{
 																								"type": "choropleth",
+																								"showOnLegend": false,
 																								"classification": "equal interval",
 																								"classes": "BuGn.5"
 																							}
@@ -2876,6 +2914,7 @@
 																					"techniques": [
 																						{
 																							"type": "label",
+																							"showOnLegend": false,
 																							"size": 10
 																						}
 																					]}
