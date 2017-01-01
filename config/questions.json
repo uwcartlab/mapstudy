@@ -1024,7 +1024,27 @@
 							"input": {
 								"required": false,
 								"autoadvance": false,
-								"type": "text"
+								"type": "radios",
+								"options": [
+									{
+										"text": "PhD"
+									},
+									{
+										"text": "Master Degree"
+									},
+									{
+										"text": "Post-Bachelor Certificate"
+									},
+									{
+										"text": "Bachelor Degree"
+									},
+									{
+										"text": "Associate Degree"
+									},
+									{
+										"text": "High School Diploma/Equivalent"
+									}
+								]
 							}
 						},
 						{
