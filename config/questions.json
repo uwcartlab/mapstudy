@@ -44,14 +44,14 @@
 							"ask": "This is an example of what a map could look like. It shows the total amount of waste imported by each site in the western United States from 2009-2012, but always review the legend carefully so you know what you are looking at. Each map that you will be shown will have a different question at a different location. <br><br>The maps will allow you to pan, or move around the map, zoom, or change the level of detail you are looking at, and retrieve details by clicking. Exploration is encouraged.<br><br>Use the map to answer the following example question.<br><br> <strong>REMEMBER: Once you select 'Next' the survey will begin and a timer will start.</strong>"
 						},
 						{
-							"ask": "Rank the sites that imported the most hazardous waste from highest to lowest:",
+							"ask": "Rank the sites that imported the most solid hazardous waste from highest to lowest:",
 							"input": {
 								"required": true,
 								"autoadvance": false,
 								"type": "rank",
 								"items": [
 									{
-										"text": "Chemical Waste Management of the Northwest, Inc."
+										"text": "Chemical Waste Management"
 									},
 									{
 										"text": "Veolia ES Technical Solutions"
@@ -80,14 +80,14 @@
 							"ask": "This is an example of what a map could look like. It shows the total amount of waste imported by each site in the western United States from 2009-2012, but always review the legend carefully so you know what you are looking at. Each map that you will be shown will as a different question at a different location. <br><br>The maps will allow you to pan, or move around the map, zoom, or change the level of detail you are looking at, retrieve details by clicking, overlay to add additional layers, and filter information. Exploration is encouraged.<br><br>Use the map to answer the following example question.<br><br> <strong>REMEMBER: Once you select 'Next' the survey will begin and a timer will start.</strong>"
 						},
 						{
-							"ask": "Rank the sites that imported the most hazardous waste from highest to lowest:",
+							"ask": "Rank the sites that imported the most solid hazardous waste from highest to lowest:",
 							"input": {
 								"required": true,
 								"autoadvance": false,
 								"type": "rank",
 								"items": [
 									{
-										"text": "Chemical Waste Management of the Northwest, Inc."
+										"text": "Chemical Waste Management"
 									},
 									{
 										"text": "Veolia ES Technical Solutions"

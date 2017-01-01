@@ -14,35 +14,36 @@
 				"resetButton": true,
 				"center": [
 					40,
-					-82.9
+					-115
 				],
-				"zoom": 7,
-				"minZoom": 6,
-				"maxZoom": 10,
+				"zoom": 5,
+				"minZoom": 5,
+				"maxZoom": 8,
 				"maxBounds": [
 					[
-						35,
-						-70
+						30,
+						-130
 					],
 					[
-						45,
-						-95
+						47,
+						-100
 					]
 				]
 			},
 			"baseLayers": [
 					{
 						"name": "Basemap",
-						"source": "https://api.mapbox.com/styles/v1/vinckl/ciuvkpmgl00e82js5bd8dir82/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+						"source": "https://api.mapbox.com/styles/v1/vinckl/cis98z43a002u2xoa5i3qu52n/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 					}
 				],
 				"dataLayers": [
 					{
+						"roundTo": 0,
 						"name": "Example Map",
-						"source": "data/maptest.geojson",
-						"expressedAttribute": "tweets",
+						"source": "data/ExampleMapData.geojson",
+						"expressedAttribute": "Kilograms",
 						"displayAttributes": [
-							"NAME10"
+							"Company"
 						],
 						"layerOptions": {
 					"fillOpacity": 0.8,
@@ -53,9 +54,13 @@
 						"renderOnLoad": true,
 						"techniques": [
 							{
-								"type": "choropleth",
-								"classification": "equal interval",
-								"classes": "BuGn.5"
+								"type": "proportional symbol",
+									"classification": "quantile",
+									"classes": [
+										7.8,
+										11.1,
+										15.7
+									]
 							}
 						]
 					}
@@ -82,11 +87,12 @@
 							"widget": false
 						}
 					},
-					"sequence": {
-						"dataLayers": [
-							"MapTest"
-						]
-					}
+					"retrieve": {
+						"logging": true,
+						"interface": {
+							"window": false
+				}
+			}
 				}
 			},
 			{
@@ -97,35 +103,36 @@
 					"resetButton": true,
 					"center": [
 						40,
-						-82.9
+						-115
 					],
-					"zoom": 7,
-					"minZoom": 6,
-					"maxZoom": 10,
+					"zoom": 5,
+					"minZoom": 5,
+					"maxZoom": 8,
 					"maxBounds": [
 						[
-							35,
-							-70
+							30,
+							-130
 						],
 						[
-							45,
-							-95
+							47,
+							-100
 						]
 					]
 				},
 				"baseLayers": [
 						{
 							"name": "Basemap",
-							"source": "https://api.mapbox.com/styles/v1/vinckl/ciuvkpmgl00e82js5bd8dir82/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+							"source": "https://api.mapbox.com/styles/v1/vinckl/cis98z43a002u2xoa5i3qu52n/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 						}
 					],
 					"dataLayers": [
 						{
+							"roundTo": 0,
 							"name": "Example Map",
-							"source": "data/maptest.geojson",
-							"expressedAttribute": "tweets",
+							"source": "data/ExampleMapData.geojson",
+							"expressedAttribute": "Kilograms",
 							"displayAttributes": [
-								"NAME10"
+								"Company"
 							],
 							"layerOptions": {
 						"fillOpacity": 0.8,
@@ -136,9 +143,13 @@
 							"renderOnLoad": true,
 							"techniques": [
 								{
-									"type": "choropleth",
-									"classification": "equal interval",
-									"classes": "BuGn.5"
+									"type": "proportional symbol",
+										"classification": "quantile",
+										"classes": [
+											7.8,
+											11.1,
+											15.7
+										]
 								}
 							]
 						}
@@ -165,11 +176,17 @@
 								"widget": false
 							}
 						},
-						"sequence": {
-							"dataLayers": [
-								"MapTest"
-							]
-						}
+						"overlay": {
+							"logging": true,
+							"toggle": true,
+							"dataLayers": []
+						},
+						"retrieve": {
+							"logging": true,
+							"interface": {
+								"window": false
+					}
+				}
 					}
 				},
 			{
