@@ -128,19 +128,19 @@
 					"dataLayers": [
 						{
 							"roundTo": 0,
-							"name": "Example Map",
+							"name": "Kilogram Data",
 							"source": "data/ExampleMapData.geojson",
 							"expressedAttribute": "Kilograms",
 							"displayAttributes": [
-								"Company"
+								"Kilograms"
 							],
+							"renderOnLoad": true,
 							"layerOptions": {
 						"fillOpacity": 0.8,
 						"color": "black",
 						"weight": 0.5,
 						"opacity": 1
 					},
-							"renderOnLoad": true,
 							"techniques": [
 								{
 									"type": "proportional symbol",
@@ -152,7 +152,31 @@
 										]
 								}
 							]
-						}
+						},
+						{
+						"name": "Companies",
+						"source": "data/ExampleMapData2.geojson",
+						"expressedAttribute": "Kilograms",
+						"displayAttributes": [
+							"Company"
+						],
+						"renderOnLoad": false,
+						"layerOptions": {
+					"fillOpacity": 0.8,
+					"color": "black",
+					"weight": 0.5,
+					"opacity": 1,
+					"minZoom": 0,
+					"maxZoom": 11
+				},
+						"techniques": [
+							{
+								"type": "label",
+								"showOnLegend": false,
+								"size": "11"
+							}
+						]
+					}
 					],
 					"interactions": {
 						"zoom": {
