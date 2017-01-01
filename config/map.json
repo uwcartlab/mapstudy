@@ -255,11 +255,8 @@
 						}
 					}
 				},
-				{
-					"page": 6
-					},
 					{
-						"page": 7,
+						"page": 6,
 						"library": "Leaflet",
 						"mapOptions": {
 							"legend": true,
@@ -344,7 +341,7 @@
 							}
 						},
 						{
-							"page": 8,
+							"page": 7,
 							"library": "Leaflet",
 							"mapOptions": {
 								"legend": true,
@@ -430,7 +427,7 @@
 								}
 							},
 							{
-								"page": 9,
+								"page": 8,
 								"library": "Leaflet",
 								"mapOptions": {
 									"legend": true,
@@ -516,7 +513,7 @@
 									}
 								},
 							{
-								"page": 10,
+								"page": 9,
 								"library": "Leaflet",
 								"mapOptions": {
 									"legend": true,
@@ -602,7 +599,7 @@
 									}
 								},
 								{
-									"page": 11,
+									"page": 10,
 									"library": "Leaflet",
 									"mapOptions": {
 										"legend": true,
@@ -696,7 +693,7 @@
 										}
 									},
 									{
-										"page": 12,
+										"page": 11,
 										"library": "Leaflet",
 										"mapOptions": {
 											"legend": true,
@@ -794,7 +791,7 @@
 											}
 										},
 										{
-											"page": 13,
+											"page": 12,
 											"library": "Leaflet",
 											"mapOptions": {
 												"legend": true,
@@ -889,7 +886,7 @@
 												}
 											},
 											{
-												"page": 14,
+												"page": 13,
 												"library": "Leaflet",
 												"mapOptions": {
 													"legend": true,
@@ -984,16 +981,16 @@
 													}
 												},
 											{
-												"page": 15
+												"page": 14
 												},
 												{
-													"page": 16
+													"page": 15
 													},
 													{
-														"page": 17
+														"page": 16
 														},
 														{
-															"page": 18
+															"page": 17
 															}
 	]
 }
