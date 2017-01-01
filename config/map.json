@@ -40,7 +40,7 @@
 					{
 						"roundTo": 0,
 						"name": "Example Map",
-						"source": "data/ExampleMapData.geojson",
+						"source": "data/ExampleMapDataCopy.geojson",
 						"expressedAttribute": "Kilograms",
 						"displayAttributes": [
 							"Company"
@@ -173,7 +173,7 @@
 							{
 								"type": "label",
 								"showOnLegend": false,
-								"size": "11"
+								"size": "9"
 							}
 						]
 					}
