@@ -103,7 +103,7 @@
 					"resetButton": true,
 					"center": [
 						40,
-						-115
+						-117
 					],
 					"zoom": 5,
 					"minZoom": 5,
@@ -154,8 +154,8 @@
 							]
 						},
 						{
-						"name": "Companies",
-						"source": "data/ExampleMapData2.geojson",
+						"name": "Importing Company",
+						"source": "data/ExampleMapData.geojson",
 						"expressedAttribute": "Kilograms",
 						"displayAttributes": [
 							"Company"
@@ -200,9 +200,17 @@
 								"widget": false
 							}
 						},
+						"filter": {
+							"dataLayers": [
+									"Kilogram Data"
+								],
+								"tool": "slider",
+								"logging": true,
+								"toggle": false
+				},
 						"overlay": {
 							"logging": true,
-							"toggle": true,
+							"toggle": false,
 							"dataLayers": []
 						},
 						"retrieve": {
