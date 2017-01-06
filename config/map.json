@@ -665,7 +665,7 @@
 										"resetButton": true,
 										"center": [
 											40,
-											-82.9
+											-83.2
 										],
 										"zoom": 7,
 										"minZoom": 6,
@@ -689,11 +689,12 @@
 										],
 										"dataLayers": [
 											{
-												"name": "Pizza tweets",
-												"source": "data/countiesall.geojson",
-												"expressedAttribute": "Pizza",
+												"name": "Waste Imported",
+												"source": "data/Ohio.geojson",
+												"roundTo": 0,
+												"expressedAttribute": "Kilograms",
 												"displayAttributes": [
-													"NAME10"
+													"Management Method", "Violations in 3 Years"
 												],
 												"layerOptions": {
 											"fillOpacity": 0.8,
@@ -702,14 +703,44 @@
 											"opacity": 1
 										},
 												"renderOnLoad": true,
-												"techniques": [
-													{
-														"type": "heat",
-														"size": 0.7
-													}
-												]
-											}
-										],
+																"techniques": [
+																	{
+																		"type": "proportional symbol",
+																			"classification": "equal interval",
+																			"classes": [
+																				7.8,
+																				11.1,
+																				15.7,
+																				22.2,
+																				31.4
+																			]
+																	}
+																]},
+																{
+																"name": "Company",
+																"source": "data/Ohio.geojson",
+																"expressedAttribute": "Kilograms",
+																"displayAttributes": [
+																	"Company"
+																],
+																"renderOnLoad": false,
+																"layerOptions": {
+															"fillOpacity": 0.8,
+															"color": "black",
+															"weight": 0.5,
+															"opacity": 1,
+															"minZoom": 0,
+															"maxZoom": 11
+														},
+																"techniques": [
+																	{
+																		"type": "label",
+																		"showOnLegend": false,
+																		"size": "9"
+																	}
+																]
+															}
+															],
 										"interactions": {
 											"zoom": {
 												"logging": true,
@@ -740,17 +771,21 @@
 													"window": false
 												}
 											},
+											"filter": {
+												"dataLayers": [
+														"Waste Imported"
+													],
+													"tool": "slider",
+													"logging": true,
+													"toggle": false
+												},
 											"overlay": {
 												"logging": true,
-												"toggle": false
-											},
-											"filter": {
-												"logging": true,
 												"toggle": false,
-												"tool": "logic"
-											}
-										}
-									},
+												"dataLayers": [
+													"Company"
+												]
+											}}},
 									{
 										"page": 11,
 										"library": "Leaflet",
