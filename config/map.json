@@ -336,7 +336,7 @@
 							],
 							"dataLayers": [
 								{
-									"name": "Ohio",
+									"name": "Waste Imported",
 									"renderOnLoad": true,
 									"roundTo": 0,
 									"source": "data/Ohio.geojson",
@@ -488,7 +488,7 @@
 									"resetButton": true,
 									"center": [
 										32,
-										-100
+										-99.5
 									],
 									"zoom": 6,
 									"minZoom": 5,
@@ -512,11 +512,12 @@
 									],
 									"dataLayers": [
 										{
-											"name": "Nightlife tweets",
-											"source": "data/countiesall.geojson",
-											"expressedAttribute": "Nightlife",
+											"name": "Waste Imported",
+											"source": "data/Texas.geojson",
+											"roundTo": 0,
+											"expressedAttribute": "Kilograms",
 											"displayAttributes": [
-												"NAME10"
+												"Company", "Violations in 3 Years", "Management Method"
 											],
 											"layerOptions": {
 										"fillOpacity": 0.8,
@@ -525,15 +526,19 @@
 										"opacity": 1
 									},
 											"renderOnLoad": true,
-											"techniques": [
-												{
-													"type": "dot",
-													"interval": 10,
-													"size": 1
-												}
-											]
-										}
-									],
+															"techniques": [
+																{
+																	"type": "proportional symbol",
+																		"classification": "equal interval",
+																		"classes": [
+																			7.8,
+																			11.1,
+																			15.7,
+																			22.2,
+																			31.4
+																		]
+																}
+															]}],
 									"interactions": {
 										"zoom": {
 											"logging": true,
