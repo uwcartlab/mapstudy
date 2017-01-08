@@ -795,104 +795,135 @@
 													"Company"
 												]
 											}}},
-									{
-										"page": 11,
-										"library": "Leaflet",
-										"mapOptions": {
-											"legend": true,
-											"resetButton": true,
-											"center": [
-												32,
-												-100
-											],
-											"zoom": 6,
-											"minZoom": 5,
-											"maxZoom": 10,
-											"maxBounds": [
-												[
-													10,
-													-80
-												],
-												[
-													40,
-													-120
-												]
-											]
-										},
-										"baseLayers": [
-												{
-													"name": "Basemap",
-													"source": "https://api.mapbox.com/styles/v1/vinckl/cis98z43a002u2xoa5i3qu52n/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
-												}
-											],
-											"dataLayers": [
-												{
-													"name": "Baseball tweets",
-													"source": "data/countiesall.geojson",
-													"expressedAttribute": "Baseball",
-													"displayAttributes": [
-														"NAME10"
+											{
+												"page": 11,
+												"library": "Leaflet",
+												"mapOptions": {
+													"legend": true,
+													"resetButton": true,
+													"center": [
+														30,
+														-99.5
 													],
-													"layerOptions": {
-												"fillOpacity": 0.8,
-												"color": "black",
-												"weight": 0.5,
-												"opacity": 1
-											},
-													"renderOnLoad": true,
-													"techniques": [
-														{
-															"type": "proportional symbol",
-															"classification": "equal interval",
-															"classes": [
-																5,
-																20
-															]
-														}
+													"zoom": 6,
+													"minZoom": 5,
+													"maxZoom": 10,
+													"maxBounds": [
+														[
+															10,
+															-80
+														],
+														[
+															40,
+															-120
+														]
 													]
-												}
-											],
-											"interactions": {
-												"zoom": {
-													"logging": true,
-													"toggle": false,
-													"interface": {
-														"touch": true,
-														"scrollWheel": true,
-														"doubleClick": true,
-														"box": true,
-														"keyboard": true,
-														"widget": false
-													}
 												},
-												"pan": {
-													"logging": true,
-													"toggle": false,
-													"interface": {
-														"drag": true,
-														"keyboard": true,
-														"widget": false
-													}
-												},
-												"retrieve": {
-													"logging": true,
-													"toggle": false,
-													"interface": {
-														"popup": true,
-														"window": false
-													}
-												},
-												"overlay": {
-													"logging": true,
-													"toggle": false
-												},
-												"filter": {
-													"logging": true,
-													"toggle": false,
-													"tool": "logic"
-												}
-											}
-										},
+												"baseLayers": [
+														{
+															"name": "Basemap",
+															"source": "https://api.mapbox.com/styles/v1/vinckl/cis98z43a002u2xoa5i3qu52n/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+														}
+													],
+													"dataLayers": [
+														{
+															"name": "Waste Imported",
+															"source": "data/Texas.geojson",
+															"roundTo": 0,
+															"expressedAttribute": "Kilograms",
+															"displayAttributes": [
+																"Management Method", "Violations in 3 Years", "Census Tract Income ($)", "Census Tract Percent Non-White Population"
+															],
+															"layerOptions": {
+														"fillOpacity": 0.8,
+														"color": "black",
+														"weight": 0.5,
+														"opacity": 1
+													},
+															"renderOnLoad": true,
+																			"techniques": [
+																				{
+																					"type": "proportional symbol",
+																						"classification": "equal interval",
+																						"classes": [
+																							7.8,
+																							11.1,
+																							15.7,
+																							22.2,
+																							31.4
+																						]
+																				}
+																			]},
+																			{
+																			"name": "Company",
+																			"source": "data/Texas.geojson",
+																			"expressedAttribute": "Kilograms",
+																			"displayAttributes": [
+																				"Company"
+																			],
+																			"renderOnLoad": false,
+																			"layerOptions": {
+																		"fillOpacity": 0.8,
+																		"color": "black",
+																		"weight": 0.5,
+																		"opacity": 1,
+																		"minZoom": 0,
+																		"maxZoom": 11
+																	},
+																			"techniques": [
+																				{
+																					"type": "label",
+																					"showOnLegend": false,
+																					"size": "9"
+																				}
+																			]
+																		}
+																		],
+													"interactions": {
+														"zoom": {
+															"logging": true,
+															"toggle": false,
+															"interface": {
+																"touch": true,
+																"scrollWheel": true,
+																"doubleClick": true,
+																"box": true,
+																"keyboard": true,
+																"widget": false
+															}
+														},
+														"pan": {
+															"logging": true,
+															"toggle": false,
+															"interface": {
+																"drag": true,
+																"keyboard": true,
+																"widget": false
+															}
+														},
+														"retrieve": {
+															"logging": true,
+															"toggle": false,
+															"interface": {
+																"popup": true,
+																"window": false
+															}
+														},
+														"filter": {
+															"dataLayers": [
+																	"Waste Imported"
+																],
+																"tool": "slider",
+																"logging": true,
+																"toggle": false
+															},
+														"overlay": {
+															"logging": true,
+															"toggle": false,
+															"dataLayers": [
+																"Company"
+															]
+														}}},
 										{
 											"page": 12,
 											"library": "Leaflet",
