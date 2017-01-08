@@ -228,20 +228,20 @@
 					"legend": true,
 					"resetButton": true,
 					"center": [
-						32,
-						-100
+						37,
+						-98
 					],
-					"zoom": 6,
-					"minZoom": 5,
+					"zoom": 4,
+					"minZoom": 4,
 					"maxZoom": 10,
 					"maxBounds": [
 						[
 							10,
-							-80
+							-10
 						],
 						[
-							40,
-							-120
+							90,
+							-150
 						]
 					]
 				},

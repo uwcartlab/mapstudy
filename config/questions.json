@@ -518,19 +518,25 @@
 								"type": "rank",
 								"items": [
 									{
-										"text": "HOW MANY OPTIONS GO HERE???"
+										"text": "AMG VANADIUM"
 									},
 									{
-										"text": "AMG Vanadium"
+										"text": "CLEAN HARBORS, INC."
 									},
 									{
-										"text": "Spring Grove Resoure and Recovery"
+										"text": "CLEAN HARBORS, INC.-CLEVELAND"
 									},
 									{
-										"text": "Spring Grove Resoure and Recovery"
+										"text": "ENVIRITE OF OHIO INC"
 									},
 									{
-										"text": "Spring Grove Resoure and Recovery"
+										"text": "ROSS INCINERATION SERVICES, INC."
+									},
+									{
+										"text": "SPRING GROVE RESOURCE RECOVERY INC."
+									},
+									{
+										"text": "SYSTECH CORPORATION"
 									}
 								]
 							}
@@ -550,26 +556,32 @@
 					"blocks": [
 						{
 							"title": "Map 2",
-							"ask": "You are a regulator at the EPA. Because of the region you work in, you are responsible for making sure all waste facilities in Texs follow government regulations properly. Your job is to focus on facilities that incinerate hazardous waste, which limits the facilities you work with, because there is indication that some of these facilities are underperforming. Your job is to examine previous reports to understand each company’s past compliance record, as well as examine public concerns about the facilities in their respective communities. Recently, community members have come forward indicating they feel like they are burdened by the facility. After your examination, rank the top 3 sites that need to be monitored more closely.",
+							"ask": "You are a regulator at the EPA. Because of the region you work in, you are responsible for making sure all waste facilities in Texas follow government regulations properly. Your job is to focus on facilities that incinerate hazardous waste, which limits the facilities you work with, because there is indication that some of these facilities are underperforming. Your job is to examine previous reports to understand each company’s past compliance record, as well as examine public concerns about the facilities in their respective communities. Recently, community members have come forward indicating they feel like they are burdened by the facility. After your examination, rank the top 3 sites that need to be monitored more closely.",
 							"input": {
 								"required": true,
 								"autoadvance": false,
 								"type": "rank",
 								"items": [
 									{
-										"text": "Clean Harbors Environmental Services"
+										"text": "AMLON RESOURCES C/O DUATHERM, INC."
 									},
 									{
-										"text": "AMG Vanadium"
+										"text": "CLEAN HARBORS, INC."
 									},
 									{
-										"text": "Spring Grove Resoure and Recovery"
+										"text": "EURECAT U.S. INC."
 									},
 									{
-										"text": "Spring Grove Resoure and Recovery"
+										"text": "SAFETY-KLEEN"
 									},
 									{
-										"text": "Spring Grove Resoure and Recovery"
+										"text": "SET ENVIRONMENTAL INC."
+									},
+									{
+										"text": "U.S. ECOLOGY TEXAS"
+									},
+									{
+										"text": "VEOLIA ENVIRONMENTAL SERVICES"
 									}
 								]
 							}
@@ -596,19 +608,25 @@
 								"type": "rank",
 								"items": [
 									{
-										"text": "Clean Harbors Environmental Services"
+										"text": "AMLON RESOURCES C/O DUATHERM, INC."
 									},
 									{
-										"text": "AMG Vanadium"
+										"text": "CLEAN HARBORS, INC."
 									},
 									{
-										"text": "Spring Grove Resoure and Recovery"
+										"text": "EURECAT U.S. INC."
 									},
 									{
-										"text": "Spring Grove Resoure and Recovery"
+										"text": "SAFETY-KLEEN"
 									},
 									{
-										"text": "Spring Grove Resoure and Recovery"
+										"text": "SET ENVIRONMENTAL INC."
+									},
+									{
+										"text": "U.S. ECOLOGY TEXAS"
+									},
+									{
+										"text": "VEOLIA ENVIRONMENTAL SERVICES"
 									}
 								]
 							}
@@ -635,19 +653,25 @@
 								"type": "rank",
 								"items": [
 									{
-										"text": "Clean Harbors Environmental Services"
+										"text": "AMG VANADIUM"
 									},
 									{
-										"text": "AMG Vanadium"
+										"text": "CLEAN HARBORS, INC."
 									},
 									{
-										"text": "Spring Grove Resoure and Recovery"
+										"text": "CLEAN HARBORS, INC.-CLEVELAND"
 									},
 									{
-										"text": "Spring Grove Resoure and Recovery"
+										"text": "ENVIRITE OF OHIO INC"
 									},
 									{
-										"text": "Spring Grove Resoure and Recovery"
+										"text": "ROSS INCINERATION SERVICES, INC."
+									},
+									{
+										"text": "SPRING GROVE RESOURCE RECOVERY INC."
+									},
+									{
+										"text": "SYSTECH CORPORATION"
 									}
 								]
 							}
@@ -674,19 +698,25 @@
 								"type": "rank",
 								"items": [
 									{
-										"text": "Clean Harbors Environmental Services"
+										"text": "AMG VANADIUM"
 									},
 									{
-										"text": "AMG Vanadium"
+										"text": "CLEAN HARBORS, INC."
 									},
 									{
-										"text": "Spring Grove Resoure and Recovery"
+										"text": "CLEAN HARBORS, INC.-CLEVELAND"
 									},
 									{
-										"text": "Spring Grove Resoure and Recovery"
+										"text": "ENVIRITE OF OHIO INC"
 									},
 									{
-										"text": "Spring Grove Resoure and Recovery"
+										"text": "ROSS INCINERATION SERVICES, INC."
+									},
+									{
+										"text": "SPRING GROVE RESOURCE RECOVERY INC."
+									},
+									{
+										"text": "SYSTECH CORPORATION"
 									}
 								]
 							}
@@ -713,19 +743,25 @@
 								"type": "rank",
 								"items": [
 									{
-										"text": "Clean Harbors Environmental Services"
+										"text": "AMLON RESOURCES C/O DUATHERM, INC."
 									},
 									{
-										"text": "AMG Vanadium"
+										"text": "CLEAN HARBORS, INC."
 									},
 									{
-										"text": "Spring Grove Resoure and Recovery"
+										"text": "EURECAT U.S. INC."
 									},
 									{
-										"text": "Spring Grove Resoure and Recovery"
+										"text": "SAFETY-KLEEN"
 									},
 									{
-										"text": "Spring Grove Resoure and Recovery"
+										"text": "SET ENVIRONMENTAL INC."
+									},
+									{
+										"text": "U.S. ECOLOGY TEXAS"
+									},
+									{
+										"text": "VEOLIA ENVIRONMENTAL SERVICES"
 									}
 								]
 							}
@@ -752,19 +788,25 @@
 								"type": "rank",
 								"items": [
 									{
-										"text": "Clean Harbors Environmental Services"
+										"text": "AMLON RESOURCES C/O DUATHERM, INC."
 									},
 									{
-										"text": "AMG Vanadium"
+										"text": "CLEAN HARBORS, INC."
 									},
 									{
-										"text": "Spring Grove Resoure and Recovery"
+										"text": "EURECAT U.S. INC."
 									},
 									{
-										"text": "Spring Grove Resoure and Recovery"
+										"text": "SAFETY-KLEEN"
 									},
 									{
-										"text": "Spring Grove Resoure and Recovery"
+										"text": "SET ENVIRONMENTAL INC."
+									},
+									{
+										"text": "U.S. ECOLOGY TEXAS"
+									},
+									{
+										"text": "VEOLIA ENVIRONMENTAL SERVICES"
 									}
 								]
 							}
@@ -791,19 +833,25 @@
 								"type": "rank",
 								"items": [
 									{
-										"text": "Clean Harbors Environmental Services"
+										"text": "AMG VANADIUM"
 									},
 									{
-										"text": "AMG Vanadium"
+										"text": "CLEAN HARBORS, INC."
 									},
 									{
-										"text": "Spring Grove Resoure and Recovery"
+										"text": "CLEAN HARBORS, INC.-CLEVELAND"
 									},
 									{
-										"text": "Spring Grove Resoure and Recovery"
+										"text": "ENVIRITE OF OHIO INC"
 									},
 									{
-										"text": "Spring Grove Resoure and Recovery"
+										"text": "ROSS INCINERATION SERVICES, INC."
+									},
+									{
+										"text": "SPRING GROVE RESOURCE RECOVERY INC."
+									},
+									{
+										"text": "SYSTECH CORPORATION"
 									}
 								]
 							}
