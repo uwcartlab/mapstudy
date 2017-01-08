@@ -394,92 +394,97 @@
 									}
 								}
 							}},
-						{
-							"page": 7,
-							"library": "Leaflet",
-							"mapOptions": {
-								"legend": true,
-								"resetButton": true,
-								"center": [
-									32,
-									-100
-								],
-								"zoom": 6,
-								"minZoom": 5,
-								"maxZoom": 10,
-								"maxBounds": [
-									[
-										10,
-										-80
+							{
+								"page": 7,
+								"library": "Leaflet",
+								"mapOptions": {
+									"legend": true,
+									"resetButton": true,
+									"center": [
+										32,
+										-99.5
 									],
-									[
-										40,
-										-120
-									]
-								]
-							},
-							"baseLayers": [
-									{
-										"name": "Basemap",
-										"source": "https://api.mapbox.com/styles/v1/vinckl/cis98z43a002u2xoa5i3qu52n/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
-									}
-								],
-								"dataLayers": [
-									{
-										"name": "Nightlife tweets",
-										"source": "data/countiesall.geojson",
-										"expressedAttribute": "Nightlife",
-										"displayAttributes": [
-											"NAME10"
+									"zoom": 6,
+									"minZoom": 5,
+									"maxZoom": 10,
+									"maxBounds": [
+										[
+											10,
+											-80
 										],
-										"layerOptions": {
-									"fillOpacity": 0.8,
-									"color": "black",
-									"weight": 0.5,
-									"opacity": 1
-								},
-										"renderOnLoad": true,
-										"techniques": [
-											{
-												"type": "dot",
-												"interval": 10,
-												"size": 1
-											}
+										[
+											40,
+											-120
 										]
-									}
-								],
-								"interactions": {
-									"zoom": {
+									]
+								},
+								"baseLayers": [
+										{
+											"name": "Basemap",
+											"source": "https://api.mapbox.com/styles/v1/vinckl/cis98z43a002u2xoa5i3qu52n/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+										}
+									],
+									"dataLayers": [
+										{
+											"name": "Waste Imported",
+											"source": "data/Texas.geojson",
+											"roundTo": 0,
+											"expressedAttribute": "Kilograms",
+											"displayAttributes": [
+												"Company", "Violations in 3 Years", "Management Method", "Census Tract Income ($)", "Census Tract Percent Non-White Population"
+											],
+											"layerOptions": {
+										"fillOpacity": 0.8,
+										"color": "black",
+										"weight": 0.5,
+										"opacity": 1
+									},
+											"renderOnLoad": true,
+															"techniques": [
+																{
+																	"type": "proportional symbol",
+																		"classification": "equal interval",
+																		"classes": [
+																			7.8,
+																			11.1,
+																			15.7,
+																			22.2,
+																			31.4
+																		]
+																}
+															]}],
+									"interactions": {
+										"zoom": {
+											"logging": true,
+											"toggle": false,
+											"interface": {
+												"touch": true,
+												"scrollWheel": true,
+												"doubleClick": true,
+												"box": true,
+												"keyboard": true,
+												"widget": false
+											}
+										},
+										"pan": {
+											"logging": true,
+											"toggle": false,
+											"interface": {
+												"drag": true,
+												"keyboard": true,
+												"widget": false
+											}
+										},
+										"retrieve": {
 										"logging": true,
 										"toggle": false,
 										"interface": {
-											"touch": true,
-											"scrollWheel": true,
-											"doubleClick": true,
-											"box": true,
-											"keyboard": true,
-											"widget": false
-										}
-									},
-									"pan": {
-										"logging": true,
-										"toggle": false,
-										"interface": {
-											"drag": true,
-											"keyboard": true,
-											"widget": false
-										}
-									},
-									"retrieve": {
-									"logging": true,
-									"toggle": false,
-									"interface": {
-									"popup": true,
-									"window": false
+										"popup": true,
+										"window": false
+											}
 										}
 									}
-								}
-							},
+								},
 							{
 								"page": 8,
 								"library": "Leaflet",
@@ -1119,6 +1124,9 @@
 														},
 														{
 															"page": 17
+														},
+														{
+															"page": 18
 															}
 	]
 }
