@@ -600,6 +600,7 @@ projection = d3.geo.albers()
     &quot;source&quot;
     &quot;expressedAttribute&quot;
     *&quot;displayAttributes&quot;*
+    *&quot;roundTo&quot;*
     *&quot;renderOnLoad&quot;*
     *&quot;layerOptions&quot;*
     &quot;techniques&quot;
@@ -619,6 +620,9 @@ projection = d3.geo.albers()
 <h4 id="map-pages-page-datalayers-i-displayattributes">map.pages[page].dataLayers[i].displayAttributes</h4>
 <pre><code>    *&quot;displayAttributes&quot;*: []
 </code></pre><p>An array of one or more attributes to include in that layer&#39;s pop-ups if the <code>retrieve</code> interaction is included, in the search tool if the <code>search</code> interaction is included, and in the filter tool if the <code>filter</code> interaction is included. Only categorical attributes with string values will be searchable (e.g., &quot;name&quot; but not &quot;population&quot;). Only numerical attributes will be added to the filter tool (e.g., &quot;population&quot; but not &quot;name&quot;), and will be accessible via a drop-down menu in the data layer&#39;s line in the filter tool. If <code>retrieve</code>, <code>search</code>, or <code>filter</code> are included but no <code>displayAttributes</code> are given, pop-ups and tools will be implemented using only the layer&#39;s <code>expressedAttribute</code>.</p>
+<h4 id="map-pages-page-datalayers-i-roundto">map.pages[page].dataLayers[i].roundTo</h4>
+<pre><code>    *&quot;roundTo&quot;*: *number*
+</code></pre><p>A number of digits to which to round the expressed attribute values displayed on the legend. Positive values represent the number of digits to the right of the decimal point (with 0 representing an integer with no decimals); negative values represent the number of places to the left of the decimal point.</p>
 <h4 id="map-pages-page-datalayers-i-renderonload">map.pages[page].dataLayers[i].renderOnLoad</h4>
 <pre><code>    *&quot;renderOnLoad&quot;*: *true* *false*
 </code></pre><p>Whether to render the layer when the map loads.</p>
@@ -654,11 +658,12 @@ projection = d3.geo.albers()
         *&quot;symbol&quot;*
         *&quot;interval&quot;*
         *&quot;size&quot;*
+        *&quot;showOnLegend&quot;*
     }]
 </code></pre><p>An array of objects containing the thematic mapping techniques, including the map type and classification parameters for the data layer. At least one technique object is required. The first technique object in the array will be used for the layer&#39;s initial expression; all other techniques for the layer will only be available to the user if <code>map.pages[page].interactions.reexpress</code> is included.</p>
 <h4 id="map-pages-page-datalayers-i-techniques-ii-type">map.pages[page].dataLayers[i].techniques[ii].type</h4>
-<pre><code>        &quot;type&quot;: *&quot;choropleth&quot;* *&quot;proportional symbol&quot;* *&quot;dot&quot;* *&quot;isarithmic&quot;* *&quot;heat&quot;*
-</code></pre><p>The <a href="https://en.wikipedia.org/wiki/Thematic_map">thematic map type</a>. Note that only a data layer with a <code>proportional symbol</code>, <code>isarithmic</code>, or <code>heat</code> technique type can use point feature data, but all technique types can use polygon data. The <code>retrieve</code> and <code>search</code> interactions are not available for <code>heat</code> map layers, and <code>search</code> is not available for <code>isarithmic</code> layers.</p>
+<pre><code>        &quot;type&quot;: *&quot;choropleth&quot;* *&quot;proportional symbol&quot;* *&quot;dot&quot;* *&quot;isarithmic&quot;* *&quot;heat&quot;* *&quot;label&quot;* *&quot;point&quot;*
+</code></pre><p>The <a href="https://en.wikipedia.org/wiki/Thematic_map">thematic map type</a>. Note that only a data layer with a <code>proportional symbol</code>, <code>isarithmic</code>, <code>heat</code>, or <code>point</code> technique type can use point feature data, but all technique types can use polygon data. The <code>retrieve</code> and <code>search</code> interactions are not available for <code>heat</code> map layers, and <code>search</code> is not available for <code>isarithmic</code> layers. A <code>label</code> data layer will place labels on the map for each feature expressing the layer&#39;s first display attribute, either adjacent to the feature if point data or centered within the feature if polygons. A <code>point</code> layer renders a single size of circle for each point feature or centroid using the technique <code>size</code> option.</p>
 <h4 id="map-pages-page-datalayers-i-techniques-ii-classification">map.pages[page].dataLayers[i].techniques[ii].classification</h4>
 <pre><code>        &quot;classification&quot;: *&quot;quantile&quot;* *&quot;equal interval&quot;* *&quot;natural breaks&quot;* *&quot;unclassed&quot;*
 </code></pre><p>The classification technique for a choropleth or proportional symbol map. Which technique is chosen determines how the data values of the <code>expressedAttribute</code> are grouped for display on the map. Required for <code>choropleth</code> and <code>proportional symbol</code> types, and unavailable for <code>isarithmic</code>, <code>heat</code>, and <code>dot</code> type.</p>
@@ -706,7 +711,7 @@ projection = d3.geo.albers()
 <p>For a dot map, the value of <code>interval</code> is the denominator by which the feature&#39;s expressed attribute value will be divided to determine the number of dots to add within the boundaries of a feature. Omitting <code>interval</code> will result in a default of one dot for every 10 units. For example, if the expressed attribute value for a feature is <code>15,607</code>, by default there will be 1,561 dots scattered within that feature&#39;s boundaries. Designating <code>interval</code> as <code>1</code> will result in a dot being added for each whole number increase in the expressed attribute value, resulting in a true dot (as opposed to dot density) map. The larger the <code>interval</code>, the fewer dots will be created, and vice-versa. Note that the more dots are created, <em>and the more irregular the polygons in the dataset</em>, the longer the map will take to render. It is not recommended to use an <code>interval</code> that will create more than 10,000 dots total.</p>
 <h4 id="map-pages-page-datalayers-i-techniques-ii-size">map.pages[page].dataLayers[i].techniques[ii].size</h4>
 <pre><code>        *&quot;size&quot;*: *size*
-</code></pre><p>The size of dots on a dot map or isarithms on an isarithmic map; a number.</p>
+</code></pre><p>The size of dots on a dot map, isarithms on an isarithmic map, or label font size in pixels; a number.</p>
 <table>
 <thead>
 <tr>
@@ -718,11 +723,14 @@ projection = d3.geo.albers()
 <tbody>
 <tr>
 <td style="text-align:center"><code>*size*</code></td>
-<td style="text-align:left">Not available for other technique types. For a dot map, <code>size</code> is the dot radius. For an isarithmic map, <code>size</code> is the line width of each isarithm.</td>
+<td style="text-align:left">Not available for other technique types. For a dot map and points, <code>size</code> is the dot or point radius. For an isarithmic map, <code>size</code> is the line width of each isarithm. For labels, <code>size</code> is the pixel size of each label.</td>
 <td style="text-align:left">1 pixel</td>
 </tr>
 </tbody>
 </table>
+<h4 id="map-pages-page-datalayers-i-techniques-ii-showonlegend">map.pages[page].dataLayers[i].techniques[ii].showOnLegend</h4>
+<pre><code>        *&quot;showOnLegend&quot;*: *true* *false*
+</code></pre><p>Whether or not to show the technique on the legend when visible on the map. Default is <code>true</code>.</p>
 <h2 id="questions">Questions</h2>
 <h3 id="filename-questions-json">Filename: questions.json</h3>
 <p>This config file holds the configuration options necessary to create the survey questions and other content. In the descriptions below, <code>questions</code> refers to each object in the questions.json <code>pages</code> array. The questions.json file should be structured thus:</p>
@@ -768,7 +776,7 @@ projection = d3.geo.albers()
     *&quot;persist&quot;*,
     *&quot;remove&quot;*
 }
-</code></pre><p>Whether to include a timer for the page and timer options. If <code>&quot;timer&quot;</code> is included, a timer will appear in the page header and count up or down until the next page or until replaced by another timer.</p>
+</code></pre><p>Whether to include a timer for the page and timer options. If <code>&quot;timer&quot;</code> is included, a timer will appear in the page header and count up or down until the next page or until replaced by another timer. <em>Caution</em>: Do not use both a page timer and a set timer on the same page.</p>
 <h4 id="questions-pages-page-timer-direction">questions.pages[page].timer.direction</h4>
 <table>
 <thead>
@@ -863,6 +871,8 @@ projection = d3.geo.albers()
         *&quot;title&quot;: text string*
         &quot;ask&quot;: HTML string
         *&quot;description&quot;: HTML string*
+        *&quot;image&quot;: url or path to image file*
+        *&quot;video&quot;: url or path to video file*
         *&quot;input&quot;*: {
             *&quot;required&quot;* &quot;type&quot; *&quot;options&quot;: []* *&quot;items&quot;: []*
         }
@@ -897,6 +907,16 @@ projection = d3.geo.albers()
 <td style="text-align:center"><code>*&quot;description&quot;: HTML string*</code></td>
 <td style="text-align:left">Further description tied to the question asked. Description text will appear in italicized font below the ask and above the other elements of the block (if included). Any text or html (such as image elements) may be included.</td>
 <td style="text-align:left">Example description</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>*&quot;image&quot;: url or path to image file*</code></td>
+<td style="text-align:left">A url or path to an image in PNG, JPEG, or GIF format</td>
+<td style="text-align:left">Example image</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>*&quot;video&quot;: url or path to video file*</code></td>
+<td style="text-align:left">A url to an online video or a path to a video file in MP4, WebM, or Ogg format. If a url, must link to the embeddable version of the video.</td>
+<td style="text-align:left">Example video</td>
 </tr>
 <tr>
 <td style="text-align:center"><code>*&quot;input&quot;*: see below for options</code></td>
@@ -1004,7 +1024,7 @@ projection = d3.geo.albers()
 <pre><code>*&quot;options&quot;*: [
     {
         &quot;text&quot;: text string
-        *&quot;value&quot;: text string*
+        *&quot;value&quot;: text string -or- &quot;get from participant&quot;*
     }
 ]
 </code></pre><p>An array of input options. Required by <code>radios</code>, <code>dropdown</code>, and <code>matrix</code> input types; ignored otherwise.</p>
@@ -1023,8 +1043,8 @@ projection = d3.geo.albers()
 <td style="text-align:left">Example text</td>
 </tr>
 <tr>
-<td style="text-align:center"><code>*&quot;value&quot;: text string*</code></td>
-<td style="text-align:left">The value to display in the resulting data cell for the question block or item if the option is selected.</td>
+<td style="text-align:center"><code>*&quot;value&quot;: text string -or- &quot;get from participant&quot;*</code></td>
+<td style="text-align:left">The value to display in the resulting data cell for the question block or item if the option is selected. If the input type is <code>radios</code> and the string provided is <code>&quot;get from participant&quot;</code>, a text box will be added for participant input (this is good for &quot;other&quot; options).</td>
 <td style="text-align:left">If omitted, the option <code>&quot;text&quot;</code> will be recorded as the value.</td>
 </tr>
 </tbody>
@@ -1034,6 +1054,7 @@ projection = d3.geo.albers()
     {
         &quot;text&quot;: text string
         *&quot;label&quot;: text string*
+        *&quot;value&quot;: text string -or- &quot;get from participant&quot;*
     }
 ]
 </code></pre><p>An array of input items. Required by <code>checkboxes</code>, <code>matrix</code>, and <code>rank</code> input types; ignored otherwise.</p>
@@ -1053,8 +1074,12 @@ projection = d3.geo.albers()
 </tr>
 <tr>
 <td style="text-align:center"><code>*&quot;label&quot;: text string*</code></td>
-<td style="text-align:left">(&lt;= 20 characters) What to label the column for the item in the resulting data. Each item will be given its own column in the data table. For each item column, if the input type is <code>checkboxes</code>, each item&#39;s cell value will be recorded as <code>1</code> if the box is checked and no data if not checked. If the type is <code>matrix</code>, each item&#39;s cell value will correspond to the value of the selected option. If the type is <code>rank</code>, the cell value will be given the item&#39;s rank, starting at 1 for the top item.</td>
+<td style="text-align:left">(&lt;= 20 characters) What to label the column for the item in the resulting data. Each item will be given its own column in the data table. For each item column, if the input type is <code>checkboxes</code>, each item&#39;s cell value will be recorded as <code>1</code> or a value provided for <code>value</code> if the box is checked and no data if not checked. If the type is <code>matrix</code>, each item&#39;s cell value will correspond to the value of the selected option (this overrides the item <code>value</code> option). If the type is <code>rank</code>, the cell value will be given the item&#39;s rank, starting at 1 for the top item (this also overrides the item <code>value</code> option).</td>
 <td style="text-align:left">If no <code>label</code> is provided for the item, a label will be automatically generated consisting of the block label and item indexes (for example, &quot;p1s3b1i1&quot;)</td>
+</tr>
+<tr>
+<td style="text-align:center"><code>*&quot;value&quot;: text string -or- &quot;get from participant&quot;*</code></td>
+<td style="text-align:left">Only useful if the input type is <code>checkboxes</code>. Replaces <code>1</code> as the value recorded for each item that is checked. If the string provided is <code>&quot;get from participant&quot;</code>, a text box will be added for participant input (this is good for &quot;other&quot; items).</td>
 </tr>
 </tbody>
 </table>
@@ -1104,7 +1129,7 @@ projection = d3.geo.albers()
     *&quot;persist&quot;*,
     *&quot;remove&quot;*
 }
-</code></pre><p>Whether to include a timer for the set and timer options. If <code>&quot;timer&quot;</code> is included, a timer will appear in the page header and count up or down until the next set or until replaced by another timer.</p>
+</code></pre><p>Whether to include a timer for the set and timer options. If <code>&quot;timer&quot;</code> is included, a timer will appear in the page header and count up or down until the next set or until replaced by another timer. <em>Caution</em>: Do not use both a page timer and a set timer on the same page.</p>
 <h4 id="questions-pages-page-sets-i-timer-direction">questions.pages[page].sets[i].timer.direction</h4>
 <table>
 <thead>
@@ -1180,6 +1205,23 @@ projection = d3.geo.albers()
 <td style="text-align:center"><code>*true*</code></td>
 <td style="text-align:left">Removes a persistent set timer without replacing it. If included, no other timer options will be applied.</td>
 <td style="text-align:left">N/A</td>
+</tr>
+</tbody>
+</table>
+<h4 id="questions-pages-page-sets-i-resetmap">questions.pages[page].sets[i].resetMap</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Value</th>
+<th style="text-align:left">Description</th>
+<th style="text-align:left">Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><code>*true*</code></td>
+<td style="text-align:left">Resets the map to its original state when set is loaded. Has no affect if applied to the first set on a page.</td>
+<td style="text-align:left"><code>false</code></td>
 </tr>
 </tbody>
 </table>

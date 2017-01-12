@@ -38,26 +38,39 @@ var CheckboxesInputView = TextInputView.extend({
 	template: _.template( $('#checkbox-input-template').html() ),
 	appendItem: function(item, i){
 		//get or create item label
-		var label = item.hasOwnProperty('label') && item.label.length > 0 ? item.label.substring(0,20) : this.model.get('label')+"i"+(i+1);
+		var label = item.hasOwnProperty('label') && item.label.length > 0 ? item.label.substring(0,20) : this.model.get('label')+"i"+(i+1),
+			value = item.value || i+1;
 		//append item input
 		this.$el.find('.input-items').append(this.template({
 			label: label,
 			text: item.text,
-			value: i+1
+			value: value === 'get from participant' ? item.text : value
 		}));
+		if (value === 'get from participant'){
+			this.$el.find('input[name='+label+'-text-input]').show()
+				.css('width', 'inherit');
+		};
 	},
 	render: function(){
 		this.$el.append('<div class="input-items">');
 		var items = this.model.get('items');
-		_.each(items, this.appendItem, this);
+		_.each(items, function(item, i){
+			item.value = item.value || 1;
+			this.appendItem(item, i);
+		}, this);
 		this.required();
-		this.$el.find('input').click(function(){
+		this.$el.find('input[type=checkbox]').click(function(){
 			if (!$(this).is(':checked')){
 				_options.attributes.data[$(this).attr('name')] = {
 					value: '',
 					tmsp: Date.now()
 				};
 			};			
+		});
+		this.$el.find('input[type=text]').on('keyup', function(e){
+			var label = e.target.name.split('-')[0],
+				text = $(e.target).parent().find('.item').html();
+			$('input[name='+label+']').val(text+': '+e.target.value);
 		});
 	}
 });
@@ -77,11 +90,16 @@ var RadiosInputView = CheckboxesInputView.extend({
 		this.$el.find('.input-item.'+i).append(this.template({
 			label: label,
 			text: option.text,
-			value: option.value
+			value: option.value == 'get from participant' ? option.text : option.value,
+			i: i
 		}));
+		if (option.value === 'get from participant'){
+			this.$el.find('input[name='+label+'-'+i+'-text-input]').show()
+				.css('width', 'inherit');
+		};
 	},
 	appendOptionText: function(option,i){
-		this.$el.find('.input-item.'+i).append(option.text);
+		this.$el.find('.input-item.'+i+' span').html(option.text);
 	},
 	autoadvance: function(e){
 		if (this.model.get('autoadvance')){
@@ -99,6 +117,11 @@ var RadiosInputView = CheckboxesInputView.extend({
 			this.appendOptionText(option, i);
 		}, this);
 		this.required();
+		this.$el.find('input[type=text]').on('keyup', function(e){
+			var label = e.target.name.split('-')[0],
+				text = $(e.target).parent().find('.radio-text').html();
+			$('input[name='+label+']').val(text+': '+e.target.value);
+		});
 	}
 });
 
@@ -209,6 +232,7 @@ var BlockModel = Backbone.Model.extend({
 		"title": "",
 		"ask": "",
 		"description": "",
+		"image": "",
 		"video": "",
 		"input": {}
 	}
@@ -237,6 +261,10 @@ var BlockView = Backbone.View.extend({
 		//set description
 		if (this.model.get('description').length > 0){
 			this.$el.append('<p class="description">'+ this.model.get('description') +'</p>');
+		};
+		//set image
+		if (this.model.get('image').length > 0){
+			this.$el.append('<p class="image"><img src="'+ this.model.get('image') +'"></p>');
 		};
 		//set video
 		if (this.model.get('video').length > 0){
@@ -268,6 +296,7 @@ var BlockView = Backbone.View.extend({
 			width: w,
 			height: w * 9 / 16
 		});
+		$('#q img').css('max-width', w);
 	}
 });
 
@@ -305,9 +334,10 @@ var TimerView = Backbone.View.extend({
 	interval: function(view){
 		//get starting time
 		var st = view.$el.html().split(':'),
-			h = parseInt(st[0]),
-			m = parseInt(st[1]),
-			s = parseInt(st[2]),
+			txt = st[0] + ': ',
+			h = parseInt(st[1]),
+			m = parseInt(st[2]),
+			s = parseInt(st[3]),
 			nt = '';
 		if (view.model.get('direction') == 'up'){
 			//count up
@@ -355,7 +385,7 @@ var TimerView = Backbone.View.extend({
 			nt += d < 10 ? '0' + String(d) : String(d);
 			nt += i < 2 ? ':' : '';
 		});
-		view.$el.html(nt);
+		view.$el.html(txt+nt);
 	},
 	removeTimer: function(){
 		var level = this.model.get('level');
@@ -366,9 +396,18 @@ var TimerView = Backbone.View.extend({
 		this.$el.empty();
 	},
 	setTimer: function(){
-		var level = this.model.get('level'),
-			view = this;
-		this.$el.html(this.model.get('starttime'));
+		var level = this.model.get('level')
+			dir = this.model.get('direction'),
+			view = this,
+			txt = dir == 'up' ? 'Time elapsed: ' : 'Time remaining: ';
+		this.$el.html(txt+this.model.get('starttime'));
+		//set right margin of timer
+		var rmargin = parseFloat(this.$el.css('right').split('px')[0]) + $('#header img').width() + 'px';
+		this.$el.css({
+			right: rmargin
+		});
+		$(window).trigger('resize');
+		//start counting
 		document[level+'Timer'] = window.setInterval(function(){
 			view.interval(view);
 		}, 1000);
@@ -528,7 +567,7 @@ var Questions = Backbone.View.extend({
 		$('.required').each(function(){
 			var required = $(this).parent(),
 				inputSet = required.find('input[type=checkbox], input[type=radio]'),
-				textbox = required.find('input[type=text]'),
+				textbox = required.find('.text-input'),
 				textarea = required.find('textarea'),
 				select = required.find('select'),
 				inputNames = [];
