@@ -556,7 +556,7 @@
 					"blocks": [
 						{
 							"title": "Map 2",
-							"ask": "You are a regulator at the EPA. Because of the region you work in, you are responsible for making sure all waste facilities in Texas follow government regulations properly. Your job is to focus on facilities that incinerate hazardous waste, which limits the facilities you work with, because there is indication that some of these facilities are underperforming. Your job is to examine previous reports to understand each company’s past compliance record, as well as examine public concerns about the facilities in their respective communities. Recently, community members have come forward indicating they feel like they are burdened by the facility. After your examination, rank the top 3 sites that need to be monitored more closely.",
+							"ask": "You are a regional regulator at the EPA responsible for making sure all waste facilities in Texas conform to government regulations. Your job is to focus on facilities that incinerate hazardous waste because there is indication that some of these facilities are underperforming. Your job is to examine the reports of each processing site to assess each company's past compliance record. Further, some communities recently have come forward indicating they feel like they are burdeded by the facility. After your examination, rank the sites whose reports you plan on reviewing first.",
 							"input": {
 								"required": true,
 								"autoadvance": false,
