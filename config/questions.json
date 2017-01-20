@@ -134,7 +134,7 @@
 									"title": "*These Questions are NOT timed.",
 									"ask": "1. On a scale of 1-5, how confident are you in your answer?",
 									"input": {
-										"required": false,
+										"required": true,
 										"type": "radios",
 										"options": [
 											{
@@ -158,7 +158,7 @@
 								{
 									"ask": "2. On a scale of 1-5, how easy was it to arrive at this answer",
 									"input": {
-										"required": false,
+										"required": true,
 										"autoadvance": false,
 										"type": "radios",
 										"options": [
@@ -190,7 +190,7 @@
 						"blocks":	[{
 							"ask": "Which state has more hazardous waste facilities?",
 							"input": {
-								"required": false,
+								"required": true,
 								"autoadvance": true,
 								"type": "radios",
 								"options": [
@@ -214,7 +214,7 @@
 										"title": "*These Questions are NOT timed.",
 										"ask": "1. On a scale of 1-5, how confident are you in your answer?",
 										"input": {
-											"required": false,
+											"required": true,
 											"type": "radios",
 											"options": [
 												{
@@ -238,7 +238,7 @@
 									{
 										"ask": "2. On a scale of 1-5, how easy was it to arrive at this answer",
 										"input": {
-											"required": false,
+											"required": true,
 											"autoadvance": false,
 											"type": "radios",
 											"options": [
@@ -270,7 +270,7 @@
 							"blocks":	[{
 							"ask": "Which state has the most hazardous waste facilities?",
 							"input": {
-								"required": false,
+								"required": true,
 								"autoadvance": true,
 								"type": "radios",
 								"options": [
@@ -292,7 +292,7 @@
 										"title": "*These Questions are NOT timed.",
 										"ask": "1. On a scale of 1-5, how confident are you in your answer?",
 										"input": {
-											"required": false,
+											"required": true,
 											"type": "radios",
 											"options": [
 												{
@@ -316,7 +316,7 @@
 									{
 										"ask": "2. On a scale of 1-5, how easy was it to arrive at this answer",
 										"input": {
-											"required": false,
+											"required": true,
 											"autoadvance": false,
 											"type": "radios",
 											"options": [
@@ -348,7 +348,7 @@
 								"blocks":	[{
 								"ask": "Where are low poverty rates and a high number of shipments highly correlated? ",
 								"input": {
-									"required": false,
+									"required": true,
 									"autoadvance": true,
 									"type": "radios",
 									"options": [
@@ -367,7 +367,7 @@
 											"title": "*These Questions are NOT timed.",
 											"ask": "1. On a scale of 1-5, how confident are you in your answer?",
 											"input": {
-												"required": false,
+												"required": true,
 												"type": "radios",
 												"options": [
 													{
@@ -391,7 +391,7 @@
 										{
 											"ask": "2. On a scale of 1-5, how easy was it to arrive at this answer",
 											"input": {
-												"required": false,
+												"required": true,
 												"autoadvance": false,
 												"type": "radios",
 												"options": [
@@ -423,7 +423,7 @@
 							"blocks":	[{
 							"ask": "Which region is most active in the hazardous waste trade?",
 							"input": {
-								"required": false,
+								"required": true,
 								"autoadvance": false,
 								"autoadvance": true,
 								"type": "radios",
@@ -450,7 +450,7 @@
 							"title": "*These Questions are NOT timed.",
 							"ask": "1. On a scale of 1-5, how confident are you in your answer?",
 							"input": {
-								"required": false,
+								"required": true,
 								"type": "radios",
 								"options": [
 									{
@@ -474,7 +474,7 @@
 						{
 							"ask": "2. On a scale of 1-5, how easy was it to arrive at this answer",
 							"input": {
-								"required": false,
+								"required": true,
 								"autoadvance": false,
 								"type": "radios",
 								"options": [
@@ -1339,7 +1339,7 @@
 									"title": "*These Questions are NOT timed.",
 									"ask": "1. On a scale of 1-5, how confident are you in your answer?",
 									"input": {
-										"required": false,
+										"required": true,
 										"type": "radios",
 										"options": [
 											{
@@ -1363,7 +1363,7 @@
 								{
 									"ask": "2. On a scale of 1-5, how easy was it to arrive at this answer",
 									"input": {
-										"required": false,
+										"required": true,
 										"autoadvance": false,
 										"type": "radios",
 										"options": [
