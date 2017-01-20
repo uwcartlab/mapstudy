@@ -135,7 +135,7 @@
 									"ask": "1. On a scale of 1-5, how confident are you in your answer?",
 									"input": {
 										"required": true,
-										"type": "radios",
+										"type": "matrix",
 										"options": [
 											{
 												"text": "1-No Confidence"
@@ -152,15 +152,16 @@
 											{
 												"text": "5-Very Confident"
 											}
-										]
+										],
+										"items": [{}]
 									}
 								},
 								{
-									"ask": "2. On a scale of 1-5, how easy was it to arrive at this answer",
+									"ask": "2. On a scale of 1-5, how easy was it to arrive at this answer?",
 									"input": {
 										"required": true,
 										"autoadvance": false,
-										"type": "radios",
+										"type": "matrix",
 										"options": [
 											{
 												"text": "1-Not At All Easy"
@@ -177,7 +178,8 @@
 											{
 												"text": "5-Very Easy"
 											}
-										]
+										],
+										"items": [{}]
 									}
 								}
 							],
@@ -215,7 +217,7 @@
 										"ask": "1. On a scale of 1-5, how confident are you in your answer?",
 										"input": {
 											"required": true,
-											"type": "radios",
+											"type": "matrix",
 											"options": [
 												{
 													"text": "1-No Confidence"
@@ -232,15 +234,16 @@
 												{
 													"text": "5-Very Confident"
 												}
-											]
+											],
+											"items": [{}]
 										}
 									},
 									{
-										"ask": "2. On a scale of 1-5, how easy was it to arrive at this answer",
+										"ask": "2. On a scale of 1-5, how easy was it to arrive at this answer?",
 										"input": {
 											"required": true,
 											"autoadvance": false,
-											"type": "radios",
+											"type": "matrix",
 											"options": [
 												{
 													"text": "1-Not At All Easy"
@@ -257,7 +260,8 @@
 												{
 													"text": "5-Very Easy"
 												}
-											]
+											],
+											"items": [{}]
 										}
 									}
 								],
@@ -293,7 +297,7 @@
 										"ask": "1. On a scale of 1-5, how confident are you in your answer?",
 										"input": {
 											"required": true,
-											"type": "radios",
+											"type": "matrix",
 											"options": [
 												{
 													"text": "1-No Confidence"
@@ -310,15 +314,16 @@
 												{
 													"text": "5-Very Confident"
 												}
-											]
+											],
+											"items": [{}]
 										}
 									},
 									{
-										"ask": "2. On a scale of 1-5, how easy was it to arrive at this answer",
+										"ask": "2. On a scale of 1-5, how easy was it to arrive at this answer?",
 										"input": {
 											"required": true,
 											"autoadvance": false,
-											"type": "radios",
+											"type": "matrix",
 											"options": [
 												{
 													"text": "1-Not At All Easy"
@@ -335,7 +340,8 @@
 												{
 													"text": "5-Very Easy"
 												}
-											]
+											],
+											"items": [{}]
 										}
 									}
 								],
@@ -368,7 +374,7 @@
 											"ask": "1. On a scale of 1-5, how confident are you in your answer?",
 											"input": {
 												"required": true,
-												"type": "radios",
+												"type": "matrix",
 												"options": [
 													{
 														"text": "1-No Confidence"
@@ -385,15 +391,16 @@
 													{
 														"text": "5-Very Confident"
 													}
-												]
+												],
+												"items": [{}]
 											}
 										},
 										{
-											"ask": "2. On a scale of 1-5, how easy was it to arrive at this answer",
+											"ask": "2. On a scale of 1-5, how easy was it to arrive at this answer?",
 											"input": {
 												"required": true,
 												"autoadvance": false,
-												"type": "radios",
+												"type": "matrix",
 												"options": [
 													{
 														"text": "1-Not At All Easy"
@@ -410,7 +417,8 @@
 													{
 														"text": "5-Very Easy"
 													}
-												]
+												],
+												"items": [{}]
 											}
 										}
 									],
@@ -451,7 +459,7 @@
 							"ask": "1. On a scale of 1-5, how confident are you in your answer?",
 							"input": {
 								"required": true,
-								"type": "radios",
+								"type": "matrix",
 								"options": [
 									{
 										"text": "1-No Confidence"
@@ -468,15 +476,16 @@
 									{
 										"text": "5-Very Confident"
 									}
-								]
+								],
+								"items": [{}]
 							}
 						},
 						{
-							"ask": "2. On a scale of 1-5, how easy was it to arrive at this answer",
+							"ask": "2. On a scale of 1-5, how easy was it to arrive at this answer?",
 							"input": {
 								"required": true,
 								"autoadvance": false,
-								"type": "radios",
+								"type": "matrix",
 								"options": [
 									{
 										"text": "1-Not At All Easy"
@@ -493,7 +502,8 @@
 									{
 										"text": "5-Very Easy"
 									}
-								]
+								],
+								"items": [{}]
 							}
 						}
 					],
@@ -1340,7 +1350,7 @@
 									"ask": "1. On a scale of 1-5, how confident are you in your answer?",
 									"input": {
 										"required": true,
-										"type": "radios",
+										"type": "matrix",
 										"options": [
 											{
 												"text": "1-No Confidence"
@@ -1357,15 +1367,16 @@
 											{
 												"text": "5-Very Confident"
 											}
-										]
+										],
+										"items": [{}]
 									}
 								},
 								{
-									"ask": "2. On a scale of 1-5, how easy was it to arrive at this answer",
+									"ask": "2. On a scale of 1-5, how easy was it to arrive at this answer?",
 									"input": {
 										"required": true,
 										"autoadvance": false,
-										"type": "radios",
+										"type": "matrix",
 										"options": [
 											{
 												"text": "1-Not At All Easy"
@@ -1382,7 +1393,8 @@
 											{
 												"text": "5-Very Easy"
 											}
-										]
+										],
+										"items": [{}]
 									}
 								}
 							],
