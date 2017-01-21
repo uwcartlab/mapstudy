@@ -618,60 +618,12 @@
 										],
 										"dataLayers": [
 											{
-									"roundTo": 0,
-									"name": "Soil Permeability",
-									"source": "data/permeability.geojson",
-									"expressedAttribute": "Permeability",
-									"displayAttributes": [
-										"Permeability"
-									],
-									"layerOptions": {
-								"fillOpacity": 0.8,
-								"color": "black",
-								"weight": 0.5,
-								"opacity": 1,
-								"minZoom": 6,
-								"maxZoom": 10
-								},
-									"renderOnLoad": true,
-									"techniques": [
-										{
-											"type": "choropleth",
-											"classification": "equal interval",
-											"classes": "BuGn.5"
-										}
-									]},
-											{
-									"roundTo": 0,
-									"name": "Percent in Poverty",
-									"source": "data/goodohio.geojson",
-									"expressedAttribute": "Poverty",
-									"displayAttributes": [
-										"Poverty"
-									],
-									"layerOptions": {
-								"fillOpacity": 0.8,
-								"color": "black",
-								"weight": 0.5,
-								"opacity": 1,
-								"minZoom": 6,
-								"maxZoom": 10
-								},
-									"renderOnLoad": true,
-									"techniques": [
-										{
-											"type": "choropleth",
-											"classification": "equal interval",
-											"classes": "BuGn.5"
-										}
-									]},
-											{
 												"name": "Waste Imported",
 												"source": "data/Ohio.geojson",
 												"roundTo": 0,
 												"expressedAttribute": "Kilograms",
 												"displayAttributes": [
-													"Management Method", "Violations in 3 Years"
+													"Kilograms", "Violations", "Air Quality Watches"
 												],
 												"layerOptions": {
 											"fillOpacity": 0.8,
@@ -1052,6 +1004,54 @@
 																}
 															],
 															"dataLayers": [
+																{
+														"roundTo": 0,
+														"name": "Percent in Poverty",
+														"source": "data/goodohio.geojson",
+														"expressedAttribute": "Poverty",
+														"displayAttributes": [
+															"Poverty"
+														],
+														"layerOptions": {
+													"fillOpacity": 0.8,
+													"color": "black",
+													"weight": 0.5,
+													"opacity": 1,
+													"minZoom": 6,
+													"maxZoom": 10
+													},
+														"renderOnLoad": true,
+														"techniques": [
+															{
+																"type": "choropleth",
+																"classification": "equal interval",
+																"classes": "BuGn.5"
+															}
+														]},
+																{
+														"roundTo": 0,
+														"name": "Soil Permeability",
+														"source": "data/permeability.geojson",
+														"expressedAttribute": "Permeability",
+														"displayAttributes": [
+															"Permeability"
+														],
+														"layerOptions": {
+													"fillOpacity": 0.8,
+													"color": "black",
+													"weight": 0.5,
+													"opacity": 1,
+													"minZoom": 6,
+													"maxZoom": 10
+													},
+														"renderOnLoad": true,
+														"techniques": [
+															{
+																"type": "choropleth",
+																"classification": "equal interval",
+																"classes": "BuGn.5"
+															}
+														]},
 																{
 																	"name": "Waste Imported",
 																	"source": "data/Ohio.geojson",
