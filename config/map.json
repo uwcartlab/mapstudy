@@ -11,7 +11,7 @@
 			"library": "Leaflet",
 			"mapOptions": {
 				"legend": true,
-				"resetButton": true,
+				"resetButton": false,
 				"center": [
 					40,
 					-115
@@ -100,7 +100,7 @@
 				"library": "Leaflet",
 				"mapOptions": {
 					"legend": true,
-					"resetButton": true,
+					"resetButton": false,
 					"center": [
 						40,
 						-117
@@ -229,7 +229,7 @@
 						"library": "Leaflet",
 						"mapOptions": {
 							"legend": true,
-							"resetButton": true,
+							"resetButton": false,
 							"center": [
 								40,
 								-82.9
@@ -319,7 +319,7 @@
 								"library": "Leaflet",
 								"mapOptions": {
 									"legend": true,
-									"resetButton": true,
+									"resetButton": false,
 									"center": [
 										32,
 										-99.5
@@ -410,7 +410,7 @@
 								"library": "Leaflet",
 								"mapOptions": {
 									"legend": true,
-									"resetButton": true,
+									"resetButton": false,
 									"center": [
 										32,
 										-99.5
@@ -501,7 +501,7 @@
 									"library": "Leaflet",
 									"mapOptions": {
 										"legend": true,
-										"resetButton": true,
+										"resetButton": false,
 										"center": [
 											40,
 											-82.9
@@ -591,7 +591,7 @@
 									"library": "Leaflet",
 									"mapOptions": {
 										"legend": true,
-										"resetButton": true,
+										"resetButton": false,
 										"center": [
 											40,
 											-83.2
@@ -720,7 +720,7 @@
 												"library": "Leaflet",
 												"mapOptions": {
 													"legend": true,
-													"resetButton": true,
+													"resetButton": false,
 													"center": [
 														30,
 														-96
@@ -849,7 +849,7 @@
 											"library": "Leaflet",
 											"mapOptions": {
 												"legend": true,
-												"resetButton": true,
+												"resetButton": false,
 												"center": [
 													30,
 													-96
@@ -978,7 +978,7 @@
 														"library": "Leaflet",
 														"mapOptions": {
 															"legend": true,
-															"resetButton": true,
+															"resetButton": false,
 															"center": [
 																40,
 																-83.2
