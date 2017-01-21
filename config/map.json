@@ -528,13 +528,37 @@
 										],
 										"dataLayers": [
 											{
+									"roundTo": 0,
+									"name": "Soil Permeability",
+									"source": "data/permeability.geojson",
+									"expressedAttribute": "Permeability",
+									"displayAttributes": [
+										"Permeability"
+									],
+									"layerOptions": {
+								"fillOpacity": 0.8,
+								"color": "black",
+								"weight": 0.5,
+								"opacity": 1,
+								"minZoom": 6,
+								"maxZoom": 10
+								},
+									"renderOnLoad": true,
+									"techniques": [
+										{
+											"type": "choropleth",
+											"classification": "equal interval",
+											"classes": "BuGn.5"
+										}
+									]},
+											{
 												"name": "Waste Imported",
 												"renderOnLoad": true,
 												"roundTo": 0,
 												"source": "data/Ohio.geojson",
 												"expressedAttribute": "Kilograms",
 												"displayAttributes": [
-													"Company", "Violations in 3 Years", "Management Method", "Census Tract Income ($)", "Census Tract Percent Non-White Population"
+													"Company", "Kilograms", "Violations", "Poverty (%)", "Air Quality Watch"
 												],
 												"layerOptions": {
 											"fillOpacity": 0.8,
