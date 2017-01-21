@@ -618,6 +618,30 @@
 										],
 										"dataLayers": [
 											{
+									"roundTo": 0,
+									"name": "Air Quality",
+									"source": "data/ohioair.geojson",
+									"expressedAttribute": "Air Quality Watches",
+									"displayAttributes": [
+										"Air Quality Watches"
+									],
+									"layerOptions": {
+								"fillOpacity": 0.8,
+								"color": "black",
+								"weight": 0.5,
+								"opacity": 1,
+								"minZoom": 6,
+								"maxZoom": 10
+								},
+									"renderOnLoad": true,
+									"techniques": [
+										{
+											"type": "choropleth",
+											"classification": "equal interval",
+											"classes": "BuGn.3"
+										}
+									]},
+											{
 												"name": "Waste Imported",
 												"source": "data/Ohio.geojson",
 												"roundTo": 0,
