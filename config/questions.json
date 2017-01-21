@@ -61,6 +61,9 @@
 									}
 								]
 							}
+						},
+						{
+							"ask": "<strong>By selecting next you agree that you understand the interface and questions and are ready to begin the study.</strong>"
 						}
 					],
 					"buttons": [
@@ -97,6 +100,9 @@
 									}
 								]
 							}
+						},
+						{
+							"ask": "<strong>By selecting next you agree that you understand the interface and questions and are ready to begin the study.</strong>"
 						}
 					],
 					"buttons": [
