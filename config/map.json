@@ -262,7 +262,7 @@
 									"source": "data/Ohio.geojson",
 									"expressedAttribute": "Kilograms",
 									"displayAttributes": [
-										"Company",  "Kilograms", "Violations", "Air Quality Watch"
+										"Company",  "Kilograms", "Violations", "Air Quality Watches"
 									],
 									"layerOptions": {
 								"fillOpacity": 0.8,
@@ -534,7 +534,7 @@
 												"source": "data/Ohio.geojson",
 												"expressedAttribute": "Kilograms",
 												"displayAttributes": [
-													"Company", "Kilograms", "Violations", "Poverty (%)", "Air Quality Watch", "Soil Penetration (in/hr)"
+													"Company", "Kilograms", "Violations", "Poverty (%)", "Air Quality Watches", "Soil Penetration (in/hr)"
 												],
 												"layerOptions": {
 											"fillOpacity": 0.8,
@@ -1005,7 +1005,7 @@
 															"resetButton": false,
 															"center": [
 																40,
-																-83.2
+																-83.46
 															],
 															"zoom": 7,
 															"minZoom": 7,
@@ -1028,6 +1028,30 @@
 																}
 															],
 															"dataLayers": [
+																{
+														"roundTo": 0,
+														"name": "Air Quality",
+														"source": "data/ohioair.geojson",
+														"expressedAttribute": "Air Quality Watches",
+														"displayAttributes": [
+															"Air Quality Watches"
+														],
+														"layerOptions": {
+													"fillOpacity": 0.8,
+													"color": "black",
+													"weight": 0.5,
+													"opacity": 1,
+													"minZoom": 6,
+													"maxZoom": 10
+													},
+														"renderOnLoad": true,
+														"techniques": [
+															{
+																"type": "choropleth",
+																"classification": "equal interval",
+																"classes": "BuGn.3"
+															}
+														]},
 																{
 														"roundTo": 0,
 														"name": "Percent in Poverty",
@@ -1054,7 +1078,7 @@
 														]},
 																{
 														"roundTo": 0,
-														"name": "Soil Permeability",
+														"name": "Soil Penetration",
 														"source": "data/permeability.geojson",
 														"expressedAttribute": "Permeability",
 														"displayAttributes": [
@@ -1082,7 +1106,7 @@
 																	"roundTo": 0,
 																	"expressedAttribute": "Kilograms",
 																	"displayAttributes": [
-																		"Management Method", "Violations in 3 Years", "Census Tract Income ($)", "Census Tract Percent Non-White Population"
+																		"Kilograms", "Violations", "Poverty (%)", "Air Quality Watches", "Soil Penetration (in/hr)"
 																	],
 																	"layerOptions": {
 																"fillOpacity": 0.8,
@@ -1130,18 +1154,6 @@
 																				}
 																				],
 															"interactions": {
-																"zoom": {
-																	"logging": true,
-																	"toggle": false,
-																	"interface": {
-																		"touch": true,
-																		"scrollWheel": true,
-																		"doubleClick": true,
-																		"box": true,
-																		"keyboard": true,
-																		"widget": true
-																	}
-																},
 																"pan": {
 																	"logging": true,
 																	"toggle": false,
@@ -1173,7 +1185,20 @@
 																	"dataLayers": [
 																		"Company"
 																	]
-																}}},
+																},
+																"zoom": {
+																	"logging": true,
+																	"toggle": false,
+																	"interface": {
+																		"touch": true,
+																		"scrollWheel": true,
+																		"doubleClick": true,
+																		"box": true,
+																		"keyboard": true,
+																		"widget": true
+																	}
+																}
+																}},
 											{
 												"page": 14
 												},
