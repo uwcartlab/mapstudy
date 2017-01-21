@@ -75,7 +75,7 @@
 							"doubleClick": true,
 							"box": true,
 							"keyboard": true,
-							"widget": false
+							"widget": true
 						}
 					},
 					"pan": {
@@ -179,18 +179,6 @@
 					}
 					],
 					"interactions": {
-						"zoom": {
-							"logging": true,
-							"toggle": false,
-							"interface": {
-								"touch": true,
-								"scrollWheel": true,
-								"doubleClick": true,
-								"box": true,
-								"keyboard": true,
-								"widget": false
-							}
-						},
 						"pan": {
 							"logging": true,
 							"toggle": false,
@@ -212,6 +200,18 @@
 							"logging": true,
 							"toggle": false,
 							"dataLayers": []
+						},
+						"zoom": {
+							"logging": true,
+							"toggle": false,
+							"interface": {
+								"touch": true,
+								"scrollWheel": true,
+								"doubleClick": true,
+								"box": true,
+								"keyboard": true,
+								"widget": true
+							}
 						},
 						"retrieve": {
 							"logging": true,
@@ -373,7 +373,7 @@
 										"doubleClick": true,
 										"box": true,
 										"keyboard": true,
-										"widget": false
+										"widget": true
 									}
 								},
 									"retrieve": {
@@ -463,7 +463,7 @@
 												"doubleClick": true,
 												"box": true,
 												"keyboard": true,
-												"widget": false
+												"widget": true
 											}
 										},
 										"pan": {
@@ -554,7 +554,7 @@
 												"doubleClick": true,
 												"box": true,
 												"keyboard": true,
-												"widget": false
+												"widget": true
 											}
 										},
 										"pan": {
@@ -645,7 +645,7 @@
 													"doubleClick": true,
 													"box": true,
 													"keyboard": true,
-													"widget": false
+													"widget": true
 												}
 											},
 												"retrieve": {
@@ -760,7 +760,7 @@
 													"doubleClick": true,
 													"box": true,
 													"keyboard": true,
-													"widget": false
+													"widget": true
 												}
 											},
 											"pan": {
@@ -889,7 +889,7 @@
 																"doubleClick": true,
 																"box": true,
 																"keyboard": true,
-																"widget": false
+																"widget": true
 															}
 														},
 														"pan": {
@@ -1018,7 +1018,7 @@
 															"doubleClick": true,
 															"box": true,
 															"keyboard": true,
-															"widget": false
+															"widget": true
 														}
 													},
 													"pan": {
@@ -1147,7 +1147,7 @@
 																		"doubleClick": true,
 																		"box": true,
 																		"keyboard": true,
-																		"widget": false
+																		"widget": true
 																	}
 																},
 																"pan": {
