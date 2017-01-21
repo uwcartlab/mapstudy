@@ -113,16 +113,17 @@
 		},
 		{
 			"page": 5,
-			"fullpage": false,
+			"fullpage": true,
 			"sets": [
 				{
 					"blocks": [
 						{
+							"image": "img/benchmark.png",
 							"title": "Map Reading Tasks",
-							"ask": "What state has the easternmost hazardous waste facility?",
+							"ask": "<strong>What state has the easternmost hazardous waste facility?</strong>",
 							"input": {
 								"required": true,
-								"autoadvance": true,
+								"autoadvance": false,
 								"type": "radios",
 								"options": [
 									{
@@ -133,7 +134,11 @@
 									}
 								]
 							}
-						}]},
+						}],
+						"buttons": [
+								"next"
+							]
+						},
 						{
 							"blocks": [
 								{
@@ -196,10 +201,11 @@
 						{
 						"resetMap": true,
 						"blocks":	[{
-							"ask": "Which state has more hazardous waste facilities?",
+							"image": "img/benchmark.png",
+							"ask": "<strong>Which state has more hazardous waste facilities?</strong>",
 							"input": {
 								"required": true,
-								"autoadvance": true,
+								"autoadvance": false,
 								"type": "radios",
 								"options": [
 										{
@@ -215,7 +221,10 @@
 									}
 								]
 							}
-							}]},
+							}],
+							"buttons": [
+									"next"
+								]},
 							{
 								"blocks": [
 									{
@@ -278,10 +287,11 @@
 							{
 							"resetMap": true,
 							"blocks":	[{
-							"ask": "Which state has the most hazardous waste facilities?",
+							"image": "img/benchmark.png",
+							"ask": "<strong>Which state has the most hazardous waste facilities?</strong>",
 							"input": {
 								"required": true,
-								"autoadvance": true,
+								"autoadvance": false,
 								"type": "radios",
 								"options": [
 									{
@@ -295,7 +305,10 @@
 									}
 								]
 							}
-							}]},
+							}],
+							"buttons": [
+									"next"
+								]},
 							{
 								"blocks": [
 									{
@@ -358,10 +371,11 @@
 								{
 								"resetMap": true,
 								"blocks":	[{
-								"ask": "Where are low poverty rates and a high number of shipments highly correlated? ",
+								"image": "img/benchmark.png",
+								"ask": "<strong>Where are low poverty rates and a high number of shipments highly correlated?</strong>",
 								"input": {
 									"required": true,
-									"autoadvance": true,
+									"autoadvance": false,
 									"type": "radios",
 									"options": [
 										{
@@ -372,7 +386,10 @@
 										}
 									]
 								}
-								}]},
+								}],
+								"buttons": [
+										"next"
+									]},
 								{
 									"blocks": [
 										{
@@ -435,11 +452,12 @@
 							{
 								"resetMap": true,
 							"blocks":	[{
-							"ask": "Which region is most active in the hazardous waste trade?",
+							"image": "img/benchmark.png",
+							"ask": "<strong>Which region is most active in the hazardous waste trade?</strong>",
 							"input": {
 								"required": true,
 								"autoadvance": false,
-								"autoadvance": true,
+								"autoadvance": false,
 								"type": "radios",
 								"options": [
 										{
@@ -456,7 +474,10 @@
 								]
 							}
 						}
-					]
+					],
+					"buttons": [
+							"next"
+						]
 				},
 				{
 					"blocks": [
