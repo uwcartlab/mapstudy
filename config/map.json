@@ -43,7 +43,7 @@
 						"source": "data/ExampleMapDataCopy.geojson",
 						"expressedAttribute": "Kilograms",
 						"displayAttributes": [
-							"Company"
+							"Company", "Kilograms"
 						],
 						"layerOptions": {
 					"fillOpacity": 0.8,
