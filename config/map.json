@@ -132,7 +132,7 @@
 							"source": "data/ExampleMapData.geojson",
 							"expressedAttribute": "Kilograms",
 							"displayAttributes": [
-								"Kilograms"
+								"Kilograms", "Violations"
 							],
 							"renderOnLoad": true,
 							"layerOptions": {
