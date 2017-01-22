@@ -256,7 +256,7 @@
 							],
 							"dataLayers": [
 								{
-									"name": "Waste Imported",
+									"name": "Kilograms",
 									"renderOnLoad": true,
 									"roundTo": 0,
 									"source": "data/Ohio.geojson",
@@ -346,7 +346,7 @@
 									],
 									"dataLayers": [
 										{
-											"name": "Waste Imported",
+											"name": "Kilograms",
 											"source": "data/Texas.geojson",
 											"roundTo": 0,
 											"expressedAttribute": "Kilograms",
@@ -437,7 +437,7 @@
 									],
 									"dataLayers": [
 										{
-											"name": "Waste Imported",
+											"name": "Kilograms",
 											"source": "data/Texas.geojson",
 											"roundTo": 0,
 											"expressedAttribute": "Kilograms",
@@ -528,7 +528,7 @@
 										],
 										"dataLayers": [
 											{
-												"name": "Waste Imported",
+												"name": "Kilograms",
 												"renderOnLoad": true,
 												"roundTo": 0,
 												"source": "data/Ohio.geojson",
@@ -642,7 +642,7 @@
 										}
 									]},
 											{
-												"name": "Waste Imported",
+												"name": "Kilograms",
 												"source": "data/Ohio.geojson",
 												"roundTo": 0,
 												"expressedAttribute": "Kilograms",
@@ -714,7 +714,7 @@
 											},
 											"filter": {
 												"dataLayers": [
-														"Waste Imported"
+														"Kilograms"
 													],
 													"tool": "slider",
 													"logging": true,
@@ -843,12 +843,12 @@
 													}
 												]},
 														{
-															"name": "Waste Imported",
+															"name": "Kilograms",
 															"source": "data/Texas.geojson",
 															"roundTo": 0,
 															"expressedAttribute": "Kilograms",
 															"displayAttributes": [
-																"Kilograms", "Violations", "Census Tract Income ($)", "Soil Penetration (in/hr)"
+																"Kilograms", "Violations", "Poverty (%)", "Air Quality Watches", "Soil Penetration (in/hr)"
 															],
 															"layerOptions": {
 														"fillOpacity": 0.8,
@@ -915,7 +915,7 @@
 														},
 														"filter": {
 															"dataLayers": [
-																	"Waste Imported"
+																	"Kilograms"
 																],
 																"tool": "slider",
 																"logging": true,
@@ -972,7 +972,7 @@
 												],
 												"dataLayers": [
 													{
-														"name": "Waste Imported",
+														"name": "Kilograms",
 														"source": "data/Texas.geojson",
 														"roundTo": 0,
 														"expressedAttribute": "Kilograms",
@@ -1056,7 +1056,7 @@
 													},
 													"filter": {
 														"dataLayers": [
-																"Waste Imported"
+																"Kilograms"
 															],
 															"tool": "slider",
 															"logging": true,
@@ -1173,7 +1173,7 @@
 															}
 														]},
 																{
-																	"name": "Waste Imported",
+																	"name": "Kilograms",
 																	"source": "data/Ohio.geojson",
 																	"roundTo": 0,
 																	"expressedAttribute": "Kilograms",
@@ -1245,7 +1245,7 @@
 																},
 																"filter": {
 																	"dataLayers": [
-																			"Waste Imported"
+																			"Kilograms"
 																		],
 																		"tool": "slider",
 																		"logging": true,
