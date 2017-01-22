@@ -947,8 +947,8 @@
 												"legend": true,
 												"resetButton": false,
 												"center": [
-													30,
-													-96
+													29.5,
+													-98.5
 												],
 												"zoom": 6,
 												"minZoom": 6,
@@ -972,12 +972,36 @@
 												],
 												"dataLayers": [
 													{
+											"roundTo": 0,
+											"name": "Air Quality",
+											"source": "data/texascounties.geojson",
+											"expressedAttribute": "Air Quality Watches",
+											"displayAttributes": [
+												"Air Quality Watches"
+											],
+											"layerOptions": {
+										"fillOpacity": 0.8,
+										"color": "black",
+										"weight": 0.5,
+										"opacity": 1,
+										"minZoom": 5,
+										"maxZoom": 10
+										},
+											"renderOnLoad": true,
+											"techniques": [
+												{
+													"type": "choropleth",
+													"classification": "equal interval",
+													"classes": "BuGn.3"
+												}
+											]},
+													{
 														"name": "Kilograms",
 														"source": "data/Texas.geojson",
 														"roundTo": 0,
 														"expressedAttribute": "Kilograms",
 														"displayAttributes": [
-															"Company", "Management Method", "Violations in 3 Years"
+															"Company", "Kilograms", "Violations", "Air Quality Watches"
 														],
 														"layerOptions": {
 													"fillOpacity": 0.8,
@@ -1025,18 +1049,6 @@
 																	}
 																	],
 												"interactions": {
-													"zoom": {
-														"logging": true,
-														"toggle": false,
-														"interface": {
-															"touch": true,
-															"scrollWheel": true,
-															"doubleClick": true,
-															"box": true,
-															"keyboard": true,
-															"widget": true
-														}
-													},
 													"pan": {
 														"logging": true,
 														"toggle": false,
@@ -1068,6 +1080,18 @@
 														"dataLayers": [
 															"Company"
 														]
+													},
+													"zoom": {
+														"logging": true,
+														"toggle": false,
+														"interface": {
+															"touch": true,
+															"scrollWheel": true,
+															"doubleClick": true,
+															"box": true,
+															"keyboard": true,
+															"widget": true
+														}
 													}}},
 													{
 														"page": 13,
