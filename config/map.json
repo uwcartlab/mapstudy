@@ -747,7 +747,7 @@
 													"resetButton": false,
 													"center": [
 														29.5,
-														-98
+														-99
 													],
 													"zoom": 6,
 													"minZoom": 6,
@@ -770,6 +770,54 @@
 														}
 													],
 													"dataLayers": [
+														{
+												"roundTo": 0,
+												"name": "Air Quality",
+												"source": "data/texascounties.geojson",
+												"expressedAttribute": "Air Quality Watches",
+												"displayAttributes": [
+													"Air Quality Watches"
+												],
+												"layerOptions": {
+											"fillOpacity": 0.8,
+											"color": "black",
+											"weight": 0.5,
+											"opacity": 1,
+											"minZoom": 5,
+											"maxZoom": 10
+											},
+												"renderOnLoad": true,
+												"techniques": [
+													{
+														"type": "choropleth",
+														"classification": "equal interval",
+														"classes": "BuGn.3"
+													}
+												]},
+														{
+												"roundTo": 0,
+												"name": "Percent in Poverty",
+												"source": "data/texascounties.geojson",
+												"expressedAttribute": "Poverty (%)",
+												"displayAttributes": [
+													"Poverty (%)"
+												],
+												"layerOptions": {
+											"fillOpacity": 0.8,
+											"color": "black",
+											"weight": 0.5,
+											"opacity": 1,
+											"minZoom": 5,
+											"maxZoom": 10
+											},
+												"renderOnLoad": true,
+												"techniques": [
+													{
+														"type": "choropleth",
+														"classification": "equal interval",
+														"classes": "BuGn.5"
+													}
+												]},
 														{
 												"roundTo": 0,
 												"name": "Soil Penetration",
