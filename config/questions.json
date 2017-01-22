@@ -548,7 +548,7 @@
 					"blocks": [
 						{
 							"title": "Map Task",
-							"ask": "You are the manager of a newly opened Canadian firm looking to ship hazardous waste to Ohio for processing. Your decision to ship waste internationally is due to processing needs that cannot be fully met regionally and economic benefits given Ohio's infrastructure. Your waste needs to be incinerated, which limits the facilities with which you can contract. Your goal is to send the waste to a place you know will handle the waste properly, otherwise your new business could face scrutiny. Given this, rank the sites in the order that you plan on contracting, using information in the interactive map.",
+							"ask": "You are the manager of a newly opened Canadian firm looking to ship hazardous waste to Ohio for processing. Your decision to ship waste internationally is due to economic benefits. Your goal is to send the waste to a place you know will handle the waste properly without harming the citizens living nearby, otherwise your new business could face scrutiny. Given this, rank the sites from most likely to least likely that you plan on contracting with, using information in the interactive map.",
 							"input": {
 								"required": true,
 								"autoadvance": false,
@@ -593,7 +593,7 @@
 					"blocks": [
 						{
 							"title": "Map Task",
-							"ask": "You are a regional regulator at the EPA responsible for making sure all waste facilities in Texas conform to government regulations. Your job is to focus on facilities that incinerate hazardous waste because there is indication that some of these facilities are underperforming. Your job is to examine the reports of each processing site to assess each company's past compliance record. Further, some communities recently have come forward indicating they feel like they are burdeded by the facility. After your examination, rank the sites whose reports you plan on reviewing first, using information in the interactive map.",
+							"ask": "You are a regional regulator at the EPA responsible for making sure all waste facilities in Texas conform to government regulations. Your job is to analyze the facilities handling waste because there is indication that some of these facilities are underperforming. Your job is to examine each processing site to assess each company's impact on the surrounding environment. After your examination, rank the sites from most likely to least likely to have a negative impact on the environment, using information in the interactive map.",
 							"input": {
 								"required": true,
 								"autoadvance": false,
@@ -638,7 +638,7 @@
 					"blocks": [
 						{
 							"title": "Map Task",
-							"ask": "You plan to buy a new house in your home state of Texas. This state is home to multiple hazardous waste facilities, which causes concern for you and your family. Particularly, facilities with incinerators cause concern because of emissions from the incineration process. As you decide which city and neighborhood to live in, you investigate the hazardous waste facilities and see which ones have a record of processing waste properly. Further, you examine the communities that have these waste facilities because of recent news coverage about environmental (in)justice concerns in communities that have hazardous waste facilities. Given this, rank the top 3 sites that you would not want to live nearby.",
+							"ask": "You are the manager of a newly opened Canadian firm looking to ship hazardous waste to Texas for processing. Your decision to ship waste internationally is due to economic benefits. Your goal is to send the waste to a place you know will handle the waste properly without harming the citizens living nearby, otherwise your new business could face scrutiny. Given this, rank the sites from most likely to least likely that you plan on contracting with, using information in the interactive map.",
 							"input": {
 								"required": true,
 								"autoadvance": false,
@@ -683,7 +683,7 @@
 					"blocks": [
 						{
 							"title": "Map Task",
-							"ask": "You are the manager of a newly opened Canadian firm looking to ship hazardous waste to Ohio to be processed. The transnational shipment is due to economic benefits and processing needs. Your waste needs to be incinerated, which limits the facilities you can send to. Your goal is to send the waste to a place you know will handle the waste properly, otherwise your business could face scrutiny. Further, you are concerned about the communities that process waste, given recent news coverage about environmental (in)justice concerns in communities that have hazardous waste facilities. Given this, rank the top 3 sites that would be good to do business with.",
+							"ask": "You are a regional regulator at the EPA responsible for making sure all waste facilities in Ohio conform to government regulations. Your job is to analyze the facilities handling waste because there is indication that some of these facilities are underperforming. Your job is to examine each processing site to assess each company's impact on the surrounding environment. After your examination, rank the sites from most likely to least likely to have a negative impact on the environment, using information in the interactive map.",
 							"input": {
 								"required": true,
 								"autoadvance": false,
@@ -728,7 +728,7 @@
 					"blocks": [
 						{
 							"title": "Map Task",
-							"ask": "You are a regulator at the EPA. Because of the region you work in, you are responsible for making sure all waste facilities in Ohio follow government regulations properly. Your task for the week is to focus on facilities that incinerate hazardous waste, which limits the facilities you work with for the week, because there is indication that some of these facilities are underperforming. Your job is to examine previous reports to understand each company’s past compliance record, as well as examine public concerns about the facilities in their respective communities. Recently, community members have come forward indicating they feel like they are burdened by the facility. After your examination, rank the top 3 sites that need to be monitored more closely.",
+							"ask": "You are the manager of a newly opened Canadian firm looking to ship hazardous waste to Ohio for processing. Your decision to ship waste internationally is due to economic benefits. Your goal is to send the waste to a place you know will handle the waste properly without harming the citizens living nearby, otherwise your new business could face scrutiny. Given this, rank the sites from most likely to least likely that you plan on contracting with, using information in the interactive map.",
 							"input": {
 								"required": true,
 								"autoadvance": false,
@@ -773,7 +773,7 @@
 					"blocks": [
 						{
 							"title": "Map Task",
-							"ask": "You plan to buy a new house in your home state of Texas. This state is home to multiple hazardous waste facilities, which causes concern for you and your family. Particularly, facilities with incinerators cause concern because of emissions from the incineration process. As you decide which city and neighborhood to live in, you investigate the hazardous waste facilities and see which ones have a record of processing waste properly. Further, you examine the communities that have these waste facilities because of recent news coverage about environmental (in)justice concerns in communities that have hazardous waste facilities. Given this, rank the top 3 sites that you would not want to live nearby.",
+							"ask": "You are a regional regulator at the EPA responsible for making sure all waste facilities in Texas conform to government regulations. Your job is to analyze the facilities handling waste because there is indication that some of these facilities are underperforming. Your job is to examine each processing site to assess each company's impact on the surrounding environment. After your examination, rank the sites from most likely to least likely to have a negative impact on the environment, using information in the interactive map.",
 							"input": {
 								"required": true,
 								"autoadvance": false,
@@ -818,7 +818,7 @@
 					"blocks": [
 						{
 							"title": "Map Task",
-							"ask": "You are the manager of a newly opened Canadian firm looking to ship hazardous waste to Texas to be processed. The transnational shipment is due to economic benefits and processing needs. Your waste needs to be incinerated, which limits the facilities you can send to. Your goal is to send the waste to a place you know will handle the waste properly, otherwise your business could face scrutiny. Further, you are concerned about the communities that process waste, given recent news coverage about environmental (in)justice concerns in communities that have hazardous waste facilities. Given this, rank the top 3 sites that would be good to do business with.",
+							"ask": "You are the manager of a newly opened Canadian firm looking to ship hazardous waste to Texas for processing. Your decision to ship waste internationally is due to economic benefits. Your goal is to send the waste to a place you know will handle the waste properly without harming the citizens living nearby, otherwise your new business could face scrutiny. Given this, rank the sites from most likely to least likely that you plan on contracting with, using information in the interactive map.",
 							"input": {
 								"required": true,
 								"autoadvance": false,
@@ -863,7 +863,7 @@
 					"blocks": [
 						{
 							"title": "Map Task",
-							"ask": "You are a regulator at the EPA. Because of the region you work in, you are responsible for making sure all waste facilities in Ohio follow government regulations properly. Your task for the week is to focus on facilities that incinerate hazardous waste, which limits the facilities you work with for the week, because there is indication that some of these facilities are underperforming. Your job is to examine previous reports to understand each company’s past compliance record, as well as examine public concerns about the facilities in their respective communities. Recently, community members have come forward indicating they feel like they are burdened by the facility. After your examination, rank the top 3 sites that need to be monitored more closely.",
+							"ask": "You are a regional regulator at the EPA responsible for making sure all waste facilities in Ohio conform to government regulations. Your job is to analyze the facilities handling waste because there is indication that some of these facilities are underperforming. Your job is to examine each processing site to assess each company's impact on the surrounding environment. After your examination, rank the sites from most likely to least likely to have a negative impact on the environment, using information in the interactive map.",
 							"input": {
 								"required": true,
 								"autoadvance": false,
