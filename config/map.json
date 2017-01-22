@@ -771,12 +771,36 @@
 													],
 													"dataLayers": [
 														{
+												"roundTo": 0,
+												"name": "Soil Penetration",
+												"source": "data/texasperm.geojson",
+												"expressedAttribute": "Permeability",
+												"displayAttributes": [
+													"Permeability"
+												],
+												"layerOptions": {
+											"fillOpacity": 0.8,
+											"color": "black",
+											"weight": 0.5,
+											"opacity": 1,
+											"minZoom": 5,
+											"maxZoom": 10
+											},
+												"renderOnLoad": true,
+												"techniques": [
+													{
+														"type": "choropleth",
+														"classification": "equal interval",
+														"classes": "BuGn.5"
+													}
+												]},
+														{
 															"name": "Waste Imported",
 															"source": "data/Texas.geojson",
 															"roundTo": 0,
 															"expressedAttribute": "Kilograms",
 															"displayAttributes": [
-																"Kilograms", "Violations", "Census Tract Income ($)", "Census Tract Percent Non-White Population"
+																"Kilograms", "Violations", "Census Tract Income ($)", "Soil Penetration (in/hr)"
 															],
 															"layerOptions": {
 														"fillOpacity": 0.8,
