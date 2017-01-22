@@ -647,7 +647,7 @@
 												"roundTo": 0,
 												"expressedAttribute": "Kilograms",
 												"displayAttributes": [
-													"Kilograms", "Violations", "Air Quality Watches"
+													"Company","Kilograms", "Violations", "Air Quality Watches"
 												],
 												"layerOptions": {
 											"fillOpacity": 0.8,
@@ -848,7 +848,7 @@
 															"roundTo": 0,
 															"expressedAttribute": "Kilograms",
 															"displayAttributes": [
-																"Kilograms", "Violations", "Poverty (%)", "Air Quality Watches", "Soil Penetration (in/hr)"
+																"Company","Kilograms", "Violations", "Poverty (%)", "Air Quality Watches", "Soil Penetration (in/hr)"
 															],
 															"layerOptions": {
 														"fillOpacity": 0.8,
@@ -977,7 +977,7 @@
 														"roundTo": 0,
 														"expressedAttribute": "Kilograms",
 														"displayAttributes": [
-															"Management Method", "Violations in 3 Years"
+															"Company", "Management Method", "Violations in 3 Years"
 														],
 														"layerOptions": {
 													"fillOpacity": 0.8,
@@ -1178,7 +1178,7 @@
 																	"roundTo": 0,
 																	"expressedAttribute": "Kilograms",
 																	"displayAttributes": [
-																		"Kilograms", "Violations", "Poverty (%)", "Air Quality Watches", "Soil Penetration (in/hr)"
+																		"Company","Kilograms", "Violations", "Poverty (%)", "Air Quality Watches", "Soil Penetration (in/hr)"
 																	],
 																	"layerOptions": {
 																"fillOpacity": 0.8,
