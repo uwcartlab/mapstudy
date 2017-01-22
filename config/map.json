@@ -351,7 +351,7 @@
 											"roundTo": 0,
 											"expressedAttribute": "Kilograms",
 											"displayAttributes": [
-												"Company", "Violations in 3 Years", "Management Method", "Census Tract Income ($)", "Census Tract Percent Non-White Population"
+												"Company", "Kilograms", "Violations", "Management Method", "Census Tract Income ($)", "Census Tract Percent Non-White Population"
 											],
 											"layerOptions": {
 										"fillOpacity": 0.8,
@@ -746,8 +746,8 @@
 													"legend": true,
 													"resetButton": false,
 													"center": [
-														30,
-														-96
+														29.5,
+														-98
 													],
 													"zoom": 6,
 													"minZoom": 6,
@@ -776,7 +776,7 @@
 															"roundTo": 0,
 															"expressedAttribute": "Kilograms",
 															"displayAttributes": [
-																"Management Method", "Violations in 3 Years", "Census Tract Income ($)", "Census Tract Percent Non-White Population"
+																"Kilograms", "Violations", "Census Tract Income ($)", "Census Tract Percent Non-White Population"
 															],
 															"layerOptions": {
 														"fillOpacity": 0.8,
@@ -824,18 +824,6 @@
 																		}
 																		],
 													"interactions": {
-														"zoom": {
-															"logging": true,
-															"toggle": false,
-															"interface": {
-																"touch": true,
-																"scrollWheel": true,
-																"doubleClick": true,
-																"box": true,
-																"keyboard": true,
-																"widget": true
-															}
-														},
 														"pan": {
 															"logging": true,
 															"toggle": false,
@@ -867,6 +855,18 @@
 															"dataLayers": [
 																"Company"
 															]
+														},
+														"zoom": {
+															"logging": true,
+															"toggle": false,
+															"interface": {
+																"touch": true,
+																"scrollWheel": true,
+																"doubleClick": true,
+																"box": true,
+																"keyboard": true,
+																"widget": true
+															}
 														}}},
 										{
 											"page": 12,
