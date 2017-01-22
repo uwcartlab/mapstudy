@@ -442,7 +442,7 @@
 											"roundTo": 0,
 											"expressedAttribute": "Kilograms",
 											"displayAttributes": [
-												"Company", "Violations in 3 Years", "Management Method"
+												"Company", "Kilograms", "Violations", "Air Quality Watches"
 											],
 											"layerOptions": {
 										"fillOpacity": 0.8,
