@@ -127,6 +127,34 @@
 					],
 					"dataLayers": [
 						{
+							"name": "Violations",
+							"source": "data/ExampleMapData.geojson",
+							"roundTo": 0,
+							"expressedAttribute": "Violations",
+							"displayAttributes": [
+								"Violations"
+							],
+							"layerOptions": {
+						"fillOpacity": 0.7,
+						"color": "purple",
+						"weight": 0.5,
+						"opacity": 0.5
+					},
+							"renderOnLoad": true,
+											"techniques": [
+												{
+													"type": "proportional symbol",
+														"classification": "quantile",
+														"classes": [
+															7.8,
+															11.1,
+															15.7,
+															22.2,
+															31.4
+														]
+												}
+											]},
+						{
 							"roundTo": 0,
 							"name": "Kilogram Data",
 							"source": "data/ExampleMapData.geojson",
