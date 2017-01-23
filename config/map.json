@@ -618,6 +618,34 @@
 										],
 										"dataLayers": [
 											{
+												"name": "Violations",
+												"source": "data/Ohio.geojson",
+												"roundTo": 0,
+												"expressedAttribute": "Violations",
+												"displayAttributes": [
+													"Violations"
+												],
+												"layerOptions": {
+											"fillOpacity": 0.7,
+											"color": "purple",
+											"weight": 0.5,
+											"opacity": 0.5
+										},
+												"renderOnLoad": true,
+																"techniques": [
+																	{
+																		"type": "proportional symbol",
+																			"classification": "quantile",
+																			"classes": [
+																				7.8,
+																				11.1,
+																				15.7,
+																				22.2,
+																				31.4
+																			]
+																	}
+																]},
+											{
 									"roundTo": 0,
 									"name": "Air Quality",
 									"source": "data/ohioair.geojson",
@@ -771,6 +799,34 @@
 													],
 													"dataLayers": [
 														{
+															"name": "Violations",
+															"source": "data/Texas.geojson",
+															"roundTo": 0,
+															"expressedAttribute": "Violations",
+															"displayAttributes": [
+																"Violations"
+															],
+															"layerOptions": {
+														"fillOpacity": 0.7,
+														"color": "purple",
+														"weight": 0.5,
+														"opacity": 0.5
+													},
+															"renderOnLoad": true,
+																			"techniques": [
+																				{
+																					"type": "proportional symbol",
+																						"classification": "quantile",
+																						"classes": [
+																							7.8,
+																							11.1,
+																							15.7,
+																							22.2,
+																							31.4
+																						]
+																				}
+																			]},
+														{
 												"roundTo": 0,
 												"name": "Air Quality",
 												"source": "data/texascounties.geojson",
@@ -815,7 +871,7 @@
 													{
 														"type": "choropleth",
 														"classification": "equal interval",
-														"classes": "BuGn.5"
+														"classes": "BuGn.3"
 													}
 												]},
 														{
@@ -839,7 +895,7 @@
 													{
 														"type": "choropleth",
 														"classification": "equal interval",
-														"classes": "BuGn.5"
+														"classes": "BuGn.3"
 													}
 												]},
 														{
@@ -971,6 +1027,34 @@
 													}
 												],
 												"dataLayers": [
+													{
+														"name": "Violations",
+														"source": "data/Texas.geojson",
+														"roundTo": 0,
+														"expressedAttribute": "Violations",
+														"displayAttributes": [
+															"Violations"
+														],
+														"layerOptions": {
+													"fillOpacity": 0.7,
+													"color": "purple",
+													"weight": 0.5,
+													"opacity": 0.5
+												},
+														"renderOnLoad": true,
+																		"techniques": [
+																			{
+																				"type": "proportional symbol",
+																					"classification": "quantile",
+																					"classes": [
+																						7.8,
+																						11.1,
+																						15.7,
+																						22.2,
+																						31.4
+																					]
+																			}
+																		]},
 													{
 											"roundTo": 0,
 											"name": "Air Quality",
@@ -1125,6 +1209,34 @@
 															],
 															"dataLayers": [
 																{
+																	"name": "Violations",
+																	"source": "data/Ohio.geojson",
+																	"roundTo": 0,
+																	"expressedAttribute": "Violations",
+																	"displayAttributes": [
+																		"Violations"
+																	],
+																	"layerOptions": {
+																"fillOpacity": 0.7,
+																"color": "purple",
+																"weight": 0.5,
+																"opacity": 0.5
+															},
+																	"renderOnLoad": true,
+																					"techniques": [
+																						{
+																							"type": "proportional symbol",
+																								"classification": "quantile",
+																								"classes": [
+																									7.8,
+																									11.1,
+																									15.7,
+																									22.2,
+																									31.4
+																								]
+																						}
+																					]},
+																{
 														"roundTo": 0,
 														"name": "Air Quality",
 														"source": "data/ohioair.geojson",
@@ -1169,7 +1281,7 @@
 															{
 																"type": "choropleth",
 																"classification": "equal interval",
-																"classes": "BuGn.5"
+																"classes": "BuGn.3"
 															}
 														]},
 																{
@@ -1193,7 +1305,7 @@
 															{
 																"type": "choropleth",
 																"classification": "equal interval",
-																"classes": "BuGn.5"
+																"classes": "BuGn.3"
 															}
 														]},
 																{
