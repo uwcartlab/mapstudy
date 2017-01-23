@@ -46,10 +46,10 @@
 							"Company", "Kilograms"
 						],
 						"layerOptions": {
-					"fillOpacity": 0.8,
+					"fillOpacity": 0.7,
 					"color": "black",
 					"weight": 0.5,
-					"opacity": 1
+					"opacity": 0.5
 				},
 						"renderOnLoad": true,
 						"techniques": [
@@ -136,10 +136,10 @@
 							],
 							"renderOnLoad": true,
 							"layerOptions": {
-						"fillOpacity": 0.8,
+						"fillOpacity": 0.7,
 						"color": "black",
 						"weight": 0.5,
-						"opacity": 1
+						"opacity": 0.5
 					},
 							"techniques": [
 								{
@@ -265,15 +265,15 @@
 										"Company",  "Kilograms", "Violations", "Air Quality Watches"
 									],
 									"layerOptions": {
-								"fillOpacity": 0.8,
+								"fillOpacity": 0.7,
 								"color": "black",
 								"weight": 0.5,
-								"opacity": 1
+								"opacity": 0.5
 							},
 											"techniques": [
 												{
 													"type": "proportional symbol",
-														"classification": "equal interval",
+														"classification": "quantile",
 														"classes": [
 															7.8,
 															11.1,
@@ -354,16 +354,16 @@
 												"Company", "Kilograms", "Violations", "Poverty (%)", "Air Quality Watches", "Soil Penetration (in/hr)"
 											],
 											"layerOptions": {
-										"fillOpacity": 0.8,
+										"fillOpacity": 0.7,
 										"color": "black",
 										"weight": 0.5,
-										"opacity": 1
+										"opacity": 0.5
 									},
 											"renderOnLoad": true,
 															"techniques": [
 																{
 																	"type": "proportional symbol",
-																		"classification": "equal interval",
+																		"classification": "quantile",
 																		"classes": [
 																			7.8,
 																			11.1,
@@ -445,16 +445,16 @@
 												"Company", "Kilograms", "Violations", "Air Quality Watches"
 											],
 											"layerOptions": {
-										"fillOpacity": 0.8,
+										"fillOpacity": 0.7,
 										"color": "black",
 										"weight": 0.5,
-										"opacity": 1
+										"opacity": 0.5
 									},
 											"renderOnLoad": true,
 															"techniques": [
 																{
 																	"type": "proportional symbol",
-																		"classification": "equal interval",
+																		"classification": "quantile",
 																		"classes": [
 																			7.8,
 																			11.1,
@@ -537,15 +537,15 @@
 													"Company", "Kilograms", "Violations", "Poverty (%)", "Air Quality Watches", "Soil Penetration (in/hr)"
 												],
 												"layerOptions": {
-											"fillOpacity": 0.8,
+											"fillOpacity": 0.7,
 											"color": "black",
 											"weight": 0.5,
-											"opacity": 1
+											"opacity": 0.5
 										},
 														"techniques": [
 															{
 																"type": "proportional symbol",
-																	"classification": "equal interval",
+																	"classification": "quantile",
 																	"classes": [
 																		7.8,
 																		11.1,
@@ -650,16 +650,16 @@
 													"Company","Kilograms", "Violations", "Air Quality Watches"
 												],
 												"layerOptions": {
-											"fillOpacity": 0.8,
+											"fillOpacity": 0.7,
 											"color": "black",
 											"weight": 0.5,
-											"opacity": 1
+											"opacity": 0.5
 										},
 												"renderOnLoad": true,
 																"techniques": [
 																	{
 																		"type": "proportional symbol",
-																			"classification": "equal interval",
+																			"classification": "quantile",
 																			"classes": [
 																				7.8,
 																				11.1,
@@ -851,16 +851,16 @@
 																"Company","Kilograms", "Violations", "Poverty (%)", "Air Quality Watches", "Soil Penetration (in/hr)"
 															],
 															"layerOptions": {
-														"fillOpacity": 0.8,
+														"fillOpacity": 0.7,
 														"color": "black",
 														"weight": 0.5,
-														"opacity": 1
+														"opacity": 0.5
 													},
 															"renderOnLoad": true,
 																			"techniques": [
 																				{
 																					"type": "proportional symbol",
-																						"classification": "equal interval",
+																						"classification": "quantile",
 																						"classes": [
 																							7.8,
 																							11.1,
@@ -1004,16 +1004,16 @@
 															"Company", "Kilograms", "Violations", "Air Quality Watches"
 														],
 														"layerOptions": {
-													"fillOpacity": 0.8,
+													"fillOpacity": 0.7,
 													"color": "black",
 													"weight": 0.5,
-													"opacity": 1
+													"opacity": 0.5
 												},
 														"renderOnLoad": true,
 																		"techniques": [
 																			{
 																				"type": "proportional symbol",
-																					"classification": "equal interval",
+																					"classification": "quantile",
 																					"classes": [
 																						7.8,
 																						11.1,
@@ -1205,16 +1205,16 @@
 																		"Company","Kilograms", "Violations", "Poverty (%)", "Air Quality Watches", "Soil Penetration (in/hr)"
 																	],
 																	"layerOptions": {
-																"fillOpacity": 0.8,
+																"fillOpacity": 0.7,
 																"color": "black",
 																"weight": 0.5,
-																"opacity": 1
+																"opacity": 0.5
 															},
 																	"renderOnLoad": true,
 																					"techniques": [
 																						{
 																							"type": "proportional symbol",
-																								"classification": "equal interval",
+																								"classification": "quantile",
 																								"classes": [
 																									7.8,
 																									11.1,
