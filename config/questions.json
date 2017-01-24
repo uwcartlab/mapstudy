@@ -577,19 +577,6 @@
 									}
 								]
 							}
-						},
-						{
-							"ask": "Do you confirm that this is your final answer?",
-							"input": {
-								"required": true,
-								"autoadvance": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "Yes"
-									}
-								]
-							}
 						}
 					],
 					"buttons": [
@@ -632,19 +619,6 @@
 									},
 									{
 										"text": "VEOLIA ENVIRONMENTAL"
-									}
-								]
-							}
-						},
-						{
-							"ask": "Do you confirm that this is your final answer?",
-							"input": {
-								"required": true,
-								"autoadvance": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "Yes"
 									}
 								]
 							}
@@ -694,19 +668,6 @@
 									}
 								]
 							}
-						},
-						{
-							"ask": "Do you confirm that this is your final answer?",
-							"input": {
-								"required": true,
-								"autoadvance": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "Yes"
-									}
-								]
-							}
 						}
 					],
 					"buttons": [
@@ -749,19 +710,6 @@
 									},
 									{
 										"text": "SYSTECH CORP."
-									}
-								]
-							}
-						},
-						{
-							"ask": "Do you confirm that this is your final answer?",
-							"input": {
-								"required": true,
-								"autoadvance": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "Yes"
 									}
 								]
 							}
@@ -810,19 +758,6 @@
 									}
 								]
 							}
-						},
-						{
-							"ask": "Do you confirm that this is your final answer?",
-							"input": {
-								"required": true,
-								"autoadvance": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "Yes"
-									}
-								]
-							}
 						}
 					],
 					"buttons": [
@@ -868,20 +803,7 @@
 									}
 								]
 							}
-						},
-							{
-								"ask": "Do you confirm that this is your final answer?",
-								"input": {
-									"required": true,
-									"autoadvance": false,
-									"type": "radios",
-									"options": [
-										{
-											"text": "Yes"
-										}
-									]
-								}
-							}
+						}
 						],
 					"buttons": [
 						"next"
@@ -923,19 +845,6 @@
 									},
 									{
 										"text": "VEOLIA ENVIRONMENTAL"
-									}
-								]
-							}
-						},
-						{
-							"ask": "Do you confirm that this is your final answer?",
-							"input": {
-								"required": true,
-								"autoadvance": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "Yes"
 									}
 								]
 							}
@@ -981,19 +890,6 @@
 									},
 									{
 										"text": "SYSTECH CORP."
-									}
-								]
-							}
-						},
-						{
-							"ask": "Do you confirm that this is your final answer?",
-							"input": {
-								"required": true,
-								"autoadvance": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "Yes"
 									}
 								]
 							}
