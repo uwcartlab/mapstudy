@@ -482,7 +482,7 @@
 				{
 					"blocks": [
 						{
-							"title": "*These Questions are NOT timed.",
+							"title": "*These Questions are NOT timed. However, once you select next, a timer will start.",
 							"ask": "1. On a scale of 1-5, how confident are you in your answer?",
 							"input": {
 								"required": true,
@@ -543,6 +543,9 @@
 		{
 			"page": 6,
 			"fullpage": false,
+			"timer": {
+				"persist": true
+			},
 			"sets": [
 				{
 					"blocks": [
@@ -588,6 +591,12 @@
 		{
 			"page": 7,
 			"fullpage": false,
+			"timer": {
+				"remove": true
+			},
+			"timer": {
+				"persist": true
+			},
 			"sets": [
 				{
 					"blocks": [
@@ -634,6 +643,12 @@
 		{
 			"page": 8,
 			"fullpage": false,
+			"timer": {
+				"remove": true
+			},
+			"timer": {
+				"persist": true
+			},
 			"sets": [
 				{
 					"blocks": [
@@ -679,6 +694,12 @@
 		{
 			"page": 9,
 			"fullpage": false,
+			"timer": {
+				"remove": true
+			},
+			"timer": {
+				"persist": true
+			},
 			"sets": [
 				{
 					"blocks": [
@@ -724,6 +745,12 @@
 		{
 			"page": 10,
 			"fullpage": false,
+			"timer": {
+				"remove": true
+			},
+			"timer": {
+				"persist": true
+			},
 			"sets": [
 				{
 					"blocks": [
@@ -769,6 +796,12 @@
 		{
 			"page": 11,
 			"fullpage": false,
+			"timer": {
+				"remove": true
+			},
+			"timer": {
+				"persist": true
+			},
 			"sets": [
 				{
 					"blocks": [
@@ -814,6 +847,12 @@
 		{
 			"page": 12,
 			"fullpage": false,
+			"timer": {
+				"remove": true
+			},
+			"timer": {
+				"persist": true
+			},
 			"sets": [
 				{
 					"blocks": [
@@ -859,6 +898,12 @@
 		{
 			"page": 13,
 			"fullpage": false,
+			"timer": {
+				"remove": true
+			},
+			"timer": {
+				"persist": true
+			},
 			"sets": [
 				{
 					"blocks": [
