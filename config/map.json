@@ -140,7 +140,7 @@
 						"weight": 0.5,
 						"opacity": 0.5
 					},
-							"renderOnLoad": true,
+							"renderOnLoad": false,
 											"techniques": [
 												{
 													"type": "proportional symbol",
@@ -227,7 +227,9 @@
 						"overlay": {
 							"logging": true,
 							"toggle": false,
-							"dataLayers": []
+							"dataLayers": [
+								"Violations", "Importing Company"
+							]
 						},
 						"zoom": {
 							"logging": true,
@@ -659,7 +661,7 @@
 											"weight": 0.5,
 											"opacity": 0.5
 										},
-												"renderOnLoad": true,
+												"renderOnLoad": false,
 																"techniques": [
 																	{
 																		"type": "proportional symbol",
@@ -689,12 +691,12 @@
 								"minZoom": 6,
 								"maxZoom": 10
 								},
-									"renderOnLoad": true,
+									"renderOnLoad": false,
 									"techniques": [
 										{
 											"type": "choropleth",
-											"classification": "equal interval",
-											"classes": "BuGn.3"
+											"classification": "quantile",
+											"classes": "BuGn.5"
 										}
 									]},
 											{
@@ -780,7 +782,7 @@
 												"logging": true,
 												"toggle": false,
 												"dataLayers": [
-													"Company"
+													"Violations", "Air Quality", "Company"
 												]
 											},
 											"zoom": {
@@ -840,7 +842,7 @@
 														"weight": 0.5,
 														"opacity": 0.5
 													},
-															"renderOnLoad": true,
+															"renderOnLoad": false,
 																			"techniques": [
 																				{
 																					"type": "proportional symbol",
@@ -870,12 +872,12 @@
 											"minZoom": 5,
 											"maxZoom": 10
 											},
-												"renderOnLoad": true,
+												"renderOnLoad": false,
 												"techniques": [
 													{
 														"type": "choropleth",
-														"classification": "equal interval",
-														"classes": "BuGn.3"
+														"classification": "quantile",
+														"classes": "BuGn.5"
 													}
 												]},
 														{
@@ -894,12 +896,12 @@
 											"minZoom": 5,
 											"maxZoom": 10
 											},
-												"renderOnLoad": true,
+												"renderOnLoad": false,
 												"techniques": [
 													{
 														"type": "choropleth",
-														"classification": "equal interval",
-														"classes": "BuGn.3"
+														"classification": "quantile",
+														"classes": "BuGn.5"
 													}
 												]},
 														{
@@ -918,12 +920,12 @@
 											"minZoom": 5,
 											"maxZoom": 10
 											},
-												"renderOnLoad": true,
+												"renderOnLoad": false,
 												"techniques": [
 													{
 														"type": "choropleth",
-														"classification": "equal interval",
-														"classes": "BuGn.3"
+														"classification": "quantile",
+														"classes": "BuGn.5"
 													}
 												]},
 														{
@@ -1009,7 +1011,7 @@
 															"logging": true,
 															"toggle": false,
 															"dataLayers": [
-																"Company"
+																"Violations", "Percent in Poverty", "Air Quality", "Soil Penetration", "Company"
 															]
 														},
 														"zoom": {
@@ -1069,7 +1071,7 @@
 													"weight": 0.5,
 													"opacity": 0.5
 												},
-														"renderOnLoad": true,
+														"renderOnLoad": false,
 																		"techniques": [
 																			{
 																				"type": "proportional symbol",
@@ -1099,12 +1101,12 @@
 										"minZoom": 5,
 										"maxZoom": 10
 										},
-											"renderOnLoad": true,
+											"renderOnLoad": false,
 											"techniques": [
 												{
 													"type": "choropleth",
-													"classification": "equal interval",
-													"classes": "BuGn.3"
+													"classification": "quantile",
+													"classes": "BuGn.5"
 												}
 											]},
 													{
@@ -1190,7 +1192,7 @@
 														"logging": true,
 														"toggle": false,
 														"dataLayers": [
-															"Company"
+															"Violations", "Air Quality", "Company"
 														]
 													},
 													"zoom": {
@@ -1250,7 +1252,7 @@
 																"weight": 0.5,
 																"opacity": 0.5
 															},
-																	"renderOnLoad": true,
+																	"renderOnLoad": false,
 																					"techniques": [
 																						{
 																							"type": "proportional symbol",
@@ -1280,12 +1282,12 @@
 													"minZoom": 6,
 													"maxZoom": 10
 													},
-														"renderOnLoad": true,
+														"renderOnLoad": false,
 														"techniques": [
 															{
 																"type": "choropleth",
-																"classification": "equal interval",
-																"classes": "BuGn.3"
+																"classification": "quantile",
+																"classes": "BuGn.5"
 															}
 														]},
 																{
@@ -1304,12 +1306,12 @@
 													"minZoom": 6,
 													"maxZoom": 10
 													},
-														"renderOnLoad": true,
+														"renderOnLoad": false,
 														"techniques": [
 															{
 																"type": "choropleth",
-																"classification": "equal interval",
-																"classes": "BuGn.3"
+																"classification": "quantile",
+																"classes": "BuGn.5"
 															}
 														]},
 																{
@@ -1328,12 +1330,12 @@
 													"minZoom": 6,
 													"maxZoom": 10
 													},
-														"renderOnLoad": true,
+														"renderOnLoad": false,
 														"techniques": [
 															{
 																"type": "choropleth",
-																"classification": "equal interval",
-																"classes": "BuGn.3"
+																"classification": "quantile",
+																"classes": "BuGn.5"
 															}
 														]},
 																{
@@ -1419,7 +1421,7 @@
 																	"logging": true,
 																	"toggle": false,
 																	"dataLayers": [
-																		"Company"
+																		"Violations", "Percent in Poverty", "Air Quality", "Soil Penetration", "Company"
 																	]
 																},
 																"zoom": {
