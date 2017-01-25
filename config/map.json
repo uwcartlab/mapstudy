@@ -830,7 +830,7 @@
 													"dataLayers": [
 														{
 															"name": "Violations",
-															"source": "data/Texas.geojson",
+															"source": "data/violationstx.geojson",
 															"roundTo": 0,
 															"expressedAttribute": "Violations",
 															"displayAttributes": [
@@ -843,19 +843,13 @@
 														"opacity": 0.5
 													},
 															"renderOnLoad": false,
-																			"techniques": [
-																				{
-																					"type": "proportional symbol",
-																						"classification": "quantile",
-																						"classes": [
-																							7.8,
-																							11.1,
-																							15.7,
-																							22.2,
-																							31.4
-																						]
-																				}
-																			]},
+															"techniques": [
+																{
+																	"type": "choropleth",
+																	"classification": "quantile",
+																	"classes": "BuGn.5"
+																}
+															]},
 														{
 												"roundTo": 0,
 												"name": "Air Quality",
