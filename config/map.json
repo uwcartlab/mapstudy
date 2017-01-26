@@ -671,7 +671,7 @@
 												]},
 											{
 									"roundTo": 0,
-									"name": "Air Quality",
+									"name": "Air Quality Watches Per Capita",
 									"source": "data/ohioair1.geojson",
 									"expressedAttribute": "Air Quality Watches",
 									"displayAttributes": [
@@ -776,7 +776,7 @@
 												"logging": true,
 												"toggle": false,
 												"dataLayers": [
-													"Violations", "Air Quality", "Company"
+													"Violations", "Air Quality Watches Per Capita", "Company"
 												]
 											},
 											"zoom": {
@@ -846,7 +846,7 @@
 															]},
 														{
 												"roundTo": 0,
-												"name": "Air Quality",
+												"name": "Air Quality Watches Per Capita",
 												"source": "data/texascounties1.geojson",
 												"expressedAttribute": "Air Quality Watches",
 												"displayAttributes": [
@@ -999,7 +999,7 @@
 															"logging": true,
 															"toggle": false,
 															"dataLayers": [
-																"Violations", "Percent in Poverty", "Air Quality", "Soil Penetration", "Company"
+																"Violations", "Percent in Poverty", "Air Quality Watches Per Capita", "Soil Penetration", "Company"
 															]
 														},
 														"zoom": {
@@ -1069,7 +1069,7 @@
 														]},
 													{
 											"roundTo": 0,
-											"name": "Air Quality",
+											"name": "Air Quality Watches Per Capita",
 											"source": "data/texascounties1.geojson",
 											"expressedAttribute": "Air Quality Watches",
 											"displayAttributes": [
@@ -1174,7 +1174,7 @@
 														"logging": true,
 														"toggle": false,
 														"dataLayers": [
-															"Violations", "Air Quality", "Company"
+															"Violations", "Air Quality Watches Per Capita", "Company"
 														]
 													},
 													"zoom": {
@@ -1244,7 +1244,7 @@
 																	]},
 																{
 														"roundTo": 0,
-														"name": "Air Quality",
+														"name": "Air Quality Watches Per Capita",
 														"source": "data/ohioair1.geojson",
 														"expressedAttribute": "Air Quality Watches",
 														"displayAttributes": [
@@ -1397,7 +1397,7 @@
 																	"logging": true,
 																	"toggle": false,
 																	"dataLayers": [
-																		"Violations", "Percent in Poverty", "Air Quality", "Soil Penetration", "Company"
+																		"Violations", "Percent in Poverty", "Air Quality Watches Per Capita", "Soil Penetration", "Company"
 																	]
 																},
 																"zoom": {

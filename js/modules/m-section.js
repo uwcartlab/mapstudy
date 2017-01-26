@@ -524,7 +524,7 @@ var LegendLayerView = Backbone.View.extend({
 				heightArray.sort(function(a,b){ return b-a });
 				view.model.attributes.svgHeight = heightArray[0];
 			} else {
-				view.model.attributes.svgHeight = 9 * range.length + 6;
+				view.model.attributes.svgHeight = 13 * range.length + 6;
 			};
 			//remove earlier svg width
 			view.model.attributes.svgWidth = 0;
