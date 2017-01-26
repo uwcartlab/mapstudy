@@ -229,6 +229,7 @@ svg {
     border-radius: 5px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
     padding: 10px;
+
 }
 
 .interaction-control-container {
@@ -262,7 +263,7 @@ svg {
 }
 
 .range-slider {
-    width: 300px;  
+    width: 300px;
 }
 
 .slider-labels {
@@ -313,6 +314,10 @@ svg {
     stroke: black;
     stroke-width: 1;
 }
+
+/*#map > div.leaflet-control-container > div.leaflet-bottom.leaflet-right > div.legend-control-container.control-container.leaflet-control {
+  overflow-y: auto;
+}*/
 
 #pan-left {
     display: inline-block;
