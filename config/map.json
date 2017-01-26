@@ -672,7 +672,7 @@
 											{
 									"roundTo": 0,
 									"name": "Air Quality",
-									"source": "data/ohioair.geojson",
+									"source": "data/ohioair1.geojson",
 									"expressedAttribute": "Air Quality Watches",
 									"displayAttributes": [
 										"Air Quality Watches"
@@ -1245,7 +1245,7 @@
 																{
 														"roundTo": 0,
 														"name": "Air Quality",
-														"source": "data/ohioair.geojson",
+														"source": "data/ohioair1.geojson",
 														"expressedAttribute": "Air Quality Watches",
 														"displayAttributes": [
 															"Air Quality Watches"
