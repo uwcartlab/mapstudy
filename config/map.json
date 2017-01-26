@@ -895,10 +895,10 @@
 														{
 												"roundTo": 0,
 												"name": "Soil Penetration",
-												"source": "data/texasperm.geojson",
-												"expressedAttribute": "Permeability",
+												"source": "data/txsoil.geojson",
+												"expressedAttribute": "Soil",
 												"displayAttributes": [
-													"Permeability"
+													"Soil"
 												],
 												"layerOptions": {
 											"fillOpacity": 0.8,
