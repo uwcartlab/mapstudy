@@ -1293,10 +1293,10 @@
 																{
 														"roundTo": 0,
 														"name": "Soil Penetration",
-														"source": "data/permeability.geojson",
-														"expressedAttribute": "Permeability",
+														"source": "data/ohiosoil1.geojson",
+														"expressedAttribute": "Soil",
 														"displayAttributes": [
-															"Permeability"
+															"Soil"
 														],
 														"layerOptions": {
 													"fillOpacity": 0.8,
