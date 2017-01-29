@@ -468,10 +468,10 @@ var LegendLayerView = Backbone.View.extend({
 				min = domain[0];
 				max = domain[1];
 			};
-			attributes.label = min + ' - ' + max;
 			var format = d3.format(",.0f")
 			min =format(min)
 			max = format(max)
+			attributes.label = min + ' - ' + max;
 		} else {
 			attributes.label = String(domain)
 		};

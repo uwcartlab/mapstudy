@@ -219,6 +219,11 @@ svg {
     display: inline-block;
 }
 
+#legend-wrapper {
+    max-height: 50vh;
+    overflow-y: auto;
+}
+
 .attr {
     font-weight: bold;
     padding-right: 10px;
