@@ -469,6 +469,9 @@ var LegendLayerView = Backbone.View.extend({
 				max = domain[1];
 			};
 			attributes.label = min + ' - ' + max;
+			var format = d3.format(",.0f")
+			min =format(min)
+			max = format(max)
 		} else {
 			attributes.label = String(domain)
 		};
@@ -1832,10 +1835,12 @@ var LeafletMap = Backbone.View.extend({
 			var popupContent = "<table>";
 			if (dataLayerModel.attributes.displayAttributes){
 				dataLayerModel.get('displayAttributes').forEach(function(attr){
-					popupContent += _.template($('#popup-line-template').html())({
-						attribute: attr,
-						value: feature.properties[attr]
-					});
+var format = d3.format(",.0f")
+var value = typeof feature.properties[attr] != "string" ? format(feature.properties[attr]) : feature.properties[attr]
+popupContent += _.template($('#popup-line-template').html())({
+attribute: attr,
+value: value
+});
 				});
 			} else {
 				var attr = dataLayerModel.get('expressedAttribute');
