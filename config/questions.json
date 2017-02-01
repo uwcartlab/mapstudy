@@ -123,17 +123,20 @@
 						{
 							"image": "img/benchmark.png",
 							"title": "Map Reading Tasks",
-							"ask": "<strong>What state has the easternmost hazardous waste facility?</strong>",
+							"ask": "<strong>How many waste facilities are in Alabama?</strong>",
 							"input": {
 								"required": true,
 								"autoadvance": false,
 								"type": "radios",
 								"options": [
 									{
-										"text": "Rhode Island"
+										"text": "1"
 									},
 									{
-										"text": "South Carolina"
+										"text": "2"
+									},
+									{
+										"text": "3"
 									}
 								]
 							}
@@ -205,17 +208,17 @@
 						"resetMap": true,
 						"blocks":	[{
 							"image": "img/benchmark.png",
-							"ask": "<strong>Which state has more hazardous waste facilities?</strong>",
+							"ask": "<strong>Which state had more waste shipments?</strong>",
 							"input": {
 								"required": true,
 								"autoadvance": false,
 								"type": "radios",
 								"options": [
 										{
-											"text": "California"
+											"text": "Arizona"
 										},
 										{
-											"text": "Oklahoma"
+											"text": "South Carolina"
 										}
 									],
 								"items": [
@@ -291,7 +294,7 @@
 							"resetMap": true,
 							"blocks":	[{
 							"image": "img/benchmark.png",
-							"ask": "<strong>Which state has the most hazardous waste facilities?</strong>",
+							"ask": "<strong>Which state had the most waste shipments?</strong>",
 							"input": {
 								"required": true,
 								"autoadvance": false,
@@ -375,7 +378,7 @@
 								"resetMap": true,
 								"blocks":	[{
 								"image": "img/benchmark.png",
-								"ask": "<strong>Where are low poverty rates and a high number of shipments highly correlated?</strong>",
+								"ask": "<strong>Which state is more likely to have imported waste from Canada?</strong>",
 								"input": {
 									"required": true,
 									"autoadvance": false,
@@ -385,7 +388,7 @@
 											"text": "Michigan"
 										},
 										{
-											"text": "Tennessee"
+											"text": "Kansas"
 										}
 									]
 								}
