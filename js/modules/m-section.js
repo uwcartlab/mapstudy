@@ -468,9 +468,6 @@ var LegendLayerView = Backbone.View.extend({
 				min = domain[0];
 				max = domain[1];
 			};
-			var format = d3.format(",.0f")
-			min =format(min)
-			max = format(max)
 			attributes.label = min + ' - ' + max;
 		} else {
 			attributes.label = String(domain)
@@ -924,6 +921,9 @@ var FilterModel = Backbone.Model.extend({
 	}
 });
 
+//array to save user-assigned slider data
+var userInputSliders = [];
+
 //slider view for filter interaction
 var FilterSliderView = Backbone.View.extend({
 	el: ".filter-control-container",
@@ -939,7 +939,7 @@ var FilterSliderView = Backbone.View.extend({
 	setSlider: function(attribute, className){
 		//get attribute values for all features with given attribute
 		var allAttributeValues = getAllAttributeValues(this.model.get('features'), attribute);
-		//set values for slider
+		//set values for sliderv
 		var min = _.min(allAttributeValues),
 			max = _.max(allAttributeValues),
 			mindiff = _.reduce(allAttributeValues, function(memo, val, i){
@@ -976,18 +976,50 @@ var FilterSliderView = Backbone.View.extend({
 		labelsDiv.children(".right").html(max);
 		//to pass to slide callback
 		var applyFilter = this.applyFilter;
+
+		//Check to see if user data exists for slider positions
+		//If not, adds values to array
+		var setMin;
+		var setMax;
+		var objectExists = false;
+		var objIndex = -1;
+		if(min!=Infinity){ //not sure why sometime this shows as Infinity, but this fixes it
+				for(i = 0; i < userInputSliders.length; i++){
+					if(userInputSliders[i].name === attribute){ //searches for objects named w/attribute
+						objectExists = true;
+						objIndex = i;
+					}
+				}
+				if(objectExists){ //if data exists, sets slider min/max
+					setMin = userInputSliders[objIndex].uMin;
+					setMax = userInputSliders[objIndex].uMax;
+				} else { //if data does not exist, adds it to the userInputSliders array
+					userInputSliders.push({name:attribute,uMin:min,uMax:max})
+					setMin = min;
+					setMax = max;
+				}
+		}
 		//call once to reset layer
-		applyFilter(attribute, [min, max], true);
+		applyFilter(attribute, [setMin, setMax], true);
+
 		//set slider
 		this.$el.find("#"+className+"-slider").slider({
 			range: true,
 			min: min,
 			max: max,
-			values: [min, max],
+			values: [setMin,setMax],
 			step: step,
 			slide: function(e, slider){
 				labelsDiv.children(".left").html(slider.values[0]);
 				labelsDiv.children(".right").html(slider.values[1]);
+
+				//iterate through saved slider value array and set slider to previous value
+				for(j = 0; j< userInputSliders.length; j++){
+					if(userInputSliders[j].name === attribute){ //searches for objects named w/attribute
+						userInputSliders[j].uMin = slider.values[0];
+						userInputSliders[j].uMax = slider.values[1];
+					}
+				}
 				applyFilter(attribute, slider.values);
 			}
 		});
@@ -1835,12 +1867,10 @@ var LeafletMap = Backbone.View.extend({
 			var popupContent = "<table>";
 			if (dataLayerModel.attributes.displayAttributes){
 				dataLayerModel.get('displayAttributes').forEach(function(attr){
-var format = d3.format(",.0f")
-var value = typeof feature.properties[attr] != "string" ? format(feature.properties[attr]) : feature.properties[attr]
-popupContent += _.template($('#popup-line-template').html())({
-attribute: attr,
-value: value
-});
+					popupContent += _.template($('#popup-line-template').html())({
+						attribute: attr,
+						value: feature.properties[attr]
+					});
 				});
 			} else {
 				var attr = dataLayerModel.get('expressedAttribute');
