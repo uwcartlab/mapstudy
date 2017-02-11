@@ -962,75 +962,19 @@
 					{
 						"blocks": [
 							{
-								"title": "*The survey is no longer being timed. <br><br> Exit Survey-North American Hazardous Waste Trade",
-								"ask": "<br>Please rank how difficult it was to understand the hazardous waste trade <u>topic</u>:",
-								"input": {
-									"required": false,
-									"type": "radios",
-									"options": [
-										{
-											"text": "1. Very Difficult"
-										},
-										{
-											"text": "2. Difficult"
-										},
-										{
-											"text": "3. Neutral"
-										},
-										{
-											"text": "4. Not Difficult"
-										},
-										{
-											"text": "5. Not At All Difficult"
-										}
-									]
-								}
-							},
-							{
-								"ask": "<br>Discuss which points were confusing, if any:",
+								"title": "*The survey is no longer being timed. Thank you for completing the decision and map tasks. Before completing the survey, we would like you to answer a set of background questions to capture your interests and experiences. The following background survey is divided across 2 pages.<br><br> Page 1 of 2: Exit Survey-Decision-Making, Insight into Your Decision-Making Process",
+								"ask": "<br>Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
 								"input": {
 									"required": false,
 									"autoadvance": false,
 									"type": "paragraph"
 								}
 							},
-							{
-								"ask": "<br>Please describe your decision-making process:",
+							{"ask":"Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
 								"input": {
 									"required": false,
 									"autoadvance": false,
 									"type": "paragraph"
-								}
-							},
-							{
-								"ask": "<br>What information about the <u>hazardous waste trade</u> would have made coming to your decisions easier?",
-								"input": {
-									"required": false,
-									"autoadvance": false,
-									"type": "paragraph"
-								}
-							},
-							{
-								"ask": "<br>What are your views of the hazardous waste trade?",
-								"input": {
-									"required": false,
-									"autoadvance": false,
-									"type": "paragraph"
-								}
-							},
-							{
-								"ask": "Should we trade hazardous waste?",
-								"input": {
-									"required": false,
-									"type": "radios",
-									"options": [
-										{
-											"text": "Yes"
-										},
-										{
-											"text": "No"
-										}
-									]
 								}
 							}
 						],
@@ -1043,68 +987,11 @@
 		{
 			"page": 15,
 			"fullpage": true,
-				"sets": [
-					{
-						"blocks": [
-							{
-								"title": "Exit Survey-Interactive Maps",
-								"ask": "<br>Please rank how difficult it was to understand the <u>map</u>:",
-								"input": {
-									"required": false,
-									"type": "radios",
-									"options": [
-										{
-											"text": "1. Very Difficult"
-										},
-										{
-											"text": "2. Difficult"
-										},
-										{
-											"text": "3. Neutral"
-										},
-										{
-											"text": "4. Not Difficult"
-										},
-										{
-											"text": "5. Not At All Difficult"
-										}
-									]
-								}
-							},
-							{
-								"ask": "<br>Discuss which points were confusing, if any:",
-								"input": {
-									"required": false,
-									"autoadvance": false,
-									"type": "paragraph"
-								}
-							},
-							{
-								"ask": "<br>Changing which features on the <u>map</u> would have made coming to your decisions easier?",
-								"input": {
-									"required": false,
-									"autoadvance": false,
-									"type": "paragraph"
-
-
-								}
-							}
-						],
-						"buttons": [
-							"next",
-							"back"
-						]
-					}
-				]
-			},
-		{
-			"page": 16,
-			"fullpage": true,
 			"sets": [
 				{
 					"blocks": [
 						{
-							"title": "Exit Survey-Background Information",
+							"title": "Page 2 of 2: Exit Survey-Biographic Information",
 							"ask": "What is your age?",
 							"input": {
 								"required": false,
@@ -1196,151 +1083,81 @@
 							}
 						},
 						{
-							"ask": "How much experience do you have with maps?",
+							"ask": "How much <i>experience</i> do you have with: (1-5; no experience-use or think about everyday)",
 							"input": {
-								"required": false,
-								"autoadvance": false,
-								"type": "radios",
+								"type": "matrix",
+								"items": [
+									{
+										"text": "maps"
+									},
+									{
+										"text": "geography"
+									},
+									{
+										"text": "the hazardous waste trade"
+									},
+									{
+										"text": "computers"
+									},
+									{
+										"text": "the Internet"
+									}
+								],
 								"options": [
 									{
-										"text": "1. No Experience"
+										"text": "1-No experience"
 									},
 									{
-										"text": "2. Slight Experience"
+										"text": "2"
 									},
 									{
-										"text": "3. Some Experience"
+										"text": "3"
 									},
 									{
-										"text": "4. Use Maps Most Days"
+										"text": "4"
 									},
 									{
-										"text": "5. Use Maps Everyday"
+										"text": "5-Use or think about everyday"
 									}
 								]
 							}
 						},
 						{
-							"ask": "How much experience do you have with the hazardous waste industry?",
+							"ask": "How <i>familiar</i> do you have with: (1-5; not at all familiar-extremely familiar)",
 							"input": {
-								"required": false,
-								"autoadvance": false,
-								"type": "radios",
-								"options": [
+								"type": "matrix",
+								"items": [
 									{
-										"text": "1. No Experience"
+										"text": "maps"
 									},
 									{
-										"text": "2. Slight Experience"
+										"text": "geography"
 									},
 									{
-										"text": "3. Some Experience"
+										"text": "the hazardous waste trade"
 									},
 									{
-										"text": "4. Part of Most Work Days"
+										"text": "computers"
 									},
 									{
-										"text": "5. Part of Every Work Day"
+										"text": "the Internet"
 									}
-								]
-							}
-						},
-						{
-							"ask": "How <i>familiar</i> are you with maps?",
-							"input": {
-								"required": false,
-								"autoadvance": false,
-								"type": "radios",
+								],
 								"options": [
 									{
-										"text": "1. Not At All Familiar"
+										"text": "1-Not at all familiar"
 									},
 									{
-										"text": "2. Slightly Familiar"
+										"text": "2"
 									},
 									{
-										"text": "3. Somewhat Familiar"
+										"text": "3"
 									},
 									{
-										"text": "4. Moderately Familiar"
+										"text": "4"
 									},
 									{
-										"text": "5. Extremely Familiar"
-									}
-								]
-							}
-						},
-						{
-							"ask": "How </i>familiar</i> are you with online, interactive maps (i.e. Google Maps)?",
-							"input": {
-								"required": false,
-								"autoadvance": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "1. Not At All Familiar"
-									},
-									{
-										"text": "2. Slightly Familiar"
-									},
-									{
-										"text": "3. Somewhat Familiar"
-									},
-									{
-										"text": "4. Moderately Familiar"
-									},
-									{
-										"text": "5. Extremely Familiar"
-									}
-								]
-							}
-						},
-						{
-							"ask": "How </i>familiar</i> are you with the hazardous waste trade?",
-							"input": {
-								"required": false,
-								"autoadvance": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "1. Not At All Familiar"
-									},
-									{
-										"text": "2. Slightly Familiar"
-									},
-									{
-										"text": "3. Somewhat Familiar"
-									},
-									{
-										"text": "4. Moderately Familiar"
-									},
-									{
-										"text": "5. Extremely Familiar"
-									}
-								]
-							}
-						},
-						{
-							"ask": "How often do you use computers?",
-							"input": {
-								"required": false,
-								"autoadvance": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "1. Never"
-									},
-									{
-										"text": "2. Almost Never"
-									},
-									{
-										"text": "3. Sometimes"
-									},
-									{
-										"text": "4. Almost Every Day"
-									},
-									{
-										"text": "5. Every Day"
+										"text": "5-Extremely familiar"
 									}
 								]
 							}
@@ -1365,7 +1182,8 @@
 										"text": "Mobile Device"
 									},
 									{
-										"text": "Other"
+										"text": "Other",
+										"value": "get from participant"
 									}
 								]
 							}
@@ -1386,7 +1204,8 @@
 										"text": "Mouse"
 									},
 									{
-										"text": "Other"
+										"text": "Other",
+										"value": "get from participant"
 									}
 								]
 							}
@@ -1394,14 +1213,13 @@
 					],
 
 					"buttons": [
-						"submit",
-						"back"
+						"submit"
 					]
 				}
 			]
 		},
 		{
-			"page": 17,
+			"page": 16,
 			"fullpage": true,
 			"sets": [
 				{
@@ -1422,7 +1240,7 @@
 			]
 		},
 		{
-			"page": 18,
+			"page": 17,
 			"fullpage": true,
 			"sets": [
 				{
@@ -1439,7 +1257,7 @@
 								]
 							}]},
 		{
-			"page": 19,
+			"page": 18,
 			"fullpage": true,
 			"sets": [
 						{
