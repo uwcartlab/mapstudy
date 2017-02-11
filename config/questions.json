@@ -557,7 +557,7 @@
 					"blocks": [
 						{
 							"title": "Map Task",
-							"ask": "You are the manager of a newly opened Canadian firm looking to ship hazardous waste to Ohio for processing. Your decision to ship waste internationally is due to economic benefits. Your goal is to send the waste to a place you know will handle the waste properly without harming the citizens living nearby, otherwise your new business could face scrutiny. Given this, rank the sites that you plan on contracting with from most likely to least likely, using information in the interactive map.",
+							"ask": "You are the manager of a newly opened Canadian firm looking to ship your by-product hazardous waste to processing facilities in Ohio for disposal. The transnational shipment is due to waste volume needs that cannot be met in Canada and economic benefits of Ohio facilities. You are concerned about the impact on communities near the processing facilities, given recent news coverage over disproportionate risk to marginalized populations. Further, you want to send the hazardous waste to a processing facility that will handle it properly, otherwise your business could face scrutiny about negative environmental impacts. Given these needs and concerns, rank your preference for doing business with available Ohio processing facilities using information from the interactive map (1=most prefered, 7=least preferred).",
 							"input": {
 								"required": true,
 								"autoadvance": false,
@@ -608,7 +608,7 @@
 					"blocks": [
 						{
 							"title": "Map Task",
-							"ask": "You are a regional regulator at the EPA responsible for making sure all waste facilities in Texas conform to government regulations. Your job is to analyze the facilities handling waste because there is indication that some of these facilities are underperforming. Your job is to examine each processing site to assess each company's impact on the surrounding environment. After your examination, rank the sites from most likely to least likely to have a negative impact on the environment, using information in the interactive map.",
+							"ask": "You are a regulator at the EPA responsible for ensuring that hazardous waste imported from Mexico is processed at facilities in Texas following government regulations. New information suggests that the volume of imported hazardous waste has changed, and that you will need to plan site visits to review the processing facilities. Your job is to examine recent reports to assess each company’s potential for negative environmental impacts. Further, community members have come forward with concerns they are at risk of exposure to hazardous waste, and this risk disproportionately impacts marginalized populations. Given these needs and concerns, use the interactive map to rank the urgency you need to follow-up with site visits to each facility (1=most urgent, 7=least urgent).",
 							"input": {
 								"required": true,
 								"autoadvance": false,
@@ -660,7 +660,7 @@
 					"blocks": [
 						{
 							"title": "Map Task",
-							"ask": "You are the manager of a newly opened Canadian firm looking to ship hazardous waste to Texas for processing. Your decision to ship waste internationally is due to economic benefits. Your goal is to send the waste to a place you know will handle the waste properly without harming the citizens living nearby, otherwise your new business could face scrutiny. Given this, rank the sites that you plan on contracting with from most likely to least likely, using information in the interactive map.",
+							"ask": "You are the manager of a newly opened Mexican firm looking to ship your by-product hazardous waste to processing facilities in Texas for disposal. The transnational shipment is due to waste volume needs that cannot be met in Mexico and economic benefits of Texas facilities. You are concerned about the impact on communities near the processing facilities, given recent news coverage over disproportionate risk to marginalized populations. Further, you want to send the hazardous waste to a processing facility that will handle it properly, otherwise your business could face scrutiny about negative environmental impacts. Given these needs and concerns, rank your preference for doing business with available Texas processing facilities using information from the interactive map (1=most prefered, 7=least preferred).",
 							"input": {
 								"required": true,
 								"autoadvance": false,
@@ -711,7 +711,7 @@
 					"blocks": [
 						{
 							"title": "Map Task",
-							"ask": "You are a regional regulator at the EPA responsible for making sure all waste facilities in Ohio conform to government regulations. Your job is to analyze the facilities handling waste because there is indication that some of these facilities are underperforming. Your job is to examine each processing site to assess each company's impact on the surrounding environment. After your examination, rank the sites from most likely to least likely to have a negative impact on the environment, using information in the interactive map.",
+							"ask": "You are a regulator at the EPA responsible for ensuring that hazardous waste imported from Canada is processed at facilities in Ohio following government regulations. New information suggests that the volume of imported hazardous waste has changed, and that you will need to plan site visits to review the processing facilities. Your job is to examine recent reports to assess each company’s potential for negative environmental impacts. Further, community members have come forward with concerns they are at risk of exposure to hazardous waste, and this risk disproportionately impacts marginalized populations. Given these needs and concerns, use the interactive map to rank the urgency you need to follow-up with site visits to each facility (1=most urgent, 7=least urgent).",
 							"input": {
 								"required": true,
 								"autoadvance": false,
@@ -762,7 +762,7 @@
 					"blocks": [
 						{
 							"title": "Map Task",
-							"ask": "You are the manager of a newly opened Canadian firm looking to ship hazardous waste to Ohio for processing. Your decision to ship waste internationally is due to economic benefits. Your goal is to send the waste to a place you know will handle the waste properly without harming the citizens living nearby, otherwise your new business could face scrutiny. Given this, rank the sites that you plan on contracting with from most likely to least likely, using information in the interactive map.",
+							"ask": "You are the manager of a newly opened Canadian firm looking to ship your by-product hazardous waste to processing facilities in Ohio for disposal. The transnational shipment is due to waste volume needs that cannot be met in Canada and economic benefits of Ohio facilities. You are concerned about the impact on communities near the processing facilities, given recent news coverage over disproportionate risk to marginalized populations. Further, you want to send the hazardous waste to a processing facility that will handle it properly, otherwise your business could face scrutiny about negative environmental impacts. Given these needs and concerns, rank your preference for doing business with available Ohio processing facilities using information from the interactive map (1=most prefered, 7=least preferred).",
 							"input": {
 								"required": true,
 								"autoadvance": false,
@@ -813,7 +813,7 @@
 					"blocks": [
 						{
 							"title": "Map Task",
-							"ask": "You are a regional regulator at the EPA responsible for making sure all waste facilities in Texas conform to government regulations. Your job is to analyze the facilities handling waste because there is indication that some of these facilities are underperforming. Your job is to examine each processing site to assess each company's impact on the surrounding environment. After your examination, rank the sites from most likely to least likely to have a negative impact on the environment, using information in the interactive map.",
+							"ask": "You are a regulator at the EPA responsible for ensuring that hazardous waste imported from Mexico is processed at facilities in Texas following government regulations. New information suggests that the volume of imported hazardous waste has changed, and that you will need to plan site visits to review the processing facilities. Your job is to examine recent reports to assess each company’s potential for negative environmental impacts. Further, community members have come forward with concerns they are at risk of exposure to hazardous waste, and this risk disproportionately impacts marginalized populations. Given these needs and concerns, use the interactive map to rank the urgency you need to follow-up with site visits to each facility (1=most urgent, 7=least urgent).",
 							"input": {
 								"required": true,
 								"autoadvance": false,
@@ -864,7 +864,7 @@
 					"blocks": [
 						{
 							"title": "Map Task",
-							"ask": "You are the manager of a newly opened Canadian firm looking to ship hazardous waste to Texas for processing. Your decision to ship waste internationally is due to economic benefits. Your goal is to send the waste to a place you know will handle the waste properly without harming the citizens living nearby, otherwise your new business could face scrutiny. Given this, rank the sites that you plan on contracting with from most likely to least likely, using information in the interactive map.",
+							"ask": "You are the manager of a newly opened Mexican firm looking to ship your by-product hazardous waste to processing facilities in Texas for disposal. The transnational shipment is due to waste volume needs that cannot be met in Mexico and economic benefits of Texas facilities. You are concerned about the impact on communities near the processing facilities, given recent news coverage over disproportionate risk to marginalized populations. Further, you want to send the hazardous waste to a processing facility that will handle it properly, otherwise your business could face scrutiny about negative environmental impacts. Given these needs and concerns, rank your preference for doing business with available Texas processing facilities using information from the interactive map (1=most prefered, 7=least preferred).",
 							"input": {
 								"required": true,
 								"autoadvance": false,
@@ -915,7 +915,7 @@
 					"blocks": [
 						{
 							"title": "Map Task",
-							"ask": "You are a regional regulator at the EPA responsible for making sure all waste facilities in Ohio conform to government regulations. Your job is to analyze the facilities handling waste because there is indication that some of these facilities are underperforming. Your job is to examine each processing site to assess each company's impact on the surrounding environment. After your examination, rank the sites from most likely to least likely to have a negative impact on the environment, using information in the interactive map.",
+							"ask": "You are a regulator at the EPA responsible for ensuring that hazardous waste imported from Canada is processed at facilities in Ohio following government regulations. New information suggests that the volume of imported hazardous waste has changed, and that you will need to plan site visits to review the processing facilities. Your job is to examine recent reports to assess each company’s potential for negative environmental impacts. Further, community members have come forward with concerns they are at risk of exposure to hazardous waste, and this risk disproportionately impacts marginalized populations. Given these needs and concerns, use the interactive map to rank the urgency you need to follow-up with site visits to each facility (1=most urgent, 7=least urgent).",
 							"input": {
 								"required": true,
 								"autoadvance": false,
