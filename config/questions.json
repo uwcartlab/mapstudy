@@ -208,14 +208,14 @@
 						"resetMap": true,
 						"blocks":	[{
 							"image": "img/benchmark.png",
-							"ask": "<strong>Which state had more waste shipments?</strong>",
+							"ask": "<strong>Which state imported more kilograms of waste?</strong>",
 							"input": {
 								"required": true,
 								"autoadvance": false,
 								"type": "radios",
 								"options": [
 										{
-											"text": "Arizona"
+											"text": "Arkansas"
 										},
 										{
 											"text": "South Carolina"
@@ -294,7 +294,7 @@
 							"resetMap": true,
 							"blocks":	[{
 							"image": "img/benchmark.png",
-							"ask": "<strong>Which state had the most waste shipments?</strong>",
+							"ask": "<strong>Which state imported the most kilograms of waste?</strong>",
 							"input": {
 								"required": true,
 								"autoadvance": false,
@@ -304,10 +304,10 @@
 										"text": "Minnesota"
 									},
 									{
-										"text": "Pennsylvania"
+										"text": "Arizona"
 									},
 									{
-										"text": "Utah"
+										"text": "Arkansas"
 									}
 								]
 							}
@@ -388,7 +388,7 @@
 											"text": "Michigan"
 										},
 										{
-											"text": "Kansas"
+											"text": "Nebraska"
 										}
 									]
 								}
@@ -1423,6 +1423,23 @@
 		},
 		{
 			"page": 18,
+			"fullpage": true,
+			"sets": [
+				{
+					"blocks": [
+						{
+							"image": "img/benchmark.png",
+							"title": "Map Reading Tasks",
+							"ask": "The static map below shows the distribution of hazardous waste imports in the United States. Your responses are timed, so please complete the map reading tasks with your complete focus.<br><br><strong>Click 'Next' below to begin the map reading tasks.</strong>",
+							"input": {
+							}
+						}],
+							"buttons": [
+									"next"
+								]
+							}]},
+		{
+			"page": 19,
 			"fullpage": true,
 			"sets": [
 						{
