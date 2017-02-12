@@ -289,7 +289,7 @@
 									"source": "data/Ohio.geojson",
 									"expressedAttribute": "Kilograms",
 									"displayAttributes": [
-										"Company",  "Kilograms", "% Non-white", "Air Quality Watches"
+										"Company",  "Kilograms", "Non-white (%)", "Air Quality Watches"
 									],
 									"layerOptions": {
 								"fillOpacity": 0.7,
@@ -378,7 +378,7 @@
 											"roundTo": 0,
 											"expressedAttribute": "Kilograms",
 											"displayAttributes": [
-												"Company", "Kilograms", "Violations per Capita", "Poverty (%)", "Air Quality Watches", "Soil Penetration (in/hr)"
+												"Company", "Kilograms", "Non-white (%)", "Poverty (%)", "Air Quality Watches", "Soil Penetration (in/hr)"
 											],
 											"layerOptions": {
 										"fillOpacity": 0.7,
@@ -469,7 +469,7 @@
 											"roundTo": 0,
 											"expressedAttribute": "Kilograms",
 											"displayAttributes": [
-												"Company", "Kilograms", "Violations per Capita", "Air Quality Watches"
+												"Company", "Kilograms", "Non-white (%)", "Air Quality Watches"
 											],
 											"layerOptions": {
 										"fillOpacity": 0.7,
@@ -561,7 +561,7 @@
 												"source": "data/Ohio.geojson",
 												"expressedAttribute": "Kilograms",
 												"displayAttributes": [
-													"Company", "Kilograms", "% Non-white", "Poverty (%)", "Air Quality Watches", "Soil Penetration (in/hr)"
+													"Company", "Kilograms", "Non-white (%)", "Poverty (%)", "Air Quality Watches", "Soil Penetration (in/hr)"
 												],
 												"layerOptions": {
 											"fillOpacity": 0.7,
@@ -648,9 +648,9 @@
 												"name": "Non-white (%)",
 												"source": "data/violationsoh.geojson",
 												"roundTo": 0,
-												"expressedAttribute": "% Non-white",
+												"expressedAttribute": "Non-white (%)",
 												"displayAttributes": [
-													"% Non-white"
+													"Non-white (%)"
 												],
 												"layerOptions": {
 											"fillOpacity": 0.8,
@@ -694,7 +694,7 @@
 												"roundTo": 0,
 												"expressedAttribute": "Kilograms",
 												"displayAttributes": [
-													"Company","Kilograms", "% Non-white", "Air Quality Watches"
+													"Company","Kilograms", "Non-white (%)", "Air Quality Watches"
 												],
 												"layerOptions": {
 											"fillOpacity": 0.7,
@@ -818,12 +818,12 @@
 													],
 													"dataLayers": [
 														{
-															"name": "Violations",
+															"name": "Non-white (%)",
 															"source": "data/violationstx.geojson",
 															"roundTo": 0,
-															"expressedAttribute": "Violations per Capita",
+															"expressedAttribute": "Non-white (%)",
 															"displayAttributes": [
-																"Violations per Capita"
+																"Non-white (%)"
 															],
 															"layerOptions": {
 														"fillOpacity": 0.8,
@@ -917,7 +917,7 @@
 															"roundTo": 0,
 															"expressedAttribute": "Kilograms",
 															"displayAttributes": [
-																"Company","Kilograms", "Violations per Capita", "Poverty (%)", "Air Quality Watches", "Soil Penetration (in/hr)"
+																"Company","Kilograms", "Non-white (%)", "Poverty (%)", "Air Quality Watches", "Soil Penetration (in/hr)"
 															],
 															"layerOptions": {
 														"fillOpacity": 0.7,
@@ -994,7 +994,7 @@
 															"logging": true,
 															"toggle": false,
 															"dataLayers": [
-																"Violations", "Percent in Poverty", "Air Quality Watches Per Capita", "Soil Penetration", "Company"
+																"Non-white (%)", "Percent in Poverty", "Air Quality Watches Per Capita", "Soil Penetration", "Company"
 															]
 														},
 														"zoom": {
@@ -1041,12 +1041,12 @@
 												],
 												"dataLayers": [
 													{
-														"name": "Violations",
+														"name": "Non-white (%)",
 														"source": "data/violationstx.geojson",
 														"roundTo": 0,
-														"expressedAttribute": "Violations per Capita",
+														"expressedAttribute": "Non-white (%)",
 														"displayAttributes": [
-															"Violations per Capita"
+															"Non-white (%)"
 														],
 														"layerOptions": {
 													"fillOpacity": 0.8,
@@ -1092,7 +1092,7 @@
 														"roundTo": 0,
 														"expressedAttribute": "Kilograms",
 														"displayAttributes": [
-															"Company", "Kilograms", "Violations per Capita", "Air Quality Watches"
+															"Company", "Kilograms", "Non-white (%)", "Air Quality Watches"
 														],
 														"layerOptions": {
 													"fillOpacity": 0.7,
@@ -1169,7 +1169,7 @@
 														"logging": true,
 														"toggle": false,
 														"dataLayers": [
-															"Violations", "Air Quality Watches Per Capita", "Company"
+															"Non-white (%)", "Air Quality Watches Per Capita", "Company"
 														]
 													},
 													"zoom": {
@@ -1219,9 +1219,9 @@
 																	"name": "Non-white (%)",
 																	"source": "data/violationsoh.geojson",
 																	"roundTo": 0,
-																	"expressedAttribute": "% Non-white",
+																	"expressedAttribute": "Non-white (%)",
 																	"displayAttributes": [
-																		"% Non-white"
+																		"Non-white (%)"
 																	],
 																	"layerOptions": {
 																"fillOpacity": 0.8,
@@ -1315,7 +1315,7 @@
 																	"roundTo": 0,
 																	"expressedAttribute": "Kilograms",
 																	"displayAttributes": [
-																		"Company","Kilograms", "% Non-white", "Poverty (%)", "Air Quality Watches", "Soil Penetration (in/hr)"
+																		"Company","Kilograms", "Non-white (%)", "Poverty (%)", "Air Quality Watches", "Soil Penetration (in/hr)"
 																	],
 																	"layerOptions": {
 																"fillOpacity": 0.7,
