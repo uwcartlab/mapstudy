@@ -73,8 +73,8 @@
         </script>
 
         <script type="text/template" id="overlay-control-template">
-            <div class="overlay-control-layer <%= techniqueType %>-layer layer-<%= layerId %>" id="overlay-layer-<%= layerId %>">
-                <input type="checkbox" name="overlay-input" value="<%= layerId %>">
+            <div class="overlay-control-layer <%= techniqueType %>-layer layer-<%= layerId %>" id="overlay-layer-<%= layerId %>" style="text-align:left;">
+                <input type="radio" name="overlay-input" value="<%= layerId %>" >
                 <label for="<%= layerId %>"><%= layerName %></label>
             </div>
         </script>
@@ -192,7 +192,7 @@
                 <label for="scale-value-max" class="scale-value-hideable">max: </label>
                 <input name="scale-value-max" type="text" size="3">
                 <div class="rendering-progress-bar" style="display: none;">
-                    Rendering&mdash;please wait... 
+                    Rendering&mdash;please wait...
                     <div class="progress-bar-border">
                         <div class="progress-bar-fill">.</div>
                     </div>

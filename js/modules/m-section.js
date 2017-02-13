@@ -807,6 +807,7 @@ var RetrieveControlView = InteractionControlView.extend({
 	}
 });
 
+
 //model for overlay control
 var OverlayControlModel = Backbone.Model.extend({
 	defaults: {
@@ -815,6 +816,9 @@ var OverlayControlModel = Backbone.Model.extend({
 		techniqueType: ''
 	}
 });
+
+//array to keep track of radio buttons
+var radioButtons = [];
 
 //view for overlay control
 var OverlayControlView = Backbone.View.extend({
@@ -2433,13 +2437,18 @@ var LeafletMap = Backbone.View.extend({
 						//trigger interaction logging if toggle was not due to reexpression
 						leafletView.trigger('overlay');
 						//turn layer on/off
-						if (map._layers[layerId] && !addLayer){
-							leafletView.removeLayer(layerId);
-							$('input[value='+layerId+']').removeAttr('checked');
-						} else if (!map._layers[layerId] && offLayers[layerId]){
+						if (!map._layers[layerId] && offLayers[layerId]){
 							leafletView.addLayer(layerId);
-							$('input[value='+layerId+']').prop('checked', true);
+							//$('input[value='+layerId+']').prop('checked', true);
 						};
+
+						//turn other layers off
+						$('.overlay-control-layer').each(function(){
+							var thisId = $(this).attr('id').split('-')[2];
+							if (layerId != thisId && map._layers[thisId]){
+								leafletView.removeLayer(thisId);
+							};
+						});
 					};
 					overlayControlView.render();
 					//only show the control for the first technique of each data layer
@@ -2452,6 +2461,7 @@ var LeafletMap = Backbone.View.extend({
 						//disable checkboxes for out-of-bounds layers
 						$('input[value='+layerId+']').prop('disabled', true);
 					};
+
 				}, this);
 			}, this);
 
