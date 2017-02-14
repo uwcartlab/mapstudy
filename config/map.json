@@ -13,19 +13,19 @@
 				"legend": true,
 				"resetButton": false,
 				"center": [
-					40,
-					-115
+					37,
+					-120
 				],
 				"zoom": 5,
 				"minZoom": 5,
 				"maxZoom": 8,
 				"maxBounds": [
 					[
-						30,
+						25,
 						-130
 					],
 					[
-						47,
+						50,
 						-100
 					]
 				]
@@ -102,19 +102,19 @@
 					"legend": true,
 					"resetButton": false,
 					"center": [
-						40,
-						-122
+						36,
+						-120.5
 					],
 					"zoom": 5,
 					"minZoom": 5,
 					"maxZoom": 8,
 					"maxBounds": [
 						[
-							30,
+							22,
 							-140
 						],
 						[
-							47,
+							50,
 							-100
 						]
 					]
@@ -198,7 +198,7 @@
 										"type": "proportional symbol",
 											"classification": "quantile",
 											"classes": [
-												0.1
+												0.01
 											]
 								}
 							]
@@ -224,7 +224,7 @@
 										"type": "proportional symbol",
 											"classification": "quantile",
 											"classes": [
-												0.1
+												0.01
 											]
 								}
 							]
