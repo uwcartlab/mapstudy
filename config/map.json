@@ -943,30 +943,6 @@
 															]},
 														{
 												"roundTo": 0,
-												"name": "Air Quality Watches Per Capita",
-												"source": "data/texascounties1.geojson",
-												"expressedAttribute": "Air Quality Watches",
-												"displayAttributes": [
-													"Air Quality Watches"
-												],
-												"layerOptions": {
-											"fillOpacity": 0.8,
-											"color": "black",
-											"weight": 0.5,
-											"opacity": 1,
-											"minZoom": 5,
-											"maxZoom": 10
-											},
-												"renderOnLoad": false,
-												"techniques": [
-													{
-														"type": "choropleth",
-														"classification": "quantile",
-														"classes": "BuGn.5"
-													}
-												]},
-														{
-												"roundTo": 0,
 												"name": "Percent in Poverty",
 												"source": "data/texascounties.geojson",
 												"expressedAttribute": "Poverty (%)",
@@ -989,13 +965,37 @@
 														"classes": "BuGn.5"
 													}
 												]},
+												{
+										"roundTo": 0,
+										"name": "Air Quality Watches Per Capita",
+										"source": "data/texascounties1.geojson",
+										"expressedAttribute": "Air Quality Watches",
+										"displayAttributes": [
+											"Air Quality Watches"
+										],
+										"layerOptions": {
+									"fillOpacity": 0.8,
+									"color": "black",
+									"weight": 0.5,
+									"opacity": 1,
+									"minZoom": 5,
+									"maxZoom": 10
+									},
+										"renderOnLoad": false,
+										"techniques": [
+											{
+												"type": "choropleth",
+												"classification": "quantile",
+												"classes": "BuGn.5"
+											}
+										]},
 														{
 												"roundTo": 0,
 												"name": "Soil Penetration",
 												"source": "data/txsoil.geojson",
-												"expressedAttribute": "Soil",
+												"expressedAttribute": "Soil Penetration (in/hr)",
 												"displayAttributes": [
-													"Soil"
+													"Soil Penetration (in/hr)"
 												],
 												"layerOptions": {
 											"fillOpacity": 0.8,
@@ -1441,35 +1441,11 @@
 																	]},
 																{
 														"roundTo": 0,
-														"name": "Air Quality Watches Per Capita",
-														"source": "data/ohioair1.geojson",
-														"expressedAttribute": "Air Quality Watches",
-														"displayAttributes": [
-															"Air Quality Watches"
-														],
-														"layerOptions": {
-													"fillOpacity": 0.8,
-													"color": "black",
-													"weight": 0.5,
-													"opacity": 1,
-													"minZoom": 6,
-													"maxZoom": 10
-													},
-														"renderOnLoad": false,
-														"techniques": [
-															{
-																"type": "choropleth",
-																"classification": "quantile",
-																"classes": "BuGn.5"
-															}
-														]},
-																{
-														"roundTo": 0,
 														"name": "Percent in Poverty",
 														"source": "data/goodohio.geojson",
-														"expressedAttribute": "Poverty",
+														"expressedAttribute": "Poverty (%)",
 														"displayAttributes": [
-															"Poverty"
+															"Poverty (%)"
 														],
 														"layerOptions": {
 													"fillOpacity": 0.8,
@@ -1487,13 +1463,37 @@
 																"classes": "BuGn.5"
 															}
 														]},
+														{
+												"roundTo": 0,
+												"name": "Air Quality Watches Per Capita",
+												"source": "data/ohioair1.geojson",
+												"expressedAttribute": "Air Quality Watches",
+												"displayAttributes": [
+													"Air Quality Watches"
+												],
+												"layerOptions": {
+											"fillOpacity": 0.8,
+											"color": "black",
+											"weight": 0.5,
+											"opacity": 1,
+											"minZoom": 6,
+											"maxZoom": 10
+											},
+												"renderOnLoad": false,
+												"techniques": [
+													{
+														"type": "choropleth",
+														"classification": "quantile",
+														"classes": "BuGn.5"
+													}
+												]},
 																{
 														"roundTo": 0,
 														"name": "Soil Penetration",
 														"source": "data/ohiosoil1.geojson",
-														"expressedAttribute": "Soil",
+														"expressedAttribute": "Soil Penetration (in/hr)",
 														"displayAttributes": [
-															"Soil"
+															"Soil Penetration (in/hr)"
 														],
 														"layerOptions": {
 													"fillOpacity": 0.8,

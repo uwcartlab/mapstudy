@@ -817,9 +817,9 @@ var OverlayControlModel = Backbone.Model.extend({
 	}
 });
 
-//array to keep track of radio buttons
-var radioButtons = [];
-
+//to connect radio buttons w/sliders
+var radioToSliders = [];
+var rtsCount = 0;
 //view for overlay control
 var OverlayControlView = Backbone.View.extend({
 	el: '.overlay-control-container',
@@ -829,8 +829,23 @@ var OverlayControlView = Backbone.View.extend({
 		this.$el.append(this.template(this.model.attributes));
 		//set change interaction on this child element only
 		var view = this;
+		radioToSliders[rtsCount].value = this.model.get('layerId');
+		rtsCount++;
 		this.$el.find('.layer-'+this.model.get('layerId')+' input').change(function(e){
+
+			var rtsNum = -1;
+			for(i = 0; i < radioToSliders.length; i++){
+				if(radioToSliders[i].value == $(e.target).val()){
+					rtsNum = i;
+				}
+			}
+			if(rtsNum != -1 && rtsNum < radioToSliders.length-1){
+				$(".filter-row select").first().val(radioToSliders[rtsNum].trigVal).change();
+
+			}
 			view.toggleLayer($(e.target).val(), $(e.target).prop('checked'));
+			//$(".filter-row select").first().change();
+
 		});
 	}
 });
@@ -1048,6 +1063,7 @@ var FilterSliderView = Backbone.View.extend({
 		var optionTemplate = _.template($('#filter-options-template').html()),
 			select = this.$el.find('select[name=' + this.model.get('className') + ']');
 		_.each(numericAttributes, function(attribute){
+			radioToSliders.push({trigVal:attribute});
 			select.append(optionTemplate({attribute: attribute}))
 		}, this);
 	},
