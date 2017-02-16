@@ -830,6 +830,16 @@ var OverlayControlView = Backbone.View.extend({
 		//set change interaction on this child element only
 		var view = this;
 		radioToSliders[rtsCount].value = this.model.get('layerId');
+
+		if(rtsCount == 0){ //on first round, initially disable first slider
+			$(".filter-row").first().css('opacity', '0.3'); //gray out slider
+			$(".filter-row .range-slider").first().slider({disabled:true}); //disable slider
+		}
+
+		if(rtsCount == radioToSliders.length - 1){
+			$(".filtLabel").last().html(radioToSliders[rtsCount].trigVal); //label last slider
+		}
+
 		rtsCount++;
 		this.$el.find('.layer-'+this.model.get('layerId')+' input').change(function(e){
 
@@ -846,9 +856,15 @@ var OverlayControlView = Backbone.View.extend({
 			view.toggleLayer(targetVal, targetBool);
 
 			if(rtsNum != -1 && rtsNum < radioToSliders.length-1){
+				$(".filter-row .range-slider").first().slider({disabled:false});
 				$(".filter-row select").first().val(radioToSliders[rtsNum].trigVal).change();
+				$(".filter-row").first().css('opacity', '1');
+				$(".filtLabel").first().html(radioToSliders[rtsNum].trigVal);
+			} else if(rtsNum != -1 && rtsNum === radioToSliders.length-1){ //if last radio button is clicked
+				$(".filter-row").first().css('opacity', '0.3'); //gray out slider
+				$(".filter-row .range-slider").first().slider({disabled:true}); //disable slider
+				//$(".filtLabel").last().html(radioToSliders[rtsNum].trigVal); //label last slider
 			}
-
 
 			//console.log($(e.target).val() + " " + $(e.target).prop('checked'))
 			//$(".filter-row select").first().change();
@@ -1071,7 +1087,8 @@ var FilterSliderView = Backbone.View.extend({
 			select = this.$el.find('select[name=' + this.model.get('className') + ']');
 		_.each(numericAttributes, function(attribute){
 			radioToSliders.push({trigVal:attribute});
-			select.append(optionTemplate({attribute: attribute}))
+			select.append(optionTemplate({attribute: attribute}));
+			select.css('display', 'none');
 		}, this);
 	},
 	initialize: function(options){

@@ -307,7 +307,7 @@
 						"page": 6,
 						"library": "Leaflet",
 						"mapOptions": {
-							"legend": true,
+							"legend": false,
 							"resetButton": false,
 							"center": [
 								40,
@@ -341,7 +341,7 @@
 									"source": "data/Ohio.geojson",
 									"expressedAttribute": "Kilograms",
 									"displayAttributes": [
-										"Company",  "Kilograms", "Non-white (%)", "Air Quality Watches"
+										"Company", "Non-white (%)", "Air Quality Watches"
 									],
 									"layerOptions": {
 								"fillOpacity": 0.7,
@@ -351,14 +351,11 @@
 							},
 											"techniques": [
 												{
+
 													"type": "proportional symbol",
 														"classification": "quantile",
 														"classes": [
-															7.8,
-															11.1,
-															15.7,
-															22.2,
-															31.4
+															7.8
 														]
 												}
 											]}],
@@ -397,7 +394,7 @@
 								"page": 7,
 								"library": "Leaflet",
 								"mapOptions": {
-									"legend": true,
+									"legend": false,
 									"resetButton": false,
 									"center": [
 										32,
@@ -430,7 +427,7 @@
 											"roundTo": 0,
 											"expressedAttribute": "Kilograms",
 											"displayAttributes": [
-												"Company", "Kilograms", "Non-white (%)", "Poverty (%)", "Air Quality Watches", "Soil Penetration (in/hr)"
+												"Company", "Non-white (%)", "Poverty (%)", "Air Quality Watches", "Soil Penetration (in/hr)"
 											],
 											"layerOptions": {
 										"fillOpacity": 0.7,
@@ -444,11 +441,7 @@
 																	"type": "proportional symbol",
 																		"classification": "quantile",
 																		"classes": [
-																			7.8,
-																			11.1,
-																			15.7,
-																			22.2,
-																			31.4
+																			7.8
 																		]
 																}
 															]}],
@@ -488,7 +481,7 @@
 								"page": 8,
 								"library": "Leaflet",
 								"mapOptions": {
-									"legend": true,
+									"legend": false,
 									"resetButton": false,
 									"center": [
 										32,
@@ -521,7 +514,7 @@
 											"roundTo": 0,
 											"expressedAttribute": "Kilograms",
 											"displayAttributes": [
-												"Company", "Kilograms", "Non-white (%)", "Air Quality Watches"
+												"Company", "Non-white (%)", "Air Quality Watches"
 											],
 											"layerOptions": {
 										"fillOpacity": 0.7,
@@ -535,11 +528,7 @@
 																	"type": "proportional symbol",
 																		"classification": "quantile",
 																		"classes": [
-																			7.8,
-																			11.1,
-																			15.7,
-																			22.2,
-																			31.4
+																			7.8
 																		]
 																}
 															]}],
@@ -579,7 +568,7 @@
 									"page": 9,
 									"library": "Leaflet",
 									"mapOptions": {
-										"legend": true,
+										"legend": false,
 										"resetButton": false,
 										"center": [
 											40,
@@ -613,7 +602,7 @@
 												"source": "data/Ohio.geojson",
 												"expressedAttribute": "Kilograms",
 												"displayAttributes": [
-													"Company", "Kilograms", "Non-white (%)", "Poverty (%)", "Air Quality Watches", "Soil Penetration (in/hr)"
+													"Company", "Non-white (%)", "Poverty (%)", "Air Quality Watches", "Soil Penetration (in/hr)"
 												],
 												"layerOptions": {
 											"fillOpacity": 0.7,
@@ -626,11 +615,7 @@
 																"type": "proportional symbol",
 																	"classification": "quantile",
 																	"classes": [
-																		7.8,
-																		11.1,
-																		15.7,
-																		22.2,
-																		31.4
+																		7.8
 																	]
 															}
 														]}],
