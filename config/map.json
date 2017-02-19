@@ -151,10 +151,10 @@
 						{
 							"roundTo": 0,
 							"name": "Kilogram Data",
-							"source": "data/ExampleMapData.geojson",
+							"source": "data/ExampleMapDataNum.geojson",
 							"expressedAttribute": "Kilograms",
 							"displayAttributes": [
-								"Company", "Kilograms", "Air Quality Watches"
+								"Company", "Air Quality Watches ", "Air Quality Watches"
 							],
 							"renderOnLoad": true,
 							"layerOptions": {
@@ -169,58 +169,6 @@
 											"classification": "quantile",
 											"classes": [
 												7.8
-											]
-								}
-							]
-						},
-						{
-							"roundTo": 0,
-							"name": "Kilogram Data2",
-							"source": "data/ExampleMapData.geojson",
-							"expressedAttribute": "Kilograms",
-							"displayAttributes": [
-								"Company", "Air Quality Watches"
-							],
-							"renderOnLoad": true,
-							"layerOptions": {
-						"fillOpacity": 0.7,
-						"color": "black",
-						"weight": 0.5,
-						"opacity": 0.5
-					},
-								"techniques": [
-									{
-										"showOnLegend": false,
-										"type": "proportional symbol",
-											"classification": "quantile",
-											"classes": [
-												0.01
-											]
-								}
-							]
-						},
-						{
-							"roundTo": 0,
-							"name": "Kilogram Data3",
-							"source": "data/ExampleMapData.geojson",
-							"expressedAttribute": "Kilograms",
-							"displayAttributes": [
-								"Kilograms"
-							],
-							"renderOnLoad": true,
-							"layerOptions": {
-						"fillOpacity": 0.7,
-						"color": "black",
-						"weight": 0.5,
-						"opacity": 0.5
-					},
-								"techniques": [
-									{
-										"showOnLegend": false,
-										"type": "proportional symbol",
-											"classification": "quantile",
-											"classes": [
-												0.01
 											]
 								}
 							]
@@ -263,7 +211,7 @@
 						},
 						"filter": {
 							"dataLayers": [
-									"Kilogram Data2"
+									"Kilogram Data"
 								],
 								"tool": "slider",
 								"logging": true,
