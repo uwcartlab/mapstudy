@@ -263,7 +263,7 @@
 						},
 						"filter": {
 							"dataLayers": [
-									"Kilogram Data2", "Kilogram Data3"
+									"Kilogram Data2"
 								],
 								"tool": "slider",
 								"logging": true,

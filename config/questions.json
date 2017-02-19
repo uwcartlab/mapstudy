@@ -1379,6 +1379,9 @@
 		{
 			"page": 17,
 			"fullpage": true,
+			"timer": {
+				"remove": true
+			},
 			"sets": [
 				{
 					"blocks": [
@@ -1396,6 +1399,9 @@
 		{
 			"page": 18,
 			"fullpage": true,
+			"timer": {
+				"remove": true
+			},
 			"sets": [
 						{
 							"blocks": [
@@ -1455,6 +1461,72 @@
 							"buttons": [
 									"next"
 								]
-							}]}
+							}]},
+							{
+								"page": 19,
+								"fullpage": true,
+								"timer": {
+									"remove": true
+								},
+								"sets": [
+											{
+												"blocks": [
+													{
+
+														"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking?",
+														"input": {
+															"required": true,
+															"type": "matrix",
+															"options": [
+																{
+																	"text": "1-Very easy"
+																},
+																{
+																	"text": "2"
+																},
+																{
+																	"text": "3"
+																},
+																{
+																	"text": "4"
+																},
+																{
+																	"text": "5-Very difficult"
+																}
+															],
+															"items": [{}]
+														}
+													},
+													{
+														"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct?",
+														"input": {
+															"required": true,
+															"autoadvance": false,
+															"type": "matrix",
+															"options": [
+																{
+																	"text": "1-Not confident"
+																},
+																{
+																	"text": "2"
+																},
+																{
+																	"text": "3"
+																},
+																{
+																	"text": "4"
+																},
+																{
+																	"text": "5-Very confident"
+																}
+															],
+															"items": [{}]
+														}
+													}
+												],
+												"buttons": [
+														"next"
+													]
+												}]}
 	]
 }
