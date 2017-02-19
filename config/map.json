@@ -144,7 +144,7 @@
 				"techniques": [
 					{
 						"type": "choropleth",
-						"classification": "quantile",
+						"classification": "equal interval",
 						"classes": "BuGn.3"
 					}
 				]},
