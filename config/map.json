@@ -145,7 +145,7 @@
 					{
 						"type": "choropleth",
 						"classification": "quantile",
-						"classes": "BuGn.5"
+						"classes": "BuGn.3"
 					}
 				]},
 						{
@@ -696,7 +696,7 @@
 													{
 														"type": "choropleth",
 														"classification": "quantile",
-														"classes": "BuGn.5"
+														"classes": "BuGn.3"
 													}
 												]},
 											{
@@ -718,7 +718,7 @@
 										{
 											"type": "choropleth",
 											"classification": "quantile",
-											"classes": "BuGn.5"
+											"classes": "BuGn.3"
 										}
 									]},
 											{
@@ -865,7 +865,7 @@
 																{
 																	"type": "choropleth",
 																	"classification": "quantile",
-																	"classes": "BuGn.5"
+																	"classes": "BuGn.3"
 																}
 															]},
 														{
@@ -889,7 +889,7 @@
 													{
 														"type": "choropleth",
 														"classification": "quantile",
-														"classes": "BuGn.5"
+														"classes": "BuGn.3"
 													}
 												]},
 												{
@@ -913,7 +913,7 @@
 											{
 												"type": "choropleth",
 												"classification": "quantile",
-												"classes": "BuGn.5"
+												"classes": "BuGn.3"
 											}
 										]},
 														{
@@ -937,7 +937,7 @@
 													{
 														"type": "choropleth",
 														"classification": "quantile",
-														"classes": "BuGn.5"
+														"classes": "BuGn.3"
 													}
 												]},
 														{
@@ -1084,7 +1084,7 @@
 															{
 																"type": "choropleth",
 																"classification": "quantile",
-																"classes": "BuGn.5"
+																"classes": "BuGn.3"
 															}
 														]},
 													{
@@ -1108,7 +1108,7 @@
 												{
 													"type": "choropleth",
 													"classification": "quantile",
-													"classes": "BuGn.5"
+													"classes": "BuGn.3"
 												}
 											]},
 													{
@@ -1255,7 +1255,7 @@
 																		{
 																			"type": "choropleth",
 																			"classification": "quantile",
-																			"classes": "BuGn.5"
+																			"classes": "BuGn.3"
 																		}
 																	]},
 																{
@@ -1279,7 +1279,7 @@
 															{
 																"type": "choropleth",
 																"classification": "quantile",
-																"classes": "BuGn.5"
+																"classes": "BuGn.3"
 															}
 														]},
 														{
@@ -1303,7 +1303,7 @@
 													{
 														"type": "choropleth",
 														"classification": "quantile",
-														"classes": "BuGn.5"
+														"classes": "BuGn.3"
 													}
 												]},
 																{
@@ -1327,7 +1327,7 @@
 															{
 																"type": "choropleth",
 																"classification": "quantile",
-																"classes": "BuGn.5"
+																"classes": "BuGn.3"
 															}
 														]},
 																{
