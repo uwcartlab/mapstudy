@@ -57,7 +57,9 @@
 								"type": "proportional symbol",
 									"classification": "quantile",
 									"classes": [
-										7.8
+										7.8,
+										11.1,
+										15.7
 									]
 							}
 						]
@@ -154,7 +156,7 @@
 							"source": "data/ExampleMapDataNum.geojson",
 							"expressedAttribute": "Kilograms",
 							"displayAttributes": [
-								"Company", "Air Quality Watches ", "Air Quality Watches"
+								"Company", "Kilograms", "Air Quality Watches "
 							],
 							"renderOnLoad": true,
 							"layerOptions": {
@@ -168,7 +170,9 @@
 										"type": "proportional symbol",
 											"classification": "quantile",
 											"classes": [
-												7.8
+										7.8,
+										11.1,
+										15.7
 											]
 								}
 							]
@@ -211,7 +215,7 @@
 						},
 						"filter": {
 							"dataLayers": [
-									"Kilogram Data"
+									"Air Quality Watches Per Capita"
 								],
 								"tool": "slider",
 								"logging": true,
