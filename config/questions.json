@@ -125,6 +125,7 @@
 					"blocks": [
 						{
 							"image": "img/benchmark.png",
+							"image2": "img/kgstate.png",
 							"title": "Map Reading Tasks",
 							"ask": "<strong>How many waste facilities are in Alabama?</strong>",
 							"input": {
@@ -207,10 +208,96 @@
 									"next"
 								]
 							},
+							{
+							"resetMap": true,
+							"blocks":	[{
+							"image": "img/benchmark.png",
+							"image2": "img/kgstate.png",
+							"ask": "<strong>How many waste facilities are in South Carolina?</strong>",
+							"input": {
+								"required": true,
+								"autoadvance": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "1"
+									},
+									{
+										"text": "2"
+									},
+									{
+										"text": "3"
+									}
+								]
+							}
+							}],
+							"buttons": [
+									"next"
+								]},
+								{
+									"blocks": [
+										{
+
+											"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to come to your answer?",
+											"input": {
+												"required": true,
+												"type": "matrix",
+												"options": [
+													{
+														"text": "1-Very easy "
+													},
+													{
+														"text": "2"
+													},
+													{
+														"text": "3"
+													},
+													{
+														"text": "4"
+													},
+													{
+														"text": "5-Very difficult"
+													}
+												],
+												"items": [{}]
+											}
+										},
+										{
+											"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your answer is correct?",
+											"input": {
+												"required": true,
+												"autoadvance": false,
+												"type": "matrix",
+												"options": [
+													{
+														"text": "1-Not confident"
+													},
+													{
+														"text": "2"
+													},
+													{
+														"text": "3"
+													},
+													{
+														"text": "4"
+													},
+													{
+														"text": "5-Very confident"
+													}
+												],
+											"items": [{}]
+										}
+									}
+								],
+								"buttons": [
+										"next"
+									]
+								},
 						{
 						"resetMap": true,
 						"blocks":	[{
 							"image": "img/benchmark.png",
+							"image2": "img/kgstate.png",
 							"ask": "<strong>Which state imported more kilograms of waste?</strong>",
 							"input": {
 								"required": true,
@@ -293,10 +380,93 @@
 										"next"
 									]
 								},
+								{
+								"resetMap": true,
+								"blocks":	[{
+								"image": "img/benchmark.png",
+								"image2": "img/kgstate.png",
+								"ask": "<strong>Which state imported more kilograms of waste?</strong>",
+								"input": {
+									"required": true,
+									"autoadvance": false,
+									"type": "radios",
+									"options": [
+										{
+											"text": "Oregon"
+										},
+										{
+											"text": "Tennessee"
+										}
+									]
+								}
+								}],
+								"buttons": [
+										"next"
+									]},
+									{
+										"blocks": [
+											{
+
+												"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to come to your answer?",
+												"input": {
+													"required": true,
+													"type": "matrix",
+													"options": [
+														{
+															"text": "1-Very easy "
+														},
+														{
+															"text": "2"
+														},
+														{
+															"text": "3"
+														},
+														{
+															"text": "4"
+														},
+														{
+															"text": "5-Very difficult"
+														}
+													],
+													"items": [{}]
+												}
+											},
+											{
+												"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your answer is correct?",
+												"input": {
+													"required": true,
+													"autoadvance": false,
+													"type": "matrix",
+													"options": [
+														{
+															"text": "1-Not confident"
+														},
+														{
+															"text": "2"
+														},
+														{
+															"text": "3"
+														},
+														{
+															"text": "4"
+														},
+														{
+															"text": "5-Very confident"
+														}
+													],
+												"items": [{}]
+											}
+										}
+									],
+									"buttons": [
+											"next"
+										]
+									},
 							{
 							"resetMap": true,
 							"blocks":	[{
 							"image": "img/benchmark.png",
+							"image2": "img/kgstate.png",
 							"ask": "<strong>Which state imported the most kilograms of waste?</strong>",
 							"input": {
 								"required": true,
@@ -377,92 +547,12 @@
 										"next"
 									]
 								},
-								{
-								"resetMap": true,
-								"blocks":	[{
-								"image": "img/benchmark.png",
-								"ask": "<strong>Which state is more likely to have imported waste from Canada?</strong>",
-								"input": {
-									"required": true,
-									"autoadvance": false,
-									"type": "radios",
-									"options": [
-										{
-											"text": "Michigan"
-										},
-										{
-											"text": "Nebraska"
-										}
-									]
-								}
-								}],
-								"buttons": [
-										"next"
-									]},
-									{
-										"blocks": [
-											{
-
-												"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to come to your answer?",
-												"input": {
-													"required": true,
-													"type": "matrix",
-													"options": [
-														{
-															"text": "1-Very easy "
-														},
-														{
-															"text": "2"
-														},
-														{
-															"text": "3"
-														},
-														{
-															"text": "4"
-														},
-														{
-															"text": "5-Very difficult"
-														}
-													],
-													"items": [{}]
-												}
-											},
-											{
-												"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your answer is correct?",
-												"input": {
-													"required": true,
-													"autoadvance": false,
-													"type": "matrix",
-													"options": [
-														{
-															"text": "1-Not confident"
-														},
-														{
-															"text": "2"
-														},
-														{
-															"text": "3"
-														},
-														{
-															"text": "4"
-														},
-														{
-															"text": "5-Very confident"
-														}
-													],
-												"items": [{}]
-											}
-										}
-									],
-									"buttons": [
-											"next"
-										]
-									},
 							{
 								"resetMap": true,
 							"blocks":	[{
 							"image": "img/benchmark.png",
-							"ask": "<strong>Which region is most active in the hazardous waste trade?</strong>",
+							"image2": "img/kgstate.png",
+							"ask": "<strong>Which state imported the most kilograms of waste?</strong>",
 							"input": {
 								"required": true,
 								"autoadvance": false,
@@ -470,10 +560,13 @@
 								"type": "radios",
 								"options": [
 										{
-											"text": "Great Lakes Region"
+											"text": "Kansas"
 										},
 										{
-											"text": "Pacific Northwest"
+											"text": "Louisiana"
+										},
+										{
+											"text": "Oregon"
 										}
 									],
 								"items": [
