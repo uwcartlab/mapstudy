@@ -734,6 +734,30 @@
 																	}
 																]},
 																{
+																	"name": "Kilograms2",
+																	"source": "data/Ohio.geojson",
+																	"roundTo": 0,
+																	"expressedAttribute": "Kilograms",
+																	"displayAttributes": [
+																		"Kilograms"
+																	],
+																	"layerOptions": {
+																"fillOpacity": 0.7,
+																"color": "black",
+																"weight": 0.5,
+																"opacity": 0.5
+															},
+																	"renderOnLoad": true,
+																					"techniques": [
+																						{
+																							"type": "proportional symbol",
+																								"classification": "equal interval",
+																								"classes": [
+																									0.001
+																								]
+																						}
+																					]},
+																{
 																"name": "Company",
 																"source": "data/Ohio.geojson",
 																"expressedAttribute": "Kilograms",
@@ -778,7 +802,7 @@
 											},
 											"filter": {
 												"dataLayers": [
-														"Kilograms"
+														"Kilograms2"
 													],
 													"tool": "slider",
 													"logging": true,
@@ -1230,7 +1254,7 @@
 															"dataLayers": [
 																{
 																	"name": "Non-white Percent",
-																	"source": "data/violationsoh.geojson",
+																	"source": "data/violationsoh2.geojson",
 																	"roundTo": 0,
 																	"expressedAttribute": "Non-white (%)",
 																	"displayAttributes": [
