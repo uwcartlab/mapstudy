@@ -43,7 +43,7 @@
 						"source": "data/ExampleMapData.geojson",
 						"expressedAttribute": "Kilograms",
 						"displayAttributes": [
-							"Company", "Air Quality Watches"
+							"Company", "Kilograms", "Air Quality Watches"
 						],
 						"layerOptions": {
 					"fillOpacity": 0.7,
@@ -303,7 +303,11 @@
 													"type": "proportional symbol",
 														"classification": "quantile",
 														"classes": [
-															7.8
+															7.8,
+															11.1,
+															15.7,
+															22.2,
+															31.4
 														]
 												}
 											]}],
