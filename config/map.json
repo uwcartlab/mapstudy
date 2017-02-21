@@ -43,7 +43,7 @@
 						"source": "data/ExampleMapData.geojson",
 						"expressedAttribute": "Kilograms",
 						"displayAttributes": [
-							"Company", "Kilograms ", "Air Quality Watches"
+							"Company", "Kilograms ", "Air Quality Watches "
 						],
 						"layerOptions": {
 					"fillOpacity": 0.7,
@@ -153,10 +153,10 @@
 						{
 							"roundTo": 0,
 							"name": "Kilogram Data",
-							"source": "data/ExampleMapDataNum.geojson",
+							"source": "data/ExampleMapData.geojson",
 							"expressedAttribute": "Kilograms",
 							"displayAttributes": [
-								"Company", "Kilograms", "Air Quality Watches "
+								"Company", "Kilograms ", "Air Quality Watches "
 							],
 							"renderOnLoad": true,
 							"layerOptions": {
@@ -173,6 +173,31 @@
 										7.8,
 										11.1,
 										15.7
+											]
+								}
+							]
+						},
+						{
+							"roundTo": 0,
+							"name": "Kilogram Data2",
+							"source": "data/ExampleMapData.geojson",
+							"expressedAttribute": "Kilograms",
+							"displayAttributes": [
+								"Kilograms"
+							],
+							"renderOnLoad": true,
+							"layerOptions": {
+						"fillOpacity": 0.7,
+						"color": "black",
+						"weight": 0.5,
+						"opacity": 0.5
+					},
+								"techniques": [
+									{
+										"type": "proportional symbol",
+											"classification": "quantile",
+											"classes": [
+										0.01
 											]
 								}
 							]
@@ -215,7 +240,7 @@
 						},
 						"filter": {
 							"dataLayers": [
-									"Air Quality Watches Per Capita"
+									"Air Quality Watches Per Capita", "Kilogram Data2"
 								],
 								"tool": "slider",
 								"logging": true,
