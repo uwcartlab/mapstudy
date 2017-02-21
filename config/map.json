@@ -713,7 +713,7 @@
 												"roundTo": 0,
 												"expressedAttribute": "Kilograms",
 												"displayAttributes": [
-													"Company", "Non-white (%)", "Air Quality Watches"
+													"Company", "Kilograms ", "Non-white (%)", "Air Quality Watches"
 												],
 												"layerOptions": {
 											"fillOpacity": 0.7,
