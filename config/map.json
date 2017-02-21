@@ -43,7 +43,7 @@
 						"source": "data/ExampleMapData.geojson",
 						"expressedAttribute": "Kilograms",
 						"displayAttributes": [
-							"Company", "Kilograms", "Air Quality Watches"
+							"Company", "Kilograms ", "Air Quality Watches"
 						],
 						"layerOptions": {
 					"fillOpacity": 0.7,
