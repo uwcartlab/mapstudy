@@ -1324,11 +1324,11 @@
 														]},
 																{
 																	"name": "Kilograms",
-																	"source": "data/Ohio.geojson",
+																	"source": "data/Ohio2.geojson",
 																	"roundTo": 0,
 																	"expressedAttribute": "Kilograms",
 																	"displayAttributes": [
-																		"Company", "Non-white (%)", "Poverty (%)", "Air Quality Watches", "Soil Penetration (in/hr)"
+																		"Company", "Kilograms ", "Non-white (%)", "Poverty (%)", "Air Quality Watches", "Soil Penetration (in/hr)"
 																	],
 																	"layerOptions": {
 																"fillOpacity": 0.7,
