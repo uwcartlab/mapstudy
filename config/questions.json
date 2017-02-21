@@ -127,7 +127,7 @@
 							"image": "img/benchmark.png",
 							"image2": "img/kgstate.png",
 							"title": "Map Reading Tasks",
-							"ask": "<strong>How many waste facilities are in Alabama?</strong>",
+							"ask": "<strong>How many waste facilities are in Utah?</strong>",
 							"input": {
 								"required": true,
 								"autoadvance": false,
@@ -213,7 +213,7 @@
 							"blocks":	[{
 							"image": "img/benchmark.png",
 							"image2": "img/kgstate.png",
-							"ask": "<strong>How many waste facilities are in South Carolina?</strong>",
+							"ask": "<strong>How many states imported more than 15% of the total waste imported?</strong>",
 							"input": {
 								"required": true,
 								"autoadvance": false,
@@ -305,7 +305,7 @@
 								"type": "radios",
 								"options": [
 										{
-											"text": "Arkansas"
+											"text": "Michigan"
 										},
 										{
 											"text": "South Carolina"
@@ -385,14 +385,14 @@
 								"blocks":	[{
 								"image": "img/benchmark.png",
 								"image2": "img/kgstate.png",
-								"ask": "<strong>Which state imported more kilograms of waste?</strong>",
+								"ask": "<strong>Which state imported the greater percentage of total waste?</strong>",
 								"input": {
 									"required": true,
 									"autoadvance": false,
 									"type": "radios",
 									"options": [
 										{
-											"text": "Oregon"
+											"text": "Nebraska"
 										},
 										{
 											"text": "Tennessee"
@@ -552,7 +552,7 @@
 							"blocks":	[{
 							"image": "img/benchmark.png",
 							"image2": "img/kgstate.png",
-							"ask": "<strong>Which state imported the most kilograms of waste?</strong>",
+							"ask": "<strong>Which state imported the greatest percentage of total waste?</strong>",
 							"input": {
 								"required": true,
 								"autoadvance": false,
