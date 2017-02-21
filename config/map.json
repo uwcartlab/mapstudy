@@ -1301,7 +1301,7 @@
 														{
 												"roundTo": 0,
 												"name": "Air Quality Watches Per Capita",
-												"source": "data/ohioair1.geojson",
+												"source": "data/ohioair2.geojson",
 												"expressedAttribute": "Air Quality Watches",
 												"displayAttributes": [
 													"Air Quality Watches"
