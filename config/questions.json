@@ -654,6 +654,7 @@
 					"blocks": [
 						{
 							"title": "Map Task",
+							"image": "img/kglegend.png",
 							"ask": "You are the manager of a newly opened Canadian firm looking to ship your by-product hazardous waste to processing facilities in Ohio for disposal. The transnational shipment is due to waste volume needs that cannot be met in Canada and economic benefits of Ohio facilities. You are concerned about the impact on communities near the processing facilities, given recent news coverage over disproportionate risk to marginalized populations. Further, you want to send the hazardous waste to a processing facility that will handle it properly, otherwise your business could face scrutiny about negative environmental impacts. Given these needs and concerns, rank your preference for doing business with available Ohio processing facilities using information from the interactive map (1=most prefered, 7=least preferred).",
 							"input": {
 								"required": true,
