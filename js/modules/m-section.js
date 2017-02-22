@@ -1911,10 +1911,25 @@ var LeafletMap = Backbone.View.extend({
 			var popupContent = "<table>";
 			if (dataLayerModel.attributes.displayAttributes){
 				dataLayerModel.get('displayAttributes').forEach(function(attr){
-					popupContent += _.template($('#popup-line-template').html())({
-						attribute: attr,
-						value: feature.properties[attr]
-					});
+					var popVal;
+					if(feature.properties[attr] == 1){
+						popVal = 'Low';
+					} else if(feature.properties[attr] == 2){
+						popVal = "Medium";
+					} else if(feature.properties[attr] == 3){
+						popVal = "High";
+					}
+					if(popVal != undefined){
+						popupContent += _.template($('#popup-line-template').html())({
+							attribute: attr,
+							value: popVal
+						});
+					} else {
+						popupContent += _.template($('#popup-line-template').html())({
+							attribute: attr,
+							value: feature.properties[attr]
+						});
+					}
 				});
 			} else {
 				var attr = dataLayerModel.get('expressedAttribute');
