@@ -802,7 +802,7 @@
 											},
 											"filter": {
 												"dataLayers": [
-														"Kilograms2"
+														"Kilograms", "Kilograms2"
 													],
 													"tool": "slider",
 													"logging": true,
