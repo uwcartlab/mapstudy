@@ -1510,9 +1510,10 @@
 				{
 					"blocks": [
 						{
-							"image": "img/benchmark.png",
+							"image": "img/benchmark1.png",
+							"image2": "img/benchmark2.png",
 							"title": "Map Reading Tasks",
-							"ask": "The static map below shows the distribution of hazardous waste imports in the United States. Your responses are timed, so please complete the map reading tasks with your complete focus.<br><br><strong>Click 'Next' below to begin the map reading tasks.</strong>",
+							"ask": "The first static map below shows the distribution of hazardous waste imports in the United States. The second shows the relative hazardous waste risks for the United States. States included in your decision scenarios are removed. Use the map provided on the given page to respond to the following series of questions. Your responses are timed, so please complete the map reading tasks with your complete focus.<br><br><strong>Click 'Next' below to begin the map reading tasks.</strong>",
 							"input": {
 							}
 						}],
