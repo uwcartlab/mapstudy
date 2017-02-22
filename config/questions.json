@@ -125,23 +125,25 @@
 				{
 					"blocks": [
 						{
-							"image": "img/benchmark.png",
-							"image2": "img/kgstate.png",
+							"image": "img/benchmark1.png",
 							"title": "Map Reading Tasks",
-							"ask": "<strong>How many waste facilities are in Utah?</strong>",
+							"ask": "<strong>How much waste did Utah import?</strong>",
 							"input": {
 								"required": true,
 								"autoadvance": false,
 								"type": "radios",
 								"options": [
 									{
-										"text": "1"
+										"text": "High"
 									},
 									{
-										"text": "2"
+										"text": "Medium"
 									},
 									{
-										"text": "3"
+										"text": "Low"
+									},
+									{
+										"text": "Can't tell"
 									}
 								]
 							}
@@ -212,22 +214,24 @@
 							{
 							"resetMap": true,
 							"blocks":	[{
-							"image": "img/benchmark.png",
-							"image2": "img/kgstate.png",
-							"ask": "<strong>How many states imported more than 15% of the total waste imported?</strong>",
+							"image": "img/benchmark1.png",
+							"ask": "<strong>Which state imported more waste, Alabama or North Carolina?</strong>",
 							"input": {
 								"required": true,
 								"autoadvance": false,
 								"type": "radios",
 								"options": [
 									{
-										"text": "1"
+										"text": "Alabama"
 									},
 									{
-										"text": "2"
+										"text": "North Carolina"
 									},
 									{
-										"text": "3"
+										"text": "They imported the same amount of waste."
+									},
+									{
+										"text": "Can't tell"
 									}
 								]
 							}
@@ -297,19 +301,24 @@
 						{
 						"resetMap": true,
 						"blocks":	[{
-							"image": "img/benchmark.png",
-							"image2": "img/kgstate.png",
-							"ask": "<strong>Which state imported more kilograms of waste?</strong>",
+							"image": "img/benchmark1.png",
+							"ask": "<strong>Which state imported the most waste?</strong>",
 							"input": {
 								"required": true,
 								"autoadvance": false,
 								"type": "radios",
 								"options": [
 										{
-											"text": "Michigan"
+											"text": "Arkansas"
 										},
 										{
-											"text": "South Carolina"
+											"text": "Nebraska"
+										},
+										{
+											"text": "Pennsylvania"
+										},
+										{
+											"text": "Can't tell"
 										}
 									],
 								"items": [
@@ -384,19 +393,24 @@
 								{
 								"resetMap": true,
 								"blocks":	[{
-								"image": "img/benchmark.png",
-								"image2": "img/kgstate.png",
-								"ask": "<strong>Which state imported the greater percentage of total waste?</strong>",
+								"image": "img/benchmark2.png",
+								"ask": "<strong>What is Arizona’s hazardous waste risk?</strong>",
 								"input": {
 									"required": true,
 									"autoadvance": false,
 									"type": "radios",
 									"options": [
 										{
-											"text": "Nebraska"
+											"text": "High"
 										},
 										{
-											"text": "Tennessee"
+											"text": "Medium"
+										},
+										{
+											"text": "Low"
+										},
+										{
+											"text": "Can't tell"
 										}
 									]
 								}
@@ -466,22 +480,24 @@
 							{
 							"resetMap": true,
 							"blocks":	[{
-							"image": "img/benchmark.png",
-							"image2": "img/kgstate.png",
-							"ask": "<strong>Which state imported the most kilograms of waste?</strong>",
+							"image": "img/benchmark2.png",
+							"ask": "<strong>Which state is at greater risk?</strong>",
 							"input": {
 								"required": true,
 								"autoadvance": false,
 								"type": "radios",
 								"options": [
 									{
-										"text": "Minnesota"
+										"text": "Michigan"
 									},
 									{
-										"text": "Arizona"
+										"text": "Nebraska"
 									},
 									{
-										"text": "Arkansas"
+										"text": "They have equal risk levels."
+									},
+									{
+										"text": "Can't tell"
 									}
 								]
 							}
@@ -551,9 +567,8 @@
 							{
 								"resetMap": true,
 							"blocks":	[{
-							"image": "img/benchmark.png",
-							"image2": "img/kgstate.png",
-							"ask": "<strong>Which state imported the greatest percentage of total waste?</strong>",
+							"image": "img/benchmark2.png",
+							"ask": "<strong>Which state has the greatest hazardous waste risk?</strong>",
 							"input": {
 								"required": true,
 								"autoadvance": false,
@@ -561,13 +576,16 @@
 								"type": "radios",
 								"options": [
 										{
-											"text": "Kansas"
+											"text": "Alabama"
 										},
 										{
-											"text": "Louisiana"
+											"text": "Michigan"
 										},
 										{
 											"text": "Oregon"
+										},
+										{
+											"text": "Can't tell"
 										}
 									],
 								"items": [

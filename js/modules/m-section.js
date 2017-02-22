@@ -829,17 +829,16 @@ var OverlayControlView = Backbone.View.extend({
 		this.$el.append(this.template(this.model.attributes));
 		//set change interaction on this child element only
 		var view = this;
-		if(rtsCount < radioToSliders.length){
-			radioToSliders[rtsCount].value = this.model.get('layerId');
-		}
+		radioToSliders[rtsCount].value = this.model.get('layerId');
+
 		if(rtsCount == 0){ //on first round, initially disable first slider
 			$(".filter-row").first().css('opacity', '0.3'); //gray out slider
 			$(".filter-row .range-slider").first().slider({disabled:true}); //disable slider
 		}
 
-		// if(rtsCount == radioToSliders.length - 1){
-		// 	$(".filtLabel").last().html(radioToSliders[rtsCount].trigVal); //label last slider
-		// }
+		if(rtsCount == radioToSliders.length - 1){
+			$(".filtLabel").last().html(radioToSliders[rtsCount].trigVal); //label last slider
+		}
 
 		rtsCount++;
 		this.$el.find('.layer-'+this.model.get('layerId')+' input').change(function(e){
@@ -847,20 +846,21 @@ var OverlayControlView = Backbone.View.extend({
 			var targetVal = $(e.target).val();
 			var targetBool = $(e.target).prop('checked');
 
-			var rtsNum = radioToSliders.length;
+			var rtsNum = -1;
 			for(i = 0; i < radioToSliders.length; i++){
 				if(radioToSliders[i].value == targetVal){
 					rtsNum = i;
 				}
 			}
+
 			view.toggleLayer(targetVal, targetBool);
 
-			if(rtsNum < radioToSliders.length){
+			if(rtsNum != -1 && rtsNum < radioToSliders.length-1){
 				$(".filter-row .range-slider").first().slider({disabled:false});
 				$(".filter-row select").first().val(radioToSliders[rtsNum].trigVal).change();
 				$(".filter-row").first().css('opacity', '1');
 				$(".filtLabel").first().html(radioToSliders[rtsNum].trigVal);
-			} else if(rtsNum === radioToSliders.length){ //if last radio button is clicked
+			} else if(rtsNum != -1 && rtsNum === radioToSliders.length-1){ //if last radio button is clicked
 				$(".filter-row").first().css('opacity', '0.3'); //gray out slider
 				$(".filter-row .range-slider").first().slider({disabled:true}); //disable slider
 				//$(".filtLabel").last().html(radioToSliders[rtsNum].trigVal); //label last slider
