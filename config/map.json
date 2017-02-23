@@ -860,7 +860,7 @@
 													"dataLayers": [
 														{
 															"name": "Non-white Percent",
-															"source": "data/violationstx.geojson",
+															"source": "data/violationstx2.geojson",
 															"roundTo": 0,
 															"expressedAttribute": "Non-white (%)",
 															"displayAttributes": [
@@ -907,7 +907,7 @@
 												{
 										"roundTo": 0,
 										"name": "Air Quality Watches Per Capita",
-										"source": "data/texascounties1.geojson",
+										"source": "data/texascounties2.geojson",
 										"expressedAttribute": "Air Quality Watches",
 										"displayAttributes": [
 											"Air Quality Watches"
@@ -979,6 +979,30 @@
 																				}
 																			]},
 																			{
+																				"name": "Kilograms2",
+																				"source": "data/Texas.geojson",
+																				"roundTo": 0,
+																				"expressedAttribute": "Kilograms",
+																				"displayAttributes": [
+																					"Kilograms"
+																				],
+																				"layerOptions": {
+																			"fillOpacity": 0.7,
+																			"color": "black",
+																			"weight": 0.5,
+																			"opacity": 0.5
+																		},
+																				"renderOnLoad": true,
+																								"techniques": [
+																									{
+																										"type": "proportional symbol",
+																											"classification": "equal interval",
+																											"classes": [
+																												0.001
+																											]
+																									}
+																								]},
+																			{
 																			"name": "Company",
 																			"source": "data/Texas.geojson",
 																			"expressedAttribute": "Kilograms",
@@ -1023,7 +1047,7 @@
 														},
 														"filter": {
 															"dataLayers": [
-																	"Kilograms"
+																	"Kilograms", "Kilograms2"
 																],
 																"tool": "slider",
 																"logging": true,
