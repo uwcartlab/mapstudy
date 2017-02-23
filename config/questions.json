@@ -152,65 +152,6 @@
 								"next"
 							]
 						},
-						{
-							"blocks": [
-								{
-
-									"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to come to your answer?",
-									"input": {
-										"required": true,
-										"type": "matrix",
-										"options": [
-											{
-												"text": "1-Very easy "
-											},
-											{
-												"text": "2"
-											},
-											{
-												"text": "3"
-											},
-											{
-												"text": "4"
-											},
-											{
-												"text": "5-Very difficult"
-											}
-										],
-										"items": [{}]
-									}
-								},
-								{
-									"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your answer is correct?",
-									"input": {
-										"required": true,
-										"autoadvance": false,
-										"type": "matrix",
-										"options": [
-											{
-												"text": "1-Not confident"
-											},
-											{
-												"text": "2"
-											},
-											{
-												"text": "3"
-											},
-											{
-												"text": "4"
-											},
-											{
-												"text": "5-Very confident"
-											}
-										],
-										"items": [{}]
-									}
-								}
-							],
-							"buttons": [
-									"next"
-								]
-							},
 							{
 							"resetMap": true,
 							"blocks":	[{
@@ -239,65 +180,6 @@
 							"buttons": [
 									"next"
 								]},
-								{
-									"blocks": [
-										{
-
-											"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to come to your answer?",
-											"input": {
-												"required": true,
-												"type": "matrix",
-												"options": [
-													{
-														"text": "1-Very easy "
-													},
-													{
-														"text": "2"
-													},
-													{
-														"text": "3"
-													},
-													{
-														"text": "4"
-													},
-													{
-														"text": "5-Very difficult"
-													}
-												],
-												"items": [{}]
-											}
-										},
-										{
-											"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your answer is correct?",
-											"input": {
-												"required": true,
-												"autoadvance": false,
-												"type": "matrix",
-												"options": [
-													{
-														"text": "1-Not confident"
-													},
-													{
-														"text": "2"
-													},
-													{
-														"text": "3"
-													},
-													{
-														"text": "4"
-													},
-													{
-														"text": "5-Very confident"
-													}
-												],
-											"items": [{}]
-										}
-									}
-								],
-								"buttons": [
-										"next"
-									]
-								},
 						{
 						"resetMap": true,
 						"blocks":	[{
@@ -330,335 +212,7 @@
 							}],
 							"buttons": [
 									"next"
-								]},
-								{
-									"blocks": [
-										{
-
-											"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to come to your answer?",
-											"input": {
-												"required": true,
-												"type": "matrix",
-												"options": [
-													{
-														"text": "1-Very easy "
-													},
-													{
-														"text": "2"
-													},
-													{
-														"text": "3"
-													},
-													{
-														"text": "4"
-													},
-													{
-														"text": "5-Very difficult"
-													}
-												],
-												"items": [{}]
-											}
-										},
-										{
-											"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your answer is correct?",
-											"input": {
-												"required": true,
-												"autoadvance": false,
-												"type": "matrix",
-												"options": [
-													{
-														"text": "1-Not confident"
-													},
-													{
-														"text": "2"
-													},
-													{
-														"text": "3"
-													},
-													{
-														"text": "4"
-													},
-													{
-														"text": "5-Very confident"
-													}
-												],
-											"items": [{}]
-										}
-									}
-								],
-								"buttons": [
-										"next"
-									]
-								},
-								{
-								"resetMap": true,
-								"blocks":	[{
-								"image": "img/benchmark2.png",
-								"ask": "<strong>What is Arizona’s hazardous waste risk?</strong>",
-								"input": {
-									"required": true,
-									"autoadvance": false,
-									"type": "radios",
-									"options": [
-										{
-											"text": "High"
-										},
-										{
-											"text": "Medium"
-										},
-										{
-											"text": "Low"
-										},
-										{
-											"text": "Can't tell"
-										}
-									]
-								}
-								}],
-								"buttons": [
-										"next"
-									]},
-									{
-										"blocks": [
-											{
-
-												"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to come to your answer?",
-												"input": {
-													"required": true,
-													"type": "matrix",
-													"options": [
-														{
-															"text": "1-Very easy "
-														},
-														{
-															"text": "2"
-														},
-														{
-															"text": "3"
-														},
-														{
-															"text": "4"
-														},
-														{
-															"text": "5-Very difficult"
-														}
-													],
-													"items": [{}]
-												}
-											},
-											{
-												"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your answer is correct?",
-												"input": {
-													"required": true,
-													"autoadvance": false,
-													"type": "matrix",
-													"options": [
-														{
-															"text": "1-Not confident"
-														},
-														{
-															"text": "2"
-														},
-														{
-															"text": "3"
-														},
-														{
-															"text": "4"
-														},
-														{
-															"text": "5-Very confident"
-														}
-													],
-												"items": [{}]
-											}
-										}
-									],
-									"buttons": [
-											"next"
-										]
-									},
-							{
-							"resetMap": true,
-							"blocks":	[{
-							"image": "img/benchmark2.png",
-							"ask": "<strong>Which state is at greater risk?</strong>",
-							"input": {
-								"required": true,
-								"autoadvance": false,
-								"type": "radios",
-								"options": [
-									{
-										"text": "Michigan"
-									},
-									{
-										"text": "Nebraska"
-									},
-									{
-										"text": "They have equal risk levels."
-									},
-									{
-										"text": "Can't tell"
-									}
-								]
-							}
-							}],
-							"buttons": [
-									"next"
-								]},
-								{
-									"blocks": [
-										{
-
-											"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to come to your answer?",
-											"input": {
-												"required": true,
-												"type": "matrix",
-												"options": [
-													{
-														"text": "1-Very easy "
-													},
-													{
-														"text": "2"
-													},
-													{
-														"text": "3"
-													},
-													{
-														"text": "4"
-													},
-													{
-														"text": "5-Very difficult"
-													}
-												],
-												"items": [{}]
-											}
-										},
-										{
-											"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your answer is correct?",
-											"input": {
-												"required": true,
-												"autoadvance": false,
-												"type": "matrix",
-												"options": [
-													{
-														"text": "1-Not confident"
-													},
-													{
-														"text": "2"
-													},
-													{
-														"text": "3"
-													},
-													{
-														"text": "4"
-													},
-													{
-														"text": "5-Very confident"
-													}
-												],
-											"items": [{}]
-										}
-									}
-								],
-								"buttons": [
-										"next"
-									]
-								},
-							{
-								"resetMap": true,
-							"blocks":	[{
-							"image": "img/benchmark2.png",
-							"ask": "<strong>Which state has the greatest hazardous waste risk?</strong>",
-							"input": {
-								"required": true,
-								"autoadvance": false,
-								"autoadvance": false,
-								"type": "radios",
-								"options": [
-										{
-											"text": "Alabama"
-										},
-										{
-											"text": "Michigan"
-										},
-										{
-											"text": "Oregon"
-										},
-										{
-											"text": "Can't tell"
-										}
-									],
-								"items": [
-									{
-
-									}
-								]
-							}
-						}
-					],
-					"buttons": [
-							"next"
-						]
-				},
-						{
-							"blocks": [
-								{
-
-									"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to come to your answer?",
-									"input": {
-										"required": true,
-										"type": "matrix",
-										"options": [
-											{
-												"text": "1-Very easy "
-											},
-											{
-												"text": "2"
-											},
-											{
-												"text": "3"
-											},
-											{
-												"text": "4"
-											},
-											{
-												"text": "5-Very difficult"
-											}
-										],
-										"items": [{}]
-									}
-								},
-								{
-									"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your answer is correct?",
-									"input": {
-										"required": true,
-										"autoadvance": false,
-										"type": "matrix",
-										"options": [
-											{
-												"text": "1-Not confident"
-											},
-											{
-												"text": "2"
-											},
-											{
-												"text": "3"
-											},
-											{
-												"text": "4"
-											},
-											{
-												"text": "5-Very confident"
-											}
-										],
-								"items": [{}]
-							}
-						}
-					],
-					"buttons": [
-							"next"
-						]
-					}
+								]}
 			]
 		},
 		{
@@ -1511,9 +1065,8 @@
 					"blocks": [
 						{
 							"image": "img/benchmark1.png",
-							"image2": "img/benchmark2.png",
-							"title": "Map Reading Tasks",
-							"ask": "The first static map below shows the distribution of hazardous waste imports in the United States. The second shows the relative hazardous waste risks for the United States. States included in your decision scenarios are removed. Use the map provided on the given page to respond to the following series of questions. Your responses are timed, so please complete the map reading tasks with your complete focus.<br><br><strong>Click 'Next' below to begin the map reading tasks.</strong>",
+							"title": "Map Reading Tasks: 1 of 2",
+							"ask": "The static map below shows the distribution of hazardous waste imports in the United States (states included in your decision scenarios are removed). Use this map to respond to the following series of questions. Your responses are timed, so please complete the map reading tasks with your complete focus.<br><br><strong>Click 'Next' to begin the map reading tasks.</strong>",
 							"input": {
 							}
 						}],
@@ -1652,6 +1205,127 @@
 												"buttons": [
 														"next"
 													]
-												}]}
+												}]},
+												{
+													"page": 20,
+													"fullpage": true,
+													"timer": {
+														"remove": true
+													},
+													"sets": [
+														{
+															"blocks": [
+																{
+																	"image": "img/benchmark2.png",
+																	"title": "Map Reading Tasks: 2 of 2",
+																	"ask": "The static map below shows the relative hazardous waste risks for the United States (states included in your decision scenarios are removed). Use this map to respond to the following series of questions. Your responses are timed, so please complete the map reading tasks with your complete focus.<br><br><strong>Click 'Next' below to begin the map reading tasks.</strong>",
+																	"input": {
+																	}
+																}],
+																	"buttons": [
+																			"next"
+																		]
+																	}]},
+																	{
+																		"page": 21,
+																		"fullpage": true,
+																		"timer": {
+																			"persist": true
+																		},
+																		"sets": [
+																							{
+																							"resetMap": true,
+																							"blocks":	[{
+																							"image": "img/benchmark2.png",
+																							"ask": "<strong>What is Arizona’s hazardous waste risk?</strong>",
+																							"input": {
+																								"required": true,
+																								"autoadvance": false,
+																								"type": "radios",
+																								"options": [
+																									{
+																										"text": "High"
+																									},
+																									{
+																										"text": "Medium"
+																									},
+																									{
+																										"text": "Low"
+																									},
+																									{
+																										"text": "Can't tell"
+																									}
+																								]
+																							}
+																							}],
+																							"buttons": [
+																									"next"
+																								]},
+																						{
+																						"resetMap": true,
+																						"blocks":	[{
+																						"image": "img/benchmark2.png",
+																						"ask": "<strong>Which state is at greater risk?</strong>",
+																						"input": {
+																							"required": true,
+																							"autoadvance": false,
+																							"type": "radios",
+																							"options": [
+																								{
+																									"text": "Michigan"
+																								},
+																								{
+																									"text": "Nebraska"
+																								},
+																								{
+																									"text": "They have equal risk levels."
+																								},
+																								{
+																									"text": "Can't tell"
+																								}
+																							]
+																						}
+																						}],
+																						"buttons": [
+																								"next"
+																							]},
+																						{
+																							"resetMap": true,
+																						"blocks":	[{
+																						"image": "img/benchmark2.png",
+																						"ask": "<strong>Which state has the greatest hazardous waste risk?</strong>",
+																						"input": {
+																							"required": true,
+																							"autoadvance": false,
+																							"autoadvance": false,
+																							"type": "radios",
+																							"options": [
+																									{
+																										"text": "Alabama"
+																									},
+																									{
+																										"text": "Michigan"
+																									},
+																									{
+																										"text": "Oregon"
+																									},
+																									{
+																										"text": "Can't tell"
+																									}
+																								],
+																							"items": [
+																								{
+
+																								}
+																							]
+																						}
+																					}
+																				],
+																				"buttons": [
+																						"next"
+																					]
+																			}
+																		]
+																	}
 	]
 }
