@@ -1782,7 +1782,901 @@
 																											"buttons": [
 																													"next"
 																												]
-																											}]}
+																											}]},
+																											{
+																												"page": 24,
+																												"fullpage": true,
+																												"timer": {
+																													"remove": true
+																												},
+																												"sets": [
+																															{
+																																"blocks": [
+																																	{
+
+																																		"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking?",
+																																		"input": {
+																																			"required": true,
+																																			"type": "matrix",
+																																			"options": [
+																																				{
+																																					"text": "1-Very easy"
+																																				},
+																																				{
+																																					"text": "2"
+																																				},
+																																				{
+																																					"text": "3"
+																																				},
+																																				{
+																																					"text": "4"
+																																				},
+																																				{
+																																					"text": "5-Very difficult"
+																																				}
+																																			],
+																																			"items": [{}]
+																																		}
+																																	},
+																																	{
+																																		"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct?",
+																																		"input": {
+																																			"required": true,
+																																			"autoadvance": false,
+																																			"type": "matrix",
+																																			"options": [
+																																				{
+																																					"text": "1-Not confident"
+																																				},
+																																				{
+																																					"text": "2"
+																																				},
+																																				{
+																																					"text": "3"
+																																				},
+																																				{
+																																					"text": "4"
+																																				},
+																																				{
+																																					"text": "5-Very confident"
+																																				}
+																																			],
+																																			"items": [{}]
+																																		}
+																																	},
+																																	{
+																																		"title": "Scenario #1",
+																																		"ask": "Please rate how important the following criteria were when assuming Scenario #1 (1-5: I did not consider this criterion-I only considered this criterion):",
+																																		"input": {
+																																			"required": true,
+																																			"type": "matrix",
+																																			"items": [
+																																				{
+																																					"text": "Volume of Waste"
+																																				},
+																																				{
+																																					"text": "Air Quality"
+																																				},
+																																				{
+																																					"text": "% Non-white"
+																																				}
+																																			],
+																																			"options": [
+																																				{
+																																					"text": "1-I did not consider this criterion"
+																																				},
+																																				{
+																																					"text": "2"
+																																				},
+																																				{
+																																					"text": "3"
+																																				},
+																																				{
+																																					"text": "4"
+																																				},
+																																				{
+																																					"text": "5-I only considered this criterion"
+																																				}
+																																			]
+																																		}
+																																	},
+																																	{
+																																		"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1? (1-5: not helpful-very helpful)",
+																																		"input": {
+																																			"required": true,
+																																			"type": "matrix",
+																																			"items": [
+																																				{
+																																					"text": "Zooming into the map"
+																																				},
+																																				{
+																																					"text": "Panning around the map"
+																																				},
+																																				{
+																																					"text": "Retrieving details about map features"
+																																				}
+																																			],
+																																			"options": [
+																																				{
+																																					"text": "1-Not helpful"
+																																				},
+																																				{
+																																					"text": "2"
+																																				},
+																																				{
+																																					"text": "3"
+																																				},
+																																				{
+																																					"text": "4"
+																																				},
+																																				{
+																																					"text": "5-Very helpful"
+																																				}
+																																			]
+																																		}
+																																	},
+																																	{"ask":"Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
+																																		"input": {
+																																			"required": true,
+																																			"autoadvance": false,
+																																			"type": "paragraph"
+																																		}
+																																	}
+																																],
+																																"buttons": [
+																																		"next"
+																																	]
+																																}]},
+																																{
+																																	"page": 25,
+																																	"fullpage": true,
+																																	"timer": {
+																																		"remove": true
+																																	},
+																																	"sets": [
+																																				{
+																																					"blocks": [
+																																						{
+
+																																							"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking?",
+																																							"input": {
+																																								"required": true,
+																																								"type": "matrix",
+																																								"options": [
+																																									{
+																																										"text": "1-Very easy"
+																																									},
+																																									{
+																																										"text": "2"
+																																									},
+																																									{
+																																										"text": "3"
+																																									},
+																																									{
+																																										"text": "4"
+																																									},
+																																									{
+																																										"text": "5-Very difficult"
+																																									}
+																																								],
+																																								"items": [{}]
+																																							}
+																																						},
+																																						{
+																																							"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct?",
+																																							"input": {
+																																								"required": true,
+																																								"autoadvance": false,
+																																								"type": "matrix",
+																																								"options": [
+																																									{
+																																										"text": "1-Not confident"
+																																									},
+																																									{
+																																										"text": "2"
+																																									},
+																																									{
+																																										"text": "3"
+																																									},
+																																									{
+																																										"text": "4"
+																																									},
+																																									{
+																																										"text": "5-Very confident"
+																																									}
+																																								],
+																																								"items": [{}]
+																																							}
+																																						},
+																																						{
+																																							"title": "Scenario #2",
+																																							"ask": "Please rate how important the following criteria were when assuming Scenario #2 (1-5: I did not consider this criterion-I only considered this criterion):",
+																																							"input": {
+																																								"required": true,
+																																								"type": "matrix",
+																																								"items": [
+																																									{
+																																										"text": "Volume of Waste"
+																																									},
+																																									{
+																																										"text": "Air Quality"
+																																									},
+																																									{
+																																										"text": "Soil Permeability"
+																																									},
+																																									{
+																																										"text": "% in Poverty"
+																																									},
+																																									{
+																																										"text": "% Non-white"
+																																									}
+																																								],
+																																								"options": [
+																																									{
+																																										"text": "1-I did not consider this criterion"
+																																									},
+																																									{
+																																										"text": "2"
+																																									},
+																																									{
+																																										"text": "3"
+																																									},
+																																									{
+																																										"text": "4"
+																																									},
+																																									{
+																																										"text": "5-I only considered this criterion"
+																																									}
+																																								]
+																																							}
+																																						},
+																	{
+																		"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2? (1-5: not helpful-very helpful)",
+																		"input": {
+																			"required": true,
+																			"type": "matrix",
+																			"items": [
+																				{
+																					"text": "Zooming into the map"
+																				},
+																			{
+																				"text": "Panning around the map"
+																			},
+																			{
+																				"text": "Retrieving details about map features"
+																			}
+																		],
+																		"options": [
+																			{
+																				"text": "1-Not helpful"
+																			},
+																			{
+																				"text": "2"
+																			},
+																			{
+																				"text": "3"
+																			},
+																			{
+																				"text": "4"
+																			},
+																			{
+																				"text": "5-Very helpful"
+																			}
+																		]
+																	}
+																},
+																{"ask":"Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
+																	"input": {
+																		"required": true,
+																		"autoadvance": false,
+																		"type": "paragraph"
+																	}
+																}
+															],
+															"buttons": [
+																	"next"
+																]
+															}]},
+															{
+																"page": 26,
+																"fullpage": true,
+																"timer": {
+																	"remove": true
+																},
+																"sets": [
+																			{
+																				"blocks": [
+																					{
+
+																						"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking?",
+																						"input": {
+																							"required": true,
+																							"type": "matrix",
+																							"options": [
+																								{
+																									"text": "1-Very easy"
+																								},
+																								{
+																									"text": "2"
+																								},
+																								{
+																									"text": "3"
+																								},
+																								{
+																									"text": "4"
+																								},
+																								{
+																									"text": "5-Very difficult"
+																								}
+																							],
+																							"items": [{}]
+																						}
+																					},
+																					{
+																						"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct?",
+																						"input": {
+																							"required": true,
+																							"autoadvance": false,
+																							"type": "matrix",
+																							"options": [
+																								{
+																									"text": "1-Not confident"
+																								},
+																								{
+																									"text": "2"
+																								},
+																								{
+																									"text": "3"
+																								},
+																								{
+																									"text": "4"
+																								},
+																								{
+																									"text": "5-Very confident"
+																								}
+																							],
+																							"items": [{}]
+																						}
+																					},
+																					{
+																						"title": "Scenario #1",
+																						"ask": "Please rate how important the following criteria were when assuming Scenario #1 (1-5: I did not consider this criterion-I only considered this criterion):",
+																						"input": {
+																							"required": true,
+																							"type": "matrix",
+																							"items": [
+																								{
+																									"text": "Volume of Waste"
+																								},
+																								{
+																									"text": "Air Quality"
+																								},
+																								{
+																									"text": "Soil Permeability"
+																								},
+																								{
+																									"text": "% in Poverty"
+																								},
+																								{
+																									"text": "% Non-white"
+																								}
+																							],
+																							"options": [
+																								{
+																									"text": "1-I did not consider this criterion"
+																								},
+																								{
+																									"text": "2"
+																								},
+																								{
+																									"text": "3"
+																								},
+																								{
+																									"text": "4"
+																								},
+																								{
+																									"text": "5-I only considered this criterion"
+																								}
+																							]
+																						}
+																					},
+{
+	"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1? (1-5: not helpful-very helpful)",
+	"input": {
+		"required": true,
+		"type": "matrix",
+		"items": [
+			{
+				"text": "Zooming into the map"
+			},
+		{
+			"text": "Panning around the map"
+		},
+		{
+			"text": "Retrieving details about map features"
+		}
+	],
+	"options": [
+		{
+			"text": "1-Not helpful"
+		},
+		{
+			"text": "2"
+		},
+		{
+			"text": "3"
+		},
+		{
+			"text": "4"
+		},
+		{
+			"text": "5-Very helpful"
+		}
+	]
+}
+},
+{"ask":"Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
+"input": {
+	"required": true,
+	"autoadvance": false,
+	"type": "paragraph"
+}
+}
+],
+"buttons": [
+"next"
+]
+}]},
+{
+	"page": 27,
+	"fullpage": true,
+	"timer": {
+		"remove": true
+	},
+	"sets": [
+				{
+					"blocks": [
+						{
+
+							"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking?",
+							"input": {
+								"required": true,
+								"type": "matrix",
+								"options": [
+									{
+										"text": "1-Very easy"
+									},
+									{
+										"text": "2"
+									},
+									{
+										"text": "3"
+									},
+									{
+										"text": "4"
+									},
+									{
+										"text": "5-Very difficult"
+									}
+								],
+								"items": [{}]
+							}
+						},
+						{
+							"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct?",
+							"input": {
+								"required": true,
+								"autoadvance": false,
+								"type": "matrix",
+								"options": [
+									{
+										"text": "1-Not confident"
+									},
+									{
+										"text": "2"
+									},
+									{
+										"text": "3"
+									},
+									{
+										"text": "4"
+									},
+									{
+										"text": "5-Very confident"
+									}
+								],
+								"items": [{}]
+							}
+						},
+						{
+							"title": "Scenario #2",
+							"ask": "Please rate how important the following criteria were when assuming Scenario #2 (1-5: I did not consider this criterion-I only considered this criterion):",
+							"input": {
+								"required": true,
+								"type": "matrix",
+								"items": [
+									{
+										"text": "Volume of Waste"
+									},
+									{
+										"text": "Air Quality"
+									},
+									{
+										"text": "% Non-white"
+									}
+								],
+								"options": [
+									{
+										"text": "1-I did not consider this criterion"
+									},
+									{
+										"text": "2"
+									},
+									{
+										"text": "3"
+									},
+									{
+										"text": "4"
+									},
+									{
+										"text": "5-I only considered this criterion"
+									}
+								]
+							}
+						},
+							{
+							"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2? (1-5: not helpful-very helpful)",
+							"input": {
+							"required": true,
+							"type": "matrix",
+							"items": [
+							{
+							"text": "Zooming into the map"
+							},
+							{
+							"text": "Panning around the map"
+							},
+							{
+							"text": "Retrieving details about map features"
+							}
+							],
+							"options": [
+							{
+							"text": "1-Not helpful"
+							},
+							{
+							"text": "2"
+							},
+							{
+							"text": "3"
+							},
+							{
+							"text": "4"
+							},
+							{
+							"text": "5-Very helpful"
+							}
+							]
+							}
+							},
+							{"ask":"Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
+							"input": {
+							"required": true,
+							"autoadvance": false,
+							"type": "paragraph"
+							}
+							}
+							],
+							"buttons": [
+							"next"
+							]
+							}]},
+							{
+								"page": 28,
+								"fullpage": true,
+								"timer": {
+									"remove": true
+								},
+								"sets": [
+											{
+												"blocks": [
+													{
+
+														"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking?",
+														"input": {
+															"required": true,
+															"type": "matrix",
+															"options": [
+																{
+																	"text": "1-Very easy"
+																},
+																{
+																	"text": "2"
+																},
+																{
+																	"text": "3"
+																},
+																{
+																	"text": "4"
+																},
+																{
+																	"text": "5-Very difficult"
+																}
+															],
+															"items": [{}]
+														}
+													},
+													{
+														"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct?",
+														"input": {
+															"required": true,
+															"autoadvance": false,
+															"type": "matrix",
+															"options": [
+																{
+																	"text": "1-Not confident"
+																},
+																{
+																	"text": "2"
+																},
+																{
+																	"text": "3"
+																},
+																{
+																	"text": "4"
+																},
+																{
+																	"text": "5-Very confident"
+																}
+															],
+															"items": [{}]
+														}
+													},
+													{
+														"title": "Scenario #1",
+														"ask": "Please rate how important the following criteria were when assuming Scenario #1 (1-5: I did not consider this criterion-I only considered this criterion):",
+														"input": {
+															"required": true,
+															"type": "matrix",
+															"items": [
+																{
+																	"text": "Volume of Waste"
+																},
+																{
+																	"text": "Air Quality"
+																},
+																{
+																	"text": "% Non-white"
+																}
+															],
+															"options": [
+																{
+																	"text": "1-I did not consider this criterion"
+																},
+																{
+																	"text": "2"
+																},
+																{
+																	"text": "3"
+																},
+																{
+																	"text": "4"
+																},
+																{
+																	"text": "5-I only considered this criterion"
+																}
+															]
+														}
+													},
+														{
+														"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1? (1-5: not helpful-very helpful)",
+														"input": {
+														"required": true,
+														"type": "matrix",
+														"items": [
+														{
+														"text": "Zooming into the map"
+														},
+														{
+														"text": "Panning around the map"
+														},
+														{
+														"text": "Retrieving details about map features"
+													},
+													{
+													"text": "Overlaying additional map information"
+												},
+												{
+												"text": "Filtering map information"
+												}
+														],
+														"options": [
+														{
+														"text": "1-Not helpful"
+														},
+														{
+														"text": "2"
+														},
+														{
+														"text": "3"
+														},
+														{
+														"text": "4"
+														},
+														{
+														"text": "5-Very helpful"
+														}
+														]
+														}
+														},
+														{"ask":"Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
+														"input": {
+														"required": true,
+														"autoadvance": false,
+														"type": "paragraph"
+														}
+														}
+														],
+														"buttons": [
+														"next"
+														]
+														}]},
+														{
+															"page": 29,
+															"fullpage": true,
+															"timer": {
+																"remove": true
+															},
+															"sets": [
+																		{
+																			"blocks": [
+																				{
+
+																					"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking?",
+																					"input": {
+																						"required": true,
+																						"type": "matrix",
+																						"options": [
+																							{
+																								"text": "1-Very easy"
+																							},
+																							{
+																								"text": "2"
+																							},
+																							{
+																								"text": "3"
+																							},
+																							{
+																								"text": "4"
+																							},
+																							{
+																								"text": "5-Very difficult"
+																							}
+																						],
+																						"items": [{}]
+																					}
+																				},
+																				{
+																					"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct?",
+																					"input": {
+																						"required": true,
+																						"autoadvance": false,
+																						"type": "matrix",
+																						"options": [
+																							{
+																								"text": "1-Not confident"
+																							},
+																							{
+																								"text": "2"
+																							},
+																							{
+																								"text": "3"
+																							},
+																							{
+																								"text": "4"
+																							},
+																							{
+																								"text": "5-Very confident"
+																							}
+																						],
+																						"items": [{}]
+																					}
+																				},
+																				{
+																					"title": "Scenario #2",
+																					"ask": "Please rate how important the following criteria were when assuming Scenario #2 (1-5: I did not consider this criterion-I only considered this criterion):",
+																					"input": {
+																						"required": true,
+																						"type": "matrix",
+																						"items": [
+																							{
+																								"text": "Volume of Waste"
+																							},
+																							{
+																								"text": "Air Quality"
+																							},
+																							{
+																								"text": "Soil Permeability"
+																							},
+																							{
+																								"text": "% in Poverty"
+																							},
+																							{
+																								"text": "% Non-white"
+																							}
+																						],
+																						"options": [
+																							{
+																								"text": "1-I did not consider this criterion"
+																							},
+																							{
+																								"text": "2"
+																							},
+																							{
+																								"text": "3"
+																							},
+																							{
+																								"text": "4"
+																							},
+																							{
+																								"text": "5-I only considered this criterion"
+																							}
+																						]
+																					}
+																				},
+																					{
+																					"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2? (1-5: not helpful-very helpful)",
+																					"input": {
+																					"required": true,
+																					"type": "matrix",
+																					"items": [
+																					{
+																					"text": "Zooming into the map"
+																					},
+																					{
+																					"text": "Panning around the map"
+																					},
+																					{
+																					"text": "Retrieving details about map features"
+																				},
+																				{
+																				"text": "Overlaying additional map information"
+																			},
+																			{
+																			"text": "Filtering map information"
+																		}
+																					],
+																					"options": [
+																					{
+																					"text": "1-Not helpful"
+																					},
+																					{
+																					"text": "2"
+																					},
+																					{
+																					"text": "3"
+																					},
+																					{
+																					"text": "4"
+																					},
+																					{
+																					"text": "5-Very helpful"
+																					}
+																					]
+																					}
+																					},
+																					{"ask":"Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
+																					"input": {
+																					"required": true,
+																					"autoadvance": false,
+																					"type": "paragraph"
+																					}
+																					}
+																					],
+																					"buttons": [
+																					"next"
+																					]
+																					}]}
 
 	]
 }
