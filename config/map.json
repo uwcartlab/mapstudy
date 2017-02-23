@@ -1373,6 +1373,30 @@
 																						}
 																					]},
 																					{
+																						"name": "Kilograms2",
+																						"source": "data/Ohio2.geojson",
+																						"roundTo": 0,
+																						"expressedAttribute": "Kilograms",
+																						"displayAttributes": [
+																							"Kilograms"
+																						],
+																						"layerOptions": {
+																					"fillOpacity": 0.7,
+																					"color": "black",
+																					"weight": 0.5,
+																					"opacity": 0.5
+																				},
+																						"renderOnLoad": true,
+																										"techniques": [
+																											{
+																												"type": "proportional symbol",
+																													"classification": "equal interval",
+																													"classes": [
+																													0.001
+																													]
+																											}
+																										]},
+																					{
 																					"name": "Company",
 																					"source": "data/Ohio.geojson",
 																					"expressedAttribute": "Kilograms",
@@ -1417,7 +1441,7 @@
 																},
 																"filter": {
 																	"dataLayers": [
-																			"Kilograms"
+																			"Kilograms", "Kilograms2"
 																		],
 																		"tool": "slider",
 																		"logging": true,
