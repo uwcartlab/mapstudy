@@ -1014,8 +1014,8 @@ var FilterSliderView = Backbone.View.extend({
 		// max = max == 0 ? max : Math.ceil(max / step) * step + step;
 		//add labels
 		var labelsDiv = this.$el.find("#"+className+"-labels");
-		labelsDiv.children(".left").html(min);
-		labelsDiv.children(".right").html(max);
+		labelsDiv.children(".left").html("Low");
+		labelsDiv.children(".right").html("High");
 		//to pass to slide callback
 		var applyFilter = this.applyFilter;
 
@@ -1052,8 +1052,8 @@ var FilterSliderView = Backbone.View.extend({
 			values: [setMin,setMax],
 			step: step,
 			slide: function(e, slider){
-				labelsDiv.children(".left").html(slider.values[0]);
-				labelsDiv.children(".right").html(slider.values[1]);
+				labelsDiv.children(".left").html("Low");
+				labelsDiv.children(".right").html("High");
 
 				//iterate through saved slider value array and set slider to previous value
 				for(j = 0; j< userInputSliders.length; j++){
