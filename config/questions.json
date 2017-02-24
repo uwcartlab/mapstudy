@@ -643,32 +643,31 @@
 					{
 						"blocks": [
 							{
-								"title": "*The survey is no longer being timed. Thank you for completing the decision and map tasks. Before completing the survey, we would like you to answer a set of background questions to capture your interests and experiences. The following background survey is divided across 2 pages.<br><br> Page 1 of 2: Exit Survey-Decision-Making <br><br>Insight into Your Decision-Making Process",
-								"ask": "<br>Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
-								"input": {
-									"required": false,
-									"autoadvance": false,
-									"type": "paragraph"
-								}
+								"title": "*The survey is no longer being timed. Thank you for completing the decision and map tasks. Before completing the survey, we would like you to answer a set of background questions to capture your interests and experiences. The following background survey is divided across 2 pages.<br><br> Page 1 of 2: Exit Survey-Decision-Making"
 							},
-							{"ask":"Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
-								"input": {
-									"required": false,
-									"autoadvance": false,
-									"type": "paragraph"
-								}
-							},
-							{"ask": "<strong>General Thoughts on Decision-Making</strong>"},
 							{
-								"ask": "Rate the degree to which you agree with the following statements (1-5; strongly disagree-strongly agree):",
+								"ask": "Rate the degree to which you agree with the following statements:",
 								"input": {
+									"required": true,
 									"type": "matrix",
 									"items": [
 										{
-											"text": "We should trade hazardous waste."
+											"text": "We should <i>trade</i> hazardous waste."
 										},
 										{
-											"text": "We should limit trade of hazardous waste."
+											"text": "We should limit the <i>trade</i> of hazardous waste."
+										},
+										{
+											"text": "We should <i>import</i> hazardous waste."
+										},
+										{
+											"text": "We should limit the <i>import</i> of hazardous waste."
+										},
+										{
+											"text": "We should <i>export</i> hazardous waste."
+										},
+										{
+											"text": "We should limit the <i>export</i> of hazardous waste."
 										},
 										{
 											"text": "Hazardous waste poses a threat to the environment."
@@ -677,7 +676,10 @@
 											"text": "Hazardous waste poses a threat to marginalized communities."
 										},
 										{
-											"text": "Hazardous waste presents an economic opportunity."
+											"text": "The hazardous waste trade supports job creation."
+										},
+										{
+											"text": "Hazardous waste should be a valued commodity."
 										}
 									],
 									"options": [
@@ -700,21 +702,22 @@
 								}
 							},
 							{
-								"ask": "Rate the degree to which you agree with the following statements (1-5 strongly disagree-strongly agree):",
+								"ask": "Rate the degree to which you agree with the following statements:",
 								"input": {
+									"required": true,
 									"type": "matrix",
 									"items": [
 										{
-											"text": "I am generally risk averse."
+											"text": "People who know me would describe me as generally risk averse."
 										},
 										{
-											"text": "I am generally risk tolerant."
+											"text": "People who know me would describe me as generally risk tolerant."
 										},
 										{
-											"text": "I base decisions on facts and information."
+											"text": "People who know me would describe me as someone who makes decisions on facts and information."
 										},
 										{
-											"text": "I base decisions on impressions and feelings."
+											"text": "People who know me would describe me as someone who makes decisions on impressions and feelings."
 										}
 									],
 									"options": [
@@ -737,8 +740,9 @@
 								}
 							},
 							{
-								"ask": "Rate the degree to which you agree with the following statements (1-5 strongly disagree-strongly agree):",
+								"ask": "Rate the degree to which you agree with the following statements:",
 								"input": {
+									"required": true,
 									"type": "matrix",
 									"items": [
 										{
@@ -809,14 +813,14 @@
 							"title": "Page 2 of 2: Exit Survey-Biographic Information",
 							"ask": "What is your age?",
 							"input": {
-								"required": false,
+								"required": true,
 								"type": "text"
 							}
 						},
 						{
 							"ask": "What is your gender?",
 							"input": {
-								"required": false,
+								"required": true,
 								"autoadvance": false,
 								"type": "radios",
 								"options": [
@@ -835,14 +839,14 @@
 						{
 							"ask": "What state do you currently live in?",
 							"input": {
-								"required": false,
+								"required": true,
 								"type": "text"
 							}
 						},
 						{
 							"ask": "Have you ever lived in Texas or Ohio?",
 							"input": {
-								"required": false,
+								"required": true,
 								"autoadvance": false,
 								"type": "radios",
 								"options": [
@@ -864,7 +868,7 @@
 						{
 							"ask": "What is the highest degree you have received?",
 							"input": {
-								"required": false,
+								"required": true,
 								"autoadvance": false,
 								"type": "radios",
 								"options": [
@@ -892,14 +896,15 @@
 						{
 							"ask": "What field is your degree(s) in?",
 							"input": {
-								"required": false,
+								"required": true,
 								"autoadvance": false,
 								"type": "text"
 							}
 						},
 						{
-							"ask": "How much <i>experience</i> do you have with: (1-5; no experience-use or think about everyday)",
+							"ask": "How much <i>experience</i> do you have with:",
 							"input": {
+								"required": true,
 								"type": "matrix",
 								"items": [
 									{
@@ -938,8 +943,9 @@
 							}
 						},
 						{
-							"ask": "How <i>familiar</i> do you have with: (1-5; not at all familiar-extremely familiar)",
+							"ask": "How <i>familiar</i> are you with:",
 							"input": {
+								"required": true,
 								"type": "matrix",
 								"items": [
 									{
@@ -980,7 +986,7 @@
 						{
 							"ask": "What device did you complete this survey on?",
 							"input": {
-								"required": false,
+								"required": true,
 								"autoadvance": false,
 								"type": "radios",
 								"options": [
@@ -994,7 +1000,7 @@
 										"text": "Tablet or Touchscreen Device"
 									},
 									{
-										"text": "Mobile Device"
+										"text": "Smartphone"
 									},
 									{
 										"text": "Other",
@@ -1006,7 +1012,7 @@
 						{
 							"ask": "What best describes the manner you interacted with the map and submitted your survey responses? ",
 							"input": {
-								"required": false,
+								"required": true,
 								"type": "radios",
 								"options": [
 									{
@@ -1137,7 +1143,7 @@
 								},
 								{
 									"title": "Scenario #1",
-									"ask": "Please rate how important the following criteria were when assuming Scenario #1 (1-5: I did not consider this criterion-I only considered this criterion):",
+									"ask": "Please rate how important the following criteria were when assuming Scenario #1:",
 									"input": {
 										"required": true,
 										"type": "matrix",
@@ -1172,7 +1178,7 @@
 									}
 								},
 								{
-									"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1? (1-5: not helpful-very helpful)",
+									"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
 									"input": {
 										"required": true,
 										"type": "matrix",
@@ -1281,7 +1287,7 @@
 													},
 													{
 														"title": "Scenario #2",
-														"ask": "Please rate how important the following criteria were when assuming Scenario #2 (1-5: I did not consider this criterion-I only considered this criterion):",
+														"ask": "Please rate how important the following criteria were when assuming Scenario #2:",
 														"input": {
 															"required": true,
 															"type": "matrix",
@@ -1322,7 +1328,7 @@
 														}
 													},
 													{
-														"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2? (1-5: not helpful-very helpful)",
+														"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
 														"input": {
 															"required": true,
 															"type": "matrix",
@@ -1552,7 +1558,7 @@
 																							},
 																							{
 																								"title": "Scenario #1",
-																								"ask": "Please rate how important the following criteria were when assuming Scenario #1 (1-5: I did not consider this criterion-I only considered this criterion):",
+																								"ask": "Please rate how important the following criteria were when assuming Scenario #1:",
 																								"input": {
 																									"required": true,
 																									"type": "matrix",
@@ -1593,7 +1599,7 @@
 																								}
 																							},
 																							{
-																								"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1? (1-5: not helpful-very helpful)",
+																								"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
 																								"input": {
 																									"required": true,
 																									"type": "matrix",
@@ -1702,7 +1708,7 @@
 																												},
 																												{
 																													"title": "Scenario #2",
-																													"ask": "Please rate how important the following criteria were when assuming Scenario #2 (1-5: I did not consider this criterion-I only considered this criterion):",
+																													"ask": "Please rate how important the following criteria were when assuming Scenario #2:",
 																													"input": {
 																														"required": true,
 																														"type": "matrix",
@@ -1737,7 +1743,7 @@
 																													}
 																												},
 																												{
-																													"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2? (1-5: not helpful-very helpful)",
+																													"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
 																													"input": {
 																														"required": true,
 																														"type": "matrix",
@@ -1846,7 +1852,7 @@
 																																	},
 																																	{
 																																		"title": "Scenario #1",
-																																		"ask": "Please rate how important the following criteria were when assuming Scenario #1 (1-5: I did not consider this criterion-I only considered this criterion):",
+																																		"ask": "Please rate how important the following criteria were when assuming Scenario #1:",
 																																		"input": {
 																																			"required": true,
 																																			"type": "matrix",
@@ -1881,7 +1887,7 @@
 																																		}
 																																	},
 																																	{
-																																		"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1? (1-5: not helpful-very helpful)",
+																																		"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
 																																		"input": {
 																																			"required": true,
 																																			"type": "matrix",
@@ -1990,7 +1996,7 @@
 																																						},
 																																						{
 																																							"title": "Scenario #2",
-																																							"ask": "Please rate how important the following criteria were when assuming Scenario #2 (1-5: I did not consider this criterion-I only considered this criterion):",
+																																							"ask": "Please rate how important the following criteria were when assuming Scenario #2:",
 																																							"input": {
 																																								"required": true,
 																																								"type": "matrix",
@@ -2031,7 +2037,7 @@
 																																							}
 																																						},
 																	{
-																		"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2? (1-5: not helpful-very helpful)",
+																		"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
 																		"input": {
 																			"required": true,
 																			"type": "matrix",
@@ -2140,7 +2146,7 @@
 																					},
 																					{
 																						"title": "Scenario #1",
-																						"ask": "Please rate how important the following criteria were when assuming Scenario #1 (1-5: I did not consider this criterion-I only considered this criterion):",
+																						"ask": "Please rate how important the following criteria were when assuming Scenario #1:",
 																						"input": {
 																							"required": true,
 																							"type": "matrix",
@@ -2181,7 +2187,7 @@
 																						}
 																					},
 {
-	"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1? (1-5: not helpful-very helpful)",
+	"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
 	"input": {
 		"required": true,
 		"type": "matrix",
@@ -2290,7 +2296,7 @@
 						},
 						{
 							"title": "Scenario #2",
-							"ask": "Please rate how important the following criteria were when assuming Scenario #2 (1-5: I did not consider this criterion-I only considered this criterion):",
+							"ask": "Please rate how important the following criteria were when assuming Scenario #2:",
 							"input": {
 								"required": true,
 								"type": "matrix",
@@ -2325,7 +2331,7 @@
 							}
 						},
 							{
-							"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2? (1-5: not helpful-very helpful)",
+							"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
 							"input": {
 							"required": true,
 							"type": "matrix",
@@ -2434,7 +2440,7 @@
 													},
 													{
 														"title": "Scenario #1",
-														"ask": "Please rate how important the following criteria were when assuming Scenario #1 (1-5: I did not consider this criterion-I only considered this criterion):",
+														"ask": "Please rate how important the following criteria were when assuming Scenario #1:",
 														"input": {
 															"required": true,
 															"type": "matrix",
@@ -2469,7 +2475,7 @@
 														}
 													},
 														{
-														"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1? (1-5: not helpful-very helpful)",
+														"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
 														"input": {
 														"required": true,
 														"type": "matrix",
@@ -2584,7 +2590,7 @@
 																				},
 																				{
 																					"title": "Scenario #2",
-																					"ask": "Please rate how important the following criteria were when assuming Scenario #2 (1-5: I did not consider this criterion-I only considered this criterion):",
+																					"ask": "Please rate how important the following criteria were when assuming Scenario #2:",
 																					"input": {
 																						"required": true,
 																						"type": "matrix",
@@ -2625,7 +2631,7 @@
 																					}
 																				},
 																					{
-																					"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2? (1-5: not helpful-very helpful)",
+																					"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
 																					"input": {
 																					"required": true,
 																					"type": "matrix",
@@ -2740,7 +2746,7 @@
 																											},
 																											{
 																												"title": "Scenario #1",
-																												"ask": "Please rate how important the following criteria were when assuming Scenario #1 (1-5: I did not consider this criterion-I only considered this criterion):",
+																												"ask": "Please rate how important the following criteria were when assuming Scenario #1:",
 																												"input": {
 																													"required": true,
 																													"type": "matrix",
@@ -2781,7 +2787,7 @@
 																												}
 																											},
 																												{
-																												"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1? (1-5: not helpful-very helpful)",
+																												"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
 																												"input": {
 																												"required": true,
 																												"type": "matrix",
@@ -2896,7 +2902,7 @@
 																																		},
 																																		{
 																																			"title": "Scenario #2",
-																																			"ask": "Please rate how important the following criteria were when assuming Scenario #2 (1-5: I did not consider this criterion-I only considered this criterion):",
+																																			"ask": "Please rate how important the following criteria were when assuming Scenario #2:",
 																																			"input": {
 																																				"required": true,
 																																				"type": "matrix",
@@ -2931,7 +2937,7 @@
 																																			}
 																																		},
 																																			{
-																																			"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2? (1-5: not helpful-very helpful)",
+																																			"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
 																																			"input": {
 																																			"required": true,
 																																			"type": "matrix",
@@ -3046,7 +3052,7 @@
 												},
 												{
 													"title": "Scenario #1",
-													"ask": "Please rate how important the following criteria were when assuming Scenario #1 (1-5: I did not consider this criterion-I only considered this criterion):",
+													"ask": "Please rate how important the following criteria were when assuming Scenario #1:",
 													"input": {
 														"required": true,
 														"type": "matrix",
@@ -3081,7 +3087,7 @@
 													}
 												},
 													{
-													"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1? (1-5: not helpful-very helpful)",
+													"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
 													"input": {
 													"required": true,
 													"type": "matrix",
@@ -3196,7 +3202,7 @@
 },
 {
 	"title": "Scenario #2",
-	"ask": "Please rate how important the following criteria were when assuming Scenario #2 (1-5: I did not consider this criterion-I only considered this criterion):",
+	"ask": "Please rate how important the following criteria were when assuming Scenario #2:",
 	"input": {
 		"required": true,
 		"type": "matrix",
@@ -3237,7 +3243,7 @@
 }
 },
 {
-"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2? (1-5: not helpful-very helpful)",
+"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
 "input": {
 "required": true,
 "type": "matrix",
@@ -3352,7 +3358,7 @@
 },
 {
 "title": "Scenario #1",
-"ask": "Please rate how important the following criteria were when assuming Scenario #1 (1-5: I did not consider this criterion-I only considered this criterion):",
+"ask": "Please rate how important the following criteria were when assuming Scenario #1:",
 "input": {
 "required": true,
 "type": "matrix",
@@ -3393,7 +3399,7 @@
 }
 },
 {
-"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1? (1-5: not helpful-very helpful)",
+"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
 "input": {
 "required": true,
 "type": "matrix",
@@ -3508,7 +3514,7 @@
 },
 {
 "title": "Scenario #2",
-"ask": "Please rate how important the following criteria were when assuming Scenario #2 (1-5: I did not consider this criterion-I only considered this criterion):",
+"ask": "Please rate how important the following criteria were when assuming Scenario #2:",
 "input": {
 "required": true,
 "type": "matrix",
@@ -3543,7 +3549,7 @@
 }
 },
 {
-"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2? (1-5: not helpful-very helpful)",
+"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
 "input": {
 "required": true,
 "type": "matrix",
