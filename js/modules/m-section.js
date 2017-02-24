@@ -1010,8 +1010,8 @@ var FilterSliderView = Backbone.View.extend({
 			};
 		};
 		//add a small amount of padding to ensure max and min values stay within range
-		min = min == 0 ? min : Math.floor(min / step) * step - step;
-		max = max == 0 ? max : Math.ceil(max / step) * step + step;
+		// min = min == 0 ? min : Math.floor(min / step) * step - step;
+		// max = max == 0 ? max : Math.ceil(max / step) * step + step;
 		//add labels
 		var labelsDiv = this.$el.find("#"+className+"-labels");
 		labelsDiv.children(".left").html(min);
@@ -2748,7 +2748,7 @@ var LeafletMap = Backbone.View.extend({
 					if (layer.feature && layer.feature.properties && layer.feature.properties[attribute]){
 						var layerValue = layer.feature.properties[attribute];
 						//if value within range, add to map and remove from removed layers array
-						if (layerValue > min && layerValue < max){
+						if (layerValue >= min && layerValue <= max){
 							layer.addTo(map);
 							delete offLayers[layer._leaflet_id + '-filter'];
 						};
