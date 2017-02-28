@@ -1142,8 +1142,8 @@
 									}
 								},
 								{
-									"title": "Scenario #1",
-									"ask": "Please rate how important the following criteria were when assuming Scenario #1:",
+
+									"ask": "3. Please rate how important the following criteria were when assuming Scenario #1:",
 									"input": {
 										"required": true,
 										"type": "matrix",
@@ -1178,7 +1178,7 @@
 									}
 								},
 								{
-									"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
+									"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
 									"input": {
 										"required": true,
 										"type": "matrix",
@@ -1212,7 +1212,7 @@
 										]
 									}
 								},
-								{"ask":"Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
+								{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
 									"input": {
 										"required": true,
 										"autoadvance": false,
@@ -1286,8 +1286,8 @@
 														}
 													},
 													{
-														"title": "Scenario #2",
-														"ask": "Please rate how important the following criteria were when assuming Scenario #2:",
+
+														"ask": "3. Please rate how important the following criteria were when assuming Scenario #2:",
 														"input": {
 															"required": true,
 															"type": "matrix",
@@ -1328,7 +1328,7 @@
 														}
 													},
 													{
-														"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
+														"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
 														"input": {
 															"required": true,
 															"type": "matrix",
@@ -1362,7 +1362,7 @@
 															]
 														}
 													},
-													{"ask":"Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
+													{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
 														"input": {
 															"required": true,
 															"autoadvance": false,
@@ -1557,8 +1557,8 @@
 																								}
 																							},
 																							{
-																								"title": "Scenario #1",
-																								"ask": "Please rate how important the following criteria were when assuming Scenario #1:",
+
+																								"ask": "3. Please rate how important the following criteria were when assuming Scenario #1:",
 																								"input": {
 																									"required": true,
 																									"type": "matrix",
@@ -1599,7 +1599,7 @@
 																								}
 																							},
 																							{
-																								"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
+																								"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
 																								"input": {
 																									"required": true,
 																									"type": "matrix",
@@ -1633,7 +1633,7 @@
 																									]
 																								}
 																							},
-																							{"ask":"Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
+																							{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
 																								"input": {
 																									"required": true,
 																									"autoadvance": false,
@@ -1707,8 +1707,8 @@
 																													}
 																												},
 																												{
-																													"title": "Scenario #2",
-																													"ask": "Please rate how important the following criteria were when assuming Scenario #2:",
+
+																													"ask": "3. Please rate how important the following criteria were when assuming Scenario #2:",
 																													"input": {
 																														"required": true,
 																														"type": "matrix",
@@ -1743,7 +1743,7 @@
 																													}
 																												},
 																												{
-																													"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
+																													"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
 																													"input": {
 																														"required": true,
 																														"type": "matrix",
@@ -1777,7 +1777,7 @@
 																														]
 																													}
 																												},
-																												{"ask":"Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
+																												{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
 																													"input": {
 																														"required": true,
 																														"autoadvance": false,
@@ -1851,8 +1851,8 @@
 																																		}
 																																	},
 																																	{
-																																		"title": "Scenario #1",
-																																		"ask": "Please rate how important the following criteria were when assuming Scenario #1:",
+
+																																		"ask": "3. Please rate how important the following criteria were when assuming Scenario #1:",
 																																		"input": {
 																																			"required": true,
 																																			"type": "matrix",
@@ -1887,7 +1887,7 @@
 																																		}
 																																	},
 																																	{
-																																		"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
+																																		"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
 																																		"input": {
 																																			"required": true,
 																																			"type": "matrix",
@@ -1921,7 +1921,7 @@
 																																			]
 																																		}
 																																	},
-																																	{"ask":"Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
+																																	{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
 																																		"input": {
 																																			"required": true,
 																																			"autoadvance": false,
@@ -1995,8 +1995,8 @@
 																																							}
 																																						},
 																																						{
-																																							"title": "Scenario #2",
-																																							"ask": "Please rate how important the following criteria were when assuming Scenario #2:",
+
+																																							"ask": "3. Please rate how important the following criteria were when assuming Scenario #2:",
 																																							"input": {
 																																								"required": true,
 																																								"type": "matrix",
@@ -2037,7 +2037,7 @@
 																																							}
 																																						},
 																	{
-																		"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
+																		"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
 																		"input": {
 																			"required": true,
 																			"type": "matrix",
@@ -2071,7 +2071,7 @@
 																		]
 																	}
 																},
-																{"ask":"Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
+																{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
 																	"input": {
 																		"required": true,
 																		"autoadvance": false,
@@ -2145,8 +2145,8 @@
 																						}
 																					},
 																					{
-																						"title": "Scenario #1",
-																						"ask": "Please rate how important the following criteria were when assuming Scenario #1:",
+
+																						"ask": "3. Please rate how important the following criteria were when assuming Scenario #1:",
 																						"input": {
 																							"required": true,
 																							"type": "matrix",
@@ -2187,7 +2187,7 @@
 																						}
 																					},
 {
-	"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
+	"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
 	"input": {
 		"required": true,
 		"type": "matrix",
@@ -2221,7 +2221,7 @@
 	]
 }
 },
-{"ask":"Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
+{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
 "input": {
 	"required": true,
 	"autoadvance": false,
@@ -2295,8 +2295,8 @@
 							}
 						},
 						{
-							"title": "Scenario #2",
-							"ask": "Please rate how important the following criteria were when assuming Scenario #2:",
+
+							"ask": "3. Please rate how important the following criteria were when assuming Scenario #2:",
 							"input": {
 								"required": true,
 								"type": "matrix",
@@ -2331,7 +2331,7 @@
 							}
 						},
 							{
-							"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
+							"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
 							"input": {
 							"required": true,
 							"type": "matrix",
@@ -2365,7 +2365,7 @@
 							]
 							}
 							},
-							{"ask":"Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
+							{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
 							"input": {
 							"required": true,
 							"autoadvance": false,
@@ -2439,8 +2439,8 @@
 														}
 													},
 													{
-														"title": "Scenario #1",
-														"ask": "Please rate how important the following criteria were when assuming Scenario #1:",
+
+														"ask": "3. Please rate how important the following criteria were when assuming Scenario #1:",
 														"input": {
 															"required": true,
 															"type": "matrix",
@@ -2475,7 +2475,7 @@
 														}
 													},
 														{
-														"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
+														"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
 														"input": {
 														"required": true,
 														"type": "matrix",
@@ -2515,7 +2515,7 @@
 														]
 														}
 														},
-														{"ask":"Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
+														{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
 														"input": {
 														"required": true,
 														"autoadvance": false,
@@ -2589,8 +2589,8 @@
 																					}
 																				},
 																				{
-																					"title": "Scenario #2",
-																					"ask": "Please rate how important the following criteria were when assuming Scenario #2:",
+
+																					"ask": "3. Please rate how important the following criteria were when assuming Scenario #2:",
 																					"input": {
 																						"required": true,
 																						"type": "matrix",
@@ -2631,7 +2631,7 @@
 																					}
 																				},
 																					{
-																					"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
+																					"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
 																					"input": {
 																					"required": true,
 																					"type": "matrix",
@@ -2671,7 +2671,7 @@
 																					]
 																					}
 																					},
-																					{"ask":"Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
+																					{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
 																					"input": {
 																					"required": true,
 																					"autoadvance": false,
@@ -2745,8 +2745,8 @@
 																												}
 																											},
 																											{
-																												"title": "Scenario #1",
-																												"ask": "Please rate how important the following criteria were when assuming Scenario #1:",
+
+																												"ask": "3. Please rate how important the following criteria were when assuming Scenario #1:",
 																												"input": {
 																													"required": true,
 																													"type": "matrix",
@@ -2787,7 +2787,7 @@
 																												}
 																											},
 																												{
-																												"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
+																												"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
 																												"input": {
 																												"required": true,
 																												"type": "matrix",
@@ -2827,7 +2827,7 @@
 																												]
 																												}
 																												},
-																												{"ask":"Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
+																												{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
 																												"input": {
 																												"required": true,
 																												"autoadvance": false,
@@ -2901,8 +2901,8 @@
 																																			}
 																																		},
 																																		{
-																																			"title": "Scenario #2",
-																																			"ask": "Please rate how important the following criteria were when assuming Scenario #2:",
+
+																																			"ask": "3. Please rate how important the following criteria were when assuming Scenario #2:",
 																																			"input": {
 																																				"required": true,
 																																				"type": "matrix",
@@ -2937,7 +2937,7 @@
 																																			}
 																																		},
 																																			{
-																																			"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
+																																			"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
 																																			"input": {
 																																			"required": true,
 																																			"type": "matrix",
@@ -2977,7 +2977,7 @@
 																																			]
 																																			}
 																																			},
-																																			{"ask":"Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
+																																			{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
 																																			"input": {
 																																			"required": true,
 																																			"autoadvance": false,
@@ -3051,8 +3051,8 @@
 													}
 												},
 												{
-													"title": "Scenario #1",
-													"ask": "Please rate how important the following criteria were when assuming Scenario #1:",
+
+													"ask": "3. Please rate how important the following criteria were when assuming Scenario #1:",
 													"input": {
 														"required": true,
 														"type": "matrix",
@@ -3087,7 +3087,7 @@
 													}
 												},
 													{
-													"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
+													"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
 													"input": {
 													"required": true,
 													"type": "matrix",
@@ -3127,7 +3127,7 @@
 													]
 													}
 													},
-													{"ask":"Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
+													{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
 													"input": {
 													"required": true,
 													"autoadvance": false,
@@ -3201,8 +3201,8 @@
 	}
 },
 {
-	"title": "Scenario #2",
-	"ask": "Please rate how important the following criteria were when assuming Scenario #2:",
+
+	"ask": "3. Please rate how important the following criteria were when assuming Scenario #2:",
 	"input": {
 		"required": true,
 		"type": "matrix",
@@ -3243,7 +3243,7 @@
 }
 },
 {
-"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
+"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
 "input": {
 "required": true,
 "type": "matrix",
@@ -3283,7 +3283,7 @@
 ]
 }
 },
-{"ask":"Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
+{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
 "input": {
 "required": true,
 "autoadvance": false,
@@ -3357,8 +3357,8 @@
 }
 },
 {
-"title": "Scenario #1",
-"ask": "Please rate how important the following criteria were when assuming Scenario #1:",
+
+"ask": "3. Please rate how important the following criteria were when assuming Scenario #1:",
 "input": {
 "required": true,
 "type": "matrix",
@@ -3399,7 +3399,7 @@
 }
 },
 {
-"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
+"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
 "input": {
 "required": true,
 "type": "matrix",
@@ -3439,7 +3439,7 @@
 ]
 }
 },
-{"ask":"Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
+{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
 "input": {
 "required": true,
 "autoadvance": false,
@@ -3513,8 +3513,8 @@
 }
 },
 {
-"title": "Scenario #2",
-"ask": "Please rate how important the following criteria were when assuming Scenario #2:",
+
+"ask": "3. Please rate how important the following criteria were when assuming Scenario #2:",
 "input": {
 "required": true,
 "type": "matrix",
@@ -3549,7 +3549,7 @@
 }
 },
 {
-"ask": "How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
+"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
 "input": {
 "required": true,
 "type": "matrix",
@@ -3589,7 +3589,7 @@
 ]
 }
 },
-{"ask":"Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
+{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
 "input": {
 "required": true,
 "autoadvance": false,
