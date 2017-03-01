@@ -984,6 +984,32 @@
 							}
 						},
 						{
+							"ask": "Which of these best describes you?",
+							"input": {
+								"required": true,
+								"autoadvance": false,
+								"type": "radios",
+								"options": [
+									{
+										"text": "Professional working in the hazardous waste industry"
+									},
+									{
+										"text": "Graduate student studying hazardous waste"
+									},
+									{
+										"text": "Someone with some prior work with hazardous waste, including data processing or industry work"
+									},
+									{
+										"text": "Someone with no current or prior work with hazardous waste"
+									},
+									{
+										"text": "Other",
+										"value": "get from participant"
+									}
+								]
+							}
+						},
+						{
 							"ask": "What device did you complete this survey on?",
 							"input": {
 								"required": true,
