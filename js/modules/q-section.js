@@ -519,7 +519,12 @@ var Questions = Backbone.View.extend({
 		var data = _options.get('data');
 		_.each(data, function(d){
 			this.$el.find('input[type=text][name="'+d.name+'"], input[type=hidden][name="'+d.name+'"], textarea[name="'+d.name+'"], select[name="'+d.name+'"]').val(d.value);
-			this.$el.find('input[type=checkbox][name="'+d.name+'"][value="'+d.value+'"], input[type=radio][name="'+d.name+'"][value="'+d.value+'"]').attr('checked', 'checked');
+			// HULK SMASH USER INPUTBUG
+			if (d.value.length > 20 || String(d.value).indexOf('"') > -1){
+				return false;
+			} else {
+				this.$el.find('input[type=checkbox][name="'+d.name+'"][value="'+d.value+'"], input[type=radio][name="'+d.name+'"][value="'+d.value+'"]').attr('checked', 'checked');
+			};
 		}, this);
 		//re-sort rank inputs
 		$('.ui-sortable').each(function(){
