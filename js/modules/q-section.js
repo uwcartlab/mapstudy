@@ -519,7 +519,7 @@ var Questions = Backbone.View.extend({
 		var data = _options.get('data');
 		_.each(data, function(d){
 			this.$el.find('input[type=text][name="'+d.name+'"], input[type=hidden][name="'+d.name+'"], textarea[name="'+d.name+'"], select[name="'+d.name+'"]').val(d.value);
-			//HULK SMASH USER INPUT BUG
+			//HULK SMASH USER INPUTBUG
 			if (d.value.length > 20 || String(d.value).indexOf('"') > -1){
 				return false;
 			} else {
