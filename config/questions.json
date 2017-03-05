@@ -65,7 +65,7 @@
 							}
 						},
 						{
-							"ask": "<strong>By selecting 'Next', you confirm that you understand the map symbols, map controls, and example question, and that you are ready to begin the study.<br> <u>Please note that a timer will begin after you click next</u>, so please make your decisions with your complete focus.</strong>"
+							"ask": "<strong>By selecting 'Next', you confirm that you understand the map symbols, map controls, and example question, and that you are ready to begin the study.<br> <u>Please note that a timer will begin after you click next</u>, so please make your decisions with your complete focus.<br><br>Please note that each page may take several seconds to load.</strong>"
 						}
 					],
 					"buttons": [
@@ -106,7 +106,7 @@
 							}
 						},
 						{
-							"ask": "<strong>By selecting 'Next', you confirm that you understand the map symbols, map controls, and example question, and that you are ready to begin the study.<br> <u>Please note that a timer will begin after you click next</u>, so please make your decisions with your complete focus.</strong>"
+							"ask": "<strong>By selecting 'Next', you confirm that you understand the map symbols, map controls, and example question, and that you are ready to begin the study.<br> <u>Please note that a timer will begin after you click next</u>, so please make your decisions with your complete focus.<br><br>Please note that each page may take several seconds to load.</strong>"
 						}
 					],
 					"buttons": [
