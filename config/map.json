@@ -204,7 +204,7 @@
 						},
 						{
 						"roundTo": 0,
-						"name": "Importing Company",
+						"name": "Company",
 						"source": "data/ExampleMapData.geojson",
 						"expressedAttribute": "Kilograms",
 						"displayAttributes": [
@@ -250,7 +250,7 @@
 							"logging": true,
 							"toggle": false,
 							"dataLayers": [
-								"Air Quality Watches Per Capita", "Importing Company"
+								"Air Quality Watches Per Capita", "Company"
 							]
 						},
 						"zoom": {
