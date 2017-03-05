@@ -65,7 +65,7 @@
 							}
 						},
 						{
-							"ask": "<strong>By selecting 'Next', you confirm that you understand the map symbols, map controls, and example question, and that you are ready to begin the study. Please note that a timer will begin after you click next, so please make your decisions with your complete focus.</strong>"
+							"ask": "<strong>By selecting 'Next', you confirm that you understand the map symbols, map controls, and example question, and that you are ready to begin the study.<br> <u>Please note that a timer will begin after you click next</u>, so please make your decisions with your complete focus.</strong>"
 						}
 					],
 					"buttons": [
@@ -106,7 +106,7 @@
 							}
 						},
 						{
-							"ask": "<strong>By selecting 'Next', you confirm that you understand the map symbols, map controls, and example question, and that you are ready to begin the study. Please note that a timer will begin after you click next, so please make your decisions with your complete focus.</strong>"
+							"ask": "<strong>By selecting 'Next', you confirm that you understand the map symbols, map controls, and example question, and that you are ready to begin the study.<br> <u>Please note that a timer will begin after you click next</u>, so please make your decisions with your complete focus.</strong>"
 						}
 					],
 					"buttons": [
@@ -1098,7 +1098,7 @@
 						{
 							"image": "img/benchmark1.png",
 							"title": "Map Reading Tasks: 1 of 2",
-							"ask": "The static map below shows the distribution of hazardous waste imports in the United States (states included in your decision scenarios are removed). Use this map to respond to the following series of questions. Your responses are timed, so please complete the map reading tasks with your complete focus.<br><br><strong>Click 'Next' to begin the map reading tasks.</strong>",
+							"ask": "The static map below shows the distribution of hazardous waste imports in the United States (states included in your decision scenarios are removed). Use this map to respond to the following series of questions. <u>Your responses are timed</u>, so please complete the map reading tasks with your complete focus.<br><br><strong>Click 'Next' to begin the map reading tasks.</strong>",
 							"input": {
 							}
 						}],
@@ -1412,7 +1412,7 @@
 																{
 																	"image": "img/benchmark2.png",
 																	"title": "Map Reading Tasks: 2 of 2",
-																	"ask": "The static map below shows the relative hazardous waste risks for the United States (states included in your decision scenarios are removed). Use this map to respond to the following series of questions. Your responses are timed, so please complete the map reading tasks with your complete focus.<br><br><strong>Click 'Next' below to begin the map reading tasks.</strong>",
+																	"ask": "The static map below shows the relative hazardous waste risks for the United States (states included in your decision scenarios are removed). Use this map to respond to the following series of questions. <u>Your responses are timed</u>, so please complete the map reading tasks with your complete focus.<br><br><strong>Click 'Next' below to begin the map reading tasks.</strong>",
 																	"input": {
 																	}
 																}],
