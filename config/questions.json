@@ -81,10 +81,10 @@
 				{
 					"blocks": [
 						{
-							"image": "img/legend.png",
-							"image2": "img/kglegend.png",
+							"image": "img/kglegend.png",
+							"image2": "img/legend.png",
 							"title": "Example Map",
-							"ask": "The example map to the left has similar symbols and controls as the maps you will use in the survey. The map depicts the total amount of hazardous waste imported at different U.S. processing facilities in California as proportionately-sized circular symbols, with larger symbols indicating facilities that process relatively more imported waste. By viewing the legends on the page (see legends below), you will see an explanation of the values related to the symbols.<br><br>The maps are interactive, and allow you to complete the following changes to the map: <ol><li><strong>Zoom</strong> into and out of the map using your mouse wheel, double-clicking on the map, trackpad, or using the zoom buttons on the map to change the level of detail (zooming is constrained to only several scales).</li><li><strong>Pan</strong> by grabbing and dragging the map to recenter on an area of interest (panning is constrained to the study area).</li><li><strong>Retrieve details</strong> about a facility by clicking on a circular symbol.</li><li><strong>Overlay</strong> labels and additional datasets (e.g., air quality watches per capita) using the radio buttons on the left side of the map. When an overlay is selected (not labels, however), details can also be retrieved by clicking on a colored region (e.g. clicking on a county when the air quality watches overlay is selected).</li><li><strong>Filter</strong> facilities from the map based on the volume of waste they process or other datasets about the facilities using the slider bars on the left side of the map.</li></ol><br><strong>Try each of these interactions now.</strong><br><br> Each map that you view will have a different set of processing facilities and a different decision, so read the provided scenario, decision questions, and interactive maps carefully! To get a feel for the study, use the example map to answer the following example question. Again, review the legends carefully. Examples of the legends are seen here:"
+							"ask": "The example map to the left has similar symbols and controls as the maps you will use in the survey. The map depicts the total amount of hazardous waste imported at different U.S. processing facilities in California as proportionately-sized circular symbols, with larger symbols indicating facilities that process relatively more imported waste. By viewing the legends on the page (see legends below), you will see an explanation of the values related to the symbols.<br><br>The maps are interactive, and allow you to complete the following changes to the map: <ol><li><strong>Zoom</strong> into and out of the map using your mouse wheel, double-clicking on the map, trackpad, or using the zoom buttons on the map to change the level of detail (zooming is constrained to only several scales).</li><li><strong>Pan</strong> by grabbing and dragging the map to recenter on an area of interest (panning is constrained to the study area).</li><li><strong>Retrieve details</strong> about a facility by clicking on a circular symbol.</li><li><strong>Overlay</strong> labels and additional datasets (e.g., air quality watches per capita) using the radio buttons on the left side of the map. When an overlay is selected (not labels, however), details can also be retrieved by clicking on a colored region (e.g. clicking on a county when the air quality watches overlay is selected).</li><li><strong>Filter</strong> facilities from the map based on the volume of waste they process or other datasets about the facilities using the slider bars on the left side of the map.</li></ol><br><strong>Try each of these interactions now.</strong><br><br> Each map that you view will have a different set of processing facilities and a different decision, so read the provided scenario, decision questions, and interactive maps carefully! To get a feel for the study, use the example map to answer the following example question. Again, review the legends carefully. Note that the Risk Level legend only applies when an overlay layer, but not a label layer, is selected. Examples of the legends are seen here:"
 						},
 						{
 							"ask": "<strong>Question:</strong> Rank the facilities according to their potential environmental impact by dragging the names above and below each other <strong>(1=most impact; 3=least impact)</strong>.",
@@ -434,8 +434,8 @@
 				{
 					"blocks": [
 						{
-							"image": "img/legend.png",
-							"image2": "img/kglegend.png",
+							"image": "img/kglegend.png",
+							"image2": "img/legend.png",
 							"title": "Map Task",
 							"ask": "You are the manager of a newly opened Canadian firm looking to ship your by-product hazardous waste to processing facilities in Ohio for disposal. The transnational shipment is due to waste volume needs that cannot be met in Canada and economic benefits of Ohio facilities. You are concerned about the impact on communities near the processing facilities, given recent news coverage over disproportionate risk to marginalized populations. Further, you want to send the hazardous waste to a processing facility that will handle it properly, otherwise your business could face scrutiny about negative environmental impacts. Given these needs and concerns, rank your preference for doing business with available Ohio processing facilities using information from the interactive map <strong>(1=most preferred, 7=least preferred)</strong>.",
 							"input": {
@@ -487,8 +487,8 @@
 				{
 					"blocks": [
 						{
-							"image": "img/legend.png",
-							"image2": "img/kglegend.png",
+							"image": "img/kglegend.png",
+							"image2": "img/legend.png",
 							"title": "Map Task",
 							"ask": "You are a regulator at the EPA responsible for ensuring that hazardous waste imported from Mexico is processed at facilities in Texas following government regulations. New information suggests that the volume of imported hazardous waste has changed, and that you will need to plan site visits to review the processing facilities. Your job is to examine recent reports to assess each company’s potential for negative environmental impacts. Further, community members have come forward with concerns they are at risk of exposure to hazardous waste, and this risk disproportionately impacts marginalized populations. Given these needs and concerns, use the interactive map to rank the urgency you need to follow-up with site visits to each facility <strong>(1=most urgent, 7=least urgent)</strong>.",
 							"input": {
@@ -540,8 +540,8 @@
 				{
 					"blocks": [
 						{
-							"image": "img/legend.png",
-							"image2": "img/kglegend.png",
+							"image": "img/kglegend.png",
+							"image2": "img/legend.png",
 							"title": "Map Task",
 							"ask": "You are the manager of a newly opened Mexican firm looking to ship your by-product hazardous waste to processing facilities in Texas for disposal. The transnational shipment is due to waste volume needs that cannot be met in Mexico and economic benefits of Texas facilities. You are concerned about the impact on communities near the processing facilities, given recent news coverage over disproportionate risk to marginalized populations. Further, you want to send the hazardous waste to a processing facility that will handle it properly, otherwise your business could face scrutiny about negative environmental impacts. Given these needs and concerns, rank your preference for doing business with available Texas processing facilities using information from the interactive map <strong>(1=most preferred, 7=least preferred)</strong>.",
 							"input": {
@@ -593,8 +593,8 @@
 				{
 					"blocks": [
 						{
-							"image": "img/legend.png",
-							"image2": "img/kglegend.png",
+							"image": "img/kglegend.png",
+							"image2": "img/legend.png",
 							"title": "Map Task",
 							"ask": "You are a regulator at the EPA responsible for ensuring that hazardous waste imported from Canada is processed at facilities in Ohio following government regulations. New information suggests that the volume of imported hazardous waste has changed, and that you will need to plan site visits to review the processing facilities. Your job is to examine recent reports to assess each company’s potential for negative environmental impacts. Further, community members have come forward with concerns they are at risk of exposure to hazardous waste, and this risk disproportionately impacts marginalized populations. Given these needs and concerns, use the interactive map to rank the urgency you need to follow-up with site visits to each facility <strong>(1=most urgent, 7=least urgent)</strong>.",
 							"input": {
