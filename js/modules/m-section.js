@@ -852,10 +852,13 @@ var OverlayControlView = Backbone.View.extend({
 					rtsNum = i;
 				}
 			}
-
 			view.toggleLayer(targetVal, targetBool);
 
-			if(rtsNum != -1 && rtsNum < radioToSliders.length-1){
+			if(rtsNum === 0){
+				$(".filter-row").first().css('opacity', '0.3'); //gray out slider
+				$(".filter-row .range-slider").first().slider({disabled:true}); //disable slider
+			}
+			else if(rtsNum != -1 && rtsNum < radioToSliders.length-1){
 				$(".filter-row .range-slider").first().slider({disabled:false});
 				$(".filter-row select").first().val(radioToSliders[rtsNum].trigVal).change();
 				$(".filter-row").first().css('opacity', '1');
@@ -1924,7 +1927,7 @@ var LeafletMap = Backbone.View.extend({
 							attribute: attr,
 							value: popVal
 						});
-					} else {
+					} else if(feature.properties[attr] !== "No Overlays"){
 						popupContent += _.template($('#popup-line-template').html())({
 							attribute: attr,
 							value: feature.properties[attr]
