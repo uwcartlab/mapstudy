@@ -872,7 +872,7 @@
 							}
 						},
 						{
-							"ask": "How much <i>experience</i> do you have with:",
+							"ask": "How much <i>experience</i> do you have with <strong>(1=No experience, 5=Use or think about everyday)</strong>:",
 							"input": {
 								"required": true,
 								"type": "matrix",
@@ -913,7 +913,7 @@
 							}
 						},
 						{
-							"ask": "How <i>familiar</i> are you with:",
+							"ask": "How <i>familiar</i> are you with <strong>(1=Not at all familiar, 5=Extremely familiar)</strong>:",
 							"input": {
 								"required": true,
 								"type": "matrix",
@@ -1087,7 +1087,7 @@
 							"blocks": [
 								{
 
-									"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking?",
+									"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking <strong>(1=Very easy, 5=Very difficult)</strong>?",
 									"input": {
 										"required": true,
 										"type": "matrix",
@@ -1112,7 +1112,7 @@
 									}
 								},
 								{
-									"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct?",
+									"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct <strong>(1=Not confident, 5=Very confident)</strong>?",
 									"input": {
 										"required": true,
 										"autoadvance": false,
@@ -1139,7 +1139,7 @@
 								},
 								{
 
-									"ask": "3. Please rate how important the following criteria were when assuming Scenario #1:",
+									"ask": "3. Please rate how important the following criteria were when making your ranking decision <strong>(1=I did not consider this criterion, 5=I only considered this criterion)</strong>:",
 									"input": {
 										"required": true,
 										"type": "matrix",
@@ -1174,7 +1174,7 @@
 									}
 								},
 								{
-									"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
+									"ask": "4. How helpful did you find the following interactive controls when completing your ranking decision <strong>(1=Not helpful, 5=Very helpful)</strong>?",
 									"input": {
 										"required": true,
 										"type": "matrix",
@@ -1208,7 +1208,7 @@
 										]
 									}
 								},
-								{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
+								{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support your ranking.",
 									"input": {
 										"required": true,
 										"autoadvance": false,
@@ -1231,7 +1231,7 @@
 												"blocks": [
 													{
 
-														"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking?",
+														"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking <strong>(1=Very easy, 5=Very difficult)</strong>?",
 														"input": {
 															"required": true,
 															"type": "matrix",
@@ -1256,7 +1256,7 @@
 														}
 													},
 													{
-														"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct?",
+														"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct <strong>(1=Not confident, 5=Very confident)</strong>?",
 														"input": {
 															"required": true,
 															"autoadvance": false,
@@ -1283,7 +1283,7 @@
 													},
 													{
 
-														"ask": "3. Please rate how important the following criteria were when assuming Scenario #2:",
+														"ask": "3. Please rate how important the following criteria were when making your ranking decision <strong>(1=I did not consider this criterion, 5=I only considered this criterion)</strong>:",
 														"input": {
 															"required": true,
 															"type": "matrix",
@@ -1324,7 +1324,7 @@
 														}
 													},
 													{
-														"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
+														"ask": "4. How helpful did you find the following interactive controls when completing your ranking decision <strong>(1=Not helpful, 5=Very helpful)</strong>?",
 														"input": {
 															"required": true,
 															"type": "matrix",
@@ -1358,7 +1358,7 @@
 															]
 														}
 													},
-													{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
+													{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support your ranking.",
 														"input": {
 															"required": true,
 															"autoadvance": false,
@@ -1502,7 +1502,7 @@
 																						"blocks": [
 																							{
 
-																								"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking?",
+																								"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking <strong>(1=Very easy, 5=Very difficult)</strong>?",
 																								"input": {
 																									"required": true,
 																									"type": "matrix",
@@ -1527,7 +1527,7 @@
 																								}
 																							},
 																							{
-																								"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct?",
+																								"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct <strong>(1=Not confident, 5=Very confident)</strong>?",
 																								"input": {
 																									"required": true,
 																									"autoadvance": false,
@@ -1554,7 +1554,7 @@
 																							},
 																							{
 
-																								"ask": "3. Please rate how important the following criteria were when assuming Scenario #1:",
+																								"ask": "3. Please rate how important the following criteria were when making your ranking decision <strong>(1=I did not consider this criterion, 5=I only considered this criterion)</strong>:",
 																								"input": {
 																									"required": true,
 																									"type": "matrix",
@@ -1595,7 +1595,7 @@
 																								}
 																							},
 																							{
-																								"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
+																								"ask": "4. How helpful did you find the following interactive controls when completing your ranking decision <strong>(1=Not helpful, 5=Very helpful)</strong>?",
 																								"input": {
 																									"required": true,
 																									"type": "matrix",
@@ -1629,7 +1629,7 @@
 																									]
 																								}
 																							},
-																							{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
+																							{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support your ranking.",
 																								"input": {
 																									"required": true,
 																									"autoadvance": false,
@@ -1652,7 +1652,7 @@
 																											"blocks": [
 																												{
 
-																													"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking?",
+																													"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking <strong>(1=Very easy, 5=Very difficult)</strong>?",
 																													"input": {
 																														"required": true,
 																														"type": "matrix",
@@ -1677,7 +1677,7 @@
 																													}
 																												},
 																												{
-																													"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct?",
+																													"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct <strong>(1=Not confident, 5=Very confident)</strong>?",
 																													"input": {
 																														"required": true,
 																														"autoadvance": false,
@@ -1704,7 +1704,7 @@
 																												},
 																												{
 
-																													"ask": "3. Please rate how important the following criteria were when assuming Scenario #2:",
+																													"ask": "3. Please rate how important the following criteria were when making your ranking decision <strong>(1=I did not consider this criterion, 5=I only considered this criterion)</strong>:",
 																													"input": {
 																														"required": true,
 																														"type": "matrix",
@@ -1739,7 +1739,7 @@
 																													}
 																												},
 																												{
-																													"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
+																													"ask": "4. How helpful did you find the following interactive controls when completing your ranking decision <strong>(1=Not helpful, 5=Very helpful)</strong>?",
 																													"input": {
 																														"required": true,
 																														"type": "matrix",
@@ -1773,7 +1773,7 @@
 																														]
 																													}
 																												},
-																												{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
+																												{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support your ranking.",
 																													"input": {
 																														"required": true,
 																														"autoadvance": false,
@@ -1796,7 +1796,7 @@
 																																"blocks": [
 																																	{
 
-																																		"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking?",
+																																		"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking <strong>(1=Very easy, 5=Very difficult)</strong>?",
 																																		"input": {
 																																			"required": true,
 																																			"type": "matrix",
@@ -1821,7 +1821,7 @@
 																																		}
 																																	},
 																																	{
-																																		"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct?",
+																																		"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct <strong>(1=Not confident, 5=Very confident)</strong>?",
 																																		"input": {
 																																			"required": true,
 																																			"autoadvance": false,
@@ -1848,7 +1848,7 @@
 																																	},
 																																	{
 
-																																		"ask": "3. Please rate how important the following criteria were when assuming Scenario #1:",
+																																		"ask": "3. Please rate how important the following criteria were when making your ranking decision <strong>(1=I did not consider this criterion, 5=I only considered this criterion)</strong>:",
 																																		"input": {
 																																			"required": true,
 																																			"type": "matrix",
@@ -1883,7 +1883,7 @@
 																																		}
 																																	},
 																																	{
-																																		"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
+																																		"ask": "4. How helpful did you find the following interactive controls when completing your ranking decision <strong>(1=Not helpful, 5=Very helpful)</strong>?",
 																																		"input": {
 																																			"required": true,
 																																			"type": "matrix",
@@ -1917,7 +1917,7 @@
 																																			]
 																																		}
 																																	},
-																																	{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
+																																	{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support your ranking.",
 																																		"input": {
 																																			"required": true,
 																																			"autoadvance": false,
@@ -1940,7 +1940,7 @@
 																																					"blocks": [
 																																						{
 
-																																							"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking?",
+																																							"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking <strong>(1=Very easy, 5=Very difficult)</strong>?",
 																																							"input": {
 																																								"required": true,
 																																								"type": "matrix",
@@ -1965,7 +1965,7 @@
 																																							}
 																																						},
 																																						{
-																																							"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct?",
+																																							"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct <strong>(1=Not confident, 5=Very confident)</strong>?",
 																																							"input": {
 																																								"required": true,
 																																								"autoadvance": false,
@@ -1992,7 +1992,7 @@
 																																						},
 																																						{
 
-																																							"ask": "3. Please rate how important the following criteria were when assuming Scenario #2:",
+																																							"ask": "3. Please rate how important the following criteria were when making your ranking decision <strong>(1=I did not consider this criterion, 5=I only considered this criterion)</strong>:",
 																																							"input": {
 																																								"required": true,
 																																								"type": "matrix",
@@ -2033,7 +2033,7 @@
 																																							}
 																																						},
 																	{
-																		"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
+																		"ask": "4. How helpful did you find the following interactive controls when completing your ranking decision <strong>(1=Not helpful, 5=Very helpful)</strong>?",
 																		"input": {
 																			"required": true,
 																			"type": "matrix",
@@ -2067,7 +2067,7 @@
 																		]
 																	}
 																},
-																{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
+																{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support your ranking.",
 																	"input": {
 																		"required": true,
 																		"autoadvance": false,
@@ -2090,7 +2090,7 @@
 																				"blocks": [
 																					{
 
-																						"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking?",
+																						"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking <strong>(1=Very easy, 5=Very difficult)</strong>?",
 																						"input": {
 																							"required": true,
 																							"type": "matrix",
@@ -2115,7 +2115,7 @@
 																						}
 																					},
 																					{
-																						"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct?",
+																						"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct <strong>(1=Not confident, 5=Very confident)</strong>?",
 																						"input": {
 																							"required": true,
 																							"autoadvance": false,
@@ -2142,7 +2142,7 @@
 																					},
 																					{
 
-																						"ask": "3. Please rate how important the following criteria were when assuming Scenario #1:",
+																						"ask": "3. Please rate how important the following criteria were when making your ranking decision <strong>(1=I did not consider this criterion, 5=I only considered this criterion)</strong>:",
 																						"input": {
 																							"required": true,
 																							"type": "matrix",
@@ -2183,7 +2183,7 @@
 																						}
 																					},
 {
-	"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
+	"ask": "4. How helpful did you find the following interactive controls when completing your ranking decision <strong>(1=Not helpful, 5=Very helpful)</strong>?",
 	"input": {
 		"required": true,
 		"type": "matrix",
@@ -2217,7 +2217,7 @@
 	]
 }
 },
-{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
+{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support your ranking.",
 "input": {
 	"required": true,
 	"autoadvance": false,
@@ -2240,7 +2240,7 @@
 					"blocks": [
 						{
 
-							"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking?",
+							"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking <strong>(1=Very easy, 5=Very difficult)</strong>?",
 							"input": {
 								"required": true,
 								"type": "matrix",
@@ -2265,7 +2265,7 @@
 							}
 						},
 						{
-							"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct?",
+							"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct <strong>(1=Not confident, 5=Very confident)</strong>?",
 							"input": {
 								"required": true,
 								"autoadvance": false,
@@ -2292,7 +2292,7 @@
 						},
 						{
 
-							"ask": "3. Please rate how important the following criteria were when assuming Scenario #2:",
+							"ask": "3. Please rate how important the following criteria were when making your ranking decision <strong>(1=I did not consider this criterion, 5=I only considered this criterion)</strong>:",
 							"input": {
 								"required": true,
 								"type": "matrix",
@@ -2327,7 +2327,7 @@
 							}
 						},
 							{
-							"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
+							"ask": "4. How helpful did you find the following interactive controls when completing your ranking decision <strong>(1=Not helpful, 5=Very helpful)</strong>?",
 							"input": {
 							"required": true,
 							"type": "matrix",
@@ -2361,7 +2361,7 @@
 							]
 							}
 							},
-							{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
+							{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support your ranking.",
 							"input": {
 							"required": true,
 							"autoadvance": false,
@@ -2384,7 +2384,7 @@
 												"blocks": [
 													{
 
-														"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking?",
+														"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking <strong>(1=Very easy, 5=Very difficult)</strong>?",
 														"input": {
 															"required": true,
 															"type": "matrix",
@@ -2409,7 +2409,7 @@
 														}
 													},
 													{
-														"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct?",
+														"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct <strong>(1=Not confident, 5=Very confident)</strong>?",
 														"input": {
 															"required": true,
 															"autoadvance": false,
@@ -2436,7 +2436,7 @@
 													},
 													{
 
-														"ask": "3. Please rate how important the following criteria were when assuming Scenario #1:",
+														"ask": "3. Please rate how important the following criteria were when making your ranking decision <strong>(1=I did not consider this criterion, 5=I only considered this criterion)</strong>:",
 														"input": {
 															"required": true,
 															"type": "matrix",
@@ -2471,7 +2471,7 @@
 														}
 													},
 														{
-														"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
+														"ask": "4. How helpful did you find the following interactive controls when completing your ranking decision <strong>(1=Not helpful, 5=Very helpful)</strong>?",
 														"input": {
 														"required": true,
 														"type": "matrix",
@@ -2511,7 +2511,7 @@
 														]
 														}
 														},
-														{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
+														{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support your ranking.",
 														"input": {
 														"required": true,
 														"autoadvance": false,
@@ -2534,7 +2534,7 @@
 																			"blocks": [
 																				{
 
-																					"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking?",
+																					"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking <strong>(1=Very easy, 5=Very difficult)</strong>?",
 																					"input": {
 																						"required": true,
 																						"type": "matrix",
@@ -2559,7 +2559,7 @@
 																					}
 																				},
 																				{
-																					"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct?",
+																					"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct <strong>(1=Not confident, 5=Very confident)</strong>?",
 																					"input": {
 																						"required": true,
 																						"autoadvance": false,
@@ -2586,7 +2586,7 @@
 																				},
 																				{
 
-																					"ask": "3. Please rate how important the following criteria were when assuming Scenario #2:",
+																					"ask": "3. Please rate how important the following criteria were when making your ranking decision <strong>(1=I did not consider this criterion, 5=I only considered this criterion)</strong>:",
 																					"input": {
 																						"required": true,
 																						"type": "matrix",
@@ -2627,7 +2627,7 @@
 																					}
 																				},
 																					{
-																					"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
+																					"ask": "4. How helpful did you find the following interactive controls when completing your ranking decision <strong>(1=Not helpful, 5=Very helpful)</strong>?",
 																					"input": {
 																					"required": true,
 																					"type": "matrix",
@@ -2667,7 +2667,7 @@
 																					]
 																					}
 																					},
-																					{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
+																					{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support your ranking.",
 																					"input": {
 																					"required": true,
 																					"autoadvance": false,
@@ -2690,7 +2690,7 @@
 																										"blocks": [
 																											{
 
-																												"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking?",
+																												"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking <strong>(1=Very easy, 5=Very difficult)</strong>?",
 																												"input": {
 																													"required": true,
 																													"type": "matrix",
@@ -2715,7 +2715,7 @@
 																												}
 																											},
 																											{
-																												"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct?",
+																												"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct <strong>(1=Not confident, 5=Very confident)</strong>?",
 																												"input": {
 																													"required": true,
 																													"autoadvance": false,
@@ -2742,7 +2742,7 @@
 																											},
 																											{
 
-																												"ask": "3. Please rate how important the following criteria were when assuming Scenario #1:",
+																												"ask": "3. Please rate how important the following criteria were when making your ranking decision <strong>(1=I did not consider this criterion, 5=I only considered this criterion)</strong>:",
 																												"input": {
 																													"required": true,
 																													"type": "matrix",
@@ -2783,7 +2783,7 @@
 																												}
 																											},
 																												{
-																												"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
+																												"ask": "4. How helpful did you find the following interactive controls when completing your ranking decision <strong>(1=Not helpful, 5=Very helpful)</strong>?",
 																												"input": {
 																												"required": true,
 																												"type": "matrix",
@@ -2823,7 +2823,7 @@
 																												]
 																												}
 																												},
-																												{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
+																												{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support your ranking.",
 																												"input": {
 																												"required": true,
 																												"autoadvance": false,
@@ -2846,7 +2846,7 @@
 																																	"blocks": [
 																																		{
 
-																																			"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking?",
+																																			"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking <strong>(1=Very easy, 5=Very difficult)</strong>?",
 																																			"input": {
 																																				"required": true,
 																																				"type": "matrix",
@@ -2871,7 +2871,7 @@
 																																			}
 																																		},
 																																		{
-																																			"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct?",
+																																			"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct <strong>(1=Not confident, 5=Very confident)</strong>?",
 																																			"input": {
 																																				"required": true,
 																																				"autoadvance": false,
@@ -2898,7 +2898,7 @@
 																																		},
 																																		{
 
-																																			"ask": "3. Please rate how important the following criteria were when assuming Scenario #2:",
+																																			"ask": "3. Please rate how important the following criteria were when making your ranking decision <strong>(1=I did not consider this criterion, 5=I only considered this criterion)</strong>:",
 																																			"input": {
 																																				"required": true,
 																																				"type": "matrix",
@@ -2933,7 +2933,7 @@
 																																			}
 																																		},
 																																			{
-																																			"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
+																																			"ask": "4. How helpful did you find the following interactive controls when completing your ranking decision <strong>(1=Not helpful, 5=Very helpful)</strong>?",
 																																			"input": {
 																																			"required": true,
 																																			"type": "matrix",
@@ -2973,7 +2973,7 @@
 																																			]
 																																			}
 																																			},
-																																			{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
+																																			{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support your ranking.",
 																																			"input": {
 																																			"required": true,
 																																			"autoadvance": false,
@@ -2996,7 +2996,7 @@
 											"blocks": [
 												{
 
-													"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking?",
+													"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking <strong>(1=Very easy, 5=Very difficult)</strong>?",
 													"input": {
 														"required": true,
 														"type": "matrix",
@@ -3021,7 +3021,7 @@
 													}
 												},
 												{
-													"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct?",
+													"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct <strong>(1=Not confident, 5=Very confident)</strong>?",
 													"input": {
 														"required": true,
 														"autoadvance": false,
@@ -3048,7 +3048,7 @@
 												},
 												{
 
-													"ask": "3. Please rate how important the following criteria were when assuming Scenario #1:",
+													"ask": "3. Please rate how important the following criteria were when making your ranking decision <strong>(1=I did not consider this criterion, 5=I only considered this criterion)</strong>:",
 													"input": {
 														"required": true,
 														"type": "matrix",
@@ -3083,7 +3083,7 @@
 													}
 												},
 													{
-													"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
+													"ask": "4. How helpful did you find the following interactive controls when completing your ranking decision <strong>(1=Not helpful, 5=Very helpful)</strong>?",
 													"input": {
 													"required": true,
 													"type": "matrix",
@@ -3123,7 +3123,7 @@
 													]
 													}
 													},
-													{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
+													{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support your ranking.",
 													"input": {
 													"required": true,
 													"autoadvance": false,
@@ -3146,7 +3146,7 @@
 																		"blocks": [
 																			{
 
-																				"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking?",
+																				"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking <strong>(1=Very easy, 5=Very difficult)</strong>?",
 																				"input": {
 																					"required": true,
 																					"type": "matrix",
@@ -3171,7 +3171,7 @@
 				}
 			},
 			{
-				"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct?",
+				"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct <strong>(1=Not confident, 5=Very confident)</strong>?",
 				"input": {
 					"required": true,
 					"autoadvance": false,
@@ -3198,7 +3198,7 @@
 },
 {
 
-	"ask": "3. Please rate how important the following criteria were when assuming Scenario #2:",
+	"ask": "3. Please rate how important the following criteria were when making your ranking decision <strong>(1=I did not consider this criterion, 5=I only considered this criterion)</strong>:",
 	"input": {
 		"required": true,
 		"type": "matrix",
@@ -3239,7 +3239,7 @@
 }
 },
 {
-"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
+"ask": "4. How helpful did you find the following interactive controls when completing your ranking decision <strong>(1=Not helpful, 5=Very helpful)</strong>?",
 "input": {
 "required": true,
 "type": "matrix",
@@ -3279,7 +3279,7 @@
 ]
 }
 },
-{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
+{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support your ranking.",
 "input": {
 "required": true,
 "autoadvance": false,
@@ -3302,7 +3302,7 @@
 					"blocks": [
 						{
 
-							"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking?",
+							"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking <strong>(1=Very easy, 5=Very difficult)</strong>?",
 							"input": {
 								"required": true,
 								"type": "matrix",
@@ -3327,7 +3327,7 @@
 }
 },
 {
-"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct?",
+"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct <strong>(1=Not confident, 5=Very confident)</strong>?",
 "input": {
 "required": true,
 "autoadvance": false,
@@ -3354,7 +3354,7 @@
 },
 {
 
-"ask": "3. Please rate how important the following criteria were when assuming Scenario #1:",
+"ask": "3. Please rate how important the following criteria were when making your ranking decision <strong>(1=I did not consider this criterion, 5=I only considered this criterion)</strong>:",
 "input": {
 "required": true,
 "type": "matrix",
@@ -3395,7 +3395,7 @@
 }
 },
 {
-"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #1?",
+"ask": "4. How helpful did you find the following interactive controls when completing your ranking decision <strong>(1=Not helpful, 5=Very helpful)</strong>?",
 "input": {
 "required": true,
 "type": "matrix",
@@ -3435,7 +3435,7 @@
 ]
 }
 },
-{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #1 ranking.",
+{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support your ranking.",
 "input": {
 "required": true,
 "autoadvance": false,
@@ -3458,7 +3458,7 @@
 					"blocks": [
 						{
 
-							"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking?",
+							"ask": "1. On a scale of 1-5, how <strong><u>difficult</u></strong> was it for you to complete the ranking <strong>(1=Very easy, 5=Very difficult)</strong>?",
 							"input": {
 								"required": true,
 								"type": "matrix",
@@ -3483,7 +3483,7 @@
 }
 },
 {
-"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct?",
+"ask": "2. On a scale of 1-5, how <strong><u>confident</u></strong> are you that your ranking is correct <strong>(1=Not confident, 5=Very confident)</strong>?",
 "input": {
 "required": true,
 "autoadvance": false,
@@ -3510,7 +3510,7 @@
 },
 {
 
-"ask": "3. Please rate how important the following criteria were when assuming Scenario #2:",
+"ask": "3. Please rate how important the following criteria were when making your ranking decision <strong>(1=I did not consider this criterion, 5=I only considered this criterion)</strong>:",
 "input": {
 "required": true,
 "type": "matrix",
@@ -3545,7 +3545,7 @@
 }
 },
 {
-"ask": "4. How helpful did you find the following interactive controls when completing the ranked decision in Scenario #2?",
+"ask": "4. How helpful did you find the following interactive controls when completing your ranking decision <strong>(1=Not helpful, 5=Very helpful)</strong>?",
 "input": {
 "required": true,
 "type": "matrix",
@@ -3585,7 +3585,7 @@
 ]
 }
 },
-{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support the Scenario #2 ranking.",
+{"ask":"5. Briefly describe your decision-making process, including details on how you used the map to support your ranking.",
 "input": {
 "required": true,
 "autoadvance": false,
