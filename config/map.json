@@ -227,7 +227,7 @@
 						},
 						{
 						"roundTo": 0,
-						"name": "Company",
+						"name": "Company Labels",
 						"source": "data/ExampleMapData.geojson",
 						"expressedAttribute": "Kilograms",
 						"displayAttributes": [
@@ -273,7 +273,7 @@
 							"logging": true,
 							"toggle": false,
 							"dataLayers": [
-								"None", "Air Quality Watches Per Capita", "Company"
+								"None", "Air Quality Watches Per Capita", "Company Labels"
 							]
 						},
 						"zoom": {
@@ -804,7 +804,7 @@
 																						}
 																					]},
 																{
-																"name": "Company",
+																"name": "Company Labels",
 																"source": "data/Ohio.geojson",
 																"expressedAttribute": "Kilograms",
 																"displayAttributes": [
@@ -858,7 +858,7 @@
 												"logging": true,
 												"toggle": false,
 												"dataLayers": [
-													"None", "Non-white Percent", "Air Quality Watches Per Capita", "Company"
+													"None", "Non-white Percent", "Air Quality Watches Per Capita", "Company Labels"
 												]
 											},
 											"zoom": {
@@ -1072,7 +1072,7 @@
 																									}
 																								]},
 																			{
-																			"name": "Company",
+																			"name": "Company Labels",
 																			"source": "data/Texas.geojson",
 																			"expressedAttribute": "Kilograms",
 																			"displayAttributes": [
@@ -1126,7 +1126,7 @@
 															"logging": true,
 															"toggle": false,
 															"dataLayers": [
-																"None", "Non-white Percent", "Percent in Poverty", "Air Quality Watches Per Capita", "Soil Penetration", "Company"
+																"None", "Non-white Percent", "Percent in Poverty", "Air Quality Watches Per Capita", "Soil Penetration", "Company Labels"
 															]
 														},
 														"zoom": {
@@ -1292,7 +1292,7 @@
 																								}
 																							]},
 																		{
-																		"name": "Company",
+																		"name": "Company Labels",
 																		"source": "data/Texas.geojson",
 																		"expressedAttribute": "Kilograms",
 																		"displayAttributes": [
@@ -1346,7 +1346,7 @@
 														"logging": true,
 														"toggle": false,
 														"dataLayers": [
-															"None", "Non-white Percent", "Air Quality Watches Per Capita", "Company"
+															"None", "Non-white Percent", "Air Quality Watches Per Capita", "Company Labels"
 														]
 													},
 													"zoom": {
@@ -1560,7 +1560,7 @@
 																											}
 																										]},
 																					{
-																					"name": "Company",
+																					"name": "Company Labels",
 																					"source": "data/Ohio.geojson",
 																					"expressedAttribute": "Kilograms",
 																					"displayAttributes": [
@@ -1614,7 +1614,7 @@
 																	"logging": true,
 																	"toggle": false,
 																	"dataLayers": [
-																		"None", "Non-white Percent", "Percent in Poverty", "Air Quality Watches Per Capita", "Soil Penetration", "Company"
+																		"None", "Non-white Percent", "Percent in Poverty", "Air Quality Watches Per Capita", "Soil Penetration", "Company Labels"
 																	]
 																},
 																"zoom": {
