@@ -646,28 +646,13 @@
 								"title": "*The survey is no longer being timed. Thank you for completing the decision and map tasks. Before completing the survey, we would like you to answer a set of background questions to capture your interests and experiences. The following background survey is divided across 2 pages.<br><br> Page 1 of 2: Exit Survey-Decision-Making"
 							},
 							{
-								"ask": "Rate the degree to which you agree with the following statements:",
+								"ask": "Rate the degree to which you agree with the following statements <strong> (1=strongly disagree, 5=strongly agree)</strong>:",
 								"input": {
 									"required": true,
 									"type": "matrix",
 									"items": [
 										{
-											"text": "We should <i>trade</i> hazardous waste."
-										},
-										{
-											"text": "We should limit the <i>trade</i> of hazardous waste."
-										},
-										{
-											"text": "We should <i>import</i> hazardous waste."
-										},
-										{
-											"text": "We should limit the <i>import</i> of hazardous waste."
-										},
-										{
-											"text": "We should <i>export</i> hazardous waste."
-										},
-										{
-											"text": "We should limit the <i>export</i> of hazardous waste."
+											"text": "The U.S. should trade hazardous waste."
 										},
 										{
 											"text": "Hazardous waste poses a threat to the environment."
@@ -676,10 +661,7 @@
 											"text": "Hazardous waste poses a threat to marginalized communities."
 										},
 										{
-											"text": "The hazardous waste trade supports job creation."
-										},
-										{
-											"text": "Hazardous waste should be a valued commodity."
+											"text": "Hazardous waste presents an economic opportunity."
 										}
 									],
 									"options": [
@@ -702,22 +684,19 @@
 								}
 							},
 							{
-								"ask": "Rate the degree to which you agree with the following statements:",
+								"ask": "Rate the degree to which you agree with the following statements <strong>(1=strongly disagree, 5=strongly agree)</strong>:",
 								"input": {
 									"required": true,
 									"type": "matrix",
 									"items": [
 										{
-											"text": "People who know me would describe me as generally risk averse."
+											"text": "People who know me would describe me as someone who generally doesn’t take risks."
 										},
 										{
-											"text": "People who know me would describe me as generally risk tolerant."
+											"text": "People who know me would describe me as someone who makes decisions using facts and information."
 										},
 										{
-											"text": "People who know me would describe me as someone who makes decisions on facts and information."
-										},
-										{
-											"text": "People who know me would describe me as someone who makes decisions on impressions and feelings."
+											"text": "People who know me would describe me as someone who makes decisions using impressions and feelings."
 										}
 									],
 									"options": [
@@ -740,31 +719,22 @@
 								}
 							},
 							{
-								"ask": "Rate the degree to which you agree with the following statements:",
+								"ask": "Rate the degree to which you agree with the following statements <strong>(1=strongly disagree, 5=strongly agree)</strong>:",
 								"input": {
 									"required": true,
 									"type": "matrix",
 									"items": [
-										{
-											"text": "I had a difficult time reading the map symbols."
-										},
 										{
 											"text": "I understood the map symbols."
-										},
-										{
-											"text": "I had a difficult time using the map controls."
 										},
 										{
 											"text": "I understood the map controls."
 										},
 										{
-											"text": "I had a difficult time interpreting the scenarios."
-										},
-										{
 											"text": "I understood the scenarios."
 										},
 										{
-											"text": "I had a difficult time knowing what hazardous waste meant in the scenarios."
+											"text": "I understood what hazardous waste meant in the scenarios."
 										},
 										{
 											"text": "I understood what the hazardous waste trade was."
