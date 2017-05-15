@@ -1,0 +1,25 @@
+Group 1: CBasketball(4) PHamburgers (5) HJackets (6) DNightlife (7)
+Group 2: DShoes(9) HPizza (10) PBaseball (11) CHiking (12)
+Group 3: HSoccer(14) DSalad (15) CGloves (16) PMovies (17)
+Group 4: PHats(19) CCoffee (20) DTennis (21) HMusic (22)
+
+Key:
+C = choropleth
+P = proportional symbol
+H = heat map
+D = dot density
+
+1 = Participant Consent Form
+2 = Thank you/Description 
+3 = Example map
+24 = Exit Survey-Usefulness and Preference
+25 = Exit Survey-Background
+26 = Exit Survey-Familiarity and Interest
+27 = Exit Survey-Technology
+28 = Thank you!
+
+Conditions (for conditions config file):
+Condition #1: [1,2,3,4,5,6,7,24,25,26,27,28]
+Condition #2: [1,2,3,9,10,11,12,24,25,26,27,28]
+Condition #3: [1,2,3,14,15,16,17,24,25,26,27,28]
+Condition #4: [1,2,3,19,20,21,22,24,25,26,27,28]
