@@ -6221,23 +6221,25 @@
 		{
 			"page": 28,
 			"fullpage": true,
-			"sets": [
-				{
-					"blocks": [
-						{
-							"title": "Thank you!",
-							"ask": "Thank you for taking the time to complete this survey. Your response has been recorded. You will receive your payment shortly.</br></br>Please close your browser to exit."
-						}
-
-					],
-					"buttons": [
-					]
-				},
-				{
-					"buttons": [
-					]
-				}
-			]
+		  "sets": [
+		            {
+		              "blocks": [
+		                {
+		                  "title": "Thank you for participating!",
+		                  "ask": "Your response has been recorded. To receive your payment, please enter the following code in the submission box on Turk."
+		                  },
+		                {
+		                  "ask": "<strong>Confirmation Code: NL301S</strong>"
+		                },
+		                {
+		                  "ask": "We will send your payment within one week."
+		                },
+		                {
+		                  "ask": "Please close your browser to exit."
+		                }
+		              ]
+		            }
+		          ]
 		}
 	]
 }
