@@ -10,7 +10,7 @@
 			"page": 3,
 			"library": "Leaflet",
 			"mapOptions": {
-				"legend": true,
+				"legend": false,
 				"resetButton": true,
 				"center": [
 					38.7,
@@ -195,7 +195,7 @@
 				"page": 4,
 				"library": "Leaflet",
 				"mapOptions": {
-
+					"legend": false,
 					"resetButton": true,
 					"center": [
 						38.7,
@@ -376,7 +376,7 @@
 					"page": 5,
 					"library": "Leaflet",
 					"mapOptions": {
-						"legend": true,
+						"legend": false,
 						"resetButton": true,
 						"center": [
 							38.7,
@@ -412,8 +412,9 @@
 									"NAME10"
 								],
 								"layerOptions": {
-							"fillOpacity": 0.8,
+							"fillOpacity": 1,
 							"color": "black",
+							"stroke": "white",
 							"weight": 0.5,
 							"opacity": 1,
 							"minZoom": 0,
@@ -550,7 +551,7 @@
 						"page": 6,
 						"library": "Leaflet",
 						"mapOptions": {
-							"legend": true,
+							"legend": false,
 							"resetButton": true,
 							"center": [
 								38.7,
@@ -717,7 +718,7 @@
 							"page": 7,
 							"library": "Leaflet",
 							"mapOptions": {
-								"legend": true,
+								"legend": false,
 								"resetButton": true,
 								"center": [
 									38.7,
@@ -881,7 +882,7 @@
 								"page": 9,
 								"library": "Leaflet",
 								"mapOptions": {
-									"legend": true,
+									"legend": false,
 									"resetButton": true,
 									"center": [
 										38.7,
@@ -1042,7 +1043,7 @@
 									"page": 10,
 									"library": "Leaflet",
 									"mapOptions": {
-										"legend": true,
+										"legend": false,
 										"resetButton": true,
 										"center": [
 											38.7,
@@ -1209,7 +1210,7 @@
 										"page": 11,
 										"library": "Leaflet",
 										"mapOptions": {
-											"legend": true,
+											"legend": false,
 											"resetButton": true,
 											"center": [
 												38.7,
@@ -1384,7 +1385,7 @@
 											"page": 12,
 											"library": "Leaflet",
 											"mapOptions": {
-												"legend": true,
+												"legend": false,
 												"resetButton": true,
 												"center": [
 													38.7,
@@ -1574,7 +1575,7 @@
 												"page": 14,
 												"library": "Leaflet",
 												"mapOptions": {
-													"legend": true,
+													"legend": false,
 													"resetButton": true,
 													"center": [
 														38.7,
@@ -1741,7 +1742,7 @@
 													"page": 15,
 													"library": "Leaflet",
 													"mapOptions": {
-														"legend": true,
+														"legend": false,
 														"resetButton": true,
 														"center": [
 															38.7,
@@ -1902,7 +1903,7 @@
 														"page": 16,
 														"library": "Leaflet",
 														"mapOptions": {
-															"legend": true,
+															"legend": false,
 															"resetButton": true,
 															"center": [
 																38.7,
@@ -2087,7 +2088,7 @@
 															"page": 17,
 															"library": "Leaflet",
 															"mapOptions": {
-																"legend": true,
+																"legend": false,
 																"resetButton": true,
 																"center": [
 																	38.7,
@@ -2264,7 +2265,7 @@
 																"page": 19,
 																"library": "Leaflet",
 																"mapOptions": {
-																	"legend": true,
+																	"legend": false,
 																	"resetButton": true,
 																	"center": [
 																		38.7,
@@ -2438,7 +2439,7 @@
 																	"page": 20,
 																	"library": "Leaflet",
 																	"mapOptions": {
-																		"legend": true,
+																		"legend": false,
 																		"resetButton": true,
 																		"center": [
 																			38.7,
@@ -2624,7 +2625,7 @@
 																		"page": 21,
 																		"library": "Leaflet",
 																		"mapOptions": {
-																			"legend": true,
+																			"legend": false,
 																			"resetButton": true,
 																			"center": [
 																				38.7,
@@ -2785,7 +2786,7 @@
 																			"page": 22,
 																			"library": "Leaflet",
 																			"mapOptions": {
-																				"legend": true,
+																				"legend": false,
 																				"resetButton": true,
 																				"center": [
 																					38.7,

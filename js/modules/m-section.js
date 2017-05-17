@@ -1791,7 +1791,7 @@ var LeafletMap = Backbone.View.extend({
 						};
 					}, this);
 				} else {
-					layer.bringToFront();
+					//layer.bringToFront();
 				}
 			};
 		}, this);

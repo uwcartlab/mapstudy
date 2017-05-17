@@ -10,8 +10,8 @@ H = heat map
 D = dot density
 
 1 = Participant Consent Form
-2 = Thank you/Description 
-3 = Example map
+2 = Thank you/Description
+3 = Example map (Choropleth)
 24 = Exit Survey-Usefulness and Preference
 25 = Exit Survey-Background
 26 = Exit Survey-Familiarity and Interest
