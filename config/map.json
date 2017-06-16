@@ -10,25 +10,25 @@
 			"page": 3,
 			"library": "Leaflet",
 			"mapOptions": {
-				"legend": false,
-				"resetButton": true,
-				"center": [
-					38.7,
-					-100.5
-				],
-				"zoom": 7,
-				"minZoom": 7,
-				"maxZoom": 10,
-				"maxBounds": [
-					[
-						43,
-						-110
-					],
-					[
-						30,
-						-90
-					]
-				]
+			  "legend": true,
+			  "resetButton": true,
+			  "center": [
+			    38.9,
+			    -100.6
+			  ],
+			  "zoom": 8,
+			  "minZoom": 7,
+			  "maxZoom": 10,
+			  "maxBounds": [
+			    [
+			      43,
+			      -110
+			    ],
+			    [
+			      30,
+			      -90
+			    ]
+			  ]
 			},
 			"baseLayers": [
 					{
@@ -39,42 +39,9 @@
 				"dataLayers": [
 					{
 						"roundTo": 0,
-						"name": "Hamburger tweets",
-						"source": "data/Cities.json",
-						"expressedAttribute": "lat",
-						"displayAttributes": [
-							"city"
-						],
-						"layerOptions": {
-					"fillOpacity": 0.8,
-					"color": "black",
-					"weight": 0.5,
-					"opacity": 1,
-					"minZoom": 8,
-					"maxZoom": 11
-				},
-						"renderOnLoad": true,
-						"techniques": [
-							{
-								"type": "proportional symbol",
-								"classification": "equal interval",
-								"showOnLegend": false,
-								"classes": [
-							1,
-							1
-								]
-							}
-						]
-					},
-
-					{
-						"roundTo": 0,
 						"name": "Example Map",
 						"source": "data/maptest.geojson",
 						"expressedAttribute": "tweets",
-						"displayAttributes": [
-							"NAME10"
-						],
 						"layerOptions": {
 					"fillOpacity": 0.8,
 					"color": "black",
@@ -96,17 +63,14 @@
 							"name": "Example Map",
 							"source": "data/detailsdata.geojson",
 							"expressedAttribute": "county_t_1",
-							"displayAttributes": [
-								"NAME10"
-							],
 							"layerOptions": {
-						"fillOpacity": 0.8,
-						"color": "black",
-						"weight": 0.2,
-						"opacity": 1,
-						"minZoom": 10,
-						"maxZoom": 11,
-						"dashArray": "5, 5"
+							"fillOpacity": 0.8,
+							"color": "black",
+							"weight": 0.2,
+							"opacity": 1,
+							"minZoom": 10,
+							"maxZoom": 11,
+							"dashArray": "5, 5"
 						},
 							"renderOnLoad": true,
 							"techniques": [
@@ -118,29 +82,112 @@
 							]},
 				{
 					"roundTo": 0,
-					"name": "Example Map",
+					"name": "counties",
 					"source": "data/maptest.geojson",
 					"expressedAttribute": "tweets",
 					"displayAttributes": [
 						"NAME10"
 					],
 					"layerOptions": {
-				"fillOpacity": 1,
-				"color": "black",
-				"weight": 0.5,
-				"opacity": 1,
-				"minZoom": 8
+						"fillOpacity": 0.5,
+						"color": "black",
+						"weight": 0.5,
+						"opacity": 0.5,
+						"minZoom": 7,
+						"maxZoom": 9
 				},
 					"renderOnLoad": true,
 					"techniques": [
 						{
 							"type": "label",
 							"showOnLegend": false,
-							"size": 10
+							"size": 11
 						}
 					]},
 					{
-						"name": "Example Map",
+						"roundTo": 0,
+						"name": "countiesZoomed",
+						"source": "data/maptest.geojson",
+						"expressedAttribute": "tweets",
+						"displayAttributes": [
+							"NAME10"
+						],
+						"layerOptions": {
+							"fillOpacity": 1,
+							"color": "black",
+							"weight": 0.5,
+							"opacity": 0.5,
+							"minZoom": 10,
+							"maxZoom": 11
+					},
+						"renderOnLoad": true,
+						"techniques": [
+							{
+								"type": "label",
+								"showOnLegend": false,
+								"size": 12
+							}
+						]},
+					{
+						"roundTo": 0,
+						"name": "cityPoints",
+						"source": "data/Cities.json",
+						"expressedAttribute": "lat",
+						"displayAttributes": [
+							"city"
+						],
+						"layerOptions": {
+							"fillOpacity": 0.8,
+							"color": "black",
+							"weight": 0.5,
+							"opacity": 1,
+							"minZoom": 7,
+							"maxZoom": 9
+				},
+						"renderOnLoad": true,
+						"techniques": [
+							{
+								"type": "proportional symbol",
+								"classification": "equal interval",
+								"showOnLegend": true,
+								"classes": [
+							1,
+							1
+								]
+							}
+						]
+					},
+					{
+						"roundTo": 0,
+						"name": "cityPointsZoomed",
+						"source": "data/Cities.json",
+						"expressedAttribute": "lat",
+						"displayAttributes": [
+							"city"
+						],
+						"layerOptions": {
+							"fillOpacity": 0.8,
+							"color": "black",
+							"weight": 0.5,
+							"opacity": 1,
+							"minZoom": 10,
+							"maxZoom": 10
+				},
+						"renderOnLoad": true,
+						"techniques": [
+							{
+								"type": "proportional symbol",
+								"classification": "equal interval",
+								"showOnLegend": true,
+								"classes": [
+							1,
+							1
+								]
+							}
+						]
+					},
+					{
+						"name": "cityLabels",
 						"source": "data/Cities.json",
 						"expressedAttribute": "city",
 						"displayAttributes": [
@@ -151,7 +198,8 @@
 					"color": "black",
 					"weight": 0.5,
 					"opacity": 1,
-					"minZoom": 8
+					"minZoom": 7,
+					"maxZoom": 9
 					},
 						"renderOnLoad": true,
 						"techniques": [
@@ -160,7 +208,32 @@
 								"showOnLegend": false,
 								"size": 10
 							}
-						]}
+						]
+					},
+					{
+						"name": "cityLabelsZoomed",
+						"source": "data/Cities.json",
+						"expressedAttribute": "city",
+						"displayAttributes": [
+							"city"
+						],
+						"layerOptions": {
+					"fillOpacity": 1,
+					"color": "black",
+					"weight": 0.5,
+					"opacity": 1,
+					"minZoom": 10,
+					"maxZoom": 10
+					},
+						"renderOnLoad": true,
+						"techniques": [
+							{
+								"type": "label",
+								"showOnLegend": false,
+								"size": 10
+							}
+						]
+					}
 				],
 				"interactions": {
 					"zoom": {
@@ -198,22 +271,22 @@
 					"legend": false,
 					"resetButton": true,
 					"center": [
-						38.7,
-						-100.5
-					],
-					"zoom": 7,
-					"minZoom": 7,
-					"maxZoom": 10,
-					"maxBounds": [
-						[
-							43,
-							-110
-						],
-						[
-							30,
-							-90
-						]
-					]
+				    38.9,
+				    -100.6
+				  ],
+				  "zoom": 8,
+				  "minZoom": 7,
+				  "maxZoom": 10,
+				  "maxBounds": [
+				    [
+				      43,
+				      -110
+				    ],
+				    [
+				      30,
+				      -90
+				    ]
+				  ]
 				},
 				"baseLayers": [
 						{
@@ -224,48 +297,16 @@
 					"dataLayers": [
 						{
 								"roundTo": 0,
-							"name": "Hamburger tweets",
-							"source": "data/Cities.json",
-							"expressedAttribute": "lat",
-							"displayAttributes": [
-								"city"
-							],
-							"layerOptions": {
-						"fillOpacity": 0.8,
-						"color": "black",
-						"weight": 0.5,
-						"opacity": 1,
-						"minZoom": 8,
-						"maxZoom": 11
-					},
-							"renderOnLoad": true,
-							"techniques": [
-								{
-									"type": "proportional symbol",
-									"showOnLegend": false,
-									"classification": "equal interval",
-									"classes": [
-								1,
-								1
-									]
-								}
-							]
-						},
-						{
-								"roundTo": 0,
 							"name": "Basketball tweets",
 							"source": "data/countiesall.geojson",
 							"expressedAttribute": "Basketball",
-							"displayAttributes": [
-								"NAME10"
-							],
 							"layerOptions": {
-						"fillOpacity": 0.8,
-						"color": "black",
-						"weight": 0.5,
-						"opacity": 1,
-						"minZoom": 0,
-						"maxZoom": 9
+							"fillOpacity": 0.8,
+							"color": "black",
+							"weight": 0.5,
+							"opacity": 1,
+							"minZoom": 0,
+							"maxZoom": 9
 					},
 							"renderOnLoad": true,
 							"techniques": [
@@ -301,53 +342,161 @@
 									"classes": "BuGn.5"
 								}
 							]},
-						{
-								"roundTo": 0,
-							"name": "Example Map",
-							"source": "data/maptest.geojson",
-							"expressedAttribute": "tweets",
-							"displayAttributes": [
-								"NAME10"
-							],
-							"layerOptions": {
-						"fillOpacity": 1,
-						"color": "black",
-						"weight": 0.5,
-						"opacity": 1,
-						"minZoom": 8
-						},
-							"renderOnLoad": true,
-							"techniques": [
-								{
-									"type": "label",
-									"showOnLegend": false,
-									"size": 10
-								}
-							]},
 							{
-									"roundTo": 0,
-								"name": "Example Map",
-								"source": "data/Cities.json",
-								"expressedAttribute": "city",
+								"roundTo": 0,
+								"name": "counties",
+								"source": "data/maptest.geojson",
+								"expressedAttribute": "tweets",
 								"displayAttributes": [
-									"city"
+									"NAME10"
 								],
 								"layerOptions": {
-							"fillOpacity": 1,
-							"color": "black",
-							"weight": 0.5,
-							"opacity": 1,
-							"minZoom": 8
+									"fillOpacity": 0.5,
+									"color": "black",
+									"weight": 0.5,
+									"opacity": 0.5,
+									"minZoom": 7,
+									"maxZoom": 9
 							},
 								"renderOnLoad": true,
 								"techniques": [
 									{
 										"type": "label",
 										"showOnLegend": false,
-										"size": 10
+										"size": 11
 									}
-								]}
-					],
+								]},
+								{
+									"roundTo": 0,
+									"name": "countiesZoomed",
+									"source": "data/maptest.geojson",
+									"expressedAttribute": "tweets",
+									"displayAttributes": [
+										"NAME10"
+									],
+									"layerOptions": {
+										"fillOpacity": 1,
+										"color": "black",
+										"weight": 0.5,
+										"opacity": 0.5,
+										"minZoom": 10,
+										"maxZoom": 11
+								},
+									"renderOnLoad": true,
+									"techniques": [
+										{
+											"type": "label",
+											"showOnLegend": false,
+											"size": 12
+										}
+									]},
+								{
+									"roundTo": 0,
+									"name": "cityPoints",
+									"source": "data/Cities.json",
+									"expressedAttribute": "lat",
+									"displayAttributes": [
+										"city"
+									],
+									"layerOptions": {
+										"fillOpacity": 0.8,
+										"color": "black",
+										"weight": 0.5,
+										"opacity": 1,
+										"minZoom": 7,
+										"maxZoom": 9
+							},
+									"renderOnLoad": true,
+									"techniques": [
+										{
+											"type": "proportional symbol",
+											"classification": "equal interval",
+											"showOnLegend": true,
+											"classes": [
+										2,
+										2
+											]
+										}
+									]
+								},
+								{
+									"roundTo": 0,
+									"name": "cityPointsZoomed",
+									"source": "data/Cities.json",
+									"expressedAttribute": "lat",
+									"displayAttributes": [
+										"city"
+									],
+									"layerOptions": {
+										"fillOpacity": 0.8,
+										"color": "black",
+										"weight": 0.5,
+										"opacity": 1,
+										"minZoom": 10,
+										"maxZoom": 10
+							},
+									"renderOnLoad": true,
+									"techniques": [
+										{
+											"type": "proportional symbol",
+											"classification": "equal interval",
+											"showOnLegend": true,
+											"classes": [
+										2,
+										2
+											]
+										}
+									]
+								},
+								{
+									"name": "cityLabels",
+									"source": "data/Cities.json",
+									"expressedAttribute": "city",
+									"displayAttributes": [
+										"city"
+									],
+									"layerOptions": {
+								"fillOpacity": 1,
+								"color": "black",
+								"weight": 0.5,
+								"opacity": 1,
+								"minZoom": 7,
+								"maxZoom": 9
+								},
+									"renderOnLoad": true,
+									"techniques": [
+										{
+											"type": "label",
+											"showOnLegend": false,
+											"size": 10
+										}
+									]
+								},
+								{
+									"name": "cityLabelsZoomed",
+									"source": "data/Cities.json",
+									"expressedAttribute": "city",
+									"displayAttributes": [
+										"city"
+									],
+									"layerOptions": {
+								"fillOpacity": 1,
+								"color": "black",
+								"weight": 0.5,
+								"opacity": 1,
+								"minZoom": 10,
+								"maxZoom": 10
+								},
+									"renderOnLoad": true,
+									"techniques": [
+										{
+											"type": "label",
+											"showOnLegend": false,
+											"size": 10
+										}
+									]
+								}
+							],
 					"interactions": {
 						"zoom": {
 							"logging": true,
@@ -379,27 +528,27 @@
 						"legend": false,
 						"resetButton": true,
 						"center": [
-							38.7,
-							-100.5
-						],
-						"zoom": 7,
-						"minZoom": 7,
-						"maxZoom": 10,
-						"maxBounds": [
-							[
-								43,
-								-110
-							],
-							[
-								30,
-								-90
-							]
-						]
+					    38.9,
+					    -100.6
+					  ],
+					  "zoom": 8,
+					  "minZoom": 7,
+					  "maxZoom": 10,
+					  "maxBounds": [
+					    [
+					      43,
+					      -110
+					    ],
+					    [
+					      30,
+					      -90
+					    ]
+					  ]
 					},
 					"baseLayers": [
 							{
 								"name": "Basemap",
-								"source": "https://api.mapbox.com/styles/v1/vinckl/civ2hghwg000y2in0l8mqk343/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+								"source": "https://api.mapbox.com/styles/v1/vinckl/cityvzq8p00882inzeisk6o24/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 							}
 						],
 						"dataLayers": [
@@ -408,17 +557,14 @@
 								"name": "Hamburger tweets",
 								"source": "data/countiesall.geojson",
 								"expressedAttribute": "Hamburgers",
-								"displayAttributes": [
-									"NAME10"
-								],
 								"layerOptions": {
-							"fillOpacity": 1,
-							"color": "black",
-							"stroke": "white",
-							"weight": 0.5,
-							"opacity": 1,
-							"minZoom": 0,
-							"maxZoom": 8
+								"fillOpacity": 1,
+								"color": "black",
+								"stroke": "white",
+								"weight": 0.5,
+								"opacity": 1,
+								"minZoom": 7,
+								"maxZoom": 9
 						},
 								"renderOnLoad": true,
 								"techniques": [
@@ -440,16 +586,13 @@
 								"name": "Hamburger tweets",
 								"source": "data/detailsdata.geojson",
 								"expressedAttribute": "county_t_2",
-								"displayAttributes": [
-									"NAME10"
-								],
 								"layerOptions": {
-							"fillOpacity": 0.8,
-							"color": "black",
-							"weight": 0.5,
-							"opacity": 1,
-							"minZoom": 9,
-							"maxZoom": 11
+								"fillOpacity": 0.8,
+								"color": "black",
+								"weight": 0.5,
+								"opacity": 1,
+								"minZoom": 10,
+								"maxZoom": 10
 						},
 								"renderOnLoad": true,
 								"techniques": [
@@ -467,56 +610,154 @@
 								]
 							},
 							{
-									"roundTo": 0,
-								"name": "Example Map",
-								"source": "data/detailsdata.geojson",
-								"expressedAttribute": "county_t_1",
-								"displayAttributes": [
-									"NAME10"
-								],
-								"layerOptions": {
-							"fillOpacity": 0.8,
-							"color": "black",
-							"weight": 0.2,
-							"opacity": 1,
-							"fillOpacity": 0,
-							"minZoom": 6,
-							"maxZoom": 11,
-							"dashArray": "5, 5"
-							},
-								"renderOnLoad": true,
-								"techniques": [
-									{
-										"type": "choropleth",
-										"showOnLegend": false,
-										"classification": "equal interval",
-										"classes": "BuGn.5"
-									}
-								]},
-							{
-									"roundTo": 0,
-								"name": "Example Map",
+								"roundTo": 0,
+								"name": "counties",
 								"source": "data/maptest.geojson",
-								"expressedAttribute": "city",
+								"expressedAttribute": "tweets",
 								"displayAttributes": [
 									"NAME10"
 								],
 								"layerOptions": {
-							"fillOpacity": 1,
-							"color": "black",
-							"weight": 0.5,
-							"opacity": 1,
-							"minZoom": 8
+									"fillOpacity": 1,
+									"color": "black",
+									"weight": 0.5,
+									"opacity": 1,
+									"minZoom": 7,
+									"maxZoom": 9
 							},
 								"renderOnLoad": true,
 								"techniques": [
 									{
 										"type": "label",
 										"showOnLegend": false,
-										"size": 10
+										"size": 12
 									}
-								]}
-						],
+								]},
+								{
+									"roundTo": 0,
+									"name": "countiesZoomed",
+									"source": "data/maptest.geojson",
+									"expressedAttribute": "tweets",
+									"displayAttributes": [
+										"NAME10"
+									],
+									"layerOptions": {
+										"fillOpacity": 1,
+										"color": "black",
+										"weight": 0.5,
+										"opacity": 0.5,
+										"minZoom": 10,
+										"maxZoom": 11
+								},
+									"renderOnLoad": true,
+									"techniques": [
+										{
+											"type": "label",
+											"showOnLegend": false,
+											"size": 12
+										}
+									]},
+								{
+									"roundTo": 0,
+									"name": "cityPoints",
+									"source": "data/Cities.json",
+									"expressedAttribute": "lat",
+									"layerOptions": {
+										"fillOpacity": 0.8,
+										"color": "black",
+										"weight": 0.5,
+										"opacity": 1,
+										"minZoom": 7,
+										"maxZoom": 9
+							},
+									"renderOnLoad": true,
+									"techniques": [
+										{
+											"type": "proportional symbol",
+											"classification": "equal interval",
+											"showOnLegend": false,
+											"classes": [
+										2,
+										2
+											]
+										}
+									]
+								},
+								{
+									"roundTo": 0,
+									"name": "cityPointsZoomed",
+									"source": "data/Cities.json",
+									"expressedAttribute": "lat",
+									"layerOptions": {
+										"fillOpacity": 0.8,
+										"color": "black",
+										"weight": 0.5,
+										"opacity": 1,
+										"minZoom": 10,
+										"maxZoom": 10
+							},
+									"renderOnLoad": true,
+									"techniques": [
+										{
+											"type": "proportional symbol",
+											"classification": "equal interval",
+											"showOnLegend": true,
+											"classes": [
+										2,
+										2
+											]
+										}
+									]
+								},
+								{
+									"name": "cityLabels",
+									"source": "data/Cities.json",
+									"expressedAttribute": "city",
+									"displayAttributes": [
+										"city"
+									],
+									"layerOptions": {
+									"fillOpacity": 1,
+									"color": "black",
+									"weight": 0.5,
+									"opacity": 1,
+									"minZoom": 7,
+									"maxZoom": 9
+								},
+									"renderOnLoad": true,
+									"techniques": [
+										{
+											"type": "label",
+											"showOnLegend": false,
+											"size": 11
+										}
+									]
+								},
+								{
+									"name": "cityLabelsZoomed",
+									"source": "data/Cities.json",
+									"expressedAttribute": "city",
+									"displayAttributes": [
+										"city"
+									],
+									"layerOptions": {
+								"fillOpacity": 1,
+								"color": "black",
+								"weight": 0.5,
+								"opacity": 1,
+								"minZoom": 10,
+								"maxZoom": 10
+								},
+									"renderOnLoad": true,
+									"techniques": [
+										{
+											"type": "label",
+											"showOnLegend": false,
+											"size": 11
+										}
+									]
+								}
+							],
 
 						"interactions": {
 							"zoom": {
@@ -554,27 +795,27 @@
 							"legend": false,
 							"resetButton": true,
 							"center": [
-								38.7,
-								-100.5
-							],
-							"zoom": 7,
-							"minZoom": 7,
-							"maxZoom": 10,
-							"maxBounds": [
-								[
-									43,
-									-110
-								],
-								[
-									30,
-									-90
-								]
-							]
+						    38.9,
+						    -100.6
+						  ],
+						  "zoom": 8,
+						  "minZoom": 7,
+						  "maxZoom": 10,
+						  "maxBounds": [
+						    [
+						      43,
+						      -110
+						    ],
+						    [
+						      30,
+						      -90
+						    ]
+						  ]
 						},
 						"baseLayers": [
 								{
 									"name": "Basemap",
-									"source": "https://api.mapbox.com/styles/v1/vinckl/civ2hghwg000y2in0l8mqk343/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+									"source": "https://api.mapbox.com/styles/v1/vinckl/cityvzq8p00882inzeisk6o24/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 								}
 							],
 							"dataLayers": [
@@ -583,24 +824,21 @@
 									"name": "Jacket tweets",
 									"source": "data/Points1.json",
 									"expressedAttribute": "point",
-									"displayAttributes": [
-										"NAME10"
-									],
 									"layerOptions": {
-								"fillOpacity": 0.8,
-								"color": "black",
-								"weight": 0.5,
-								"opacity": 1,
-								"gradient": {
-									"1":"#006d2c",
-									"0.8":"#b2e2e2",
-									"0.6":"#66c2a4",
-									"0.4":"#2ca25f",
-									"0.2":"#edf8fb"
+									"fillOpacity": 0.8,
+									"color": "black",
+									"weight": 0.5,
+									"opacity": 1,
+									"gradient": {
+										"1":"#006d2c",
+										"0.8":"#b2e2e2",
+										"0.6":"#66c2a4",
+										"0.4":"#2ca25f",
+										"0.2":"#edf8fb"
 
 								},
-								"minZoom": 0,
-								"maxZoom": 8
+								"minZoom": 7,
+								"maxZoom": 9
 							},
 									"renderOnLoad": true,
 									"techniques": [
@@ -619,12 +857,12 @@
 										"NAME10"
 									],
 									"layerOptions": {
-								"fillOpacity": 0.8,
-								"color": "black",
-								"weight": 0.5,
-								"opacity": 1,
-								"minZoom": 9,
-								"maxZoom": 11
+										"fillOpacity": 0.8,
+										"color": "black",
+										"weight": 0.5,
+										"opacity": 1,
+										"minZoom": 10,
+										"maxZoom": 10
 							},
 									"renderOnLoad": true,
 									"techniques": [
@@ -639,18 +877,15 @@
 									"name": "Example Map",
 									"source": "data/detailsdata.geojson",
 									"expressedAttribute": "county_t_1",
-									"displayAttributes": [
-										"NAME10"
-									],
 									"layerOptions": {
-								"fillOpacity": 0.8,
-								"color": "black",
-								"weight": 0.2,
-								"opacity": 1,
-								"fillOpacity": 0,
-								"minZoom": 6,
-								"maxZoom": 11,
-								"dashArray": "5, 5"
+										"fillOpacity": 0.8,
+										"color": "black",
+										"weight": 0.2,
+										"opacity": 1,
+										"fillOpacity": 0,
+										"minZoom": 6,
+										"maxZoom": 11,
+										"dashArray": "5, 5"
 								},
 									"renderOnLoad": true,
 									"techniques": [
@@ -661,30 +896,155 @@
 											"classes": "BuGn.5"
 										}
 									]},
-							{
-									"roundTo": 0,
-								"name": "Example Map",
-								"source": "data/maptest.geojson",
-								"expressedAttribute": "city",
-								"displayAttributes": [
-									"NAME10"
-								],
-								"layerOptions": {
-							"fillOpacity": 1,
-							"color": "black",
-							"weight": 0.5,
-							"opacity": 1,
-							"minZoom": 8
-							},
-								"renderOnLoad": true,
-								"techniques": [
 									{
-										"type": "label",
-										"showOnLegend": false,
-										"size": 10
-									}
-								]}
-						],
+										"roundTo": 0,
+										"name": "counties",
+										"source": "data/maptest.geojson",
+										"expressedAttribute": "tweets",
+										"displayAttributes": [
+											"NAME10"
+										],
+										"layerOptions": {
+											"fillOpacity": 1,
+											"color": "black",
+											"weight": 0.5,
+											"opacity": 1,
+											"minZoom": 7,
+											"maxZoom": 9
+									},
+										"renderOnLoad": true,
+										"techniques": [
+											{
+												"type": "label",
+												"showOnLegend": false,
+												"size": 12
+											}
+										]},
+										{
+											"roundTo": 0,
+											"name": "countiesZoomed",
+											"source": "data/maptest.geojson",
+											"expressedAttribute": "tweets",
+											"displayAttributes": [
+												"NAME10"
+											],
+											"layerOptions": {
+												"fillOpacity": 1,
+												"color": "black",
+												"weight": 0.5,
+												"opacity": 0.5,
+												"minZoom": 10,
+												"maxZoom": 11
+										},
+											"renderOnLoad": true,
+											"techniques": [
+												{
+													"type": "label",
+													"showOnLegend": false,
+													"size": 12
+												}
+											]},
+										{
+											"roundTo": 0,
+											"name": "cityPoints",
+											"source": "data/Cities.json",
+											"expressedAttribute": "lat",
+											"layerOptions": {
+												"fillOpacity": 0.8,
+												"color": "black",
+												"weight": 0.5,
+												"opacity": 1,
+												"minZoom": 7,
+												"maxZoom": 9
+									},
+											"renderOnLoad": true,
+											"techniques": [
+												{
+													"type": "proportional symbol",
+													"classification": "equal interval",
+													"showOnLegend": false,
+													"classes": [
+												2,
+												2
+													]
+												}
+											]
+										},
+										{
+											"roundTo": 0,
+											"name": "cityPointsZoomed",
+											"source": "data/Cities.json",
+											"expressedAttribute": "lat",
+											"layerOptions": {
+												"fillOpacity": 0.8,
+												"color": "black",
+												"weight": 0.5,
+												"opacity": 1,
+												"minZoom": 10,
+												"maxZoom": 10
+									},
+											"renderOnLoad": true,
+											"techniques": [
+												{
+													"type": "proportional symbol",
+													"classification": "equal interval",
+													"showOnLegend": true,
+													"classes": [
+												2,
+												2
+													]
+												}
+											]
+										},
+										{
+											"name": "cityLabels",
+											"source": "data/Cities.json",
+											"expressedAttribute": "city",
+											"displayAttributes": [
+												"city"
+											],
+											"layerOptions": {
+											"fillOpacity": 1,
+											"color": "black",
+											"weight": 0.5,
+											"opacity": 1,
+											"minZoom": 7,
+											"maxZoom": 9
+										},
+											"renderOnLoad": true,
+											"techniques": [
+												{
+													"type": "label",
+													"showOnLegend": false,
+													"size": 11
+												}
+											]
+										},
+										{
+											"name": "cityLabelsZoomed",
+											"source": "data/Cities.json",
+											"expressedAttribute": "city",
+											"displayAttributes": [
+												"city"
+											],
+											"layerOptions": {
+										"fillOpacity": 1,
+										"color": "black",
+										"weight": 0.5,
+										"opacity": 1,
+										"minZoom": 10,
+										"maxZoom": 10
+										},
+											"renderOnLoad": true,
+											"techniques": [
+												{
+													"type": "label",
+													"showOnLegend": false,
+													"size": 11
+												}
+											]
+										}
+									],
 							"interactions": {
 								"zoom": {
 									"logging": true,
@@ -721,27 +1081,27 @@
 								"legend": false,
 								"resetButton": true,
 								"center": [
-									38.7,
-									-100.5
-								],
-								"zoom": 7,
-								"minZoom": 7,
-								"maxZoom": 10,
-								"maxBounds": [
-									[
-										43,
-										-110
-									],
-									[
-										30,
-										-90
-									]
-								]
+							    38.9,
+							    -100.6
+							  ],
+							  "zoom": 8,
+							  "minZoom": 7,
+							  "maxZoom": 10,
+							  "maxBounds": [
+							    [
+							      43,
+							      -110
+							    ],
+							    [
+							      30,
+							      -90
+							    ]
+							  ]
 							},
 							"baseLayers": [
 									{
 										"name": "Basemap",
-										"source": "https://api.mapbox.com/styles/v1/vinckl/civ2hghwg000y2in0l8mqk343/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+										"source": "https://api.mapbox.com/styles/v1/vinckl/cityvzq8p00882inzeisk6o24/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 									}
 								],
 								"dataLayers": [
@@ -750,16 +1110,13 @@
 										"name": "Nightlife tweets",
 										"source": "data/countiesall.geojson",
 										"expressedAttribute": "Nightlife",
-										"displayAttributes": [
-											"NAME10"
-										],
 										"layerOptions": {
-									"fillOpacity": 0.8,
-									"color": "black",
-									"weight": 0.5,
-									"opacity": 1,
-									"minZoom": 0,
-									"maxZoom": 8
+											"fillOpacity": 0.8,
+											"color": "black",
+											"weight": 0.5,
+											"opacity": 1,
+											"minZoom": 7,
+											"maxZoom": 9
 								},
 										"renderOnLoad": true,
 										"techniques": [
@@ -770,33 +1127,6 @@
 											}
 										]
 									},
-									{
-											"roundTo": 0,
-										"name": "Example Map",
-										"source": "data/detailsdata.geojson",
-										"expressedAttribute": "county_t_1",
-										"displayAttributes": [
-											"NAME10"
-										],
-										"layerOptions": {
-									"fillOpacity": 0.8,
-									"color": "black",
-									"weight": 0.2,
-									"opacity": 1,
-									"fillOpacity": 0,
-									"minZoom": 6,
-									"maxZoom": 11,
-									"dashArray": "5, 5"
-									},
-										"renderOnLoad": true,
-										"techniques": [
-											{
-												"type": "choropleth",
-												"showOnLegend": false,
-												"classification": "equal interval",
-												"classes": "BuGn.5"
-											}
-										]},
 									{
 											"roundTo": 0,
 										"name": "Nightlife tweets",
@@ -810,8 +1140,8 @@
 									"color": "black",
 									"weight": 0.5,
 									"opacity": 1,
-									"minZoom": 9,
-									"maxZoom": 11
+									"minZoom": 10,
+									"maxZoom": 10
 								},
 										"renderOnLoad": true,
 										"techniques": [
@@ -823,29 +1153,154 @@
 										]
 									},
 									{
-											"roundTo": 0,
-										"name": "Example Map",
+										"roundTo": 0,
+										"name": "counties",
 										"source": "data/maptest.geojson",
-										"expressedAttribute": "city",
+										"expressedAttribute": "tweets",
 										"displayAttributes": [
 											"NAME10"
 										],
 										"layerOptions": {
-									"fillOpacity": 1,
-									"color": "black",
-									"weight": 0.5,
-									"opacity": 1,
-									"minZoom": 8
+											"fillOpacity": 1,
+											"color": "black",
+											"weight": 0.5,
+											"opacity": 1,
+											"minZoom": 7,
+											"maxZoom": 9
 									},
 										"renderOnLoad": true,
 										"techniques": [
 											{
 												"type": "label",
 												"showOnLegend": false,
-												"size": 10
+												"size": 12
 											}
-										]}
-								],
+										]},
+										{
+											"roundTo": 0,
+											"name": "countiesZoomed",
+											"source": "data/maptest.geojson",
+											"expressedAttribute": "tweets",
+											"displayAttributes": [
+												"NAME10"
+											],
+											"layerOptions": {
+												"fillOpacity": 1,
+												"color": "black",
+												"weight": 0.5,
+												"opacity": 0.5,
+												"minZoom": 10,
+												"maxZoom": 11
+										},
+											"renderOnLoad": true,
+											"techniques": [
+												{
+													"type": "label",
+													"showOnLegend": false,
+													"size": 12
+												}
+											]},
+										{
+											"roundTo": 0,
+											"name": "cityPoints",
+											"source": "data/Cities.json",
+											"expressedAttribute": "lat",
+											"layerOptions": {
+												"fillOpacity": 0.8,
+												"color": "black",
+												"weight": 0.5,
+												"opacity": 1,
+												"minZoom": 7,
+												"maxZoom": 9
+									},
+											"renderOnLoad": true,
+											"techniques": [
+												{
+													"type": "proportional symbol",
+													"classification": "equal interval",
+													"showOnLegend": false,
+													"classes": [
+												2,
+												2
+													]
+												}
+											]
+										},
+										{
+											"roundTo": 0,
+											"name": "cityPointsZoomed",
+											"source": "data/Cities.json",
+											"expressedAttribute": "lat",
+											"layerOptions": {
+												"fillOpacity": 0.8,
+												"color": "black",
+												"weight": 0.5,
+												"opacity": 1,
+												"minZoom": 10,
+												"maxZoom": 10
+									},
+											"renderOnLoad": true,
+											"techniques": [
+												{
+													"type": "proportional symbol",
+													"classification": "equal interval",
+													"showOnLegend": true,
+													"classes": [
+												2,
+												2
+													]
+												}
+											]
+										},
+										{
+											"name": "cityLabels",
+											"source": "data/Cities.json",
+											"expressedAttribute": "city",
+											"displayAttributes": [
+												"city"
+											],
+											"layerOptions": {
+											"fillOpacity": 1,
+											"color": "black",
+											"weight": 0.5,
+											"opacity": 1,
+											"minZoom": 7,
+											"maxZoom": 9
+										},
+											"renderOnLoad": true,
+											"techniques": [
+												{
+													"type": "label",
+													"showOnLegend": false,
+													"size": 11
+												}
+											]
+										},
+										{
+											"name": "cityLabelsZoomed",
+											"source": "data/Cities.json",
+											"expressedAttribute": "city",
+											"displayAttributes": [
+												"city"
+											],
+											"layerOptions": {
+										"fillOpacity": 1,
+										"color": "black",
+										"weight": 0.5,
+										"opacity": 1,
+										"minZoom": 10,
+										"maxZoom": 10
+										},
+											"renderOnLoad": true,
+											"techniques": [
+												{
+													"type": "label",
+													"showOnLegend": false,
+													"size": 11
+												}
+											]
+										}
+									],
 								"interactions": {
 									"zoom": {
 										"logging": true,
@@ -885,27 +1340,27 @@
 									"legend": false,
 									"resetButton": true,
 									"center": [
-										38.7,
-										-100.5
-									],
-									"zoom": 7,
-									"minZoom": 7,
-									"maxZoom": 10,
-									"maxBounds": [
-										[
-											43,
-											-110
-										],
-										[
-											30,
-											-90
-										]
-									]
+								    38.9,
+								    -100.6
+								  ],
+								  "zoom": 8,
+								  "minZoom": 7,
+								  "maxZoom": 10,
+								  "maxBounds": [
+								    [
+								      43,
+								      -110
+								    ],
+								    [
+								      30,
+								      -90
+								    ]
+								  ]
 								},
 								"baseLayers": [
 										{
 											"name": "Basemap",
-											"source": "https://api.mapbox.com/styles/v1/vinckl/civ2hghwg000y2in0l8mqk343/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+											"source": "https://api.mapbox.com/styles/v1/vinckl/cityvzq8p00882inzeisk6o24/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 										}
 									],
 									"dataLayers": [
@@ -914,16 +1369,13 @@
 											"name": "Shoes tweets",
 											"source": "data/countiesall.geojson",
 											"expressedAttribute": "Shoes",
-											"displayAttributes": [
-												"NAME10"
-											],
 											"layerOptions": {
-										"fillOpacity": 0.8,
-										"color": "black",
-										"weight": 0.5,
-										"opacity": 1,
-										"minZoom": 0,
-										"maxZoom": 8
+											"fillOpacity": 0.8,
+											"color": "black",
+											"weight": 0.5,
+											"opacity": 1,
+											"minZoom": 7,
+											"maxZoom": 9
 									},
 											"renderOnLoad": true,
 											"techniques": [
@@ -939,16 +1391,13 @@
 											"name": "Nightlife tweets",
 											"source": "data/detailsdata.geojson",
 											"expressedAttribute": "county_t_5",
-											"displayAttributes": [
-												"NAME10"
-											],
 											"layerOptions": {
-										"fillOpacity": 0.8,
-										"color": "black",
-										"weight": 0.5,
-										"opacity": 1,
-										"minZoom": 9,
-										"maxZoom": 11
+												"fillOpacity": 0.8,
+												"color": "black",
+												"weight": 0.5,
+												"opacity": 1,
+												"minZoom": 10,
+												"maxZoom": 10
 									},
 											"renderOnLoad": true,
 											"techniques": [
@@ -959,57 +1408,156 @@
 												}
 											]
 										},
-										{
+
+											{
 												"roundTo": 0,
-											"name": "Example Map",
-											"source": "data/detailsdata.geojson",
-											"expressedAttribute": "county_t_1",
-											"displayAttributes": [
-												"NAME10"
-											],
-											"layerOptions": {
-										"fillOpacity": 0.8,
-										"color": "black",
-										"weight": 0.2,
-										"opacity": 1,
-										"fillOpacity": 0,
-										"minZoom": 6,
-										"maxZoom": 11,
-										"dashArray": "5, 5"
-										},
-											"renderOnLoad": true,
-											"techniques": [
+												"name": "counties",
+												"source": "data/maptest.geojson",
+												"expressedAttribute": "tweets",
+												"displayAttributes": [
+													"NAME10"
+												],
+												"layerOptions": {
+													"fillOpacity": 1,
+													"color": "black",
+													"weight": 0.5,
+													"opacity": 1,
+													"minZoom": 7,
+													"maxZoom": 9
+											},
+												"renderOnLoad": true,
+												"techniques": [
+													{
+														"type": "label",
+														"showOnLegend": false,
+														"size": 12
+													}
+												]},
 												{
-													"type": "choropleth",
-													"showOnLegend": false,
-													"classification": "equal interval",
-													"classes": "BuGn.5"
-												}
-											]},
-										{
-												"roundTo": 0,
-											"name": "Example Map",
-											"source": "data/maptest.geojson",
-											"expressedAttribute": "city",
-											"displayAttributes": [
-												"NAME10"
-											],
-											"layerOptions": {
-										"fillOpacity": 1,
-										"color": "black",
-										"weight": 0.5,
-										"opacity": 1,
-										"minZoom": 8
-										},
-											"renderOnLoad": true,
-											"techniques": [
+													"roundTo": 0,
+													"name": "countiesZoomed",
+													"source": "data/maptest.geojson",
+													"expressedAttribute": "tweets",
+													"displayAttributes": [
+														"NAME10"
+													],
+													"layerOptions": {
+														"fillOpacity": 1,
+														"color": "black",
+														"weight": 0.5,
+														"opacity": 0.5,
+														"minZoom": 10,
+														"maxZoom": 11
+												},
+													"renderOnLoad": true,
+													"techniques": [
+														{
+															"type": "label",
+															"showOnLegend": false,
+															"size": 12
+														}
+													]},
 												{
-													"type": "label",
-													"showOnLegend": false,
-													"size": 10
+													"roundTo": 0,
+													"name": "cityPoints",
+													"source": "data/Cities.json",
+													"expressedAttribute": "lat",
+													"layerOptions": {
+														"fillOpacity": 0.8,
+														"color": "black",
+														"weight": 0.5,
+														"opacity": 1,
+														"minZoom": 7,
+														"maxZoom": 9
+											},
+													"renderOnLoad": true,
+													"techniques": [
+														{
+															"type": "proportional symbol",
+															"classification": "equal interval",
+															"showOnLegend": false,
+															"classes": [
+														2,
+														2
+															]
+														}
+													]
+												},
+												{
+													"roundTo": 0,
+													"name": "cityPointsZoomed",
+													"source": "data/Cities.json",
+													"expressedAttribute": "lat",
+													"layerOptions": {
+														"fillOpacity": 0.8,
+														"color": "black",
+														"weight": 0.5,
+														"opacity": 1,
+														"minZoom": 10,
+														"maxZoom": 10
+											},
+													"renderOnLoad": true,
+													"techniques": [
+														{
+															"type": "proportional symbol",
+															"classification": "equal interval",
+															"showOnLegend": true,
+															"classes": [
+														2,
+														2
+															]
+														}
+													]
+												},
+												{
+													"name": "cityLabels",
+													"source": "data/Cities.json",
+													"expressedAttribute": "city",
+													"displayAttributes": [
+														"city"
+													],
+													"layerOptions": {
+													"fillOpacity": 1,
+													"color": "black",
+													"weight": 0.5,
+													"opacity": 1,
+													"minZoom": 7,
+													"maxZoom": 9
+												},
+													"renderOnLoad": true,
+													"techniques": [
+														{
+															"type": "label",
+															"showOnLegend": false,
+															"size": 11
+														}
+													]
+												},
+												{
+													"name": "cityLabelsZoomed",
+													"source": "data/Cities.json",
+													"expressedAttribute": "city",
+													"displayAttributes": [
+														"city"
+													],
+													"layerOptions": {
+												"fillOpacity": 1,
+												"color": "black",
+												"weight": 0.5,
+												"opacity": 1,
+												"minZoom": 10,
+												"maxZoom": 10
+												},
+													"renderOnLoad": true,
+													"techniques": [
+														{
+															"type": "label",
+															"showOnLegend": false,
+															"size": 11
+														}
+													]
 												}
-											]}
-										],
+											],
 									"interactions": {
 										"zoom": {
 											"logging": true,
@@ -1046,22 +1594,22 @@
 										"legend": false,
 										"resetButton": true,
 										"center": [
-											38.7,
-											-100.5
-										],
-										"zoom": 7,
-										"minZoom": 7,
-										"maxZoom": 10,
-										"maxBounds": [
-											[
-												43,
-												-110
-											],
-											[
-												30,
-												-90
-											]
-										]
+									    38.9,
+									    -100.6
+									  ],
+									  "zoom": 8,
+									  "minZoom": 7,
+									  "maxZoom": 10,
+									  "maxBounds": [
+									    [
+									      43,
+									      -110
+									    ],
+									    [
+									      30,
+									      -90
+									    ]
+									  ]
 									},
 									"baseLayers": [
 											{
@@ -1091,8 +1639,8 @@
 												"0.2":"#edf8fb"
 
 											},
-											"minZoom": 0,
-											"maxZoom": 8
+											"minZoom": 7,
+											"maxZoom": 9
 										},
 												"renderOnLoad": true,
 												"techniques": [
@@ -1115,8 +1663,8 @@
 										"color": "black",
 										"weight": 0.5,
 										"opacity": 1,
-										"minZoom": 9,
-										"maxZoom": 11
+										"minZoom": 10,
+										"maxZoom": 10
 									},
 											"renderOnLoad": true,
 											"techniques": [
@@ -1127,56 +1675,154 @@
 											]
 										},
 										{
-												"roundTo": 0,
-											"name": "Example Map",
-											"source": "data/detailsdata.geojson",
-											"expressedAttribute": "county_t_1",
-											"displayAttributes": [
-												"NAME10"
-											],
-											"layerOptions": {
-										"fillOpacity": 0.8,
-										"color": "black",
-										"weight": 0.2,
-										"opacity": 1,
-										"fillOpacity": 0,
-										"minZoom": 6,
-										"maxZoom": 11,
-										"dashArray": "5, 5"
+										  "roundTo": 0,
+										  "name": "counties",
+										  "source": "data/maptest.geojson",
+										  "expressedAttribute": "tweets",
+										  "displayAttributes": [
+										    "NAME10"
+										  ],
+										  "layerOptions": {
+										    "fillOpacity": 1,
+										    "color": "black",
+										    "weight": 0.5,
+										    "opacity": 1,
+										    "minZoom": 7,
+										    "maxZoom": 9
 										},
-											"renderOnLoad": true,
-											"techniques": [
-												{
-													"type": "choropleth",
-													"showOnLegend": false,
-													"classification": "equal interval",
-													"classes": "BuGn.5"
-												}
-											]},
-									{
-											"roundTo": 0,
-										"name": "Example Map",
-										"source": "data/maptest.geojson",
-										"expressedAttribute": "city",
-										"displayAttributes": [
-											"NAME10"
+										  "renderOnLoad": true,
+										  "techniques": [
+										    {
+										      "type": "label",
+										      "showOnLegend": false,
+										      "size": 12
+										    }
+										  ]},
+										  {
+										    "roundTo": 0,
+										    "name": "countiesZoomed",
+										    "source": "data/maptest.geojson",
+										    "expressedAttribute": "tweets",
+										    "displayAttributes": [
+										      "NAME10"
+										    ],
+										    "layerOptions": {
+										      "fillOpacity": 1,
+										      "color": "black",
+										      "weight": 0.5,
+										      "opacity": 0.5,
+										      "minZoom": 10,
+										      "maxZoom": 11
+										  },
+										    "renderOnLoad": true,
+										    "techniques": [
+										      {
+										        "type": "label",
+										        "showOnLegend": false,
+										        "size": 12
+										      }
+										    ]},
+										  {
+										    "roundTo": 0,
+										    "name": "cityPoints",
+										    "source": "data/Cities.json",
+										    "expressedAttribute": "lat",
+										    "layerOptions": {
+										      "fillOpacity": 0.8,
+										      "color": "black",
+										      "weight": 0.5,
+										      "opacity": 1,
+										      "minZoom": 7,
+										      "maxZoom": 9
+										},
+										    "renderOnLoad": true,
+										    "techniques": [
+										      {
+										        "type": "proportional symbol",
+										        "classification": "equal interval",
+										        "showOnLegend": false,
+										        "classes": [
+										      2,
+										      2
+										        ]
+										      }
+										    ]
+										  },
+										  {
+										    "roundTo": 0,
+										    "name": "cityPointsZoomed",
+										    "source": "data/Cities.json",
+										    "expressedAttribute": "lat",
+										    "layerOptions": {
+										      "fillOpacity": 0.8,
+										      "color": "black",
+										      "weight": 0.5,
+										      "opacity": 1,
+										      "minZoom": 10,
+										      "maxZoom": 10
+										},
+										    "renderOnLoad": true,
+										    "techniques": [
+										      {
+										        "type": "proportional symbol",
+										        "classification": "equal interval",
+										        "showOnLegend": true,
+										        "classes": [
+										      2,
+										      2
+										        ]
+										      }
+										    ]
+										  },
+										  {
+										    "name": "cityLabels",
+										    "source": "data/Cities.json",
+										    "expressedAttribute": "city",
+										    "displayAttributes": [
+										      "city"
+										    ],
+										    "layerOptions": {
+										    "fillOpacity": 1,
+										    "color": "black",
+										    "weight": 0.5,
+										    "opacity": 1,
+										    "minZoom": 7,
+										    "maxZoom": 9
+										  },
+										    "renderOnLoad": true,
+										    "techniques": [
+										      {
+										        "type": "label",
+										        "showOnLegend": false,
+										        "size": 11
+										      }
+										    ]
+										  },
+										  {
+										    "name": "cityLabelsZoomed",
+										    "source": "data/Cities.json",
+										    "expressedAttribute": "city",
+										    "displayAttributes": [
+										      "city"
+										    ],
+										    "layerOptions": {
+										  "fillOpacity": 1,
+										  "color": "black",
+										  "weight": 0.5,
+										  "opacity": 1,
+										  "minZoom": 10,
+										  "maxZoom": 10
+										  },
+										    "renderOnLoad": true,
+										    "techniques": [
+										      {
+										        "type": "label",
+										        "showOnLegend": false,
+										        "size": 11
+										      }
+										    ]
+										  }
 										],
-										"layerOptions": {
-									"fillOpacity": 1,
-									"color": "black",
-									"weight": 0.5,
-									"opacity": 1,
-									"minZoom": 8
-									},
-										"renderOnLoad": true,
-										"techniques": [
-											{
-												"type": "label",
-												"showOnLegend": false,
-												"size": 10
-											}
-										]}
-								],
 										"interactions": {
 											"zoom": {
 												"logging": true,
@@ -1213,27 +1859,27 @@
 											"legend": false,
 											"resetButton": true,
 											"center": [
-												38.7,
-												-100.5
-											],
-											"zoom": 7,
-											"minZoom": 7,
-											"maxZoom": 10,
-											"maxBounds": [
-												[
-													43,
-													-110
-												],
-												[
-													30,
-													-90
-												]
-											]
+										    38.9,
+										    -100.6
+										  ],
+										  "zoom": 8,
+										  "minZoom": 7,
+										  "maxZoom": 10,
+										  "maxBounds": [
+										    [
+										      43,
+										      -110
+										    ],
+										    [
+										      30,
+										      -90
+										    ]
+										  ]
 										},
 										"baseLayers": [
 												{
 													"name": "Basemap",
-													"source": "https://api.mapbox.com/styles/v1/vinckl/civ2hghwg000y2in0l8mqk343/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+													"source": "https://api.mapbox.com/styles/v1/vinckl/cityvzq8p00882inzeisk6o24/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 												}
 											],
 											"dataLayers": [
@@ -1242,16 +1888,13 @@
 													"name": "Baseball tweets",
 													"source": "data/countiesall.geojson",
 													"expressedAttribute": "Baseball",
-													"displayAttributes": [
-														"NAME10"
-													],
 													"layerOptions": {
 												"fillOpacity": 0.8,
 												"color": "black",
 												"weight": 0.5,
 												"opacity": 1,
-												"minZoom": 0,
-												"maxZoom": 8
+												"minZoom": 7,
+												"maxZoom": 9
 											},
 													"renderOnLoad": true,
 													"techniques": [
@@ -1274,16 +1917,13 @@
 												"name": "Hamburger tweets",
 												"source": "data/detailsdata.geojson",
 												"expressedAttribute": "county_t_7",
-												"displayAttributes": [
-													"NAME10"
-												],
 												"layerOptions": {
 											"fillOpacity": 0.8,
 											"color": "black",
 											"weight": 0.5,
 											"opacity": 1,
-											"minZoom": 9,
-											"maxZoom": 11
+											"minZoom": 10,
+											"maxZoom": 10
 										},
 												"renderOnLoad": true,
 												"techniques": [
@@ -1301,57 +1941,154 @@
 												]
 											},
 											{
-													"roundTo": 0,
-												"name": "Example Map",
-												"source": "data/detailsdata.geojson",
-												"expressedAttribute": "county_t_1",
-												"displayAttributes": [
-													"NAME10"
-												],
-												"layerOptions": {
-											"fillOpacity": 0.8,
-											"color": "black",
-											"weight": 0.2,
-											"opacity": 1,
-											"fillOpacity": 0,
-											"minZoom": 6,
-											"maxZoom": 11,
-											"dashArray": "5, 5"
+											  "roundTo": 0,
+											  "name": "counties",
+											  "source": "data/maptest.geojson",
+											  "expressedAttribute": "tweets",
+											  "displayAttributes": [
+											    "NAME10"
+											  ],
+											  "layerOptions": {
+											    "fillOpacity": 1,
+											    "color": "black",
+											    "weight": 0.5,
+											    "opacity": 1,
+											    "minZoom": 7,
+											    "maxZoom": 9
 											},
-												"renderOnLoad": true,
-												"techniques": [
-													{
-														"type": "choropleth",
-														"showOnLegend": false,
-														"classification": "equal interval",
-														"classes": "BuGn.5"
-													}
-												]},
-											{
-													"roundTo": 0,
-												"name": "Example Map",
-												"source": "data/maptest.geojson",
-												"expressedAttribute": "city",
-												"displayAttributes": [
-													"NAME10"
-												],
-												"layerOptions": {
-											"fillOpacity": 1,
-											"color": "black",
-											"weight": 0.5,
-											"opacity": 1,
-											"minZoom": 8
+											  "renderOnLoad": true,
+											  "techniques": [
+											    {
+											      "type": "label",
+											      "showOnLegend": false,
+											      "size": 12
+											    }
+											  ]},
+											  {
+											    "roundTo": 0,
+											    "name": "countiesZoomed",
+											    "source": "data/maptest.geojson",
+											    "expressedAttribute": "tweets",
+											    "displayAttributes": [
+											      "NAME10"
+											    ],
+											    "layerOptions": {
+											      "fillOpacity": 1,
+											      "color": "black",
+											      "weight": 0.5,
+											      "opacity": 0.5,
+											      "minZoom": 10,
+											      "maxZoom": 11
+											  },
+											    "renderOnLoad": true,
+											    "techniques": [
+											      {
+											        "type": "label",
+											        "showOnLegend": false,
+											        "size": 12
+											      }
+											    ]},
+											  {
+											    "roundTo": 0,
+											    "name": "cityPoints",
+											    "source": "data/Cities.json",
+											    "expressedAttribute": "lat",
+											    "layerOptions": {
+											      "fillOpacity": 0.8,
+											      "color": "black",
+											      "weight": 0.5,
+											      "opacity": 1,
+											      "minZoom": 7,
+											      "maxZoom": 9
 											},
-												"renderOnLoad": true,
-												"techniques": [
-													{
-														"type": "label",
-														"showOnLegend": false,
-														"size": 10
-													}
-												]}
-										],
-
+											    "renderOnLoad": true,
+											    "techniques": [
+											      {
+											        "type": "proportional symbol",
+											        "classification": "equal interval",
+											        "showOnLegend": false,
+											        "classes": [
+											      2,
+											      2
+											        ]
+											      }
+											    ]
+											  },
+											  {
+											    "roundTo": 0,
+											    "name": "cityPointsZoomed",
+											    "source": "data/Cities.json",
+											    "expressedAttribute": "lat",
+											    "layerOptions": {
+											      "fillOpacity": 0.8,
+											      "color": "black",
+											      "weight": 0.5,
+											      "opacity": 1,
+											      "minZoom": 10,
+											      "maxZoom": 10
+											},
+											    "renderOnLoad": true,
+											    "techniques": [
+											      {
+											        "type": "proportional symbol",
+											        "classification": "equal interval",
+											        "showOnLegend": true,
+											        "classes": [
+											      2,
+											      2
+											        ]
+											      }
+											    ]
+											  },
+											  {
+											    "name": "cityLabels",
+											    "source": "data/Cities.json",
+											    "expressedAttribute": "city",
+											    "displayAttributes": [
+											      "city"
+											    ],
+											    "layerOptions": {
+											    "fillOpacity": 1,
+											    "color": "black",
+											    "weight": 0.5,
+											    "opacity": 1,
+											    "minZoom": 7,
+											    "maxZoom": 9
+											  },
+											    "renderOnLoad": true,
+											    "techniques": [
+											      {
+											        "type": "label",
+											        "showOnLegend": false,
+											        "size": 11
+											      }
+											    ]
+											  },
+											  {
+											    "name": "cityLabelsZoomed",
+											    "source": "data/Cities.json",
+											    "expressedAttribute": "city",
+											    "displayAttributes": [
+											      "city"
+											    ],
+											    "layerOptions": {
+											  "fillOpacity": 1,
+											  "color": "black",
+											  "weight": 0.5,
+											  "opacity": 1,
+											  "minZoom": 10,
+											  "maxZoom": 10
+											  },
+											    "renderOnLoad": true,
+											    "techniques": [
+											      {
+											        "type": "label",
+											        "showOnLegend": false,
+											        "size": 11
+											      }
+											    ]
+											  }
+											],
 											"interactions": {
 												"zoom": {
 													"logging": true,
@@ -1385,25 +2122,25 @@
 											"page": 12,
 											"library": "Leaflet",
 											"mapOptions": {
-												"legend": false,
+												"legend": true,
 												"resetButton": true,
 												"center": [
-													38.7,
-													-100.5
-												],
-												"zoom": 7,
-												"minZoom": 7,
-												"maxZoom": 10,
-												"maxBounds": [
-													[
-														43,
-														-110
-													],
-													[
-														30,
-														-90
-													]
-												]
+											    38.9,
+											    -100.6
+											  ],
+											  "zoom": 8,
+											  "minZoom": 7,
+											  "maxZoom": 10,
+											  "maxBounds": [
+											    [
+											      43,
+											      -110
+											    ],
+											    [
+											      30,
+											      -90
+											    ]
+											  ]
 											},
 											"baseLayers": [
 													{
@@ -1414,46 +2151,15 @@
 												"dataLayers": [
 													{
 															"roundTo": 0,
-														"name": "Hamburger tweets",
-														"source": "data/Cities.json",
-														"expressedAttribute": "lat",
-														"displayAttributes": [
-															"city"
-														],
-														"layerOptions": {
-													"fillOpacity": 0.8,
-													"color": "black",
-													"weight": 0.5,
-													"opacity": 1,
-													"minZoom": 8
-												},
-														"renderOnLoad": true,
-														"techniques": [
-															{
-																"type": "proportional symbol",
-																"showOnLegend": false,
-																"classification": "equal interval",
-																"classes": [
-															1,
-															1
-																]
-															}
-														]
-													},
-													{
-															"roundTo": 0,
 														"name": "Hiking tweets",
 														"source": "data/countiesall.geojson",
 														"expressedAttribute": "Hiking",
-														"displayAttributes": [
-															"NAME10"
-														],
 														"layerOptions": {
 													"fillOpacity": 0.8,
 													"color": "black",
 													"weight": 0.5,
 													"opacity": 1,
-													"minZoom": 0,
+													"minZoom": 7,
 													"maxZoom": 9
 												},
 														"renderOnLoad": true,
@@ -1479,7 +2185,7 @@
 													"weight": 0.2,
 													"opacity": 1,
 													"minZoom": 10,
-													"maxZoom": 11,
+													"maxZoom": 10,
 													"dashArray": "5, 5"
 													},
 														"renderOnLoad": true,
@@ -1490,54 +2196,155 @@
 																"classes": "BuGn.5"
 															}
 														]},
-													{
-															"roundTo": 0,
-														"name": "Example Map",
-														"source": "data/maptest.geojson",
-														"expressedAttribute": "tweets",
-														"displayAttributes": [
-															"NAME10"
-														],
-														"layerOptions": {
-													"fillOpacity": 1,
-													"color": "black",
-													"weight": 0.5,
-													"opacity": 1,
-													"minZoom": 8
-													},
-														"renderOnLoad": true,
-														"techniques": [
-															{
-																"type": "label",
-																"showOnLegend": false,
-																"size": 10
-															}
-														]},
 														{
-																"roundTo": 0,
-															"name": "Example Map",
-															"source": "data/Cities.json",
-															"expressedAttribute": "city",
-															"displayAttributes": [
-																"city"
-															],
-															"layerOptions": {
-														"fillOpacity": 1,
-														"color": "black",
-														"weight": 0.5,
-														"opacity": 1,
-														"minZoom": 8
+														  "roundTo": 0,
+														  "name": "counties",
+														  "source": "data/maptest.geojson",
+														  "expressedAttribute": "tweets",
+														  "displayAttributes": [
+														    "NAME10"
+														  ],
+														  "layerOptions": {
+														    "fillOpacity": 1,
+														    "color": "black",
+														    "weight": 0.5,
+														    "opacity": 1,
+														    "minZoom": 7,
+														    "maxZoom": 9
 														},
-															"renderOnLoad": true,
-															"techniques": [
-																{
-																	"type": "label",
-																	"showOnLegend": false,
-																	"size": 10
-																}
-															]}
-
-												],
+														  "renderOnLoad": true,
+														  "techniques": [
+														    {
+														      "type": "label",
+														      "showOnLegend": false,
+														      "size": 12
+														    }
+														  ]},
+														  {
+														    "roundTo": 0,
+														    "name": "countiesZoomed",
+														    "source": "data/maptest.geojson",
+														    "expressedAttribute": "tweets",
+														    "displayAttributes": [
+														      "NAME10"
+														    ],
+														    "layerOptions": {
+														      "fillOpacity": 1,
+														      "color": "black",
+														      "weight": 0.5,
+														      "opacity": 0.5,
+														      "minZoom": 10,
+														      "maxZoom": 11
+														  },
+														    "renderOnLoad": true,
+														    "techniques": [
+														      {
+														        "type": "label",
+														        "showOnLegend": false,
+														        "size": 12
+														      }
+														    ]},
+														  {
+														    "roundTo": 0,
+														    "name": "cityPoints",
+														    "source": "data/Cities.json",
+														    "expressedAttribute": "lat",
+														    "layerOptions": {
+														      "fillOpacity": 0.8,
+														      "color": "black",
+														      "weight": 0.5,
+														      "opacity": 1,
+														      "minZoom": 7,
+														      "maxZoom": 9
+														},
+														    "renderOnLoad": true,
+														    "techniques": [
+														      {
+														        "type": "proportional symbol",
+														        "classification": "equal interval",
+														        "showOnLegend": false,
+														        "classes": [
+														      2,
+														      2
+														        ]
+														      }
+														    ]
+														  },
+														  {
+														    "roundTo": 0,
+														    "name": "cityPointsZoomed",
+														    "source": "data/Cities.json",
+														    "expressedAttribute": "lat",
+														    "layerOptions": {
+														      "fillOpacity": 0.8,
+														      "color": "black",
+														      "weight": 0.5,
+														      "opacity": 1,
+														      "minZoom": 10,
+														      "maxZoom": 10
+														},
+														    "renderOnLoad": true,
+														    "techniques": [
+														      {
+														        "type": "proportional symbol",
+														        "classification": "equal interval",
+														        "showOnLegend": true,
+														        "classes": [
+														      2,
+														      2
+														        ]
+														      }
+														    ]
+														  },
+														  {
+														    "name": "cityLabels",
+														    "source": "data/Cities.json",
+														    "expressedAttribute": "city",
+														    "displayAttributes": [
+														      "city"
+														    ],
+														    "layerOptions": {
+														    "fillOpacity": 1,
+														    "color": "black",
+														    "weight": 0.5,
+														    "opacity": 1,
+														    "minZoom": 7,
+														    "maxZoom": 9
+														  },
+														    "renderOnLoad": true,
+														    "techniques": [
+														      {
+														        "type": "label",
+														        "showOnLegend": false,
+														        "size": 11
+														      }
+														    ]
+														  },
+														  {
+														    "name": "cityLabelsZoomed",
+														    "source": "data/Cities.json",
+														    "expressedAttribute": "city",
+														    "displayAttributes": [
+														      "city"
+														    ],
+														    "layerOptions": {
+														  "fillOpacity": 1,
+														  "color": "black",
+														  "weight": 0.5,
+														  "opacity": 1,
+														  "minZoom": 10,
+														  "maxZoom": 10
+														  },
+														    "renderOnLoad": true,
+														    "techniques": [
+														      {
+														        "type": "label",
+														        "showOnLegend": false,
+														        "size": 11
+														      }
+														    ]
+														  }
+														],
 
 												"interactions": {
 													"zoom": {
@@ -1578,27 +2385,27 @@
 													"legend": false,
 													"resetButton": true,
 													"center": [
-														38.7,
-														-100.5
-													],
-													"zoom": 7,
-													"minZoom": 7,
-													"maxZoom": 10,
-													"maxBounds": [
-														[
-															43,
-															-110
-														],
-														[
-															30,
-															-90
-														]
-													]
+												    38.9,
+												    -100.6
+												  ],
+												  "zoom": 8,
+												  "minZoom": 7,
+												  "maxZoom": 10,
+												  "maxBounds": [
+												    [
+												      43,
+												      -110
+												    ],
+												    [
+												      30,
+												      -90
+												    ]
+												  ]
 												},
 												"baseLayers": [
 														{
 															"name": "Basemap",
-															"source": "https://api.mapbox.com/styles/v1/vinckl/civ2hghwg000y2in0l8mqk343/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+															"source": "https://api.mapbox.com/styles/v1/vinckl/cityvzq8p00882inzeisk6o24/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 														}
 													],
 													"dataLayers": [
@@ -1607,9 +2414,6 @@
 															"name": "Soccer tweets",
 															"source": "data/Points3.json",
 															"expressedAttribute": "point",
-															"displayAttributes": [
-																"NAME10"
-															],
 															"layerOptions": {
 														"fillOpacity": 0.8,
 														"color": "black",
@@ -1623,8 +2427,8 @@
 															"0.2":"#edf8fb"
 
 														},
-														"minZoom": 0,
-														"maxZoom": 8
+														"minZoom": 7,
+														"maxZoom": 9
 													},
 															"renderOnLoad": true,
 															"techniques": [
@@ -1639,16 +2443,13 @@
 															"name": "Jacket tweets",
 															"source": "data/Points3.json",
 															"expressedAttribute": "point",
-															"displayAttributes": [
-																"NAME10"
-															],
 															"layerOptions": {
 														"fillOpacity": 0.8,
 														"color": "black",
 														"weight": 0.5,
 														"opacity": 1,
-														"minZoom": 9,
-														"maxZoom": 11
+														"minZoom": 10,
+														"maxZoom": 10
 													},
 															"renderOnLoad": true,
 															"techniques": [
@@ -1659,56 +2460,154 @@
 															]
 														},
 														{
-																"roundTo": 0,
-															"name": "Example Map",
-															"source": "data/detailsdata.geojson",
-															"expressedAttribute": "county_t_1",
-															"displayAttributes": [
-																"NAME10"
-															],
-															"layerOptions": {
-														"fillOpacity": 0.8,
-														"color": "black",
-														"weight": 0.2,
-														"opacity": 1,
-														"fillOpacity": 0,
-														"minZoom": 6,
-														"maxZoom": 11,
-														"dashArray": "5, 5"
+														  "roundTo": 0,
+														  "name": "counties",
+														  "source": "data/maptest.geojson",
+														  "expressedAttribute": "tweets",
+														  "displayAttributes": [
+														    "NAME10"
+														  ],
+														  "layerOptions": {
+														    "fillOpacity": 1,
+														    "color": "black",
+														    "weight": 0.5,
+														    "opacity": 1,
+														    "minZoom": 7,
+														    "maxZoom": 9
 														},
-															"renderOnLoad": true,
-															"techniques": [
-																{
-																	"type": "choropleth",
-																	"showOnLegend": false,
-																	"classification": "equal interval",
-																	"classes": "BuGn.5"
-																}
-															]},
-													{
-															"roundTo": 0,
-														"name": "Example Map",
-														"source": "data/maptest.geojson",
-														"expressedAttribute": "city",
-														"displayAttributes": [
-															"NAME10"
+														  "renderOnLoad": true,
+														  "techniques": [
+														    {
+														      "type": "label",
+														      "showOnLegend": false,
+														      "size": 12
+														    }
+														  ]},
+														  {
+														    "roundTo": 0,
+														    "name": "countiesZoomed",
+														    "source": "data/maptest.geojson",
+														    "expressedAttribute": "tweets",
+														    "displayAttributes": [
+														      "NAME10"
+														    ],
+														    "layerOptions": {
+														      "fillOpacity": 1,
+														      "color": "black",
+														      "weight": 0.5,
+														      "opacity": 0.5,
+														      "minZoom": 10,
+														      "maxZoom": 11
+														  },
+														    "renderOnLoad": true,
+														    "techniques": [
+														      {
+														        "type": "label",
+														        "showOnLegend": false,
+														        "size": 12
+														      }
+														    ]},
+														  {
+														    "roundTo": 0,
+														    "name": "cityPoints",
+														    "source": "data/Cities.json",
+														    "expressedAttribute": "lat",
+														    "layerOptions": {
+														      "fillOpacity": 0.8,
+														      "color": "black",
+														      "weight": 0.5,
+														      "opacity": 1,
+														      "minZoom": 7,
+														      "maxZoom": 9
+														},
+														    "renderOnLoad": true,
+														    "techniques": [
+														      {
+														        "type": "proportional symbol",
+														        "classification": "equal interval",
+														        "showOnLegend": false,
+														        "classes": [
+														      2,
+														      2
+														        ]
+														      }
+														    ]
+														  },
+														  {
+														    "roundTo": 0,
+														    "name": "cityPointsZoomed",
+														    "source": "data/Cities.json",
+														    "expressedAttribute": "lat",
+														    "layerOptions": {
+														      "fillOpacity": 0.8,
+														      "color": "black",
+														      "weight": 0.5,
+														      "opacity": 1,
+														      "minZoom": 10,
+														      "maxZoom": 10
+														},
+														    "renderOnLoad": true,
+														    "techniques": [
+														      {
+														        "type": "proportional symbol",
+														        "classification": "equal interval",
+														        "showOnLegend": true,
+														        "classes": [
+														      2,
+														      2
+														        ]
+														      }
+														    ]
+														  },
+														  {
+														    "name": "cityLabels",
+														    "source": "data/Cities.json",
+														    "expressedAttribute": "city",
+														    "displayAttributes": [
+														      "city"
+														    ],
+														    "layerOptions": {
+														    "fillOpacity": 1,
+														    "color": "black",
+														    "weight": 0.5,
+														    "opacity": 1,
+														    "minZoom": 7,
+														    "maxZoom": 9
+														  },
+														    "renderOnLoad": true,
+														    "techniques": [
+														      {
+														        "type": "label",
+														        "showOnLegend": false,
+														        "size": 11
+														      }
+														    ]
+														  },
+														  {
+														    "name": "cityLabelsZoomed",
+														    "source": "data/Cities.json",
+														    "expressedAttribute": "city",
+														    "displayAttributes": [
+														      "city"
+														    ],
+														    "layerOptions": {
+														  "fillOpacity": 1,
+														  "color": "black",
+														  "weight": 0.5,
+														  "opacity": 1,
+														  "minZoom": 10,
+														  "maxZoom": 10
+														  },
+														    "renderOnLoad": true,
+														    "techniques": [
+														      {
+														        "type": "label",
+														        "showOnLegend": false,
+														        "size": 11
+														      }
+														    ]
+														  }
 														],
-														"layerOptions": {
-													"fillOpacity": 1,
-													"color": "black",
-													"weight": 0.5,
-													"opacity": 1,
-													"minZoom": 8
-													},
-														"renderOnLoad": true,
-														"techniques": [
-															{
-																"type": "label",
-																"showOnLegend": false,
-																"size": 10
-															}
-														]}
-												],
 													"interactions": {
 														"zoom": {
 															"logging": true,
@@ -1745,27 +2644,27 @@
 														"legend": false,
 														"resetButton": true,
 														"center": [
-															38.7,
-															-100.5
-														],
-														"zoom": 7,
-														"minZoom": 7,
-														"maxZoom": 10,
-														"maxBounds": [
-															[
-																43,
-																-110
-															],
-															[
-																30,
-																-90
-															]
-														]
+													    38.9,
+													    -100.6
+													  ],
+													  "zoom": 8,
+													  "minZoom": 7,
+													  "maxZoom": 10,
+													  "maxBounds": [
+													    [
+													      43,
+													      -110
+													    ],
+													    [
+													      30,
+													      -90
+													    ]
+													  ]
 													},
 													"baseLayers": [
 															{
 																"name": "Basemap",
-																"source": "https://api.mapbox.com/styles/v1/vinckl/civ2hghwg000y2in0l8mqk343/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+																"source": "https://api.mapbox.com/styles/v1/vinckl/cityvzq8p00882inzeisk6o24/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 															}
 														],
 														"dataLayers": [
@@ -1774,16 +2673,13 @@
 																"name": "Salad tweets",
 																"source": "data/countiesall.geojson",
 																"expressedAttribute": "Salad",
-																"displayAttributes": [
-																	"NAME10"
-																],
 																"layerOptions": {
 															"fillOpacity": 0.8,
 															"color": "black",
 															"weight": 0.5,
 															"opacity": 1,
-															"minZoom": 0,
-															"maxZoom": 8
+															"minZoom": 7,
+															"maxZoom": 9
 														},
 																"renderOnLoad": true,
 																"techniques": [
@@ -1796,46 +2692,16 @@
 															},
 															{
 																	"roundTo": 0,
-																"name": "Example Map",
-																"source": "data/detailsdata.geojson",
-																"expressedAttribute": "county_t_1",
-																"displayAttributes": [
-																	"NAME10"
-																],
-																"layerOptions": {
-															"fillOpacity": 0.8,
-															"color": "black",
-															"weight": 0.2,
-															"opacity": 1,
-															"fillOpacity": 0,
-															"minZoom": 6,
-															"maxZoom": 11,
-															"dashArray": "5, 5"
-															},
-																"renderOnLoad": true,
-																"techniques": [
-																	{
-																		"type": "choropleth",
-																		"showOnLegend": false,
-																		"classification": "equal interval",
-																		"classes": "BuGn.5"
-																	}
-																]},
-															{
-																	"roundTo": 0,
 																"name": "Nightlife tweets",
 																"source": "data/detailsdata.geojson",
 																"expressedAttribute": "county__10",
-																"displayAttributes": [
-																	"NAME10"
-																],
 																"layerOptions": {
 															"fillOpacity": 0.8,
 															"color": "black",
 															"weight": 0.5,
 															"opacity": 1,
-															"minZoom": 9,
-															"maxZoom": 11
+															"minZoom": 10,
+															"maxZoom": 10
 														},
 																"renderOnLoad": true,
 																"techniques": [
@@ -1847,28 +2713,153 @@
 																]
 															},
 															{
-																	"roundTo": 0,
-																"name": "Example Map",
-																"source": "data/maptest.geojson",
-																"expressedAttribute": "city",
-																"displayAttributes": [
-																	"NAME10"
-																],
-																"layerOptions": {
-															"fillOpacity": 1,
-															"color": "black",
-															"weight": 0.5,
-															"opacity": 1,
-															"minZoom": 8
+															  "roundTo": 0,
+															  "name": "counties",
+															  "source": "data/maptest.geojson",
+															  "expressedAttribute": "tweets",
+															  "displayAttributes": [
+															    "NAME10"
+															  ],
+															  "layerOptions": {
+															    "fillOpacity": 1,
+															    "color": "black",
+															    "weight": 0.5,
+															    "opacity": 1,
+															    "minZoom": 7,
+															    "maxZoom": 9
 															},
-																"renderOnLoad": true,
-																"techniques": [
-																	{
-																		"type": "label",
-																		"showOnLegend": false,
-																		"size": 10
-																	}
-																]}
+															  "renderOnLoad": true,
+															  "techniques": [
+															    {
+															      "type": "label",
+															      "showOnLegend": false,
+															      "size": 12
+															    }
+															  ]},
+															  {
+															    "roundTo": 0,
+															    "name": "countiesZoomed",
+															    "source": "data/maptest.geojson",
+															    "expressedAttribute": "tweets",
+															    "displayAttributes": [
+															      "NAME10"
+															    ],
+															    "layerOptions": {
+															      "fillOpacity": 1,
+															      "color": "black",
+															      "weight": 0.5,
+															      "opacity": 0.5,
+															      "minZoom": 10,
+															      "maxZoom": 11
+															  },
+															    "renderOnLoad": true,
+															    "techniques": [
+															      {
+															        "type": "label",
+															        "showOnLegend": false,
+															        "size": 12
+															      }
+															    ]},
+															  {
+															    "roundTo": 0,
+															    "name": "cityPoints",
+															    "source": "data/Cities.json",
+															    "expressedAttribute": "lat",
+															    "layerOptions": {
+															      "fillOpacity": 0.8,
+															      "color": "black",
+															      "weight": 0.5,
+															      "opacity": 1,
+															      "minZoom": 7,
+															      "maxZoom": 9
+															},
+															    "renderOnLoad": true,
+															    "techniques": [
+															      {
+															        "type": "proportional symbol",
+															        "classification": "equal interval",
+															        "showOnLegend": false,
+															        "classes": [
+															      2,
+															      2
+															        ]
+															      }
+															    ]
+															  },
+															  {
+															    "roundTo": 0,
+															    "name": "cityPointsZoomed",
+															    "source": "data/Cities.json",
+															    "expressedAttribute": "lat",
+															    "layerOptions": {
+															      "fillOpacity": 0.8,
+															      "color": "black",
+															      "weight": 0.5,
+															      "opacity": 1,
+															      "minZoom": 10,
+															      "maxZoom": 10
+															},
+															    "renderOnLoad": true,
+															    "techniques": [
+															      {
+															        "type": "proportional symbol",
+															        "classification": "equal interval",
+															        "showOnLegend": true,
+															        "classes": [
+															      2,
+															      2
+															        ]
+															      }
+															    ]
+															  },
+															  {
+															    "name": "cityLabels",
+															    "source": "data/Cities.json",
+															    "expressedAttribute": "city",
+															    "displayAttributes": [
+															      "city"
+															    ],
+															    "layerOptions": {
+															    "fillOpacity": 1,
+															    "color": "black",
+															    "weight": 0.5,
+															    "opacity": 1,
+															    "minZoom": 7,
+															    "maxZoom": 9
+															  },
+															    "renderOnLoad": true,
+															    "techniques": [
+															      {
+															        "type": "label",
+															        "showOnLegend": false,
+															        "size": 11
+															      }
+															    ]
+															  },
+															  {
+															    "name": "cityLabelsZoomed",
+															    "source": "data/Cities.json",
+															    "expressedAttribute": "city",
+															    "displayAttributes": [
+															      "city"
+															    ],
+															    "layerOptions": {
+															  "fillOpacity": 1,
+															  "color": "black",
+															  "weight": 0.5,
+															  "opacity": 1,
+															  "minZoom": 10,
+															  "maxZoom": 10
+															  },
+															    "renderOnLoad": true,
+															    "techniques": [
+															      {
+															        "type": "label",
+															        "showOnLegend": false,
+															        "size": 11
+															      }
+															    ]
+															  }
 															],
 														"interactions": {
 															"zoom": {
@@ -1906,22 +2897,22 @@
 															"legend": false,
 															"resetButton": true,
 															"center": [
-																38.7,
-																-100.5
-															],
-															"zoom": 7,
-															"minZoom": 7,
-															"maxZoom": 10,
-															"maxBounds": [
-																[
-																	43,
-																	-110
-																],
-																[
-																	30,
-																	-90
-																]
-															]
+														    38.9,
+														    -100.6
+														  ],
+														  "zoom": 8,
+														  "minZoom": 7,
+														  "maxZoom": 10,
+														  "maxBounds": [
+														    [
+														      43,
+														      -110
+														    ],
+														    [
+														      30,
+														      -90
+														    ]
+														  ]
 														},
 														"baseLayers": [
 																{
@@ -1935,9 +2926,6 @@
 																	"name": "Hamburger tweets",
 																	"source": "data/Cities.json",
 																	"expressedAttribute": "lat",
-																	"displayAttributes": [
-																		"city"
-																	],
 																	"layerOptions": {
 																"fillOpacity": 0.8,
 																"color": "black",
@@ -1963,9 +2951,6 @@
 																	"name": "Glove tweets",
 																	"source": "data/countiesall.geojson",
 																	"expressedAttribute": "Gloves",
-																	"displayAttributes": [
-																		"NAME10"
-																	],
 																	"layerOptions": {
 																"fillOpacity": 0.8,
 																"color": "black",
@@ -2008,53 +2993,155 @@
 																			"classes": "BuGn.5"
 																		}
 																	]},
-																{
-																		"roundTo": 0,
-																	"name": "Example Map",
-																	"source": "data/maptest.geojson",
-																	"expressedAttribute": "tweets",
-																	"displayAttributes": [
-																		"NAME10"
-																	],
-																	"layerOptions": {
-																"fillOpacity": 1,
-																"color": "black",
-																"weight": 0.5,
-																"opacity": 1,
-																"minZoom": 8
-																},
-																	"renderOnLoad": true,
-																	"techniques": [
-																		{
-																			"type": "label",
-																			"showOnLegend": false,
-																			"size": 10
-																		}
-																	]},
 																	{
-																			"roundTo": 0,
-																		"name": "Example Map",
-																		"source": "data/Cities.json",
-																		"expressedAttribute": "city",
-																		"displayAttributes": [
-																			"city"
-																		],
-																		"layerOptions": {
-																	"fillOpacity": 1,
-																	"color": "black",
-																	"weight": 0.5,
-																	"opacity": 1,
-																	"minZoom": 8
+																	  "roundTo": 0,
+																	  "name": "counties",
+																	  "source": "data/maptest.geojson",
+																	  "expressedAttribute": "tweets",
+																	  "displayAttributes": [
+																	    "NAME10"
+																	  ],
+																	  "layerOptions": {
+																	    "fillOpacity": 1,
+																	    "color": "black",
+																	    "weight": 0.5,
+																	    "opacity": 1,
+																	    "minZoom": 7,
+																	    "maxZoom": 9
 																	},
-																		"renderOnLoad": true,
-																		"techniques": [
-																			{
-																				"type": "label",
-																				"showOnLegend": false,
-																				"size": 10
-																			}
-																		]}
-																],
+																	  "renderOnLoad": true,
+																	  "techniques": [
+																	    {
+																	      "type": "label",
+																	      "showOnLegend": false,
+																	      "size": 12
+																	    }
+																	  ]},
+																	  {
+																	    "roundTo": 0,
+																	    "name": "countiesZoomed",
+																	    "source": "data/maptest.geojson",
+																	    "expressedAttribute": "tweets",
+																	    "displayAttributes": [
+																	      "NAME10"
+																	    ],
+																	    "layerOptions": {
+																	      "fillOpacity": 1,
+																	      "color": "black",
+																	      "weight": 0.5,
+																	      "opacity": 0.5,
+																	      "minZoom": 10,
+																	      "maxZoom": 11
+																	  },
+																	    "renderOnLoad": true,
+																	    "techniques": [
+																	      {
+																	        "type": "label",
+																	        "showOnLegend": false,
+																	        "size": 12
+																	      }
+																	    ]},
+																	  {
+																	    "roundTo": 0,
+																	    "name": "cityPoints",
+																	    "source": "data/Cities.json",
+																	    "expressedAttribute": "lat",
+																	    "layerOptions": {
+																	      "fillOpacity": 0.8,
+																	      "color": "black",
+																	      "weight": 0.5,
+																	      "opacity": 1,
+																	      "minZoom": 7,
+																	      "maxZoom": 9
+																	},
+																	    "renderOnLoad": true,
+																	    "techniques": [
+																	      {
+																	        "type": "proportional symbol",
+																	        "classification": "equal interval",
+																	        "showOnLegend": false,
+																	        "classes": [
+																	      2,
+																	      2
+																	        ]
+																	      }
+																	    ]
+																	  },
+																	  {
+																	    "roundTo": 0,
+																	    "name": "cityPointsZoomed",
+																	    "source": "data/Cities.json",
+																	    "expressedAttribute": "lat",
+																	    "layerOptions": {
+																	      "fillOpacity": 0.8,
+																	      "color": "black",
+																	      "weight": 0.5,
+																	      "opacity": 1,
+																	      "minZoom": 10,
+																	      "maxZoom": 10
+																	},
+																	    "renderOnLoad": true,
+																	    "techniques": [
+																	      {
+																	        "type": "proportional symbol",
+																	        "classification": "equal interval",
+																	        "showOnLegend": true,
+																	        "classes": [
+																	      2,
+																	      2
+																	        ]
+																	      }
+																	    ]
+																	  },
+																	  {
+																	    "name": "cityLabels",
+																	    "source": "data/Cities.json",
+																	    "expressedAttribute": "city",
+																	    "displayAttributes": [
+																	      "city"
+																	    ],
+																	    "layerOptions": {
+																	    "fillOpacity": 1,
+																	    "color": "black",
+																	    "weight": 0.5,
+																	    "opacity": 1,
+																	    "minZoom": 7,
+																	    "maxZoom": 9
+																	  },
+																	    "renderOnLoad": true,
+																	    "techniques": [
+																	      {
+																	        "type": "label",
+																	        "showOnLegend": false,
+																	        "size": 11
+																	      }
+																	    ]
+																	  },
+																	  {
+																	    "name": "cityLabelsZoomed",
+																	    "source": "data/Cities.json",
+																	    "expressedAttribute": "city",
+																	    "displayAttributes": [
+																	      "city"
+																	    ],
+																	    "layerOptions": {
+																	  "fillOpacity": 1,
+																	  "color": "black",
+																	  "weight": 0.5,
+																	  "opacity": 1,
+																	  "minZoom": 10,
+																	  "maxZoom": 10
+																	  },
+																	    "renderOnLoad": true,
+																	    "techniques": [
+																	      {
+																	        "type": "label",
+																	        "showOnLegend": false,
+																	        "size": 11
+																	      }
+																	    ]
+																	  }
+																	],
 															"interactions": {
 																"zoom": {
 																	"logging": true,
@@ -2091,27 +3178,27 @@
 																"legend": false,
 																"resetButton": true,
 																"center": [
-																	38.7,
-																	-100.5
-																],
-																"zoom": 7,
-																"minZoom": 7,
-																"maxZoom": 10,
-																"maxBounds": [
-																	[
-																		43,
-																		-110
-																	],
-																	[
-																		30,
-																		-90
-																	]
-																]
+															    38.9,
+															    -100.6
+															  ],
+															  "zoom": 8,
+															  "minZoom": 7,
+															  "maxZoom": 10,
+															  "maxBounds": [
+															    [
+															      43,
+															      -110
+															    ],
+															    [
+															      30,
+															      -90
+															    ]
+															  ]
 															},
 															"baseLayers": [
 																	{
 																		"name": "Basemap",
-																		"source": "https://api.mapbox.com/styles/v1/vinckl/civ2hghwg000y2in0l8mqk343/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+																		"source": "https://api.mapbox.com/styles/v1/vinckl/cityvzq8p00882inzeisk6o24/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 																	}
 																],
 																"dataLayers": [
@@ -2120,16 +3207,13 @@
 																		"name": "Movie tweets",
 																		"source": "data/countiesall.geojson",
 																		"expressedAttribute": "Movies",
-																		"displayAttributes": [
-																			"NAME10"
-																		],
 																		"layerOptions": {
 																	"fillOpacity": 0.8,
 																	"color": "black",
 																	"weight": 0.5,
 																	"opacity": 1,
-																	"minZoom": 0,
-																	"maxZoom": 8
+																	"minZoom": 7,
+																	"maxZoom": 9
 																},
 																		"renderOnLoad": true,
 																		"techniques": [
@@ -2152,16 +3236,13 @@
 																	"name": "Hamburger tweets",
 																	"source": "data/detailsdata.geojson",
 																	"expressedAttribute": "county__12",
-																	"displayAttributes": [
-																		"NAME10"
-																	],
 																	"layerOptions": {
 																"fillOpacity": 0.8,
 																"color": "black",
 																"weight": 0.5,
 																"opacity": 1,
-																"minZoom": 9,
-																"maxZoom": 11
+																"minZoom": 10,
+																"maxZoom": 10
 															},
 																	"renderOnLoad": true,
 																	"techniques": [
@@ -2183,9 +3264,6 @@
 																	"name": "Example Map",
 																	"source": "data/detailsdata.geojson",
 																	"expressedAttribute": "county_t_1",
-																	"displayAttributes": [
-																		"NAME10"
-																	],
 																	"layerOptions": {
 																"fillOpacity": 0.8,
 																"color": "black",
@@ -2205,30 +3283,155 @@
 																			"classes": "BuGn.5"
 																		}
 																	]},
-																{
-																		"roundTo": 0,
-																	"name": "Example Map",
-																	"source": "data/maptest.geojson",
-																	"expressedAttribute": "city",
-																	"displayAttributes": [
-																		"NAME10"
+																	{
+																	  "roundTo": 0,
+																	  "name": "counties",
+																	  "source": "data/maptest.geojson",
+																	  "expressedAttribute": "tweets",
+																	  "displayAttributes": [
+																	    "NAME10"
+																	  ],
+																	  "layerOptions": {
+																	    "fillOpacity": 1,
+																	    "color": "black",
+																	    "weight": 0.5,
+																	    "opacity": 1,
+																	    "minZoom": 7,
+																	    "maxZoom": 9
+																	},
+																	  "renderOnLoad": true,
+																	  "techniques": [
+																	    {
+																	      "type": "label",
+																	      "showOnLegend": false,
+																	      "size": 12
+																	    }
+																	  ]},
+																	  {
+																	    "roundTo": 0,
+																	    "name": "countiesZoomed",
+																	    "source": "data/maptest.geojson",
+																	    "expressedAttribute": "tweets",
+																	    "displayAttributes": [
+																	      "NAME10"
+																	    ],
+																	    "layerOptions": {
+																	      "fillOpacity": 1,
+																	      "color": "black",
+																	      "weight": 0.5,
+																	      "opacity": 0.5,
+																	      "minZoom": 10,
+																	      "maxZoom": 11
+																	  },
+																	    "renderOnLoad": true,
+																	    "techniques": [
+																	      {
+																	        "type": "label",
+																	        "showOnLegend": false,
+																	        "size": 12
+																	      }
+																	    ]},
+																	  {
+																	    "roundTo": 0,
+																	    "name": "cityPoints",
+																	    "source": "data/Cities.json",
+																	    "expressedAttribute": "lat",
+																	    "layerOptions": {
+																	      "fillOpacity": 0.8,
+																	      "color": "black",
+																	      "weight": 0.5,
+																	      "opacity": 1,
+																	      "minZoom": 7,
+																	      "maxZoom": 9
+																	},
+																	    "renderOnLoad": true,
+																	    "techniques": [
+																	      {
+																	        "type": "proportional symbol",
+																	        "classification": "equal interval",
+																	        "showOnLegend": false,
+																	        "classes": [
+																	      2,
+																	      2
+																	        ]
+																	      }
+																	    ]
+																	  },
+																	  {
+																	    "roundTo": 0,
+																	    "name": "cityPointsZoomed",
+																	    "source": "data/Cities.json",
+																	    "expressedAttribute": "lat",
+																	    "layerOptions": {
+																	      "fillOpacity": 0.8,
+																	      "color": "black",
+																	      "weight": 0.5,
+																	      "opacity": 1,
+																	      "minZoom": 10,
+																	      "maxZoom": 10
+																	},
+																	    "renderOnLoad": true,
+																	    "techniques": [
+																	      {
+																	        "type": "proportional symbol",
+																	        "classification": "equal interval",
+																	        "showOnLegend": true,
+																	        "classes": [
+																	      2,
+																	      2
+																	        ]
+																	      }
+																	    ]
+																	  },
+																	  {
+																	    "name": "cityLabels",
+																	    "source": "data/Cities.json",
+																	    "expressedAttribute": "city",
+																	    "displayAttributes": [
+																	      "city"
+																	    ],
+																	    "layerOptions": {
+																	    "fillOpacity": 1,
+																	    "color": "black",
+																	    "weight": 0.5,
+																	    "opacity": 1,
+																	    "minZoom": 7,
+																	    "maxZoom": 9
+																	  },
+																	    "renderOnLoad": true,
+																	    "techniques": [
+																	      {
+																	        "type": "label",
+																	        "showOnLegend": false,
+																	        "size": 11
+																	      }
+																	    ]
+																	  },
+																	  {
+																	    "name": "cityLabelsZoomed",
+																	    "source": "data/Cities.json",
+																	    "expressedAttribute": "city",
+																	    "displayAttributes": [
+																	      "city"
+																	    ],
+																	    "layerOptions": {
+																	  "fillOpacity": 1,
+																	  "color": "black",
+																	  "weight": 0.5,
+																	  "opacity": 1,
+																	  "minZoom": 10,
+																	  "maxZoom": 10
+																	  },
+																	    "renderOnLoad": true,
+																	    "techniques": [
+																	      {
+																	        "type": "label",
+																	        "showOnLegend": false,
+																	        "size": 11
+																	      }
+																	    ]
+																	  }
 																	],
-																	"layerOptions": {
-																"fillOpacity": 1,
-																"color": "black",
-																"weight": 0.5,
-																"opacity": 1,
-																"minZoom": 8
-																},
-																	"renderOnLoad": true,
-																	"techniques": [
-																		{
-																			"type": "label",
-																			"showOnLegend": false,
-																			"size": 10
-																		}
-																	]}
-															],
 																"interactions": {
 																	"zoom": {
 																		"logging": true,
@@ -2268,27 +3471,27 @@
 																	"legend": false,
 																	"resetButton": true,
 																	"center": [
-																		38.7,
-																		-100.5
-																	],
-																	"zoom": 7,
-																	"minZoom": 7,
-																	"maxZoom": 10,
-																	"maxBounds": [
-																		[
-																			43,
-																			-110
-																		],
-																		[
-																			30,
-																			-90
-																		]
-																	]
+																    38.9,
+																    -100.6
+																  ],
+																  "zoom": 8,
+																  "minZoom": 7,
+																  "maxZoom": 10,
+																  "maxBounds": [
+																    [
+																      43,
+																      -110
+																    ],
+																    [
+																      30,
+																      -90
+																    ]
+																  ]
 																},
 																"baseLayers": [
 																		{
 																			"name": "Basemap",
-																			"source": "https://api.mapbox.com/styles/v1/vinckl/civ2hghwg000y2in0l8mqk343/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+																			"source": "https://api.mapbox.com/styles/v1/vinckl/cityvzq8p00882inzeisk6o24/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 																		}
 																	],
 																	"dataLayers": [
@@ -2305,8 +3508,8 @@
 																		"color": "black",
 																		"weight": 0.5,
 																		"opacity": 1,
-																		"minZoom": 0,
-																		"maxZoom": 8
+																		"minZoom": 7,
+																		"maxZoom": 9
 																	},
 																			"renderOnLoad": true,
 																			"techniques": [
@@ -2329,16 +3532,13 @@
 																		"name": "Hamburger tweets",
 																		"source": "data/detailsdata.geojson",
 																		"expressedAttribute": "county__13",
-																		"displayAttributes": [
-																			"NAME10"
-																		],
 																		"layerOptions": {
 																	"fillOpacity": 0.8,
 																	"color": "black",
 																	"weight": 0.5,
 																	"opacity": 1,
-																	"minZoom": 9,
-																	"maxZoom": 11
+																	"minZoom": 10,
+																	"maxZoom": 10
 																},
 																		"renderOnLoad": true,
 																		"techniques": [
@@ -2360,9 +3560,6 @@
 																		"name": "Example Map",
 																		"source": "data/detailsdata.geojson",
 																		"expressedAttribute": "county_t_1",
-																		"displayAttributes": [
-																			"NAME10"
-																		],
 																		"layerOptions": {
 																	"fillOpacity": 0.8,
 																	"color": "black",
@@ -2382,30 +3579,155 @@
 																				"classes": "BuGn.5"
 																			}
 																		]},
-																	{
-																			"roundTo": 0,
-																		"name": "Example Map",
-																		"source": "data/maptest.geojson",
-																		"expressedAttribute": "city",
-																		"displayAttributes": [
-																			"NAME10"
+																		{
+																		  "roundTo": 0,
+																		  "name": "counties",
+																		  "source": "data/maptest.geojson",
+																		  "expressedAttribute": "tweets",
+																		  "displayAttributes": [
+																		    "NAME10"
+																		  ],
+																		  "layerOptions": {
+																		    "fillOpacity": 1,
+																		    "color": "black",
+																		    "weight": 0.5,
+																		    "opacity": 1,
+																		    "minZoom": 7,
+																		    "maxZoom": 9
+																		},
+																		  "renderOnLoad": true,
+																		  "techniques": [
+																		    {
+																		      "type": "label",
+																		      "showOnLegend": false,
+																		      "size": 13
+																		    }
+																		  ]},
+																		  {
+																		    "roundTo": 0,
+																		    "name": "countiesZoomed",
+																		    "source": "data/maptest.geojson",
+																		    "expressedAttribute": "tweets",
+																		    "displayAttributes": [
+																		      "NAME10"
+																		    ],
+																		    "layerOptions": {
+																		      "fillOpacity": 1,
+																		      "color": "black",
+																		      "weight": 0.5,
+																		      "opacity": 0.5,
+																		      "minZoom": 10,
+																		      "maxZoom": 11
+																		  },
+																		    "renderOnLoad": true,
+																		    "techniques": [
+																		      {
+																		        "type": "label",
+																		        "showOnLegend": false,
+																		        "size": 12
+																		      }
+																		    ]},
+																		  {
+																		    "roundTo": 0,
+																		    "name": "cityPoints",
+																		    "source": "data/Cities.json",
+																		    "expressedAttribute": "lat",
+																		    "layerOptions": {
+																		      "fillOpacity": 0.8,
+																		      "color": "black",
+																		      "weight": 0.5,
+																		      "opacity": 1,
+																		      "minZoom": 7,
+																		      "maxZoom": 9
+																		},
+																		    "renderOnLoad": true,
+																		    "techniques": [
+																		      {
+																		        "type": "proportional symbol",
+																		        "classification": "equal interval",
+																		        "showOnLegend": false,
+																		        "classes": [
+																		      2,
+																		      2
+																		        ]
+																		      }
+																		    ]
+																		  },
+																		  {
+																		    "roundTo": 0,
+																		    "name": "cityPointsZoomed",
+																		    "source": "data/Cities.json",
+																		    "expressedAttribute": "lat",
+																		    "layerOptions": {
+																		      "fillOpacity": 0.8,
+																		      "color": "black",
+																		      "weight": 0.5,
+																		      "opacity": 1,
+																		      "minZoom": 10,
+																		      "maxZoom": 10
+																		},
+																		    "renderOnLoad": true,
+																		    "techniques": [
+																		      {
+																		        "type": "proportional symbol",
+																		        "classification": "equal interval",
+																		        "showOnLegend": true,
+																		        "classes": [
+																		      2,
+																		      2
+																		        ]
+																		      }
+																		    ]
+																		  },
+																		  {
+																		    "name": "cityLabels",
+																		    "source": "data/Cities.json",
+																		    "expressedAttribute": "city",
+																		    "displayAttributes": [
+																		      "city"
+																		    ],
+																		    "layerOptions": {
+																		    "fillOpacity": 1,
+																		    "color": "black",
+																		    "weight": 0.5,
+																		    "opacity": 1,
+																		    "minZoom": 7,
+																		    "maxZoom": 9
+																		  },
+																		    "renderOnLoad": true,
+																		    "techniques": [
+																		      {
+																		        "type": "label",
+																		        "showOnLegend": false,
+																		        "size": 11
+																		      }
+																		    ]
+																		  },
+																		  {
+																		    "name": "cityLabelsZoomed",
+																		    "source": "data/Cities.json",
+																		    "expressedAttribute": "city",
+																		    "displayAttributes": [
+																		      "city"
+																		    ],
+																		    "layerOptions": {
+																		  "fillOpacity": 1,
+																		  "color": "black",
+																		  "weight": 0.5,
+																		  "opacity": 1,
+																		  "minZoom": 10,
+																		  "maxZoom": 10
+																		  },
+																		    "renderOnLoad": true,
+																		    "techniques": [
+																		      {
+																		        "type": "label",
+																		        "showOnLegend": false,
+																		        "size": 11
+																		      }
+																		    ]
+																		  }
 																		],
-																		"layerOptions": {
-																	"fillOpacity": 1,
-																	"color": "black",
-																	"weight": 0.5,
-																	"opacity": 1,
-																	"minZoom": 8
-																	},
-																		"renderOnLoad": true,
-																		"techniques": [
-																			{
-																				"type": "label",
-																				"showOnLegend": false,
-																				"size": 10
-																			}
-																		]}
-																],
 																	"interactions": {
 																		"zoom": {
 																			"logging": true,
@@ -2442,22 +3764,22 @@
 																		"legend": false,
 																		"resetButton": true,
 																		"center": [
-																			38.7,
-																			-100.5
-																		],
-																		"zoom": 7,
-																		"minZoom": 7,
-																		"maxZoom": 10,
-																		"maxBounds": [
-																			[
-																				43,
-																				-110
-																			],
-																			[
-																				30,
-																				-90
-																			]
-																		]
+																	    38.9,
+																	    -100.6
+																	  ],
+																	  "zoom": 8,
+																	  "minZoom": 7,
+																	  "maxZoom": 10,
+																	  "maxBounds": [
+																	    [
+																	      43,
+																	      -110
+																	    ],
+																	    [
+																	      30,
+																	      -90
+																	    ]
+																	  ]
 																	},
 																	"baseLayers": [
 																			{
@@ -2471,15 +3793,12 @@
 																				"name": "Hamburger tweets",
 																				"source": "data/Cities.json",
 																				"expressedAttribute": "lat",
-																				"displayAttributes": [
-																					"city"
-																				],
 																				"layerOptions": {
 																			"fillOpacity": 0.8,
 																			"color": "black",
 																			"weight": 0.5,
-																			"opacity": 1,
-																			"minZoom": 8
+																			"opacity": 7,
+																			"minZoom": 9
 																		},
 																				"renderOnLoad": true,
 																				"techniques": [
@@ -2499,15 +3818,12 @@
 																				"name": "Coffee tweets",
 																				"source": "data/countiesall.geojson",
 																				"expressedAttribute": "Coffee",
-																				"displayAttributes": [
-																					"NAME10"
-																				],
 																				"layerOptions": {
 																			"fillOpacity": 0.8,
 																			"color": "black",
 																			"weight": 0.5,
 																			"opacity": 1,
-																			"minZoom": 0,
+																			"minZoom": 7,
 																			"maxZoom": 9
 																		},
 																				"renderOnLoad": true,
@@ -2524,16 +3840,13 @@
 																				"name": "Example Map",
 																				"source": "data/detailsdata.geojson",
 																				"expressedAttribute": "county__14",
-																				"displayAttributes": [
-																					"NAME10"
-																				],
 																				"layerOptions": {
 																			"fillOpacity": 0.8,
 																			"color": "black",
 																			"weight": 0.2,
 																			"opacity": 1,
 																			"minZoom": 10,
-																			"maxZoom": 11,
+																			"maxZoom": 10,
 																			"dashArray": "5, 5"
 																			},
 																				"renderOnLoad": true,
@@ -2544,54 +3857,155 @@
 																						"classes": "BuGn.5"
 																					}
 																				]},
-																			{
-																					"roundTo": 0,
-																				"name": "Example Map",
-																				"source": "data/maptest.geojson",
-																				"expressedAttribute": "tweets",
-																				"displayAttributes": [
-																					"NAME10"
-																				],
-																				"layerOptions": {
-																			"fillOpacity": 1,
-																			"color": "black",
-																			"weight": 0.5,
-																			"opacity": 1,
-																			"minZoom": 8
-																			},
-																				"renderOnLoad": true,
-																				"techniques": [
-																					{
-																						"type": "label",
-																						"showOnLegend": false,
-																						"size": 10
-																					}
-																				]},
 																				{
-																						"roundTo": 0,
-																					"name": "Example Map",
-																					"source": "data/Cities.json",
-																					"expressedAttribute": "city",
-																					"displayAttributes": [
-																						"city"
-																					],
-																					"layerOptions": {
-																				"fillOpacity": 1,
-																				"color": "black",
-																				"weight": 0.5,
-																				"opacity": 1,
-																				"minZoom": 8
+																				  "roundTo": 0,
+																				  "name": "counties",
+																				  "source": "data/maptest.geojson",
+																				  "expressedAttribute": "tweets",
+																				  "displayAttributes": [
+																				    "NAME10"
+																				  ],
+																				  "layerOptions": {
+																				    "fillOpacity": 1,
+																				    "color": "black",
+																				    "weight": 0.5,
+																				    "opacity": 1,
+																				    "minZoom": 7,
+																				    "maxZoom": 9
 																				},
-																					"renderOnLoad": true,
-																					"techniques": [
-																						{
-																							"type": "label",
-																							"showOnLegend": false,
-																							"size": 10
-																						}
-																					]}
-
-																		],
+																				  "renderOnLoad": true,
+																				  "techniques": [
+																				    {
+																				      "type": "label",
+																				      "showOnLegend": false,
+																				      "size": 13
+																				    }
+																				  ]},
+																				  {
+																				    "roundTo": 0,
+																				    "name": "countiesZoomed",
+																				    "source": "data/maptest.geojson",
+																				    "expressedAttribute": "tweets",
+																				    "displayAttributes": [
+																				      "NAME10"
+																				    ],
+																				    "layerOptions": {
+																				      "fillOpacity": 1,
+																				      "color": "black",
+																				      "weight": 0.5,
+																				      "opacity": 0.5,
+																				      "minZoom": 10,
+																				      "maxZoom": 11
+																				  },
+																				    "renderOnLoad": true,
+																				    "techniques": [
+																				      {
+																				        "type": "label",
+																				        "showOnLegend": false,
+																				        "size": 12
+																				      }
+																				    ]},
+																				  {
+																				    "roundTo": 0,
+																				    "name": "cityPoints",
+																				    "source": "data/Cities.json",
+																				    "expressedAttribute": "lat",
+																				    "layerOptions": {
+																				      "fillOpacity": 0.8,
+																				      "color": "black",
+																				      "weight": 0.5,
+																				      "opacity": 1,
+																				      "minZoom": 7,
+																				      "maxZoom": 9
+																				},
+																				    "renderOnLoad": true,
+																				    "techniques": [
+																				      {
+																				        "type": "proportional symbol",
+																				        "classification": "equal interval",
+																				        "showOnLegend": false,
+																				        "classes": [
+																				      2,
+																				      2
+																				        ]
+																				      }
+																				    ]
+																				  },
+																				  {
+																				    "roundTo": 0,
+																				    "name": "cityPointsZoomed",
+																				    "source": "data/Cities.json",
+																				    "expressedAttribute": "lat",
+																				    "layerOptions": {
+																				      "fillOpacity": 0.8,
+																				      "color": "black",
+																				      "weight": 0.5,
+																				      "opacity": 1,
+																				      "minZoom": 10,
+																				      "maxZoom": 10
+																				},
+																				    "renderOnLoad": true,
+																				    "techniques": [
+																				      {
+																				        "type": "proportional symbol",
+																				        "classification": "equal interval",
+																				        "showOnLegend": true,
+																				        "classes": [
+																				      2,
+																				      2
+																				        ]
+																				      }
+																				    ]
+																				  },
+																				  {
+																				    "name": "cityLabels",
+																				    "source": "data/Cities.json",
+																				    "expressedAttribute": "city",
+																				    "displayAttributes": [
+																				      "city"
+																				    ],
+																				    "layerOptions": {
+																				    "fillOpacity": 1,
+																				    "color": "black",
+																				    "weight": 0.5,
+																				    "opacity": 1,
+																				    "minZoom": 7,
+																				    "maxZoom": 9
+																				  },
+																				    "renderOnLoad": true,
+																				    "techniques": [
+																				      {
+																				        "type": "label",
+																				        "showOnLegend": false,
+																				        "size": 11
+																				      }
+																				    ]
+																				  },
+																				  {
+																				    "name": "cityLabelsZoomed",
+																				    "source": "data/Cities.json",
+																				    "expressedAttribute": "city",
+																				    "displayAttributes": [
+																				      "city"
+																				    ],
+																				    "layerOptions": {
+																				  "fillOpacity": 1,
+																				  "color": "black",
+																				  "weight": 0.5,
+																				  "opacity": 1,
+																				  "minZoom": 10,
+																				  "maxZoom": 10
+																				  },
+																				    "renderOnLoad": true,
+																				    "techniques": [
+																				      {
+																				        "type": "label",
+																				        "showOnLegend": false,
+																				        "size": 11
+																				      }
+																				    ]
+																				  }
+																				],
 																		"interactions": {
 																			"zoom": {
 																				"logging": true,
@@ -2628,10 +4042,10 @@
 																			"legend": false,
 																			"resetButton": true,
 																			"center": [
-																				38.7,
-																				-100.5
+																				38.9,
+																				-100.6
 																			],
-																			"zoom": 7,
+																			"zoom": 8,
 																			"minZoom": 7,
 																			"maxZoom": 10,
 																			"maxBounds": [
@@ -2665,8 +4079,8 @@
 																				"color": "black",
 																				"weight": 0.5,
 																				"opacity": 1,
-																				"minZoom": 0,
-																				"maxZoom": 8
+																				"minZoom": 7,
+																				"maxZoom": 9
 																			},
 																					"renderOnLoad": true,
 																					"techniques": [
@@ -2690,8 +4104,8 @@
 																				"color": "black",
 																				"weight": 0.5,
 																				"opacity": 1,
-																				"minZoom": 9,
-																				"maxZoom": 11
+																				"minZoom": 10,
+																				"maxZoom": 10
 																			},
 																					"renderOnLoad": true,
 																					"techniques": [
@@ -2789,27 +4203,27 @@
 																				"legend": false,
 																				"resetButton": true,
 																				"center": [
-																					38.7,
-																					-100.5
-																				],
-																				"zoom": 7,
-																				"minZoom": 7,
-																				"maxZoom": 10,
-																				"maxBounds": [
-																					[
-																						43,
-																						-110
-																					],
-																					[
-																						30,
-																						-90
-																					]
-																				]
+																			    38.9,
+																			    -100.6
+																			  ],
+																			  "zoom": 8,
+																			  "minZoom": 7,
+																			  "maxZoom": 10,
+																			  "maxBounds": [
+																			    [
+																			      43,
+																			      -110
+																			    ],
+																			    [
+																			      30,
+																			      -90
+																			    ]
+																			  ]
 																			},
 																			"baseLayers": [
 																					{
 																						"name": "Basemap",
-																						"source": "https://api.mapbox.com/styles/v1/vinckl/civ2hghwg000y2in0l8mqk343/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
+																						"source": "https://api.mapbox.com/styles/v1/vinckl/cityvzq8p00882inzeisk6o24/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoidmluY2tsIiwiYSI6InBxek03N1UifQ.U-SETItEW23RpzOykJX5Jw"
 																					}
 																				],
 																				"dataLayers": [
@@ -2818,9 +4232,6 @@
 																						"name": "Music tweets",
 																						"source": "data/Points4.json",
 																						"expressedAttribute": "point",
-																						"displayAttributes": [
-																							"NAME10"
-																						],
 																						"layerOptions": {
 																					"fillOpacity": 0.8,
 																					"color": "black",
@@ -2834,8 +4245,8 @@
 																						"0.2":"#edf8fb"
 
 																					},
-																					"minZoom": 0,
-																					"maxZoom": 8
+																					"minZoom": 7,
+																					"maxZoom": 9
 																				},
 																						"renderOnLoad": true,
 																						"techniques": [
@@ -2850,16 +4261,13 @@
 																						"name": "Jacket tweets",
 																						"source": "data/Points4.json",
 																						"expressedAttribute": "point",
-																						"displayAttributes": [
-																							"NAME10"
-																						],
 																						"layerOptions": {
 																					"fillOpacity": 0.8,
 																					"color": "black",
 																					"weight": 0.5,
 																					"opacity": 1,
-																					"minZoom": 9,
-																					"maxZoom": 11
+																					"minZoom": 10,
+																					"maxZoom": 10
 																				},
 																						"renderOnLoad": true,
 																						"techniques": [
@@ -2870,56 +4278,154 @@
 																						]
 																					},
 																					{
-																							"roundTo": 0,
-																						"name": "Example Map",
-																						"source": "data/detailsdata.geojson",
-																						"expressedAttribute": "county_t_1",
-																						"displayAttributes": [
-																							"NAME10"
-																						],
-																						"layerOptions": {
-																					"fillOpacity": 0.8,
-																					"color": "black",
-																					"weight": 0.2,
-																					"opacity": 1,
-																					"fillOpacity": 0,
-																					"minZoom": 6,
-																					"maxZoom": 11,
-																					"dashArray": "5, 5"
+																					  "roundTo": 0,
+																					  "name": "counties",
+																					  "source": "data/maptest.geojson",
+																					  "expressedAttribute": "tweets",
+																					  "displayAttributes": [
+																					    "NAME10"
+																					  ],
+																					  "layerOptions": {
+																					    "fillOpacity": 1,
+																					    "color": "black",
+																					    "weight": 0.5,
+																					    "opacity": 1,
+																					    "minZoom": 7,
+																					    "maxZoom": 9
 																					},
-																						"renderOnLoad": true,
-																						"techniques": [
-																							{
-																								"type": "choropleth",
-																								"showOnLegend": false,
-																								"classification": "equal interval",
-																								"classes": "BuGn.5"
-																							}
-																						]},
-																				{
-																						"roundTo": 0,
-																					"name": "Example Map",
-																					"source": "data/maptest.geojson",
-																					"expressedAttribute": "city",
-																					"displayAttributes": [
-																						"NAME10"
+																					  "renderOnLoad": true,
+																					  "techniques": [
+																					    {
+																					      "type": "label",
+																					      "showOnLegend": false,
+																					      "size": 13
+																					    }
+																					  ]},
+																					  {
+																					    "roundTo": 0,
+																					    "name": "countiesZoomed",
+																					    "source": "data/maptest.geojson",
+																					    "expressedAttribute": "tweets",
+																					    "displayAttributes": [
+																					      "NAME10"
+																					    ],
+																					    "layerOptions": {
+																					      "fillOpacity": 1,
+																					      "color": "black",
+																					      "weight": 0.5,
+																					      "opacity": 0.5,
+																					      "minZoom": 10,
+																					      "maxZoom": 11
+																					  },
+																					    "renderOnLoad": true,
+																					    "techniques": [
+																					      {
+																					        "type": "label",
+																					        "showOnLegend": false,
+																					        "size": 12
+																					      }
+																					    ]},
+																					  {
+																					    "roundTo": 0,
+																					    "name": "cityPoints",
+																					    "source": "data/Cities.json",
+																					    "expressedAttribute": "lat",
+																					    "layerOptions": {
+																					      "fillOpacity": 0.8,
+																					      "color": "black",
+																					      "weight": 0.5,
+																					      "opacity": 1,
+																					      "minZoom": 7,
+																					      "maxZoom": 9
+																					},
+																					    "renderOnLoad": true,
+																					    "techniques": [
+																					      {
+																					        "type": "proportional symbol",
+																					        "classification": "equal interval",
+																					        "showOnLegend": false,
+																					        "classes": [
+																					      2,
+																					      2
+																					        ]
+																					      }
+																					    ]
+																					  },
+																					  {
+																					    "roundTo": 0,
+																					    "name": "cityPointsZoomed",
+																					    "source": "data/Cities.json",
+																					    "expressedAttribute": "lat",
+																					    "layerOptions": {
+																					      "fillOpacity": 0.8,
+																					      "color": "black",
+																					      "weight": 0.5,
+																					      "opacity": 1,
+																					      "minZoom": 10,
+																					      "maxZoom": 10
+																					},
+																					    "renderOnLoad": true,
+																					    "techniques": [
+																					      {
+																					        "type": "proportional symbol",
+																					        "classification": "equal interval",
+																					        "showOnLegend": true,
+																					        "classes": [
+																					      2,
+																					      2
+																					        ]
+																					      }
+																					    ]
+																					  },
+																					  {
+																					    "name": "cityLabels",
+																					    "source": "data/Cities.json",
+																					    "expressedAttribute": "city",
+																					    "displayAttributes": [
+																					      "city"
+																					    ],
+																					    "layerOptions": {
+																					    "fillOpacity": 1,
+																					    "color": "black",
+																					    "weight": 0.5,
+																					    "opacity": 1,
+																					    "minZoom": 7,
+																					    "maxZoom": 9
+																					  },
+																					    "renderOnLoad": true,
+																					    "techniques": [
+																					      {
+																					        "type": "label",
+																					        "showOnLegend": false,
+																					        "size": 11
+																					      }
+																					    ]
+																					  },
+																					  {
+																					    "name": "cityLabelsZoomed",
+																					    "source": "data/Cities.json",
+																					    "expressedAttribute": "city",
+																					    "displayAttributes": [
+																					      "city"
+																					    ],
+																					    "layerOptions": {
+																					  "fillOpacity": 1,
+																					  "color": "black",
+																					  "weight": 0.5,
+																					  "opacity": 1,
+																					  "minZoom": 10,
+																					  "maxZoom": 10
+																					  },
+																					    "renderOnLoad": true,
+																					    "techniques": [
+																					      {
+																					        "type": "label",
+																					        "showOnLegend": false,
+																					        "size": 11
+																					      }
+																					    ]
+																					  }
 																					],
-																					"layerOptions": {
-																				"fillOpacity": 1,
-																				"color": "black",
-																				"weight": 0.5,
-																				"opacity": 1,
-																				"minZoom": 8
-																				},
-																					"renderOnLoad": true,
-																					"techniques": [
-																						{
-																							"type": "label",
-																							"showOnLegend": false,
-																							"size": 10
-																						}
-																					]}
-																			],
 																				"interactions": {
 																					"zoom": {
 																						"logging": true,

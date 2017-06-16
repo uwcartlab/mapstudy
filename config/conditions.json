@@ -1,12 +1,12 @@
 [
 	{
-		"pages": [21],
-		"weight": 0,
+		"pages": [22,12,16,20],
+		"weight": 1,
 		"name": "testing"
 	},
 	{
 		"pages":[3,4,5,6,7,9,10,11,12,14,15,16,17,19,20,21,22],
-		"weight": 0,
+		"weight": 1,
 		"name": "all maps"
 	},
 	{

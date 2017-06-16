@@ -8,6 +8,12 @@
 		"content": "Multiscale Comparison and Ranking for Interactive Thematic Maps"
 	},
 	{
+		"sectionId": "m",
+		"cssAttributes": {
+			"text-shadow": "1px 1px 1px #fff"
+		}
+	},
+	{
 		"sectionId": "footer",
 		"cssAttributes": {
 			"background-color": "#f03d28"

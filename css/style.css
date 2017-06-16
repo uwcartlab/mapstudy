@@ -204,6 +204,7 @@ svg {
 
 #m {
     height: 650px; /* temporary height to allow for map layer placement */
+    width: 600px;
     text-align: center;
     border-right: 10px solid #ccc;
 }
