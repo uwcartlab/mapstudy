@@ -39,7 +39,6 @@
                 <span class="content"></span>
             </section>
         </div>
-
         <script type="text/template" id="question-template">
             <div>
                 <input id="todo_complete" type="checkbox" <%= completed ? 'checked="checked"' : '' %>>
@@ -356,6 +355,17 @@
         <script type="text/javascript" src="js/modules/m-section.js"></script>
         <script type="text/javascript" src="js/modules/q-section.js"></script>
 
+        <script>
+          $(document).on('click','path',function(){
+            var pathTarget = this;
+        	   $( this ).attr("stroke", "#ff0000");
+             $( this ).attr("stroke-width","2");
+             setTimeout(function(){
+               $(pathTarget).attr("stroke", "#000");
+               $(pathTarget).attr("stroke-width", "0.5");
+               },2000);
+             });
+        </script>
         <!-- <script>
           var sw = screen.width;
           var sh = screen.height;

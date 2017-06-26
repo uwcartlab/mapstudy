@@ -323,7 +323,7 @@
 							"source": "data/detailsdata.geojson",
 							"expressedAttribute": "county_t_1",
 							"displayAttributes": [
-								"NAME10"
+								"county_t_1"
 							],
 							"layerOptions": {
 						"fillOpacity": 0.8,
@@ -372,7 +372,7 @@
 									"source": "data/maptest.geojson",
 									"expressedAttribute": "tweets",
 									"displayAttributes": [
-										"NAME10"
+										"tweets"
 									],
 									"layerOptions": {
 										"fillOpacity": 1,
@@ -498,6 +498,14 @@
 								}
 							],
 					"interactions": {
+						"retrieve": {
+							"logging": true,
+							"toggle": false,
+							"interface": {
+								"popup": true,
+								"window": false
+							}
+						},
 						"zoom": {
 							"logging": true,
 							"toggle": false,
@@ -875,16 +883,16 @@
 								{
 										"roundTo": 0,
 									"name": "Example Map",
-									"source": "data/detailsdata.geojson",
-									"expressedAttribute": "county_t_1",
+									"source": "data/points1_countiesall.geojson",
+									"expressedAttribute": "Tweets",
 									"layerOptions": {
 										"fillOpacity": 0.8,
 										"color": "black",
 										"weight": 0.2,
 										"opacity": 1,
 										"fillOpacity": 0,
-										"minZoom": 6,
-										"maxZoom": 11,
+										"minZoom": 7,
+										"maxZoom": 9,
 										"dashArray": "5, 5"
 								},
 									"renderOnLoad": true,
@@ -896,6 +904,30 @@
 											"classes": "BuGn.5"
 										}
 									]},
+									{
+											"roundTo": 0,
+										"name": "Example Map",
+										"source": "data/points1_details.geojson",
+										"expressedAttribute": "Tweets",
+										"layerOptions": {
+											"fillOpacity": 0.8,
+											"color": "black",
+											"weight": 0.2,
+											"opacity": 1,
+											"fillOpacity": 0,
+											"minZoom": 10,
+											"maxZoom": 10,
+											"dashArray": "5, 5"
+									},
+										"renderOnLoad": true,
+										"techniques": [
+											{
+												"type": "choropleth",
+												"showOnLegend": false,
+												"classification": "equal interval",
+												"classes": "BuGn.5"
+											}
+										]},
 									{
 										"roundTo": 0,
 										"name": "counties",
@@ -1046,6 +1078,14 @@
 										}
 									],
 							"interactions": {
+								"retrieve": {
+									"logging": true,
+									"toggle": false,
+									"interface": {
+										"popup": true,
+										"window": false
+									}
+								},
 								"zoom": {
 									"logging": true,
 									"toggle": false,
@@ -2609,6 +2649,14 @@
 														  }
 														],
 													"interactions": {
+														"retrieve": {
+															"logging": true,
+															"toggle": false,
+															"interface": {
+																"popup": true,
+																"window": false
+															}
+														},
 														"zoom": {
 															"logging": true,
 															"toggle": false,

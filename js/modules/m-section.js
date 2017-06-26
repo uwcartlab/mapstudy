@@ -570,7 +570,7 @@ var LegendLayerView = Backbone.View.extend({
 			view.append(view.css.stroke, 'Line interval: '+interval, 0);
 			//set stroke width
 			if (view.css.hasOwnProperty('stroke-width')){
-				view.$el.find('path').attr('stroke-width', view.css['stroke-width']);
+				//view.$el.find('path').attr('stroke-width', view.css['stroke-width']);
 			};
 			//set svg height
 			view.model.attributes.svgHeight = 16;
