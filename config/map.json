@@ -800,7 +800,7 @@
 						"page": 6,
 						"library": "Leaflet",
 						"mapOptions": {
-							"legend": false,
+							"legend": true,
 							"resetButton": true,
 							"center": [
 						    38.9,
@@ -852,6 +852,7 @@
 									"techniques": [
 										{
 											"type": "heat",
+											"showOnLegend": false,
 											"size": 0.05
 										}
 									]
@@ -876,13 +877,14 @@
 									"techniques": [
 										{
 											"type": "heat",
+											"showOnLegend": false,
 											"size": 0.05
 										}
 									]
 								},
 								{
 										"roundTo": 0,
-									"name": "Example Map",
+									"name": "Map of Tweets",
 									"source": "data/points1_countiesall.geojson",
 									"expressedAttribute": "Tweets",
 									"layerOptions": {
@@ -899,7 +901,7 @@
 									"techniques": [
 										{
 											"type": "choropleth",
-											"showOnLegend": false,
+											"showOnLegend": true,
 											"classification": "equal interval",
 											"classes": "BuGn.5"
 										}
@@ -923,7 +925,7 @@
 										"techniques": [
 											{
 												"type": "choropleth",
-												"showOnLegend": false,
+												"showOnLegend": true,
 												"classification": "equal interval",
 												"classes": "BuGn.5"
 											}
@@ -1020,7 +1022,7 @@
 												{
 													"type": "proportional symbol",
 													"classification": "equal interval",
-													"showOnLegend": true,
+													"showOnLegend": false,
 													"classes": [
 												2,
 												2

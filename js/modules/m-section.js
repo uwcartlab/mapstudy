@@ -2164,7 +2164,7 @@ var LeafletMap = Backbone.View.extend({
 				var id = 'legend-'+layer._leaflet_id;
 				//only show immediately if layer is visible
 				var display = map.hasLayer(layer) ? 'block' : 'none';
-				innerHTML += '<div id="'+id+'" style="display: '+display+';"><p class="legend-layer-title">'+layer.layerName+' '+layer.techniqueType+'<br/>Attribute: '+layer.model.get('expressedAttribute')+'</p>';
+				innerHTML += '<div id="'+id+'" style="display: '+display+';"><p class="legend-layer-title">'+layer.model.get('expressedAttribute')+'</p>';
 				var legendView = new LegendLayerView({model: layer.model});
 				innerHTML += legendView.$el[0].outerHTML + '</div>';
 			}, this);
@@ -2204,6 +2204,7 @@ var LeafletMap = Backbone.View.extend({
 		//add open and close listeners
 		$('.legend-control-container .open').click(function(){
 			$('#legend-wrapper, .legend-control-container .close').show();
+			$("svg.choropleth-legend > rect").css("fill-opacity","0.8");
 		});
 		$('.legend-control-container .close').click(function(){
 			$('#legend-wrapper, .legend-control-container .close').hide();

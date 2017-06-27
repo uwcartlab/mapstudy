@@ -355,7 +355,9 @@
         <script type="text/javascript" src="js/modules/m-section.js"></script>
         <script type="text/javascript" src="js/modules/q-section.js"></script>
 
+        <!--outline clicked feature-->
         <script>
+        $(window).bind("load", function() {
           $(document).on('click','path',function(){
             var pathTarget = this;
         	   $( this ).attr("stroke", "#ff0000");
@@ -363,9 +365,14 @@
              setTimeout(function(){
                $(pathTarget).attr("stroke", "#000");
                $(pathTarget).attr("stroke-width", "0.5");
-               },2000);
-             });
+             },1000);
+             $('td.attr').text("Tweets:"); //change popup text to 'Tweets:'
+           });
+
+          });
+
         </script>
+
         <!-- <script>
           var sw = screen.width;
           var sh = screen.height;
