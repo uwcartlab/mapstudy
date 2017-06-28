@@ -2164,7 +2164,7 @@ var LeafletMap = Backbone.View.extend({
 				var id = 'legend-'+layer._leaflet_id;
 				//only show immediately if layer is visible
 				var display = map.hasLayer(layer) ? 'block' : 'none';
-				innerHTML += '<div id="'+id+'" style="display: '+display+';"><p class="legend-layer-title">'+layer.model.get('expressedAttribute')+'</p>';
+				innerHTML += '<div id="'+id+'" style="display: '+display+';"><p class="legend-layer-title">Tweets:</p>';
 				var legendView = new LegendLayerView({model: layer.model});
 				innerHTML += legendView.$el[0].outerHTML + '</div>';
 			}, this);

@@ -44,9 +44,6 @@
 							"ask": "This is an example of what a map could look like. It shows the total number of tweets, but always review the legend carefully so you know what you are looking at. Each map that you will be shown will be a different topic with a different distribution. The distribution that you will be looking at will have a 'higher' and 'lower' relationship. <br><br>The maps will allow you to pan, or move around the map, and zoom, or change the level of detail you are looking at. Exploration is encouraged. If you are familiar with the represented geography, do not consider any correlating factors in map reading and interaction. <br><br>Use the map to answer the following example question.<br><br> <strong>REMEMBER: Once you select 'Next' the survey will begin and a timer will start.</strong>"
 						},
 						{
-							"ask": "<img src='img/legends/legendChoro.png' />"
-						},
-						{
 							"ask": "Which city had the most tweets?",
 							"input": {
 								"required": true,
@@ -84,8 +81,7 @@
 				{
 					"blocks": [
 						{
-							"title": "Tweets about Basketball, Choropleth Map",
-							"ask": "<img src='img/legends/legendChoro.png' />"
+							"title": "Tweets about Basketball, Choropleth Map"
 						},
 						{
 							"ask": "Which town had more tweets?",
@@ -163,9 +159,6 @@
 						{
 						"resetMap": false,
 						"blocks":	[
-							{
-								"ask": "<img src='img/legends/legendChoro.png' />"
-							},
 							{
 							"ask": "Which town had the most tweets?",
 							"input": {
@@ -251,9 +244,6 @@
 							"resetMap": false,
 							"blocks":	[
 								{
-									"ask": "<img src='img/legends/legendChoro.png' />"
-								},
-								{
 							"ask": "Which county had more tweets?",
 							"input": {
 								"required": false,
@@ -329,9 +319,6 @@
 							{
 								"resetMap": false,
 							"blocks":	[
-								{
-									"ask": "<img src='img/legends/legendChoro.png' />"
-								},
 								{
 							"ask": "Which county had the most tweets?",
 							"input": {
@@ -425,8 +412,7 @@
 				{
 					"blocks": [
 						{
-							"title": "Tweets about Hamburgers, Proportional Symbol Map",
-							"ask": "<img src='img/legends/legendProp.png' />"
+							"title": "Tweets about Hamburgers, Proportional Symbol Map"
 						},
 						{
 							"ask": "Which town had more tweets?",
@@ -504,9 +490,6 @@
 							{
 								"resetMap": false,
 							"blocks":	[
-								{
-									"ask": "<img src='img/legends/legendProp.png' />"
-								},
 								{
 							"ask": "Which town had the most tweets?",
 							"input": {
@@ -592,9 +575,6 @@
 								"resetMap": false,
 							"blocks":	[
 								{
-									"ask": "<img src='img/legends/legendProp.png' />"
-								},
-								{
 							"ask": "Which county had more tweets?",
 							"input": {
 								"required": false,
@@ -670,9 +650,6 @@
 							{
 								"resetMap": false,
 							"blocks":	[
-								{
-									"ask": "<img src='img/legends/legendProp.png' />"
-								},
 								{
 							"ask": "Which county had the most tweets?",
 							"input": {
@@ -765,8 +742,7 @@
 				{
 					"blocks": [
 						{
-							"title": "Tweets about Jackets, Heat Map",
-							"ask": "<img src='img/legends/legendChoro.png' />"
+							"title": "Tweets about Jackets, Heat Map"
 						},
 						{
 
@@ -845,9 +821,6 @@
 							{
 							"resetMap": false,
 							"blocks":	[
-								{
-									"ask": "<img src='img/legends/legendChoro.png' />"
-								},
 								{
 							"ask": "Which town had the most tweets?",
 							"input": {
@@ -933,9 +906,6 @@
 								"resetMap": false,
 							"blocks":	[
 								{
-									"ask": "<img src='img/legends/legendChoro.png' />"
-								},
-								{
 							"ask": "Which county had more tweets?",
 							"input": {
 								"required": false,
@@ -1011,9 +981,6 @@
 							{
 								"resetMap": false,
 							"blocks":	[
-								{
-									"ask": "<img src='img/legends/legendChoro.png' />"
-								},
 								{
 							"ask": "Which county had the most tweets?",
 							"input": {
@@ -1105,8 +1072,7 @@
 				{
 					"blocks": [
 						{
-							"title": "Tweets about Nightlife, Dot Density Map",
-							"ask": "<img src='img/legends/legendDot.png' />"
+							"title": "Tweets about Nightlife, Dot Density Map"
 						},
 						{
 							"ask": "Which town had more tweets?",
@@ -1184,9 +1150,6 @@
 							{
 								"resetMap": false,
 							"blocks":	[
-								{
-									"ask": "<img src='img/legends/legendDot.png' />"
-								},
 								{
 							"ask": "Which town had the most tweets?",
 							"input": {
@@ -1272,9 +1235,6 @@
 								"resetMap": false,
 							"blocks":	[
 								{
-									"ask": "<img src='img/legends/legendDot.png' />"
-								},
-								{
 							"ask": "Which county had more tweets?",
 							"input": {
 								"required": false,
@@ -1350,9 +1310,6 @@
 							{
 								"resetMap": false,
 							"blocks":	[
-								{
-									"ask": "<img src='img/legends/legendDot.png' />"
-								},
 								{
 							"ask": "Which county had the most tweets?",
 							"input": {
@@ -1505,8 +1462,7 @@
 				{
 					"blocks": [
 						{
-							"title": "Tweets about Shoes, Dot Density Map",
-							"ask": "<img src='img/legends/legendDot.png' />"
+							"title": "Tweets about Shoes, Dot Density Map"
 						},
 						{
 							"ask": "Which town had more tweets?",
@@ -1584,9 +1540,6 @@
 							{
 								"resetMap": false,
 							"blocks":	[
-								{
-									"ask": "<img src='img/legends/legendDot.png' />"
-								},
 								{
 							"ask": "Which town had the most tweets?",
 							"input": {
@@ -1672,9 +1625,6 @@
 								"resetMap": false,
 							"blocks":	[
 								{
-									"ask": "<img src='img/legends/legendDot.png' />"
-								},
-								{
 							"ask": "Which county had more tweets?",
 							"input": {
 								"required": false,
@@ -1750,9 +1700,6 @@
 							{
 								"resetMap": false,
 							"blocks":	[
-								{
-									"ask": "<img src='img/legends/legendDot.png' />"
-								},
 								{
 							"ask": "Which county had the most tweets?",
 							"input": {
@@ -1843,8 +1790,7 @@
 				{
 					"blocks": [
 						{
-							"title": "Tweets about Pizza, Heat Map",
-							"ask": "<img src='img/legends/legendChoro.png' />"
+							"title": "Tweets about Pizza, Heat Map"
 						},
 						{
 							"ask": "Which town had more tweets?",
@@ -1922,9 +1868,6 @@
 								{
 									"resetMap": false,
 								"blocks":	[
-									{
-										"ask": "<img src='img/legends/legendChoro.png' />"
-									},
 									{
 								"ask": "Which town had the most tweets?",
 								"input": {
@@ -2010,9 +1953,6 @@
 									"resetMap": false,
 								"blocks":	[
 									{
-										"ask": "<img src='img/legends/legendChoro.png' />"
-									},
-									{
 								"ask": "Which county had more tweets?",
 								"input": {
 									"required": false,
@@ -2088,9 +2028,6 @@
 								{
 									"resetMap": false,
 								"blocks":	[
-									{
-										"ask": "<img src='img/legends/legendChoro.png' />"
-									},
 									{
 								"ask": "Which county had the most tweets?",
 								"input": {
@@ -2181,8 +2118,7 @@
 				{
 					"blocks": [
 						{
-							"title": "Tweets about Baseball, Proportional Symbol Map",
-							"ask": "<img src='img/legends/legendProp.png' />"
+							"title": "Tweets about Baseball, Proportional Symbol Map"
 						},
 						{
 							"ask": "Which town had more tweets?",
@@ -2260,9 +2196,6 @@
 							{
 								"resetMap": false,
 							"blocks":	[
-								{
-									"ask": "<img src='img/legends/legendProp.png' />"
-								},
 								{
 							"ask": "Which town had the most tweets?",
 							"input": {
@@ -2348,9 +2281,6 @@
 								"resetMap": false,
 							"blocks":	[
 								{
-									"ask": "<img src='img/legends/legendProp.png' />"
-								},
-								{
 							"ask": "Which county had more tweets?",
 							"input": {
 								"required": false,
@@ -2426,9 +2356,6 @@
 							{
 								"resetMap": false,
 							"blocks":	[
-								{
-									"ask": "<img src='img/legends/legendProp.png' />"
-								},
 								{
 							"ask": "Which county had the most tweets?",
 							"input": {
@@ -2518,8 +2445,7 @@
 				{
 					"blocks": [
 						{
-							"title": "Tweets about Hiking, Choropleth Map",
-							"ask": "<img src='img/legends/legendChoro.png' />"
+							"title": "Tweets about Hiking, Choropleth Map"
 						},
 						{
 							"ask": "Which town had more tweets?",
@@ -2597,9 +2523,6 @@
 							{
 								"resetMap": false,
 							"blocks":	[
-								{
-									"ask": "<img src='img/legends/legendChoro.png' />"
-								},
 								{
 							"ask": "Which town had the most tweets?",
 							"input": {
@@ -2685,9 +2608,6 @@
 								"resetMap": false,
 							"blocks":	[
 								{
-									"ask": "<img src='img/legends/legendChoro.png' />"
-								},
-								{
 							"ask": "Which county had more tweets?",
 							"input": {
 								"required": false,
@@ -2763,9 +2683,6 @@
 							{
 								"resetMap": false,
 							"blocks":	[
-								{
-									"ask": "<img src='img/legends/legendChoro.png' />"
-								},
 								{
 							"ask": "Which county had the most tweets?",
 							"input": {
@@ -2919,8 +2836,7 @@
 				{
 					"blocks": [
 						{
-							"title": "Tweets about Soccer, Heat Map",
-							"ask": "<img src='img/legends/legendChoro.png' />"
+							"title": "Tweets about Soccer, Heat Map"
 						},
 						{
 							"ask": "Which town had more tweets?",
@@ -2998,9 +2914,6 @@
 							{
 								"resetMap": false,
 							"blocks":	[
-								{
-									"ask": "<img src='img/legends/legendChoro.png' />"
-								},
 								{
 							"ask": "Which town had the most tweets?",
 							"input": {
@@ -3086,9 +2999,6 @@
 								"resetMap": false,
 							"blocks":	[
 								{
-									"ask": "<img src='img/legends/legendChoro.png' />"
-								},
-								{
 							"ask": "Which county had more tweets?",
 							"input": {
 								"required": false,
@@ -3164,9 +3074,6 @@
 							{
 								"resetMap": false,
 							"blocks":	[
-								{
-									"ask": "<img src='img/legends/legendChoro.png' />"
-								},
 								{
 							"ask": "Which county had the most tweets?",
 							"input": {
@@ -3256,8 +3163,7 @@
 				{
 					"blocks": [
 						{
-							"title": "Tweets about Salad, Dot Density Map",
-							"ask": "<img src='img/legends/legendDot.png' />"
+							"title": "Tweets about Salad, Dot Density Map"
 						},
 						{
 							"ask": "Which town had more tweets?",
@@ -3335,9 +3241,6 @@
 								{
 									"resetMap": false,
 								"blocks":	[
-									{
-										"ask": "<img src='img/legends/legendDot.png' />"
-									},
 									{
 								"ask": "Which town had the most tweets?",
 								"input": {
@@ -3423,9 +3326,6 @@
 									"resetMap": false,
 								"blocks":	[
 									{
-										"ask": "<img src='img/legends/legendDot.png' />"
-									},
-									{
 								"ask": "Which county had more tweets?",
 								"input": {
 									"required": false,
@@ -3501,9 +3401,6 @@
 								{
 									"resetMap": false,
 								"blocks":	[
-									{
-										"ask": "<img src='img/legends/legendDot.png' />"
-									},
 									{
 								"ask": "Which county had the most tweets?",
 								"input": {
@@ -3593,8 +3490,7 @@
 				{
 					"blocks": [
 						{
-							"title": "Tweets about Gloves, Choropleth Map",
-							"ask": "<img src='img/legends/legendChoro.png' />"
+							"title": "Tweets about Gloves, Choropleth Map"
 						},
 						{
 							"ask": "Which town had more tweets?",
@@ -3672,9 +3568,6 @@
 								{
 									"resetMap": false,
 								"blocks":	[
-									{
-										"ask": "<img src='img/legends/legendChoro.png' />"
-									},
 									{
 								"ask": "Which town had the most tweets?",
 								"input": {
@@ -3760,9 +3653,6 @@
 									"resetMap": false,
 								"blocks":	[
 									{
-										"ask": "<img src='img/legends/legendChoro.png' />"
-									},
-									{
 								"ask": "Which county had more tweets?",
 								"input": {
 									"required": false,
@@ -3838,9 +3728,6 @@
 								{
 									"resetMap": false,
 								"blocks":	[
-									{
-										"ask": "<img src='img/legends/legendChoro.png' />"
-									},
 									{
 								"ask": "Which county had the most tweets?",
 								"input": {
@@ -3930,8 +3817,7 @@
 				{
 					"blocks": [
 						{
-							"title": "Tweets about Movies, Proportional Symbol Map",
-							"ask": "<img src='img/legends/legendProp.png' />"
+							"title": "Tweets about Movies, Proportional Symbol Map"
 						},
 						{
 							"ask": "Which town had more tweets?",
@@ -4009,9 +3895,6 @@
 							{
 								"resetMap": false,
 							"blocks":	[
-								{
-									"ask": "<img src='img/legends/legendProp.png' />"
-								},
 								{
 							"ask": "Which town had the most tweets?",
 							"input": {
@@ -4097,9 +3980,6 @@
 								"resetMap": false,
 							"blocks":	[
 								{
-									"ask": "<img src='img/legends/legendProp.png' />"
-								},
-								{
 							"ask": "Which county had more tweets?",
 							"input": {
 								"required": false,
@@ -4175,9 +4055,6 @@
 							{
 								"resetMap": false,
 							"blocks":	[
-								{
-									"ask": "<img src='img/legends/legendProp.png' />"
-								},
 								{
 							"ask": "Which county had the most tweets?",
 							"input": {
@@ -4330,8 +4207,7 @@
 				{
 					"blocks": [
 						{
-							"title": "Tweets about Hats, Proportional Symbol Map",
-							"ask": "<img src='img/legends/legendProp.png' />"
+							"title": "Tweets about Hats, Proportional Symbol Map"
 						},
 						{
 							"ask": "Which town had more tweets?",
@@ -4409,9 +4285,6 @@
 							{
 								"resetMap": false,
 							"blocks":	[
-								{
-									"ask": "<img src='img/legends/legendProp.png' />"
-								},
 								{
 							"ask": "Which town had the most tweets?",
 							"input": {
@@ -4497,9 +4370,6 @@
 								"resetMap": false,
 							"blocks":	[
 								{
-									"ask": "<img src='img/legends/legendProp.png' />"
-								},
-								{
 							"ask": "Which county had more tweets?",
 							"input": {
 								"required": false,
@@ -4575,9 +4445,6 @@
 							{
 								"resetMap": false,
 							"blocks":	[
-								{
-									"ask": "<img src='img/legends/legendProp.png' />"
-								},
 								{
 							"ask": "Which county had the most tweets?",
 							"input": {
@@ -4667,8 +4534,7 @@
 				{
 					"blocks": [
 						{
-							"title": "Tweets about Coffee, Choropleth Map",
-							"ask": "<img src='img/legends/legendChoro.png' />"
+							"title": "Tweets about Coffee, Choropleth Map"
 						},
 						{
 							"ask": "Which town had more tweets?",
@@ -4746,9 +4612,6 @@
 							{
 								"resetMap": false,
 							"blocks":	[
-								{
-									"ask": "<img src='img/legends/legendChoro.png' />"
-								},
 								{
 							"ask": "Which town had the most tweets?",
 							"input": {
@@ -4834,9 +4697,6 @@
 								"resetMap": false,
 							"blocks":	[
 								{
-									"ask": "<img src='img/legends/legendChoro.png' />"
-								},
-								{
 							"ask": "Which county had more tweets?",
 							"input": {
 								"required": false,
@@ -4912,9 +4772,6 @@
 							{
 								"resetMap": false,
 							"blocks":	[
-								{
-									"ask": "<img src='img/legends/legendChoro.png' />"
-								},
 								{
 							"ask": "Which county had the most tweets?",
 							"input": {
@@ -5004,8 +4861,7 @@
 				{
 					"blocks": [
 						{
-							"title": "Tweets about Tennis, Dot Density Map",
-							"ask": "<img src='img/legends/legendDot.png' />"
+							"title": "Tweets about Tennis, Dot Density Map"
 						},
 						{
 							"ask": "Which town had more tweets?",
@@ -5083,9 +4939,6 @@
 							{
 								"resetMap": false,
 							"blocks":	[
-								{
-									"ask": "<img src='img/legends/legendDot.png' />"
-								},
 								{
 							"ask": "Which town had the most tweets?",
 							"input": {
@@ -5171,9 +5024,6 @@
 								"resetMap": false,
 							"blocks":	[
 								{
-									"ask": "<img src='img/legends/legendDot.png' />"
-								},
-								{
 							"ask": "Which county had more tweets?",
 							"input": {
 								"required": false,
@@ -5249,9 +5099,6 @@
 							{
 								"resetMap": false,
 							"blocks":	[
-								{
-									"ask": "<img src='img/legends/legendDot.png' />"
-								},
 								{
 							"ask": "Which county had the most tweets?",
 							"input": {
@@ -5342,10 +5189,6 @@
 					"blocks": [
 						{
 							"title": "Tweets about Music, Heat Map",
-							"ask": "<img src='img/legends/legendChoro.png' />"
-						},
-						{
-							"title": "Tweets about Music, Heat Map",
 							"ask": "Which town had more tweets?",
 							"input": {
 								"required": false,
@@ -5421,9 +5264,6 @@
 							{
 								"resetMap": false,
 							"blocks":	[
-								{
-									"ask": "<img src='img/legends/legendChoro.png' />"
-								},
 								{
 							"ask": "Which town had the most tweets?",
 							"input": {
@@ -5509,9 +5349,6 @@
 								"resetMap": false,
 							"blocks":	[
 								{
-									"ask": "<img src='img/legends/legendChoro.png' />"
-								},
-								{
 							"ask": "Which county had more tweets?",
 							"input": {
 								"required": false,
@@ -5587,9 +5424,6 @@
 							{
 								"resetMap": false,
 							"blocks":	[
-								{
-									"ask": "<img src='img/legends/legendChoro.png' />"
-								},
 								{
 							"ask": "Which county had the most tweets?",
 							"input": {
