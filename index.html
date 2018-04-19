@@ -360,12 +360,12 @@
         $(window).bind("load", function() {
           $(document).on('click','path',function(){
             var pathTarget = this;
-        	   $( this ).attr("stroke", "#ff0000");
-             $( this ).attr("stroke-width","2");
+        	   $( this ).attr("stroke", "#fff830");
+             $( this ).attr("stroke-width","5");
              setTimeout(function(){
                $(pathTarget).attr("stroke", "#000");
                $(pathTarget).attr("stroke-width", "0.5");
-             },1000);
+             },2000);
              $('td.attr').text("Tweets:"); //change popup text to 'Tweets:'
            });
 
