@@ -2096,7 +2096,7 @@ var LeafletMap = Backbone.View.extend({
 				//add name and icon if not the interaction buttons
 				if (controlName != 'interaction'){
 					container.innerHTML = '<img class="icon" src="img/icons/'+controlName+'.png" alt="'+controlName+'" title="'+controlName+'"><span class="control-title">'+controlName+'</span>';
-					$(container).hide();
+					//$(container).hide();
 				};
 				//kill map interactions under control
 				L.DomEvent.addListener(container, 'mousedown click dblclick', function(e) {
@@ -2210,7 +2210,7 @@ var LeafletMap = Backbone.View.extend({
 			$('#legend-wrapper, .legend-control-container .close').hide();
 		});
 		//hide everything but icon to start
-		$('#legend-wrapper').hide();
+		//$('#legend-wrapper').hide();
 	},
 	setMapInteractions: {
 		zoom: function(controlView, leafletView){
