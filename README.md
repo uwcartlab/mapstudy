@@ -56,7 +56,7 @@ This documentation assumes a basic working knowledge of JSON formatting, geograp
 
 5. If you plan to embed a static map image or pre-rendered web map from a service such as [CartoDB](https://cartodb.com/), prepare that map separately. *Note that if you do this, you lose the benefit of the embedded user interaction logging.*
 
-6. Set up a PostgreSQL, MySQL, or Microsoft Access database to store question answers and interaction logs. The MapStudy application will need administrator-level access to that database.
+6. Set up a PostgreSQL, MySQL, or Microsoft Access database to store question answers and interaction logs. The MapStudy application will need administrator-level access to that database, as well as several necessary PHP extensions. For more info on database setup and troubleshooting, see the "Param" section of the documentation.
 
 7. Edit and extend each *.json* file in the *config* directory using the options below. Your edits should be reflected immediately in the browser upon loading or reloading *index.html*.
 
@@ -532,6 +532,7 @@ The REST parameters may also be added in the above format to `baseLayer.source` 
 		"source"
 		"expressedAttribute"
 		*"displayAttributes"*
+		*"roundTo"*
 		*"renderOnLoad"*
 		*"layerOptions"*
 		"techniques"
@@ -567,6 +568,12 @@ The name of the numerical attribute that will be visually expressed on the map; 
 
 An array of one or more attributes to include in that layer's pop-ups if the `retrieve` interaction is included, in the search tool if the `search` interaction is included, and in the filter tool if the `filter` interaction is included. Only categorical attributes with string values will be searchable (e.g., "name" but not "population"). Only numerical attributes will be added to the filter tool (e.g., "population" but not "name"), and will be accessible via a drop-down menu in the data layer's line in the filter tool. If `retrieve`, `search`, or `filter` are included but no `displayAttributes` are given, pop-ups and tools will be implemented using only the layer's `expressedAttribute`.
 
+#### map.pages[page].dataLayers[i].roundTo
+
+		*"roundTo"*: *number*
+
+A number of digits to which to round the expressed attribute values displayed on the legend. Positive values represent the number of digits to the right of the decimal point (with 0 representing an integer with no decimals); negative values represent the number of places to the left of the decimal point.
+
 #### map.pages[page].dataLayers[i].renderOnLoad
 
 		*"renderOnLoad"*: *true* *false*
@@ -593,15 +600,16 @@ An object or URL string pointing to a JSON file containing [Leaflet Path options
 			*"symbol"*
 			*"interval"*
 			*"size"*
+			*"showOnLegend"*
 		}]
 
 An array of objects containing the thematic mapping techniques, including the map type and classification parameters for the data layer. At least one technique object is required. The first technique object in the array will be used for the layer's initial expression; all other techniques for the layer will only be available to the user if `map.pages[page].interactions.reexpress` is included.
 
 #### map.pages[page].dataLayers[i].techniques[ii].type
 
-			"type": *"choropleth"* *"proportional symbol"* *"dot"* *"isarithmic"* *"heat"*
+			"type": *"choropleth"* *"proportional symbol"* *"dot"* *"isarithmic"* *"heat"* *"label"* *"point"*
 
-The [thematic map type](https://en.wikipedia.org/wiki/Thematic_map). Note that only a data layer with a `proportional symbol`, `isarithmic`, or `heat` technique type can use point feature data, but all technique types can use polygon data. The `retrieve` and `search` interactions are not available for `heat` map layers, and `search` is not available for `isarithmic` layers.
+The [thematic map type](https://en.wikipedia.org/wiki/Thematic_map). Note that only a data layer with a `proportional symbol`, `isarithmic`, `heat`, or `point` technique type can use point feature data, but all technique types can use polygon data. The `retrieve` and `search` interactions are not available for `heat` map layers, and `search` is not available for `isarithmic` layers. A `label` data layer will place labels on the map for each feature expressing the layer's first display attribute, either adjacent to the feature if point data or centered within the feature if polygons. A `point` layer renders a single size of circle for each point feature or centroid using the technique `size` option.
 
 #### map.pages[page].dataLayers[i].techniques[ii].classification
 
@@ -642,11 +650,19 @@ For a dot map, the value of `interval` is the denominator by which the feature's
 
 			*"size"*: *size*
 
-The size of dots on a dot map or isarithms on an isarithmic map; a number.
+The size of dots on a dot map, isarithms on an isarithmic map, or label font size in pixels; a number.
 
 | Value  | Description | Default |
 | :------------: | :----------- | :------------------- |
-| `*size*` | Not available for other technique types. For a dot map, `size` is the dot radius. For an isarithmic map, `size` is the line width of each isarithm. | 1 pixel |
+| `*size*` | Not available for other technique types. For a dot map and points, `size` is the dot or point radius. For an isarithmic map, `size` is the line width of each isarithm. For labels, `size` is the pixel size of each label. | 1 pixel |
+
+#### map.pages[page].dataLayers[i].techniques[ii].showOnLegend
+
+			*"showOnLegend"*: *true* *false*
+
+Whether or not to show the technique on the legend when visible on the map. Default is `true`.
+
+
 
 ## Questions
 ###Filename: questions.json
@@ -685,7 +701,7 @@ Used to set page width.
 		*"remove"*
 	}
 
-Whether to include a timer for the page and timer options. If `"timer"` is included, a timer will appear in the page header and count up or down until the next page or until replaced by another timer.
+Whether to include a timer for the page and timer options. If `"timer"` is included, a timer will appear in the page header and count up or down until the next page or until replaced by another timer. *Caution*: Do not use both a page timer and a set timer on the same page.
 
 #### questions.pages[page].timer.direction
 
@@ -733,6 +749,8 @@ The sets of questions (blocks) and buttons that are viewable to the user at one 
 			*"title": text string*
 			"ask": HTML string
 			*"description": HTML string*
+			*"image": url or path to image file*
+			*"video": url or path to video file*
 			*"input"*: {
 				*"required"* "type" *"options": []* *"items": []*
 			}
@@ -747,6 +765,8 @@ A single question along with accompanying content and answer input(s). Each ques
 | `*"title": text string*` | Title for the question. If included, the question title will appear in bold at the top of the question block. | Example text |
 | `"ask": HTML string` | The question asked. Required. The question asked will appear in normal font below the title (if included) and above the other elements of the block (if included). It need not be a literal question; any text or html (such as image elements) may be included. | Example questions |
 | `*"description": HTML string*` | Further description tied to the question asked. Description text will appear in italicized font below the ask and above the other elements of the block (if included). Any text or html (such as image elements) may be included. | Example description |
+| `*"image": url or path to image file*` | A url or path to an image in PNG, JPEG, or GIF format | Example image |
+| `*"video": url or path to video file*` | A url to an online video or a path to a video file in MP4, WebM, or Ogg format. If a url, must link to the embeddable version of the video. | Example video |
 | `*"input"*: see below for options` | The answer input associated with the question. Appears below the ask and description (if included). | Example answers |
 
 
@@ -803,7 +823,7 @@ The type of answer input. Required if `input` is included with the block.
 	*"options"*: [
 		{
 			"text": text string
-			*"value": text string*
+			*"value": text string -or- "get from participant"*
 		}
 	]
 
@@ -812,7 +832,7 @@ An array of input options. Required by `radios`, `dropdown`, and `matrix` input 
 | Value  | Description | Default |
 | :------------: | :----------- | :------------------- |:---------------|
 | `"text": text string` | The text to display to the participant for the option. Required if `options` is included. | Example text |
-| `*"value": text string*` |  The value to display in the resulting data cell for the question block or item if the option is selected.  | If omitted, the option `"text"` will be recorded as the value. |
+| `*"value": text string -or- "get from participant"*` |  The value to display in the resulting data cell for the question block or item if the option is selected. If the input type is `radios` and the string provided is `"get from participant"`, a text box will be added for participant input (this is good for "other" options). | If omitted, the option `"text"` will be recorded as the value. |
 
 #### questions.pages[page].sets[i].blocks[ii].input.items
 
@@ -820,6 +840,7 @@ An array of input options. Required by `radios`, `dropdown`, and `matrix` input 
 		{
 			"text": text string
 			*"label": text string*
+			*"value": text string -or- "get from participant"*
 		}
 	]
 
@@ -828,7 +849,8 @@ An array of input items. Required by `checkboxes`, `matrix`, and `rank` input ty
 | Value  | Description | Default |
 | :------------: | :----------- | :------------------- |:---------------|
 | `"text": text string` | The text to display to the participant for the item. Required if `items` is included.| Example text |
-| `*"label": text string*` | (<= 20 characters) What to label the column for the item in the resulting data. Each item will be given its own column in the data table. For each item column, if the input type is `checkboxes`, each item's cell value will be recorded as `1` if the box is checked and no data if not checked. If the type is `matrix`, each item's cell value will correspond to the value of the selected option. If the type is `rank`, the cell value will be given the item's rank, starting at 1 for the top item.| If no `label` is provided for the item, a label will be automatically generated consisting of the block label and item indexes (for example, "p1s3b1i1") |
+| `*"label": text string*` | (<= 20 characters) What to label the column for the item in the resulting data. Each item will be given its own column in the data table. For each item column, if the input type is `checkboxes`, each item's cell value will be recorded as `1` or a value provided for `value` if the box is checked and no data if not checked. If the type is `matrix`, each item's cell value will correspond to the value of the selected option (this overrides the item `value` option). If the type is `rank`, the cell value will be given the item's rank, starting at 1 for the top item (this also overrides the item `value` option).| If no `label` is provided for the item, a label will be automatically generated consisting of the block label and item indexes (for example, "p1s3b1i1") |
+| `*"value": text string -or- "get from participant"*` | Only useful if the input type is `checkboxes`. Replaces `1` as the value recorded for each item that is checked. If the string provided is `"get from participant"`, a text box will be added for participant input (this is good for "other" items). |
 
 
 #### questions.pages[page].sets[i].buttons
@@ -858,7 +880,7 @@ Buttons that should be included at the bottom of the question set, below all of 
 		*"remove"*
 	}
 
-Whether to include a timer for the set and timer options. If `"timer"` is included, a timer will appear in the page header and count up or down until the next set or until replaced by another timer.
+Whether to include a timer for the set and timer options. If `"timer"` is included, a timer will appear in the page header and count up or down until the next set or until replaced by another timer. *Caution*: Do not use both a page timer and a set timer on the same page.
 
 #### questions.pages[page].sets[i].timer.direction
 
@@ -885,6 +907,12 @@ Whether to include a timer for the set and timer options. If `"timer"` is includ
 | Value  | Description | Default |
 | :------------: | :----------- | :------------------- |
 | `*true*` | Removes a persistent set timer without replacing it. If included, no other timer options will be applied. | N/A |
+
+#### questions.pages[page].sets[i].resetMap
+
+| Value  | Description | Default |
+| :------------: | :----------- | :------------------- |
+| `*true*` | Resets the map to its original state when set is loaded. Has no affect if applied to the first set on a page. | `false` |
 
 
 
@@ -938,7 +966,17 @@ This config file holds the configuration options necessary to access the databas
 
 #### Configuring the database
 
-A database is the recommended way to store the form and interaction data created by the MapStudy application. The framework supports database connections through the PHP PDO (PHP Data Objects) interface. Cubrid, FreeTDS (SyBase and Microsoft SQL Server), Firebird, IBM DB2, IBM Informix Dynamic Server, MySQL, Oracle Call Interface, ODBC v3, PostgreSQL, SQLite, Microsoft Azure SQL Database, and 4D databases are supported. The application will automatically generate the following tables:
+A database is the recommended way to store the form and interaction data created by the MapStudy application. The framework supports database connections through the PHP PDO (PHP Data Objects) interface. Cubrid, FreeTDS (SyBase and Microsoft SQL Server), Firebird, IBM DB2, IBM Informix Dynamic Server, MySQL, Oracle Call Interface, ODBC v3, PostgreSQL, SQLite, Microsoft Azure SQL Database, and 4D databases are supported. 
+
+When troubleshooting database issues, ensure your version of PHP is up to date and the following PHP extensions are enabled in the php.ini file:
+
+-extension=php_curl.dll\
+-extension=php_mbstring.dll\
+-extension=php_exif.dll\
+-extension=php_pdo_pgsql.dll\
+-extension=php_pgsql.dll
+
+The application will automatically generate the following tables:
 
 - **Participant Data**: One data table will be generated per participant to hold that participant's answers, named using the convention `p012345678_data` where `012345678` is the participant ID. Each row will correspond to a question block. The first column will be the question labels as defined in questions.json or automatically generated for the question if no label is provided (see label generation for [blocks](#questionssetsiblocksiilabel) and [items](#questionssetsiblocksiiinputoptionsiiilabel)), the second column will be the text of each question, and the third column will be the answers provided by the participant.
 

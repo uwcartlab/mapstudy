@@ -45,7 +45,7 @@ var Quantile = Backbone.Model.extend({
 	},
 	scale: function(values, classes){
 		//create scale generator
-		var scale = d3.scale.quantile()
+		var scale = d3.scaleQuantile()
 			.range(classes);
 		//assign array of values as scale domain
 		scale.domain(values);
@@ -60,7 +60,7 @@ var EqualInterval = Backbone.Model.extend({
 	},
 	scale: function(values, classes){
 		//create scale generator
-		var scale = d3.scale.quantile()
+		var scale = d3.scaleQuantile()
 			.range(classes);
 		//assign two-value array as scale domain
 		scale.domain([d3.min(values), d3.max(values)]);
@@ -75,7 +75,7 @@ var NaturalBreaks = Backbone.Model.extend({
 	},
 	scale: function(values, classes){
 		//create scale generator
-		var scale = d3.scale.threshold()
+		var scale = d3.scaleThreshold()
 			.range(classes);
 		//cluster data using ckmeans clustering algorithm to create natural breaks
 		var clusters = ss.ckmeans(values, classes.length);
@@ -98,7 +98,7 @@ var Unclassed = Backbone.Model.extend({
 	},
 	scale: function(values, rangeBounds){
 		//create scale generator
-		var scale = d3.scale.linear()
+		var scale = d3.scaleLinear()
 			.range(rangeBounds);
 		//assign two-value array as scale domain
 		scale.domain([d3.min(values), d3.max(values)]);
@@ -113,7 +113,7 @@ var UserDefined = Backbone.Model.extend({
 	},
 	scale: function(domain, classes){
 		//create scale generator
-		var scale = d3.scale.threshold()
+		var scale = d3.scaleThreshold()
 			.range(classes)
 			.domain(domain);
 		//done
@@ -136,7 +136,8 @@ var classification = new Backbone.Collection([
 var Choropleth = Backbone.Model.extend({
 	defaults: {
 		techniqueIndex: 0,
-		techniqueType: 'choropleth'
+		techniqueType: 'choropleth',
+		showOnLegend: true
 	},
 	setLayerOptions: function(feature, scale, expressedAttribute){
 		//weed out NaN and null values
@@ -155,10 +156,14 @@ var Choropleth = Backbone.Model.extend({
 			};
 		};
 	},
+	changeData: function(){},
 	symbolize: function(){
+		this.changeData(); //placeholder
 		var expressedAttribute = this.get('expressedAttribute'),
 			techniqueIndex = this.get('techniqueIndex'),
 			technique = this.get('techniques')[techniqueIndex];
+		//set whether to show on legend
+		if (technique.hasOwnProperty('showOnLegend')){ this.attributes.showOnLegend = technique.showOnLegend };
 		//retrieve ColorBrewer scheme if classes is a colorbrewer code
 		var classes;
 		if (typeof technique.classes == 'string'){
@@ -185,7 +190,8 @@ var Choropleth = Backbone.Model.extend({
 var ProportionalSymbol = Choropleth.extend({
 	defaults: {
 		symbol: 'circle',
-		techniqueType: 'proportional symbol'
+		techniqueType: 'proportional symbol',
+		showOnLegend: true
 	},
 	polygonsToPoints: function(rawfeatures, expressedAttribute){
 		var features = [];
@@ -203,8 +209,6 @@ var ProportionalSymbol = Choropleth.extend({
 		return features;
 	},
 	setLayerOptions: function(feature, scale, expressedAttribute){
-		//turn any polygons into points
-		this.attributes.features = this.polygonsToPoints(this.get('features'), expressedAttribute);
 		//ensure scale range values are numbers
 		var range = _.map(scale.range(), function(val){
 			return parseFloat(val);
@@ -214,13 +218,49 @@ var ProportionalSymbol = Choropleth.extend({
 		return {
 			radius: scale(parseFloat(feature.properties[expressedAttribute]))
 		};
+	},
+	changeData: function(){
+		//turn any polygons into points
+		this.attributes.features = this.polygonsToPoints(this.get('features'), this.get('expressedAttribute'));
 	}
 });
+
+var Point = ProportionalSymbol.extend({
+	defaults: {
+		symbol: 'circle',
+		techniqueType: 'point',
+		size: 1,
+		showOnLegend: false
+	},
+	setLayerOptions: function(feature, expressedAttribute){
+		//set a new radius property for each feature with the size option
+		return {
+			radius: this.get('size')
+		};
+	},
+	symbolize: function(){
+		this.changeData();
+		var expressedAttribute = this.get('expressedAttribute'),
+			techniqueIndex = this.get('techniqueIndex'),
+			technique = this.get('techniques')[techniqueIndex];
+		this.attributes.size = technique.size || 1;
+		//set whether to show on legend
+		if (technique.hasOwnProperty('showOnLegend')){ this.attributes.showOnLegend = technique.showOnLegend };
+		//get all of the values for the attribute by which the data will be classed
+		var values = getAllAttributeValues(this.get('features'), expressedAttribute);
+		//use size and attribute to set layer options
+		_.each(this.get('features'), function(feature, i){
+			feature.id = feature.id || i;
+			feature.properties.layerOptions = this.setLayerOptions(feature, expressedAttribute);
+		}, this);
+	}
+})
 
 var Isarithmic = ProportionalSymbol.extend({
 	defaults: {
 		interval: 1,
-		techniqueType: 'isarithmic'
+		techniqueType: 'isarithmic',
+		showOnLegend: true
 	},
 	setIsarithms: function(interval){
 		var size = this.get('size'),
@@ -262,6 +302,8 @@ var Isarithmic = ProportionalSymbol.extend({
 		var expressedAttribute = this.get('expressedAttribute'),
 			technique = this.get('techniques')[this.get('techniqueIndex')],
 			interval = technique.interval || 10;
+		//set whether to show on legend
+		if (technique.hasOwnProperty('showOnLegend')){ this.attributes.showOnLegend = technique.showOnLegend };
 		//set point feature set to enable resymbolize
 		this.attributes.pointFeatures = this.polygonsToPoints(this.get('features'), expressedAttribute);
 		this.attributes.size = technique.size || null;
@@ -272,7 +314,8 @@ var Isarithmic = ProportionalSymbol.extend({
 
 var Heat = Isarithmic.extend({
 	defaults: {
-		techniqueType: 'heat'
+		techniqueType: 'heat',
+		showOnLegend: true
 	},
 	featuresToDataPoints: function(features, expressedAttribute){
 		//return data usable to leaflet-heatmap
@@ -293,6 +336,9 @@ var Heat = Isarithmic.extend({
 	symbolize: function(){
 		var technique = this.get('techniques')[this.get('techniqueIndex')],
 			size = technique.size || null;
+		//set whether to show on legend
+		if (technique.hasOwnProperty('showOnLegend')){ this.attributes.showOnLegend = technique.showOnLegend };
+		//set heatmap
 		this.attributes.size = size;
 		this.setHeatmap(this);
 	}
@@ -301,7 +347,8 @@ var Heat = Isarithmic.extend({
 var Dot = Backbone.Model.extend({
 	defaults: {
 		techniqueIndex: 0,
-		techniqueType: 'dot'
+		techniqueType: 'dot',
+		showOnLegend: true
 	},
 	polygonsToDots: function(interval){
 		var expressedAttribute = this.get('expressedAttribute'),
@@ -342,6 +389,9 @@ var Dot = Backbone.Model.extend({
 		var technique = this.get('techniques')[this.get('techniqueIndex')],
 			size = technique.size || 1,
 			interval = technique.interval || 10;
+		//set whether to show on legend
+		if (technique.hasOwnProperty('showOnLegend')){ this.attributes.showOnLegend = technique.showOnLegend };
+		//create dots
 		this.attributes.size = size;
 		this.attributes.interval = interval;
 		this.polygonsToDots();
@@ -351,7 +401,8 @@ var Dot = Backbone.Model.extend({
 var Label = Backbone.Model.extend({
 	defaults: {
 		techniqueIndex: 0,
-		techniqueType: 'label'
+		techniqueType: 'label',
+		showOnLegend: false
 	},
 	setLabels: function(feature){
 		var label = feature.properties[this.get('displayAttributes')[0]],
@@ -384,7 +435,8 @@ var techniquesObj = {
 	'isarithmic': Isarithmic,
 	'heat': Heat,
 	'dot': Dot,
-	'label': Label
+	'label': Label,
+	'point': Point
 };
 
 //view for legend creation
@@ -408,7 +460,15 @@ var LegendLayerView = Backbone.View.extend({
 		};
 		//set label content
 		if (typeof domain == 'object'){
-			attributes.label = domain[0] + ' - ' + domain[1];
+			var min, max;
+			if (this.model.attributes.hasOwnProperty('roundTo')){
+				min = domain[0].toFixed(parseInt(this.model.get('roundTo')));
+				max = domain[1].toFixed(parseInt(this.model.get('roundTo')));
+			} else {
+				min = domain[0];
+				max = domain[1];
+			};
+			attributes.label = min + ' - ' + max;
 		} else {
 			attributes.label = String(domain)
 		};
@@ -458,7 +518,7 @@ var LegendLayerView = Backbone.View.extend({
 				view.model.attributes.maxRadius = parseFloat(range[range.length-1]);
 				//svg height should be whichever is larger, label heights or largest circle diameter
 				var heightArray = [
-					13 * range.length + 6, 
+					13 * range.length + 6,
 					parseFloat(range[range.length-1]) * 2 + 6
 				];
 				heightArray.sort(function(a,b){ return b-a });
@@ -586,7 +646,7 @@ var LegendLayerView = Backbone.View.extend({
 		this.css = css;
 		//set legend elements
 		var techniqueType = this.model.get('techniqueType');
-		this.techniques[techniqueType](this);		
+		this.techniques[techniqueType](this);
 		//style according to layer options
 		for (var style in css){
 			this.$el.children('rect').each(function(){
@@ -861,6 +921,9 @@ var FilterModel = Backbone.Model.extend({
 	}
 });
 
+//array to save user-assigned slider data
+var userInputSliders = [];
+
 //slider view for filter interaction
 var FilterSliderView = Backbone.View.extend({
 	el: ".filter-control-container",
@@ -876,7 +939,7 @@ var FilterSliderView = Backbone.View.extend({
 	setSlider: function(attribute, className){
 		//get attribute values for all features with given attribute
 		var allAttributeValues = getAllAttributeValues(this.model.get('features'), attribute);
-		//set values for slider
+		//set values for sliderv
 		var min = _.min(allAttributeValues),
 			max = _.max(allAttributeValues),
 			mindiff = _.reduce(allAttributeValues, function(memo, val, i){
@@ -913,18 +976,50 @@ var FilterSliderView = Backbone.View.extend({
 		labelsDiv.children(".right").html(max);
 		//to pass to slide callback
 		var applyFilter = this.applyFilter;
+
+		//Check to see if user data exists for slider positions
+		//If not, adds values to array
+		var setMin;
+		var setMax;
+		var objectExists = false;
+		var objIndex = -1;
+		if(min!=Infinity){ //not sure why sometime this shows as Infinity, but this fixes it
+				for(i = 0; i < userInputSliders.length; i++){
+					if(userInputSliders[i].name === attribute){ //searches for objects named w/attribute
+						objectExists = true;
+						objIndex = i;
+					}
+				}
+				if(objectExists){ //if data exists, sets slider min/max
+					setMin = userInputSliders[objIndex].uMin;
+					setMax = userInputSliders[objIndex].uMax;
+				} else { //if data does not exist, adds it to the userInputSliders array
+					userInputSliders.push({name:attribute,uMin:min,uMax:max})
+					setMin = min;
+					setMax = max;
+				}
+		}
 		//call once to reset layer
-		applyFilter(attribute, [min, max], true);
+		applyFilter(attribute, [setMin, setMax], true);
+
 		//set slider
 		this.$el.find("#"+className+"-slider").slider({
 			range: true,
 			min: min,
 			max: max,
-			values: [min, max],
+			values: [setMin,setMax],
 			step: step,
 			slide: function(e, slider){
 				labelsDiv.children(".left").html(slider.values[0]);
 				labelsDiv.children(".right").html(slider.values[1]);
+
+				//iterate through saved slider value array and set slider to previous value
+				for(j = 0; j< userInputSliders.length; j++){
+					if(userInputSliders[j].name === attribute){ //searches for objects named w/attribute
+						userInputSliders[j].uMin = slider.values[0];
+						userInputSliders[j].uMax = slider.values[1];
+					}
+				}
 				applyFilter(attribute, slider.values);
 			}
 		});
@@ -1286,7 +1381,7 @@ var ReclassifyView = ReexpressInputView.extend({
 			//set display and values based on number of classes
 			var display = i < scale.range().length-1 ? 'inline' : 'none';
 			this.$el.find('.class-break-inputs').append(cbTemplate({
-				index: i, 
+				index: i,
 				display: display
 			}));
 		};
@@ -1309,7 +1404,7 @@ var ReclassifyView = ReexpressInputView.extend({
 			setClassification = this.setClassification,
 			setNClasses = this.setNClasses,
 			setClassBreaks = this.setClassBreaks;
-		
+
 		//set reclassification listener on classification dropdown
 		this.$el.find('select[name=classification]').change(function(e, r){
 			//get classification parameters
@@ -1371,7 +1466,7 @@ var RecolorView = ReclassifyView.extend({
 			} else {
 				var hex = this.model.get('color');
 			};
-			//set default color of input 
+			//set default color of input
 			colorInput.attr('value', hex);
 			//hide color scale select
 			this.$el.find('.recolor select, .color-scale-palette, .color-scale-button').hide();
@@ -1505,7 +1600,7 @@ var RecolorView = ReclassifyView.extend({
 				});
 			};
 		}, this);
-		
+
 		//set listeners on each list element in color scale list
 		this.setColorSelectListeners(list);
 
@@ -1523,7 +1618,7 @@ var RecolorView = ReclassifyView.extend({
 			}, this);
 		}, this);
 		//go ahead with palette if first run
-		if (init){ 
+		if (init){
 			this.model.trigger('reclassified')
 		};
 	},
@@ -1622,6 +1717,23 @@ var RescaleView = RecolorView.extend({
 
 /************** map.library ****************/
 
+//Static Image
+var imageMap = Backbone.View.extend({
+	el: '#m',
+	template: _.template($('#image-map-template').html()),
+	render: function(){
+		var source = this.model.attributes.hasOwnProperty('source') ? this.model.get('source') : null;
+		this.$el.html(this.template({source: source}));
+		return this;
+	},
+	setMap: function(){} //not used for image but required to load view
+});
+
+//Iframe
+var iframeMap = imageMap.extend({
+	template: _.template($('#iframe-map-template').html())
+});
+
 //Leaflet
 var LeafletMap = Backbone.View.extend({
 	el: '#m',
@@ -1630,6 +1742,7 @@ var LeafletMap = Backbone.View.extend({
 	},
 	firstLayers: {},
 	offLayers: {},
+	timeout: window.setTimeout(function(){},0),
 	//all available interactions
 	interactions: {
 		zoom: false,
@@ -1682,9 +1795,28 @@ var LeafletMap = Backbone.View.extend({
 			}
 		});
 	},
+	orderLayers: function(filter){
+		filter = filter || false;
+		//redraw layers according to layer order
+		_.each(this.model.get('leafletDataLayers'), function(layer){
+			if (this.map.hasLayer(layer)){
+				//if filtering, need to selectively target sub-layers
+				if (filter && layer.hasOwnProperty('_layers')){
+					_.each(layer._layers, function(l){
+						if (this.map.hasLayer(l)){
+							l.bringToFront();
+						};
+					}, this);
+				} else {
+					layer.bringToFront();
+				}
+			};
+		}, this);
+	},
 	addLayer: function(layerId){
 		this.offLayers[layerId].show = true;
 		this.offLayers[layerId].addTo(this.map);
+		this.orderLayers();
 	},
 	removeLayer: function(layerId, maintain){
 		//mark layer as hidden only if manually hidden by user
@@ -1714,7 +1846,7 @@ var LeafletMap = Backbone.View.extend({
 		leafletBaseLayer._leaflet_id = Math.round(Math.random()*10000);
 		var layerId = leafletBaseLayer._leaflet_id;
 		//only add first base layer to the map
-		if (i==0){ 
+		if (i==0){
 			leafletBaseLayer.addTo(this.map);
 			this.firstLayers[layerId] = leafletBaseLayer;
 		} else {
@@ -1780,9 +1912,10 @@ var LeafletMap = Backbone.View.extend({
 	},
 	setTechniques: function(dataLayerModel){
 		//variables needed by internal functions
-		var view = this, 
+		var view = this,
 			model = view.model,
-			map = view.map;
+			map = view.map,
+			dataLayerOptions = dataLayerModel.get('layerOptions') || {};
 		//translate topojson
 		if (dataLayerModel.attributes.type && dataLayerModel.get('type') == 'Topology'){
 			var featureCollection = view.topoToGeoJSON(dataLayerModel.get('transform'), dataLayerModel.get('arcs'), dataLayerModel.get('objects'), dataLayerModel.get('crs'));
@@ -1797,13 +1930,13 @@ var LeafletMap = Backbone.View.extend({
 		function style(feature){
 			//combine layer options objects from config file and feature properties
 			//classification will take precedence over base options
-			return _.defaults(feature.properties.layerOptions, dataLayerModel.get('layerOptions'));
+			return _.defaults(feature.properties.layerOptions, dataLayerOptions);
 		};
 
 		//create a new Leaflet layer for each technique
 		_.each(dataLayerModel.get('techniques'), function(technique, i){
 			//instantiate new model based on technique type and combine with data layer model
-			var techniqueModel = new techniquesObj[technique.type]({techniqueIndex: i});
+			var techniqueModel = new techniquesObj[technique.type](_.extend(technique, {techniqueIndex: i}));
 			_.defaults(techniqueModel, dataLayerModel);
 			_.extend(techniqueModel.attributes, dataLayerModel.attributes);
 			if (technique.type == 'heat'){
@@ -1813,6 +1946,7 @@ var LeafletMap = Backbone.View.extend({
 						values = getAllAttributeValues(features, expressedAttribute),
 						points = tModel.featuresToDataPoints(features, expressedAttribute),
 						technique = tModel.get('techniques')[tModel.get('techniqueIndex')],
+						layerOptions = tModel.get('layerOptions'),
 						size = technique.size ? technique.size : 1;
 					//leaflet heatmap layer data
 					var data = {
@@ -1820,15 +1954,16 @@ var LeafletMap = Backbone.View.extend({
 						data: points
 					};
 					//leaflet heatmap layer config
-					var heatmapConfig = {
-						radius: size,
+					var heatmapConfig = _.extend({
 						maxOpacity: 0.8,
 						scaleRadius: true,
 						useLocalExtrema: true,
 						latField: 'lat',
 						lngField: 'lng',
 						valueField: expressedAttribute
-					};
+					}, layerOptions);
+					heatmapConfig.radius = size; //set radius to size to override other techniques' settings
+					delete heatmapConfig.opacity; //no set opacity!
 					//leaflet heatmap layer instance
 					var heatmapLayer = new HeatmapOverlay(heatmapConfig);
 					heatmapLayer.setData(data);
@@ -1845,12 +1980,12 @@ var LeafletMap = Backbone.View.extend({
 				onEachFeature: onEachFeature,
 				style: style,
 				className: dataLayerModel.get('className'),
-				minZoom: dataLayerModel.get('layerOptions').minZoom || 0,
-				maxZoom: dataLayerModel.get('layerOptions').maxZoom || 30
+				minZoom: dataLayerOptions.minZoom || 0,
+				maxZoom: dataLayerOptions.maxZoom || 30
 			};
 
 			//special processing for prop symbol maps
-			if (technique.type == 'proportional symbol'){
+			if (technique.type == 'proportional symbol' || technique.type == 'point'){
 				//implement pointToLayer conversion for proportional symbol maps
 				function pointToLayer(feature, latlng){
 					var markerOptions = style(feature);
@@ -1895,11 +2030,13 @@ var LeafletMap = Backbone.View.extend({
 			leafletDataLayer.className = techniqueModel.get('className');
 			leafletDataLayer.techniqueType = technique.type;
 			leafletDataLayer.techniqueOrder = i;
+			leafletDataLayer.showOnLegend = techniqueModel.get('showOnLegend');
 
 			var mapZoom = map.getZoom();
-
 			//render immediately by default
-			dataLayerModel.attributes.renderOnLoad = dataLayerModel.attributes.renderOnLoad || true;
+			if (!dataLayerModel.attributes.hasOwnProperty('renderOnLoad')){
+				dataLayerModel.attributes.renderOnLoad = true;
+			};
 			if (i==0 && dataLayerModel.get('renderOnLoad')){
 				leafletDataLayer.show = true;
 				if (mapZoom > overlayOptions.minZoom && mapZoom < overlayOptions.maxZoom){
@@ -1929,7 +2066,7 @@ var LeafletMap = Backbone.View.extend({
 						view.trigger('dataLayersDone');
 					};
 				};
-			};			
+			};
 		}, this);
 	},
 	setDataLayer: function(dataLayer, i){
@@ -2004,7 +2141,7 @@ var LeafletMap = Backbone.View.extend({
 			zoom = map.getZoom();
 		//remove out-of-bounds layers
 		map.eachLayer(function(layer){
-			if (!layer._url && 
+			if (!layer._url &&
 				(layer.options.minZoom > zoom || layer.options.maxZoom < zoom)
 			){
 				//remove but leave "shown" so it appears on zoom in
@@ -2040,10 +2177,12 @@ var LeafletMap = Backbone.View.extend({
 			var innerHTML = '<div class="open button" title="click to open legend"><img src="img/icons/legend.png" alt="legend"><span class="control-title">Legend</span></div><div id="legend-wrapper">';
 			//add legend entry for each visible data layer
 			_.each(model.get('leafletDataLayers'), function(layer, i){
+				if (!layer.showOnLegend){ return };
 				var id = 'legend-'+layer._leaflet_id;
 				//only show immediately if layer is visible
 				var display = map.hasLayer(layer) ? 'block' : 'none';
-				innerHTML += '<div id="'+id+'" style="display: '+display+';"><p class="legend-layer-title">'+layer.layerName+' '+layer.techniqueType+'<br/>Attribute: '+layer.model.get('expressedAttribute')+'</p>';
+				var acc = display == 'block' ? ' acc-open' : ' acc-closed';
+				innerHTML += '<div id="'+id+'" class="legend-layer-div display-'+display+'" style="display: '+display+';"><a class="leg-accordion'+acc+'"><img src="img/accordion_arrow.png" class="acc-arrow" title="click to minimize legend for layer"><p class="legend-layer-title">'+layer.layerName+' '+layer.techniqueType+'<br/>Attribute: '+layer.model.get('expressedAttribute')+'</p></a>';
 				var legendView = new LegendLayerView({model: layer.model});
 				innerHTML += legendView.$el[0].outerHTML + '</div>';
 			}, this);
@@ -2076,7 +2215,7 @@ var LeafletMap = Backbone.View.extend({
 				}]
 			});
 		});
-		
+
 		//add close button
 		var closeButton = _.template( $('#close-button-template').html() );
 		$('.legend-control-container').prepend(closeButton());
@@ -2087,8 +2226,53 @@ var LeafletMap = Backbone.View.extend({
 		$('.legend-control-container .close').click(function(){
 			$('#legend-wrapper, .legend-control-container .close').hide();
 		});
+		//add minimize/maximize listeners
+		var view = this;
+		$(".leg-accordion").click(view.legendLayerAccordion);
+		//minimize visible layers if more than one is visible
+		var legLayerCount = $('.legend-layer-div.display-block').length;
+		if (legLayerCount > 1){
+			$(".acc-open .acc-arrow").trigger("click")
+				.css("transform", "rotate(0deg)");
+		} else {
+			$(".acc-open .acc-arrow").css("transform", "rotate(90deg)");
+		};
+		//minimize invisible layers
+		$(".acc-closed .acc-arrow").css("transform", "rotate(0deg)");
+		$(".acc-closed").parent().children("svg, .heatmap-legend-wrapper").hide();
 		//hide everything but icon to start
 		$('#legend-wrapper').hide();
+	},
+	legendLayerAccordion: function(e){
+		legLayerA = $(e.target).is("a") ? $(e.target) : $(e.target).parent();
+		function stepCallback(now){
+            legLayerA.children("img").css({
+                transform: 'rotate(' + now + 'deg)'
+            });
+        }
+		if (legLayerA.attr("class").indexOf("closed") > -1){
+			//reset classname to open
+			legLayerA.attr("class", "leg-accordion acc-open");
+			//rotate arrow
+			$({deg: 0}).animate({deg: 90}, {
+		        step: stepCallback
+		    });
+		    //reset title on image
+		    legLayerA.children("img").attr("title", "click to minimize legend for layer")
+			//reveal SVG
+			legLayerA.parent().children("svg, .heatmap-legend-wrapper").slideDown(400);
+		} else {
+			//reset classname to closed
+			legLayerA.attr("class", "leg-accordion acc-closed");
+			//rotate arrow
+			$({deg: 90}).animate({deg: 0}, {
+		        step: stepCallback
+		    });
+		    //reset title on image
+		    legLayerA.children("img").attr("title", "click to view legend for layer")
+			//reveal SVG
+			legLayerA.parent().children("svg, .heatmap-legend-wrapper").slideUp(400);
+		}
 	},
 	setMapInteractions: {
 		zoom: function(controlView, leafletView){
@@ -2170,7 +2354,7 @@ var LeafletMap = Backbone.View.extend({
 					leafletView.trigger('pan');
 				};
 			};
-			//set timer to avoid autopan triggering	
+			//set timer to avoid autopan triggering
 			map.on('autopanstart', function(){
 				autopan = true;
 				setTimeout(function(){ autopan = false }, 500);
@@ -2294,10 +2478,12 @@ var LeafletMap = Backbone.View.extend({
 			var OverlayControl = leafletView.CustomControl('overlay', 'bottomleft');
 			var overlayControl = new OverlayControl();
 			map.addControl(overlayControl);
-
 			//add to overlay control
 			leafletView.once('dataLayersDone', function(){
 				_.each(leafletView.model.get('leafletDataLayers'), function(dataLayer){
+					if (_.indexOf(leafletView.model.get('interactions').overlay.dataLayers, dataLayer.layerName) == -1){
+						return false;
+					};
 					var layerId = dataLayer._leaflet_id;
 					var overlayControlModel = new OverlayControlModel({
 						layerName: dataLayer.layerName,
@@ -2464,6 +2650,9 @@ var LeafletMap = Backbone.View.extend({
 				$('#search-results-box').empty();
 				var allFeatures = [];
 				_.each(leafletView.model.get('leafletDataLayers'), function(layer){
+					if (_.indexOf(leafletView.model.get('interactions').search.dataLayers, layer.layerName) == -1){
+						return false;
+					};
 					if (layer.techniqueType != 'heat' && map.hasLayer(layer)){
 						allFeatures = _.union(allFeatures, layer.toGeoJSON().features);
 					};
@@ -2560,7 +2749,8 @@ var LeafletMap = Backbone.View.extend({
 						};
 					};
 				};
-
+				window.clearTimeout(leafletView.timeout);
+				leafletView.timeout = window.setTimeout(function(){ leafletView.orderLayers(true) }, 500);
 			};
 			//get interaction variables
 			var filterLayers = leafletView.model.get('interactions.filter.dataLayers'),
@@ -2646,7 +2836,7 @@ var LeafletMap = Backbone.View.extend({
 						$('#'+layerName+'-logic-div input').val('');
 						$('#'+layerName+'-logic-div input').prop('disabled', true);
 					}
-				};	
+				};
 			});
 
 			return controlView;
@@ -3049,24 +3239,28 @@ var LeafletMap = Backbone.View.extend({
 		},
 		reset: function(controlView, leafletView){
 			//change reset function to refresh the map
-			controlView.reset = function(){
+			controlView.reset = function(e){
 				window.setTimeout(function(){
 					var map = leafletView.map,
 						firstLayers = leafletView.firstLayers;
 					map.setView(map.options.center, map.options.zoom);
 					//remove all layers
 					map.eachLayer(function(layer){
-						map.removeLayer(layer);
+						leafletView.removeLayer(layer._leaflet_id, true);
 					});
 					//add back in initial map layers
 					for (var layerId in firstLayers){
-						map.addLayer(firstLayers[layerId]);
+						leafletView.addLayer(layerId);
 					};
 					//reset all layer controls
 					leafletView.trigger('refreshmap', {
 						layersObject: firstLayers,
 						dataLayers: leafletView.model.get('leafletDataLayers')
 					});
+					//only trigger logging if reset triggered by user
+					if (!e.hasOwnProperty('isTrigger')){
+						leafletView.trigger('resetMap');
+					};
 
 					//toggle off
 					controlView.toggle({target: $('.reset-control')[0]}, controlView, true);
@@ -3097,17 +3291,19 @@ var LeafletMap = Backbone.View.extend({
 			var InteractionControl = this.CustomControl('interaction', 'topright');
 			var interactionControl = new InteractionControl();
 			interactionControl.addTo(map);
-			//if resetButton is true, add to map interactions
+
+			//add reset button to allow reset to be triggered by user if specified or from questions regardless
 			var resetButton = this.model.get('mapOptions').resetButton || false;
-			if (resetButton){
-				if (!this.model.get('interactions').hasOwnProperty('reset')){
-					this.model.attributes.interactions.reset = {};
-				};
-				var resetI = this.model.attributes.interactions.reset;
-				if (!resetI.hasOwnProperty('toggle')){
-					resetI.toggle = true;
+			if (!this.model.get('interactions').hasOwnProperty('reset')){
+				this.model.attributes.interactions.reset = {
+					button: resetButton
 				};
 			};
+			var resetI = this.model.attributes.interactions.reset;
+			if (!resetI.hasOwnProperty('toggle')){
+				resetI.toggle = true;
+			};
+
 			//create new button for each interaction
 			var interactions = this.model.get('interactions');
 			for (var interaction in interactions){
@@ -3127,13 +3323,17 @@ var LeafletMap = Backbone.View.extend({
 				};
 				if (interactions[interaction].toggle){
 					//render interaction toggle button
-					interactionToggleView.render();	
+					interactionToggleView.render();
 					//change the reset control title
 					$('.reset-control img').attr('title', 'reset map');
 				} else {
 					$('.'+interaction+'-control-container').show();
 					interactionToggleView.toggle(interaction);
 				};
+			};
+			//hide reset button if not specified
+			if (!resetButton){
+				$('.reset-control').css('display', 'none');
 			};
 		}, this);
 
@@ -3161,7 +3361,7 @@ var LeafletMap = Backbone.View.extend({
 			filter: {filter: this},
 			reexpress: {reexpress: this},
 			resymbolize: {resymbolize: this},
-			reset: {refreshmap: this}
+			reset: {resetMap: this}
 		};
 		//create a new interaction object for each interaction with logging
 		var interactions = this.model.get('interactions');
@@ -3200,7 +3400,7 @@ var LeafletMap = Backbone.View.extend({
 				go = false;
 				window.setTimeout(function(){go = true}, 100);
 			}
-		});	
+		});
 
 		//add initial tile layers
 		var baseLayers = this.model.get('baseLayers');
@@ -3216,6 +3416,7 @@ var LeafletMap = Backbone.View.extend({
 		};
 	}
 });
+//End Leaflet Map
 
 /************** set map view ****************/
 

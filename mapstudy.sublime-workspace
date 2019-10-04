@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"order",
+				"orderLayers"
+			],
+			[
+				"or",
+				"orderLayers"
+			],
+			[
+				"leafletData",
+				"leafletDataLayers"
+			],
+			[
+				"dataLayer",
+				"dataLayerModel"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"shw",
+				"showOnLegend"
+			],
+			[
+				"show",
+				"showOnLegend"
+			],
+			[
 				"text",
 				"textAnchor"
 			],
@@ -288,10 +316,6 @@
 				"techniqueType"
 			],
 			[
-				"leafletData",
-				"leafletDataLayer"
-			],
-			[
 				"leaflet",
 				"leafletDataLayer"
 			],
@@ -488,32 +512,8 @@
 				"leafletDataLayers"
 			],
 			[
-				"dataLayer",
-				"dataLayersDone"
-			],
-			[
 				"Reexpre",
 				"ReexpressInputView"
-			],
-			[
-				"Reexpress",
-				"ReexpressSectionView"
-			],
-			[
-				"data",
-				"dataLayer"
-			],
-			[
-				"apply",
-				"applyFilter"
-			],
-			[
-				"retrieve-contro",
-				"retrieve-control-container"
-			],
-			[
-				"id",
-				"id"
 			]
 		]
 	},
@@ -523,7 +523,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 16275,
+				"buffer_size": 17385,
 				"line_ending": "Windows"
 			}
 		},
@@ -531,7 +531,7 @@
 			"file": "config/conditions.json",
 			"settings":
 			{
-				"buffer_size": 141,
+				"buffer_size": 139,
 				"line_ending": "Windows"
 			}
 		},
@@ -547,7 +547,7 @@
 			"file": "css/style.css",
 			"settings":
 			{
-				"buffer_size": 11225,
+				"buffer_size": 11490,
 				"line_ending": "Windows"
 			}
 		},
@@ -555,7 +555,7 @@
 			"file": "README.md",
 			"settings":
 			{
-				"buffer_size": 58344,
+				"buffer_size": 60920,
 				"line_ending": "Windows"
 			}
 		},
@@ -563,23 +563,7 @@
 			"file": "js/modules/app.js",
 			"settings":
 			{
-				"buffer_size": 3965,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/modules/m-section.js",
-			"settings":
-			{
-				"buffer_size": 114407,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "config/map.json",
-			"settings":
-			{
-				"buffer_size": 13043,
+				"buffer_size": 4497,
 				"line_ending": "Windows"
 			}
 		},
@@ -587,7 +571,15 @@
 			"file": "js/modules/q-section.js",
 			"settings":
 			{
-				"buffer_size": 17523,
+				"buffer_size": 20240,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/modules/m-section.js",
+			"settings":
+			{
+				"buffer_size": 120004,
 				"line_ending": "Windows"
 			}
 		},
@@ -608,22 +600,6 @@
 			}
 		},
 		{
-			"file": "config/questions.json",
-			"settings":
-			{
-				"buffer_size": 5970,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "doc/README.md",
-			"settings":
-			{
-				"buffer_size": 58905,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "php/data.php",
 			"settings":
 			{
@@ -632,11 +608,19 @@
 			}
 		},
 		{
-			"file": "/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/MapStudy1/config/conditions.json",
+			"file": "config/questions.json",
 			"settings":
 			{
-				"buffer_size": 568,
-				"line_ending": "Unix"
+				"buffer_size": 6291,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "config/map.json",
+			"settings":
+			{
+				"buffer_size": 13109,
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -664,6 +648,9 @@
 	},
 	"file_history":
 	[
+		"/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/mapstudy/js/modules/m-section.js",
+		"/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/mapstudy/doc/README.md",
+		"/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/MapStudy1/config/conditions.json",
 		"/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/mapstudy/doc/versions.md",
 		"/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/mapstudy/js/lib/leaflet-src.js",
 		"/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/mapstudy/config/param.php",
@@ -788,10 +775,7 @@
 		"/C/Program Files/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/Senegal/php/query.php",
 		"/C/Program Files/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/Senegal/css/style.css",
 		"/C/Program Files/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/Senegal/index.html",
-		"/C/Program Files/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/Senegal/js/messages.js",
-		"/C/Program Files/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/Senegal/js/wikimap.js",
-		"/C/Program Files/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/Senegal/TODO.txt",
-		"/C/Program Files/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/Senegal/lib/leaflet/core/leaflet7/leaflet.0.7.3-src.js"
+		"/C/Program Files/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/Senegal/js/messages.js"
 	],
 	"find":
 	{
@@ -809,6 +793,82 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"marker",
+			"symbol",
+			".addInteraction",
+			"console",
+			"overlay:",
+			"overlay",
+			"consle",
+			"console",
+			"text-input",
+			"radio",
+			"appendOptionText",
+			"input",
+			"options",
+			"({\n",
+			"options\"*",
+			"options",
+			"timeout",
+			"leafletView.setTimeout",
+			"labels",
+			"on top",
+			"console",
+			"orderLayers",
+			"timeout",
+			"applyFilter:",
+			"applyFilter",
+			"orderLayers",
+			"dataLayersDone",
+			"bringLabelsToFront",
+			".attributes.leafletDataLayers",
+			"leafletDataLayers",
+			"ProportionalSymbol",
+			"points",
+			"showonlegend",
+			"timer",
+			"console",
+			"timer",
+			"h1",
+			"max-width",
+			".timer",
+			"-timer",
+			"setElement",
+			"down",
+			"timer",
+			"page-timer",
+			"layerOptions",
+			"video",
+			"form",
+			"console",
+			"video",
+			"template",
+			"description",
+			"console",
+			"showOnLegend",
+			"svgHeight",
+			"etLayerOptions",
+			"techniquesObj",
+			"techniqueModel",
+			"showOnLegend",
+			"className",
+			"show",
+			"legend",
+			"console",
+			"setView",
+			"set",
+			"console",
+			"trigger('resetMap')",
+			".trigger('reset')",
+			"InteractionToggleView",
+			".reset",
+			"leafletView.trigger",
+			"toggle",
+			"resetButton",
+			"reset",
+			"refreshmap",
+			"reset-control",
+			"reset",
 			"legend",
 			"textAnchor",
 			"text-anchor",
@@ -860,83 +920,7 @@
 			"set",
 			"action",
 			"record",
-			"nextset",
-			"_.extend(doc",
-			"extend",
-			"document",
-			"nextset",
-			"autoadvance",
-			"submit",
-			"update",
-			"turf.",
-			"turf",
-			"required",
-			"autoadvance",
-			"console",
-			"$('.leaflet-popup-pane').show",
-			"$('.leaflet-popup-pane').hide",
-			"$('.leaflet-popup-pane')",
-			"popup",
-			"console",
-			"i",
-			"nextset",
-			"autoadvance",
-			"next",
-			"nextset",
-			"autoadvance",
-			"_set",
-			"autoadvance",
-			"set>>",
-			"nextset",
-			"autoadvance",
-			"events",
-			"autoadvance",
-			"autoa",
-			"toggle",
-			"default",
-			"console",
-			"leaflet-popup",
-			"\"-control-container",
-			"'-control-container'",
-			"-control-container",
-			"retrieve-control-container",
-			"InteractionToggleView",
-			"leaflet-popup-pane",
-			"retrieve",
-			"InteractionToggleView",
-			"CustomControl",
-			"toggleLayer",
-			"InteractionToggleView",
-			"switch",
-			"setMapInteractions",
-			"console",
-			"interface",
-			"widget",
-			"zoom",
-			"widget",
-			"interaction",
-			".input",
-			"class=\"input",
-			"map.",
-			"map.json",
-			"questions.",
-			"questions.pages[page].sets[i].buttons",
-			"#### questions.pages[page].sets[i].buttons",
-			"console",
-			"set>>",
-			">>",
-			"timer.direction",
-			"nextset",
-			"next",
-			"TimerView",
-			"empty",
-			"_set",
-			"setQuestions",
-			"_page",
-			"header",
-			"I'm some credits",
-			"database.php",
-			"questions."
+			"nextset"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -944,6 +928,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"orderLayers",
+			"#timer",
 			"toggle",
 			"map.pages[page].",
 			"questions.pages[page].",
@@ -1069,9 +1055,7 @@
 			"dataLayers",
 			"displayAttributes",
 			"dataLayerName",
-			"buttonCounts",
-			"this",
-			"dataLayerModels[i+a]"
+			"buttonCounts"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -1082,7 +1066,7 @@
 	"groups":
 	[
 		{
-			"selected": 8,
+			"selected": 7,
 			"sheets":
 			[
 				{
@@ -1090,15 +1074,15 @@
 					"file": "index.html",
 					"settings":
 					{
-						"buffer_size": 16275,
+						"buffer_size": 17385,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								16100,
-								16101
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1108,7 +1092,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 6426.0,
+						"translation.y": 474.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1118,15 +1102,15 @@
 					"file": "config/conditions.json",
 					"settings":
 					{
-						"buffer_size": 141,
+						"buffer_size": 139,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								120,
-								120
+								110,
+								110
 							]
 						],
 						"settings":
@@ -1152,8 +1136,8 @@
 						"selection":
 						[
 							[
-								141,
-								141
+								137,
+								137
 							]
 						],
 						"settings":
@@ -1171,15 +1155,15 @@
 					"file": "css/style.css",
 					"settings":
 					{
-						"buffer_size": 11225,
+						"buffer_size": 11490,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2680,
-								2680
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1189,7 +1173,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2587.0,
+						"translation.y": 9252.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1199,15 +1183,15 @@
 					"file": "README.md",
 					"settings":
 					{
-						"buffer_size": 58344,
+						"buffer_size": 60920,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								49196,
+								49196
 							]
 						],
 						"settings":
@@ -1216,7 +1200,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 12133.0,
+						"translation.y": 20429.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1226,76 +1210,20 @@
 					"file": "js/modules/app.js",
 					"settings":
 					{
-						"buffer_size": 3965,
+						"buffer_size": 4497,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								293,
-								305
+								330,
+								330
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"word_wrap": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 162.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "js/modules/m-section.js",
-					"settings":
-					{
-						"buffer_size": 114407,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"word_wrap": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 10729.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "config/map.json",
-					"settings":
-					{
-						"buffer_size": 13043,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								83,
-								83
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
 							"translate_tabs_to_spaces": false,
 							"word_wrap": true
 						},
@@ -1306,19 +1234,19 @@
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 6,
 					"file": "js/modules/q-section.js",
 					"settings":
 					{
-						"buffer_size": 17523,
+						"buffer_size": 20240,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2294,
-								2294
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1328,13 +1256,40 @@
 							"word_wrap": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 87.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 7,
+					"file": "js/modules/m-section.js",
+					"settings":
+					{
+						"buffer_size": 120004,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								55234,
+								55234
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 37760.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
 					"file": "LICENSE.txt",
 					"settings":
 					{
@@ -1360,7 +1315,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 9,
 					"file": "config/styles.json",
 					"settings":
 					{
@@ -1371,8 +1326,8 @@
 						"selection":
 						[
 							[
-								191,
-								191
+								158,
+								158
 							]
 						],
 						"settings":
@@ -1387,62 +1342,7 @@
 					"type": "text"
 				},
 				{
-					"buffer": 11,
-					"file": "config/questions.json",
-					"settings":
-					{
-						"buffer_size": 5970,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3059,
-								3059
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"translate_tabs_to_spaces": false,
-							"word_wrap": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2274.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "doc/README.md",
-					"settings":
-					{
-						"buffer_size": 58905,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8252,
-								8252
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2969.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 13,
+					"buffer": 10,
 					"file": "php/data.php",
 					"settings":
 					{
@@ -1463,25 +1363,53 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 5181.0,
+						"translation.y": 500.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 14,
-					"file": "/C/Program Files (x86)/PostgreSQL/EnterpriseDB-ApachePHP/apache/www/MapStudy1/config/conditions.json",
+					"buffer": 11,
+					"file": "config/questions.json",
 					"settings":
 					{
-						"buffer_size": 568,
+						"buffer_size": 6291,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								134,
-								134
+								948,
+								948
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage",
+							"translate_tabs_to_spaces": false,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1560.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "config/map.json",
+					"settings":
+					{
+						"buffer_size": 13109,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
 							]
 						],
 						"settings":
