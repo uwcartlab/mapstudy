@@ -1,5 +1,7 @@
 # <img src="mapstudy.png"> MapStudy
 
+## **Latest stable development version ** 
+
 # What is MapStudy?
 
 MapStudy is an integrated, modularized framework for the creation of survey applications designed to test cartographic design and interaction hypotheses in a modern web map environment. It leverages Postgresql and PHP on the server side and Javascript, jQuery, Leaflet, and D3 on the client. MapStudy is being developed specifically for use in the University of Wisconsin-Madison Cartography program through the support of the UW-Madison Cartography Lab and the Wisconsin Alumni Research Foundation.
