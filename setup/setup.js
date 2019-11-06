@@ -41,6 +41,7 @@ var PageView = Backbone.View.extend({
 		"change .reset-p input": "toggleResetButton"
 	},
 	removepage: function(){
+		console.log("fire removepage");
 		//reset page numbering
 		this.model.set('pagenum', this.model.get('pagenum')-1);
 		//fade out and remove view
@@ -57,9 +58,11 @@ var PageView = Backbone.View.extend({
 		});
 	},
 	addpage: function(){
+		console.log("fire addpage");
 		createPage(this.model.get('pagenum')+1);
 	},
 	setInteractionOptions: function(){
+		console.log("fire setInteractionOptions");
 		var loggingTemplate = _.template( $('#interaction-logging-template').html() ),
 			pagenum = this.model.get('pagenum');
 		this.$el.find('.i-section').each(function(){
@@ -74,6 +77,7 @@ var PageView = Backbone.View.extend({
 		});
 	},
 	toggleInteraction: function(e){
+		console.log("fire toggleInteraction");
 		var isection = $(e.target).parent().parent().find('.i-section');
 		if (e.target.checked){
 			isection.find('input, select').removeAttr('disabled');
@@ -84,6 +88,7 @@ var PageView = Backbone.View.extend({
 		};
 	},
 	toggleMaponpage: function(e){
+		console.log("toggleMaponpage")
 		if (e.target.value == "true"){
 			this.$el.find('.maponpage').val("false").trigger("change");
 		} else {
@@ -91,6 +96,7 @@ var PageView = Backbone.View.extend({
 		}
 	},
 	toggleFullpage: function(e){
+		console.log("toggleFullpage");
 		if (e.target.value == "true"){
 			this.$el.find('.fullpage').val("false").trigger("change");
 		} else {
@@ -98,6 +104,7 @@ var PageView = Backbone.View.extend({
 		}
 	},
 	toggleResetButton: function(e){
+		console.log("fire toggleResetButton")
 		if ($(e.target).attr('class').indexOf('resetSelect') > -1){
 			if (e.target.value == 'true'){
 				this.$el.find('.reset-p input').prop('checked', true).trigger('change')
@@ -113,6 +120,7 @@ var PageView = Backbone.View.extend({
 		};
 	},
 	setLibrary: function(library){
+		console.log("setLibrary")
 		//extract name of library from select change event
 		if (typeof library == 'object'){
 			library = $(library.target).val();
@@ -126,11 +134,13 @@ var PageView = Backbone.View.extend({
 		this.setInteractionOptions();
 	},
 	addDataLayer: function(){
+		console.log("fire addDataLayer");
 		//add data layer options
 		createLayer("dataLayer", 0);
 		this.$el.find('.addDataLayer').hide();
 	},
 	render: function(){
+		console.log("render");
 		//create page div
 		var pagenum = this.model.get('pagenum');
 		this.$el.attr('id', 'page-'+pagenum);
@@ -184,6 +194,7 @@ var BaseLayerView = Backbone.View.extend({
 		//add other libraries...
 	},
 	removeLayer: function(){
+		console.log("removeLayer");
 		//reset layer numbering
 		this.i--
 		//fade out and remove view
@@ -223,6 +234,7 @@ var BaseLayerView = Backbone.View.extend({
 		});
 	},
 	addLayer: function(){
+		console.log("fire addLayer");
 		this.i = parseInt(this.$el.find('.layernumber').html())-1;
 		this.$el.find('.addlayer').hide();
 		this.$el.find('.removelayer').show();
@@ -269,6 +281,7 @@ var BaseLayerView = Backbone.View.extend({
 		this.$el.children('.removelayer').css('display', display);
 	},
 	addInteractionLayers: function(e){
+		console.log("called addInteractionLayers")
 		var pagenum = this.model.get('pagenum'),
 			i = this.i,
 			layerName = e.target.value,
@@ -340,6 +353,7 @@ var BaseLayerView = Backbone.View.extend({
 		this.$el.find('.sourcelink').attr('href', this.sourceLinks[library].link);
 	},
 	setLayerOptions: function(){
+		console.log("call setLayerOptions");
 		//set layer options
 		var library = this.model.get('library'),
 			layerOptionsTemplate = _.template( $('#'+library+"-"+this.className+"-options-template").html() );
@@ -1280,6 +1294,7 @@ function createBooleanDropdown(select, toggleAll){
 	};
 
 	function resetChangeEvent(){
+		console.log("resetChangeEvent");
 		select.on('change', function(){
 			var togglediv = toggleAll ? $(this).closest('.q').find('.displayonyes, .hideonno') : $(this).closest('.q').children('.displayonyes, .hideonno');
 			if ($(this).val() == "true"){
@@ -1402,6 +1417,7 @@ function readForm(step){
 };
 
 function makeJSON(data){
+	console.log("call makeJSON");
 	var json = JSON.stringify(data, function(k, v){
 			if (v.length == 0){
 				return undefined;
@@ -1528,6 +1544,83 @@ function changeStep(prevStep, currentStep){
 	};
 };
 
+//deal with data from extracted zip
+function loadStyles(styles){
+	var allSections = ["header", "footer", "map", "questions"];
+	// get jquery references
+	var $style = $("form#styles");
+	var $sections = $style.find('.section.q');
+	var $bdd = $sections.find('.bdd');
+	var $hideonno = $sections.find('.hideonno');
+	// set all to no
+	$bdd.val("false");
+	$hideonno.css({"display": "none"});
+
+	//check for content
+	if(styles.length > 0){
+
+		for(var section of styles){
+			var $section = $style.find(`.section.${section.sectionId}`);
+			var i = allSections.indexOf(section.sectionId).toString();
+			//set to yes and expand
+			$section.find('.section-yn').val("true");
+			$section.find('.hideonno').css({"display": "block"});
+
+			for(var param in section){
+				if(param != "sectionId"){
+					var value = section[param];
+					var $param = $section.find(`[name*="${i+"."+param}"]`);
+					var $parentYes = $param.parent();
+					var $parentBdd = $parentYes.siblings("p").find(".bdd");
+					//parent yes and visible
+					$parentBdd.val("true");
+					$parentYes.css({"display": "block"});
+					//set param
+					$param.removeAttr('disabled');
+					$param.siblings(`[name*=".sectionId"]`).removeAttr('disabled');
+					if(typeof(value) != "object"){
+					  $param.val(value);
+					} else {
+					  $param.val(JSON.stringify(value));
+					}
+				}
+			}
+		}
+	}
+}
+
+
+///loading zip file
+function uploadConfig(input) {
+	var config_zip = new JSZip();
+    var file = input.files[0];
+    if(!file["name"].includes(".zip")){
+    	alert("Must upload a zip file!")
+    }else {
+	   	config_zip.loadAsync(file).then(function(zip){
+	    	textContents = [zip.files['styles.json'].async("string"),
+	    					zip.files['map.json'].async("string"),
+	    					zip.files['questions.json'].async("string"),
+	    					zip.files['conditions.json'].async("string"),
+	    					zip.files['param.php'].async("string")];
+	    	return Promise.all(textContents);
+	    }).then(function(textFiles){
+
+	    	if(textFiles[0].length != 0){
+	    	   	var styles = JSON.parse(textFiles[0]);
+	    	}
+	    	//first work on styles
+	    	loadStyles(styles);
+
+	    	// var map = textFiles[1];
+	    	// var questions = textFiles[2];
+	    	// var conditions = textFiles[3];
+	    	// var param = textFiles[4];
+    		});
+    }
+
+};
+
 function navigation(){
 	//activate navigation buttons
 	var step = 0,
@@ -1572,6 +1665,11 @@ function navigation(){
 	$('#preview').click(function(){
 		livePreview(steps[step]);
 	});
+
+	$('#upload input').on("change", function(){
+		uploadConfig(this);
+	});	
+
 };
 
 function initialize(){
@@ -1587,6 +1685,7 @@ function initialize(){
 	$('.addcondition').click(function(){
 		createCondition(1);
 	});
+
 };
 
 $(document).ready(initialize);
