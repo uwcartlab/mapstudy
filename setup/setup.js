@@ -1006,6 +1006,7 @@ var OptionItemViews = {
 };
 
 function createPage(pagenum){
+	console.log("create Page!");
 	pageModel.set('pagenum', pagenum);
 	var pageView = new PageView({model: pageModel});
 	var page = pageView.render();
@@ -1589,6 +1590,63 @@ function loadStyles(styles){
 	}
 }
 
+function assignValue(target,value){
+	console.log(target);
+	console.log(value);
+
+}
+
+
+function populateMapPage(page){
+	createPage(page.page);
+	$page = $(`div#page-${page.page}`);
+
+	//map options
+	$mapOptions = $page.find(".mapOptions");
+
+	for(var att in page.mapOptions){
+		var value = page.mapOptions[att]
+		//deal with array madness
+		if(!Array.isArray(value)){
+			assignValue("." + att,value);
+		} else {
+			 for(var i=0; i<value.length;i++){
+			 	var subVal = value[i];
+			 	if(!Array.isArray(subVal)){
+			 		assignValue("." + att + "." + i,subVal);
+			 	}
+			 	else {
+			 		 for(var j=0; j<subVal.length;j++){
+			 		 	subSubVal = subVal[j];
+			 		 	assignValue(`.${att}.${i}.${j}`,subSubVal); 	
+			 		 }
+			 	}
+			 }
+		}		
+	}
+	//$mapOptions.find(`${}`)
+
+
+
+
+
+	//base layers
+
+	//data layers
+
+	//interactions
+}
+
+
+function loadMap(mapConfig){
+	console.log(mapConfig);
+	for(var page of mapConfig.pages) {
+		populateMapPage(page);
+	}
+
+
+}
+
 
 ///loading zip file
 function uploadConfig(input) {
@@ -1609,10 +1667,12 @@ function uploadConfig(input) {
 	    	if(textFiles[0].length != 0){
 	    	   	var styles = JSON.parse(textFiles[0]);
 	    	}
+	    	var map = JSON.parse(textFiles[1]);
+
+
 	    	//first work on styles
 	    	loadStyles(styles);
-
-	    	// var map = textFiles[1];
+	    	loadMap(map)
 	    	// var questions = textFiles[2];
 	    	// var conditions = textFiles[3];
 	    	// var param = textFiles[4];

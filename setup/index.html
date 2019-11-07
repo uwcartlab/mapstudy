@@ -366,25 +366,25 @@
                         <p>Include a map on this page? <select class="bdd yes maponpage"></select></p>
                         <input type="hidden" name="map.pages.<%= pagenum %>.page" value="<%= pagenum %>">
                         <div id="m-section-<%= pagenum %>-map" class="hideonno">
-                            <p>
-                                Map library: <select name="map.pages.<%= pagenum %>.library">
-                                    <option value="Leaflet">Leaflet</option>
-                                    <option disabled>More coming soon...</option>
-                                </select>
-                            </p>
-                            
-                            <p>
-                                Include a map legend? <select name="map.pages.<%= pagenum %>.mapOptions.legend">
-                                    <option value="true">yes</option>
-                                    <option value="false">no</option>
-                                </select>
-                            </p>
+                            <div class="mapOptions q">
+                                <p>
+                                    Map library: <select name="map.pages.<%= pagenum %>.library">
+                                        <option value="Leaflet">Leaflet</option>
+                                        <option disabled>More coming soon...</option>
+                                    </select>
+                                </p>
+                                
+                                <p>
+                                    Include a map legend? <select name="map.pages.<%= pagenum %>.mapOptions.legend">
+                                        <option value="true">yes</option>
+                                        <option value="false">no</option>
+                                    </select>
+                                </p>
 
-                            <p class="q resetButton">
-                                Include a reset button? <select class="bdd no resetSelect" name="map.pages.<%= pagenum %>.mapOptions.resetButton"></select>
-                            </p>
+                                <p class="q resetButton">
+                                    Include a reset button? <select class="bdd no resetSelect" name="map.pages.<%= pagenum %>.mapOptions.resetButton"></select>
+                                </p>
                             
-                            <div class="map-options q">
                                 <p class="nomargin"><a class="ext" href="http://leafletjs.com/reference.html#map-options" target="_blank">Map Options</a>:
                                 </p>
                                 <div class="map-options-inputs"></div>
