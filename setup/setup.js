@@ -1013,6 +1013,8 @@ function createPage(pagenum){
 };
 
 function createLayer(layerType, layerIndex){
+	console.log("layerType = " + layerType);
+	console.log("layerIndex = " + layerIndex );
 	var layerView = new LayerViews[layerType]({model: pageModel});
 	layerView.i = layerIndex;
 	var layer = layerView.render();
@@ -1295,7 +1297,6 @@ function createBooleanDropdown(select, toggleAll){
 	};
 
 	function resetChangeEvent(){
-		console.log("resetChangeEvent");
 		select.on('change', function(){
 			var togglediv = toggleAll ? $(this).closest('.q').find('.displayonyes, .hideonno') : $(this).closest('.q').children('.displayonyes, .hideonno');
 			if ($(this).val() == "true"){
@@ -1591,8 +1592,23 @@ function loadStyles(styles){
 }
 
 function assignValue(target,value){
-	console.log(target);
-	console.log(value);
+	
+
+	$param = $(`[name*="${target}"]`);
+	console.log($param);
+	$param.removeAttr('disabled');
+	
+	var $parentYes = $param.parent();
+	var $parentBdd = $parentYes.siblings("p").find(".bdd");
+	//parent yes and visible
+	$parentBdd.val("true");
+	$parentYes.css({"display": "block"});
+
+	if(typeof(value) != "object"){
+					  $param.val(value);
+					} else {
+					  $param.val(JSON.stringify(value));
+					}
 
 }
 
@@ -1602,37 +1618,73 @@ function populateMapPage(page){
 	$page = $(`div#page-${page.page}`);
 
 	//map options
-	$mapOptions = $page.find(".mapOptions");
-
 	for(var att in page.mapOptions){
 		var value = page.mapOptions[att]
 		//deal with array madness
 		if(!Array.isArray(value)){
-			assignValue("." + att,value);
+			assignValue( "map.pages." + page.page + ".mapOptions." + att,value);
 		} else {
 			 for(var i=0; i<value.length;i++){
 			 	var subVal = value[i];
 			 	if(!Array.isArray(subVal)){
-			 		assignValue("." + att + "." + i,subVal);
+			 		assignValue("map.pages." + page.page + ".mapOptions." + att + "." + i,subVal);
 			 	}
 			 	else {
 			 		 for(var j=0; j<subVal.length;j++){
 			 		 	subSubVal = subVal[j];
-			 		 	assignValue(`.${att}.${i}.${j}`,subSubVal); 	
+			 		 	assignValue(`map.pages.${page.page}.mapOptions.${att}.${i}.${j}`,subSubVal); 	
 			 		 }
 			 	}
 			 }
 		}		
 	}
-	//$mapOptions.find(`${}`)
-
-
-
-
 
 	//base layers
-
+	if(page.baseLayers){
+		for(var i = 0; i < page.baseLayers.length; i++){
+			var baseLayer = page.baseLayers[i];
+			createLayer("baseLayer",i);
+			for(var param in baseLayer){
+				assignValue(`map.pages.${page.page}.baseLayers.${i}.${param}`, baseLayer[param]);
+			}
+		}
+	}
+	
 	//data layers
+	if(page.dataLayers){
+		for(var i = 0; i < page.dataLayers.length; i++){
+			var dataLayer = page.dataLayers[i];
+			createLayer("dataLayer",i);
+			for(var param in dataLayer){
+				//special handling for displayAttributes and techniques
+				if(param == "displayAttributes"){
+					var commaSep = "";
+					for(var displayAtt of dataLayer[param]){
+						commaSep+=displayAtt + ",";
+					}
+					assignValue(`map.pages.${page.page}.dataLayers.${i}.${param}`, commaSep);
+
+				} else if(param == "techniques"){
+					for(var j; j<dataLayer[param].length; j++){
+						var technique = data[param][j];
+						createTechnique(i,j);
+						for(var techParam in technique){
+							assignValue(`map.pages.${page.page}.dataLayers.${i}.techniques.${j}.${techParam}`,technique[techParam]);
+						}
+					}
+				} else {
+					assignValue(`map.pages.${page.page}.dataLayers.${i}.${param}`, dataLayer[param]);
+				}
+			}
+		}
+	}
+
+
+		
+	
+
+
+
 
 	//interactions
 }
