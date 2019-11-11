@@ -434,6 +434,8 @@ var TechniqueView = Backbone.View.extend({
 			changeNClasses = this.changeNClasses,
 			changeSymbol = this.changeSymbol;
 
+		l.find('.technique-type').val(techniqueType);
+
 		//object to hold descriptions and form modification function for each technique type
 		var techniques = {
 			choropleth: {
@@ -454,6 +456,7 @@ var TechniqueView = Backbone.View.extend({
 			'proportional symbol': {
 				desc: "Adds a symbol (typically a circle) on top of each geographic unit and sizes the symbol according to data values in the expressed attribute. Data may have point or polygon/multipolygon geometries; if polygon/multipolygon, symbols will be placed at the centroid of each geographic unit.",
 				modifyForm: function(){
+					console.log("modify prop symbol form!");
 					//show/hide form options
 					l.find('input, select').removeAttr('disabled');
 					l.find('.technique-classification-p').show().find('select').val('unclassed');
@@ -551,11 +554,15 @@ var TechniqueView = Backbone.View.extend({
 		classifications[classification].modifyForm();
 	},
 	changeNClasses: function(nClasses, l){
+
+
 		//get value from event target
 		if (typeof nClasses == 'object'){
 			nClasses = nClasses.target.value;
 		};
 		l = l || this.$el;
+
+		l.find('.technique-n-classes').val(nClasses);
 
 		//implement type of classification
 		if (l.find('.technique-type').val() == 'choropleth'){
@@ -575,6 +582,7 @@ var TechniqueView = Backbone.View.extend({
 					l.find('.color-classes').append(colorOptionTemplate({colorcode: val}));
 					//add swatches for each color in the class to the option
 					_.each(colorArray, function(fillColor){
+						l.find('option[value="'+val+'"]').text(val);
 						l.find('option[value="'+val+'"]').append(colorSwatchTemplate({fillColor: fillColor}));
 					});
 				};
@@ -591,7 +599,8 @@ var TechniqueView = Backbone.View.extend({
 				ii = id[5];
 			//add input for each radius class
 			for (var a=0; a<parseInt(nClasses); a++){
-				l.find('.radii-classes').append(radiusTemplate({pagenum: this.model.get('pagenum'), i: i, ii: ii}));
+				var pageNum = l.closest(".page").attr("id").replace("page-", "");
+				l.find('.radii-classes').append(radiusTemplate({pagenum: pageNum, i: i, ii: ii, c: a}));
 				var cell;
 				if (a == 0){
 					cell = '<td class="l-align">min</td>';
@@ -677,9 +686,10 @@ var TechniqueView = Backbone.View.extend({
 		this.$el.html(this.template({pagenum: pagenum, i: this.i, ii: this.ii}));
 
 		this.removeButton();
-		this.changeTechniqueType('choropleth');
-		this.changeNClasses('5', this.$el);
 
+			this.changeTechniqueType('choropleth');
+			this.changeNClasses('5', this.$el);
+		
 		//add layer div to layer's techniques container
 		$('#page-'+pagenum+'-dataLayer-'+this.i+' .layer-techniques').append(this.$el[0]);
 		return this;
@@ -1006,15 +1016,12 @@ var OptionItemViews = {
 };
 
 function createPage(pagenum){
-	console.log("create Page!");
 	pageModel.set('pagenum', pagenum);
 	var pageView = new PageView({model: pageModel});
 	var page = pageView.render();
 };
 
 function createLayer(layerType, layerIndex){
-	console.log("layerType = " + layerType);
-	console.log("layerIndex = " + layerIndex );
 	var layerView = new LayerViews[layerType]({model: pageModel});
 	layerView.i = layerIndex;
 	var layer = layerView.render();
@@ -1025,6 +1032,7 @@ function createTechnique(layerIndex, techniqueIndex){
 	techniqueView.i = layerIndex;
 	techniqueView.ii = techniqueIndex;
 	var technique = techniqueView.render();
+	return techniqueView;
 };
 
 function createSet(setIndex){
@@ -1419,7 +1427,6 @@ function readForm(step){
 };
 
 function makeJSON(data){
-	console.log("call makeJSON");
 	var json = JSON.stringify(data, function(k, v){
 			if (v.length == 0){
 				return undefined;
@@ -1592,13 +1599,14 @@ function loadStyles(styles){
 }
 
 function assignValue(target,value){
-	
-
+	 //convert booleans to strings
+	 if(typeof value == "boolean"){
+	 	value = value.toString();
+	 }
 	$param = $(`[name*="${target}"]`);
-	console.log($param);
 	$param.removeAttr('disabled');
 	
-	var $parentYes = $param.parent();
+	var $parentYes = $param.parent(".displayonyes,.hideonno");
 	var $parentBdd = $parentYes.siblings("p").find(".bdd");
 	//parent yes and visible
 	$parentBdd.val("true");
@@ -1609,7 +1617,6 @@ function assignValue(target,value){
 					} else {
 					  $param.val(JSON.stringify(value));
 					}
-
 }
 
 
@@ -1638,7 +1645,6 @@ function populateMapPage(page){
 			 }
 		}		
 	}
-
 	//base layers
 	if(page.baseLayers){
 		for(var i = 0; i < page.baseLayers.length; i++){
@@ -1649,7 +1655,6 @@ function populateMapPage(page){
 			}
 		}
 	}
-	
 	//data layers
 	if(page.dataLayers){
 		for(var i = 0; i < page.dataLayers.length; i++){
@@ -1662,15 +1667,42 @@ function populateMapPage(page){
 					for(var displayAtt of dataLayer[param]){
 						commaSep+=displayAtt + ",";
 					}
+					commaSep = commaSep.slice(0,-1);
 					assignValue(`map.pages.${page.page}.dataLayers.${i}.${param}`, commaSep);
 
 				} else if(param == "techniques"){
-					for(var j; j<dataLayer[param].length; j++){
-						var technique = data[param][j];
-						createTechnique(i,j);
-						for(var techParam in technique){
-							assignValue(`map.pages.${page.page}.dataLayers.${i}.techniques.${j}.${techParam}`,technique[techParam]);
+					//remove first technique
+					$(`#page-${page.page}-dataLayer-${i}-technique-0`).remove();
+					var techniques = dataLayer[param];
+					for(var j=0; j<techniques.length; j++){
+						var technique = dataLayer[param][j];
+						var techView = createTechnique(i,j);
+						if(technique["type"]) {
+							techView.changeTechniqueType(technique["type"]);
 						}
+						if(technique["classification"]) techView.changeClassification(technique["classification"]);
+						if(technique["classes"]){
+							var numClass;
+							if(technique["type"] == "choropleth") {
+								numClass = technique["classes"].split(".")[1];
+							}
+							else {
+								numClass = technique["classes"].length;
+							}
+							techView.changeNClasses(numClass);
+						}
+						if(j!=techniques.length-1) techView.$el.find('.addtechnique').hide();					
+						for(var techParam in technique){
+							if(!Array.isArray(technique[techParam])){
+								assignValue(`map.pages.${page.page}.dataLayers.${i}.techniques.${j}.${techParam}`,technique[techParam]);
+							} 
+							else {
+								for(k=0; k<technique[techParam].length; k++){
+									subTechParam = technique[techParam][k];
+									assignValue(`map.pages.${page.page}.dataLayers.${i}.techniques.${j}.${techParam}.${k}`,subTechParam);
+								}
+							}
+						}		
 					}
 				} else {
 					assignValue(`map.pages.${page.page}.dataLayers.${i}.${param}`, dataLayer[param]);
@@ -1678,20 +1710,37 @@ function populateMapPage(page){
 			}
 		}
 	}
-
-
-		
-	
-
-
-
-
+	console.log(page);
 	//interactions
+	if(page["interactions"]){
+		for(var interaction in page["interactions"]){
+			var $interaction = $(`[name="map.pages.${page.page}.interactions.${interaction}"]`);
+			//toggle interaction on
+			$interaction.prop( "checked", true )
+			$interaction.trigger("change");
+			for(var interactionOption in page["interactions"][interaction]){
+				var $interactionSetting;
+				var value = page["interactions"][interaction][interactionOption];
+				if(typeof value == "boolean"){
+					$interactionSetting = $(`[name="map.pages.${page.page}.interactions.${interaction}.${interactionOption}"]`);
+					$interactionSetting.val(value.toString());
+				} else {
+				  	for(var subValName in value){
+				  		var subValue = value[subValName];
+				  		//deal with radio buttons
+				  		//$interactionSettingTrue = $(`[name="map.pages.${page.page}.interactions.${interaction}.${interactionOption}.${subValName}"][value="true"]`);
+				  		//$interactionSettingFalse = $(`[name="map.pages.${page.page}.interactions.${interaction}.${interactionOption}.${subValName}"][value="false"]`);
+				  		$interactionSetting = $(`[name="map.pages.${page.page}.interactions.${interaction}.${interactionOption}.${subValName}"][value="${subValue.toString()}"]`);
+				  		$interactionSetting.prop("checked",true);
+				  	}
+				}
+			}
+		}
+	}
 }
 
 
 function loadMap(mapConfig){
-	console.log(mapConfig);
 	for(var page of mapConfig.pages) {
 		populateMapPage(page);
 	}

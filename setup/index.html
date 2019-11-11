@@ -791,7 +791,7 @@
                     <table class="fullwidth">
                         <tr class="Leaflet-baseLayer-options-attribution">
                             <td class="l-align" style="width: 85px">Attribution:</td>
-                            <td class="l-align"><input class="fullwidth" type="text" name="map.pages.<%= pagenum %>.baseLayers.<%= i %>.layerOptions.attribution" placeholder="example: Map by Stamen, Data by <a href='http://osm.org'>OpenStreetMap</a> contributors"></td>
+                            <td class="l-align"><input class="fullwidth" type="text" name="map.pages.<%= pagenum %>.baseLayers.<%= i %>.attribution" placeholder="example: Map by Stamen, Data by <a href='http://osm.org'>OpenStreetMap</a> contributors"></td>
                         </tr>
                     </table>
                 </script>
@@ -930,6 +930,11 @@
 
                 <script type="text/template" id="color-scale-classes-template">
                     <p>Color scale: <select class="color-classes" name="map.pages.<%= pagenum %>.dataLayers.<%= i %>.techniques.<%= ii %>.classes"></select></p>
+                    <div class="color-scale-desc" style="margin-bottom:20px;">
+                        Color schemes: 
+                        <a href="https://colorbrewer2.org/">Color Brewer</a>
+                        
+                    </div>
                 </script>
 
                 <script type="text/template" id="radii-classes-template">
@@ -946,11 +951,11 @@
                 </script>
 
                 <script type="text/template" id="color-swatch-template">
-                    <span class="color-swatch" style="background-color: <%= fillColor %>"></span>
+                    <span class="color-swatch" style="background-color: <%= fillColor %>"> </span>
                 </script>
 
                 <script type="text/template" id="symbol-radius-template">
-                    <td><input type="text" size="2" name="map.pages.<%= pagenum %>.dataLayers.<%= i %>.techniques.<%= ii %>.classes-{c}"></td>
+                    <td><input type="text" size="2" name="map.pages.<%= pagenum %>.dataLayers.<%= i %>.techniques.<%= ii %>.classes.<%= c %>"></td>
                 </script>
 
 
