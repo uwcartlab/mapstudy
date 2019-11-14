@@ -9,6 +9,8 @@ var allData = {
 	"param": {}
 };
 
+var totalPages = 0;
+
 //templates
 var optionTemplate = _.template( $('#option-template').html() ),
 	dropdownTemplate = _.template( $('#dropdown-template').html() );
@@ -22,7 +24,7 @@ var PageModel = Backbone.Model.extend({
 	}
 });
 
-var pageModel = new PageModel();
+var pageModels = {};
 
 var PageView = Backbone.View.extend({
 	tagName: 'div',
@@ -41,7 +43,7 @@ var PageView = Backbone.View.extend({
 		"change .reset-p input": "toggleResetButton"
 	},
 	removepage: function(){
-		console.log("fire removepage");
+		totalPages-=1;
 		//reset page numbering
 		this.model.set('pagenum', this.model.get('pagenum')-1);
 		//fade out and remove view
@@ -58,11 +60,9 @@ var PageView = Backbone.View.extend({
 		});
 	},
 	addpage: function(){
-		console.log("fire addpage");
 		createPage(this.model.get('pagenum')+1);
 	},
 	setInteractionOptions: function(){
-		console.log("fire setInteractionOptions");
 		var loggingTemplate = _.template( $('#interaction-logging-template').html() ),
 			pagenum = this.model.get('pagenum');
 		this.$el.find('.i-section').each(function(){
@@ -77,7 +77,6 @@ var PageView = Backbone.View.extend({
 		});
 	},
 	toggleInteraction: function(e){
-		console.log("fire toggleInteraction");
 		var isection = $(e.target).parent().parent().find('.i-section');
 		if (e.target.checked){
 			isection.find('input, select').removeAttr('disabled');
@@ -88,7 +87,6 @@ var PageView = Backbone.View.extend({
 		};
 	},
 	toggleMaponpage: function(e){
-		console.log("toggleMaponpage")
 		if (e.target.value == "true"){
 			this.$el.find('.maponpage').val("false").trigger("change");
 		} else {
@@ -96,15 +94,13 @@ var PageView = Backbone.View.extend({
 		}
 	},
 	toggleFullpage: function(e){
-		console.log("toggleFullpage");
 		if (e.target.value == "true"){
-			this.$el.find('.fullpage').val("false").trigger("change");
+			this.$el.find('.fullpage').val("false");
 		} else {
-			this.$el.find('.fullpage').val("true").trigger("change");
+			this.$el.find('.fullpage').val("true");
 		}
 	},
 	toggleResetButton: function(e){
-		console.log("fire toggleResetButton")
 		if ($(e.target).attr('class').indexOf('resetSelect') > -1){
 			if (e.target.value == 'true'){
 				this.$el.find('.reset-p input').prop('checked', true).trigger('change')
@@ -120,7 +116,6 @@ var PageView = Backbone.View.extend({
 		};
 	},
 	setLibrary: function(library){
-		console.log("setLibrary")
 		//extract name of library from select change event
 		if (typeof library == 'object'){
 			library = $(library.target).val();
@@ -134,13 +129,12 @@ var PageView = Backbone.View.extend({
 		this.setInteractionOptions();
 	},
 	addDataLayer: function(){
-		console.log("fire addDataLayer");
 		//add data layer options
-		createLayer("dataLayer", 0);
+		var pagenum = this.model.get('pagenum');
+		createLayer(pagenum,"dataLayer", 0);
 		this.$el.find('.addDataLayer').hide();
 	},
 	render: function(){
-		console.log("render");
 		//create page div
 		var pagenum = this.model.get('pagenum');
 		this.$el.attr('id', 'page-'+pagenum);
@@ -150,10 +144,10 @@ var PageView = Backbone.View.extend({
 		$('#page-container').append(this.$el[0]);
 
 		//add initial base layer options
-		createLayer("baseLayer", 0);
+		createLayer(pagenum,"baseLayer", 0);
 
 		//add initial question set options
-		createSet(0);
+		createSet(pagenum,0);
 
 		//set initial map options
 		this.setLibrary('Leaflet');
@@ -194,7 +188,6 @@ var BaseLayerView = Backbone.View.extend({
 		//add other libraries...
 	},
 	removeLayer: function(){
-		console.log("removeLayer");
 		//reset layer numbering
 		this.i--
 		//fade out and remove view
@@ -234,11 +227,11 @@ var BaseLayerView = Backbone.View.extend({
 		});
 	},
 	addLayer: function(){
-		console.log("fire addLayer");
+		var pagenum = this.model.get('pagenum');
 		this.i = parseInt(this.$el.find('.layernumber').html())-1;
 		this.$el.find('.addlayer').hide();
 		this.$el.find('.removelayer').show();
-		createLayer(this.className, this.i+1);
+		createLayer(pagenum,this.className, this.i+1);
 	},
 	changeSourceType: function(e){
 		//dynamically change source type
@@ -281,7 +274,6 @@ var BaseLayerView = Backbone.View.extend({
 		this.$el.children('.removelayer').css('display', display);
 	},
 	addInteractionLayers: function(e){
-		console.log("called addInteractionLayers")
 		var pagenum = this.model.get('pagenum'),
 			i = this.i,
 			layerName = e.target.value,
@@ -353,7 +345,6 @@ var BaseLayerView = Backbone.View.extend({
 		this.$el.find('.sourcelink').attr('href', this.sourceLinks[library].link);
 	},
 	setLayerOptions: function(){
-		console.log("call setLayerOptions");
 		//set layer options
 		var library = this.model.get('library'),
 			layerOptionsTemplate = _.template( $('#'+library+"-"+this.className+"-options-template").html() );
@@ -387,7 +378,7 @@ var BaseLayerView = Backbone.View.extend({
 		$('#page-'+pagenum+' .'+this.className+'s').append(this.$el[0]);
 
 		//add visualization techniques
-		createTechnique(this.i, 0);
+		createTechnique(pagenum,this.i, 0);
 
 		return this;
 	}
@@ -456,7 +447,6 @@ var TechniqueView = Backbone.View.extend({
 			'proportional symbol': {
 				desc: "Adds a symbol (typically a circle) on top of each geographic unit and sizes the symbol according to data values in the expressed attribute. Data may have point or polygon/multipolygon geometries; if polygon/multipolygon, symbols will be placed at the centroid of each geographic unit.",
 				modifyForm: function(){
-					console.log("modify prop symbol form!");
 					//show/hide form options
 					l.find('input, select').removeAttr('disabled');
 					l.find('.technique-classification-p').show().find('select').val('unclassed');
@@ -666,10 +656,11 @@ var TechniqueView = Backbone.View.extend({
 		});
 	},
 	addTechnique: function(){
+		var pagenum = this.model.get('pagenum');
 		this.ii = parseInt(this.$el.find('.techniquenumber').html())-1;
 		this.$el.find('.addtechnique').hide();
 		this.$el.find('.removetechnique').show();
-		createTechnique(this.i, this.ii+1);
+		createTechnique(pagenum,this.i, this.ii+1);
 	},
 	removeButton: function(){
 		//make remove button invisible if the first layer
@@ -765,10 +756,11 @@ var SetView = Backbone.View.extend({
 		});
 	},
 	addSet: function(){
+		var pagenum = this.model.get('pagenum');
 		this.i = parseInt(this.$el.find('.setnumber').html())-1;
-		this.$el.find('.addbutton').hide();
-		this.$el.find('.removebutton').show();
-		createSet(this.i+1);
+		this.$el.find('.addset').hide();
+		this.$el.find('.removeset').show();
+		createSet(pagenum,this.i+1);
 	},
 	render: function(){
 		//create technique div
@@ -785,7 +777,7 @@ var SetView = Backbone.View.extend({
 		$('#page-'+pagenum+' .sets').append(this.el);
 
 		//add initial block options
-		createBlock(this.i, 0);
+		createBlock(pagenum,this.i, 0);
 
 		return this;
 	}
@@ -886,11 +878,12 @@ var BlockView = Backbone.View.extend({
 		};
 	},
 	addBlock: function(){
+		var pagenum = this.model.get('pagenum');
 		this.ii = parseInt(this.$el.find('.blocknumber').html())-1;
 		this.$el.find('.addbutton, .autoadv').hide();
 		this.$el.find('.autoadv').find('select').attr('disabled', true);
 		this.$el.find('.removebutton').show();
-		createBlock(this.i, this.ii+1);
+		createBlock(pagenum,this.i, this.ii+1);
 	},
 	render: function(){
 		//create technique div
@@ -916,8 +909,8 @@ var BlockView = Backbone.View.extend({
 		this.toggleInputType({target: this.$el.find('.input-type-select')[0]});
 
 		//add option and item properties
-		createOptionItem(this.i, this.ii, 0, 'option');
-		createOptionItem(this.i, this.ii, 0, 'item');
+		createOptionItem(pagenum,this.i, this.ii, 0, 'option');
+		createOptionItem(pagenum,this.i, this.ii, 0, 'item');
 
 		return this;
 	}
@@ -972,10 +965,11 @@ var OptionView = Backbone.View.extend({
 		});
 	},
 	addView: function(){
+		var pagenum = this.model.get('pagenum');
 		this.iii = parseInt(this.$el.find('.'+this.className+'number').html())-1;
 		this.$el.find('.addbutton').hide();
 		this.$el.find('.removebutton').show();
-		createOptionItem(this.i, this.ii, this.iii+1, this.className);
+		createOptionItem(pagenum,this.i, this.ii, this.iii+1, this.className);
 	},
 	render: function(){
 		//create div
@@ -1016,40 +1010,43 @@ var OptionItemViews = {
 };
 
 function createPage(pagenum){
+	totalPages+=1;
+	var pageModel = new PageModel();
 	pageModel.set('pagenum', pagenum);
-	var pageView = new PageView({model: pageModel});
+	pageModels[`page${pagenum}`] = pageModel;
+	var pageView = new PageView({model: pageModels[`page${pagenum}`]});
 	var page = pageView.render();
 };
 
-function createLayer(layerType, layerIndex){
-	var layerView = new LayerViews[layerType]({model: pageModel});
+function createLayer(pagenum,layerType, layerIndex){
+	var layerView = new LayerViews[layerType]({model: pageModels[`page${pagenum}`]});
 	layerView.i = layerIndex;
 	var layer = layerView.render();
 };
 
-function createTechnique(layerIndex, techniqueIndex){
-	var techniqueView = new TechniqueView({model: pageModel});
+function createTechnique(pagenum,layerIndex, techniqueIndex){
+	var techniqueView = new TechniqueView({model: pageModels[`page${pagenum}`]});
 	techniqueView.i = layerIndex;
 	techniqueView.ii = techniqueIndex;
 	var technique = techniqueView.render();
 	return techniqueView;
 };
 
-function createSet(setIndex){
-	var setView = new SetView({model: pageModel});
+function createSet(pagenum,setIndex){
+	var setView = new SetView({model: pageModels[`page${pagenum}`]});
 	setView.i = setIndex;
 	var set = setView.render();
 };
 
-function createBlock(setIndex, blockIndex){
-	var blockView = new BlockView({model: pageModel});
+function createBlock(pagenum,setIndex, blockIndex){
+	var blockView = new BlockView({model: pageModels[`page${pagenum}`]});
 	blockView.i = setIndex;
 	blockView.ii = blockIndex;
 	var block = blockView.render();
 };
 
-function createOptionItem(setIndex, blockIndex, optionItemIndex, type){
-	var optionItemView = new OptionItemViews[type]({model: pageModel});
+function createOptionItem(pagenum, setIndex, blockIndex, optionItemIndex, type){
+	var optionItemView = new OptionItemViews[type]({model: pageModels[`page${pagenum}`]});
 	optionItemView.i = setIndex;
 	optionItemView.ii = blockIndex;
 	optionItemView.iii = optionItemIndex;
@@ -1112,7 +1109,7 @@ var ConditionView = Backbone.View.extend({
 		createCondition(this.model.get('conditionnum')+1);
 	},
 	addPages: function(){
-		var nPages = allData.questions.pages.length,
+		var nPages = totalPages,
 			randomizeTemplate = _.template( $('#condition-randomize-template').html() );
 		for (var i=0; i<nPages; i++){
 			//add sortable list item
@@ -1188,6 +1185,8 @@ var ConditionView = Backbone.View.extend({
 		this.$el.find('.condition-randomize').each(function(i){
 			//get page div outer height including margins
 			var height = $(conditionPages[i]).outerHeight(true);
+			//hardcode because div doesnt exist when fired on upload
+			height = 48;
 			//subtract half of checkbox div height if first, and full checkbox div height for others
 			if (i == 0){
 				height -= 12;
@@ -1201,6 +1200,7 @@ var ConditionView = Backbone.View.extend({
 		e.stopPropagation();
 	},
 	modifyWeights: function(e){
+
 		var stopSlider = this.stopSlider;
 		this.$el.find('.weight-warning').hide();
 		if (typeof e == 'undefined' && this.model.get('conditionnum') == 1){
@@ -1242,11 +1242,18 @@ var ConditionView = Backbone.View.extend({
 		}
 	},
 	manualWeight: function(e){
-		var targetVal = parseFloat(e.target.value);
+		if(e["value"]) {
+			var targetVal = e["value"];
+		}
+		else{
+			var targetVal = parseFloat(e.target.value);
+		}
+
+		
 		if (!isNaN(targetVal) && targetVal >= 0 && targetVal <= 1.000){
 			$(e.target).parent().find('.condition-weight-slider').val(targetVal);
 			this.modifyWeights({manualTarget: e.target});
-		};
+		};	
 	},
 	render: function(){
 		//create condition div
@@ -1292,6 +1299,7 @@ function createCondition(conditionnum){
 	conditionModel.set('conditionnum', conditionnum);
 	var conditionView = new ConditionView({model: conditionModel});
 	var condition = conditionView.render();
+	return conditionView;
 };
 
 /****************** ALL FORMS ******************/
@@ -1553,6 +1561,31 @@ function changeStep(prevStep, currentStep){
 	};
 };
 
+function assignValue(target,value,triggerChange){
+	 //convert booleans to strings
+	 if(typeof value == "boolean"){
+	 	value = value.toString();
+	 }
+	$param = $(`[name*="${target}"]`);
+	$param.removeAttr('disabled');
+	
+	var $parentYes = $param.parent(".displayonyes,.hideonno");
+	var $parentBdd = $parentYes.siblings("p").find(".bdd");
+	//parent yes and visible
+	$parentBdd.val("true");
+	$parentYes.css({"display": "block"});
+
+	if(typeof(value) != "object"){
+					  $param.val(value);
+					} else {
+					  $param.val(JSON.stringify(value));
+					}
+	if(triggerChange){
+		$param.trigger("change");
+	}
+
+}
+
 //deal with data from extracted zip
 function loadStyles(styles){
 	var allSections = ["header", "footer", "map", "questions"];
@@ -1598,25 +1631,56 @@ function loadStyles(styles){
 	}
 }
 
-function assignValue(target,value){
-	 //convert booleans to strings
-	 if(typeof value == "boolean"){
-	 	value = value.toString();
-	 }
-	$param = $(`[name*="${target}"]`);
-	$param.removeAttr('disabled');
-	
-	var $parentYes = $param.parent(".displayonyes,.hideonno");
-	var $parentBdd = $parentYes.siblings("p").find(".bdd");
-	//parent yes and visible
-	$parentBdd.val("true");
-	$parentYes.css({"display": "block"});
+function loadConditions(conditions){
 
-	if(typeof(value) != "object"){
-					  $param.val(value);
-					} else {
-					  $param.val(JSON.stringify(value));
+	for(var i=0;i<conditions.length;i++){
+		var condition = conditions[i];
+		var conditionView = createCondition(i+1);
+		var $condition = $(`#condition-${i+1}`);
+
+		//set pages in right order
+		var overallIndex = 0;
+		var beforeRandom = false;
+		for(var page of condition.pages){
+			//if random
+			if(Array.isArray(page)){
+				for(var randomPage of page){
+					var $page = $condition.find(`[name="${i}.pages.${overallIndex}"]`);
+					$page.val(randomPage);
+					$page.parent().find(".pagenum").html(randomPage);
+					$page.parent().parent().addClass("after-randomized").addClass("randomized");
+					//check the randomize box if previous was also randomized
+					if(beforeRandom){
+						$page.parent().parent().addClass("before-randomized").addClass("randomized");
+						$condition.find(`.randomize.${overallIndex}.${overallIndex+1}`).prop("checked", true).trigger("change");
 					}
+					overallIndex+=1;
+					beforeRandom = true;
+				}
+			}else{
+				$page = $condition.find(`[name="${i}.pages.${overallIndex}"]`);
+				$page.val(page);
+				$page.parent().find(".pagenum").html(page);
+				overallIndex+=1;
+				beforeRandom = false;
+			}
+			
+		}
+	}	
+	//add weights after all conditions created
+	if(conditions[0].weight){
+		
+		for(var i=0;i<conditions.length;i++){
+			var condition = conditions[i];
+			var $condition = $(`#condition-${i+1}`);
+			//set condition weights if included
+			$condYN = $("form#conditions").find("#weight-yn").find(".bdd");
+			$condYN.val("true").trigger("change");
+			$weight = $condition.find(".weight-val");
+			$weight.val(condition["weight"]).trigger("keyup");
+		}
+	}
+	
 }
 
 
@@ -1649,7 +1713,7 @@ function populateMapPage(page){
 	if(page.baseLayers){
 		for(var i = 0; i < page.baseLayers.length; i++){
 			var baseLayer = page.baseLayers[i];
-			createLayer("baseLayer",i);
+			createLayer(page.page,"baseLayer",i);
 			for(var param in baseLayer){
 				assignValue(`map.pages.${page.page}.baseLayers.${i}.${param}`, baseLayer[param]);
 			}
@@ -1659,7 +1723,7 @@ function populateMapPage(page){
 	if(page.dataLayers){
 		for(var i = 0; i < page.dataLayers.length; i++){
 			var dataLayer = page.dataLayers[i];
-			createLayer("dataLayer",i);
+			createLayer(page.page,"dataLayer",i);
 			for(var param in dataLayer){
 				//special handling for displayAttributes and techniques
 				if(param == "displayAttributes"){
@@ -1676,7 +1740,7 @@ function populateMapPage(page){
 					var techniques = dataLayer[param];
 					for(var j=0; j<techniques.length; j++){
 						var technique = dataLayer[param][j];
-						var techView = createTechnique(i,j);
+						var techView = createTechnique(page.page,i,j);
 						if(technique["type"]) {
 							techView.changeTechniqueType(technique["type"]);
 						}
@@ -1710,7 +1774,6 @@ function populateMapPage(page){
 			}
 		}
 	}
-	console.log(page);
 	//interactions
 	if(page["interactions"]){
 		for(var interaction in page["interactions"]){
@@ -1739,13 +1802,70 @@ function populateMapPage(page){
 	}
 }
 
-
-function loadMap(mapConfig){
-	for(var page of mapConfig.pages) {
-		populateMapPage(page);
+function populateQuestionPage(page){
+	//set full page
+	assignValue(`questions.pages.${page.page}.fullpage`,page["fullpage"]);
+	$(`[name="questions.pages.${page.page}.fullpage"]`).trigger("change");
+	//sets
+	for(var i=0; i < page["sets"].length; i++){
+		if(i!=0) createSet(page.page,i);
+		var set = page["sets"][i];
+		var $set = $(`#page-${page.page}-set-${i}`);
+		//set buttons
+		for(var button of set["buttons"]){
+			$button = $set.find(`.set-button.${button}`);
+			$button.prop("checked", true);
+		}
+		//blocks
+		for(var j=0; j < set["blocks"].length;j++){
+			if(j!=0) createBlock(page.page,i,j);
+			var block = set["blocks"][j];
+			var $block = $(`#page-${page.page}-set-${i}-block-${j}`)
+			var $input = $block.find(".input-yn");
+			if(!block["input"]){
+			//set include input to no if not there
+				$input.val("false").trigger("change");
+			}
+			for(var blockOption in block){
+				if(blockOption!="input"){
+					var value = block[blockOption];
+					assignValue(`questions.pages.${page.page}.sets.${i}.blocks.${j}.${blockOption}`,value);
+				} else {
+					var inputOptions = block[blockOption];
+					for(var inputOption in inputOptions){
+						if(inputOption!="options"&&inputOption!="items"){
+							var value = inputOptions[inputOption];
+							assignValue(`questions.pages.${page.page}.sets.${i}.blocks.${j}.input.${inputOption}`,value,true);
+						}
+						//handle options or items
+						else{
+							var optionsItems = inputOptions[inputOption];
+							var type = inputOption.replace("s","");
+							if(optionsItems.length>0){
+								for(k=0;k<optionsItems.length;k++){
+									//create options/items
+									var optItem = optionsItems[k];
+									if(k!=0) createOptionItem(page.page,i,j,k,type);
+									for(var optionSetting in optItem){
+										var value = optItem[optionSetting];
+										assignValue(`questions.pages.${page.page}.sets.${i}.blocks.${j}.input.${inputOption}.${k}.${optionSetting}`,value);
+									}
+								}
+							}			
+						}
+					}
+				}
+			}
+		}
 	}
+}
 
 
+function loadPages(mapConfig,questionConfig){
+	for(var i=0;i<mapConfig.pages.length;i++){
+		populateMapPage(mapConfig.pages[i]);
+		populateQuestionPage(questionConfig.pages[i]);
+	}
 }
 
 
@@ -1757,25 +1877,28 @@ function uploadConfig(input) {
     	alert("Must upload a zip file!")
     }else {
 	   	config_zip.loadAsync(file).then(function(zip){
-	    	textContents = [zip.files['styles.json'].async("string"),
-	    					zip.files['map.json'].async("string"),
-	    					zip.files['questions.json'].async("string"),
-	    					zip.files['conditions.json'].async("string"),
-	    					zip.files['param.php'].async("string")];
+	   		var pre = "";
+	   		if(!zip.files['styles.json']) pre+=file["name"].replace(".zip","/");
+	    	textContents = [zip.files[`${pre}styles.json`].async("string"),
+	    					zip.files[`${pre}map.json`].async("string"),
+	    					zip.files[`${pre}questions.json`].async("string"),
+	    					zip.files[`${pre}conditions.json`].async("string"),
+	    					zip.files[`${pre}param.php`].async("string")];
 	    	return Promise.all(textContents);
 	    }).then(function(textFiles){
-
 	    	if(textFiles[0].length != 0){
 	    	   	var styles = JSON.parse(textFiles[0]);
+	    	   	loadStyles(styles);
 	    	}
 	    	var map = JSON.parse(textFiles[1]);
+	    	var question = JSON.parse(textFiles[2]);
+	    	loadPages(map,question);
 
+	    	if(textFiles[3].length != 0){
+	    	   	var conditions = JSON.parse(textFiles[3]);
+	    	   	loadConditions(conditions);
+	    	}
 
-	    	//first work on styles
-	    	loadStyles(styles);
-	    	loadMap(map)
-	    	// var questions = textFiles[2];
-	    	// var conditions = textFiles[3];
 	    	// var param = textFiles[4];
     		});
     }
