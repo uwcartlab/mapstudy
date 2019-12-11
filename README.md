@@ -40,7 +40,7 @@ To access the setup application (which has a live preview feature), [click here]
 
 ## About the API documentation:
 
-MapStudy is a flexible framework for creating map-based survey applications. It includes a range of components that are selected by setting and extending the options in the *.json* files within the *config* directory. For now, those files must be edited manually in a basic text editor such as Sublime or Notepad++. Hopefully there will eventually be a helper GUI for setting up the config files.
+MapStudy is a flexible framework for creating map-based survey applications. It includes a range of components that are selected by setting and extending the options in the *.json* files within the *config* directory. It is recommended to use the web-based GUI application for setting up your configuration files, though they can also be edited manually in a basic text editor such as Sublime or Notepad++. The web-based configuration setup application includes functionality that enables the upload and editing of configuration files from previous studies.
 
 The API documentation lists the options available in the config files. Each option is shown as code, with the option key to the left of a colon and each explicit possible value `between asterisks (*)`. **Everything `between asterisks (*)` is optional; everything else is required.** Special cases are noted at their respective documentation sections.
 
@@ -65,6 +65,12 @@ This documentation assumes a basic working knowledge of JSON formatting, geograp
 ## Config files:
 
 The remainder of the documentation describes each of the configuration files stored in the *config* folder and the options available with each. It is recommended to use the [form-based setup application](http://grad.geography.wisc.edu/cmsack/mapstudy/setup/) to create these, as it makes it easy to configure a custom MapStudy application without having to open up the config files and write a bunch of JSON code. But be forewarned that the setup app is still *very* beta; use at your own risk and compare the resulting files with this documentation if you run into trouble!
+
+**Upload functionality:** The web-based setup application includes upload functionality, which you may use to load and edit example configuration settings from previous Mapstudy research. Due to the complexity of the configuration files, it is strongly recommended, both for first-time users of Mapstudy and for those who wish to closely replicate or tweak existing studies. The upload functionality enables Mapstudy users to develop part of their study, download the progress they've made, and upload to continue development. 
+
+To upload configuration files zip your *config* directory, which should include all four .json files. The upload functionality does not upload the settings from the setup.php file currently as it's expected these settings will be different for each study, unlike the settings for maps and questions that may be structured in very similar ways across different Mapstudy applications. Load/refresh the setup application and start with a clean form when using the upload functionality.
+
+To see a working example of Mapstudy configuration settings, upload the zipped *config* directory from this repository.
 
 ## Styles
 ###Filename: styles.json
