@@ -1851,15 +1851,13 @@ function populateMapPage(page){
 			}
 		}
 	}
-	// var $iSections = $(".interactions.q").find(".i-checkbox");
-	// //set off change event to reset disabled settings
-	// $iSections.trigger("change");
 }
 
 function populateQuestionPage(page){
 	//set full page
-	assignValue(`questions.pages.${page.page}.fullpage`,page["fullpage"]);
-	$(`[name="questions.pages.${page.page}.fullpage"]`).trigger("change");
+	if(page["fullpage"]){
+		$(`[name="questions.pages.${page.page}.fullpage"]`).val("true").trigger("change");
+	}
 	//sets
 	for(var i=0; i < page["sets"].length; i++){
 		if(i!=0) createSet(page.page,i);
@@ -1923,7 +1921,7 @@ function loadPages(mapConfig,questionConfig){
 		if(!pageModels[`page${i+1}`] ) createPage(i+1);
 		var mapPage = mapConfig.pages.filter(page=>page.page == i+1)[0];
 		if(mapPage) populateMapPage(mapPage);
-		//populateQuestionPage(questionConfig.pages[i]);
+		populateQuestionPage(questionConfig.pages[i]);
 	}
 }
 
