@@ -15,6 +15,26 @@ html {
     line-height: 1.4;
 }
 
+.zipUpload {
+    position: absolute;
+    left:50%;
+    margin-left: -200px;
+    width: 400px;
+    height: 200px;
+    top: 50%;
+    margin-top: -100px;
+    background: rgba(255,255,255,0.9);
+    display: none;
+    border-radius: 5px;
+    font-size: 24px;
+}
+
+.zipUpload p {
+    width: 350px;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
 /*
  * Remove text-shadow in selection highlight:
  * https://twitter.com/miketaylr/status/12228805301

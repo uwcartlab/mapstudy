@@ -1826,11 +1826,8 @@ function populateMapPage(page){
 				var value = page["interactions"][interaction][interactionOption];
 				//handle data layers
 				if(interactionOption == "dataLayers"){
-					console.log(value);
 					for(var dataLayer of value){
 						$interactionSetting = $interaction.parent().parent().find(`.interaction-dataLayer.${dataLayer.replace(/ /g, "")}`).find("input");
-						console.log($interaction);
-						console.log($interactionSetting);
 						$interactionSetting.prop("checked", true).trigger("change");
 					}
 				} else if(typeof value == "boolean"){
@@ -1931,7 +1928,8 @@ function loadPages(mapConfig,questionConfig){
 
 ///loading zip file
 function uploadConfig(input) {
-
+	//open loading page
+	$(".zipUpload").css("display", "block");
 	var config_zip = new JSZip();
     var file = input.files[0];
     if(!file["name"].includes(".zip")){
@@ -1955,13 +1953,12 @@ function uploadConfig(input) {
 	    	var map = JSON.parse(textFiles[1]);
 	    	var question = JSON.parse(textFiles[2]);
 	    	loadPages(map,question);
-
 	    	if(textFiles[3].length != 0){
 	    	   	var conditions = JSON.parse(textFiles[3]);
 	    	   	loadConditions(conditions);
 	    	}
-
-	    	// var param = textFiles[4];
+	    	//close loading page
+	    	$(".zipUpload").css("display", "none");
     		});
     }
 
