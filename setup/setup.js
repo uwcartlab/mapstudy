@@ -324,7 +324,7 @@ var BaseLayerView = Backbone.View.extend({
 			},
 			render: function(){
 				this.$el.append(this.template(this.model.attributes));
-				this.$el.attr('class', "interaction-dataLayer i-dataLayer-"+this.model.get('i') + " " + this.model.attributes.layerName);
+				this.$el.attr('class', "interaction-dataLayer i-dataLayer-"+this.model.get('i') + " " + this.model.attributes.layerName.replace(/ /g, ""));
 				//uncheck checkbox to start
 				this.$el.find("input").prop("checked", false);
 				mapsection.find('.'+this.model.get('interaction')+' .interaction-dataLayers').append(this.el);
@@ -1826,8 +1826,11 @@ function populateMapPage(page){
 				var value = page["interactions"][interaction][interactionOption];
 				//handle data layers
 				if(interactionOption == "dataLayers"){
+					console.log(value);
 					for(var dataLayer of value){
-						$interactionSetting = $interaction.parent().parent().find(`.interaction-dataLayer.${dataLayer}`).find("input");
+						$interactionSetting = $interaction.parent().parent().find(`.interaction-dataLayer.${dataLayer.replace(/ /g, "")}`).find("input");
+						console.log($interaction);
+						console.log($interactionSetting);
 						$interactionSetting.prop("checked", true).trigger("change");
 					}
 				} else if(typeof value == "boolean"){
