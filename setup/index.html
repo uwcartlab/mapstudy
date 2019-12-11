@@ -570,7 +570,8 @@
                                         <input class="i-checkbox" type="checkbox" name="map.pages.<%= pagenum %>.interactions.overlay"> Overlay
                                     </p>
                                     <div class="overlay i-section">
-                                        <div class="interaction-dataLayers">Data layers to include:</div>
+                                        <div class="interaction-dataLayers">Data layers to include:
+                                            <input type="hidden" name="map.pages.<%= pagenum %>.interactions.overlay.dataLayers-{[]}"></div>
                                     </div>
                                 </div>
                                 
@@ -586,7 +587,8 @@
                                         <input class="i-checkbox" type="checkbox" name="map.pages.<%= pagenum %>.interactions.search"> Search
                                     </p>
                                     <div class="search i-section">
-                                        <div class="interaction-dataLayers">Data layers to include:</div>
+                                        <div class="interaction-dataLayers">Data layers to include:
+                                            <input type="hidden" name="map.pages.<%= pagenum %>.interactions.search.dataLayers-{[]}"></div>
                                     </div>
                                 </div>
 
@@ -595,7 +597,8 @@
                                         <input class="i-checkbox" type="checkbox" name="map.pages.<%= pagenum %>.interactions.filter"> Filter
                                     </p>
                                     <div class="filter i-section">
-                                        <div class="interaction-dataLayers mb20">Data layers to include:</div>
+                                        <div class="interaction-dataLayers mb20">Data layers to include:
+                                            <input type="hidden" name="map.pages.<%= pagenum %>.interactions.filter.dataLayers-{[]}"></div>
                                         <div class="filter-tool">Filter tool: 
                                             <select name="map.pages.<%= pagenum %>.interactions.filter.tool">
                                                 <option value="slider">Slider</option>
@@ -610,7 +613,9 @@
                                         <input class="i-checkbox" type="checkbox" name="map.pages.<%= pagenum %>.interactions.sequence"> Sequence
                                     </p>
                                     <div class="sequence i-section">
-                                        <div class="interaction-dataLayers mb20">Data layers to include:</div>
+                                        <div class="interaction-dataLayers mb20">Data layers to include:
+                                        <input type="hidden" name="map.pages.<%= pagenum %>.interactions.sequence.dataLayers-{[]}">
+                                        </div>
                                         <div class="sequence-tool">Sequence tool: 
                                             <select name="map.pages.<%= pagenum %>.interactions.sequence.tool">
                                                 <option value="buttons">Buttons</option>
@@ -864,6 +869,7 @@
                             <option value="dot">Dot</option>
                             <option value="isarithmic">Isarithmic</option>
                             <option value="heat">Heat</option>
+                            <option value="label">Label</option>
                         </select>
                     </p>
 
@@ -985,7 +991,6 @@
                 <script type="text/template" id="interaction-dataLayer-template">
                     <input type="checkbox" checked> 
                     <span class="dataLayer-layerName"><%= layerName %></span>
-                    <input type="hidden" name="map.pages.<%= pagenum %>.interactions.<%= interaction %>.dataLayers-{[]}" value="<%= layerName %>">
                 </script>
 
 

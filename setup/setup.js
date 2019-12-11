@@ -10,6 +10,7 @@ var allData = {
 };
 
 var totalPages = 0;
+var userClicks = 0;
 
 //templates
 var optionTemplate = _.template( $('#option-template').html() ),
@@ -83,7 +84,7 @@ var PageView = Backbone.View.extend({
 			isection.slideDown(250);
 		} else {
 			isection.slideUp(250);
-			isection.find('input, select').prop('disabled', true);
+			isection.find('input, select').attr('disabled', true);
 		};
 	},
 	toggleMaponpage: function(e){
@@ -290,13 +291,32 @@ var BaseLayerView = Backbone.View.extend({
 			},
 			changeInput: function(e){
 				var checked = e.target.checked,
-					hiddenInput = this.$el.find('input[type=hidden]'),
-					layerName = this.$el.find('.dataLayer-layerName').html();
+					layerName = this.$el.find('.dataLayer-layerName').html(),
+					hiddenInput = this.$el.parent().find('input[type=hidden]');
+					var includedLayers;
+				//if there are value(s)
+				if(hiddenInput.val()){
+					includedLayers = hiddenInput.val().split(",");
+				} //otherwise create empty array
+				else {
+					includedLayers = [];
+				}
+				//if checked add the new layer if not already there
 				if (checked){
-					hiddenInput.val(layerName);
-				} else {
+					if(_.indexOf(includedLayers,layerName) == -1){
+						includedLayers.push(layerName);
+					}
+				}  //otherwise remove the layer
+				else {
+					includedLayers = _.without(includedLayers,layerName);
 					hiddenInput.removeAttr('value');
 				};
+				//set value to included layers or remove if none
+				if(includedLayers.length>0) {
+					hiddenInput.val(includedLayers.join(","));
+				} else {
+					hiddenInput.removeAttr("value");
+				}
 			},
 			changeLayerName: function(e, layerName){
 				this.$el.find('.dataLayer-layerName').html(layerName);
@@ -304,7 +324,9 @@ var BaseLayerView = Backbone.View.extend({
 			},
 			render: function(){
 				this.$el.append(this.template(this.model.attributes));
-				this.$el.attr('class', "interaction-dataLayer i-dataLayer-"+this.model.get('i'));
+				this.$el.attr('class', "interaction-dataLayer i-dataLayer-"+this.model.get('i') + " " + this.model.attributes.layerName);
+				//uncheck checkbox to start
+				this.$el.find("input").prop("checked", false);
 				mapsection.find('.'+this.model.get('interaction')+' .interaction-dataLayers').append(this.el);
 			}
 		})
@@ -495,6 +517,17 @@ var TechniqueView = Backbone.View.extend({
 					l.find('.technique-classification-p, .technique-n-classes-p, .technique-symbol-p, .technique-interval-p').hide().find('input, select').attr('disabled', true);
 					l.find('.technique-classes, .classification-type-desc').empty();
 					l.find('.dot-line-size').html('Point radius: ');
+				}
+			},
+			label: {
+				desc: "A label data layer will place labels on the map for each feature expressing the layer's first display attribute, either adjacent to the feature if point data or centered within the feature if polygons.",
+				modifyForm: function(){
+					//show/hide form options
+					l.find('input, select').removeAttr('disabled');
+					l.find('.technique-size-p').show().find('input').val('1');
+					l.find('.technique-classification-p, .technique-n-classes-p, .technique-symbol-p, .technique-interval-p').hide().find('input, select').attr('disabled', true);
+					l.find('.technique-classes, .classification-type-desc').empty();
+					l.find('.dot-line-size').html('Label size: ');
 				}
 			}
 		};
@@ -1010,6 +1043,7 @@ var OptionItemViews = {
 };
 
 function createPage(pagenum){
+	console.log("creating page" + pagenum);
 	totalPages+=1;
 	var pageModel = new PageModel();
 	pageModel.set('pagenum', pagenum);
@@ -1106,10 +1140,10 @@ var ConditionView = Backbone.View.extend({
 		});
 	},
 	addcondition: function(){
-		createCondition(this.model.get('conditionnum')+1);
+		createCondition(this.model.get('conditionnum')+1,totalPages);
 	},
 	addPages: function(){
-		var nPages = totalPages,
+		var nPages = this.model.get('conditionPages'),
 			randomizeTemplate = _.template( $('#condition-randomize-template').html() );
 		for (var i=0; i<nPages; i++){
 			//add sortable list item
@@ -1295,8 +1329,9 @@ var ConditionPageView = Backbone.View.extend({
 	}
 })
 
-function createCondition(conditionnum){
+function createCondition(conditionnum,conditionPages){
 	conditionModel.set('conditionnum', conditionnum);
+	conditionModel.set('conditionPages', conditionPages);
 	var conditionView = new ConditionView({model: conditionModel});
 	var condition = conditionView.render();
 	return conditionView;
@@ -1401,6 +1436,7 @@ function processForm(data){
 			open = '',
 			close = '',
 			value = inData.value;
+
 		for (var i = 0; i < len; i++){
 			open += '{"' + propArray[i] + '":';
 			close += '}';
@@ -1409,6 +1445,7 @@ function processForm(data){
 				if (value[0] == '{' || value[0] == '[' || (value != '' && !isNaN(Number(value)))){
 					open += value;
 				} else {
+					value = value.replace(/"/g, '\\"');
 					open += '"' + value + '"';
 				}
 			};
@@ -1583,6 +1620,9 @@ function assignValue(target,value,triggerChange){
 	if(triggerChange){
 		$param.trigger("change");
 	}
+	if(typeof(value) == "string"){
+		$param.trigger("keyup");
+	}
 
 }
 
@@ -1635,7 +1675,7 @@ function loadConditions(conditions){
 
 	for(var i=0;i<conditions.length;i++){
 		var condition = conditions[i];
-		var conditionView = createCondition(i+1);
+		var conditionView = createCondition(i+1,condition.pages.length);
 		var $condition = $(`#condition-${i+1}`);
 
 		//set pages in right order
@@ -1668,14 +1708,15 @@ function loadConditions(conditions){
 		}
 	}	
 	//add weights after all conditions created
-	if(conditions[0].weight){
-		
+	if(conditions[0].hasOwnProperty("weight")){
 		for(var i=0;i<conditions.length;i++){
 			var condition = conditions[i];
 			var $condition = $(`#condition-${i+1}`);
-			//set condition weights if included
+
 			$condYN = $("form#conditions").find("#weight-yn").find(".bdd");
 			$condYN.val("true").trigger("change");
+
+			//set condition weights if included
 			$weight = $condition.find(".weight-val");
 			$weight.val(condition["weight"]).trigger("keyup");
 		}
@@ -1685,7 +1726,6 @@ function loadConditions(conditions){
 
 
 function populateMapPage(page){
-	createPage(page.page);
 	$page = $(`div#page-${page.page}`);
 
 	//map options
@@ -1774,25 +1814,36 @@ function populateMapPage(page){
 			}
 		}
 	}
-	//interactions
+	//interactions INTERACTIONS
 	if(page["interactions"]){
 		for(var interaction in page["interactions"]){
 			var $interaction = $(`[name="map.pages.${page.page}.interactions.${interaction}"]`);
 			//toggle interaction on
-			$interaction.prop( "checked", true )
+			$interaction.prop( "checked", true);
 			$interaction.trigger("change");
 			for(var interactionOption in page["interactions"][interaction]){
 				var $interactionSetting;
 				var value = page["interactions"][interaction][interactionOption];
-				if(typeof value == "boolean"){
+				//handle data layers
+				if(interactionOption == "dataLayers"){
+					for(var dataLayer of value){
+						$interactionSetting = $interaction.parent().parent().find(`.interaction-dataLayer.${dataLayer}`).find("input");
+						$interactionSetting.prop("checked", true).trigger("change");
+					}
+				} else if(typeof value == "boolean"){
+					//exception for resybolize option radios
+					if(interactionOption == "reclassify" || interactionOption == "rescale" || interactionOption == "recolor"){
+						$interactionSetting = $(`[name="map.pages.${page.page}.interactions.${interaction}.${interactionOption}"][value="${value.toString()}"]`);
+				  		$interactionSetting.prop("checked",true);
+					}
 					$interactionSetting = $(`[name="map.pages.${page.page}.interactions.${interaction}.${interactionOption}"]`);
 					$interactionSetting.val(value.toString());
+				} else if (typeof value == "string"){
+					assignValue(`map.pages.${page.page}.interactions.${interaction}.${interactionOption}`,value);
 				} else {
 				  	for(var subValName in value){
 				  		var subValue = value[subValName];
 				  		//deal with radio buttons
-				  		//$interactionSettingTrue = $(`[name="map.pages.${page.page}.interactions.${interaction}.${interactionOption}.${subValName}"][value="true"]`);
-				  		//$interactionSettingFalse = $(`[name="map.pages.${page.page}.interactions.${interaction}.${interactionOption}.${subValName}"][value="false"]`);
 				  		$interactionSetting = $(`[name="map.pages.${page.page}.interactions.${interaction}.${interactionOption}.${subValName}"][value="${subValue.toString()}"]`);
 				  		$interactionSetting.prop("checked",true);
 				  	}
@@ -1800,6 +1851,9 @@ function populateMapPage(page){
 			}
 		}
 	}
+	// var $iSections = $(".interactions.q").find(".i-checkbox");
+	// //set off change event to reset disabled settings
+	// $iSections.trigger("change");
 }
 
 function populateQuestionPage(page){
@@ -1811,10 +1865,12 @@ function populateQuestionPage(page){
 		if(i!=0) createSet(page.page,i);
 		var set = page["sets"][i];
 		var $set = $(`#page-${page.page}-set-${i}`);
-		//set buttons
-		for(var button of set["buttons"]){
-			$button = $set.find(`.set-button.${button}`);
-			$button.prop("checked", true);
+		//set buttons(last page has no buttons)
+		if(set["buttons"]) {
+			for(var button of set["buttons"]){
+				$button = $set.find(`.set-button.${button}`);
+				$button.prop("checked", true).trigger("change");
+			}
 		}
 		//blocks
 		for(var j=0; j < set["blocks"].length;j++){
@@ -1862,15 +1918,19 @@ function populateQuestionPage(page){
 
 
 function loadPages(mapConfig,questionConfig){
-	for(var i=0;i<mapConfig.pages.length;i++){
-		populateMapPage(mapConfig.pages[i]);
-		populateQuestionPage(questionConfig.pages[i]);
+	//some pages may have no map, use question.json
+	for(var i=0; i<questionConfig.pages.length;i++){
+		if(!pageModels[`page${i+1}`] ) createPage(i+1);
+		var mapPage = mapConfig.pages.filter(page=>page.page == i+1)[0];
+		if(mapPage) populateMapPage(mapPage);
+		//populateQuestionPage(questionConfig.pages[i]);
 	}
 }
 
 
 ///loading zip file
 function uploadConfig(input) {
+
 	var config_zip = new JSZip();
     var file = input.files[0];
     if(!file["name"].includes(".zip")){
@@ -1882,8 +1942,9 @@ function uploadConfig(input) {
 	    	textContents = [zip.files[`${pre}styles.json`].async("string"),
 	    					zip.files[`${pre}map.json`].async("string"),
 	    					zip.files[`${pre}questions.json`].async("string"),
-	    					zip.files[`${pre}conditions.json`].async("string"),
-	    					zip.files[`${pre}param.php`].async("string")];
+	    					zip.files[`${pre}conditions.json`].async("string")
+	    					//,zip.files[`${pre}param.php`].async("string")
+	    					];
 	    	return Promise.all(textContents);
 	    }).then(function(textFiles){
 	    	if(textFiles[0].length != 0){
@@ -1915,6 +1976,10 @@ function navigation(){
 			"param",
 			"finished"
 		];
+
+	$('body').click(function(){
+		userClicks++;
+	})
 
 	//show only the current step on page
 	$('.step').each(function(){
@@ -1951,6 +2016,7 @@ function navigation(){
 	});
 
 	$('#upload input').on("change", function(){
+		if(userClicks>3) alert("Please note you must start with a clean setup form when uploading configuration files.");
 		uploadConfig(this);
 	});	
 
@@ -1967,7 +2033,7 @@ function initialize(){
 
 	//activate add condition button for Step 3 (conditions)
 	$('.addcondition').click(function(){
-		createCondition(1);
+		createCondition(1,totalPages);
 	});
 
 };
