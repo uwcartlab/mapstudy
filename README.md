@@ -14,7 +14,7 @@ The MapStudy framework is currently in beta release, version 1.0. Note that not 
 
 To see a demo app created with the MapStudy framework, [click here](http://uwcart.github.io/mapstudy/).
 
-To access the setup application (which has a live preview feature), [click here](https://cartlab.geography.wisc.edu/mapstudy/stable/setup/)
+To access the setup application (which has a live preview feature), [click here](https://geography.wisc.edu/cartography/mapstudy/setup/)
 
 ## Documentation - Version 1.0
 
