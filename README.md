@@ -4,19 +4,19 @@
 
 # What is MapStudy?
 
-MapStudy is an integrated, modularized framework for the creation of survey applications designed to test cartographic design and interaction hypotheses in a modern web map environment. It leverages Postgresql and PHP on the server side and Javascript, jQuery, Leaflet, and D3 on the client. MapStudy is being developed specifically for use in the University of Wisconsin-Madison Cartography program through the support of the UW-Madison Cartography Lab and the Wisconsin Alumni Research Foundation.
+MapStudy is an integrated, modularized framework for the creation of survey applications designed to test cartographic design and interaction hypotheses in a modern web map environment. It leverages Postgresql and PHP on the server side and Javascript, jQuery, and Leaflet on the client. MapStudy is being developed specifically for use in the University of Wisconsin-Madison Cartography program through the support of the UW-Madison Cartography Lab and the Wisconsin Alumni Research Foundation.
 
 ## What is the status of MapStudy?
 
-The MapStudy framework is currently in beta release, version 0.1. Note that not all functionality is complete. At this time, Leaflet is the only active map library.
+The MapStudy framework is currently in beta release, version 1.0. Note that not all functionality is complete. At this time, Leaflet is the only active map library.
 
 ## Can I have a preview please?
 
-To see a demo app created with the MapStudy framework, [click here](https://geography.wisc.edu/cartography/mapstudy/).
+To see a demo app created with the MapStudy framework, [click here](http://uwcart.github.io/mapstudy/).
 
-To access the setup application (which has a live preview feature), [click here](https://geography.wisc.edu/cartography/mapstudy/setup/)
+To access the setup application (which has a live preview feature), [click here](https://cartlab.geography.wisc.edu/mapstudy/stable/setup/)
 
-## Documentation - Version 0.1
+## Documentation - Version 1.0
 
 ## Contents
 
@@ -31,6 +31,8 @@ To access the setup application (which has a live preview feature), [click here]
 #### &emsp;[Map](#map-1)
 
 #### &emsp;[Questions](#questions-1)
+
+* #### &emsp;[Story](#questions-1)
 
 #### &emsp;[Conditions](#conditions-1)
 
@@ -122,7 +124,7 @@ An HTML string that will be added to the section. The `content` of the `header` 
 ## Map
 ###Filename: map.json
 
-This config file holds the configuration options necessary to create the map. MapStudy will eventually support creating web maps with interaction logging in [Leaflet](http://leafletjs.com/), [Mapbox-GL](https://www.mapbox.com/mapbox-gl-js/api/), and [D3](http://d3js.org/), and maps with no interaction logging as any of the first three plus a static image, REST service, or embedded iframe with any other web mapping service (e.g. [CartoDB](https://cartodb.com/) and [ArcGIS Online Viewer](https://www.arcgis.com/home/webmap/viewer.html)).
+This config file holds the configuration options necessary to create the map. MapStudy supports creating web maps with interaction logging in [Leaflet](http://leafletjs.com/).
 
 In the descriptions below, `map` refers to each object in the map.json `pages` array. The map.json file should be structured thus:
 
@@ -141,10 +143,9 @@ In the descriptions below, `map` refers to each object in the map.json `pages` a
 
 #### map.pages[page].library
 
-	"library": *"Leaflet"* *"Mapbox-GL"* *"D3"* *"image"* *"REST"* *"iframe"*
+	"library": *"Leaflet"*
 
-The web mapping library or service to use to create the map. Currently only supports `Leaflet`.
-
+The web mapping library or service to use to create the map. Currently supports `Leaflet`.
 
 #### map.pages[page].interactions
 
@@ -236,12 +237,6 @@ How to implement pan. All default to `true`; add only to disable an interface op
 | `*"drag"*` | Enables panning by clicking and dragging or finger-dragging on the map. | `true` |
 | `*"keyboard"*` | Enables panning using the arrow keys of a keyboard; it is recommended to keep this option `true` for accessibility. | `true` |
 | `*"widget"*` | Implements a pan widget with arrow buttons in the lower-left corner of the map. | `true` |
-
-#### map.pages[page].interactions.rotate
-
-		*"rotate"*: { *"logging"* *"toggle"* }
-
-Rotate interaction. Allows the user to rotate the map. Only available with Mapbox-GL and D3 libraries.
 
 #### map.pages[page].interactions.retrieve
 
@@ -385,18 +380,6 @@ Changing the symbol scaling if a proportional symbol map, or the interval if a d
 | `*"true"*` | Allows the user to change the symbol color. For a choropleth map, the user may choose from any sequential ColorBrewer scale. For proportional symbol map, the user may enter any HEX value or choose from a palette the fill color of the symbols. | `true` |
 | `*"false"*` | Doesn't allow the user to change the symbol color.| `true` |
 
-#### map.pages[page].interactions.reproject
-
-		*"reproject"*: { *"logging"* *"toggle"* "projections" }
-
-Allows the user to change the map projection. Only available with the D3 library.
-
-#### map.pages[page].interactions.reproject.projections
-
-			"projections":[]
-
-An array of `projection` objects with the projection name and D3-style projection parameters for each alternative projection to include. Must have at least one projection object to enable reprojection.
-
 #### map.pages[page].interactions.reset
 
 		*"reset"*: { *"logging"* "toggle" }
@@ -430,47 +413,6 @@ Whether to include a button allowing the participant to reset the map to its ori
 | :------------: | :----------- | :------------------- |
 | `*false*` | If `true`, reset button will be included | `false` |
 
-#### map.pages[page].projection
-
-	*"projection"*: { "name" *"options"* }
-
-An object containing the projection name and parameters for a D3 projection. Only available with the D3 `library options`. Must be included to instantiate a D3 map.
-
-#### map.pages[page].projection.name
-
-		"name": "projection name"
-
-The name of the D3 projection, a string. Required if using D3. All [standard projections](https://github.com/mbostock/d3/wiki/Geo-Projections#standard-projections) and [extended projections](https://github.com/d3/d3-geo-projection/#extended-geographic-projections) are supported. The `name` is lowercase and does not include a reference to the `d3.geo` library object or parentheses (e.g. `"albers"`, not `"d3.geo.albers()"`).
-
-#### map.pages[page].projection.options
-
-		*"options"*: {}
-
-An object containing the [projection parameters](https://github.com/mbostock/d3/wiki/Geo-Projections) for the chosen projection. If not included, options will be projection defaults. Refer to the example block for your chosen projection to see which parameters are used. While in writing D3 code, each projection parameter is implemented as a selection operator method with the values as method parameters, here you give the parameter as an object key string followed by the parameter values. For example:
-
-	//D3 projection block in JavaScript
-	projection = d3.geo.albers()
-	    .center([0, 55.4])
-	    .rotate([4.4, 0])
-	    .parallels([50, 60])
-	    .scale(6000)
-	    .translate([width / 2, height / 2]);
-
-in *map.json* becomes
-
-	"projection": {
-		"name": "albers",
-		"options": {
-			"center": [0, 55.4],
-			"rotate": [4.4, 0],
-			"parallels": [50, 60],
-			"scale": 6000,
-			"translate": ["width / 2", "height / 2"]
-		}
-	}
-
-Make sure that any value that is either a string or a mix of numbers and strings is represented as a string with double-quotes. The variables `"width"` and `"height"` will be recognized as the map width and the map height. You may wish to adjust these after you see the instantiated map.
-
 #### map.pages[page].baseLayers
 
 	*"baseLayers"*: [{
@@ -491,47 +433,15 @@ The name of the base layer; a string. If `overlay` is included in the `interacti
 
 		"source": *base layer URL* *provider name* *"postgis:"+tablename*
 
-The URL of a [raster tile layer](http://leafletjs.com/reference.html#tilelayer) for a Leaflet map, a TopoJSON or GeoJSON file or Postgis table containing the basemap geometry for a Mapbox-GL or D3 map, a RESTful web map service, an iframe embed link, or a static image in *.png*, *.jpg*, or *.tif* format. A string. Required to add the layer to the map for all libraries except Mapbox-GL.
+The URL of a [raster tile layer](http://leafletjs.com/reference.html#tilelayer) for a Leaflet map. A string.
 
 For a Leaflet map, the standard URL format is `"http://{s}.domain.com/tiles/{z}/{x}/{y}.png"` where `{s}` is a variable standing for the server instance, `{z}` stands for the zoom level, `{x}` stands for the left-to-right horizontal tile coordinate, and `{y}` stands for the top-to-bottom vertical tile coordinate. Check for specifics of the tileset you want to use by viewing a single tile as an image in a browser and noting the contents of the URL bar.
-
-For a D3 map, the `source` URL should point to a TopoJSON or GeoJSON file containing the geometry to be mapped. Alternatively, the value of `source` can be a string containing `"postgis:"` and the name of the table in a PostGIS database (with no space after the colon). In the latter case, PostgreSQL database connection parameters must be added to the *params.php* config file. The geometry will be added to the map as [data](https://github.com/mbostock/d3/wiki/Selections#data) to allow for individualized feature styles, and drawn as SVG paths.
-
-For a Mapbox-GL map, `source` is optional and may be a raster tileset URL, a vector tileset URL, a TopoJSON or GeoJSON file, or a PostGIS table. If included, it will be used to add a [data source](https://www.mapbox.com/mapbox-gl-style-spec/#sources) to the styles object.
-
-For an iframe, the `source` should be the iframe `src` URL given in the embed HTML provided by the map service. Only include the URL; do not include the rest of the markup.
-
-For a REST service, the `source` should be the base URL with or without option parameters. For a static map image, the `source` should be a URL pointing to the image.
 
 #### map.pages[page].baseLayers[i].layerOptions
 
 		"layerOptions": *{}* *URL*
 
-Typically, an object containing [Leaflet TileLayer options](http://leafletjs.com/reference.html#tilelayer-options), [SVG styles](http://www.w3.org/TR/SVG/styling.html#SVGStylingProperties) for all layer paths drawn by D3, [Mapbox-GL styles](https://www.mapbox.com/mapbox-gl-style-spec), or REST parameters. May also be a URL string pointing to a JSON file that contains this information.
-
-For a D3 map, SVG styles added to each GeoJSON feature's `properties` object will also be applied to the features on an individual basis. This is useful for making, say, a political map of the world with each country given a unique fill color.
-
-For a Mapbox-GL map, `layerOptions` is required and should contain or point to a JSON-formatted object that conforms to the Mapbox-GL [style reference](https://www.mapbox.com/mapbox-gl-style-spec), including at least `version` and `layers` properties, as well as `sources` if `baseLayer.source` is omitted.
-
-For REST services, each option will be translated into a URL parameter key-value pair. For example:
-
-	"baseLayers": [{
-		"name": "MassGIS",
-		"source": "http://giswebservices.massgis.state.ma.us/geoserver/wms",
-		"layerOptions": {
-			"VERSION": "1.1.1",
-			"REQUEST": "GetMap",
-			"SERVICE": "WMS",
-			"LAYERS": "massgis:GISDATA.TOWNS_POLYM,massgis:GISDATA.NAVTEQRDS_ARC",
-			"STYLES": "Black_Lines"
-		}
-	}]
-
-When sent to the server will translate as:
-
-	http://giswebservices.massgis.state.ma.us/geoserver/wms?VERSION=1.1.1&REQUEST=GetMap&SERVICE=WMS&LAYERS=massgis:GISDATA.TOWNS_POLYM,massgis:GISDATA.NAVTEQRDS_ARC&STYLES=Black_Lines
-
-The REST parameters may also be added in the above format to `baseLayer.source` with `layerOptions` omitted.
+An object containing [Leaflet TileLayer options](http://leafletjs.com/reference.html#tilelayer-options). May also be a URL string pointing to a JSON file that contains this information.
 
 #### map.pages[page].dataLayers
 
@@ -539,14 +449,16 @@ The REST parameters may also be added in the above format to `baseLayer.source` 
 		"name"
 		"source"
 		"expressedAttribute"
+		*"expressedAttributeDisplay"*
 		*"displayAttributes"*
+		*"displayAttributesDisplay"*
 		*"roundTo"*
 		*"renderOnLoad"*
 		*"layerOptions"*
 		"techniques"
 	}]
 
-An array of objects containing information about the data to be visualized on the map, if any. Only available for Leaflet, Mapbox-GL, and D3 maps. Layers will be rendered on the map from bottom to top in the order in which they are listed in the array.
+An array of objects containing information about the data to be visualized on the map, if any. 
 
 #### map.pages[page].dataLayers[i].name
 
@@ -562,19 +474,29 @@ A URL string pointing to a TopoJSON or GeoJSON file containing the data to be ma
 
 The data should include feature geometries with *unprojected* WGS-84 coordinates. Feature geometries must be polygons unless creating a proportional symbol or isarithmic layer, and must be points if creating an isarithmic layer. The data must include at least one numerical attribute in each feature's `properties` object. Including feature names and IDs in the `properties` is encouraged, as these will generally be useful to show in pop-ups if the `retrieve` interaction is included.
 
-For a Mapbox-GL map, the `source` may also be a vector tileset. The data retrieved by `source` will be added as a [data source](https://www.mapbox.com/mapbox-gl-style-spec/#sources) to the styles object.
-
 #### map.pages[page].dataLayers[i].expressedAttribute
 
 		"expressedAttribute": attribute name
 
 The name of the numerical attribute that will be visually expressed on the map; a string. Must correspond to a key within each feature's `properties` object that references a numerical value (or no value or `null` if null for that feature).
 
+#### map.pages[page].dataLayers[i].expressedAttributeDisplay
+
+		*"expressedAttributeDisplay"*: text string
+
+Text that will display in the legend for the layer's `expressedAttribute`. If excluded, this will default to the attribute name of `expressedAttribute`. This options allows the inclusion of additional details about the attribute, such as units.
+
 #### map.pages[page].dataLayers[i].displayAttributes
 
 		*"displayAttributes"*: []
 
 An array of one or more attributes to include in that layer's pop-ups if the `retrieve` interaction is included, in the search tool if the `search` interaction is included, and in the filter tool if the `filter` interaction is included. Only categorical attributes with string values will be searchable (e.g., "name" but not "population"). Only numerical attributes will be added to the filter tool (e.g., "population" but not "name"), and will be accessible via a drop-down menu in the data layer's line in the filter tool. If `retrieve`, `search`, or `filter` are included but no `displayAttributes` are given, pop-ups and tools will be implemented using only the layer's `expressedAttribute`.
+
+#### map.pages[page].dataLayers[i].displayAttributesDisplay
+
+		*"displayAttributesDisplay"*: []
+
+An array of one or more text strings, corresponding to the amount of `displayAttributes` set for the layer. These represent the label for each `displayAttribute` when shown in a pop-up. If not set, the pop-up display text defaults to the attribute names set in `displayAttributes`. 
 
 #### map.pages[page].dataLayers[i].roundTo
 
@@ -597,7 +519,7 @@ Whether to render the layer when the map loads.
 
 		*"layerOptions"*: *{}* *URL*
 
-An object or URL string pointing to a JSON file containing [Leaflet Path options](http://leafletjs.com/reference.html#path-options), [SVG styles](http://www.w3.org/TR/SVG/styling.html#SVGStylingProperties) for all layer paths drawn by D3, or [Mapbox-GL style layers](https://www.mapbox.com/mapbox-gl-style-spec/#layers). Properties added here that conflict with the `techniques` classification will be overridden for each feature to which the classification is applied (i.e., any not null values).
+An object or URL string pointing to a JSON file containing [Leaflet Path options](http://leafletjs.com/reference.html#path-options). Properties added here that conflict with the `techniques` classification will be overridden for each feature to which the classification is applied (i.e., any not null values).
 
 #### map.pages[page].dataLayers[i].techniques
 
@@ -621,7 +543,7 @@ The [thematic map type](https://en.wikipedia.org/wiki/Thematic_map). Note that o
 
 #### map.pages[page].dataLayers[i].techniques[ii].classification
 
-			"classification": *"quantile"* *"equal interval"* *"natural breaks"* *"unclassed"*
+			"classification": *"quantile"* *"equal interval"* *"natural breaks"* *"unclassed"* *"user defined"*
 
 The classification technique for a choropleth or proportional symbol map. Which technique is chosen determines how the data values of the `expressedAttribute` are grouped for display on the map. Required for `choropleth` and `proportional symbol` types, and unavailable for `isarithmic`, `heat`, and `dot` type.
 
@@ -631,6 +553,7 @@ The classification technique for a choropleth or proportional symbol map. Which 
 | `*equal interval*` | An `equal interval` classification groups the data into classes each with an *equal range* of values (e.g., 0-10, 10-20, 20-30, etc.). This works best for data that are spread evenly across the entire data range, and usually turns out poorly if there is a small number of mapped features. It must be used if `type` is `isarithmic` and `classification` is included. | N/A |
 | `*natural breaks*` | A `natural breaks` classification uses the [Cartesian k-means](http://www.cs.toronto.edu/~norouzi/research/papers/ckmeans.pdf) algorithm to minimize the statistical distances between data points within each class. This classification is generally considered optimal for identifying groups of data values. | N/A |
 | `*unclassed*` | An `unclassed` classification creates a [linear scale](https://github.com/mbostock/d3/wiki/Quantitative-Scales#linear-scales) to map each input data value to an output value interpolated between the first two values given in the `classes` array. Thus, it results in a map with no defined classes. This is the most common classification for proportional symbol maps and the least common for choropleth maps. | N/A |
+| `*user defined*` | An `user defined` classification creates a custom scale based on values provided in the `values` array and colored using the scheme provided for the `classes` value. This feature is only usable for `choropleth` type maps. | N/A |
 
 #### map.pages[page].dataLayers[i].techniques[ii].classes
 
@@ -922,6 +845,83 @@ Whether to include a timer for the set and timer options. If `"timer"` is includ
 | :------------: | :----------- | :------------------- |
 | `*true*` | Resets the map to its original state when set is loaded. Has no affect if applied to the first set on a page. | `false` |
 
+## Story (new)
+### Filenames: questions.json and map.json
+
+The current version of Mapstudy allows the inclusion of vertical story maps, otherwise known as scrolly maps. The story maps module extends the `map` and `questions` config files to support the story map format. 
+
+#### map.pages[page].story
+
+	{
+		"pages": [
+			{
+				*"story"*: *true* *false*
+			}
+			...
+		]
+	}
+
+Is the map be a story map?
+
+While the majority of `story` options are housed within `questions`, the `story` module requires the `story` option in the `map` config to be set to `true`. 
+
+#### questions.pages[page].story
+
+All other story map options are housed within questions.json. Main options are set in the format shown below:
+
+	{
+		"pages": [
+			{
+				"story":{
+
+				}
+			}
+			...
+		]
+	}
+
+| Value  | Description | Default |
+| :------------: | :----------- | :------------------- |:---------------|
+| `*"title": text string*` | Title of the story. Will display at the top of the story map.  | Example Title |
+| `*"subtitle": text string*` | Subtitle of the story. If included, the question title will appear in bold at the top of the question block. | Example text |
+| `*"background": url or path to image file*` | Background of the title block. Could be an PNG, JPEG, or GIF. | Example image |
+| `*"color": "color"*` | An RGB or HEX value that will be the color of the title and subtitle text. | "rgb(0,0,0)" |
+| `*"reverse": *true* *false*` | Controls interactive map placement in relation to the story. `True` will place the map at the beginning of the story (after the title), while `false` will place the map at the end of the story. | false |
+| `*"float": *true* *false*` | Controls placement of the `next` and/or `back` buttons. `True` will fix the buttons at the bottom of the *window* while users scroll, while `false` keeps them at the bottom of the *page* as is the Mapstudy default. | false |
+
+#### questions.pages[page].sets[i].blocks
+
+The `story` module also uses the sets and blocks in the `questions` module and formats them in accordance with the story. Currently, there is no support for multiple stories within the same page (i.e. in different sets), so there can only be one set on each page with a story. Additionally, `block` options are reduced to what is necessary for creating story blocks. Items will appear in the order listed.
+
+	{
+		"pages": [
+			{
+				"story":{
+
+				}
+				"sets":[{
+						"blocks": [
+						{
+							*"title": text string*
+							*"subtitle": text string*
+							*"image": url or path to image file*
+							*"description": HTML string*
+						}
+					]
+				}]	
+			}
+			...
+		]
+	}
+
+Each story block appears on the page as a unit, vertically separated from other story blocks.
+
+| Value  | Description | Default |
+| :------------: | :----------- | :------------------- |:---------------|
+| `*"title": text string*` | Title of the story block. Will display at the top of the story block. | Example text |
+| `*"subtitle": text string*` | Subtitle of the story block. Will display beneath the title in a smaller font. | Example text |
+| `*"image": url or path to image file*` | An image included to enhance the story. Could be a static map, graphic or photo. Will display below the title and the subtitle. | Example image |
+| `*"description": text string*` | Descriptive text at the bottom of the story block. Could be used to elaborate on the image, or add supplementary information. | Example text |
 
 
 ## Conditions
@@ -1000,13 +1000,29 @@ The application will automatically generate the following tables:
 	</tbody>
 <table>
 
+- **Participant Story**: When a story is included, one story table will be generated per participant, named using the convention `p012345678_story` where `012345678` is a randomly-generated participant ID. The table will be formatted as follows, with the each item in the `label` column representing an individual `block` id:
+
+<table>
+	<tbody>
+		<tr><th>label</th><th>time</th><th>clicks</th></tr>
+		<tr><td>p5s1b1</td><td>2543</td><td>0</td>
+		<tr><td>p5s1b2</td><td>4211</td><td>1</td>
+		<tr><td>p5map</td><td>7865</td><td>5</td>
+		<tr><td>etc...</td><td></td><td></td>
+	</tbody>
+<table>
+
 - **Master Data**: One master data table will be generated to display all participants' answers, named `data_master`. The table will include columns for the participant ID (`pid`), time last updated (`last_updated`; in standard UTC format), each question block and item (labeled as above), and a timestamp (in milliseconds) for each submission point labeled as `p1s1_submit`, where `p1s1` represents the page number and set number of any question set that includes a submit button.
 
 - **Master Interactions**: One master interactions table will be generated to display all participants' interactions, named `interactions_master`. The table will include columns for the participant ID (`pid`), one column for each interaction included in map.json (`zoom`, `pan`, etc.) showing total hit counts for that interaction, and an `int_string` column showing a comma-separated list of all interactions in the order in which they occurred.
 
+- **Master Story**: When a story is included in a study, one master story table will be generated to display all participants' story interactions across all pages, named `story_master`. The table will include columns for the participant ID (`pid`), and two columns for each `block` id (including the map) showing total time spent (in milliseconds) viewing each block, and total clicks each block recieved, labeled `blockid_time` and `blockid_clicks`, respectively.
+
 - **Data By Page**: One table for each page of the application, labeled `data_page1`, `data_page2`, etc., to display the answers of all participants who submitted answers for that page. The table will include the columns from the `data_master` table that are relevant to the given page. This feature accommodates very long surveys and those for which at least some participants will see only certain pages.
 
 - **Interactions By Page**: One table for each page of the application, labeled `interactions_page1`, `interactions_page2`, etc., to display the interactions of all participants who submitted answers for that page. The table will include columns for the participant ID (`pid`), one column for each interaction included for that page in map.json (`zoom`, `pan`, etc.), and an `int_string` column showing a comma-separated list of all interactions in the order in which they occurred.
+
+- **Story by Page**: One table for each story included in the application, labeled `story_page1`, `storu_page2`, etc., to display all participants' story interactions who viewed that page. The table will include columns for the participant ID (`pid`), and two columns for each `block` id (including the map) showing total time spent (in milliseconds) viewing each block, and total clicks each block recieved, labeled `blockid_time` and `blockid_clicks`, respectively.
 
 To interact with a database, the following variables must be included in param.php:
 
