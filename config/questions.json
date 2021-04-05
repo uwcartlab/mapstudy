@@ -7,15 +7,9 @@
 				{
 					"blocks": [
 						{
-							"title": "Page 1",
-							"ask": "This is what a page without a map looks like. It consists of a single set with two blocks. This text is the \"ask\" for a block without an input. You can use this formatting to create an information page or consent form."
-						},
-						{
-							"ask": "This is the second block in the single set on this page. Notice that you can create a new block for each new paragraph of text. In addition to text, this block contains a text input. You could use this kind of formatting to request information or consent from a participant.",
-							"description": "Unlike the first block, this block has no title, but does have a description. This is the description; it is shown in italics. In addition to the two blocks, this set has a single \"next\" button.",
-							"input": {
-								"type": "text"
-							}
+							"title": "Page 1: Welcome to Mapstudy",
+							"ask": "The following pages serve as a tutorial and a showcase of Mapstudy's functionality. Each page will contain examples of the features that Mapstudy offers, as well as explanations of those features.",
+							"description":"This page contains a single set and a single block, with no inputs. The above text is an 'ask' element, and this italicized text is a 'description' element. This page has a single 'next' button."
 						}
 					],
 					"buttons": [
@@ -26,165 +20,33 @@
 		},
 		{
 			"page": 2,
+			"fullpage": true,
 			"sets": [
 				{
-					"set": 1,
 					"blocks": [
 						{
-							"title": "This is the first set of Page 2.",
-							"ask": "All of the questions you can see and the buttons belong to the same set. These blocks are designed give you an idea of what kinds of inputs you can create."
+							"title": "Page 2: Participant Instructions and Consent",
+							"ask": "After agreeing to the consent form below, you will be presented with a series of interactive maps and questions. Please answer the questions honestly and to the best of your abilities."
 						},
 						{
-							"ask": "What is thy name?",
-							"description": "Gimme a name!",
-							"input": {
-								"type": "text",
-								"required": true
+							"ask": "By checking the box below, you are agreeing to have your answers recorded. All information you provide will remain private and will not be linked to you in any way. ",
+							"input":{
+								"required":true,
+								"type":"checkboxes",
+								"items":[{
+									"text":"I agree",
+									"label":"consent",
+									"value":"yes"
+								}]
 							}
 						},
 						{
-							"title": "Quest",
-							"ask": "What is thy quest?",
-							"description": "",
-							"input": {
-								"type": "paragraph"
-							}
-						},
-						{
-							"title": "Color",
-							"ask": "What is thy favorite color?",
-							"input": {
-								"type": "checkboxes",
-								"items": [
-									{
-										"text": "Green."
-									},
-									{
-										"text": "No, no--blue!"
-									}
-								]
-							}
-						},
-						{
-							"title": "Airspeed Velocity",
-							"ask": "What is the airspeed velocity of an unladen swallow?",
-							"input": {
-								"type": "matrix",
-								"items": [
-									{
-										"text": "African",
-										"label": "african"
-									},
-									{
-										"text": "European",
-										"label": "european"
-									}
-								],
-								"options": [
-									{
-										"text": "10 kph"
-									},
-									{
-										"text": "20 kph"
-									},
-									{
-										"text": "30 kph"
-									},
-									{
-										"text": "I don't know!",
-										"value": "dunno"
-									}
-								]
-							}
-						},
-						{
-							"title": "Swallow Type",
-							"ask": "African or European?",
-							"description": "Select an answer to move to the next set...",
-							"input": {
-								"type": "radios",
-								"autoadvance": true,
-								"options": [
-									{
-										"text": "African"
-									},
-									{
-										"text": "European"
-									},
-									{
-										"text": "Other",
-										"value": "get from participant"
-									},
-									{
-										"text": "I don't know that!",
-										"value": "aaaaaaaaaaaaaaaah!"
-									}
-								]
-							}
+							"description": "This page models a participant consent form, and contains an input block with a single checkbox. The red asterisk marks the question as required to advance the page."
 						}
 					],
 					"buttons": [
-						"back",
-						"save"
-					]
-				},
-				{
-					"set": 2,
-					"blocks": [
-						{
-							"title": "This is the second set of Page 2. Note the countdown timer up top.",
-							"ask": "See the important image and video below.",
-							"image": "http://www1.pictures.zimbio.com/mp/RhtLxy-IdwQx.jpg",
-							"video": "https://www.youtube.com/embed/pWS8Mg-JWSg"
-						},
-						{
-							"ask": "How far were you catapulted?",
-							"description": "aaaaaaaaaaaaaaaah!",
-							"input": {
-								"type": "dropdown",
-								"options": [
-									{
-										"text": "1 km"
-									},
-									{
-										"text": "2 km"
-									},
-									{
-										"text": "to the moon!"
-									}
-								]
-							}
-						},
-						{
-							"ask": "Rank the importance of the following:",
-							"input": {
-								"type": "rank",
-								"items": [
-									{
-										"text": "bird"
-									},
-									{
-										"text": "fish"
-									},
-									{
-										"text": "monkeybrains"
-									},
-									{
-										"text": "your mom"
-									}
-								]
-							}
-						}
-					],
-					"buttons": [
-						"back",
 						"next"
-					],
-					"timer": {
-						"direction": "down",
-						"starttime": "00:01:00"
-					},
-					"resetMap": true
+					]
 				}
 			]
 		},
@@ -192,10 +54,211 @@
 			"page": 3,
 			"sets": [
 				{
+					"set": 1,
 					"blocks": [
 						{
-							"title": "A paragraph question for Page 3, Set 1",
-							"ask": "This is Page 3. The order of pages 3 and 4 has been randomized. This page has a page timer that counts up. It will count until the next page is triggered.",
+							"title": "Page 3, Set 1.",
+							"ask": "Answer the following questions based on interacting with the map to the left, which shows population statistics for counties in coastal Texas, as well as damages from Hurricane Harvey.",
+							"description":"This page contains a map and two sets of questions."
+						},
+						{
+							"title": "Highest Density",
+							"ask": "Which of the counties shown has the highest population density?",
+							"input": {
+								"type": "text"
+							},
+							"description":"This is an example of a 'text' input, which is a one line text box. Useful for short free-form responses."
+						},
+						{
+							"title": "County Comparison",
+							"ask": "Which of the following counties have a population density larger than Nueces County in 2015?",
+							"description":"The 'checkboxes' input allows users to select more than one object of a series of items.",
+							"input": {
+								"type": "checkboxes",
+								"items": [
+									{
+										"text": "Harris"
+									},
+									{
+										"text": "Galveston"
+									},
+									{
+										"text": "Jefferson"
+									},
+									{
+										"text": "San Patricio"
+									}
+								]
+							}
+						},
+						{
+							"ask": "According to the population density of each of the following counties, which do you think would be at the greatest risk :",
+							"description":"The 'rank' gives users the option to rank a series of items.",
+							"input": {
+								"type": "rank",
+								"items": [
+									{
+										"text": "Aransas"
+									},
+									{
+										"text": "Jefferson"
+									},
+									{
+										"text": "Galveston"
+									},
+									{
+										"text": "Cameron"
+									}
+								]
+							}
+						}
+					],
+					"buttons": [
+						"next"
+					]
+				},
+				{
+					"set": 2,
+					"blocks": [
+						{
+							"title": "Page 3, Set 2.",
+							"ask": "Watch the video, look at the map and the image, and answer the questions below.",
+							"description": "This set showcases some of the multimedia capabilities of mapstudy."
+						},
+						{
+							"ask": "Flooding in Port Arthur, Texas, August 31st, 2017. Photo from the U.S National Guard.",
+							"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Support_during_Hurricane_Harvey_%28TX%29_%2850%29.jpg/640px-Support_during_Hurricane_Harvey_%28TX%29_%2850%29.jpg"
+						},
+						{
+							"ask": "Satellite view of Hurricane Harvey. Video from NASA",
+							"video": "https://www.youtube.com/embed/WjxZd7fPSVI",
+							"description": "Youtube videos can be directly embedded into a study."
+						},
+						{
+							"title":"County Damages",
+							"ask": "Based on total damages, which of the following counties could benefit the most from additional hurricane protections?",
+							"description": "This is a 'radios' input, which allows for multiple-choice questions.",
+							"input": {
+								"type": "radios",
+								"options": [
+									{
+										"text": "Harris"
+									},
+									{
+										"text": "Nueces"
+									},
+									{
+										"text": "Galveston"
+									},
+									{
+										"text": "Jefferson"
+									}
+								]
+							}
+						},
+						{
+							"title":"Rainfall",
+							"ask": "Which county do you think had the most rainfall during Hurricane Harvey?",
+							"description":"The 'dropdown' input allows users to pick an item from a dropdown list. Useful when there is a large number of potential inputs (i.e states or countries). This is also a required question that will automatically advance the page when answered.",
+							"input": {
+								"type": "dropdown",
+								"options": [
+									{
+										"text": "Harris"
+									},
+									{
+										"text": "Nueces"
+									},
+									{
+										"text": "Galveston"
+									},
+									{
+										"text": "Jefferson"
+									}
+								],
+								"autoadvance":true
+							}
+						}
+					],
+					"buttons": [
+						"back",
+						"next"
+					]
+				}
+			]
+		},
+		{
+			"page": 4,
+			"fullpage": true,
+			"sets": [
+				{
+					"blocks": [
+						{
+							"title": "Page 4: Storymapping",
+							"ask": "Please read the story on the following page as thoroughly as possible.",
+							"description":"The following page details the new storymapping feature of Mapstudy, along with a count-up timer, which can be used to record how long users are engaging with an individual page. The story in this example uses the martini-glass visual storytelling structure, but a reverse martini-glass structure is also possible."
+						}
+					],
+					"buttons": [
+						"next",
+						"back"
+					]
+				}
+			]
+		},
+		{
+			"page": 5,
+			"story":{
+				"title":"Drought and Wildfires",
+				"background":"img/story/fire.gif",
+				"color":"white",
+				"reverse":false,
+				"float":true
+			},
+			"sets": [
+				{
+					"blocks": [
+						{
+							"title": "Drought in California is getting worse",
+							"subtitle": "And fueling bigger wildfires",
+							"image": "img/story/story_block_1.png",
+							"description": "This is an example of an individual story block, which can contain a title, a subtitle, an image, and a description."
+						},
+						{
+							"title": "2017 saw massive damages from wildfires across the state",
+							"image": "img/story/story_block_2.png",
+							"description": "Mapstudy records how long a study participant views each block."
+						},
+						{
+							"title": "What will the future bring?",
+							"subtitle":"Land use across the state is changine",
+							"image": "img/story/story_block_3.png",
+							"description": "This is the last block in the story, and it will be followed by an interactive map. The interactive map can be placed at either the beginning or end of the story."
+						}
+					],
+					"buttons": [
+						"next"
+					],
+					"timer": {
+						"direction": "up",
+						"starttime": "00:00:00"
+					}
+				}
+			]
+		},
+		{
+			"page": 6,
+			"fullpage":true,
+			"sets": [
+				{
+					"blocks": [
+						{
+							"title": "Page 6: Comprehension",
+							"description":"Pages 6 and 7 are presented to the user in a random order. This page contains a countdown timer, which will move to the next page as soon as time is up."
+						},
+						{
+							"ask": "In your own words, please summarize the relationship between the Wildland Urban Interface (WUI) and wildfires. Please integrate parts of the visual story into your response.",
+							"description":"The 'paragraph' input creates a text window for users to type longer free-form responses.",
 							"input": {
 								"type": "paragraph"
 							}
@@ -203,80 +266,115 @@
 					],
 					"buttons": [
 						"next",
-						"back",
-						"save"
-					]
-				},
-				{
-					"blocks": [
-						{
-							"ask": "A text question for Page 3, Set 2",
-							"input": {
-								"type": "text"
-							}
-						}
-					],
-					"buttons": [
-						"next",
-						"back",
-						"save"
+						"back"
 					]
 				}
 			],
-			"timer": {}
+			"timer": {
+				"direction": "down",
+				"starttime": "00:01:30"
+			}
 		},
 		{
-			"page": 4,
+			"page": 7,
+			"fullpage": true,
 			"sets": [
 				{
 					"blocks": [
 						{
-							"title": "A text question for Page 4",
-							"ask": "This is Page 4. The order of pages 3 and 4 has been randomized.",
+							"title": "Page 7: Reactions",
+							"description":"Pages 6 and 7 are presented to the user in a random order."
+						},
+						{
+							"ask": "Rate the degree in which you agree with the following statements about the visual story on hurricanes in Texas (1 = strongly disagree, 7 = strongly agree)",
+							"description":"This is an input 'matrix', useful for likert tests.",
 							"input": {
-								"type": "text"
+								"type": "matrix",
+								"items": [
+									{
+										"text": "The visual story excited me"
+									},
+									{
+										"text": "The visual story bored me"
+									},
+									{
+										"text": "I enjoyed the visual story"
+									},
+									{
+										"text": "I was upset by the visual story"
+									},
+									{
+										"text": "The visual story interested me"
+									},
+									{
+										"text": "The visual concerned me"
+									},
+									{
+										"text": "I agree with the visual story"
+									},
+									{
+										"text": "The visual story did not influence my beliefs"
+									}
+								],
+								"options": [
+									{
+										"text": "1"
+									},
+									{
+										"text": "2"
+									},
+									{
+										"text": "3"
+									},
+									{
+										"text": "4"
+									},
+									{
+										"text": "5"
+									},
+									{
+										"text": "6"
+									},
+									{
+										"text": "7"
+									}
+								]
 							}
 						}
 					],
 					"buttons": [
 						"next",
-						"back",
-						"save"
+						"back"
 					]
 				}
 			]
 		},
 		{
-			"page": 5,
+			"page": 8,
+			"fullpage": true,
 			"sets": [
 				{
 					"blocks": [
 						{
-							"title": "A text question for Page 5",
-							"ask": "This is Page 5.",
-							"description": "You should only include a submit button on the second-to-last page. That way, the user will see a final ending page. If the app is configured to e-mail data, an e-mail will be sent each time the submit button is clicked.",
-							"input": {
-								"type": "text"
-							}
+							"title": "Page 8: Conclusion",
+							"description":"You should only include a submit button on the second-to-last page. That way, the user will see a final ending page. If the app is configured to e-mail data, an e-mail will be sent each time the submit button is clicked."
 						}
 					],
 					"buttons": [
-						"back",
 						"submit"
 					]
 				}
 			]
 		},
 		{
-			"page": 6,
+			"page": 9,
 			"fullpage": true,
 			"sets": [
 				{
 					"blocks": [
 						{
-							"title": "Page 6",
-							"ask": "Thank you for taking this survey. You really rock.",
-							"description": "Because this set has no buttons, the participant will not be able to navigate to a different part of the survey."
+							"title": "Page 9: Thank you for participating!",
+							"description":"Because this set has no buttons, the participant will not be able to navigate to a different part of the survey."
 						}
 					]
 				}

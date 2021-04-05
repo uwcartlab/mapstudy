@@ -1,8 +1,9 @@
 {
 	"pages": [
 		{},
+		{},
 		{
-			"page": 2,
+			"page": 3,
 			"library": "Leaflet",
 			"interactions": {
 				"retrieve": {
@@ -18,608 +19,259 @@
 					}
 				},
 				"zoom": {
-					"logging": true
+					"logging": true,
+					"interface": {
+						"scrollWheel": false
+					}
 				},
 				"overlay": {
 					"logging": true,
 					"toggle": true,
 					"dataLayers": [
-						"Cities Layer"
+						"Hurricane Damages",
+						"Population Density"
 					]
 				},
 				"underlay": {
 					"logging": true,
 					"toggle": true
 				},
-				"search": {
-					"dataLayers": [
-						"US States"
-					],
-					"logging": true,
-					"toggle": true
-				},
 				"filter": {
+					"logging": true,
+					"toggle": true,
 					"dataLayers": [
-						"US States",
-						"Cities Layer"
+						"Hurricane Damages"
 					],
-					"tool": "slider",
-					"logging": true,
-					"toggle": true
-				},
-				"reexpress": {
-					"logging": true,
-					"toggle": true
+					"tool":"slider"
 				},
 				"resymbolize": {
 					"logging": true,
-					"toggle": true
+					"toggle": true,
+					"dataLayers": [
+						"Population Density"
+					]
 				}
 			},
 			"mapOptions": {
 				"resetButton": false,
-				"center": [39.83,-98.583],
-				"zoom": 3,
-				"minZoom": 3,
-				"maxZoom": 13
+				"center": [28.061,-96.705],
+				"zoom": 7,
+				"minZoom": 5,
+				"maxZoom": 10
 			},
 			"baseLayers": [{
-				"name": "Stamen Toner Lite",
-				"source": "Stamen.TonerLite",
+				"name": "Open Street Map",
+				"source": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
 				"layerOptions": {
-					"attribution": "Map by <a href='http://stamen.com'>Stamen</a>, data by <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a>"
+					"opacity":0.8,
+					"attribution": "&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
 					}
-				},
-				{
+			},
+			{
 				"name": "Stamen Toner",
-				"source": "http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png",
+				"source": "https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.png",
 				"layerOptions": {
-					"attribution": "Map by <a href='http://stamen.com'>Stamen</a>, data by <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a>"
+					"opacity":0.8,
+					"subdomains": "abcd",
+					"attribution": "Map tiles by <a href='http://stamen.com'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a> &mdash; Map data &copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
 					}
 			}],
-			"dataLayers": [{
-				"name": "US States",
-				"source": "data/us-states.geojson",
+			"dataLayers": [
+			{
+				"name": "Population Density",
+				"source": "data/texas-coast-counties.json",
 				"renderOnLoad": true,
-				"expressedAttribute": "Density (ppl/sq. mile)",
-				"displayAttributes": [
-					"name",
-					"Density (ppl/sq. mile)"
-				],
-				"roundTo": 1,
+				"expressedAttribute": "LossPaid",
+				"expressedAttributeDisplay": "Damages in $",
+				"displayAttributes":["county","Population","LossPaid"],
+				"displayAttributesDisplay":["County","Density (Ppl./Sq. Mi.)","Damages in $"],
 				"layerOptions": {
 					"fillOpacity": 0.8,
 					"color": "black",
 					"weight": 1,
-					"opacity": 1,
-					"fillColor": "#FD8D3C"
+					"opacity": 1
 				},
-				"techniques": [{
+				"layerHoverOptions": {
+					"fillOpacity": 1,
+					"color": "black"
+				},
+				"techniques": [
+					{
 					"type": "choropleth",
 					"classification": "quantile",
-					"classes": "Oranges.5"
-				},{
+					"classes":"Blues.5"
+				},
+				{
 					"type": "proportional symbol",
 					"classification": "unclassed",
-					"symbol": "img/grail.jpg",
-					"classes": [
-						5,
-						20
-					]
+					"classes":[0,30]
 				}]
 			},
 			{
-				"name": "Cities Layer",
-				"source": "data/city-data.geojson",
-				"renderOnLoad": false,
-				"expressedAttribute": "2011",
-				"displayAttributes": [
-					"name",
-					"2005",
-					"2006",
-					"2007",
-					"2008",
-					"2009",
-					"2010",
-					"2011"
-				],
+				"name": "Hurricane Damages",
+				"source": "data/texas-coast-counties.json",
+				"renderOnLoad": true,
+				"expressedAttribute": "LossPaid",
+				"expressedAttributeDisplay": "Damages in $",
+				"displayAttributes":["county","Population","LossPaid"],
+				"displayAttributesDisplay":["County","Density (Ppl./Sq. Mi.)","Damages in $"],
 				"layerOptions": {
 					"fillOpacity": 0.8,
 					"color": "white",
-					"fillColor": "blue",
+					"weight": 1,
 					"opacity": 1,
-					"weight": 1
+					"fillColor": "black"
 				},
 				"techniques": [{
 					"type": "proportional symbol",
 					"classification": "unclassed",
-					"classes": [
-						5,
-						20
-					]
+					"classes": [5,30]
 				}]
 			},
 			{
-				"name": "US States Labels",
-				"source": "data/us-states.geojson",
-				"renderOnLoad": true,
-				"expressedAttribute": "Density (ppl/sq. mile)",
-				"displayAttributes": ["name"],
+				"name": "State Labels",
+				"source": "data/us-states-points.geojson",
+				"renderOnLoad": false,
+				"displayAttributes":["name"],
+				"displayAttributesDisplay":["County"],
 				"layerOptions": {
-					"fillColor": "#555",
-					"minZoom": 5
+					"fillOpacity": 0.8,
+					"color": "white",
+					"weight": 1,
+					"opacity": 1,
+					"fillColor": "white"
 				},
 				"techniques": [{
 					"type": "label",
-					"size": 14
-				}]
-			}]
-		},
-		{
-			"page": 3,
-			"library": "Leaflet",
-			"interactions": {
-				"retrieve": {
-					"logging": true,
-					"toggle": true,
-					"interface": {
-						"popup": false
-					}
-				},
-				"pan": {
-					"logging": true,
-					"toggle": true,
-					"interface": {}
-				},
-				"zoom": {
-					"logging": true,
-					"toggle": true,
-					"interface": {}
-				},
-				"overlay": {
-					"logging": true,
-					"toggle": true,
-					"dataLayers": [
-						"Population Density"
-					]
-				},
-				"underlay": {
-					"logging": true,
-					"toggle": true
-				},
-				"search": {
-					"attributes": ["name", "density"],
-					"logging": true,
-					"toggle": true
-				},
-				"filter": {
-					"dataLayers": [
-						"Population Density"
-					],
-					"tool": "slider",
-					"logging": true,
-					"toggle": true
-				},
-				"reexpress": {
-					"logging": true,
-					"toggle": true
-				},
-				"resymbolize": {
-					"logging": true,
-					"toggle": true
-				}
-			},
-			"mapOptions": {
-				"resetButton": true,
-				"center": [45,-90],
-				"zoom": 7,
-				"minZoom": 3,
-				"maxZoom": 13
-			},
-			"baseLayers": [{
-				"name": "Stamen Toner Lite",
-				"source": "http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png",
-				"layerOptions": {
-					"attribution": "Map by <a href='http://stamen.com'>Stamen</a>, data by <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a>"
-					}
-				},
-				{
-				"name": "Stamen Toner",
-				"source": "http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png",
-				"layerOptions": {
-					"attribution": "Map by <a href='http://stamen.com'>Stamen</a>, data by <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a>"
-					}
-			}],
-			"dataLayers": [{
-				"name": "Population Density",
-				"source": "data/wi-tracts-poly.topojson",
-				"expressedAttribute": "density",
-				"layerOptions": {
-					"color": "black",
-					"weight": 1,
-					"opacity": 0.8,
-					"fillOpacity": 0.8,
-					"fillColor": "#FD8D3C"
-				},
-				"techniques": [{
-					"type": "heat",
-					"size": 0.5
-				},
-				{
-					"type": "proportional symbol",
 					"classification": "unclassed",
-					"classes": [
-						5,
-						20
-					]
-				},
-				{
-					"type": "choropleth",
-					"classification": "quantile",
-					"classes": "Oranges.5"
-				}]
-			}]
-		},
-		{
-			"page": 4,
-			"library": "Leaflet",
-			"interactions": {
-				"retrieve": {
-					"logging": true,
-					"toggle": true,
-					"interface": {
-						"popup": false
-					}
-				},
-				"pan": {
-					"logging": true,
-					"toggle": true,
-					"interface": {}
-				},
-				"zoom": {
-					"logging": true,
-					"toggle": true,
-					"interface": {}
-				},
-				"overlay": {
-					"logging": true,
-					"toggle": true,
-					"dataLayers": [
-						"Population Density"
-					]
-				},
-				"underlay": {
-					"logging": true,
-					"toggle": true
-				},
-				"search": {
-					"attributes": ["name", "density"],
-					"logging": true,
-					"toggle": true
-				},
-				"filter": {
-					"dataLayers": [
-						"Population Density"
-					],
-					"tool": "slider",
-					"logging": true,
-					"toggle": true
-				},
-				"reexpress": {
-					"logging": true,
-					"toggle": true
-				},
-				"resymbolize": {
-					"logging": true,
-					"toggle": true
-				}
-			},
-			"mapOptions": {
-				"resetButton": true,
-				"center": [39.83,-98.583],
-				"zoom": 3,
-				"minZoom": 3,
-				"maxZoom": 13
-			},
-			"baseLayers": [{
-				"name": "Stamen Toner Lite",
-				"source": "http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png",
-				"layerOptions": {
-					"attribution": "Map by <a href='http://stamen.com'>Stamen</a>, data by <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a>"
-					}
-				},
-				{
-				"name": "Stamen Toner",
-				"source": "http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png",
-				"layerOptions": {
-					"attribution": "Map by <a href='http://stamen.com'>Stamen</a>, data by <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a>"
-					}
-			}],
-			"dataLayers": [{
-				"name": "Population Density",
-				"source": "data/us-states.geojson",
-				"expressedAttribute": "Density (ppl/sq. mile)",
-				"layerOptions": {
-					"color": "black",
-					"weight": 1,
-					"opacity": 0.8,
-					"fillOpacity": 0.8,
-					"fillColor": "#FD8D3C"
-				},
-				"techniques": [{
-					"type": "heat",
-					"size": 5
-				},
-				{
-					"type": "proportional symbol",
-					"classification": "unclassed",
-					"classes": [
-						5,
-						20
-					]
-				},
-				{
-					"type": "choropleth",
-					"classification": "quantile",
-					"classes": "Oranges.5"
-				}]
-			},
-			{
-				"name": "Cities Layer",
-				"source": "data/city-data.geojson",
-				"expressedAttribute": "2011",
-				"displayAttributes": [
-					"name",
-					"2005",
-					"2006",
-					"2007",
-					"2008",
-					"2009",
-					"2010",
-					"2011"
-				],
-				"layerOptions": {
-					"fillOpacity": 0.8,
-					"color": "white",
-					"fillColor": "blue",
-					"opacity": 1,
-					"weight": 1
-				},
-				"techniques": [{
-					"type": "proportional symbol",
-					"classification": "unclassed",
-					"classes": [
-						5,
-						20
-					]
-				}]
-			}]
-		},
-		{
-			"page": 5,
-			"library": "Leaflet",
-			"interactions": {
-				"retrieve": {
-					"logging": true,
-					"toggle": true,
-					"interface": {
-						"popup": false
-					}
-				},
-				"pan": {
-					"logging": true,
-					"toggle": true,
-					"interface": {}
-				},
-				"zoom": {
-					"logging": true,
-					"toggle": true,
-					"interface": {}
-				},
-				"overlay": {
-					"logging": true,
-					"toggle": true,
-					"dataLayers": [
-						"Population Density"
-					]
-				},
-				"underlay": {
-					"logging": true,
-					"toggle": true
-				},
-				"search": {
-					"attributes": ["name", "density"],
-					"logging": true,
-					"toggle": true
-				},
-				"filter": {
-					"dataLayers": [
-						"Population Density"
-					],
-					"tool": "slider",
-					"logging": true,
-					"toggle": true
-				},
-				"reexpress": {
-					"logging": true,
-					"toggle": true
-				},
-				"resymbolize": {
-					"logging": true,
-					"toggle": true
-				}
-			},
-			"mapOptions": {
-				"resetButton": true,
-				"center": [39.83,-98.583],
-				"zoom": 3,
-				"minZoom": 3,
-				"maxZoom": 13
-			},
-			"baseLayers": [{
-				"name": "Stamen Toner Lite",
-				"source": "http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png",
-				"layerOptions": {
-					"attribution": "Map by <a href='http://stamen.com'>Stamen</a>, data by <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a>"
-					}
-				},
-				{
-				"name": "Stamen Toner",
-				"source": "http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png",
-				"layerOptions": {
-					"attribution": "Map by <a href='http://stamen.com'>Stamen</a>, data by <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a>"
-					}
-			}],
-			"dataLayers": [{
-				"name": "US Population",
-				"source": "data/us-states-pop.geojson",
-				"expressedAttribute": "population",
-				"displayAttributes": [
-					"name",
-					"population",
-					"density"
-				],
-				"techniques": [{
-					"type": "dot",
-					"interval": 1000000
-				}]
-			},
-			{
-				"name": "Population Density",
-				"source": "data/us-states.geojson",
-				"expressedAttribute": "Density (ppl/sq. mile)",
-				"displayAttributes": [
-					"name",
-					"Density (ppl/sq. mile)"
-				],
-				"layerOptions": {
-					"color": "black",
-					"weight": 1,
-					"opacity": 0.8,
-					"fillOpacity": 0.8,
-					"fillColor": "#FD8D3C"
-				},
-				"techniques": [{
-					"type": "proportional symbol",
-					"classification": "unclassed",
-					"classes": [
-						5,
-						20
-					]
-				},
-				{
-					"type": "choropleth",
-					"classification": "quantile",
-					"classes": "Oranges.5"
+					"classes": [5,30],
+					"showOnLegend":false
 				}]
 			}]
 		},
 		{},
 		{
-			"page": 7,
+			"page": 5,
 			"library": "Leaflet",
+			"story":true,
 			"interactions": {
 				"retrieve": {
 					"logging": true,
-					"toggle": true,
 					"interface": {
-						"popup": false
+						"window": false
 					}
 				},
 				"pan": {
 					"logging": true,
-					"toggle": true,
-					"interface": {}
+					"interface": {
+						"widget": false
+					}
 				},
 				"zoom": {
 					"logging": true,
-					"toggle": true,
-					"interface": {}
+					"interface": {
+						"scrollWheel": false
+					}
 				},
 				"overlay": {
 					"logging": true,
 					"toggle": true,
 					"dataLayers": [
-						"Population Density"
+						"Wildfire Damages",
+						"Counties"
 					]
 				},
-				"underlay": {
-					"logging": true,
-					"toggle": true
-				},
 				"search": {
-					"attributes": ["name", "density"],
-					"logging": true,
-					"toggle": true
-				},
-				"filter": {
-					"dataLayers": [
-						"Population Density"
-					],
-					"tool": "slider",
+					"attributes": ["NAME"],
 					"logging": true,
 					"toggle": true
 				},
 				"reexpress": {
 					"logging": true,
-					"toggle": true
-				},
-				"resymbolize": {
-					"logging": true,
-					"toggle": true
+					"toggle": true,
+					"dataLayers": [
+						"Wildfire Damages"
+					]
 				}
 			},
 			"mapOptions": {
-				"resetButton": true,
-				"center": [45,-90],
-				"zoom": 7,
-				"minZoom": 3,
-				"maxZoom": 13
+				"resetButton": false,
+				"center": [37.379,-120.806],
+				"zoom": 6,
+				"minZoom": 5,
+				"maxZoom": 10
 			},
 			"baseLayers": [{
-				"name": "Stamen Toner Lite",
-				"source": "http://{s}.tile.stamen.com/toner-lite/{z}/{x}/{y}.png",
+				"name": "ESRI World Imagery",
+				"source": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
 				"layerOptions": {
-					"attribution": "Map by <a href='http://stamen.com'>Stamen</a>, data by <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a>"
+					"opacity":0.4,
+					"attribution": "Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community"
 					}
-				},
-				{
+			},
+			{
 				"name": "Stamen Toner",
-				"source": "http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png",
+				"source": "https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.png",
 				"layerOptions": {
-					"attribution": "Map by <a href='http://stamen.com'>Stamen</a>, data by <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap contributors</a>"
+					"opacity":0.8,
+					"subdomains": "abcd",
+					"attribution": "Map tiles by <a href='http://stamen.com'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a> &mdash; Map data &copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
 					}
 			}],
-			"dataLayers": [{
-				"name": "Population Density",
-				"source": "data/wi-tracts-poly.topojson",
-				"expressedAttribute": "density",
-				"layerOptions": {
-					"color": "black",
-					"weight": 1,
-					"opacity": 0.8,
-					"fillOpacity": 0.8,
-					"fillColor": "#FD8D3C"
-				},
-				"techniques": [{
-					"type": "isarithmic",
-					"interval": 20,
-					"size": 1
+			"dataLayers": [
+				{
+					"name": "Counties",
+					"source": "data/ca-counties-total.json",
+					"renderOnLoad": true,
+					"layerOptions": {
+						"fillOpacity": 0,
+						"color": "white",
+						"weight": 1,
+						"opacity": 0.5,
+						"fillColor": "white"
+					},
+					"techniques": [{
+						"type": "choropleth",
+						"classification": "unclassed",
+						"classes": [5,30],
+						"showOnLegend":false
+					}]
 				},
 				{
-					"type": "proportional symbol",
-					"classification": "unclassed",
-					"classes": [
-						5,
-						20
-					]
-				},
-				{
-					"type": "choropleth",
-					"classification": "quantile",
-					"classes": "Oranges.5"
+					"name": "Wildfire Damages",
+					"source": "data/ca-counties.json",
+					"renderOnLoad": true,
+					"expressedAttribute": "Cost_total",
+					"expressedAttributeDisplay": "Damages in $",
+					"displayAttributes":["NAME","Cost_total"],
+					"displayAttributesDisplay":["County","Damages in $"],
+					"layerOptions": {
+						"fillOpacity": 1,
+						"fillColor":"black",
+						"color": "white",
+						"weight": 1,
+						"opacity": 1
+					},
+					"techniques": [
+					{
+						"type": "proportional symbol",
+						"classification": "unclassed",
+						"classes": [5,30]
+					},
+					{
+					"type": "heat",
+					"size": 0.5
+					},
+					{
+						"type": "choropleth",
+						"classification": "natural breaks",
+						"classes": "Oranges.5"
 				}]
 			}]
-		}
+		},
+		{},
+		{},
+		{},
+		{}
 	]
 }

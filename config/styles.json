@@ -2,16 +2,16 @@
 	{
 		"sectionId": "header",
 		"cssAttributes": {
-			"background-color": "rgb(247,154,66)"
+			"background-color": "rgb(186,18,43)"
 		},
 		"logo-url": "img/logo.png",
-		"content": "MapStudy Template"
+		"content": "MapStudy Demo"
 	},
 	{
 		"sectionId": "footer",
 		"cssAttributes": {
-			"background-color": "rgb(247,154,66)"
+			"background-color": "rgb(186,18,43)"
 		},
-		"content": "I'm some credits, maybe a Twitter or Facebook share button."
+		"content": "I'm some credits."
 	}
 ]
