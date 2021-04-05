@@ -1,4 +1,3 @@
-
 <?PHP
 
 ini_set('display_errors', 1);
@@ -12,18 +11,17 @@ $post_data = json_decode($post_data, TRUE);
 if (isset($dbtype, $dbhost, $dbport, $dbname, $dbuser, $dbpassword)){
 	
 	if ($dbtype == 'pgsql'){
-		
 		//test db credentials
 		try {
 			$dbh = new PDO("pgsql:host=$dbhost port=$dbport dbname=$dbname", $dbuser, $dbpassword);
 			$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		} catch (PDOException $e) {
 			echo 'Error: ' . $e->getMessage();
-		} 
+		}
 
 		function makeParticipantTable($dbh, $pid){
 			//create participant data table if it doesn't exist
-			$sql = "CREATE TABLE IF NOT EXISTS p".$pid."_data (label text primary key, question text, answer text, timestp text);";
+			$sql = "CREATE TABLE IF NOT EXISTS p".$pid."_story (label text primary key, time integer, clicks integer);";
 			try {
 				$stmt = $dbh->prepare($sql);
 				$stmt->execute();
@@ -34,9 +32,9 @@ if (isset($dbtype, $dbhost, $dbport, $dbname, $dbuser, $dbpassword)){
 		}
 
 		function makeBigTable($dbh, $tname, $cols){
-			$cols = implode(' text, ', $cols);
+			$cols = implode(' integer, ', $cols);
 			//create data table if it doesn't exist
-			$sql = "CREATE TABLE IF NOT EXISTS $tname (pid integer primary key, lastupdate timestamp, $cols text);";
+			$sql = "CREATE TABLE IF NOT EXISTS $tname (pid integer primary key, $cols integer);";
 			try {
 				$stmt = $dbh->prepare($sql);
 				$stmt->execute();
@@ -78,105 +76,72 @@ if (isset($dbtype, $dbhost, $dbport, $dbname, $dbuser, $dbpassword)){
 			$cols = array();
 			foreach($pages as $p => $page){
 				$pageCols = array();
-				$sets = $page["sets"];
-				foreach($sets as $s => $set){
-					$blocks = $set["blocks"];
-					foreach($blocks as $b => $block){
-						if (isset($block["input"])){
+				if (isset($page["story"])){
+					$sets = $page["sets"];
+					foreach($sets as $s => $set){
+						$blocks = $set["blocks"];
+						foreach($blocks as $b => $block){
 							$blockLabel = isset($block["label"]) ? $block["label"] : 'p'.(string)($p+1).'s'.(string)($s+1).'b'.(string)($b+1);
-							$input = $block["input"];
-							if (isset($input["items"])){
-								$items = $input["items"];
-								foreach($items as $i => $item){
-									if (isset($item["label"])){
-										$itemLabel = $item["label"];
-									} else {
-										$itemLabel = $blockLabel.'i'.(string)($i+1);
-									}
-									$pageCols[] = $itemLabel;
-									$cols[] = $itemLabel;
-									$pageCols[] = $itemLabel.'_time';
-									$cols[] = $itemLabel.'_time';
-								}
-							} else {
-								$pageCols[] = $blockLabel;
-								$cols[] = $blockLabel;
-								$pageCols[] = $blockLabel.'_time';
-								$cols[] = $blockLabel.'_time';
-							}
+							$pageCols[] = $blockLabel.'_time';
+							$cols[] = $blockLabel.'_time';
+							$pageCols[] = $blockLabel.'_clicks';
+							$cols[] = $blockLabel.'_clicks';
 						}
+						$mapLabel = 'p'.(string)($p+1).(string)('map');
+						$pageCols[] = $mapLabel.'_time';
+						$cols[] = $mapLabel.'_time';
+						$pageCols[] = $mapLabel.'_clicks';
+						$cols[] = $mapLabel.'_clicks';
 					}
 				}
 				if (!empty($pageCols)){
-					makeBigTable($dbh, 'data_page_'.(string)($p+1), $pageCols);
+					makeBigTable($dbh, 'story_page_'.(string)($p+1), $pageCols);
 				}
 			}
 			if (!empty($cols)){
-				makeBigTable($dbh, 'data_master', $cols);
+				makeBigTable($dbh, 'story_master', $cols);
 			}
 		}
 
 		function updateTables($dbh, $data){
-			//set program-defined variables
 			$pid = $data["pid"]["value"];
-			$updatetime = $data["updatetime"]["value"];
-			//create participant table
 			makeParticipantTable($dbh, $pid);
-			//set arrays for big table columns and values
-			$columns = array(
-				0 => "lastupdate"
-			);
-			$placeholders = array(
-				0 => ":lastupdate"
-			);
-			$values = array(
-				"lastupdate" => $updatetime
-			);
-			$asks = array();
+
 			$page = -1;
 			$pages = array();
 			$pageArray = array();
+
 			foreach($data as $key => $block){
-				if ($key != "action" && $block["name"] != 'pid' && $block["name"] != 'updatetime'){
-					//set page
+				$name = $block["name"];
+				if ($name != 'pid' && $name != 'updatetime' && $name != 's'){
+					
 					if ($block["page"] > $page){
 						$page = $block["page"];
 						$pageArray = array();
-						$pageArray["columns"] = array(
-							0 => "lastupdate"
-						);
-						$pageArray["placeholders"] = array(
-							0 => ":lastupdate"
-						);
-						$pageArray["values"] = array(
-							"lastupdate" => $updatetime
-						);
 					}
-					//set array values
-					$column = $block["name"];
-					$text = $block["ask"];
-					$value = empty($block["value"]) ? null : $block["value"];
-					$tmsp = $block["tmsp"];
-					$columns[] = $column;
-					$columns[] = $column."_time";
-					$pageArray["columns"][] = $column;
-					$pageArray["columns"][] = $column."_time";
-					$placeholders[] = ":".$column;
-					$placeholders[] = ":".$column."_time";
-					$pageArray["placeholders"][] = ":".$column;
-					$pageArray["placeholders"][] = ":".$column."_time";
-					$values[$column] = $value;
-					$values[$column."_time"] = $tmsp;
-					$pageArray["values"][$column] = $value;
-					$pageArray["values"][$column."_time"] = $tmsp;
+
+					$time = $block["time"];
+					$clicks = $block["clicks"];
+
+					$columns[] = $name."_time";
+					$columns[] = $name."_clicks";
+					$pageArray["columns"][] = $name."_time";
+					$pageArray["columns"][] = $name."_clicks";
+					$placeholders[] = ":".$name."_time";
+					$placeholders[] = ":".$name."_clicks";
+					$pageArray["placeholders"][] = ":".$name."_time";
+					$pageArray["placeholders"][] = ":".$name."_clicks";
+					$values[$name."_time"] = $time;
+					$values[$name."_clicks"] = $clicks;
+					$pageArray["values"][$name."_time"] = $time;
+					$pageArray["values"][$name."_clicks"] = $clicks;
 					$pages[$page] = $pageArray;
 
-					//add row for question if needed
-					$sql = "INSERT INTO p".$pid."_data SELECT :label WHERE NOT EXISTS ".
-						"(SELECT label FROM p".$pid."_data WHERE label = :label);";
+					$sql = "INSERT INTO p".$pid."_story SELECT :label WHERE NOT EXISTS ".
+						"(SELECT label FROM p".$pid."_story WHERE label = :label);";
 					try {
 						$stmt = $dbh->prepare($sql);
-						$stmt->bindParam(':label', $column);
+						$stmt->bindParam(':label', $name);
 						$stmt->execute();
 					} catch (PDOException $e) {
 						echo 'SQL Query: ', $sql;
@@ -184,13 +149,12 @@ if (isset($dbtype, $dbhost, $dbport, $dbname, $dbuser, $dbpassword)){
 					}
 
 					//insert data into participant data table
-					$sql = "UPDATE p".$pid."_data SET (question, answer, timestp) = (:question, :answer, :tmsp) WHERE label = :label;";
+					$sql = "UPDATE p".$pid."_story SET (label, time, clicks) = (:label, :time, :clicks) WHERE label = :label;";
 					try {
 						$stmt = $dbh->prepare($sql);
-						$stmt->bindParam(':label', $column);
-						$stmt->bindParam(':question', $text);
-						$stmt->bindParam(':answer', $value);
-						$stmt->bindParam(':tmsp', $tmsp);
+						$stmt->bindParam(':label', $name);
+						$stmt->bindParam(':time', $time);
+						$stmt->bindParam(':clicks', $clicks);
 						$stmt->execute();
 					} catch (PDOException $e) {
 						echo 'SQL Query: ', $sql;
@@ -200,11 +164,11 @@ if (isset($dbtype, $dbhost, $dbport, $dbname, $dbuser, $dbpassword)){
 			}
 
 			//insert data into master data table
-			addBigTableData($dbh, $pid, 'data_master', $columns, $placeholders, $values);
+			addBigTableData($dbh, $pid, 'story_master', $columns, $placeholders, $values);
 
 			//insert data into page tables
 			foreach($pages as $p => $page){
-				addBigTableData($dbh, $pid, 'data_page_'.$p, $page["columns"], $page["placeholders"], $page["values"]);
+				addBigTableData($dbh, $pid, 'story_page_'.$p, $page["columns"], $page["placeholders"], $page["values"]);
 			}
 		}
 
@@ -221,17 +185,15 @@ if (isset($smtphost, $smtpport, $euser, $epass, $toaddr, $subject, $message) && 
 	//WRITE FILE
 	//variables of great social and political import
 	$pid = $post_data["pid"]["value"];
-	$updatetime = $post_data["updatetime"]["value"];
 	//column headers
-	$csv = "label, question, answer, timestp\n";
+	$csv = "label, time, clicks\n";
 	//add rows
 	foreach($post_data as $key => $block){
 		if ($key != "action" && $key != "pid" && $key != "updatetime"){
 			$csv = $csv . 
 				$block["name"] . ", " .
-				$block["ask"] . ", " .
-				$block["value"] . ", " .
-				$block["tmsp"] . "\n";
+				$block["time"] . ", " .
+				$block["clicks"] . "\n";
 		}
 	}
 	//check for participants directory and create if not exists
@@ -239,7 +201,7 @@ if (isset($smtphost, $smtpport, $euser, $epass, $toaddr, $subject, $message) && 
 		mkdir("../participants", 0777, true);
 	}
 	//write it!
-	$filepath = "../participants/p".$pid."_data.csv";
+	$filepath = "../participants/p".$pid."_story.csv";
 	$file = fopen($filepath, "w") or die("Can't open file!");
 	fwrite($file, $csv);
 	fclose($file);
