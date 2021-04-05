@@ -173,7 +173,10 @@ var Choropleth = Backbone.Model.extend({
 			classes = technique.classes;
 		};
 		//get all of the values for the attribute by which the data will be classed
-		var values = getAllAttributeValues(this.get('features'), expressedAttribute);
+        var values = getAllAttributeValues(this.get('features'), expressedAttribute);
+        if (technique.classification == 'user defined'){
+            values = technique.values;
+        }
 		//get the d3 scale for the chosen classification scheme
 		var classificationModel = classification.where({type: technique.classification})[0];
 		var scale = classificationModel.scale(values, classes);
@@ -465,12 +468,12 @@ var LegendLayerView = Backbone.View.extend({
 				min = domain[0].toFixed(parseInt(this.model.get('roundTo')));
 				max = domain[1].toFixed(parseInt(this.model.get('roundTo')));
 			} else {
-				min = domain[0];
-				max = domain[1];
+				min = domain[0].toLocaleString();
+				max = domain[1].toLocaleString();
 			};
 			attributes.label = min + ' - ' + max;
 		} else {
-			attributes.label = String(domain)
+			attributes.label = String(domain.toLocaleString())
 		};
 		//create temporary span element to test label width
 		var labelTestSpan = $('<span class="leaflet-container">'+attributes.label+'</span>').appendTo('body');
@@ -674,6 +677,7 @@ var Interaction = Backbone.Model.extend({
 		this.attributes.page = _page+1;
 		this.attributes.set = _set+1;
 		this.save();
+		console.log(this);
 	},
 	create: function(events){
 		//events is an object in the form of {event1: context1, event2: context2}
@@ -1845,8 +1849,13 @@ var LeafletMap = Backbone.View.extend({
 		//need to pre-assign layerId for tile layers...for unknown reason
 		leafletBaseLayer._leaflet_id = Math.round(Math.random()*10000);
 		var layerId = leafletBaseLayer._leaflet_id;
+		//if pointer events are false, set pointer events to false on pane
+		if (baseLayer.pointerEventSet && baseLayer.layerOptions.pane){
+			this.map.getPane(baseLayer.layerOptions.pane).style.pointerEvents = 'none';
+		}
+
 		//only add first base layer to the map
-		if (i==0){
+		if (i==0 || baseLayer.addOnRender){
 			leafletBaseLayer.addTo(this.map);
 			this.firstLayers[layerId] = leafletBaseLayer;
 		} else {
@@ -1883,18 +1892,47 @@ var LeafletMap = Backbone.View.extend({
 			feature.layers.push(layer); //bind layer to feature for search
 			var popupContent = "<table>";
 			if (dataLayerModel.attributes.displayAttributes){
-				dataLayerModel.get('displayAttributes').forEach(function(attr){
-					popupContent += _.template($('#popup-line-template').html())({
-						attribute: attr,
-						value: feature.properties[attr]
-					});
+				dataLayerModel.get('displayAttributes').forEach(function(attr, index){
+					var display = dataLayerModel.get('displayAttributesDisplay');
+					if (display && (display.length == dataLayerModel.get('displayAttributes').length)){
+						if (feature.properties[attr]){
+							popupContent += _.template($('#popup-line-template').html())({
+								attribute: display[index],
+								value: feature.properties[attr].toLocaleString()
+							});
+						}
+					}
+					else {
+						if (feature.properties[attr]){
+							popupContent += _.template($('#popup-line-template').html())({
+								attribute: attr,
+								value: feature.properties[attr].toLocaleString()
+							});
+						}
+					}
 				});
 			} else {
-				var attr = dataLayerModel.get('expressedAttribute');
-				popupContent += "<tr><td class='attr'>"+attr+":</td><td>"+feature.properties[attr]+"</td></tr>";
+				var attr = dataLayerModel.get('expressedAttribute'),
+					attrDisplay = dataLayerModel.get('expressedAttributeDisplay') || dataLayerModel.get('expressedAttribute');
+				
+				popupContent += "<tr><td class='attr'>"+attrDisplay+":</td><td>"+feature.properties[attr]+"</td></tr>";
 			};
-			popupContent += "</table>";
-			layer.bindPopup(popupContent);
+            popupContent += "</table>";
+            
+            if (dataLayerModel.get('expressedAttribute')){
+                layer.bindPopup(popupContent);
+            }
+
+            if (dataLayerModel.attributes.layerHoverOptions){
+                layer.on({
+                    mouseover: function(e){
+						e.target.setStyle(dataLayerModel.attributes.layerHoverOptions);
+                    },
+                    mouseout: function(e){ 
+						e.target.setStyle(dataLayerModel.attributes.layerOptions);
+                    }
+                });
+            }
 			if (retrieveEvent == 'hover'){
 				layer.on({
 					mouseover: function(){
@@ -1976,19 +2014,30 @@ var LeafletMap = Backbone.View.extend({
 			//set onEachFeature function
 			var onEachFeature = view.onEachFeature(dataLayerModel, model.get('interactions.retrieve.event'));
 			//Leaflet overlay options
+			var pane = checkPane();
+			function checkPane(){
+				if(dataLayerModel.attributes.pane){
+					return dataLayerModel.attributes.pane == 'left' ? 'left':
+							'right';
+				}
+				else{
+					return 'overlayPane';
+				}
+			}
 			var overlayOptions = {
 				onEachFeature: onEachFeature,
+				pane:pane,
 				style: style,
 				className: dataLayerModel.get('className'),
 				minZoom: dataLayerOptions.minZoom || 0,
 				maxZoom: dataLayerOptions.maxZoom || 30
 			};
-
 			//special processing for prop symbol maps
 			if (technique.type == 'proportional symbol' || technique.type == 'point'){
 				//implement pointToLayer conversion for proportional symbol maps
 				function pointToLayer(feature, latlng){
 					var markerOptions = style(feature);
+					markerOptions.pane = pane;
 					if (techniqueModel.get('symbol') == 'circle' || !techniqueModel.attributes.symbol){
 						return L.circleMarker(latlng, markerOptions);
 					} else {
@@ -2006,6 +2055,7 @@ var LeafletMap = Backbone.View.extend({
 				//implement pointToLayer conversion
 				function pointToLayer(feature, latlng){
 					var markerOptions = style(feature);
+					markerOptions.pane = pane;
 					return L.circleMarker(latlng, markerOptions);
 				};
 				//add pointToLayer to create dots
@@ -2026,7 +2076,7 @@ var LeafletMap = Backbone.View.extend({
 			};
 			var	layerId = leafletDataLayer._leaflet_id;
 			leafletDataLayer.model = techniqueModel;
-			leafletDataLayer.layerName = techniqueModel.get('name');
+			leafletDataLayer.layerName = techniqueModel.get('displayName');
 			leafletDataLayer.className = techniqueModel.get('className');
 			leafletDataLayer.techniqueType = technique.type;
 			leafletDataLayer.techniqueOrder = i;
@@ -2078,6 +2128,7 @@ var LeafletMap = Backbone.View.extend({
 		dataLayer.className = dataLayer.name.replace(/\s/g, '-');
 		//instantiate model for data layer
 		var dataLayerModel = new DataLayerModel(dataLayer);
+			dataLayerModel.attributes.displayName = dataLayer.name;
 		//handle for determining layer order
 		dataLayerModel.attributes.id = i;
 		//get data and create thematic layers
@@ -2181,8 +2232,9 @@ var LeafletMap = Backbone.View.extend({
 				var id = 'legend-'+layer._leaflet_id;
 				//only show immediately if layer is visible
 				var display = map.hasLayer(layer) ? 'block' : 'none';
-				var acc = display == 'block' ? ' acc-open' : ' acc-closed';
-				innerHTML += '<div id="'+id+'" class="legend-layer-div display-'+display+'" style="display: '+display+';"><a class="leg-accordion'+acc+'"><img src="img/accordion_arrow.png" class="acc-arrow" title="click to minimize legend for layer"><p class="legend-layer-title">'+layer.layerName+' '+layer.techniqueType+'<br/>Attribute: '+layer.model.get('expressedAttribute')+'</p></a>';
+                var acc = display == 'block' ? ' acc-open' : ' acc-closed';
+                var label = layer.model.get('expressedAttributeDisplay') || layer.model.get('expressedAttribute');
+				innerHTML += '<div id="'+id+'" class="legend-layer-div display-'+display+'" style="display: '+display+';"><a class="leg-accordion'+acc+'"><img src="img/accordion_arrow.png" class="acc-arrow" title="click to minimize legend for layer"><p class="legend-layer-title">'+layer.layerName+' '+layer.techniqueType+'<br/>Attribute: '+label+'</p></a>';
 				var legendView = new LegendLayerView({model: layer.model});
 				innerHTML += legendView.$el[0].outerHTML + '</div>';
 			}, this);
@@ -2232,8 +2284,15 @@ var LeafletMap = Backbone.View.extend({
 		//minimize visible layers if more than one is visible
 		var legLayerCount = $('.legend-layer-div.display-block').length;
 		if (legLayerCount > 1){
-			$(".acc-open .acc-arrow").trigger("click")
-				.css("transform", "rotate(0deg)");
+			$(".acc-open .acc-arrow").css("transform", "rotate(0deg)");
+
+			if (model.attributes.story){
+				$(".leg-accordion").attr("class", "leg-accordion acc-closed");
+				$(".leg-accordion").children("img").attr("title", "click to view legend for layer");
+			}
+			else{
+				$(".acc-open .acc-arrow").trigger("click");
+			}
 		} else {
 			$(".acc-open .acc-arrow").css("transform", "rotate(90deg)");
 		};
@@ -2242,6 +2301,29 @@ var LeafletMap = Backbone.View.extend({
 		$(".acc-closed").parent().children("svg, .heatmap-legend-wrapper").hide();
 		//hide everything but icon to start
 		$('#legend-wrapper').hide();
+		//set map title
+		var title = this.model.get('mapTitle');
+
+		if (title){
+			this.addMapTitle(title);
+		}
+	},
+	addMapTitle:function(title){
+		L.Control.Title = L.Control.extend({
+			onAdd: function(map){
+				var div = L.DomUtil.create('div');
+					div.className = 'interactive-map-title';
+					div.innerHTML = title;
+
+				return div;
+			}
+		})
+
+		L.control.title = function(opts) {
+			return new L.Control.Title(opts);
+		}
+
+		L.control.title({ position: 'topleft' }).addTo(this.map);
 	},
 	legendLayerAccordion: function(e){
 		legLayerA = $(e.target).is("a") ? $(e.target) : $(e.target).parent();
@@ -2759,7 +2841,7 @@ var LeafletMap = Backbone.View.extend({
 			_.each(leafletView.model.get('dataLayers'), function(dataLayer){
 				//test for inclusion of data layer in filter interaction
 				if (_.indexOf(filterLayers, dataLayer.name) > -1){
-					//get filter properties
+                    //get filter properties
 					var attributes = dataLayer.displayAttributes || [dataLayer.expressedAttribute];
 					//create filter view
 					var filterView = controlType == 'logic' ? new FilterLogicView({applyFilter: applyFilter}) : new FilterSliderView({applyFilter: applyFilter});
@@ -3372,6 +3454,65 @@ var LeafletMap = Backbone.View.extend({
 			};
 		};
 	},
+	sideBySide:function(){
+		var view = this;
+		
+		var leftLayers = [];
+		var rightLayers = [];
+		
+		_.each(this.firstLayers, findKeys);
+
+		function findKeys(layer){
+			view.addSideBySideLayers(layer, leftLayers, rightLayers);
+		}
+
+		var sideBySide = L.control.sideBySide(leftLayers,rightLayers);
+		this.addSideBySideTitle(leftLayers, 'topleft')
+		this.addSideBySideTitle(rightLayers, 'topright')
+		sideBySide.addTo(this.map);
+	},
+	addSideBySideLayers:function(layer,left,right){
+		var dataLayers = this.model.attributes.dataLayers;
+		for (var i = 0; i < dataLayers.length; i++){
+			if (dataLayers[i].name == layer.layerName){
+				if (dataLayers[i].pane == 'left'){
+					left.push(layer);
+				}
+				if (dataLayers[i].pane == 'right') {
+					right.push(layer);
+				}
+			}
+		}
+	},
+	addSideBySideTitle:function(layers, direction){
+		var title;
+		
+		for (var i = 0; i < layers.length; i++){
+			if (i == 0){
+				title = layers[i].layerName;
+			}
+			else {
+				title = title + ", " + layers[i].layerName
+			}
+		}
+		
+		L.Control.SbsTitle = L.Control.extend({
+			onAdd: function(map){
+				var div = L.DomUtil.create('div');
+					div.className = 'interactive-map-title';
+					div.style.marginTop = '20px';
+					div.innerHTML = title;
+
+				return div;
+			}
+		});
+
+		L.control.sbstitle = function(opts) {
+			return new L.Control.SbsTitle(opts);
+		}
+
+		L.control.sbstitle({ position: direction }).addTo(this.map);
+	},
 	setMap: function(newmap){
 		if (newmap){
 			//configure map interactions
@@ -3384,6 +3525,11 @@ var LeafletMap = Backbone.View.extend({
 		this.map = L.map('map', this.model.get('mapOptions'));
 		//trigger mapset event
 		this.trigger('mapset');
+
+		this.map.createPane('left');
+		this.map.getPane('left').style.zIndex = 400;
+		this.map.createPane('right');
+		this.map.getPane('right').style.zIndex = 400;
 
 		//set layer change listener
 		var view = this;
@@ -3414,6 +3560,10 @@ var LeafletMap = Backbone.View.extend({
 			//set interaction logging
 			this.logInteractions();
 		};
+
+		if (this.model.attributes.sideBySide){
+			this.sideBySide();
+		}
 	}
 });
 //End Leaflet Map
@@ -3432,7 +3582,25 @@ function setMapView(options){
 	var Page = Backbone.DeepModel.extend(),
 		page = new Page();
 	page.attributes = _options.get('pages') ? _options.get('pages')[_page] : {};
+	$('#m').removeClass();
+	//check if storymap has been set
+	if (page.attributes.page){
+		if (page.attributes.story){
+			$('#m').css('width',"98%").addClass('p' + (_page + 1) + 'map');
+		} else {
+			$('#m').css('width',"45%");
+		}
+	}
 	var mapView;
+
+	/*_.each(page.attributes.maps, addMap, this);
+
+	function addMap(map, index){
+		mapView = eval("new " + page.get('library') + "Map({model: page})");
+		_options.attributes.maps[_page + '"' + index + '"'] = mapView;
+		mapView.render().setMap(true);
+	}*/
+
 	if (_options.attributes.maps.hasOwnProperty(_page)){
 		mapView = _options.get('maps')[_page];
 		mapView.render().setMap(false);

@@ -446,6 +446,7 @@ var Data = Backbone.Model.extend({
 		 	value: date.toUTCString()
 		});
 		this.save();
+		console.log(this);
 	}
 });
 
@@ -461,16 +462,20 @@ var Questions = Backbone.View.extend({
 	},
 	resize: function(view){
 		view.$el.css('max-height', $('#m').height());
-		if (view.model.attributes.fullpage){
-			$('#m').hide();
+		if (view.model.attributes.fullpage || view.model.attributes.story){
+			if (view.model.attributes.fullpage){
+				$('#m').hide();
+			}
+				
 			view.$el.css('width', '2em');
 			var w = view.$el.width();
 			view.$el.css('width', $('#container').width() - w);
 		} else {
 			view.$el.css('width', '4em');
 			var w = view.$el.width();
-			var qWidth = $('#header').width() - $('#m').width() - w - 15;
-			view.$el.css('width', qWidth);
+			var qWidth = $('#header').width() - ($('#header').width()*.45) - w - 15;
+			//$('#header').width() - $('#m).width(  ) - w - 15;
+			view.$el.css('width', qWidth);			
 		}
 	},
 	initialize: function(){
@@ -514,7 +519,9 @@ var Questions = Backbone.View.extend({
 			$('.reset-control').trigger('click');
 		};
 		//render blocks
-		_.each(qset.blocks, this.renderBlock, this);
+		if (!this.model.get('story')){
+			_.each(qset.blocks, this.renderBlock, this);
+		}
 		//assign any values stored in data
 		var data = _options.get('data');
 		_.each(data, function(d){
@@ -605,6 +612,7 @@ var Questions = Backbone.View.extend({
 		//check for required answers
 		if (this.validate()){
 			_.each(inputs, this.addData, this);
+
 		} else {
 			alert("Please answer all of the required questions (marked with a red star).");
 			return false;
@@ -670,10 +678,12 @@ function setQuestions(options){
 			}
 		});
 		questions = new Questions();
+		//console.log(dataModel);
 	};
 	var Page = Backbone.DeepModel.extend(),
 		page = _options.get('pages') ? new Page(_options.get('pages')[_page]) : null;
 	if (page){
+
 		questions.model = page;
 		questions.resize(questions);
 		questions.render();
