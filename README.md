@@ -32,7 +32,7 @@ To access the setup application (which has a live preview feature), [click here]
 
 #### &emsp;[Questions](#questions-1)
 
-* #### &emsp;[Story](#questions-1)
+#### &emsp;[Story](#story-new)
 
 #### &emsp;[Conditions](#conditions-1)
 
