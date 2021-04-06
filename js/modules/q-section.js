@@ -472,8 +472,8 @@ var Questions = Backbone.View.extend({
 			view.$el.css('width', $('#container').width() - w);
 		} else {
 			view.$el.css('width', '4em');
-			var w = view.$el.width();
-			var qWidth = $('#header').width() - ($('#header').width()*.45) - w - 15;
+			var w = view.$el.innerWidth();
+			var qWidth = $('#header').width() - ($('#m').outerWidth()) - 37;
 			//$('#header').width() - $('#m).width(  ) - w - 15;
 			view.$el.css('width', qWidth);			
 		}
