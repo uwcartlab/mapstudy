@@ -220,24 +220,6 @@
 			}],
 			"dataLayers": [
 				{
-					"name": "Counties",
-					"source": "data/ca-counties-total.json",
-					"renderOnLoad": true,
-					"layerOptions": {
-						"fillOpacity": 0,
-						"color": "white",
-						"weight": 1,
-						"opacity": 0.5,
-						"fillColor": "white"
-					},
-					"techniques": [{
-						"type": "choropleth",
-						"classification": "unclassed",
-						"classes": [5,30],
-						"showOnLegend":false
-					}]
-				},
-				{
 					"name": "Wildfire Damages",
 					"source": "data/ca-counties.json",
 					"renderOnLoad": true,
