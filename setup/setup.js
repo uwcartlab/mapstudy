@@ -39,6 +39,7 @@ var PageView = Backbone.View.extend({
 		"change select[name=library]": "setLibrary",
 		"change .i-checkbox": "toggleInteraction",
 		"change .fullpage": "toggleMaponpage",
+		"change .story": "toggleStory",
 		"change .maponpage": "toggleFullpage",
 		"change .resetSelect": "toggleResetButton",
 		"change .reset-p input": "toggleResetButton"
@@ -99,6 +100,21 @@ var PageView = Backbone.View.extend({
 			this.$el.find('.fullpage').val("false");
 		} else {
 			this.$el.find('.fullpage').val("true");
+		}
+	},
+	toggleStory: function(e){
+		$('#page-'+this.model.get('pagenum')+' .set-buttons').find('input[type=hidden]').val("")
+		if (e.target.value == "true"){
+			$('#q-section-' + this.model.get('pagenum')).css("display","none");
+
+			//$('.input-yn').val("false").trigger("change");
+			var curStoryBlocks = $('#s-section-' + this.model.get('pagenum') + '-story').find('.story-blocks');
+			if (curStoryBlocks.length == 0){
+				createStorySet(this.model.get('pagenum'), 0);	
+			}
+		} else {
+			$('.q-section').css("display","block");
+			//$('.input-yn').val("true").trigger("change");
 		}
 	},
 	toggleResetButton: function(e){
@@ -547,6 +563,7 @@ var TechniqueView = Backbone.View.extend({
 		function modifyForm(){
 			//revert to 5 classes and reset classification
 			l.find('.technique-n-classes-p').show().find('select').val("5");
+			l.find('.technique-custom-classes').hide();
 			changeNClasses("5", l);
 		};
 
@@ -568,9 +585,17 @@ var TechniqueView = Backbone.View.extend({
 				desc: "Interpolates an output value for each expressed data value based on that value's location on a scale between the minimum and maximum values.",
 				modifyForm: function(){
 					l.find('.technique-n-classes-p').hide().find('select').val("2");
+					l.find('.technique-custom-classes').hide();
 					changeNClasses("2", l);
 				}
-			}
+			},
+			'user defined': {
+				desc: "Define custom class breaks",
+				modifyForm: function(){
+					modifyForm()
+					l.find('.technique-custom-classes').show();
+				}
+			},
 		};
 		//implement form changes
 		l.find('.classification-type-desc').html(classifications[classification].desc);
@@ -824,7 +849,7 @@ var BlockView = Backbone.View.extend({
 		"click .removeblock": "removeBlock",
 		"change .input-type-select": "toggleInputType",
 		"change .autoadv select": "toggleRequired",
-		"change .reqd select": "toggleRequired"
+		"change .reqd select": "toggleRequired",
 	},
 	i: 0,
 	ii: 0,
@@ -946,6 +971,120 @@ var BlockView = Backbone.View.extend({
 		createOptionItem(pagenum,this.i, this.ii, 0, 'item');
 
 		return this;
+		}
+	
+});
+
+var StorySetView = Backbone.View.extend({
+	tagName: 'div',
+	template: _.template( $('#story-set-template').html() ),
+	events: {
+		"change .story-set-button": "setButtons",
+	},
+	i: 0,
+	setButtons: function(e){
+		var input = e.target,
+			pagenum = this.model.get('pagenum'),
+			buttonName = $(input).attr('class').split(' ')[1],
+			hidden = $('#page-'+pagenum+' .set-buttons').find('input[type=hidden]'),
+			includedButtons = hidden.val().split(',');
+		//remove blank values
+		includedButtons = _.without(includedButtons, '');
+		//add or subtract button from array
+		if (input.checked){
+			if (_.indexOf(includedButtons, buttonName) == -1){
+				includedButtons.push(buttonName);
+			};
+		} else {
+			includedButtons = _.without(includedButtons, buttonName);
+		};
+		hidden.val(includedButtons.join(','));
+	},
+	render: function(){
+		//create technique div
+		var pagenum = this.model.get('pagenum');
+		this.$el.attr({
+			id: 'page-'+pagenum+'-set-'+this.i,
+			class: 'set subsection'
+		});
+		this.$el.html(this.template({pagenum: pagenum, i: this.i}));
+		//add layer div to layer's sets container
+		$('#page-'+pagenum+' .story-sets').append(this.el);
+		//add initial block options
+		createStoryBlock(pagenum,this.i, 0);
+
+		return this;
+	}
+});
+
+var StoryBlockView = Backbone.View.extend({
+	tagName: 'div',
+	template: _.template( $('#story-block-template').html() ),
+	events: {
+		"click .addblock": "addBlock",
+		"click .removeblock": "removeBlock",
+	},
+	i: 0,
+	ii: 0,
+	removeButton: function(){
+		//make remove button invisible if the first set
+		var display = this.ii > 0 ? "inline-block" : "none";
+		this.$el.children('.removeblock').css('display', display);
+	},
+	removeBlock: function(){
+		//reset block numbering
+		this.ii--;
+		//fade out and remove view
+		var view = this,
+			pagenum = view.model.get('pagenum'),
+			set = $('.story-blocks');
+		this.$el.fadeOut(500, function(){
+			view.remove();
+			//reset numbering of sets once element has been removed
+			var l = $('.story-blocks').find('.block').length - 1;
+			set.find('.block').each(function(ii){
+				$(this).attr('id', 'page-'+pagenum+'-set-'+view.i+'-block-'+ii);
+				$(this).find('.blocknumber').html(ii+1);
+				//reveal add button if the last set
+				if (ii == l){
+					$(this).find('.addbutton').show();
+				};
+				//hide remove button if the only set
+				if (l == 0){
+					$(this).find('.removebutton').hide();
+				};
+			});
+		});
+	},
+	addBlock: function(){
+		var pagenum = this.model.get('pagenum');
+		this.ii = parseInt(this.$el.find('.blocknumber').html())-1;
+		this.$el.find('.addbutton, .autoadv').hide();
+		this.$el.find('.autoadv').find('select').attr('disabled', true);
+		this.$el.find('.removebutton').show();
+		createStoryBlock(pagenum, this.i, this.ii+1);
+	},
+	render: function(){
+		//create technique div
+		var pagenum = this.model.get('pagenum');
+		this.$el.attr({
+			id: 'page-'+pagenum+'-set-'+this.i+'-block-'+this.ii,
+			class: 'block subsection'
+		});
+		this.$el.html(this.template({pagenum: pagenum, i: this.i, ii: this.ii}));
+
+		this.removeButton();
+
+		//add layer div to layer's sets container
+		$('#page-'+pagenum+'-set-'+this.i+' .story-blocks').append(this.el);
+
+		this.$el.find('.bdd').each(function(){
+			createBooleanDropdown($(this));
+		});
+		this.$el.find('.displayonyes').hide();
+
+
+		return this;
 	}
 });
 
@@ -1006,25 +1145,26 @@ var OptionView = Backbone.View.extend({
 	},
 	render: function(){
 		//create div
-		var pagenum = this.model.get('pagenum');
-		this.$el.attr({
-			id: 'page-'+pagenum+'-set-'+this.i+'-block-'+this.ii+'-'+this.className+'-'+this.iii,
-			class: this.className+' subsection'
-		});
-		this.$el.html(this.template({pagenum: pagenum, i: this.i, ii: this.ii, iii: this.iii}));
+			var pagenum = this.model.get('pagenum');
+			this.$el.attr({
+				id: 'page-'+pagenum+'-set-'+this.i+'-block-'+this.ii+'-'+this.className+'-'+this.iii,
+				class: this.className+' subsection'
+			});
+			this.$el.html(this.template({pagenum: pagenum, i: this.i, ii: this.ii, iii: this.iii}));
 
-		this.removeButton();
+			this.removeButton();
 
-		//add div to container
-		$('#page-'+pagenum+'-set-'+this.i+'-block-'+this.ii+' .'+this.className+'s').append(this.el);
+			//add div to container
+			$('#page-'+pagenum+'-set-'+this.i+'-block-'+this.ii+' .'+this.className+'s').append(this.el);
 
-		//add options to boolean dropdown menus
-		this.$el.find('.bdd').each(function(){
-			createBooleanDropdown($(this));
-		});
-		this.$el.find('.displayonyes').hide();
+			//add options to boolean dropdown menus
+			this.$el.find('.bdd').each(function(){
+				createBooleanDropdown($(this));
+			});
+			this.$el.find('.displayonyes').hide();
 
-		return this;
+			return this;
+		
 	}
 });
 
@@ -1077,6 +1217,19 @@ function createBlock(pagenum,setIndex, blockIndex){
 	blockView.i = setIndex;
 	blockView.ii = blockIndex;
 	var block = blockView.render();
+};
+
+function createStorySet(pagenum,setIndex){
+	var setView = new StorySetView({model: pageModels[`page${pagenum}`]});
+	setView.i = setIndex;
+	var set = setView.render();
+};
+
+function createStoryBlock(pagenum, setIndex, blockIndex){
+	var storyBlockView = new StoryBlockView({model: pageModels[`page${pagenum}`]});
+	storyBlockView.ii = blockIndex;
+	storyBlockView.i = setIndex;
+	var storyBlock = storyBlockView.render();
 };
 
 function createOptionItem(pagenum, setIndex, blockIndex, optionItemIndex, type){
@@ -1461,7 +1614,6 @@ function processForm(data){
 
 function readForm(step){
 	var data = $('#'+step).serializeArray();
-
 	if (step == 'pages'){
 		var outer = processForm(data);
 		allData['map'] = outer.map;
@@ -1520,7 +1672,7 @@ function stringify(){
 function sendToServer(postData, callback){
 	$.ajax({
 		type: "POST",
-		url: "setup.php",
+		url: "./setup.php",
 		data: postData,
 		success: callback
 	});
@@ -1532,7 +1684,7 @@ function makeFiles(){
 	postData.operation = 'zip';
 	//callback to download the zip file
 	function callback(dirname){
-		window.location = "setup.php?dirname=" + dirname;
+		window.location = "./setup.php?dirname=" + dirname;
 	};
 	//create the zip file in php
 	sendToServer(postData, callback);
@@ -1550,6 +1702,7 @@ function viewCode(step){
 	readForm(step);
 	//stringify the data
 	var postData = stringify();
+	console.log(postData);
 	postData.operation = 'viewcode';
 	//callback to trigger links to view files
 	function callback(dirname){
@@ -1672,7 +1825,6 @@ function loadStyles(styles){
 }
 
 function loadConditions(conditions){
-
 	for(var i=0;i<conditions.length;i++){
 		var condition = conditions[i];
 		var conditionView = createCondition(i+1,condition.pages.length);
@@ -1727,7 +1879,6 @@ function loadConditions(conditions){
 
 function populateMapPage(page){
 	$page = $(`div#page-${page.page}`);
-
 	//map options
 	for(var att in page.mapOptions){
 		var value = page.mapOptions[att]
@@ -1753,7 +1904,10 @@ function populateMapPage(page){
 	if(page.baseLayers){
 		for(var i = 0; i < page.baseLayers.length; i++){
 			var baseLayer = page.baseLayers[i];
-			createLayer(page.page,"baseLayer",i);
+			var id = $('#page-' + page.page + '-baseLayer-' + i);
+			if (i > 0){
+				createLayer(page.page,"baseLayer",i);
+			}
 			for(var param in baseLayer){
 				assignValue(`map.pages.${page.page}.baseLayers.${i}.${param}`, baseLayer[param]);
 			}
@@ -1773,7 +1927,14 @@ function populateMapPage(page){
 					}
 					commaSep = commaSep.slice(0,-1);
 					assignValue(`map.pages.${page.page}.dataLayers.${i}.${param}`, commaSep);
-
+				}
+				else if(param == "displayAttributesDisplay"){
+					var commaSepDisplay = "";
+					for(var displayAttDisplay of dataLayer[param]){
+						commaSepDisplay+=displayAttDisplay + ",";
+					}
+					commaSepDisplay = commaSepDisplay.slice(0,-1);
+					assignValue(`map.pages.${page.page}.dataLayers.${i}.${param}`, commaSepDisplay);
 				} else if(param == "techniques"){
 					//remove first technique
 					$(`#page-${page.page}-dataLayer-${i}-technique-0`).remove();
@@ -1801,9 +1962,19 @@ function populateMapPage(page){
 								assignValue(`map.pages.${page.page}.dataLayers.${i}.techniques.${j}.${techParam}`,technique[techParam]);
 							} 
 							else {
-								for(k=0; k<technique[techParam].length; k++){
-									subTechParam = technique[techParam][k];
-									assignValue(`map.pages.${page.page}.dataLayers.${i}.techniques.${j}.${techParam}.${k}`,subTechParam);
+								if (techParam == 'values'){
+									var commaSep = "";
+									for(var value of technique[techParam]){
+										commaSep+=value + ",";
+									}
+									commaSep = commaSep.slice(0,-1);
+									assignValue(`map.pages.${page.page}.dataLayers.${i}.techniques.${j}.${techParam}`, commaSep);
+								}
+								else{
+									for(k=0; k<technique[techParam].length; k++){
+										subTechParam = technique[techParam][k];
+										assignValue(`map.pages.${page.page}.dataLayers.${i}.techniques.${j}.${techParam}.${k}`,subTechParam);
+									}
 								}
 							}
 						}		
@@ -1858,54 +2029,87 @@ function populateQuestionPage(page){
 	if(page["fullpage"]){
 		$(`[name="questions.pages.${page.page}.fullpage"]`).val("true").trigger("change");
 	}
-	//sets
-	for(var i=0; i < page["sets"].length; i++){
-		if(i!=0) createSet(page.page,i);
-		var set = page["sets"][i];
-		var $set = $(`#page-${page.page}-set-${i}`);
-		//set buttons(last page has no buttons)
-		if(set["buttons"]) {
-			for(var button of set["buttons"]){
-				$button = $set.find(`.set-button.${button}`);
-				$button.prop("checked", true).trigger("change");
-			}
+	//set story
+	if(page["story"]){
+		$(`[name="questions.pages.${page.page}.story"]`).val("true").trigger("change");
+		for(var option in page.story){
+			assignValue(`story-${option}-yn`, true, "change");
+			assignValue(`questions.pages.${page.page}.story.${option}`, page.story[option]);
 		}
-		//blocks
-		for(var j=0; j < set["blocks"].length;j++){
-			if(j!=0) createBlock(page.page,i,j);
-			var block = set["blocks"][j];
-			var $block = $(`#page-${page.page}-set-${i}-block-${j}`)
-			var $input = $block.find(".input-yn");
-			if(!block["input"]){
-			//set include input to no if not there
-				$input.val("false").trigger("change");
+		for(var i=0; i < page["sets"].length; i++){
+			if(i!=0) createStorySet(page.page,i);
+			var set = page["sets"][i];
+			var $set = $(`#page-${page.page}-set-${i}`);
+			//set buttons(last page has no buttons)
+			if(set["buttons"]) {
+				for(var button of set["buttons"]){
+					$button = $set.find(`.story-set-button.${button}`);
+					$button.prop("checked", true).trigger("change");
+				}
 			}
-			for(var blockOption in block){
-				if(blockOption!="input"){
+			//blocks
+			for(var j=0; j < set["blocks"].length;j++){
+				if(j!=0) createStoryBlock(page.page,i,j);
+				var block = set["blocks"][j];
+				var $block = $(`#page-${page.page}-set-${i}-block-${j}`)
+				var $input = $block.find(".input-yn");
+				for(var blockOption in block){
 					var value = block[blockOption];
 					assignValue(`questions.pages.${page.page}.sets.${i}.blocks.${j}.${blockOption}`,value);
-				} else {
-					var inputOptions = block[blockOption];
-					for(var inputOption in inputOptions){
-						if(inputOption!="options"&&inputOption!="items"){
-							var value = inputOptions[inputOption];
-							assignValue(`questions.pages.${page.page}.sets.${i}.blocks.${j}.input.${inputOption}`,value,true);
-						}
-						//handle options or items
-						else{
-							var optionsItems = inputOptions[inputOption];
-							var type = inputOption.replace("s","");
-							if(optionsItems.length>0){
-								for(k=0;k<optionsItems.length;k++){
-									//create options/items
-									var optItem = optionsItems[k];
-									if(k!=0) createOptionItem(page.page,i,j,k,type);
-									for(var optionSetting in optItem){
-										var value = optItem[optionSetting];
-										assignValue(`questions.pages.${page.page}.sets.${i}.blocks.${j}.input.${inputOption}.${k}.${optionSetting}`,value);
+				}
+			}
+		}
+	}
+	else{
+	//sets
+		for(var i=0; i < page["sets"].length; i++){
+			if(i!=0) createSet(page.page,i);
+			var set = page["sets"][i];
+			var $set = $(`#page-${page.page}-set-${i}`);
+			//set buttons(last page has no buttons)
+			if(set["buttons"]) {
+				for(var button of set["buttons"]){
+					$button = $set.find(`.set-button.${button}`);
+					$button.prop("checked", true).trigger("change");
+				}
+			}
+			//blocks
+			for(var j=0; j < set["blocks"].length;j++){
+				if(j!=0) createBlock(page.page,i,j);
+				var block = set["blocks"][j];
+				var $block = $(`#page-${page.page}-set-${i}-block-${j}`)
+				var $input = $block.find(".input-yn");
+				if(!block["input"]){
+				//set include input to no if not there
+					$input.val("false").trigger("change");
+				}
+				for(var blockOption in block){
+					if(blockOption!="input"){
+						var value = block[blockOption];
+						assignValue(`questions.pages.${page.page}.sets.${i}.blocks.${j}.${blockOption}`,value);
+					} else {
+						var inputOptions = block[blockOption];
+						for(var inputOption in inputOptions){
+							if(inputOption!="options"&&inputOption!="items"){
+								var value = inputOptions[inputOption];
+								assignValue(`questions.pages.${page.page}.sets.${i}.blocks.${j}.input.${inputOption}`,value,true);
+							}
+							//handle options or items
+							else{
+								var optionsItems = inputOptions[inputOption];
+								var type = inputOption.replace("s","");
+								if(optionsItems.length>0){
+									for(k=0;k<optionsItems.length;k++){
+										//create options/items
+										var optItem = optionsItems[k];
+										if(k!=0) createOptionItem(page.page,i,j,k,type);
+										for(var optionSetting in optItem){
+											var value = optItem[optionSetting];
+											assignValue(`questions.pages.${page.page}.sets.${i}.blocks.${j}.input.${inputOption}.${k}.${optionSetting}`,value);
+										}
 									}
-								}
-							}			
+								}			
+							}
 						}
 					}
 				}

@@ -365,6 +365,59 @@
 
                 <script type="text/template" id="page-template">
                     <h2>Page <span class="pagenum"><%= pagenum %></span></h2>
+                    <!--story map questions-->
+                    <div class="s-section section q">
+                        <h2>Page <span class="pagenum"><%= pagenum %></span> Story</h2>
+                        A story map page includes a series of story blocks and an interactive map. No questions are supported on a story page.<br/> 
+                        <p>Will this page be a story map? <select class="bdd no story" name="questions.pages.<%= pagenum %>.story"></select></p>
+                        <div id="s-section-<%= pagenum %>-story" class="displayonyes hideonno">
+                            <div class="storyOptions q">
+                                <input type="hidden" name="map.pages.<%= pagenum %>.story" value="true" disabled>
+
+                                <div class="q">
+                                    <p>Include story title?<select class="story-title-yn bdd no"></select></p>
+                                    <div class="story-title displayonyes">
+                                        Title: <input type="text" name="questions.pages.<%= pagenum %>.story.title" disabled>
+                                    </div>
+                                </div>
+
+                                <div class="q">
+                                    <p>Include story subtitle? <select class="story-subtitle-yn bdd no"></select></p>
+                                    <div class="story-subtitle displayonyes">
+                                        Subtitle: <input type="text" name="questions.pages.<%= pagenum %>.story.subtitle" disabled>
+                                    </div>
+                                </div>
+
+                                <div class="q">
+                                    <p>Change color of story title/subtitle text?<select class="story-color-yn bdd no"></select></p>
+                                    <div class="story-color displayonyes">
+                                        <p><label>Text color: </label>
+                                            <input name='questions.pages.<%= pagenum %>.story.color' type="color" disabled></p>
+                                    </div>
+                                </div>
+
+                                <div class="q">
+                                    <p>Include title background image or video?<select class="story-background-yn bdd no"></select></p>
+                                    <div class="story-background displayonyes">
+                                        File URL: <input name="questions.pages.<%= pagenum %>.story.background" type="text" placeholder="ex.: img/map.png" disabled>
+                                    </div>
+                                </div>
+
+                                <div class="q">
+                                    <p>Where do you want the interactive map?<select class="story-interactive-yn bdd top" name="questions.pages.<%= pagenum %>.story.reverse" disabled>
+                                        <option value="true">Top of Page</option>
+                                        <option value="false">Bottom of Page</option>
+                                    </select></p>
+                                </div>
+
+                                <div class="q">
+                                    This option allows the "next page" button to be fixed to the bottom of the page as users scroll. 
+                                    <p>Float "next" button? <select class="story-background-yn bdd no" name="questions.pages.<%= pagenum %>.story.float" disabled></select></p>
+                                </div>
+                                <div class="story-sets q"></div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="m-section section q">
                         <h2>Page <span class="pagenum"><%= pagenum %></span> Map</h2>
                         <p>Include a map on this page? <select class="bdd yes maponpage"></select></p>
@@ -429,10 +482,10 @@
                                                 </td>
                                             </tr><tr>
                                                 <td>
-                                                    <input type="radio" name="map.pages.<%= pagenum %>.interactions.zoom.interface.scrollWheel" value="true" checked>
+                                                    <input type="radio" name="map.pages.<%= pagenum %>.interactions.zoom.interface.scrollWheel" value="true" >
                                                 </td>
                                                 <td>
-                                                    <input type="radio" name="map.pages.<%= pagenum %>.interactions.zoom.interface.scrollWheel" value="false">
+                                                    <input type="radio" name="map.pages.<%= pagenum %>.interactions.zoom.interface.scrollWheel" value="false" checked>
                                                 </td>
                                                 <td>
                                                     Scroll wheel
@@ -526,14 +579,14 @@
                                         </table>
                                     </div>
                                 </div>
-                                
+                                <!---
                                 <div>
                                     <p class="rotate-p nomargin">
                                         <input class="i-checkbox" type="checkbox" name="map.pages.<%= pagenum %>.interactions.rotate"> Rotate
                                     </p>
                                     <div class="rotate i-section"></div>
                                 </div>
-                                
+                                -->
                                 <div>
                                     <p class="retrieve-p nomargin">
                                         <input class="i-checkbox" type="checkbox" name="map.pages.<%= pagenum %>.interactions.retrieve"> Retrieve
@@ -839,9 +892,14 @@
                     </div>
 
                     <p class="layer-expressedAttribute">Expressed attribute name: <input type="text" name="map.pages.<%= pagenum %>.dataLayers.<%= i %>.expressedAttribute"></p>
+                    
+                    <p class="layer-expressedAttribute">Expressed attribute label (this will appear in the legend): <input type="text" name="map.pages.<%= pagenum %>.dataLayers.<%= i %>.expressedAttributeDisplay"></p>
 
                     <p class="nomargin layer-displayAttributes">Display attributes (list attributes separated by commas):</p>
                     <textarea name="map.pages.<%= pagenum %>.dataLayers.<%= i %>.displayAttributes-{[]}"></textarea>
+
+                    <p class="nomargin layer-displayAttributes">Display attribute labels (list attribute labels separated by commas, make sure there are the same amount of values as there are display attributes):</p>
+                    <textarea name="map.pages.<%= pagenum %>.dataLayers.<%= i %>.displayAttributesDisplay-{[]}"></textarea>
 
                     <p class="layer-renderOnLoad q">Render layer when map loads? 
                         <select class="bdd yes" name="map.pages.<%= pagenum %>.dataLayers.<%= i %>.renderOnLoad"></select>
@@ -885,6 +943,7 @@
                             <option value="equal interval">Equal Interval</option>
                             <option value="natural breaks">Natural Breaks</option>
                             <option value="unclassed">Unclassed</option>
+                            <option value="user defined">User Defined</option>
                         </select>
                     </p>
 
@@ -905,6 +964,12 @@
                             <option value="12">12</option>
                         </select>
                     </p>
+
+                    <div class="technique-custom-classes">
+                        <p class="nomargin">List class breaks seperated by commas:</p>
+                        The amount of class breaks should be the same as the number of classes.
+                        <textarea name="map.pages.<%= pagenum %>.dataLayers.<%= i %>.techniques.<%= ii %>.values-{[]}"></textarea>
+                    </div>
 
                     <div class="technique-classes"></div>
 
@@ -1108,6 +1173,66 @@
                     </button>
                 </script>
 
+                <!--story set-->
+
+                <script type="text/template" id="story-set-template">
+                    <h3 class="nomargin">Blocks</h3>
+                    <div class="mb20"> 
+                        A <em>block</em> in a story map consists of an image (a static map or related graphic) plus titles and descriptive text.
+                    </div>
+                    <div class="story-blocks"></div>
+                    <div class="story-set-buttons">
+                        <input type="hidden" name="questions.pages.<%= pagenum %>.sets.0.buttons-{[]}" value="">
+                        <div><input type="checkbox" class="story-set-button next"> Next</div>
+                        <div><input type="checkbox" class="story-set-button back"> Back</div>
+                    </div>
+                </script>
+                
+
+                <!--story blocks-->
+
+                <script type="text/template" id="story-block-template">
+                    <div class="mb20"><h3 class="nomargin">Set <span class="setnumber"><%= i+1 %></span> Block <span class="blocknumber"><%= ii+1 %></span></h3></div>
+
+                    <div class="q">
+                        <p>Include title? <select class="story-block-title-yn bdd no"></select></p>
+                        <div class="story-block-title displayonyes">
+                            Title: <input type="text" name="questions.pages.<%= pagenum %>.sets.<%= i %>.blocks.<%= ii %>.title" disabled>
+                        </div>
+                    </div>
+
+                    <div class="q">
+                        <p>Include subtitle? <select class="story-block-subtitle-yn bdd no"></select></p>
+                        <div class="story-block-subtitle displayonyes">
+                            Subtitle: <input type="text" name="questions.pages.<%= pagenum %>.sets.<%= i %>.blocks.<%= ii %>.subtitle" disabled>
+                        </div>
+                    </div>
+
+                    <div class="q">
+                        <p>Include image? <select class="story-block-image-yn bdd no"></select></p>
+                        <div class="story-block-image displayonyes">
+                            <label for="header-logo">Logo image URL:</label>
+                            <input name="questions.pages.<%= pagenum %>.sets.<%= i %>.blocks.<%= ii %>.image" type="text" placeholder="ex.: img/logo.png" disabled>
+                        </div>
+                    </div>
+
+                    <div class="q">
+                        <p>Include description? <select class="story-block-desc-yn bdd no"></select></p>
+                        <div class="story-block-desc displayonyes">
+                            Description:
+                            <textarea name="questions.pages.<%= pagenum %>.sets.<%= i %>.blocks.<%= ii %>.description" disabled></textarea>
+                        </div>
+                    </div>
+
+                    <button type="button" class="removeblock removebutton">
+                        <span class="ar">-</span>
+                        Remove this block
+                    </button>
+                    <button type="button" class="addblock addbutton">
+                        <span class="ar">+</span>
+                        Add another block
+                    </button>
+                </script>
 
                 <!--input options-->
 
