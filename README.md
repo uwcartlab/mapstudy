@@ -427,7 +427,7 @@ An array of objects containing the information needed to add a basemap layer for
 
 		"name": layer name
 
-The name of the base layer; a string. If `overlay` is included in the `interactions`, this name will appear in the layers control on the map.
+The name of the base layer; a string. If `underlay` is included in the `interactions`, this name will appear in the layers control on the map.
 
 #### map.pages[page].baseLayers[i].source
 
