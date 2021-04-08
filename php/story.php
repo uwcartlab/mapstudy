@@ -86,6 +86,7 @@ if (isset($dbtype, $dbhost, $dbport, $dbname, $dbuser, $dbpassword)){
 							$cols[] = $blockLabel.'_time';
 							$pageCols[] = $blockLabel.'_clicks';
 							$cols[] = $blockLabel.'_clicks';
+							
 						}
 						$mapLabel = 'p'.(string)($p+1).(string)('map');
 						$pageCols[] = $mapLabel.'_time';
@@ -113,7 +114,7 @@ if (isset($dbtype, $dbhost, $dbport, $dbname, $dbuser, $dbpassword)){
 
 			foreach($data as $key => $block){
 				$name = $block["name"];
-				if ($name != 'pid' && $name != 'updatetime' && $name != 's'){
+				if ($name != 'pid' && $name != 'updatetime' && $name != 'currentpage' && $name != 's'){
 					
 					if ($block["page"] > $page){
 						$page = $block["page"];
@@ -179,61 +180,41 @@ if (isset($dbtype, $dbhost, $dbport, $dbname, $dbuser, $dbpassword)){
 		}
 	}
 }
-
 //e-mail data if e-mail is set up
-if (isset($smtphost, $smtpport, $euser, $epass, $toaddr, $subject, $message) && $post_data["action"] == "submit"){
-	//WRITE FILE
-	//variables of great social and political import
+if (isset($smtphost, $smtpport, $euser, $epass, $toaddr, $subject, $message)){
 	$pid = $post_data["pid"]["value"];
-	//column headers
-	$csv = "label, time, clicks\n";
-	//add rows
-	foreach($post_data as $key => $block){
-		if ($key != "action" && $key != "pid" && $key != "updatetime"){
-			$csv = $csv . 
-				$block["name"] . ", " .
-				$block["time"] . ", " .
-				$block["clicks"] . "\n";
-		}
-	}
-	//check for participants directory and create if not exists
+	//check for directory and create if not exists
 	if (!file_exists("../participants")){
 		mkdir("../participants", 0777, true);
 	}
-	//write it!
+	//check for file and create with column headers if not exists
 	$filepath = "../participants/p".$pid."_story.csv";
-	$file = fopen($filepath, "w") or die("Can't open file!");
-	fwrite($file, $csv);
-	fclose($file);
-
-	//SEND E-MAIL
-	//path to participant interactions file
-	$ipath = "../participants/p".$pid."_interactions.csv";
-	//name of MapStudy app directory
-	$appdir = ucfirst(array_pop(explode('\\', dirname(getcwd()))));
-	echo $appdir;
-	//use PHPMailer class to build e-mail
-	$mail = new PHPMailer;
-	$mail->SMTPDebug = 3;
-	$mail->isSMTP();
-	$mail->Host = $smtphost;
-	$mail->SMTPAuth = true;
-	$mail->Username = $euser;
-	$mail->Password = $epass;
-	$mail->SMTPSecure = 'tls';
-	$mail->Port = $smtpport;
-	$mail->setFrom($euser, $appdir . ' MapStudy Application');
-	$mail->addAddress($toaddr);
-	$mail->addAttachment($filepath);
-	if (file_exists($ipath)){
-		$mail->addAttachment($ipath);
+	if (!file_exists($filepath)){
+		$cols = "label, time, clicks\n";
+		$file = fopen($filepath, "w") or die("Can't open file!");
+		fwrite($file, $cols);
+		fclose($file);
 	}
-	$mail->isHTML(true);
-	$mail->Subject = $subject;
-	$mail->Body = $message;
-	//send e-mail
-	if(!$mail->send()){
-		echo 'Mailer error: ' . $mail->ErrorInfo;
+	if ($post_data["action"] == 'set'){
+		//add row
+		$currentpage = $post_data["currentpage"];
+
+		foreach($post_data as $key => $block){
+			//print("Block page: ".$block["page"].". Current Page:".$currentpage);
+			if ($key != "action" && $key != "pid" && $key != "updatetime" && $key != "currentpage"){
+				if ($currentpage["page"] == $block["page"]){
+					$row = 
+						$block["name"] . ", " .
+						$block["time"] . ", " .
+						$block["clicks"] . "\n";
+						
+					$file = fopen($filepath, "a") or die("Can't open file!");
+					fwrite($file, $row);
+					fclose($file);
+				}
+			}
+		}
+		//write row to file
 	}
 }
 

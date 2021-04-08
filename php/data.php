@@ -229,7 +229,7 @@ if (isset($smtphost, $smtpport, $euser, $epass, $toaddr, $subject, $message) && 
 		if ($key != "action" && $key != "pid" && $key != "updatetime"){
 			$csv = $csv . 
 				$block["name"] . ", " .
-				$block["ask"] . ", " .
+				str_replace( ',', '', $block["ask"] ) . ", " .
 				$block["value"] . ", " .
 				$block["tmsp"] . "\n";
 		}
@@ -247,6 +247,7 @@ if (isset($smtphost, $smtpport, $euser, $epass, $toaddr, $subject, $message) && 
 	//SEND E-MAIL
 	//path to participant interactions file
 	$ipath = "../participants/p".$pid."_interactions.csv";
+	$spath = "../participants/p".$pid."_story.csv";
 	//name of MapStudy app directory
 	$appdir = ucfirst(array_pop(explode('\\', dirname(getcwd()))));
 	echo $appdir;
@@ -265,6 +266,9 @@ if (isset($smtphost, $smtpport, $euser, $epass, $toaddr, $subject, $message) && 
 	$mail->addAttachment($filepath);
 	if (file_exists($ipath)){
 		$mail->addAttachment($ipath);
+	}
+	if (file_exists($spath)){
+		$mail->addAttachment($spath);
 	}
 	$mail->isHTML(true);
 	$mail->Subject = $subject;
