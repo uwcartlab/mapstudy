@@ -9,7 +9,7 @@
     var Data = Backbone.Model.extend({
         url: 'php/story.php',
         defaults: {
-            pid: pid
+            pid: pid,
         },
         record: function(action){
             this.set('action', action);
@@ -329,7 +329,7 @@
             document.on('nextset', this.next, this);
         },
         createDataStructure: function(){
-            //create data structure for logging interactions
+            //create data structure for logging story data
             var blocks = this.$el.find('.block').toArray();
                 _.each(blocks, this.addData, this);
             
@@ -358,6 +358,10 @@
                         clicks: 0
                     };
             }
+            _options.attributes.data["currentpage"] = {
+                name: "currentpage",
+                page:_page+1
+            };
         },
         record: function(){            
             var date = new Date();
@@ -374,6 +378,7 @@
     function setStory(options){
         //reset question set counter
         _set = 0;
+        
         if (typeof options != 'undefined'){
             var dataModel = new Data(options.attributes);
             dataModel.record('init');
