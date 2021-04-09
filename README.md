@@ -8,7 +8,7 @@ MapStudy is an integrated, modularized framework for the creation of survey appl
 
 ## What is the status of MapStudy?
 
-The MapStudy framework is currently Version 1.0. 
+The MapStudy framework is currently in Version 1.0. 
 
 ## Can I have a preview please?
 
