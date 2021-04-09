@@ -8,7 +8,7 @@ MapStudy is an integrated, modularized framework for the creation of survey appl
 
 ## What is the status of MapStudy?
 
-The MapStudy framework is currently in beta release, version 1.0. Note that not all functionality is complete. At this time, Leaflet is the only active map library.
+The MapStudy framework is currently Version 1.0. 
 
 ## Can I have a preview please?
 
