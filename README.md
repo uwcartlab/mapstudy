@@ -56,13 +56,11 @@ This documentation assumes a basic working knowledge of JSON formatting, geograp
 
 3. Replace the *logo.png* file in the *img* folder with your own icon if desired.
 
-4. If you will create a thematic map, gather geographic data and convert to GeoJSON format or store it in a PostGIS database. Geographic data should include every feature that will be mapped and each attribute that will be used to generate the thematic map. Thematic attributes should be numerical. Options for adding data to the map are covered in the *map.json* section below. A good source of geographic base data is [Natural Earth](http://www.naturalearthdata.com/).
+4. If you plan to create a thematic map, gather geographic data and convert to GeoJSON format or store it in a PostGIS database. Geographic data should include every feature that will be mapped and each attribute that will be used to generate the thematic map. Thematic attributes should be numerical. Options for adding data to the map are covered in the *map.json* section below. A good source of geographic base data is [Natural Earth](http://www.naturalearthdata.com/).
 
-5. If you plan to embed a static map image or pre-rendered web map from a service such as [CartoDB](https://cartodb.com/), prepare that map separately. *Note that if you do this, you lose the benefit of the embedded user interaction logging.*
+5. Set up a PostgreSQL, MySQL, or Microsoft Access database to store question answers and interaction logs. The MapStudy application will need administrator-level access to that database, as well as several necessary PHP extensions. For more info on database setup and troubleshooting, see the "Param" section of the documentation.
 
-6. Set up a PostgreSQL, MySQL, or Microsoft Access database to store question answers and interaction logs. The MapStudy application will need administrator-level access to that database, as well as several necessary PHP extensions. For more info on database setup and troubleshooting, see the "Param" section of the documentation.
-
-7. Edit and extend each *.json* file in the *config* directory using the options below. Your edits should be reflected immediately in the browser upon loading or reloading *index.html*.
+6. Edit and extend each *.json* file in the *config* directory using the options below. Your edits should be reflected immediately in the browser upon loading or reloading *index.html*.
 
 ## Config files:
 
