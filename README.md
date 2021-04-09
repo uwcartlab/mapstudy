@@ -50,7 +50,7 @@ This documentation assumes a basic working knowledge of JSON formatting, geograp
 
 ## Setup:
 
-1. Clone or download a zipped copy of the framework from the [Github page](https://github.com/uwcart/mapstudy).
+1. Clone or download a zipped copy of the framework from the [Github page](https://github.com/uwcartlab/mapstudy).
 
 2. Unzip the files and place them where you want to provide access to the survey&mdash;either on a public server or a private localhost server.
 
@@ -66,7 +66,7 @@ This documentation assumes a basic working knowledge of JSON formatting, geograp
 
 ## Config files:
 
-The remainder of the documentation describes each of the configuration files stored in the *config* folder and the options available with each. It is recommended to use the [form-based setup application](http://grad.geography.wisc.edu/cmsack/mapstudy/setup/) to create these, as it makes it easy to configure a custom MapStudy application without having to open up the config files and write a bunch of JSON code. But be forewarned that the setup app is still *very* beta; use at your own risk and compare the resulting files with this documentation if you run into trouble!
+The remainder of the documentation describes each of the configuration files stored in the *config* folder and the options available with each. It is recommended to use the [form-based setup application](https://geography.wisc.edu/cartography/mapstudy/setup/) to create these, as it makes it easy to configure a custom MapStudy application without having to open up the config files and write a bunch of JSON code. 
 
 **Upload functionality:** The web-based setup application includes upload functionality, which you may use to load and edit example configuration settings from previous Mapstudy research. Due to the complexity of the configuration files, it is strongly recommended, both for first-time users of Mapstudy and for those who wish to closely replicate or tweak existing studies. The upload functionality enables Mapstudy users to develop part of their study, download the progress they've made, and upload to continue development. 
 
@@ -872,7 +872,7 @@ All other story map options are housed within questions.json. Main options are s
 	{
 		"pages": [
 			{
-				"story":{
+				*"story"*:{
 
 				}
 			}
