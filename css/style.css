@@ -148,6 +148,7 @@ svg {
 }
 
 #container {
+    overflow:scroll;
     margin: 0 5em;
     min-height: 100vh;
     background-color: white;
@@ -734,3 +735,111 @@ span.value, span.rank {
         page-break-after: avoid;
     }
 }
+
+/* ---------------- story module styling--------------------- */
+#s{
+    width:100%;
+    overflow:initial;
+}
+/*resize story form as screen is resized*/
+@media only screen and (min-width: 1500px) {
+    #s form{
+        width:50%;
+        margin:auto;
+    }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1500px) {
+    #s form{
+        width:60%;
+        margin:auto;
+    }
+}
+@media only screen and (min-width: 1000px) and (max-width: 1250px) {
+    #s form{
+        width:70%;
+        margin:auto;
+    }
+}
+@media only screen and (min-width: 800px) and (max-width: 1000px) {
+    #s form{
+        width:80%;
+        margin:auto;
+    }
+}
+@media only screen and (max-width: 800px) {
+    #s form{
+        width:95%;
+        margin:auto;
+    }
+}
+
+.story-active{
+    overflow-x:hidden;
+    height:calc(100% - 60px);
+}
+.map-title, .map-subtitle{
+    position:relative;
+}
+.map-image{
+    width:100%;
+    position:relative;
+}
+.map-description, .map-ask{
+    font-size:20px;
+    font-family:serif;
+    color:rgb(48, 78, 78);
+    position:relative;
+}
+#t{
+    height:100%;
+    width:100%;
+}
+#t div{
+    width:50%;
+    margin:auto;
+    text-align:center;
+}
+#story-title{
+    font-size:72px;
+    margin:0;
+}
+#story-subtitle{
+    font-size:40px;
+    margin:0;
+    font-weight:normal;
+}
+#story-arrow{
+    animation-name: arrow;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+.quote{
+    border: 1px solid black;
+    padding:10px;
+    font-style:italic;
+}
+hr{
+    border-top: 2px black solid;
+}
+.interactive-map-title{
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 5px 0px;
+    color: black;
+    text-align:left;
+    padding:10px;
+    font-size:20px;
+    font-weight:bold;
+    border-radius:5px;
+}
+.sticky{
+    position:sticky;
+    top:0;
+    z-index:0;
+}
+.sticky-padding{
+    width:100%;
+}
+@keyframes arrow {
+    from {font-size: 20px;}
+    to {font-size: 60px;}
+  }
