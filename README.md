@@ -12,7 +12,7 @@ The MapStudy framework is currently in Version 1.0.
 
 ## Can I have a preview please?
 
-To see a demo app created with the MapStudy framework, [click here](https://geography.wisc.edu/cartography/mapstudy/).
+To see a demo app created with the MapStudy framework, [click here](https://uwcartlab.github.io/mapstudy/).
 
 To access the setup application (which has a live preview feature), [click here](https://geography.wisc.edu/cartography/mapstudy/setup/)
 
