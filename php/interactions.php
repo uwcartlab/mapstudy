@@ -166,8 +166,8 @@ if (isset($dbtype, $dbhost, $dbport, $dbname, $dbuser, $dbpassword)){
 	}
 }
 
-//e-mail data if e-mail is set up
-if (isset($smtphost, $smtpport, $euser, $epass, $toaddr, $subject, $message)){
+//write data to participant file
+//if (isset($smtphost, $smtpport, $euser, $epass, $toaddr, $subject, $message)){
 	//variables of great social and political import
 	$pid = $post_data["pid"];
 	//check for directory and create if not exists
@@ -193,6 +193,6 @@ if (isset($smtphost, $smtpport, $euser, $epass, $toaddr, $subject, $message)){
 		fwrite($file, $row);
 		fclose($file);
 	}
-}
+//}
 
 ?>

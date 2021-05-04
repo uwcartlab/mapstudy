@@ -180,42 +180,41 @@ if (isset($dbtype, $dbhost, $dbport, $dbname, $dbuser, $dbpassword)){
 		}
 	}
 }
-//e-mail data if e-mail is set up
-if (isset($smtphost, $smtpport, $euser, $epass, $toaddr, $subject, $message)){
-	$pid = $post_data["pid"]["value"];
-	//check for directory and create if not exists
-	if (!file_exists("../participants")){
-		mkdir("../participants", 0777, true);
-	}
-	//check for file and create with column headers if not exists
-	$filepath = "../participants/p".$pid."_story.csv";
-	if (!file_exists($filepath)){
-		$cols = "label, time, clicks\n";
-		$file = fopen($filepath, "w") or die("Can't open file!");
-		fwrite($file, $cols);
-		fclose($file);
-	}
+//write data to participant file
+//if (isset($smtphost, $smtpport, $euser, $epass, $toaddr, $subject, $message)){
 	if ($post_data["action"] == 'set'){
-		//add row
-		$currentpage = $post_data["currentpage"];
+		$pid = $post_data["pid"]["value"];
+		//check for directory and create if not exists
+		if (!file_exists("../participants")){
+			mkdir("../participants", 0777, true);
+		}
+		//check for file and create with column headers if not exists
+		$filepath = "../participants/p".$pid."_story.csv";
+		if (!file_exists($filepath)){
+			$cols = "label, time, clicks\n";
+			$file = fopen($filepath, "w") or die("Can't open file!");
+			fwrite($file, $cols);
+			fclose($file);
+		}
+			//add row
+			$currentpage = $post_data["currentpage"];
 
-		foreach($post_data as $key => $block){
-			//print("Block page: ".$block["page"].". Current Page:".$currentpage);
-			if ($key != "action" && $key != "pid" && $key != "updatetime" && $key != "currentpage"){
-				if ($currentpage["page"] == $block["page"]){
-					$row = 
-						$block["name"] . ", " .
-						$block["time"] . ", " .
-						$block["clicks"] . "\n";
-						
-					$file = fopen($filepath, "a") or die("Can't open file!");
-					fwrite($file, $row);
-					fclose($file);
+			foreach($post_data as $key => $block){
+				//print("Block page: ".$block["page"].". Current Page:".$currentpage);
+				if ($key != "action" && $key != "pid" && $key != "updatetime" && $key != "currentpage"){
+					if ($currentpage["page"] == $block["page"]){
+						$row = 
+							$block["name"] . ", " .
+							$block["time"] . ", " .
+							$block["clicks"] . "\n";
+							
+						$file = fopen($filepath, "a") or die("Can't open file!");
+						fwrite($file, $row);
+						fclose($file);
+					}
 				}
 			}
-		}
-		//write row to file
 	}
-}
+//}
 
 ?>

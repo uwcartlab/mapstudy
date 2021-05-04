@@ -217,7 +217,7 @@ if (isset($dbtype, $dbhost, $dbport, $dbname, $dbuser, $dbpassword)){
 }
 
 //e-mail data if e-mail is set up
-if (isset($smtphost, $smtpport, $euser, $epass, $toaddr, $subject, $message) && $post_data["action"] == "submit"){
+if ($post_data["action"] == "submit"){
 	//WRITE FILE
 	//variables of great social and political import
 	$pid = $post_data["pid"]["value"];
@@ -243,39 +243,40 @@ if (isset($smtphost, $smtpport, $euser, $epass, $toaddr, $subject, $message) && 
 	$file = fopen($filepath, "w") or die("Can't open file!");
 	fwrite($file, $csv);
 	fclose($file);
-
-	//SEND E-MAIL
-	//path to participant interactions file
-	$ipath = "../participants/p".$pid."_interactions.csv";
-	$spath = "../participants/p".$pid."_story.csv";
-	//name of MapStudy app directory
-	$appdir = ucfirst(array_pop(explode('\\', dirname(getcwd()))));
-	echo $appdir;
-	//use PHPMailer class to build e-mail
-	$mail = new PHPMailer;
-	$mail->SMTPDebug = 3;
-	$mail->isSMTP();
-	$mail->Host = $smtphost;
-	$mail->SMTPAuth = true;
-	$mail->Username = $euser;
-	$mail->Password = $epass;
-	$mail->SMTPSecure = 'tls';
-	$mail->Port = $smtpport;
-	$mail->setFrom($euser, $appdir . ' MapStudy Application');
-	$mail->addAddress($toaddr);
-	$mail->addAttachment($filepath);
-	if (file_exists($ipath)){
-		$mail->addAttachment($ipath);
-	}
-	if (file_exists($spath)){
-		$mail->addAttachment($spath);
-	}
-	$mail->isHTML(true);
-	$mail->Subject = $subject;
-	$mail->Body = $message;
-	//send e-mail
-	if(!$mail->send()){
-		echo 'Mailer error: ' . $mail->ErrorInfo;
+	if (isset($smtphost, $smtpport, $euser, $epass, $toaddr, $subject, $message)){ 
+		//SEND E-MAIL
+		//path to participant interactions file
+		$ipath = "../participants/p".$pid."_interactions.csv";
+		$spath = "../participants/p".$pid."_story.csv";
+		//name of MapStudy app directory
+		$appdir = ucfirst(array_pop(explode('\\', dirname(getcwd()))));
+		echo $appdir;
+		//use PHPMailer class to build e-mail
+		$mail = new PHPMailer;
+		$mail->SMTPDebug = 3;
+		$mail->isSMTP();
+		$mail->Host = $smtphost;
+		$mail->SMTPAuth = true;
+		$mail->Username = $euser;
+		$mail->Password = $epass;
+		$mail->SMTPSecure = 'tls';
+		$mail->Port = $smtpport;
+		$mail->setFrom($euser, $appdir . ' MapStudy Application');
+		$mail->addAddress($toaddr);
+		$mail->addAttachment($filepath);
+		if (file_exists($ipath)){
+			$mail->addAttachment($ipath);
+		}
+		if (file_exists($spath)){
+			$mail->addAttachment($spath);
+		}
+		$mail->isHTML(true);
+		$mail->Subject = $subject;
+		$mail->Body = $message;
+		//send e-mail
+		if(!$mail->send()){
+			echo 'Mailer error: ' . $mail->ErrorInfo;
+		}
 	}
 }
 
