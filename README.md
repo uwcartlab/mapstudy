@@ -1,4 +1,4 @@
-# <img src="mapstudy.png"> MapStudy
+# <img src="img/logo.png"> MapStudy
 
 ## **Latest stable development version ** 
 
@@ -12,9 +12,19 @@ The MapStudy framework is currently in Version 1.0.
 
 ## Can I have a preview please?
 
-To see a demo app created with the MapStudy framework, [click here](https://uwcartlab.github.io/mapstudy/).
+To see a demo app created with the MapStudy framework, [click here](https://geography.wisc.edu/cartography/mapstudy/demo/).
 
 To access the setup application (which has a live preview feature), [click here](https://geography.wisc.edu/cartography/mapstudy/setup/)
+
+## Downloads
+
+**Application**
+
+Blank Mapstudy template (no config files included): [click here](https://geography.wisc.edu/cartography/mapstudy/mapstudy.zip).
+
+**Config Files**
+
+Demo app: [click here](https://geography.wisc.edu/cartography/mapstudy/demo.zip)
 
 ## Documentation - Version 1.0
 
