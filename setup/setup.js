@@ -36,7 +36,7 @@ var PageView = Backbone.View.extend({
 		"click .addpage": "addpage",
 		"click .addDataLayer": "addDataLayer",
 		"click .addSet": "addSet",
-		"change select[name=library]": "setLibrary",
+		"change .library": "setLibrary",
 		"change .i-checkbox": "toggleInteraction",
 		"change .fullpage": "toggleMaponpage",
 		"change .story": "toggleStory",
@@ -142,6 +142,22 @@ var PageView = Backbone.View.extend({
 		//set map options
 		var mapOptionsTemplate = _.template( $('#'+library+"-map-options-template").html() );
 		this.$el.find('.map-options-inputs').html(mapOptionsTemplate({pagenum: this.model.get('pagenum')}));
+
+		var display = $(".baseLayers").css("display");
+
+		if (library != 'Leaflet'){
+			$(".baseLayers").css("display", "none");
+			$(".dataLayers").css("display", "none");
+			$(".interactions").css("display", "none");
+			$(".map-header").css("display", "none");
+		}
+		else {
+			$(".baseLayers").css("display", "block");
+			$(".dataLayers").css("display", "block");
+			$(".interactions").css("display", "block");
+			$(".map-header").css("display", "block");
+
+		}
 
 		this.setInteractionOptions();
 	},

@@ -425,32 +425,19 @@
                         <div id="m-section-<%= pagenum %>-map" class="hideonno">
                             <div class="mapOptions q">
                                 <p>
-                                    Map library: <select name="map.pages.<%= pagenum %>.library">
+                                    Map library: <select class="library" name="map.pages.<%= pagenum %>.library">
                                         <option value="Leaflet">Leaflet</option>
-                                        <option disabled>More coming soon...</option>
+                                        <option value="image">Image</option>
+                                        <option value="iframe">Iframe</option>
                                     </select>
-                                </p>
-                                
-                                <p>
-                                    Include a map legend? <select name="map.pages.<%= pagenum %>.mapOptions.legend">
-                                        <option value="true">yes</option>
-                                        <option value="false">no</option>
-                                    </select>
-                                </p>
-
-                                <p class="q resetButton">
-                                    Include a reset button? <select class="bdd no resetSelect" name="map.pages.<%= pagenum %>.mapOptions.resetButton"></select>
-                                </p>
-                            
-                                <p class="nomargin"><a class="ext" href="http://leafletjs.com/reference.html#map-options" target="_blank">Map Options</a>:
                                 </p>
                                 <div class="map-options-inputs"></div>
                             </div>
                             
-                            <h3 class="nomargin">Base Layers</h3>
+                            <h3 class="map-header nomargin">Base Layers</h3>
                             <div class="baseLayers q"></div>
                             
-                            <h3 class="nomargin">Data Layers</h3>
+                            <h3 class="map-header nomargin">Data Layers</h3>
                             <div class="dataLayers q">
                                 <button type="button" class="addlayer addDataLayer addbutton">
                                     <span class="ar">+</span>
@@ -458,7 +445,7 @@
                                 </button>
                             </div>
                             
-                            <h3 class="nomargin">Interactions</h3>
+                            <h3 class="map-header nomargin">Interactions</h3>
                             <div class="interactions q">
                                 <div>
                                     <p class="zoom-p nomargin">
@@ -770,7 +757,22 @@
 
                 <!--map options for each map library-->
 
-                <script type="text/template" id="Leaflet-map-options-template">
+                <script type="text/template" id="Leaflet-map-options-template">                             
+                    <p>
+                        Include a map legend? <select name="map.pages.<%= pagenum %>.mapOptions.legend">
+                            <option value="true">yes</option>
+                            <option value="false">no</option>
+                        </select>
+                    </p>
+
+                    <p class="q resetButton">
+                        Include a reset button? <select class="bdd no resetSelect" name="map.pages.<%= pagenum %>.mapOptions.resetButton">
+                            <option value="true">yes</option>
+                            <option value="false" selected>no</option>
+                        </select>
+                    </p>
+                
+                    <p class="nomargin"><a class="ext" href="http://leafletjs.com/reference.html#map-options" target="_blank">Map Options</a>:</p>
                     Refer to the documentation at the above link for explanations of the options below.
                     <table>
                     <tr class="Leaflet-mapOptions-center">
@@ -803,6 +805,13 @@
                     <table>
                 </script>
 
+                <script type="text/template" id="image-map-options-template">
+                    <p>Image URL: <input type="text" name="map.pages.<%= pagenum %>.source"></p>
+                </script>
+
+                <script type="text/template" id="iframe-map-options-template">
+                    <p>External URL: <input type="text" name="map.pages.<%= pagenum %>.source"></p>
+                </script>
 
                 <!--universal baseLayer properties-->
 
@@ -814,8 +823,8 @@
                         <td class="l-align" style="width: 84px"><a class="ext sourcelink" target="_blank">Source</a>:</td>
                         <td class="l-align" style="width: 150px"><select class="layer-source-select">
                             <option value="url">URL</option>
-                            <option value="provider-name">Provider name</option>
-                            <option value="postgis">PostGIS table</option>
+                            <!--<option value="provider-name">Provider name</option>
+                            <option value="postgis">PostGIS table</option>-->
                         </select></td>
                         <td class="l-align"><input type="text" class="layer-source-input fullwidth" name="map.pages.<%= pagenum %>.baseLayers.<%= i %>.source"></input></td>
                     </tr>
