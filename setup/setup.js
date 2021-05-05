@@ -106,15 +106,15 @@ var PageView = Backbone.View.extend({
 		$('#page-'+this.model.get('pagenum')+' .set-buttons').find('input[type=hidden]').val("")
 		if (e.target.value == "true"){
 			$('#q-section-' + this.model.get('pagenum')).css("display","none");
-
-			//$('.input-yn').val("false").trigger("change");
+			$('#q-section-' + this.model.get('pagenum'));
+			$('#page-'+this.model.get('pagenum')).find('.input-yn').val("false").trigger("change");
 			var curStoryBlocks = $('#s-section-' + this.model.get('pagenum') + '-story').find('.story-blocks');
 			if (curStoryBlocks.length == 0){
 				createStorySet(this.model.get('pagenum'), 0);	
 			}
 		} else {
 			$('.q-section').css("display","block");
-			//$('.input-yn').val("true").trigger("change");
+			$('#page-'+this.model.get('pagenum')).find('.input-yn').val("true").trigger("change");
 		}
 	},
 	toggleResetButton: function(e){
@@ -146,16 +146,16 @@ var PageView = Backbone.View.extend({
 		var display = $(".baseLayers").css("display");
 
 		if (library != 'Leaflet'){
-			$(".baseLayers").css("display", "none");
-			$(".dataLayers").css("display", "none");
-			$(".interactions").css("display", "none");
-			$(".map-header").css("display", "none");
+			this.$el.find(".baseLayers").css("display", "none");
+			this.$el.find(".dataLayers").css("display", "none");
+			this.$el.find(".interactions").css("display", "none");
+			this.$el.find(".map-header").css("display", "none");
 		}
 		else {
-			$(".baseLayers").css("display", "block");
-			$(".dataLayers").css("display", "block");
-			$(".interactions").css("display", "block");
-			$(".map-header").css("display", "block");
+			this.$el.find(".baseLayers").css("display", "block");
+			this.$el.find(".dataLayers").css("display", "block");
+			this.$el.find(".interactions").css("display", "block");
+			this.$el.find(".map-header").css("display", "block");
 
 		}
 
@@ -1199,9 +1199,25 @@ var OptionItemViews = {
 };
 
 function createPage(pagenum){
-	console.log("creating page" + pagenum);
 	totalPages+=1;
+
+	if (pagenum < totalPages){
+		pagenum = totalPages
+		/*var num = 0;
+		$('.page').each(function(){
+			num++;
+			if (num >= pagenum){
+				console.log(num + 1)
+				$(this).attr('id', "page-"+(num+1));
+				$(this).find('.pagenum').html((num + 1));
+			}
+		});*/
+	}
+
+	console.log("creating page" + pagenum);
+
 	var pageModel = new PageModel();
+
 	pageModel.set('pagenum', pagenum);
 	pageModels[`page${pagenum}`] = pageModel;
 	var pageView = new PageView({model: pageModels[`page${pagenum}`]});
@@ -1741,6 +1757,7 @@ function livePreview(step){
 	readForm(step);
 	//stringify the data
 	var postData = stringify();
+	console.log(postData)
 	postData.operation = 'preview';
 	//callback to trigger links to view files
 	function callback(dirname){
@@ -2230,13 +2247,24 @@ function navigation(){
 
 	//preview app on button click
 	$('#preview').click(function(){
-		livePreview(steps[step]);
+		steps.forEach(function(currentStep){
+			readForm(currentStep);
+		})
+		livePreview(steps);
 	});
 
 	$('#upload input').on("change", function(){
 		if(userClicks>3) alert("Please note you must start with a clean setup form when uploading configuration files.");
 		uploadConfig(this);
 	});	
+
+	//save zip file of current code to edit later
+	$('#savefiles').click(function(){
+		steps.forEach(function(currentStep){
+			readForm(currentStep);
+		})
+		makeFiles();
+	});
 
 };
 
