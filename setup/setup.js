@@ -62,7 +62,44 @@ var PageView = Backbone.View.extend({
 		});
 	},
 	addpage: function(){
-		createPage(this.model.get('pagenum')+1);
+		var pagenum = this.model.get('pagenum');
+		if (pagenum < totalPages){
+			var num = 0;
+			$('.page').each(function(){
+				num++;
+				if (this.id[this.id.length - 1] > pagenum){
+					var view = $(this).backboneView(),
+						newPage = num + 1;
+					view.model.set('pagenum',newPage);	
+					
+					view.$el.attr('id', 'page-' + newPage);
+					view.$el.find("[name*='pages." + num + "']").each(function(){
+						var name = $(this).attr("name"),
+							replace = new RegExp("pages." + num, "g"),
+							newName = name.replace(replace, "pages." + newPage);
+
+						$(this).attr("name", newName);
+					});
+
+					view.$el.find("div").each(function(){						
+						var id = $(this).attr("id");
+						
+						if (id){
+							page = new RegExp("page-" + num, "g"),
+							section = new RegExp("section-" + num, "g"),
+							newId = id.replace(page, "page-" + newPage).replace(section, "section-" + newPage);
+
+							$(this).attr("id", newId);
+						}
+					});
+
+					view.$el.find("input[name*='pages." + newPage + ".page']").attr("value",newPage);
+					view.$el.find('.pagenum').html(newPage);	
+					
+				}
+			});
+		}
+		createPage(pagenum+1);
 	},
 	setInteractionOptions: function(){
 		var loggingTemplate = _.template( $('#interaction-logging-template').html() ),
@@ -174,7 +211,12 @@ var PageView = Backbone.View.extend({
 		this.$el.html(this.template({pagenum: pagenum}));
 
 		//add page div to page container
-		$('#page-container').append(this.$el[0]);
+		if (pagenum < totalPages){
+			$("#page-" + (pagenum-1)).after(this.$el[0])
+		}
+		else{
+			$('#page-container').append(this.$el[0]);
+		}
 
 		//add initial base layer options
 		createLayer(pagenum,"baseLayer", 0);
@@ -1201,25 +1243,12 @@ var OptionItemViews = {
 function createPage(pagenum){
 	totalPages+=1;
 
-	if (pagenum < totalPages){
-		pagenum = totalPages
-		/*var num = 0;
-		$('.page').each(function(){
-			num++;
-			if (num >= pagenum){
-				console.log(num + 1)
-				$(this).attr('id', "page-"+(num+1));
-				$(this).find('.pagenum').html((num + 1));
-			}
-		});*/
-	}
-
 	console.log("creating page" + pagenum);
 
 	var pageModel = new PageModel();
 
 	pageModel.set('pagenum', pagenum);
-	pageModels[`page${pagenum}`] = pageModel;
+	pageModels[`page${pagenum}`] = pageModel;     
 	var pageView = new PageView({model: pageModels[`page${pagenum}`]});
 	var page = pageView.render();
 };
@@ -1522,6 +1551,76 @@ function createCondition(conditionnum,conditionPages){
 	return conditionView;
 };
 
+//select view by element 
+// Proxy the original Backbone.View setElement method:
+    // See: http://backbonejs.org/#View-setElement
+    var backboneSetElementOriginal = Backbone.View.prototype.setElement;
+
+    Backbone.View.prototype.setElement = function(element) {
+        if (this.el != element) {
+            $(this.el).backboneView('unlink');                    
+        }
+
+        $(element).backboneView(this);    
+
+        return backboneSetElementOriginal.apply(this, arguments);
+    };
+    // Create a custom selector to search for the presence of a 'backboneView' data entry:
+    // This avoids a dependency on a data selector plugin...
+    $.expr[':'].backboneView = function(element, intStackIndex, arrProperties, arrNodeStack) {
+        return $(element).data('backboneView') !== undefined;        
+    };
+    // Plugin internal functions:
+    var registerViewToElement = function($el, view) {
+        $el.data('backboneView', view);
+    };
+    var getClosestViewFromElement = function($el, viewType) {
+        var ret = null;
+
+        viewType = viewType || Backbone.View;
+
+        while ($el.length) {
+            $el = $el.closest(':backboneView');
+            ret = $el.length ? $el.data('backboneView') : null;
+
+            if (ret instanceof viewType) {
+                break;
+            }
+            else {
+                $el = $el.parent();
+            }           
+        }
+
+        return ret;                
+    };
+
+    // Extra methods:
+    var methods = {
+
+        unlink: function($el) {
+            $el.removeData('backboneView');        
+        }
+
+    };
+
+    // Plugin:
+    $.fn.backboneView = function() {
+        var ret = this;
+        var args = Array.prototype.slice.call(arguments, 0);
+
+        if ($.isFunction(methods[args[0]])) {
+            methods[args[0]](this);                        
+        }
+        else if (args[0] && args[0] instanceof Backbone.View) {
+            registerViewToElement(this.first(), args[0]);                
+        }
+        else {
+            ret = getClosestViewFromElement(this.first(), args[0]);
+        }
+
+        return ret;        
+    }        
+
 /****************** ALL FORMS ******************/
 
 function createBooleanDropdown(select, toggleAll){
@@ -1698,6 +1797,7 @@ function stringify(){
 			postData[filename] = makeJSON(allData[filename]);
 		};
 	};
+	console.log(postData)
 	return postData;
 };
 
@@ -1734,7 +1834,6 @@ function viewCode(step){
 	readForm(step);
 	//stringify the data
 	var postData = stringify();
-	console.log(postData);
 	postData.operation = 'viewcode';
 	//callback to trigger links to view files
 	function callback(dirname){
@@ -2237,6 +2336,50 @@ function navigation(){
 	$('button[name=back]').click(function(){
 		prevStep = steps[step];
 		step--;
+		changeStep(prevStep, steps[step]);
+	});
+
+	//go to the "styles" step directly
+	$('button[name=styles]').click(function(){
+		prevStep = steps[step];
+		steps.forEach(function(d, i){
+			if (steps[i] == "styles"){
+				step = i;
+			}
+		});
+		changeStep(prevStep, steps[step]);
+	});
+
+	//go to the "pages" step directly
+	$('button[name=pages]').click(function(){
+		prevStep = steps[step];
+		steps.forEach(function(d, i){
+			if (steps[i] == "pages"){
+				step = i;
+			}
+		});
+		changeStep(prevStep, steps[step]);
+	});
+
+	//go to the "conditions" step directly
+	$('button[name=conditions]').click(function(){
+		prevStep = steps[step];
+		steps.forEach(function(d, i){
+			if (steps[i] == "conditions"){
+				step = i;
+			}
+		});
+		changeStep(prevStep, steps[step]);
+	});
+
+	//go to the "server" step directly
+	$('button[name=server]').click(function(){
+		prevStep = steps[step];
+		steps.forEach(function(d, i){
+			if (steps[i] == "param"){
+				step = i;
+			}
+		});
 		changeStep(prevStep, steps[step]);
 	});
 

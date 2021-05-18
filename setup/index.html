@@ -353,6 +353,11 @@
 
                 <div class="buttons">
                     <button name="next" type="button">Next Step <img src="../img/next.png"></button>
+                    <br/>
+                    <button name="styles" type="button">Interface</button>
+                    <button name="pages" type="button">Pages</button>
+                    <button name="conditions" type="button">Conditions</button>
+                    <button name="server" type="button">Server</button>
                 </div>
             </form>
             
@@ -424,6 +429,12 @@
                         <p>Include a map on this page? <select class="bdd yes maponpage"></select></p>
                         <input type="hidden" name="map.pages.<%= pagenum %>.page" value="<%= pagenum %>">
                         <div id="m-section-<%= pagenum %>-map" class="hideonno">
+                            <p class="map-orientation nomargin">Orientation
+                                <select class="library" name="map.pages.<%= pagenum %>.orientation">
+                                    <option value="left">Left</option>
+                                    <option value="right">Right</option>
+                                </select>
+                            </p>
                             <div class="mapOptions q">
                                 <p>
                                     Map library: <select class="library" name="map.pages.<%= pagenum %>.library">
@@ -1300,6 +1311,11 @@
                 <div class="buttons">
                     <button name="back" type="button"><img src="../img/back.png"> Back a Step</button>
                     <button name="next" type="button">Next Step <img src="../img/next.png"></button>
+                    <br/>
+                    <button name="styles" type="button">Interface</button>
+                    <button name="pages" type="button">Pages</button>
+                    <button name="conditions" type="button">Conditions</button>
+                    <button name="server" type="button">Server</button>
                 </div>
             </form>
             
@@ -1384,6 +1400,11 @@
                 <div class="buttons">
                     <button name="back" type="button"><img src="../img/back.png"> Back a Step</button>
                     <button name="next" type="button">Next Step <img src="../img/next.png"></button>
+                    <br/>
+                    <button name="styles" type="button">Interface</button>
+                    <button name="pages" type="button">Pages</button>
+                    <button name="conditions" type="button">Conditions</button>
+                    <button name="server" type="button">Server</button>
                 </div>
             </form>
             
@@ -1517,6 +1538,11 @@
                 <div class="buttons">
                     <button name="back" type="button"><img src="../img/back.png"> Back a Step</button>
                     <button name="next" type="button">Finish <img src="../img/finish.png"></button>
+                    <br/>
+                    <button name="styles" type="button">Interface</button>
+                    <button name="pages" type="button">Pages</button>
+                    <button name="conditions" type="button">Conditions</button>
+                    <button name="server" type="button">Server</button>
                 </div>
             </form>
 
