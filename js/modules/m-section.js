@@ -3589,8 +3589,19 @@ function setMapView(options){
 			$('#m').css('width',"98%").addClass('p' + (_page + 1) + 'map');
 		} else {
 			$('#m').css('width',"45%");
+			var questions = $('#q').detach();
+
+			var orientation = page.attributes.orientation == 'right' ? 'right' : 'left';
+			if (orientation == 'right'){
+				$('#t').before(questions);
+			}
+			else{
+				$('#s').after(questions);
+			}
 		}
+
 	}
+
 	var mapView;
 
 	/*_.each(page.attributes.maps, addMap, this);
