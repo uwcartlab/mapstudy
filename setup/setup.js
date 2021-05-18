@@ -56,8 +56,38 @@ var PageView = Backbone.View.extend({
 			var pagenum = 0;
 			$('.page').each(function(){
 				pagenum++;
+
 				$(this).attr('id', "page-"+pagenum);
 				$(this).find('.pagenum').html(pagenum);
+
+				var view = $(this).backboneView(),
+					oldPage = view.model.get('pagenum');
+
+					view.model.set('pagenum',pagenum);	
+					
+					view.$el.attr('id', 'page-' + pagenum);
+					view.$el.find("[name*='pages." + oldPage + "']").each(function(){
+						var name = $(this).attr("name"),
+							replace = new RegExp("pages." + oldPage, "g"),
+							newName = name.replace(replace, "pages." + pagenum);
+
+						$(this).attr("name", newName);
+					});
+
+					view.$el.find("div").each(function(){						
+						var id = $(this).attr("id");
+						
+						if (id){
+							page = new RegExp("page-" + oldPage, "g"),
+							section = new RegExp("section-" + oldPage, "g"),
+							newId = id.replace(page, "page-" + pagenum).replace(section, "section-" + pagenum);
+
+							$(this).attr("id", newId);
+						}
+					});
+
+					view.$el.find("input[name*='pages." + pagenum + ".page']").attr("value",pagenum);
+					view.$el.find('.pagenum').html(pagenum);	
 			});
 		});
 	},
