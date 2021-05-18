@@ -1,6 +1,7 @@
 {
 	"pages": [
 		{
+			"story": false,
 			"page": 1,
 			"fullpage": true,
 			"sets": [
@@ -9,7 +10,7 @@
 						{
 							"title": "Page 1: Welcome to Mapstudy",
 							"ask": "The following pages serve as a tutorial and a showcase of Mapstudy's functionality. Each page will contain examples of the features that Mapstudy offers, as well as explanations of those features.",
-							"description":"This page contains a single set and a single block, with no inputs. The above text is an 'ask' element, and this italicized text is a 'description' element. This page has a single 'next' button."
+							"description": "This page contains a single set and a single block, with no inputs. The above text is an 'ask' element, and this italicized text is a 'description' element. This page has a single 'next' button."
 						}
 					],
 					"buttons": [
@@ -19,6 +20,7 @@
 			]
 		},
 		{
+			"story": false,
 			"page": 2,
 			"fullpage": true,
 			"sets": [
@@ -30,14 +32,15 @@
 						},
 						{
 							"ask": "By checking the box below, you are agreeing to have your answers recorded. All information you provide will remain private and will not be linked to you in any way. ",
-							"input":{
-								"required":true,
-								"type":"checkboxes",
-								"items":[{
-									"text":"I agree",
-									"label":"consent",
-									"value":"yes"
-								}]
+							"input": {
+								"required": true,
+								"type": "checkboxes",
+								"items": [
+									{
+										"text": "I agree",
+										"label": "consent"
+									}
+								]
 							}
 						},
 						{
@@ -51,33 +54,37 @@
 			]
 		},
 		{
+			"story": false,
 			"page": 3,
+			"fullpage": false,
 			"sets": [
 				{
-					"set": 1,
 					"blocks": [
 						{
 							"title": "Page 3, Set 1.",
 							"ask": "Answer the following questions based on interacting with the map to the left, which shows population statistics for counties in coastal Texas, as well as damages from Hurricane Harvey.",
-							"description":"This page contains a map and two sets of questions."
+							"description": "This page contains a map and two sets of questions."
 						},
 						{
 							"title": "Highest Density",
 							"ask": "Which of the counties shown has the highest population density?",
+							"description": "This is an example of a 'text' input, which is a one line text box. Useful for short free-form responses.",
 							"input": {
+								"required": false,
 								"type": "text"
-							},
-							"description":"This is an example of a 'text' input, which is a one line text box. Useful for short free-form responses."
+							}
 						},
 						{
 							"title": "County Comparison",
 							"ask": "Which of the following counties have a population density larger than Nueces County in 2015?",
-							"description":"The 'checkboxes' input allows users to select more than one object of a series of items.",
+							"description": "The 'checkboxes' input allows users to select more than one object of a series of items.",
 							"input": {
+								"required": false,
 								"type": "checkboxes",
 								"items": [
 									{
-										"text": "Harris"
+										"text": "Harris",
+										"label": "p4s1b3i1"
 									},
 									{
 										"text": "Galveston"
@@ -93,12 +100,14 @@
 						},
 						{
 							"ask": "According to the population density of each of the following counties, which do you think would be at the greatest risk :",
-							"description":"The 'rank' gives users the option to rank a series of items.",
+							"description": "The 'rank' gives users the option to rank a series of items.",
 							"input": {
+								"required": false,
 								"type": "rank",
 								"items": [
 									{
-										"text": "Aransas"
+										"text": "Aransas",
+										"label": "p4s1b4i1"
 									},
 									{
 										"text": "Jefferson"
@@ -118,7 +127,6 @@
 					]
 				},
 				{
-					"set": 2,
 					"blocks": [
 						{
 							"title": "Page 3, Set 2.",
@@ -126,19 +134,19 @@
 							"description": "This set showcases some of the multimedia capabilities of mapstudy."
 						},
 						{
-							"ask": "Flooding in Port Arthur, Texas, August 31st, 2017. Photo from the U.S National Guard.",
-							"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Support_during_Hurricane_Harvey_%28TX%29_%2850%29.jpg/640px-Support_during_Hurricane_Harvey_%28TX%29_%2850%29.jpg"
+							"ask": "Flooding in Port Arthur, Texas, August 31st, 2017. Photo from the U.S National Guard."
 						},
 						{
 							"ask": "Satellite view of Hurricane Harvey. Video from NASA",
-							"video": "https://www.youtube.com/embed/WjxZd7fPSVI",
 							"description": "Youtube videos can be directly embedded into a study."
 						},
 						{
-							"title":"County Damages",
+							"title": "County Damages",
 							"ask": "Based on total damages, which of the following counties could benefit the most from additional hurricane protections?",
 							"description": "This is a 'radios' input, which allows for multiple-choice questions.",
 							"input": {
+								"required": false,
+								"autoadvance": false,
 								"type": "radios",
 								"options": [
 									{
@@ -157,10 +165,12 @@
 							}
 						},
 						{
-							"title":"Rainfall",
+							"title": "Rainfall",
 							"ask": "Which county do you think had the most rainfall during Hurricane Harvey?",
-							"description":"The 'dropdown' input allows users to pick an item from a dropdown list. Useful when there is a large number of potential inputs (i.e states or countries). This is also a required question that will automatically advance the page when answered.",
+							"description": "The 'dropdown' input allows users to pick an item from a dropdown list. Useful when there is a large number of potential inputs (i.e states or countries). This is also a required question that will automatically advance the page when answered.",
 							"input": {
+								"required": true,
+								"autoadvance": true,
 								"type": "dropdown",
 								"options": [
 									{
@@ -175,8 +185,7 @@
 									{
 										"text": "Jefferson"
 									}
-								],
-								"autoadvance":true
+								]
 							}
 						}
 					],
@@ -188,6 +197,7 @@
 			]
 		},
 		{
+			"story": false,
 			"page": 4,
 			"fullpage": true,
 			"sets": [
@@ -196,7 +206,7 @@
 						{
 							"title": "Page 4: Storymapping",
 							"ask": "Please read the story on the following page as thoroughly as possible.",
-							"description":"The following page details the new storymapping feature of Mapstudy, along with a count-up timer, which can be used to record how long users are engaging with an individual page. The story in this example uses the martini-glass visual storytelling structure, but a reverse martini-glass structure is also possible."
+							"description": "The following page details the new storymapping feature of Mapstudy, along with a count-up timer, which can be used to record how long users are engaging with an individual page. The story in this example uses the martini-glass visual storytelling structure, but a reverse martini-glass structure is also possible."
 						}
 					],
 					"buttons": [
@@ -207,13 +217,12 @@
 			]
 		},
 		{
-			"page": 5,
-			"story":{
-				"title":"Drought and Wildfires",
-				"background":"img/story/fire.gif",
-				"color":"white",
-				"reverse":false,
-				"float":true
+			"story": {
+				"title": "Drought and Wildfires",
+				"color": "#000000",
+				"background": "img/story/fire.gif",
+				"reverse": false,
+				"float": true
 			},
 			"sets": [
 				{
@@ -231,35 +240,35 @@
 						},
 						{
 							"title": "What will the future bring?",
-							"subtitle":"Land use across the state is changine",
+							"subtitle": "Land use across the state is changine",
 							"image": "img/story/story_block_3.png",
 							"description": "This is the last block in the story, and it will be followed by an interactive map. The interactive map can be placed at either the beginning or end of the story."
 						}
 					],
 					"buttons": [
 						"next"
-					],
-					"timer": {
-						"direction": "up",
-						"starttime": "00:00:00"
-					}
+					]
 				}
-			]
+			],
+			"page": 5,
+			"fullpage": false
 		},
 		{
+			"story": false,
 			"page": 6,
-			"fullpage":true,
+			"fullpage": true,
 			"sets": [
 				{
 					"blocks": [
 						{
 							"title": "Page 6: Comprehension",
-							"description":"Pages 6 and 7 are presented to the user in a random order. This page contains a countdown timer, which will move to the next page as soon as time is up."
+							"description": "Pages 6 and 7 are presented to the user in a random order. This page contains a countdown timer, which will move to the next page as soon as time is up."
 						},
 						{
 							"ask": "In your own words, please summarize the relationship between the Wildland Urban Interface (WUI) and wildfires. Please integrate parts of the visual story into your response.",
-							"description":"The 'paragraph' input creates a text window for users to type longer free-form responses.",
+							"description": "The 'paragraph' input creates a text window for users to type longer free-form responses.",
 							"input": {
+								"required": false,
 								"type": "paragraph"
 							}
 						}
@@ -269,13 +278,10 @@
 						"back"
 					]
 				}
-			],
-			"timer": {
-				"direction": "down",
-				"starttime": "00:01:30"
-			}
+			]
 		},
 		{
+			"story": false,
 			"page": 7,
 			"fullpage": true,
 			"sets": [
@@ -283,16 +289,42 @@
 					"blocks": [
 						{
 							"title": "Page 7: Reactions",
-							"description":"Pages 6 and 7 are presented to the user in a random order."
+							"description": "Pages 6 and 7 are presented to the user in a random order."
 						},
 						{
 							"ask": "Rate the degree in which you agree with the following statements about the visual story on hurricanes in Texas (1 = strongly disagree, 7 = strongly agree)",
-							"description":"This is an input 'matrix', useful for likert tests.",
+							"description": "This is an input 'matrix', useful for likert tests.",
 							"input": {
+								"required": false,
+								"autoadvance": false,
 								"type": "matrix",
+								"options": [
+									{
+										"text": 1
+									},
+									{
+										"text": 2
+									},
+									{
+										"text": 3
+									},
+									{
+										"text": 4
+									},
+									{
+										"text": 5
+									},
+									{
+										"text": 6
+									},
+									{
+										"text": 7
+									}
+								],
 								"items": [
 									{
-										"text": "The visual story excited me"
+										"text": "The visual story excited me",
+										"label": "p8s1b2i1"
 									},
 									{
 										"text": "The visual story bored me"
@@ -315,29 +347,6 @@
 									{
 										"text": "The visual story did not influence my beliefs"
 									}
-								],
-								"options": [
-									{
-										"text": "1"
-									},
-									{
-										"text": "2"
-									},
-									{
-										"text": "3"
-									},
-									{
-										"text": "4"
-									},
-									{
-										"text": "5"
-									},
-									{
-										"text": "6"
-									},
-									{
-										"text": "7"
-									}
 								]
 							}
 						}
@@ -350,6 +359,7 @@
 			]
 		},
 		{
+			"story": false,
 			"page": 8,
 			"fullpage": true,
 			"sets": [
@@ -357,7 +367,7 @@
 					"blocks": [
 						{
 							"title": "Page 8: Conclusion",
-							"description":"You should only include a submit button on the second-to-last page. That way, the user will see a final ending page. If the app is configured to e-mail data, an e-mail will be sent each time the submit button is clicked."
+							"description": "You should only include a submit button on the second-to-last page. That way, the user will see a final ending page. If the app is configured to e-mail data, an e-mail will be sent each time the submit button is clicked."
 						}
 					],
 					"buttons": [
@@ -367,6 +377,7 @@
 			]
 		},
 		{
+			"story": false,
 			"page": 9,
 			"fullpage": true,
 			"sets": [
@@ -374,8 +385,11 @@
 					"blocks": [
 						{
 							"title": "Page 9: Thank you for participating!",
-							"description":"Because this set has no buttons, the participant will not be able to navigate to a different part of the survey."
+							"description": "Because this set has no buttons, the participant will not be able to navigate to a different part of the survey."
 						}
+					],
+					"buttons": [
+						
 					]
 				}
 			]

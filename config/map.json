@@ -1,27 +1,202 @@
 {
 	"pages": [
-		{},
-		{},
+		{
+			"page": 1
+		},
+		{
+			"page": 2
+		},
 		{
 			"page": 3,
 			"library": "Leaflet",
+			"orientation":"right",
+			"mapOptions": {
+				"legend": true,
+				"resetButton": false,
+				"center": [
+					28.061,
+					-96.705
+				],
+				"zoom": 7,
+				"minZoom": 5,
+				"maxZoom": 10,
+				"maxBounds": [
+					[
+						-90,
+						-180
+					],
+					[
+						90,
+						180
+					]
+				]
+			},
+			"baseLayers": [
+				{
+					"name": "Open Street Map",
+					"source": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+					"layerOptions": {
+						"opacity": 0.8,
+						"attribution": "&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
+					}
+				},
+				{
+					"name": "Stamen Toner",
+					"source": "https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.png",
+					"layerOptions": {
+						"opacity": 0.8,
+						"subdomains": "abcd",
+						"attribution": "Map tiles by <a href='http://stamen.com'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a> &mdash; Map data &copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
+					}
+				}
+			],
+			"dataLayers": [
+				{
+					"name": "Population Density",
+					"source": "data/texas-coast-counties.json",
+					"layerOptions": {
+						"fillOpacity": 0.8,
+						"color": "black",
+						"weight": 1,
+						"opacity": 1
+					},
+					"expressedAttribute": "LossPaid",
+					"expressedAttributeDisplay": "Damages in $",
+					"displayAttributes": [
+						"county",
+						"Population",
+						"LossPaid"
+					],
+					"displayAttributesDisplay": [
+						"County",
+						"Density (Ppl./Sq. Mi.)",
+						"Damages in $"
+					],
+					"renderOnLoad": true,
+					"techniques": [
+						{
+							"type": "dot",
+							"values": [
+								
+							],
+							"interval": 1000000,
+							"size": 1
+						},
+						{
+							"type": "proportional symbol",
+							"classification": "unclassed",
+							"values": [
+								
+							],
+							"classes": [
+								0,
+								30
+							],
+							"symbol": "circle"
+						}
+					]
+				},
+				{
+					"name": "Hurricane Damages",
+					"source": "data/texas-coast-counties.json",
+					"layerOptions": {
+						"fillOpacity": 0.8,
+						"color": "white",
+						"weight": 1,
+						"opacity": 1,
+						"fillColor": "black"
+					},
+					"expressedAttribute": "LossPaid",
+					"expressedAttributeDisplay": "Damages in $",
+					"displayAttributes": [
+						"county",
+						"Population",
+						"LossPaid"
+					],
+					"displayAttributesDisplay": [
+						"County",
+						"Density (Ppl./Sq. Mi.)",
+						"Damages in $"
+					],
+					"renderOnLoad": true,
+					"techniques": [
+						{
+							"type": "proportional symbol",
+							"classification": "unclassed",
+							"values": [
+								
+							],
+							"classes": [
+								5,
+								30
+							],
+							"symbol": "circle"
+						},
+						{
+							"type": "choropleth",
+							"classification": "natural breaks",
+							"classes": "Blues.5"
+						}
+					]
+				},
+				{
+					"name": "State Labels",
+					"source": "data/us-states-points.geojson",
+					"layerOptions": {
+						"fillOpacity": 0.8,
+						"color": "white",
+						"weight": 1,
+						"opacity": 1,
+						"fillColor": "white"
+					},
+					"expressedAttribute":"County",
+					"displayAttributes": [
+						"name"
+					],
+					"displayAttributesDisplay": [
+						"County"
+					],
+					"renderOnLoad": false,
+					"techniques": [
+						{
+							"type": "label",
+							"classification": "unclassed",
+							"values": [
+								
+							],
+							"size": 1
+						}
+					]
+				}
+			],
 			"interactions": {
-				"retrieve": {
+				"zoom": {
 					"logging": true,
+					"toggle": false,
 					"interface": {
-						"window": false
+						"touch": true,
+						"scrollWheel": false,
+						"doubleClick": true,
+						"box": true,
+						"keyboard": true,
+						"widget": true
 					}
 				},
 				"pan": {
 					"logging": true,
+					"toggle": false,
 					"interface": {
+						"drag": true,
+						"keyboard": true,
 						"widget": false
 					}
 				},
-				"zoom": {
+				"retrieve": {
 					"logging": true,
+					"toggle": false,
 					"interface": {
-						"scrollWheel": false
+						"popup": true,
+						"window": false
 					}
 				},
 				"overlay": {
@@ -42,218 +217,182 @@
 					"dataLayers": [
 						"Hurricane Damages"
 					],
-					"tool":"slider"
+					"tool": "slider"
+				},
+				"reexpress": {
+					"logging": true,
+					"toggle": true
 				},
 				"resymbolize": {
 					"logging": true,
 					"toggle": true,
-					"dataLayers": [
-						"Population Density"
-					]
+					"reclassify": true,
+					"rescale": true,
+					"recolor": true
 				}
-			},
-			"mapOptions": {
-				"resetButton": false,
-				"center": [28.061,-96.705],
-				"zoom": 7,
-				"minZoom": 5,
-				"maxZoom": 10
-			},
-			"baseLayers": [{
-				"name": "Open Street Map",
-				"source": "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
-				"layerOptions": {
-					"opacity":0.8,
-					"attribution": "&copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
-					}
-			},
-			{
-				"name": "Stamen Toner",
-				"source": "https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.png",
-				"layerOptions": {
-					"opacity":0.8,
-					"subdomains": "abcd",
-					"attribution": "Map tiles by <a href='http://stamen.com'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a> &mdash; Map data &copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
-					}
-			}],
-			"dataLayers": [
-			{
-				"name": "Population Density",
-				"source": "data/texas-coast-counties.json",
-				"renderOnLoad": true,
-				"expressedAttribute": "LossPaid",
-				"expressedAttributeDisplay": "Damages in $",
-				"displayAttributes":["county","Population","LossPaid"],
-				"displayAttributesDisplay":["County","Density (Ppl./Sq. Mi.)","Damages in $"],
-				"layerOptions": {
-					"fillOpacity": 0.8,
-					"color": "black",
-					"weight": 1,
-					"opacity": 1
-				},
-				"layerHoverOptions": {
-					"fillOpacity": 1,
-					"color": "black"
-				},
-				"techniques": [
-					{
-					"type": "choropleth",
-					"classification": "quantile",
-					"classes":"Blues.5"
-				},
-				{
-					"type": "proportional symbol",
-					"classification": "unclassed",
-					"classes":[0,30]
-				}]
-			},
-			{
-				"name": "Hurricane Damages",
-				"source": "data/texas-coast-counties.json",
-				"renderOnLoad": true,
-				"expressedAttribute": "LossPaid",
-				"expressedAttributeDisplay": "Damages in $",
-				"displayAttributes":["county","Population","LossPaid"],
-				"displayAttributesDisplay":["County","Density (Ppl./Sq. Mi.)","Damages in $"],
-				"layerOptions": {
-					"fillOpacity": 0.8,
-					"color": "white",
-					"weight": 1,
-					"opacity": 1,
-					"fillColor": "black"
-				},
-				"techniques": [{
-					"type": "proportional symbol",
-					"classification": "unclassed",
-					"classes": [5,30]
-				}]
-			},
-			{
-				"name": "State Labels",
-				"source": "data/us-states-points.geojson",
-				"renderOnLoad": false,
-				"displayAttributes":["name"],
-				"displayAttributesDisplay":["County"],
-				"layerOptions": {
-					"fillOpacity": 0.8,
-					"color": "white",
-					"weight": 1,
-					"opacity": 1,
-					"fillColor": "white"
-				},
-				"techniques": [{
-					"type": "label",
-					"classification": "unclassed",
-					"classes": [5,30],
-					"showOnLegend":false
-				}]
-			}]
+			}
 		},
-		{},
 		{
+			"page": 4
+		},
+		{
+			"story": true,
 			"page": 5,
 			"library": "Leaflet",
-			"story":true,
+			"mapOptions": {
+				"legend": true,
+				"resetButton": false,
+				"center": [
+					37.379,
+					-120.806
+				],
+				"zoom": 6,
+				"minZoom": 5,
+				"maxZoom": 10,
+				"maxBounds": [
+					[
+						-90,
+						-180
+					],
+					[
+						90,
+						180
+					]
+				]
+			},
+			"baseLayers": [
+				{
+					"name": "ESRI World Imagery",
+					"source": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+					"layerOptions": {
+						"opacity": 0.4,
+						"attribution": "Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community"
+					}
+				},
+				{
+					"name": "Stamen Toner",
+					"source": "https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.png",
+					"layerOptions": {
+						"opacity": 0.8,
+						"subdomains": "abcd",
+						"attribution": "Map tiles by <a href='http://stamen.com'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a> &mdash; Map data &copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
+					}
+				}
+			],
+			"dataLayers": [
+				{
+					"name": "Wildfire Damages",
+					"source": "data/ca-counties.json",
+					"layerOptions": {
+						"fillOpacity": 1,
+						"fillColor": "black",
+						"color": "white",
+						"weight": 1,
+						"opacity": 1
+					},
+					"expressedAttribute": "Cost_total",
+					"expressedAttributeDisplay": "Damages in $",
+					"displayAttributes": [
+						"NAME",
+						"Cost_total"
+					],
+					"displayAttributesDisplay": [
+						"County",
+						"Damages in $"
+					],
+					"renderOnLoad": true,
+					"techniques": [
+						{
+							"type": "proportional symbol",
+							"classification": "unclassed",
+							"values": [
+								
+							],
+							"classes": [
+								5,
+								30
+							],
+							"symbol": "circle"
+						},
+						{
+							"type": "heat",
+							"values": [
+								
+							],
+							"size": 0.5
+						},
+						{
+							"type": "choropleth",
+							"classification": "natural breaks",
+							"values": [
+								
+							],
+							"classes": "Oranges.5"
+						}
+					]
+				}
+			],
 			"interactions": {
-				"retrieve": {
+				"zoom": {
 					"logging": true,
+					"toggle": false,
 					"interface": {
-						"window": false
+						"touch": true,
+						"scrollWheel": false,
+						"doubleClick": true,
+						"box": true,
+						"keyboard": true,
+						"widget": true
 					}
 				},
 				"pan": {
 					"logging": true,
+					"toggle": false,
 					"interface": {
+						"drag": true,
+						"keyboard": true,
 						"widget": false
 					}
 				},
-				"zoom": {
+				"retrieve": {
 					"logging": true,
+					"toggle": false,
 					"interface": {
-						"scrollWheel": false
+						"popup": true,
+						"window": false
 					}
 				},
 				"overlay": {
 					"logging": true,
 					"toggle": true,
 					"dataLayers": [
-						"Wildfire Damages",
-						"Counties"
+						"Wildfire Damages"
 					]
 				},
 				"search": {
-					"attributes": ["NAME"],
-					"logging": true,
-					"toggle": true
-				},
-				"reexpress": {
 					"logging": true,
 					"toggle": true,
 					"dataLayers": [
-						"Wildfire Damages"
+						
 					]
+				},
+				"reexpress": {
+					"logging": true,
+					"toggle": true
 				}
-			},
-			"mapOptions": {
-				"resetButton": false,
-				"center": [37.379,-120.806],
-				"zoom": 6,
-				"minZoom": 5,
-				"maxZoom": 10
-			},
-			"baseLayers": [{
-				"name": "ESRI World Imagery",
-				"source": "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-				"layerOptions": {
-					"opacity":0.4,
-					"attribution": "Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community"
-					}
-			},
-			{
-				"name": "Stamen Toner",
-				"source": "https://stamen-tiles-{s}.a.ssl.fastly.net/toner-lite/{z}/{x}/{y}{r}.png",
-				"layerOptions": {
-					"opacity":0.8,
-					"subdomains": "abcd",
-					"attribution": "Map tiles by <a href='http://stamen.com'>Stamen Design</a>, <a href='http://creativecommons.org/licenses/by/3.0'>CC BY 3.0</a> &mdash; Map data &copy; <a href='https://www.openstreetmap.org/copyright'>OpenStreetMap</a> contributors"
-					}
-			}],
-			"dataLayers": [
-				{
-					"name": "Wildfire Damages",
-					"source": "data/ca-counties.json",
-					"renderOnLoad": true,
-					"expressedAttribute": "Cost_total",
-					"expressedAttributeDisplay": "Damages in $",
-					"displayAttributes":["NAME","Cost_total"],
-					"displayAttributesDisplay":["County","Damages in $"],
-					"layerOptions": {
-						"fillOpacity": 1,
-						"fillColor":"black",
-						"color": "white",
-						"weight": 1,
-						"opacity": 1
-					},
-					"techniques": [
-					{
-						"type": "proportional symbol",
-						"classification": "unclassed",
-						"classes": [5,30]
-					},
-					{
-					"type": "heat",
-					"size": 0.5
-					},
-					{
-						"type": "choropleth",
-						"classification": "natural breaks",
-						"classes": "Oranges.5"
-				}]
-			}]
+			}
 		},
-		{},
-		{},
-		{},
-		{}
+		{
+			"page": 6
+		},
+		{
+			"page": 7
+		},
+		{
+			"page": 8
+		},
+		{
+			"page": 9
+		}
 	]
 }
