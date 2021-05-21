@@ -57,79 +57,63 @@ var PageView = Backbone.View.extend({
 			$('.page').each(function(){
 				pagenum++;
 
-				$(this).attr('id', "page-"+pagenum);
-				$(this).find('.pagenum').html(pagenum);
-
 				var view = $(this).backboneView(),
 					oldPage = view.model.get('pagenum');
 
-					view.model.set('pagenum',pagenum);	
-					
-					view.$el.attr('id', 'page-' + pagenum);
-					view.$el.find("[name*='pages." + oldPage + "']").each(function(){
-						var name = $(this).attr("name"),
-							replace = new RegExp("pages." + oldPage, "g"),
-							newName = name.replace(replace, "pages." + pagenum);
-
-						$(this).attr("name", newName);
-					});
-
-					view.$el.find("div").each(function(){						
-						var id = $(this).attr("id");
-						
-						if (id){
-							page = new RegExp("page-" + oldPage, "g"),
-							section = new RegExp("section-" + oldPage, "g"),
-							newId = id.replace(page, "page-" + pagenum).replace(section, "section-" + pagenum);
-
-							$(this).attr("id", newId);
-						}
-					});
-
-					view.$el.find("input[name*='pages." + pagenum + ".page']").attr("value",pagenum);
-					view.$el.find('.pagenum').html(pagenum);	
+				view.resetPages(oldPage, pagenum);
 			});
 		});
 	},
 	addpage: function(){
 		var pagenum = this.model.get('pagenum');
+		//check if page will be added between existing pages
 		if (pagenum < totalPages){
-			var num = 0;
+			var oldPage = 0;
 			$('.page').each(function(){
-				num++;
+				oldPage++;
+				//reset page numbering of pages after the added page
 				if (this.id[this.id.length - 1] > pagenum){
 					var view = $(this).backboneView(),
-						newPage = num + 1;
-					view.model.set('pagenum',newPage);	
-					
-					view.$el.attr('id', 'page-' + newPage);
-					view.$el.find("[name*='pages." + num + "']").each(function(){
-						var name = $(this).attr("name"),
-							replace = new RegExp("pages." + num, "g"),
-							newName = name.replace(replace, "pages." + newPage);
+						newPage = oldPage + 1;
 
-						$(this).attr("name", newName);
-					});
-
-					view.$el.find("div").each(function(){						
-						var id = $(this).attr("id");
-						
-						if (id){
-							page = new RegExp("page-" + num, "g"),
-							section = new RegExp("section-" + num, "g"),
-							newId = id.replace(page, "page-" + newPage).replace(section, "section-" + newPage);
-
-							$(this).attr("id", newId);
-						}
-					});
-
-					view.$el.find("input[name*='pages." + newPage + ".page']").attr("value",newPage);
-					view.$el.find('.pagenum').html(newPage);	
-					
+					view.resetPages(oldPage, newPage);
 				}
 			});
 		}
 		createPage(pagenum+1);
+	},
+	resetPages(oldPage, newPage){
+		//function to reset page numbering
+		
+		//set model number to new page number
+		this.model.set('pagenum',newPage);	
+		//set ID to new page number
+		this.$el.attr('id', 'page-' + newPage);
+		//replace instances of old page numbering in html element names 
+		this.$el.find("[name*='pages." + oldPage + "']").each(function(){
+			var name = $(this).attr("name"),
+				replace = new RegExp("pages." + oldPage, "g"),
+				newName = name.replace(replace, "pages." + newPage);
+
+			$(this).attr("name", newName);
+		});
+		//replace instances of old page numbering in div ids
+		this.$el.find("div").each(function(){						
+			var id = $(this).attr("id");
+			
+			if (id){
+				page = new RegExp("page-" + oldPage, "g"),
+				section = new RegExp("section-" + oldPage, "g"),
+				newId = id.replace(page, "page-" + newPage).replace(section, "section-" + newPage);
+
+				$(this).attr("id", newId);
+			}
+		});
+		//set page value to new page
+		this.$el.find("input[name*='pages." + newPage + ".page']").attr("value",newPage);
+		//set display numbers to current display value
+		this.$el.find('.pagenum').html(newPage);	
+					
 	},
 	setInteractionOptions: function(){
 		var loggingTemplate = _.template( $('#interaction-logging-template').html() ),
@@ -884,16 +868,20 @@ var SetView = Backbone.View.extend({
 				$(this).attr('id', 'page-'+pagenum+'-set-'+i);
 				$(this).find('.setnumber').html(i+1);
 				//replace any i character in input/textarea names
+				$(this).find('.block').each(function(){
+					var find = new RegExp("set-" + i+1, "g"),
+						id = $(this).attr('id').replace(find, "set-" + i);
+					
+					$(this).attr('id', id);
+				});
 				$(this).find('input, textarea').each(function(){
 					if (typeof $(this).attr('name') !== 'undefined'){
-						var name = $(this).attr('name').replace(/\[[0-9]\]/g, '['+i+']');
+						var find = new RegExp("sets." + (i+1), "g"),
+							name = $(this).attr('name').replace(find, "sets." + i);
+
 						$(this).attr('name', name);
 					}
 				});
-				//reveal add button if the last set
-				if (i == l-1){
-					$(this).find('.addbutton').show();
-				};
 				//hide remove button if the only set
 				if (l == 1){
 					$(this).find('.removebutton').hide();
@@ -902,11 +890,44 @@ var SetView = Backbone.View.extend({
 		});
 	},
 	addSet: function(){
-		var pagenum = this.model.get('pagenum');
-		this.i = parseInt(this.$el.find('.setnumber').html())-1;
-		this.$el.find('.addset').hide();
-		this.$el.find('.removeset').show();
-		createSet(pagenum,this.i+1);
+		//var pagenum = this.model.get('pagenum');
+		this.i = parseInt(this.$el.find('.setnumber').html());
+		var set = this.i;
+
+		//this.$el.find('.addset').hide();
+		var view = this,
+			pagenum = this.model.get('pagenum'),
+			qsection = $('#q-section-'+pagenum),
+			l = qsection.find('.set').length;
+
+		if (set < l){
+			qsection.find('.set').each(function(i){
+				if (i >= set){
+					$(this).attr('id', 'page-'+pagenum+'-set-'+(i+1));
+					$(this).find('.setnumber').html(i+2);
+					//replace any i character in input/textarea names
+					$(this).find('.block').each(function(){
+						var find = new RegExp("set-" + i, "g"),
+							id = $(this).attr('id').replace(find, "set-" + (i+1));
+						
+						$(this).attr('id', id);
+					});
+					$(this).find('input, textarea').each(function(){
+						if (typeof $(this).attr('name') !== 'undefined'){
+							var find = new RegExp("sets." + i, "g"),
+								name = $(this).attr('name').replace(find, "sets." + (i+1));
+
+							$(this).attr('name', name);
+						}
+					});
+				}
+			});
+		}
+		if (this.i == 1){
+			this.$el.find('.removeset').show();
+		}
+		
+		createSet(pagenum,this.i);
 	},
 	render: function(){
 		//create technique div
@@ -919,8 +940,15 @@ var SetView = Backbone.View.extend({
 
 		this.removeButton();
 
-		//add layer div to layer's sets container
-		$('#page-'+pagenum+' .sets').append(this.el);
+		var l = $('#q-section-'+pagenum).find('.set').length;
+		//add page div to page container
+		if (this.i < l){
+			$('#page-'+pagenum+'-set-'+(this.i-1)).after(this.$el[0])
+		}
+		else{
+			//add layer div to layer's sets container
+			$('#page-'+pagenum+' .sets').append(this.el);
+		}
 
 		//add initial block options
 		createBlock(pagenum,this.i, 0);
@@ -1002,14 +1030,12 @@ var BlockView = Backbone.View.extend({
 				//replace any i character in input/textarea names
 				$(this).find('input, textarea').each(function(){
 					if (typeof $(this).attr('name') !== 'undefined'){
-						var name = $(this).attr('name').replace(/\[[0-9]\]/g, '['+ii+']');
+						var find = new RegExp("blocks." + (ii+1), "g"),
+							name = $(this).attr('name').replace(find, "blocks." + ii);
+
 						$(this).attr('name', name);
 					}
 				});
-				//reveal add button if the last set
-				if (ii == l-1){
-					$(this).find('.addbutton').show();
-				};
 				//hide remove button if the only set
 				if (l == 1){
 					$(this).find('.removebutton').hide();
@@ -1024,12 +1050,35 @@ var BlockView = Backbone.View.extend({
 		};
 	},
 	addBlock: function(){
-		var pagenum = this.model.get('pagenum');
-		this.ii = parseInt(this.$el.find('.blocknumber').html())-1;
-		this.$el.find('.addbutton, .autoadv').hide();
+		var pagenum = this.model.get('pagenum'),
+			set = parseInt(this.$el.find('.setnumber').html()),
+			ssection = $('#page-'+pagenum+"-set-"+(set-1)),
+			l = ssection.find('.block').length;
+
+		this.ii = parseInt(this.$el.find('.blocknumber').html());
+		var block = this.ii;
+
+		if (block < l){
+			ssection.find('.block').each(function(ii){
+				if (ii >= block){
+					$(this).attr('id', 'page-'+pagenum+'-set-'+set+'-block-'+(ii+1));
+					$(this).find('.blocknumber').html(ii+2);
+
+					$(this).find('input, textarea').each(function(){
+						if (typeof $(this).attr('name') !== 'undefined'){
+							var find = new RegExp("blocks." + ii, "g"),
+								name = $(this).attr('name').replace(find, "blocks." + (ii+1));
+
+							$(this).attr('name', name);
+						}
+					});
+				}
+			})
+		}
+
 		this.$el.find('.autoadv').find('select').attr('disabled', true);
 		this.$el.find('.removebutton').show();
-		createBlock(pagenum,this.i, this.ii+1);
+		createBlock(pagenum,this.i, this.ii);
 	},
 	render: function(){
 		//create technique div
@@ -1042,9 +1091,15 @@ var BlockView = Backbone.View.extend({
 
 		this.removeButton();
 
-		//add layer div to layer's sets container
-		$('#page-'+pagenum+'-set-'+this.i+' .blocks').append(this.el);
-
+		var l = $('#page-'+pagenum+"-set-"+this.i).find('.block').length;
+		//add page div to page container
+		if (this.ii < l){
+			$('#page-'+pagenum+'-set-'+this.i+'-block-'+(this.ii-1)).after(this.$el[0]);
+		}
+		else{
+			//add layer div to layer's sets container
+			$('#page-'+pagenum+'-set-'+this.i+' .blocks').append(this.el);
+		}
 		//add options to boolean dropdown menus
 		this.$el.find('.bdd').each(function(){
 			createBooleanDropdown($(this));
@@ -2325,9 +2380,8 @@ function uploadConfig(input) {
 	    	}
 	    	//close loading page
 	    	$(".zipUpload").css("display", "none");
-    		});
+    	});
     }
-
 };
 
 function navigation(){
@@ -2426,10 +2480,28 @@ function navigation(){
 		livePreview(steps);
 	});
 
+	//upload zip file
 	$('#upload input').on("change", function(){
 		if(userClicks>3) alert("Please note you must start with a clean setup form when uploading configuration files.");
 		uploadConfig(this);
 	});	
+
+	//view demo config setup
+	$('#democode').click(function(){
+		$(".zipUpload").css("display", "block");
+		$.when(
+			$.getJSON("../config/styles.json"),
+			$.getJSON("../config/questions.json"),
+			$.getJSON("../config/map.json"),
+			$.getJSON("../config/conditions.json"),
+		).then(function(styles, questions, map, conditions) {
+			loadStyles(styles[0]);
+			loadPages(map[0], questions[0]);
+			loadConditions(conditions[0]);
+		}).done(function(){
+			$(".zipUpload").css("display", "none");
+		});
+	});
 
 	//save zip file of current code to edit later
 	$('#savefiles').click(function(){
