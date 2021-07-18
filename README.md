@@ -148,6 +148,11 @@ In the descriptions below, `map` refers to each object in the map.json `pages` a
 		]
 	}
 
+#### map.pages[page].orientation
+
+	"orientation": *"left"* *"right"*
+
+Side of the page the map will be located. Default is `left`. 
 
 #### map.pages[page].library
 
@@ -705,7 +710,7 @@ The sets of questions (blocks) and buttons that are viewable to the user at one 
 A single question along with accompanying content and answer input(s). Each question block appears on the page as a unit, vertically separated from other question blocks.
 
 | Value  | Description | Default |
-| :------------: | :----------- | :------------------- |:---------------|
+| :------------: | :----------- | :------------------- |
 | `*"label": text string*` | Label for the question in the CSV or database table of responses, text string (<=20 characters).  | A label will be automatically generated consisting of the page, set, block, and input indexes (for example, "p1s3b1"). |
 | `*"title": text string*` | Title for the question. If included, the question title will appear in bold at the top of the question block. | Example text |
 | `"ask": HTML string` | The question asked. Required. The question asked will appear in normal font below the title (if included) and above the other elements of the block (if included). It need not be a literal question; any text or html (such as image elements) may be included. | Example questions |
@@ -732,7 +737,7 @@ A single question along with accompanying content and answer input(s). Each ques
 Whether the participant must provide input before moving to the next set.
 
 | Value  | Description | Default |
-| :------------: | :----------- | :------------------- |:---------------|
+| :------------: | :----------- | :------------------- |
 | `*true*` | Participant must provide input to move to next set. | `false` |
 
 
@@ -743,7 +748,7 @@ Whether the participant must provide input before moving to the next set.
 Whether to advance to the next set when the user makes an input choice. Only available for `radios`, `dropdown`, and `matrix` input types. *This option should only be used on the last input in a set, and renders a `next` button superfluous.*
 
 | Value  | Description | Default |
-| :------------: | :----------- | :------------------- |:---------------|
+| :------------: | :----------- | :------------------- |
 | `*true*` | Advance to next set when user makes a choice. Overrides and sets `required` to `true`. | `false` |
 
 
@@ -754,7 +759,7 @@ Whether to advance to the next set when the user makes an input choice. Only ava
 The type of answer input. Required if `input` is included with the block.
 
 | Value  | Description | Default |
-| :------------: | :----------- | :------------------- |:---------------|
+| :------------: | :----------- | :------------------- |
 | `*"text"*` | A one-line text box. | Example text |
 | `*"paragraph"*` |  A multi-line text box that may be expanded by the participant. | Example paragraph |
 | `*"checkboxes"*` | A set of checkboxes allowing the participant to select more than one answer from a list of potential answers. Requires `items` array. | Example checkboxes |
@@ -775,7 +780,7 @@ The type of answer input. Required if `input` is included with the block.
 An array of input options. Required by `radios`, `dropdown`, and `matrix` input types; ignored otherwise.
 
 | Value  | Description | Default |
-| :------------: | :----------- | :------------------- |:---------------|
+| :------------: | :----------- | :------------------- |
 | `"text": text string` | The text to display to the participant for the option. Required if `options` is included. | Example text |
 | `*"value": text string -or- "get from participant"*` |  The value to display in the resulting data cell for the question block or item if the option is selected. If the input type is `radios` and the string provided is `"get from participant"`, a text box will be added for participant input (this is good for "other" options). | If omitted, the option `"text"` will be recorded as the value. |
 
@@ -792,7 +797,7 @@ An array of input options. Required by `radios`, `dropdown`, and `matrix` input 
 An array of input items. Required by `checkboxes`, `matrix`, and `rank` input types; ignored otherwise.
 
 | Value  | Description | Default |
-| :------------: | :----------- | :------------------- |:---------------|
+| :------------: | :----------- | :------------------- |
 | `"text": text string` | The text to display to the participant for the item. Required if `items` is included.| Example text |
 | `*"label": text string*` | (<= 20 characters) What to label the column for the item in the resulting data. Each item will be given its own column in the data table. For each item column, if the input type is `checkboxes`, each item's cell value will be recorded as `1` or a value provided for `value` if the box is checked and no data if not checked. If the type is `matrix`, each item's cell value will correspond to the value of the selected option (this overrides the item `value` option). If the type is `rank`, the cell value will be given the item's rank, starting at 1 for the top item (this also overrides the item `value` option).| If no `label` is provided for the item, a label will be automatically generated consisting of the block label and item indexes (for example, "p1s3b1i1") |
 | `*"value": text string -or- "get from participant"*` | Only useful if the input type is `checkboxes`. Replaces `1` as the value recorded for each item that is checked. If the string provided is `"get from participant"`, a text box will be added for participant input (this is good for "other" items). |
@@ -895,7 +900,7 @@ All other story map options are housed within questions.json. Main options are s
 	}
 
 | Value  | Description | Default |
-| :------------: | :----------- | :------------------- |:---------------|
+| :------------: | :----------- | :------------------- |
 | `*"title": text string*` | Title of the story. Will display at the top of the story map.  | Example Title |
 | `*"subtitle": text string*` | Subtitle of the story. If included, the question title will appear in bold at the top of the question block. | Example text |
 | `*"background": url or path to image file*` | Background of the title block. Could be an PNG, JPEG, or GIF. | Example image |
@@ -931,7 +936,7 @@ The `story` module also uses the sets and blocks in the `questions` module and f
 Each story block appears on the page as a unit, vertically separated from other story blocks.
 
 | Value  | Description | Default |
-| :------------: | :----------- | :------------------- |:---------------|
+| :------------: | :----------- | :------------------- |
 | `*"title": text string*` | Title of the story block. Will display at the top of the story block. | Example text |
 | `*"subtitle": text string*` | Subtitle of the story block. Will display beneath the title in a smaller font. | Example text |
 | `*"image": url or path to image file*` | An image included to enhance the story. Could be a static map, graphic or photo. Will display below the title and the subtitle. | Example image |
