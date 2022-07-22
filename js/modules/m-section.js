@@ -843,6 +843,7 @@ var UnderlayControlModel = Backbone.Model.extend({
 	}
 });
 
+
 //view for underlay control
 var UnderlayControlView = OverlayControlView.extend({
 	el: '.underlay-control-container',
@@ -898,18 +899,22 @@ var SearchView = Backbone.View.extend({
 		this.$el.children('#search-results-box').empty();
 		//hold result IDs to prevent duplicates
 		var resultIds = [];
+		console.log($(e.target).val())
 		_.each(this.model.get('result'), function(result, i){
-			var resultId = result.properties.name.replace(/[\.\s#]/g, '') + result.id;
+			var prop = result.properties.NAME ? result.properties.NAME: result.properties.name ? result.properties.name: result.properties.Name;
+			
+			var resultId = prop.replace(/[\.\s#]/g, '') + result.id;
 			//limit to top 10 results
 			if ($('.result').length < 10 && $.inArray(resultId, resultIds) == -1){
 				featureId = i + resultId;
 				//append a new line for each result
-				this.$el.children('#search-results-box').append(this.template({featureName: result.properties.name, featureId: featureId}));
+				this.$el.children('#search-results-box').append(this.template({featureName: prop, featureId: featureId}));
 				//attach click listener
 				var selectFeature = this.selectFeature;
 				$('#result-'+featureId).click(function(e){ selectFeature(e, result); });
 				resultIds.push(resultId);
 			};
+			console.log(resultId, resultIds)
 		}, this);
 	}
 });
@@ -1048,7 +1053,7 @@ var FilterSliderView = Backbone.View.extend({
 		var optionTemplate = _.template($('#filter-options-template').html()),
 			select = this.$el.find('select[name=' + this.model.get('className') + ']');
 		_.each(numericAttributes, function(attribute){
-			select.append(optionTemplate({attribute: attribute}))
+			select.append(optionTemplate({attribute: attribute, display:attribute.replaceAll("_"," ")}))
 		}, this);
 	},
 	initialize: function(options){
@@ -2557,7 +2562,7 @@ var LeafletMap = Backbone.View.extend({
 			var map = leafletView.map,
 				offLayers = leafletView.offLayers;
 			//add overlay control
-			var OverlayControl = leafletView.CustomControl('overlay', 'bottomleft');
+			var OverlayControl = leafletView.CustomControl('overlay', 'bottomright');
 			var overlayControl = new OverlayControl();
 			map.addControl(overlayControl);
 			//add to overlay control
@@ -2697,7 +2702,7 @@ var LeafletMap = Backbone.View.extend({
 			//instantiate a view to call and display results
 			var searchView = new SearchView();
 			//function to show popup for clicked feature
-			searchView.selectFeature = function(e, result){
+			searchView.selectFeature = function(_e, result){
 				//record search interaction
 				leafletView.trigger('search');
 				//reveal popups pane if retrieve is off
@@ -2740,8 +2745,9 @@ var LeafletMap = Backbone.View.extend({
 					};
 				});
 				var options = {
-					keys: ['properties.name']
+					keys: ['properties.NAME', 'properties.name', 'properties.Name']
 				};
+
 				//create a model for the data
 				var searchModel = new SearchModel({
 					allFeatures: allFeatures,
