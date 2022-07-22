@@ -293,14 +293,30 @@
             $("#t").height($(window).height()).css("margin-bottom",$('#t').height()/3);
             //is the story reversed?
             if (this.model.get('story').reverse){
-                //add and position title block and map
+                //add and position title block and 
                 $("#s").before(map);
                 $("#s").css("margin-top",$('#m').height()/2);
+                //insert map introduction 
+                if (this.model.get('story').mapIntro){
+                    $('.map-intro').remove();
+                    $("#m").before("<p class='map-intro map-description'>" + this.model.get('story').mapIntro + "</p>");
+                }
+                else{
+                    $('.map-intro').remove();
+                }
             }
-            else{
+            else {
                 //add and position title block and map
                 $("#s").after(map);
                 $("#s").css("margin-bottom",$('#m').height()/2);
+                //insert map introduction 
+                if (this.model.get('story').mapIntro){
+                    $('.map-intro').remove();
+                    $("#m").before("<p class='map-intro map-description'>" + this.model.get('story').mapIntro + "</p>");
+                }
+                else{
+                    $('.map-intro').remove();
+                }
             }
             //render title elements
             var sTitle = this.model.get('story');

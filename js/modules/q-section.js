@@ -553,6 +553,9 @@ var Questions = Backbone.View.extend({
 				sortable.append(item.el[0]);
 			});
 		});
+		//remove map title if still visible
+		if ($('.map-intro'))
+			$('.map-intro').remove();
 		//render buttons
 		if (qset.hasOwnProperty('buttons') && qset.buttons.length > 0){
 			this.renderButtons(qset.buttons);
