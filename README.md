@@ -884,8 +884,6 @@ The current version of Mapstudy allows the inclusion of vertical story maps, oth
 		]
 	}
 
-Is the map be a story map?
-
 While the majority of `story` options are housed within `questions`, the `story` module requires the `story` option in the `map` config to be set to `true`. 
 
 #### questions.pages[page].story
