@@ -9,6 +9,8 @@ var allData = {
 	"param": {}
 };
 
+var undoLog = [];
+
 var totalPages = 0;
 var userClicks = 0;
 
@@ -75,7 +77,6 @@ var PageView = Backbone.View.extend({
 				if (this.id[this.id.length - 1] > pagenum){
 					var view = $(this).backboneView(),
 						newPage = oldPage + 1;
-
 					view.resetPages(oldPage, newPage);
 				}
 			});
@@ -84,7 +85,6 @@ var PageView = Backbone.View.extend({
 	},
 	resetPages(oldPage, newPage){
 		//function to reset page numbering
-		
 		//set model number to new page number
 		this.model.set('pagenum',newPage);	
 		//set ID to new page number
@@ -113,6 +113,8 @@ var PageView = Backbone.View.extend({
 		this.$el.find("input[name*='pages." + newPage + ".page']").attr("value",newPage);
 		//set display numbers to current display value
 		this.$el.find('.pagenum').html(newPage);	
+
+		pageModels[`page${newPage}`] = this.model;
 					
 	},
 	setInteractionOptions: function(){
@@ -240,6 +242,7 @@ var PageView = Backbone.View.extend({
 
 		//set initial map options
 		this.setLibrary('Leaflet');
+		undo();
 
 		//add options to boolean dropdown menus
 		this.$el.find('.bdd').each(function(){
@@ -489,6 +492,8 @@ var BaseLayerView = Backbone.View.extend({
 
 		//add visualization techniques
 		createTechnique(pagenum,this.i, 0);
+
+		undo();
 
 		return this;
 	}
@@ -869,8 +874,11 @@ var SetView = Backbone.View.extend({
 				$(this).find('.setnumber').html(i+1);
 				//replace any i character in input/textarea names
 				$(this).find('.block').each(function(){
-					var find = new RegExp("set-" + i+1, "g"),
+					var find = new RegExp("set-" + (i+1), "g"),
 						id = $(this).attr('id').replace(find, "set-" + i);
+
+					var view = $(this).backboneView();
+						view.i = i;
 					
 					$(this).attr('id', id);
 				});
@@ -909,6 +917,9 @@ var SetView = Backbone.View.extend({
 					$(this).find('.block').each(function(){
 						var find = new RegExp("set-" + i, "g"),
 							id = $(this).attr('id').replace(find, "set-" + (i+1));
+
+						var blockView = $(this).backboneView();
+							blockView.i = (i+1);
 						
 						$(this).attr('id', id);
 					});
@@ -922,9 +933,6 @@ var SetView = Backbone.View.extend({
 					});
 				}
 			});
-		}
-		if (this.i == 1){
-			this.$el.find('.removeset').show();
 		}
 		
 		createSet(pagenum,this.i);
@@ -948,6 +956,9 @@ var SetView = Backbone.View.extend({
 		else{
 			//add layer div to layer's sets container
 			$('#page-'+pagenum+' .sets').append(this.el);
+			if (l == 0){
+				$(this.el).find('.removeset').hide();
+			};
 		}
 
 		//add initial block options
@@ -1054,7 +1065,7 @@ var BlockView = Backbone.View.extend({
 			set = parseInt(this.$el.find('.setnumber').html()),
 			ssection = $('#page-'+pagenum+"-set-"+(set-1)),
 			l = ssection.find('.block').length;
-
+	
 		this.ii = parseInt(this.$el.find('.blocknumber').html());
 		var block = this.ii;
 
@@ -1075,9 +1086,9 @@ var BlockView = Backbone.View.extend({
 				}
 			})
 		}
-
+		
 		this.$el.find('.autoadv').find('select').attr('disabled', true);
-		this.$el.find('.removebutton').show();
+		//this.$el.find('.removebutton').show();
 		createBlock(pagenum,this.i, this.ii);
 	},
 	render: function(){
@@ -1099,6 +1110,9 @@ var BlockView = Backbone.View.extend({
 		else{
 			//add layer div to layer's sets container
 			$('#page-'+pagenum+'-set-'+this.i+' .blocks').append(this.el);
+			if (l == 0){
+				$(this.el).find('.removeblock').hide();
+			};
 		}
 		//add options to boolean dropdown menus
 		this.$el.find('.bdd').each(function(){
@@ -1176,36 +1190,91 @@ var StoryBlockView = Backbone.View.extend({
 	},
 	removeBlock: function(){
 		//reset block numbering
-		this.ii--;
+		this.ii--
 		//fade out and remove view
 		var view = this,
-			pagenum = view.model.get('pagenum'),
-			set = $('.story-blocks');
+			pagenum = this.model.get('pagenum'),
+			set = $('#page-'+pagenum+'-set-'+this.i);
 		this.$el.fadeOut(500, function(){
 			view.remove();
 			//reset numbering of sets once element has been removed
-			var l = $('.story-blocks').find('.block').length - 1;
+			var l = set.find('.story-blocks').length;
 			set.find('.block').each(function(ii){
 				$(this).attr('id', 'page-'+pagenum+'-set-'+view.i+'-block-'+ii);
 				$(this).find('.blocknumber').html(ii+1);
-				//reveal add button if the last set
-				if (ii == l){
-					$(this).find('.addbutton').show();
-				};
+				//replace any i character in input/textarea names
+				$(this).find('input, textarea').each(function(){
+					if (typeof $(this).attr('name') !== 'undefined'){
+						var find = new RegExp("blocks." + (ii+1), "g"),
+							name = $(this).attr('name').replace(find, "blocks." + ii);
+
+						$(this).attr('name', name);
+					}
+				});
+			});
+		});
+		/*var view = this,
+			pagenum = this.model.get('pagenum'),
+			set = $('#page-'+pagenum+'-set-'+this.i);
+		this.$el.fadeOut(500, function(){
+			view.remove();
+			//reset numbering of sets once element has been removed
+			var l = set.find('.block').length;
+			set.find('.block').each(function(ii){
+				$(this).attr('id', 'page-'+pagenum+'-set-'+view.i+'-block-'+ii);
+				$(this).find('.blocknumber').html(ii+1);
+				//replace any i character in input/textarea names
+				$(this).find('input, textarea').each(function(){
+					if (typeof $(this).attr('name') !== 'undefined'){
+						var find = new RegExp("blocks." + (ii+1), "g"),
+							name = $(this).attr('name').replace(find, "blocks." + ii);
+
+						$(this).attr('name', name);
+					}
+				});
 				//hide remove button if the only set
-				if (l == 0){
+				if (l == 1){
 					$(this).find('.removebutton').hide();
 				};
 			});
 		});
+		//show auto-advance if last block's input is set to radio, dropdown, or matrix
+		var prevBlock = $('#'+'page-'+pagenum+'-set-'+this.i+'-block-'+this.ii),
+			selectVal = prevBlock.find('.input-type-select').val();
+		if (selectVal == 'radios' || selectVal == 'dropdown' || selectVal == 'matrix'){
+			prevBlock.find('.autoadv').show().find('select').removeAttr('disabled');
+		};*/
 	},
 	addBlock: function(){
-		var pagenum = this.model.get('pagenum');
-		this.ii = parseInt(this.$el.find('.blocknumber').html())-1;
-		this.$el.find('.addbutton, .autoadv').hide();
+		var pagenum = this.model.get('pagenum'),
+			set = parseInt(this.$el.find('.setnumber').html()),
+			ssection = $('#page-'+pagenum+"-set-"+(set-1)),
+			l = ssection.find('.block').length;
+	
+		this.ii = parseInt(this.$el.find('.blocknumber').html());
+		var block = this.ii;
+
+		if (block < l){
+			ssection.find('.block').each(function(ii){
+				if (ii >= block){
+					$(this).attr('id', 'page-'+pagenum+'-set-'+set+'-block-'+(ii+1));
+					$(this).find('.blocknumber').html(ii+2);
+
+					$(this).find('input, textarea').each(function(){
+						if (typeof $(this).attr('name') !== 'undefined'){
+							var find = new RegExp("blocks." + ii, "g"),
+								name = $(this).attr('name').replace(find, "blocks." + (ii+1));
+
+							$(this).attr('name', name);
+						}
+					});
+				}
+			})
+		}
+		
 		this.$el.find('.autoadv').find('select').attr('disabled', true);
-		this.$el.find('.removebutton').show();
-		createStoryBlock(pagenum, this.i, this.ii+1);
+		//this.$el.find('.removebutton').show();
+		createStoryBlock(pagenum,this.i, this.ii);
 	},
 	render: function(){
 		//create technique div
@@ -1218,14 +1287,21 @@ var StoryBlockView = Backbone.View.extend({
 
 		this.removeButton();
 
-		//add layer div to layer's sets container
-		$('#page-'+pagenum+'-set-'+this.i+' .story-blocks').append(this.el);
+		var l = $('#page-'+pagenum+"-set-"+this.i).find('.block').length;
+		if (this.ii < l){
+			$('#page-'+pagenum+'-set-'+this.i+'-block-'+(this.ii-1)).after(this.$el[0]);
+		}
+		else{
+			//add layer div to layer's sets container
+			$('#page-'+pagenum+'-set-'+this.i+' .story-blocks').append(this.el);
 
+		}
+
+		//add layer div to layer's sets container
 		this.$el.find('.bdd').each(function(){
 			createBooleanDropdown($(this));
 		});
 		this.$el.find('.displayonyes').hide();
-
 
 		return this;
 	}
@@ -2164,9 +2240,10 @@ function populateMapPage(page){
 						}
 						if(technique["classification"]) techView.changeClassification(technique["classification"]);
 						if(technique["classes"]){
+							console.log( technique["classes"])
 							var numClass;
 							if(technique["type"] == "choropleth") {
-								numClass = technique["classes"].split(".")[1];
+								numClass = technique["classes"][1];
 							}
 							else {
 								numClass = technique["classes"].length;
@@ -2385,6 +2462,7 @@ function uploadConfig(input) {
 };
 
 function navigation(){
+	
 	//activate navigation buttons
 	var step = 0,
 		steps = [
@@ -2511,9 +2589,56 @@ function navigation(){
 		makeFiles();
 	});
 
-};
+}; 
+
+function undo(){
+	console.log("undo activated")
+	$("input, select, textarea, .bdd, input[name=checkbox], .Leaflet-mapOptions-center input").change(function(){
+		if (undoLog && undoLog.length <= 10){
+			undoLog.push(this);
+		}
+		console.log(undoLog)
+	})
+
+	function resetChangeEvent(selected){
+		var togglediv = $(selected).closest('.q').children('.displayonyes, .hideonno');
+		if ($(selected).val() == "true"){
+			togglediv.slideDown(100).find('input, textarea, select').removeAttr('disabled');
+		} else {
+			togglediv.slideUp(100).find('input, textarea, select').attr('disabled', true);
+		}
+	}
+	
+	$('#undo').click(function(){
+		if (undoLog){
+			var selected = undoLog[undoLog.length - 1];
+
+			if (selected.className.includes("bdd")){
+				if (selected.value == 'false'){
+					selected.value = 'true';
+					resetChangeEvent(selected);
+				}
+				else{
+					selected.value = 'false';
+					resetChangeEvent(selected);
+				}
+			}
+			if (selected.type == 'checkbox'){
+
+				if (selected.checked == true){
+					selected.checked = false;
+				}
+				else{
+					selected.checked = true;
+				}
+			}
+		}
+	})
+}
 
 function initialize(){
+	undo();
+	
 	$('.displayonyes').hide();
 
 	navigation();
